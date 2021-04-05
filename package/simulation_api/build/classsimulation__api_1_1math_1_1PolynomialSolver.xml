@@ -1,0 +1,415 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classsimulation__api_1_1math_1_1PolynomialSolver" kind="class" language="C++" prot="public">
+    <compoundname>simulation_api::math::PolynomialSolver</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1PolynomialSolver_1a0fa1971065d76b552ce9bf408a83faf3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt; double &gt; simulation_api::math::PolynomialSolver::solveLinearEquation</definition>
+        <argsstring>(double a, double b, double min_value=0, double max_value=1) const</argsstring>
+        <name>solveLinearEquation</name>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>min_value</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>max_value</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>solve linear equation a*x + b = 0 </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::vector&lt;double&gt; real root of the quadratic functions (from 0 to 1) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/polynomial_solver.hpp" line="34" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/polynomial_solver.cpp" bodystart="38" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1PolynomialSolver_1a982a7db37da3900dace06ee4f1b7b7e4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt; double &gt; simulation_api::math::PolynomialSolver::solveQuadraticEquation</definition>
+        <argsstring>(double a, double b, double c, double min_value=0, double max_value=1) const</argsstring>
+        <name>solveQuadraticEquation</name>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>min_value</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>max_value</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>solve quadratic equation a*x^2 + b*x + c = 0 </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::vector&lt;double&gt; real root of the quadratic functions (from 0 to 1) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/polynomial_solver.hpp" line="44" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/polynomial_solver.cpp" bodystart="58" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1PolynomialSolver_1aec63a133b807b4b20c2d320c9a3feaa7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt; double &gt; simulation_api::math::PolynomialSolver::solveCubicEquation</definition>
+        <argsstring>(double a, double b, double c, double d, double min_value=0, double max_value=1) const</argsstring>
+        <name>solveCubicEquation</name>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>min_value</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>max_value</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>solve cubic function a*t^3 + b*t^2 + c*t + d = 0 </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::vector&lt;double&gt; real root of the cubic functions (from 0 to 1) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/polynomial_solver.hpp" line="56" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/polynomial_solver.cpp" bodystart="84" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1PolynomialSolver_1a5d02539d703d2a94ebc216e9a571e5e0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double simulation_api::math::PolynomialSolver::cubicFunction</definition>
+        <argsstring>(double a, double b, double c, double d, double t) const</argsstring>
+        <name>cubicFunction</name>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>calculate result of cubic function a*t^3 + b*t^2 + c*t + d </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>double result of cubic function </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/polynomial_solver.hpp" line="69" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/polynomial_solver.cpp" bodystart="26" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1PolynomialSolver_1a27fe74e61dc0153075b6b9ca54869434" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double simulation_api::math::PolynomialSolver::quadraticFunction</definition>
+        <argsstring>(double a, double b, double c, double t) const</argsstring>
+        <name>quadraticFunction</name>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>calculate result of quadratic function a*t^2 + b*t + c </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>double result of quadratic function </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/polynomial_solver.hpp" line="79" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/polynomial_solver.cpp" bodystart="33" bodyend="36"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1PolynomialSolver_1a3b16d53740338742bbdacbeccda4ad93" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int simulation_api::math::PolynomialSolver::solveP3</definition>
+        <argsstring>(std::vector&lt; double &gt; &amp;x, double a, double b, double c) const</argsstring>
+        <name>solveP3</name>
+        <param>
+          <type>std::vector&lt; double &gt; &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>solve cubic equation x^3 + a*x^2 + b*x + c = 0, this code is public domain </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ulink url="http://math.ivanovo.ac.ru/dalgebra/Khashin/poly/index.html">http://math.ivanovo.ac.ru/dalgebra/Khashin/poly/index.html</ulink> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int if return value is 3, 3 real roots: x[0], x[1], x[2], if return value is 2, 2 real roots: x[0], x[1], if return value is 1, 1 real root : x[0], x[1] ± i*x[2], </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/polynomial_solver.hpp" line="94" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/polynomial_solver.cpp" bodystart="108" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1PolynomialSolver_1a064fbdbbac339d1f30ee503ffbffada9" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double simulation_api::math::PolynomialSolver::_root3</definition>
+        <argsstring>(double x) const</argsstring>
+        <name>_root3</name>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/polynomial_solver.hpp" line="95" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/polynomial_solver.cpp" bodystart="152" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1PolynomialSolver_1abdaa9105f3ab11651beaa6fb8e549f7c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double simulation_api::math::PolynomialSolver::root3</definition>
+        <argsstring>(double x) const</argsstring>
+        <name>root3</name>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/polynomial_solver.hpp" line="96" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/polynomial_solver.cpp" bodystart="173" bodyend="178"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/polynomial_solver.hpp" line="25" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/polynomial_solver.hpp" bodystart="24" bodyend="97"/>
+    <listofallmembers>
+      <member refid="classsimulation__api_1_1math_1_1PolynomialSolver_1a064fbdbbac339d1f30ee503ffbffada9" prot="private" virt="non-virtual"><scope>simulation_api::math::PolynomialSolver</scope><name>_root3</name></member>
+      <member refid="classsimulation__api_1_1math_1_1PolynomialSolver_1a5d02539d703d2a94ebc216e9a571e5e0" prot="public" virt="non-virtual"><scope>simulation_api::math::PolynomialSolver</scope><name>cubicFunction</name></member>
+      <member refid="classsimulation__api_1_1math_1_1PolynomialSolver_1a27fe74e61dc0153075b6b9ca54869434" prot="public" virt="non-virtual"><scope>simulation_api::math::PolynomialSolver</scope><name>quadraticFunction</name></member>
+      <member refid="classsimulation__api_1_1math_1_1PolynomialSolver_1abdaa9105f3ab11651beaa6fb8e549f7c" prot="private" virt="non-virtual"><scope>simulation_api::math::PolynomialSolver</scope><name>root3</name></member>
+      <member refid="classsimulation__api_1_1math_1_1PolynomialSolver_1aec63a133b807b4b20c2d320c9a3feaa7" prot="public" virt="non-virtual"><scope>simulation_api::math::PolynomialSolver</scope><name>solveCubicEquation</name></member>
+      <member refid="classsimulation__api_1_1math_1_1PolynomialSolver_1a0fa1971065d76b552ce9bf408a83faf3" prot="public" virt="non-virtual"><scope>simulation_api::math::PolynomialSolver</scope><name>solveLinearEquation</name></member>
+      <member refid="classsimulation__api_1_1math_1_1PolynomialSolver_1a3b16d53740338742bbdacbeccda4ad93" prot="private" virt="non-virtual"><scope>simulation_api::math::PolynomialSolver</scope><name>solveP3</name></member>
+      <member refid="classsimulation__api_1_1math_1_1PolynomialSolver_1a982a7db37da3900dace06ee4f1b7b7e4" prot="public" virt="non-virtual"><scope>simulation_api::math::PolynomialSolver</scope><name>solveQuadraticEquation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

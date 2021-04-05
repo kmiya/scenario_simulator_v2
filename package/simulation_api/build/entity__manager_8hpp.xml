@@ -1,0 +1,1555 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="entity__manager_8hpp" kind="file" language="C++">
+    <compoundname>entity_manager.hpp</compoundname>
+    <includes refid="ego__entity_8hpp" local="no">simulation_api/entity/ego_entity.hpp</includes>
+    <includes refid="exception_8hpp" local="no">simulation_api/entity/exception.hpp</includes>
+    <includes refid="pedestrian__entity_8hpp" local="no">simulation_api/entity/pedestrian_entity.hpp</includes>
+    <includes refid="vehicle__entity_8hpp" local="no">simulation_api/entity/vehicle_entity.hpp</includes>
+    <includes refid="hdmap__utils_8hpp" local="no">simulation_api/hdmap_utils/hdmap_utils.hpp</includes>
+    <includes refid="traffic__sink_8hpp" local="no">simulation_api/traffic/traffic_sink.hpp</includes>
+    <includes refid="traffic__light__manager_8hpp" local="no">simulation_api/traffic_lights/traffic_light_manager.hpp</includes>
+    <includes local="no">autoware_auto_msgs/msg/vehicle_control_command.hpp</includes>
+    <includes local="no">autoware_auto_msgs/msg/vehicle_kinematic_state.hpp</includes>
+    <includes local="no">autoware_auto_msgs/msg/vehicle_state_command.hpp</includes>
+    <includes local="no">boost/any.hpp</includes>
+    <includes local="no">boost/optional.hpp</includes>
+    <includes local="no">openscenario_msgs/msg/bounding_box.hpp</includes>
+    <includes local="no">openscenario_msgs/msg/driver_model.hpp</includes>
+    <includes local="no">openscenario_msgs/msg/entity_status_with_trajectory_array.hpp</includes>
+    <includes local="no">openscenario_msgs/msg/vehicle_parameters.hpp</includes>
+    <includes local="no">rclcpp/rclcpp.hpp</includes>
+    <includes local="no">tf2/LinearMath/Quaternion.h</includes>
+    <includes local="no">tf2_geometry_msgs/tf2_geometry_msgs.h</includes>
+    <includes local="no">tf2_ros/static_transform_broadcaster.h</includes>
+    <includes local="no">tf2_ros/transform_broadcaster.h</includes>
+    <includes local="no">visualization_msgs/msg/marker_array.hpp</includes>
+    <includes local="no">map</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">stdexcept</includes>
+    <includes local="no">string</includes>
+    <includes local="no">type_traits</includes>
+    <includes local="no">typeinfo</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">utility</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="api_8hpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/api/api.hpp</includedby>
+    <includedby refid="metric__base_8hpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/metrics/metric_base.hpp</includedby>
+    <includedby refid="metrics__manager_8hpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/metrics/metrics_manager.hpp</includedby>
+    <includedby refid="entity__manager_8cpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/entity/entity_manager.cpp</includedby>
+    <incdepgraph>
+      <node id="1522">
+        <label>simulation_api/traffic_lights/traffic_light_phase.hpp</label>
+        <link refid="traffic__light__phase_8hpp_source"/>
+        <childnode refid="1484" relation="include">
+        </childnode>
+        <childnode refid="1523" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+        <childnode refid="1525" relation="include">
+        </childnode>
+        <childnode refid="1519" relation="include">
+        </childnode>
+      </node>
+      <node id="1538">
+        <label>boost/property_tree/xml_parser.hpp</label>
+      </node>
+      <node id="1579">
+        <label>system_error</label>
+      </node>
+      <node id="1556">
+        <label>functional</label>
+      </node>
+      <node id="1570">
+        <label>awapi_accessor/accessor.hpp</label>
+      </node>
+      <node id="1532">
+        <label>queue</label>
+      </node>
+      <node id="1562">
+        <label>simulation_api/vehicle_model/sim_model_time_delay.hpp</label>
+        <link refid="sim__model__time__delay_8hpp"/>
+        <childnode refid="1559" relation="include">
+        </childnode>
+        <childnode refid="1560" relation="include">
+        </childnode>
+        <childnode refid="1561" relation="include">
+        </childnode>
+        <childnode refid="1563" relation="include">
+        </childnode>
+        <childnode refid="1530" relation="include">
+        </childnode>
+        <childnode refid="1532" relation="include">
+        </childnode>
+        <childnode refid="1565" relation="include">
+        </childnode>
+      </node>
+      <node id="1566">
+        <label>autoware_auto_msgs/msg/complex32.hpp</label>
+      </node>
+      <node id="1525">
+        <label>limits</label>
+      </node>
+      <node id="1497">
+        <label>geometry_msgs/msg/pose_stamped.hpp</label>
+      </node>
+      <node id="1533">
+        <label>simulation_api/entity/vehicle_parameter.hpp</label>
+        <link refid="vehicle__parameter_8hpp_source"/>
+        <childnode refid="1534" relation="include">
+        </childnode>
+        <childnode refid="1531" relation="include">
+        </childnode>
+        <childnode refid="1535" relation="include">
+        </childnode>
+        <childnode refid="1536" relation="include">
+        </childnode>
+        <childnode refid="1495" relation="include">
+        </childnode>
+        <childnode refid="1492" relation="include">
+        </childnode>
+        <childnode refid="1537" relation="include">
+        </childnode>
+        <childnode refid="1538" relation="include">
+        </childnode>
+        <childnode refid="1539" relation="include">
+        </childnode>
+        <childnode refid="1540" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+      </node>
+      <node id="1479">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_manager.hpp</label>
+        <link refid="entity__manager_8hpp"/>
+        <childnode refid="1480" relation="include">
+        </childnode>
+        <childnode refid="1523" relation="include">
+        </childnode>
+        <childnode refid="1581" relation="include">
+        </childnode>
+        <childnode refid="1481" relation="include">
+        </childnode>
+        <childnode refid="1484" relation="include">
+        </childnode>
+        <childnode refid="1588" relation="include">
+        </childnode>
+        <childnode refid="1483" relation="include">
+        </childnode>
+        <childnode refid="1567" relation="include">
+        </childnode>
+        <childnode refid="1568" relation="include">
+        </childnode>
+        <childnode refid="1569" relation="include">
+        </childnode>
+        <childnode refid="1590" relation="include">
+        </childnode>
+        <childnode refid="1493" relation="include">
+        </childnode>
+        <childnode refid="1531" relation="include">
+        </childnode>
+        <childnode refid="1551" relation="include">
+        </childnode>
+        <childnode refid="1591" relation="include">
+        </childnode>
+        <childnode refid="1535" relation="include">
+        </childnode>
+        <childnode refid="1495" relation="include">
+        </childnode>
+        <childnode refid="1592" relation="include">
+        </childnode>
+        <childnode refid="1501" relation="include">
+        </childnode>
+        <childnode refid="1593" relation="include">
+        </childnode>
+        <childnode refid="1594" relation="include">
+        </childnode>
+        <childnode refid="1515" relation="include">
+        </childnode>
+        <childnode refid="1516" relation="include">
+        </childnode>
+        <childnode refid="1520" relation="include">
+        </childnode>
+        <childnode refid="1578" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+        <childnode refid="1595" relation="include">
+        </childnode>
+        <childnode refid="1596" relation="include">
+        </childnode>
+        <childnode refid="1517" relation="include">
+        </childnode>
+        <childnode refid="1519" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+      </node>
+      <node id="1527">
+        <label>std_msgs/msg/color_rgba.hpp</label>
+      </node>
+      <node id="1555">
+        <label>behaviortree_cpp_v3/loggers/bt_cout_logger.h</label>
+      </node>
+      <node id="1541">
+        <label>simulation_api/behavior/vehicle/lane_change_action.hpp</label>
+        <link refid="lane__change__action_8hpp_source"/>
+        <childnode refid="1485" relation="include">
+        </childnode>
+        <childnode refid="1533" relation="include">
+        </childnode>
+        <childnode refid="1542" relation="include">
+        </childnode>
+        <childnode refid="1496" relation="include">
+        </childnode>
+        <childnode refid="1550" relation="include">
+        </childnode>
+        <childnode refid="1552" relation="include">
+        </childnode>
+        <childnode refid="1553" relation="include">
+        </childnode>
+        <childnode refid="1493" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+        <childnode refid="1520" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+      </node>
+      <node id="1500">
+        <label>geographic_msgs/msg/geo_point.hpp</label>
+      </node>
+      <node id="1547">
+        <label>openscenario_msgs/msg/waypoints_array.hpp</label>
+      </node>
+      <node id="1512">
+        <label>lanelet2_routing/RoutingGraph.h</label>
+      </node>
+      <node id="1550">
+        <label>openscenario_msgs/msg/entity_trajectory.hpp</label>
+      </node>
+      <node id="1504">
+        <label>lanelet2_core/geometry/Lanelet.h</label>
+      </node>
+      <node id="1593">
+        <label>tf2_ros/static_transform_broadcaster.h</label>
+      </node>
+      <node id="1496">
+        <label>openscenario_msgs/msg/entity_status.hpp</label>
+      </node>
+      <node id="1536">
+        <label>pugixml.hpp</label>
+      </node>
+      <node id="1539">
+        <label>boost/foreach.hpp</label>
+      </node>
+      <node id="1491">
+        <label>geometry_msgs/msg/pose.hpp</label>
+      </node>
+      <node id="1534">
+        <label>openscenario_msgs.pb.h</label>
+      </node>
+      <node id="1483">
+        <label>simulation_api/traffic_lights/traffic_light_manager.hpp</label>
+        <link refid="traffic__light__manager_8hpp_source"/>
+        <childnode refid="1484" relation="include">
+        </childnode>
+        <childnode refid="1521" relation="include">
+        </childnode>
+        <childnode refid="1495" relation="include">
+        </childnode>
+        <childnode refid="1515" relation="include">
+        </childnode>
+        <childnode refid="1520" relation="include">
+        </childnode>
+        <childnode refid="1517" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+        <childnode refid="1519" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+      </node>
+      <node id="1554">
+        <label>simulation_api/behavior/vehicle/behavior_tree.hpp</label>
+        <link refid="vehicle_2behavior__tree_8hpp_source"/>
+        <childnode refid="1484" relation="include">
+        </childnode>
+        <childnode refid="1496" relation="include">
+        </childnode>
+        <childnode refid="1547" relation="include">
+        </childnode>
+        <childnode refid="1548" relation="include">
+        </childnode>
+        <childnode refid="1490" relation="include">
+        </childnode>
+        <childnode refid="1553" relation="include">
+        </childnode>
+        <childnode refid="1555" relation="include">
+        </childnode>
+        <childnode refid="1556" relation="include">
+        </childnode>
+        <childnode refid="1516" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+        <childnode refid="1520" relation="include">
+        </childnode>
+      </node>
+      <node id="1526">
+        <label>simulation_api/color_utils/color_utils.hpp</label>
+        <link refid="color__utils_8hpp_source"/>
+        <childnode refid="1527" relation="include">
+        </childnode>
+        <childnode refid="1528" relation="include">
+        </childnode>
+        <childnode refid="1529" relation="include">
+        </childnode>
+        <childnode refid="1516" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+      </node>
+      <node id="1535">
+        <label>openscenario_msgs/msg/vehicle_parameters.hpp</label>
+      </node>
+      <node id="1529">
+        <label>cassert</label>
+      </node>
+      <node id="1578">
+        <label>stdexcept</label>
+      </node>
+      <node id="1560">
+        <label>eigen3/Eigen/LU</label>
+      </node>
+      <node id="1591">
+        <label>openscenario_msgs/msg/entity_status_with_trajectory_array.hpp</label>
+      </node>
+      <node id="1488">
+        <label>openscenario_msgs/msg/hermite_curve.hpp</label>
+      </node>
+      <node id="1553">
+        <label>behaviortree_cpp_v3/bt_factory.h</label>
+      </node>
+      <node id="1518">
+        <label>string</label>
+      </node>
+      <node id="1548">
+        <label>openscenario_msgs/msg/obstacle.hpp</label>
+      </node>
+      <node id="1508">
+        <label>lanelet2_extension_psim/utility/utilities.hpp</label>
+      </node>
+      <node id="1589">
+        <label>simulation_api/traffic/traffic_module_base.hpp</label>
+        <link refid="traffic__module__base_8hpp_source"/>
+      </node>
+      <node id="1567">
+        <label>autoware_auto_msgs/msg/vehicle_control_command.hpp</label>
+      </node>
+      <node id="1516">
+        <label>map</label>
+      </node>
+      <node id="1573">
+        <label>tf2/utils.h</label>
+      </node>
+      <node id="1531">
+        <label>openscenario_msgs/msg/bounding_box.hpp</label>
+      </node>
+      <node id="1495">
+        <label>rclcpp/rclcpp.hpp</label>
+      </node>
+      <node id="1511">
+        <label>lanelet2_routing/RoutingCost.h</label>
+      </node>
+      <node id="1545">
+        <label>simulation_api/math/catmull_rom_spline.hpp</label>
+        <link refid="catmull__rom__spline_8hpp_source"/>
+        <childnode refid="1485" relation="include">
+        </childnode>
+        <childnode refid="1546" relation="include">
+        </childnode>
+        <childnode refid="1490" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+        <childnode refid="1524" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+        <childnode refid="1519" relation="include">
+        </childnode>
+      </node>
+      <node id="1482">
+        <label>simulation_api/entity/entity_base.hpp</label>
+        <link refid="entity__base_8hpp_source"/>
+        <childnode refid="1483" relation="include">
+        </childnode>
+        <childnode refid="1484" relation="include">
+        </childnode>
+        <childnode refid="1531" relation="include">
+        </childnode>
+        <childnode refid="1496" relation="include">
+        </childnode>
+        <childnode refid="1515" relation="include">
+        </childnode>
+        <childnode refid="1493" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+        <childnode refid="1520" relation="include">
+        </childnode>
+        <childnode refid="1517" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+        <childnode refid="1532" relation="include">
+        </childnode>
+      </node>
+      <node id="1501">
+        <label>tf2_geometry_msgs/tf2_geometry_msgs.h</label>
+      </node>
+      <node id="1524">
+        <label>exception</label>
+      </node>
+      <node id="1585">
+        <label>simulation_api/behavior/pedestrian/follow_lane_action.hpp</label>
+        <link refid="pedestrian_2follow__lane__action_8hpp_source"/>
+        <childnode refid="1586" relation="include">
+        </childnode>
+        <childnode refid="1582" relation="include">
+        </childnode>
+        <childnode refid="1484" relation="include">
+        </childnode>
+        <childnode refid="1496" relation="include">
+        </childnode>
+        <childnode refid="1552" relation="include">
+        </childnode>
+        <childnode refid="1553" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+        <childnode refid="1520" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+      </node>
+      <node id="1568">
+        <label>autoware_auto_msgs/msg/vehicle_kinematic_state.hpp</label>
+      </node>
+      <node id="1561">
+        <label>simulation_api/vehicle_model/sim_model_interface.hpp</label>
+        <link refid="sim__model__interface_8hpp"/>
+        <childnode refid="1559" relation="include">
+        </childnode>
+        <childnode refid="1495" relation="include">
+        </childnode>
+      </node>
+      <node id="1590">
+        <label>boost/any.hpp</label>
+      </node>
+      <node id="1499">
+        <label>geometry_msgs/msg/vector3.h</label>
+      </node>
+      <node id="1551">
+        <label>openscenario_msgs/msg/driver_model.hpp</label>
+      </node>
+      <node id="1492">
+        <label>geometry_msgs/msg/vector3.hpp</label>
+      </node>
+      <node id="1494">
+        <label>simulation_api/traffic_lights/traffic_light_state.hpp</label>
+        <link refid="traffic__light__state_8hpp_source"/>
+      </node>
+      <node id="1485">
+        <label>simulation_api/math/hermite_curve.hpp</label>
+        <link refid="hermite__curve_8hpp_source"/>
+        <childnode refid="1486" relation="include">
+        </childnode>
+        <childnode refid="1488" relation="include">
+        </childnode>
+        <childnode refid="1489" relation="include">
+        </childnode>
+        <childnode refid="1490" relation="include">
+        </childnode>
+        <childnode refid="1491" relation="include">
+        </childnode>
+        <childnode refid="1492" relation="include">
+        </childnode>
+        <childnode refid="1493" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+      </node>
+      <node id="1510">
+        <label>lanelet2_routing/Route.h</label>
+      </node>
+      <node id="1509">
+        <label>lanelet2_extension_psim/utility/query.hpp</label>
+      </node>
+      <node id="1489">
+        <label>quaternion_operation/quaternion_operation.h</label>
+      </node>
+      <node id="1543">
+        <label>behaviortree_cpp_v3/action_node.h</label>
+      </node>
+      <node id="1584">
+        <label>simulation_api/behavior/pedestrian/behavior_tree.hpp</label>
+        <link refid="pedestrian_2behavior__tree_8hpp_source"/>
+        <childnode refid="1484" relation="include">
+        </childnode>
+        <childnode refid="1585" relation="include">
+        </childnode>
+        <childnode refid="1587" relation="include">
+        </childnode>
+        <childnode refid="1496" relation="include">
+        </childnode>
+        <childnode refid="1490" relation="include">
+        </childnode>
+        <childnode refid="1553" relation="include">
+        </childnode>
+        <childnode refid="1555" relation="include">
+        </childnode>
+        <childnode refid="1520" relation="include">
+        </childnode>
+        <childnode refid="1556" relation="include">
+        </childnode>
+        <childnode refid="1516" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+      </node>
+      <node id="1507">
+        <label>lanelet2_extension_psim/utility/message_conversion.hpp</label>
+      </node>
+      <node id="1490">
+        <label>geometry_msgs/msg/point.hpp</label>
+      </node>
+      <node id="1596">
+        <label>typeinfo</label>
+      </node>
+      <node id="1577">
+        <label>future</label>
+      </node>
+      <node id="1549">
+        <label>boost/algorithm/clamp.hpp</label>
+      </node>
+      <node id="1582">
+        <label>simulation_api/entity/pedestrian_parameter.hpp</label>
+        <link refid="pedestrian__parameter_8hpp_source"/>
+        <childnode refid="1536" relation="include">
+        </childnode>
+        <childnode refid="1495" relation="include">
+        </childnode>
+        <childnode refid="1492" relation="include">
+        </childnode>
+        <childnode refid="1537" relation="include">
+        </childnode>
+        <childnode refid="1538" relation="include">
+        </childnode>
+        <childnode refid="1539" relation="include">
+        </childnode>
+        <childnode refid="1533" relation="include">
+        </childnode>
+        <childnode refid="1583" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+        <childnode refid="1540" relation="include">
+        </childnode>
+      </node>
+      <node id="1546">
+        <label>openscenario_msgs/msg/catmull_rom_spline.hpp</label>
+      </node>
+      <node id="1487">
+        <label>vector</label>
+      </node>
+      <node id="1571">
+        <label>boost/filesystem.hpp</label>
+      </node>
+      <node id="1587">
+        <label>simulation_api/behavior/pedestrian/walk_straight_action.hpp</label>
+        <link refid="walk__straight__action_8hpp"/>
+        <childnode refid="1586" relation="include">
+        </childnode>
+        <childnode refid="1582" relation="include">
+        </childnode>
+        <childnode refid="1484" relation="include">
+        </childnode>
+        <childnode refid="1496" relation="include">
+        </childnode>
+        <childnode refid="1552" relation="include">
+        </childnode>
+        <childnode refid="1553" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+        <childnode refid="1520" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+      </node>
+      <node id="1569">
+        <label>autoware_auto_msgs/msg/vehicle_state_command.hpp</label>
+      </node>
+      <node id="1519">
+        <label>utility</label>
+      </node>
+      <node id="1540">
+        <label>sstream</label>
+      </node>
+      <node id="1586">
+        <label>simulation_api/behavior/pedestrian/pedestrian_action_node.hpp</label>
+        <link refid="pedestrian__action__node_8hpp_source"/>
+        <childnode refid="1543" relation="include">
+        </childnode>
+        <childnode refid="1582" relation="include">
+        </childnode>
+        <childnode refid="1544" relation="include">
+        </childnode>
+        <childnode refid="1583" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+        <childnode refid="1520" relation="include">
+        </childnode>
+      </node>
+      <node id="1564">
+        <label>math.h</label>
+      </node>
+      <node id="1514">
+        <label>lanelet2_traffic_rules/TrafficRulesFactory.h</label>
+      </node>
+      <node id="1572">
+        <label>sys/wait.h</label>
+      </node>
+      <node id="1576">
+        <label>cstdlib</label>
+      </node>
+      <node id="1506">
+        <label>lanelet2_core/primitives/LaneletSequence.h</label>
+      </node>
+      <node id="1537">
+        <label>boost/property_tree/ptree.hpp</label>
+      </node>
+      <node id="1558">
+        <label>simulation_api/vehicle_model/sim_model_ideal.hpp</label>
+        <link refid="sim__model__ideal_8hpp"/>
+        <childnode refid="1559" relation="include">
+        </childnode>
+        <childnode refid="1560" relation="include">
+        </childnode>
+        <childnode refid="1561" relation="include">
+        </childnode>
+        <childnode refid="1530" relation="include">
+        </childnode>
+      </node>
+      <node id="1530">
+        <label>iostream</label>
+      </node>
+      <node id="1503">
+        <label>lanelet2_core/LaneletMap.h</label>
+      </node>
+      <node id="1565">
+        <label>deque</label>
+      </node>
+      <node id="1480">
+        <label>simulation_api/entity/ego_entity.hpp</label>
+        <link refid="ego__entity_8hpp_source"/>
+        <childnode refid="1481" relation="include">
+        </childnode>
+        <childnode refid="1558" relation="include">
+        </childnode>
+        <childnode refid="1562" relation="include">
+        </childnode>
+        <childnode refid="1566" relation="include">
+        </childnode>
+        <childnode refid="1567" relation="include">
+        </childnode>
+        <childnode refid="1568" relation="include">
+        </childnode>
+        <childnode refid="1569" relation="include">
+        </childnode>
+        <childnode refid="1570" relation="include">
+        </childnode>
+        <childnode refid="1571" relation="include">
+        </childnode>
+        <childnode refid="1493" relation="include">
+        </childnode>
+        <childnode refid="1536" relation="include">
+        </childnode>
+        <childnode refid="1572" relation="include">
+        </childnode>
+        <childnode refid="1573" relation="include">
+        </childnode>
+        <childnode refid="1574" relation="include">
+        </childnode>
+        <childnode refid="1575" relation="include">
+        </childnode>
+        <childnode refid="1576" relation="include">
+        </childnode>
+        <childnode refid="1577" relation="include">
+        </childnode>
+        <childnode refid="1520" relation="include">
+        </childnode>
+        <childnode refid="1578" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+        <childnode refid="1579" relation="include">
+        </childnode>
+        <childnode refid="1580" relation="include">
+        </childnode>
+        <childnode refid="1517" relation="include">
+        </childnode>
+        <childnode refid="1519" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+      </node>
+      <node id="1517">
+        <label>unordered_map</label>
+      </node>
+      <node id="1498">
+        <label>autoware_auto_msgs/msg/had_map_bin.hpp</label>
+      </node>
+      <node id="1592">
+        <label>tf2/LinearMath/Quaternion.h</label>
+      </node>
+      <node id="1544">
+        <label>simulation_api/behavior/action_node.hpp</label>
+        <link refid="action__node_8hpp_source"/>
+        <childnode refid="1543" relation="include">
+        </childnode>
+        <childnode refid="1484" relation="include">
+        </childnode>
+        <childnode refid="1545" relation="include">
+        </childnode>
+        <childnode refid="1482" relation="include">
+        </childnode>
+        <childnode refid="1483" relation="include">
+        </childnode>
+        <childnode refid="1547" relation="include">
+        </childnode>
+        <childnode refid="1548" relation="include">
+        </childnode>
+        <childnode refid="1549" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+        <childnode refid="1520" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+        <childnode refid="1517" relation="include">
+        </childnode>
+      </node>
+      <node id="1552">
+        <label>behaviortree_cpp_v3/behavior_tree.h</label>
+      </node>
+      <node id="1515">
+        <label>visualization_msgs/msg/marker_array.hpp</label>
+      </node>
+      <node id="1588">
+        <label>simulation_api/traffic/traffic_sink.hpp</label>
+        <link refid="traffic__sink_8hpp"/>
+        <childnode refid="1589" relation="include">
+        </childnode>
+        <childnode refid="1491" relation="include">
+        </childnode>
+        <childnode refid="1556" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+      </node>
+      <node id="1505">
+        <label>lanelet2_core/primitives/BasicRegulatoryElements.h</label>
+      </node>
+      <node id="1513">
+        <label>lanelet2_routing/RoutingGraphContainer.h</label>
+      </node>
+      <node id="1575">
+        <label>chrono</label>
+      </node>
+      <node id="1559">
+        <label>eigen3/Eigen/Core</label>
+      </node>
+      <node id="1493">
+        <label>boost/optional.hpp</label>
+      </node>
+      <node id="1594">
+        <label>tf2_ros/transform_broadcaster.h</label>
+      </node>
+      <node id="1563">
+        <label>simulation_api/vehicle_model/sim_model_util.hpp</label>
+        <link refid="sim__model__util_8hpp_source"/>
+        <childnode refid="1564" relation="include">
+        </childnode>
+      </node>
+      <node id="1502">
+        <label>tf2/LinearMath/Matrix3x3.h</label>
+      </node>
+      <node id="1580">
+        <label>thread</label>
+      </node>
+      <node id="1595">
+        <label>type_traits</label>
+      </node>
+      <node id="1481">
+        <label>simulation_api/entity/vehicle_entity.hpp</label>
+        <link refid="vehicle__entity_8hpp_source"/>
+        <childnode refid="1482" relation="include">
+        </childnode>
+        <childnode refid="1533" relation="include">
+        </childnode>
+        <childnode refid="1541" relation="include">
+        </childnode>
+        <childnode refid="1554" relation="include">
+        </childnode>
+        <childnode refid="1557" relation="include">
+        </childnode>
+        <childnode refid="1547" relation="include">
+        </childnode>
+        <childnode refid="1551" relation="include">
+        </childnode>
+        <childnode refid="1535" relation="include">
+        </childnode>
+        <childnode refid="1495" relation="include">
+        </childnode>
+        <childnode refid="1536" relation="include">
+        </childnode>
+        <childnode refid="1493" relation="include">
+        </childnode>
+        <childnode refid="1520" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+      </node>
+      <node id="1557">
+        <label>simulation_api/behavior/route_planner.hpp</label>
+        <link refid="route__planner_8hpp_source"/>
+        <childnode refid="1484" relation="include">
+        </childnode>
+        <childnode refid="1520" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+        <childnode refid="1532" relation="include">
+        </childnode>
+      </node>
+      <node id="1574">
+        <label>algorithm</label>
+      </node>
+      <node id="1583">
+        <label>openscenario_msgs/msg/pedestrian_parameters.hpp</label>
+      </node>
+      <node id="1523">
+        <label>simulation_api/entity/exception.hpp</label>
+        <link refid="exception_8hpp_source"/>
+        <childnode refid="1518" relation="include">
+        </childnode>
+        <childnode refid="1524" relation="include">
+        </childnode>
+      </node>
+      <node id="1528">
+        <label>stdio.h</label>
+      </node>
+      <node id="1521">
+        <label>simulation_api/traffic_lights/traffic_light.hpp</label>
+        <link refid="traffic__light_8hpp_source"/>
+        <childnode refid="1494" relation="include">
+        </childnode>
+        <childnode refid="1522" relation="include">
+        </childnode>
+        <childnode refid="1526" relation="include">
+        </childnode>
+        <childnode refid="1523" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+        <childnode refid="1525" relation="include">
+        </childnode>
+        <childnode refid="1519" relation="include">
+        </childnode>
+        <childnode refid="1530" relation="include">
+        </childnode>
+        <childnode refid="1517" relation="include">
+        </childnode>
+      </node>
+      <node id="1581">
+        <label>simulation_api/entity/pedestrian_entity.hpp</label>
+        <link refid="pedestrian__entity_8hpp_source"/>
+        <childnode refid="1482" relation="include">
+        </childnode>
+        <childnode refid="1582" relation="include">
+        </childnode>
+        <childnode refid="1584" relation="include">
+        </childnode>
+        <childnode refid="1557" relation="include">
+        </childnode>
+        <childnode refid="1583" relation="include">
+        </childnode>
+        <childnode refid="1536" relation="include">
+        </childnode>
+        <childnode refid="1493" relation="include">
+        </childnode>
+        <childnode refid="1520" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+      </node>
+      <node id="1520">
+        <label>memory</label>
+      </node>
+      <node id="1484">
+        <label>simulation_api/hdmap_utils/hdmap_utils.hpp</label>
+        <link refid="hdmap__utils_8hpp_source"/>
+        <childnode refid="1485" relation="include">
+        </childnode>
+        <childnode refid="1494" relation="include">
+        </childnode>
+        <childnode refid="1495" relation="include">
+        </childnode>
+        <childnode refid="1496" relation="include">
+        </childnode>
+        <childnode refid="1497" relation="include">
+        </childnode>
+        <childnode refid="1498" relation="include">
+        </childnode>
+        <childnode refid="1499" relation="include">
+        </childnode>
+        <childnode refid="1500" relation="include">
+        </childnode>
+        <childnode refid="1501" relation="include">
+        </childnode>
+        <childnode refid="1502" relation="include">
+        </childnode>
+        <childnode refid="1503" relation="include">
+        </childnode>
+        <childnode refid="1504" relation="include">
+        </childnode>
+        <childnode refid="1505" relation="include">
+        </childnode>
+        <childnode refid="1506" relation="include">
+        </childnode>
+        <childnode refid="1507" relation="include">
+        </childnode>
+        <childnode refid="1508" relation="include">
+        </childnode>
+        <childnode refid="1509" relation="include">
+        </childnode>
+        <childnode refid="1510" relation="include">
+        </childnode>
+        <childnode refid="1511" relation="include">
+        </childnode>
+        <childnode refid="1512" relation="include">
+        </childnode>
+        <childnode refid="1513" relation="include">
+        </childnode>
+        <childnode refid="1514" relation="include">
+        </childnode>
+        <childnode refid="1515" relation="include">
+        </childnode>
+        <childnode refid="1493" relation="include">
+        </childnode>
+        <childnode refid="1516" relation="include">
+        </childnode>
+        <childnode refid="1517" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+        <childnode refid="1519" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+        <childnode refid="1520" relation="include">
+        </childnode>
+      </node>
+      <node id="1542">
+        <label>simulation_api/behavior/vehicle/vehicle_action_node.hpp</label>
+        <link refid="vehicle__action__node_8hpp_source"/>
+        <childnode refid="1543" relation="include">
+        </childnode>
+        <childnode refid="1533" relation="include">
+        </childnode>
+        <childnode refid="1544" relation="include">
+        </childnode>
+        <childnode refid="1545" relation="include">
+        </childnode>
+        <childnode refid="1550" relation="include">
+        </childnode>
+        <childnode refid="1547" relation="include">
+        </childnode>
+        <childnode refid="1548" relation="include">
+        </childnode>
+        <childnode refid="1551" relation="include">
+        </childnode>
+        <childnode refid="1535" relation="include">
+        </childnode>
+        <childnode refid="1518" relation="include">
+        </childnode>
+        <childnode refid="1520" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
+        </childnode>
+      </node>
+      <node id="1486">
+        <label>simulation_api/math/polynomial_solver.hpp</label>
+        <link refid="polynomial__solver_8hpp_source"/>
+        <childnode refid="1487" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1597">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_manager.hpp</label>
+        <link refid="entity__manager_8hpp"/>
+        <childnode refid="1598" relation="include">
+        </childnode>
+        <childnode refid="1599" relation="include">
+        </childnode>
+        <childnode refid="1601" relation="include">
+        </childnode>
+      </node>
+      <node id="1604">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/metrics/traveled_distance_metric.hpp</label>
+        <link refid="traveled__distance__metric_8hpp_source"/>
+        <childnode refid="1600" relation="include">
+        </childnode>
+      </node>
+      <node id="1600">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/metrics/metrics.hpp</label>
+        <link refid="metrics_8hpp_source"/>
+      </node>
+      <node id="1601">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/metrics/metrics_manager.hpp</label>
+        <link refid="metrics__manager_8hpp_source"/>
+        <childnode refid="1598" relation="include">
+        </childnode>
+      </node>
+      <node id="1599">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/metrics/metric_base.hpp</label>
+        <link refid="metric__base_8hpp_source"/>
+        <childnode refid="1600" relation="include">
+        </childnode>
+        <childnode refid="1601" relation="include">
+        </childnode>
+        <childnode refid="1602" relation="include">
+        </childnode>
+        <childnode refid="1603" relation="include">
+        </childnode>
+        <childnode refid="1604" relation="include">
+        </childnode>
+      </node>
+      <node id="1603">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/metrics/reaction_time_metric.hpp</label>
+        <link refid="reaction__time__metric_8hpp_source"/>
+        <childnode refid="1600" relation="include">
+        </childnode>
+      </node>
+      <node id="1598">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/api/api.hpp</label>
+        <link refid="api_8hpp_source"/>
+      </node>
+      <node id="1602">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/metrics/momentary_stop_metric.hpp</label>
+        <link refid="momentary__stop__metric_8hpp_source"/>
+        <childnode refid="1600" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classsimulation__api_1_1entity_1_1LaneletMarkerQoS" prot="public">simulation_api::entity::LaneletMarkerQoS</innerclass>
+    <innerclass refid="classsimulation__api_1_1entity_1_1EntityMarkerQoS" prot="public">simulation_api::entity::EntityMarkerQoS</innerclass>
+    <innerclass refid="classsimulation__api_1_1entity_1_1EntityManager" prot="public">simulation_api::entity::EntityManager</innerclass>
+    <innernamespace refid="namespacesimulation__api">simulation_api</innernamespace>
+    <innernamespace refid="namespacesimulation__api_1_1entity">simulation_api::entity</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="entity__manager_8hpp_1ac1bbac35f4b78aa79d4afd4c7f810a8a" prot="public" static="no">
+        <name>DEFINE_SET_TRAFFIC_LIGHT</name>
+        <param><defname>NAME</defname></param>
+        <initializer>template&lt;typename ... Ts&gt; \
+  decltype(auto) setTrafficLight ## NAME(Ts &amp;&amp; ... xs) \
+  { \
+    return traffic_light_manager_ptr_-&gt;set ## NAME(std::forward&lt;decltype(xs)&gt;(xs)...); \
+  } static_assert(true, &quot;&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_manager.hpp" line="111" column="11" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_manager.hpp" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="entity__manager_8hpp_1aa49f8cb6d6227abf6b1a0b69d6e4c614" prot="public" static="no">
+        <name>DEFINE_GET_TRAFFIC_LIGHT</name>
+        <param><defname>NAME</defname></param>
+        <initializer>template&lt;typename ... Ts&gt; \
+  decltype(auto) getTrafficLight ## NAME(Ts &amp;&amp; ... xs) \
+  { \
+    return traffic_light_manager_ptr_-&gt;get ## NAME(std::forward&lt;decltype(xs)&gt;(xs)...); \
+  } static_assert(true, &quot;&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_manager.hpp" line="125" column="11" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_manager.hpp" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="entity__manager_8hpp_1a9d24a74ef6e65a384ebdf0522ab4e399" prot="public" static="no">
+        <name>FORWARD_TO_HDMAP_UTILS</name>
+        <param><defname>NAME</defname></param>
+        <initializer>template&lt;typename ... Ts&gt; \
+  decltype(auto) NAME(Ts &amp;&amp; ... xs) const \
+  { \
+    return hdmap_utils_ptr_-&gt;NAME(std::forward&lt;decltype(xs)&gt;(xs)...); \
+  } static_assert(true, &quot;&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_manager.hpp" line="137" column="11" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_manager.hpp" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2015-2020<sp/>Tier<sp/>IV,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/><sp/>SIMULATION_API__ENTITY__ENTITY_MANAGER_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/>SIMULATION_API__ENTITY__ENTITY_MANAGER_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;simulation_api/entity/ego_entity.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;simulation_api/entity/exception.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;simulation_api/entity/pedestrian_entity.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;simulation_api/entity/vehicle_entity.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;simulation_api/hdmap_utils/hdmap_utils.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="traffic__sink_8hpp" kindref="compound">simulation_api/traffic/traffic_sink.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;simulation_api/traffic_lights/traffic_light_manager.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;autoware_auto_msgs/msg/vehicle_control_command.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;autoware_auto_msgs/msg/vehicle_kinematic_state.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;autoware_auto_msgs/msg/vehicle_state_command.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/any.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/optional.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openscenario_msgs/msg/bounding_box.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openscenario_msgs/msg/driver_model.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openscenario_msgs/msg/entity_status_with_trajectory_array.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openscenario_msgs/msg/vehicle_parameters.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rclcpp/rclcpp.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tf2/LinearMath/Quaternion.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tf2_geometry_msgs/tf2_geometry_msgs.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tf2_ros/static_transform_broadcaster.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tf2_ros/transform_broadcaster.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;visualization_msgs/msg/marker_array.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdexcept&gt;</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO(yamacir-kit):<sp/>Remove<sp/>this!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;type_traits&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;typeinfo&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacesimulation__api" kindref="compound">simulation_api</ref></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">entity</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classsimulation__api_1_1entity_1_1LaneletMarkerQoS" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classsimulation__api_1_1entity_1_1LaneletMarkerQoS" kindref="compound">LaneletMarkerQoS</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>rclcpp::QoS</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classsimulation__api_1_1entity_1_1LaneletMarkerQoS" kindref="compound">LaneletMarkerQoS</ref>(std::size_t<sp/>depth<sp/>=<sp/>1)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>:<sp/>rclcpp::QoS(depth)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>transient_local();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="classsimulation__api_1_1entity_1_1EntityMarkerQoS" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classsimulation__api_1_1entity_1_1EntityMarkerQoS" kindref="compound">EntityMarkerQoS</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>rclcpp::QoS</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classsimulation__api_1_1entity_1_1EntityMarkerQoS" kindref="compound">EntityMarkerQoS</ref>(std::size_t<sp/>depth<sp/>=<sp/>100)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>:<sp/>rclcpp::QoS(depth)<sp/>{}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="classsimulation__api_1_1entity_1_1EntityManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classsimulation__api_1_1entity_1_1EntityManager" kindref="compound">EntityManager</ref></highlight></codeline>
+<codeline lineno="75"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>verbose_;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>tf2_ros::StaticTransformBroadcaster<sp/>broadcaster_;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>tf2_ros::TransformBroadcaster<sp/>base_link_broadcaster_;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>rclcpp::Clock::SharedPtr<sp/>clock_ptr_;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>std::unordered_map&lt;std::string,<sp/>boost::any&gt;<sp/>entities_;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>rclcpp::TimerBase::SharedPtr<sp/>hdmap_marker_timer_;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>boost::optional&lt;autoware_auto_msgs::msg::VehicleControlCommand&gt;<sp/>control_cmd_;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>boost::optional&lt;autoware_auto_msgs::msg::VehicleStateCommand&gt;<sp/>state_cmd_;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step_time_;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time_;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>EntityStatusWithTrajectoryArray<sp/>=<sp/>openscenario_msgs::msg::EntityStatusWithTrajectoryArray;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>rclcpp::Publisher&lt;EntityStatusWithTrajectoryArray&gt;::SharedPtr<sp/>entity_status_array_pub_ptr_;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>MarkerArray<sp/>=<sp/>visualization_msgs::msg::MarkerArray;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>rclcpp::Publisher&lt;MarkerArray&gt;::SharedPtr<sp/>lanelet_marker_pub_ptr_;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>MarkerArray<sp/>markers_raw_;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>VehicleKinematicState<sp/>=<sp/>autoware_auto_msgs::msg::VehicleKinematicState;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>rclcpp::Publisher&lt;VehicleKinematicState&gt;::SharedPtr<sp/>kinematic_state_pub_ptr_;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;hdmap_utils::HdMapUtils&gt;<sp/>hdmap_utils_ptr_;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;TrafficLightManager&gt;<sp/>traffic_light_manager_ptr_;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>std::size_t<sp/>getNumberOfEgo()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#define<sp/>DEFINE_SET_TRAFFIC_LIGHT(NAME)<sp/>\</highlight></codeline>
+<codeline lineno="112"><highlight class="preprocessor"><sp/><sp/>template&lt;typename<sp/>...<sp/>Ts&gt;<sp/>\</highlight></codeline>
+<codeline lineno="113"><highlight class="preprocessor"><sp/><sp/>decltype(auto)<sp/>setTrafficLight<sp/>##<sp/>NAME(Ts<sp/>&amp;&amp;<sp/>...<sp/>xs)<sp/>\</highlight></codeline>
+<codeline lineno="114"><highlight class="preprocessor"><sp/><sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="115"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>return<sp/>traffic_light_manager_ptr_-&gt;set<sp/>##<sp/>NAME(std::forward&lt;decltype(xs)&gt;(xs)...);<sp/>\</highlight></codeline>
+<codeline lineno="116"><highlight class="preprocessor"><sp/><sp/>}<sp/>static_assert(true,<sp/>&quot;&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>DEFINE_SET_TRAFFIC_LIGHT(Arrow);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/>DEFINE_SET_TRAFFIC_LIGHT(ArrowPhase);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>DEFINE_SET_TRAFFIC_LIGHT(Color);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>DEFINE_SET_TRAFFIC_LIGHT(ColorPhase);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#undef<sp/>DEFINE_SET_TRAFFIC_LIGHT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#define<sp/>DEFINE_GET_TRAFFIC_LIGHT(NAME)<sp/>\</highlight></codeline>
+<codeline lineno="126"><highlight class="preprocessor"><sp/><sp/>template&lt;typename<sp/>...<sp/>Ts&gt;<sp/>\</highlight></codeline>
+<codeline lineno="127"><highlight class="preprocessor"><sp/><sp/>decltype(auto)<sp/>getTrafficLight<sp/>##<sp/>NAME(Ts<sp/>&amp;&amp;<sp/>...<sp/>xs)<sp/>\</highlight></codeline>
+<codeline lineno="128"><highlight class="preprocessor"><sp/><sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="129"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>return<sp/>traffic_light_manager_ptr_-&gt;get<sp/>##<sp/>NAME(std::forward&lt;decltype(xs)&gt;(xs)...);<sp/>\</highlight></codeline>
+<codeline lineno="130"><highlight class="preprocessor"><sp/><sp/>}<sp/>static_assert(true,<sp/>&quot;&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/>DEFINE_GET_TRAFFIC_LIGHT(Color);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/>DEFINE_GET_TRAFFIC_LIGHT(Arrow);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#undef<sp/>DEFINE_GET_TRAFFIC_LIGHT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#define<sp/>FORWARD_TO_HDMAP_UTILS(NAME)<sp/>\</highlight></codeline>
+<codeline lineno="138"><highlight class="preprocessor"><sp/><sp/>template&lt;typename<sp/>...<sp/>Ts&gt;<sp/>\</highlight></codeline>
+<codeline lineno="139"><highlight class="preprocessor"><sp/><sp/>decltype(auto)<sp/>NAME(Ts<sp/>&amp;&amp;<sp/>...<sp/>xs)<sp/>const<sp/>\</highlight></codeline>
+<codeline lineno="140"><highlight class="preprocessor"><sp/><sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="141"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>return<sp/>hdmap_utils_ptr_-&gt;NAME(std::forward&lt;decltype(xs)&gt;(xs)...);<sp/>\</highlight></codeline>
+<codeline lineno="142"><highlight class="preprocessor"><sp/><sp/>}<sp/>static_assert(true,<sp/>&quot;&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/>FORWARD_TO_HDMAP_UTILS(toLaneletPose);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>FORWARD_TO_HDMAP_UTILS(toMapPose);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>NodeT,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>AllocatorT<sp/>=<sp/>std::allocator&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">&gt;&gt;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classsimulation__api_1_1entity_1_1EntityManager" kindref="compound">EntityManager</ref>(NodeT<sp/>&amp;&amp;<sp/>node,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>map_path)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/>:<sp/>verbose_(</highlight><highlight class="keyword">false</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>broadcaster_(node),</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>base_link_broadcaster_(node),</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>clock_ptr_(node-&gt;get_clock()),</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>entity_status_array_pub_ptr_(</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>rclcpp::create_publisher&lt;EntityStatusWithTrajectoryArray&gt;(</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node,<sp/></highlight><highlight class="stringliteral">&quot;entity/status&quot;</highlight><highlight class="normal">,<sp/><ref refid="classsimulation__api_1_1entity_1_1EntityMarkerQoS" kindref="compound">EntityMarkerQoS</ref>(),</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rclcpp::PublisherOptionsWithAllocator&lt;AllocatorT&gt;())),</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>lanelet_marker_pub_ptr_(</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>rclcpp::create_publisher&lt;MarkerArray&gt;(</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node,<sp/></highlight><highlight class="stringliteral">&quot;lanelet/marker&quot;</highlight><highlight class="normal">,<sp/><ref refid="classsimulation__api_1_1entity_1_1LaneletMarkerQoS" kindref="compound">LaneletMarkerQoS</ref>(),</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rclcpp::PublisherOptionsWithAllocator&lt;AllocatorT&gt;())),</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>kinematic_state_pub_ptr_(</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>rclcpp::create_publisher&lt;VehicleKinematicState&gt;(</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node,<sp/></highlight><highlight class="stringliteral">&quot;output/kinematic_state&quot;</highlight><highlight class="normal">,<sp/><ref refid="classsimulation__api_1_1entity_1_1LaneletMarkerQoS" kindref="compound">LaneletMarkerQoS</ref>(),</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rclcpp::PublisherOptionsWithAllocator&lt;AllocatorT&gt;()))</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>geographic_msgs::msg::GeoPoint<sp/>origin;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>node-&gt;declare_parameter(</highlight><highlight class="stringliteral">&quot;origin_latitude&quot;</highlight><highlight class="normal">,<sp/>0.0);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>node-&gt;declare_parameter(</highlight><highlight class="stringliteral">&quot;origin_longitude&quot;</highlight><highlight class="normal">,<sp/>0.0);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>node-&gt;declare_parameter(&quot;origin_altitude&quot;,<sp/>0.0);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>node-&gt;get_parameter(</highlight><highlight class="stringliteral">&quot;origin_latitude&quot;</highlight><highlight class="normal">,<sp/>origin.latitude);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>node-&gt;get_parameter(</highlight><highlight class="stringliteral">&quot;origin_longitude&quot;</highlight><highlight class="normal">,<sp/>origin.longitude);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>node-&gt;get_parameter(&quot;origin_altitude&quot;,<sp/>origin.altitude);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>node-&gt;undeclare_parameter(</highlight><highlight class="stringliteral">&quot;origin_latitude&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>node-&gt;undeclare_parameter(</highlight><highlight class="stringliteral">&quot;origin_longitude&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>node-&gt;undeclare_parameter(&quot;origin_altitude&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>hdmap_utils_ptr_<sp/>=<sp/>std::make_shared&lt;hdmap_utils::HdMapUtils&gt;(map_path,<sp/>origin);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>markers_raw_<sp/>=<sp/>hdmap_utils_ptr_-&gt;generateMarker();</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>updateHdmapMarker();</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>traffic_light_marker_pub<sp/>=<sp/>rclcpp::create_publisher&lt;MarkerArray&gt;(</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>node,<sp/></highlight><highlight class="stringliteral">&quot;traffic_light/marker&quot;</highlight><highlight class="normal">,<sp/><ref refid="classsimulation__api_1_1entity_1_1LaneletMarkerQoS" kindref="compound">LaneletMarkerQoS</ref>(),</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>rclcpp::PublisherOptionsWithAllocator&lt;AllocatorT&gt;());</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>traffic_light_manager_ptr_<sp/>=<sp/>std::make_shared&lt;TrafficLightManager&gt;(</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>hdmap_utils_ptr_,<sp/>traffic_light_marker_pub,<sp/>clock_ptr_);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/>~EntityManager()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateHdmapMarker()</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>MarkerArray<sp/>markers;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>stamp<sp/>=<sp/>clock_ptr_-&gt;now();</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>marker_raw<sp/>:<sp/>markers_raw_.markers)<sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>visualization_msgs::msg::Marker<sp/>marker<sp/>=<sp/>marker_raw;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>marker.header.stamp<sp/>=<sp/>stamp;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>markers.markers.emplace_back(marker);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>lanelet_marker_pub_ptr_-&gt;publish(markers);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;hdmap_utils::HdMapUtils&gt;<sp/>getHdmapUtils();</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/>boost::optional&lt;double&gt;<sp/>getLinearJerk(</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>getStepTime()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>getCurrentTime()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setDriverModel(</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::DriverModel<sp/>&amp;<sp/>model);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::BoundingBox<sp/>getBoundingBox(</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>geometry_msgs::msg::Pose<sp/>toMapPose(</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::LaneletPose<sp/>&amp;<sp/>lanelet_pose)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>checkCollision(</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name0,</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name1);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setVerbose(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>verbose);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>requestAcquirePosition(</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::LaneletPose<sp/>&amp;<sp/>lanelet_pose);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>requestAssignRoute(</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;openscenario_msgs::msg::LaneletPose&gt;<sp/>&amp;<sp/>waypoints);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>requestLaneChange(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,<sp/>std::int64_t<sp/>to_lanelet_id);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>requestLaneChange(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Direction<sp/>&amp;<sp/>direction);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>requestWalkStraight(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/>std::vector&lt;std::int64_t&gt;<sp/>getConflictingEntityOnRouteLanelets(</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>horizon);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/>std::vector&lt;std::int64_t&gt;<sp/>getRouteLanelets(</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>horizon);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/>openscenario_msgs::msg::WaypointsArray<sp/>getWaypoints(</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/>boost::optional&lt;openscenario_msgs::msg::Obstacle&gt;<sp/>getObstacle(</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/>boost::optional&lt;double&gt;<sp/>getLongitudinalDistance(</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>from,</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>to,</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>max_distance<sp/>=<sp/>100);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/>boost::optional&lt;double&gt;<sp/>getBoundingBoxDistance(</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>from,</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>to);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/>geometry_msgs::msg::Pose<sp/>getRelativePose(</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>from,</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>to);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/>geometry_msgs::msg::Pose<sp/>getRelativePose(</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>from,</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>geometry_msgs::msg::Pose<sp/>&amp;<sp/>to);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/>geometry_msgs::msg::Pose<sp/>getRelativePose(</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>geometry_msgs::msg::Pose<sp/>&amp;<sp/>from,</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>to);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/>geometry_msgs::msg::Pose<sp/>getRelativePose(</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>geometry_msgs::msg::Pose<sp/>&amp;<sp/>from,</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>geometry_msgs::msg::Pose<sp/>&amp;<sp/>to)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/>geometry_msgs::msg::Pose<sp/>getMapPose(</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>entity_name);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/>geometry_msgs::msg::Pose<sp/>getMapPose(</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>reference_entity_name,</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>geometry_msgs::msg::Pose<sp/>&amp;<sp/>relative_pose);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::optional&lt;openscenario_msgs::msg::VehicleParameters&gt;<sp/>getVehicleParameters(</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;<sp/>getEntityNames()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>setEntityStatus(</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>openscenario_msgs::msg::EntityStatus<sp/>status);</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::optional&lt;openscenario_msgs::msg::EntityStatus&gt;<sp/>getEntityStatus(</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/>boost::optional&lt;double&gt;<sp/>getSValueInRoute(</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::int64_t&gt;<sp/>&amp;<sp/>route);</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isInLanelet(</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::int64_t<sp/>lanelet_id,</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tolerance);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>entityStatusSetted(</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setTargetSpeed(</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>target_speed,</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>continuous);</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>update(</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time,</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step_time);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>broadcastTransform(</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>geometry_msgs::msg::PoseStamped<sp/>&amp;<sp/>pose,</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>static_transform<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/>boost::optional&lt;double&gt;<sp/>getDistanceToStopLine(</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::int64_t<sp/>target_stop_line_id);</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/>boost::optional&lt;double&gt;<sp/>getDistanceToCrosswalk(</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::int64_t<sp/>target_crosswalk_id);</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>reachPosition(</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>geometry_msgs::msg::Pose<sp/>&amp;<sp/>target_pose,</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tolerance)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>reachPosition(</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::int64_t<sp/>lanelet_id,</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>s,</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>offset,</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tolerance)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>reachPosition(</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>target_name,</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tolerance)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>broadcastEntityTransform();</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>broadcastBaseLinkTransform();</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::optional&lt;double&gt;<sp/>getStandStillDuration(</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isStopping(</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_map&lt;</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string,</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/>openscenario_msgs::msg::EntityType&gt;</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/>getEntityTypeList()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isEgo(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/>openscenario_msgs::msg::EntityType<sp/>getEntityType(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>getCurrentAction(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/>boost::optional&lt;openscenario_msgs::msg::LaneletPose&gt;<sp/>getLaneletPose(</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name);</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Entity,</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::enable_if&lt;</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::is_base_of&lt;EntityBase,<sp/>typename<sp/>std::decay&lt;Entity&gt;::type&gt;::value</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/>&gt;::type&gt;</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>spawnEntity(Entity<sp/>&amp;&amp;<sp/>entity)</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(entities_.count(entity.name)<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="classsimulation__api_1_1SimulationRuntimeError" kindref="compound">simulation_api::SimulationRuntimeError</ref>(</highlight><highlight class="stringliteral">&quot;entity<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>entity.name<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>already<sp/>exist.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>entity.setHdMapUtils(hdmap_utils_ptr_);</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>entity.setTrafficLightManager(traffic_light_manager_ptr_);</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>entities_.emplace(entity.name,<sp/>std::forward&lt;decltype(entity)&gt;(entity));</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>despawnEntity(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name)</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>entityExists(name)<sp/>&amp;&amp;<sp/>entities_.erase(name);</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>entityExists(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name)</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>entities_.find(name)<sp/>!=<sp/>std::end(entities_);</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/>decltype(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">)<sp/>reference(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name)</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>iter<sp/>=<sp/>entities_.find(name);</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"></highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(iter<sp/>!=<sp/>std::end(entities_))<sp/>{</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::get&lt;1&gt;(*iter);</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::stringstream<sp/>ss<sp/>{};</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ss<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Unknown<sp/>entity<sp/>&apos;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;&apos;<sp/>has<sp/>been<sp/>referenced.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ss<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Check<sp/>the<sp/>scenario.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="classsimulation__api_1_1SimulationRuntimeError" kindref="compound">SimulationRuntimeError</ref>(ss.str());</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="414"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="415"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>entity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="416"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>simulation_api</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="417"><highlight class="normal"></highlight></codeline>
+<codeline lineno="418"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/><sp/>//<sp/>SIMULATION_API__ENTITY__ENTITY_MANAGER_HPP_</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_manager.hpp"/>
+  </compounddef>
+</doxygen>

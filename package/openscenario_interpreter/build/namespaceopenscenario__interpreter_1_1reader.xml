@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespaceopenscenario__interpreter_1_1reader" kind="namespace" language="C++">
+    <compoundname>openscenario_interpreter::reader</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="element_8hpp_1ab64ad3c482f0679c0b2de6256f9645ea" prot="public" static="no" mutable="no">
+        <type>constexpr auto</type>
+        <definition>constexpr auto openscenario_interpreter::reader::unbounded</definition>
+        <argsstring></argsstring>
+        <name>unbounded</name>
+        <initializer>{
+  std::numeric_limits&lt;
+    typename std::iterator_traits&lt;
+      typename pugi::xml_node::iterator
+    &gt;::difference_type
+  &gt;::max()
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" line="34" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="attribute_8hpp_1a087d7c554cbb5233a576205335fb3454" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Scope</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto openscenario_interpreter::reader::substitute</definition>
+        <argsstring>(std::string attribute, Scope &amp;scope)</argsstring>
+        <name>substitute</name>
+        <param>
+          <type>std::string</type>
+          <declname>attribute</declname>
+        </param>
+        <param>
+          <type><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref> &amp;</type>
+          <declname>scope</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/attribute.hpp" line="38" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/attribute.hpp" bodystart="38" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="attribute_8hpp_1a7150ddb1d3fd82c61238bfbc18ab9c9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename Node</type>
+          </param>
+          <param>
+            <type>typename Scope</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T openscenario_interpreter::reader::readAttribute</definition>
+        <argsstring>(const std::string &amp;name, const Node &amp;node, const Scope &amp;scope)</argsstring>
+        <name>readAttribute</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const Node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref> &amp;</type>
+          <declname>scope</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/attribute.hpp" line="115" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/attribute.hpp" bodystart="115" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="attribute_8hpp_1a068ceef88a5d361b61ada754dc8367ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename Node</type>
+          </param>
+          <param>
+            <type>typename Scope</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T openscenario_interpreter::reader::readAttribute</definition>
+        <argsstring>(const std::string &amp;name, const Node &amp;node, const Scope &amp;scope, T &amp;&amp;value)</argsstring>
+        <name>readAttribute</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const Node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref> &amp;</type>
+          <declname>scope</declname>
+        </param>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/attribute.hpp" line="169" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/attribute.hpp" bodystart="169" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="content_8hpp_1ae2122738b07a5fe07fb875dab26f9f96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename Node</type>
+          </param>
+          <param>
+            <type>typename Scope</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T openscenario_interpreter::reader::readContent</definition>
+        <argsstring>(const Node &amp;node, const Scope &amp;)</argsstring>
+        <name>readContent</name>
+        <param>
+          <type>const Node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/content.hpp" line="29" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/content.hpp" bodystart="29" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="element_8hpp_1ae32941a29d388d7f2d79e88a3b99836e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename Node</type>
+          </param>
+          <param>
+            <type>typename ...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto openscenario_interpreter::reader::readElement</definition>
+        <argsstring>(const std::string &amp;name, const Node &amp;parent, Ts &amp;&amp;... xs)</argsstring>
+        <name>readElement</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const Node &amp;</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" line="43" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" bodystart="43" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="element_8hpp_1aef5ff5b1d122d7ea41bf6b910f45f35f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Node</type>
+          </param>
+          <param>
+            <type>typename Callee</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void openscenario_interpreter::reader::callWithElements</definition>
+        <argsstring>(const Node &amp;parent, const std::string &amp;name, typename std::iterator_traits&lt; typename Node::iterator &gt;::difference_type min_occurs, typename std::iterator_traits&lt; typename Node::iterator &gt;::difference_type max_occurs, Callee &amp;&amp;call_with)</argsstring>
+        <name>callWithElements</name>
+        <param>
+          <type>const Node &amp;</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>typename std::iterator_traits&lt; typename Node::iterator &gt;::difference_type</type>
+          <declname>min_occurs</declname>
+        </param>
+        <param>
+          <type>typename std::iterator_traits&lt; typename Node::iterator &gt;::difference_type</type>
+          <declname>max_occurs</declname>
+        </param>
+        <param>
+          <type>Callee &amp;&amp;</type>
+          <declname>call_with</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" line="53" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" bodystart="53" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="element_8hpp_1ad9c83540bb1c4ee5e7e8c4aea657a84b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Node</type>
+          </param>
+          <param>
+            <type>typename ...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>decltype(auto)</type>
+        <definition>decltype(auto) openscenario_interpreter::reader::choice</definition>
+        <argsstring>(const Node &amp;node, Ts &amp;&amp;... xs)</argsstring>
+        <name>choice</name>
+        <param>
+          <type>const Node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" line="89" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" bodystart="89" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="element_8hpp_1a7828735418e3be0bef4b0df5886718ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Callee</type>
+          </param>
+        </templateparamlist>
+        <type>decltype(auto)</type>
+        <definition>decltype(auto) openscenario_interpreter::reader::callWithElement</definition>
+        <argsstring>(const pugi::xml_node &amp;parent, const std::string &amp;name, Callee &amp;&amp;call_with)</argsstring>
+        <name>callWithElement</name>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>Callee &amp;&amp;</type>
+          <declname>call_with</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" line="152" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" bodystart="152" bodyend="156"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/attribute.hpp" line="31" column="1"/>
+  </compounddef>
+</doxygen>

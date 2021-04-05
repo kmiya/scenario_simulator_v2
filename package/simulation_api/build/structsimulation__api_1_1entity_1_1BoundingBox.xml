@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structsimulation__api_1_1entity_1_1BoundingBox" kind="struct" language="C++" prot="public">
+    <compoundname>simulation_api::entity::BoundingBox</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structsimulation__api_1_1entity_1_1BoundingBox_1a05c2c81ed8b131df8d5883fc753e407d" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structsimulation__api_1_1entity_1_1Center" kindref="compound">Center</ref></type>
+        <definition>const Center simulation_api::entity::BoundingBox::center</definition>
+        <argsstring></argsstring>
+        <name>center</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/vehicle_parameter.hpp" line="101" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/vehicle_parameter.hpp" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsimulation__api_1_1entity_1_1BoundingBox_1a20e7a26855c3054c29ad64974f50b281" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structsimulation__api_1_1entity_1_1Dimensions" kindref="compound">Dimensions</ref></type>
+        <definition>const Dimensions simulation_api::entity::BoundingBox::dimensions</definition>
+        <argsstring></argsstring>
+        <name>dimensions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/vehicle_parameter.hpp" line="102" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/vehicle_parameter.hpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structsimulation__api_1_1entity_1_1BoundingBox_1a80e780b8888f6ec3ee1735f482ec2ed5" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>simulation_api::entity::BoundingBox::BoundingBox</definition>
+        <argsstring>(const pugi::xml_node &amp;xml)</argsstring>
+        <name>BoundingBox</name>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>xml</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/vehicle_parameter.hpp" line="95" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/vehicle_parameter.hpp" bodystart="95" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="structsimulation__api_1_1entity_1_1BoundingBox_1a8ad1db0f7232af67e0b5be86e5e18419" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>simulation_api::entity::BoundingBox::BoundingBox</definition>
+        <argsstring>(Center center, Dimensions dimensions)</argsstring>
+        <name>BoundingBox</name>
+        <param>
+          <type><ref refid="structsimulation__api_1_1entity_1_1Center" kindref="compound">Center</ref></type>
+          <declname>center</declname>
+        </param>
+        <param>
+          <type><ref refid="structsimulation__api_1_1entity_1_1Dimensions" kindref="compound">Dimensions</ref></type>
+          <declname>dimensions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/vehicle_parameter.hpp" line="98" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/vehicle_parameter.hpp" bodystart="98" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="structsimulation__api_1_1entity_1_1BoundingBox_1ac2b2a385a686cb7627fcc0347acc26e2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const openscenario_msgs::msg::BoundingBox</type>
+        <definition>const openscenario_msgs::msg::BoundingBox simulation_api::entity::BoundingBox::toRosMsg</definition>
+        <argsstring>() const</argsstring>
+        <name>toRosMsg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/vehicle_parameter.hpp" line="103" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/vehicle_parameter.hpp" bodystart="103" bodyend="113"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="33">
+        <label>simulation_api::entity::Dimensions</label>
+        <link refid="structsimulation__api_1_1entity_1_1Dimensions"/>
+      </node>
+      <node id="32">
+        <label>simulation_api::entity::Center</label>
+        <link refid="structsimulation__api_1_1entity_1_1Center"/>
+      </node>
+      <node id="31">
+        <label>simulation_api::entity::BoundingBox</label>
+        <link refid="structsimulation__api_1_1entity_1_1BoundingBox"/>
+        <childnode refid="32" relation="usage">
+          <edgelabel>center</edgelabel>
+        </childnode>
+        <childnode refid="33" relation="usage">
+          <edgelabel>dimensions</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/vehicle_parameter.hpp" line="94" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/vehicle_parameter.hpp" bodystart="93" bodyend="114"/>
+    <listofallmembers>
+      <member refid="structsimulation__api_1_1entity_1_1BoundingBox_1a80e780b8888f6ec3ee1735f482ec2ed5" prot="public" virt="non-virtual"><scope>simulation_api::entity::BoundingBox</scope><name>BoundingBox</name></member>
+      <member refid="structsimulation__api_1_1entity_1_1BoundingBox_1a8ad1db0f7232af67e0b5be86e5e18419" prot="public" virt="non-virtual"><scope>simulation_api::entity::BoundingBox</scope><name>BoundingBox</name></member>
+      <member refid="structsimulation__api_1_1entity_1_1BoundingBox_1a05c2c81ed8b131df8d5883fc753e407d" prot="public" virt="non-virtual"><scope>simulation_api::entity::BoundingBox</scope><name>center</name></member>
+      <member refid="structsimulation__api_1_1entity_1_1BoundingBox_1a20e7a26855c3054c29ad64974f50b281" prot="public" virt="non-virtual"><scope>simulation_api::entity::BoundingBox</scope><name>dimensions</name></member>
+      <member refid="structsimulation__api_1_1entity_1_1BoundingBox_1ac2b2a385a686cb7627fcc0347acc26e2" prot="public" virt="non-virtual"><scope>simulation_api::entity::BoundingBox</scope><name>toRosMsg</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

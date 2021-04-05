@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction" kind="struct" language="C++" prot="public">
+    <compoundname>openscenario_interpreter::syntax::CustomCommandAction</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a404f767a226a774356f8e405a051f813" prot="public" static="no" mutable="no">
+        <type><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref></type>
+        <definition>Scope openscenario_interpreter::syntax::CustomCommandAction::inner_scope</definition>
+        <argsstring></argsstring>
+        <name>inner_scope</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" line="48" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1aa076c6a591eb064c21475951294f15c2" prot="public" static="no" mutable="no">
+        <type>const String</type>
+        <definition>const String openscenario_interpreter::syntax::CustomCommandAction::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" line="50" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a6994da45943a63a7b3190a70ec4118d0" prot="public" static="no" mutable="no">
+        <type>const String</type>
+        <definition>const String openscenario_interpreter::syntax::CustomCommandAction::content</definition>
+        <argsstring></argsstring>
+        <name>content</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" line="52" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a8f6369f2ef2f859968599a8df05a4196" prot="public" static="no" mutable="no">
+        <type>const std::true_type</type>
+        <definition>const std::true_type openscenario_interpreter::syntax::CustomCommandAction::accomplished</definition>
+        <argsstring></argsstring>
+        <name>accomplished</name>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" line="61" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a579966669f022a91874bd32ce56a2c1b" prot="public" static="no" mutable="no">
+        <type>const std::unordered_map&lt; std::string, std::function&lt; int(const std::vector&lt; std::string &gt; &amp;, const <ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref> &amp;)&gt; &gt;</type>
+        <definition>const std::unordered_map&lt; std::string, std::function&lt; int(const std::vector&lt;std::string&gt; &amp;, const Scope &amp;)&gt; &gt; openscenario_interpreter::syntax::CustomCommandAction::builtins</definition>
+        <argsstring></argsstring>
+        <name>builtins</name>
+        <initializer>{
+    std::make_pair(&quot;WalkStraightAction&quot;, walkStraightAction),
+    std::make_pair(&quot;error&quot;, error),
+    std::make_pair(&quot;exitFailure&quot;, exitFailure),
+    std::make_pair(&quot;exitSuccess&quot;, exitSuccess),
+    std::make_pair(&quot;sigsegv&quot;, segv),  
+    std::make_pair(&quot;test&quot;, test),
+  }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" line="113" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1ac5012f67d2e07d519fb3ca75c3054e0d" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Node</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>openscenario_interpreter::syntax::CustomCommandAction::CustomCommandAction</definition>
+        <argsstring>(const Node &amp;node, const Scope &amp;outer_scope)</argsstring>
+        <name>CustomCommandAction</name>
+        <param>
+          <type>const Node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref> &amp;</type>
+          <declname>outer_scope</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" line="55" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" bodystart="55" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a3d78859027b6d438102439412bc9ab61" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto openscenario_interpreter::syntax::CustomCommandAction::evaluate</definition>
+        <argsstring>()</argsstring>
+        <name>evaluate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" line="138" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" bodystart="138" bodyend="165"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1ac45456894cfde79cab0efe2f3e4c31bc" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int openscenario_interpreter::syntax::CustomCommandAction::walkStraightAction</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;, const Scope &amp;current_scope)</argsstring>
+        <name>walkStraightAction</name>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref> &amp;</type>
+          <declname>current_scope</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" line="63" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" bodystart="63" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a937c46f54bffa91e84fea9540772ea5d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int openscenario_interpreter::syntax::CustomCommandAction::exitSuccess</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;, const Scope &amp;)</argsstring>
+        <name>exitSuccess</name>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" line="73" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" bodystart="73" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a910c1391076dde61840e239a4ec6cc73" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int openscenario_interpreter::syntax::CustomCommandAction::exitFailure</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;, const Scope &amp;)</argsstring>
+        <name>exitFailure</name>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" line="79" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" bodystart="79" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a632e335863177688d5d7c6d75ae8c138" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int openscenario_interpreter::syntax::CustomCommandAction::error</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;, const Scope &amp;)</argsstring>
+        <name>error</name>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" line="85" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" bodystart="85" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1ac85ccbe9d4602bb256159dd6971d7ecd" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int openscenario_interpreter::syntax::CustomCommandAction::segv</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;, const Scope &amp;)</argsstring>
+        <name>segv</name>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" line="91" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" bodystart="91" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a145d03413641e850dd815535518105c2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int openscenario_interpreter::syntax::CustomCommandAction::test</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;args, const Scope &amp;)</argsstring>
+        <name>test</name>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" line="97" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" bodystart="97" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a289998be3ea9e31b2c25570358897df9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto openscenario_interpreter::syntax::CustomCommandAction::split</definition>
+        <argsstring>(const std::string &amp;s)</argsstring>
+        <name>split</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" line="123" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" bodystart="123" bodyend="136"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1ab8a42644c542e0b204e79bb01f5e3d8a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const CustomCommandAction &amp;action)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction" kindref="compound">CustomCommandAction</ref> &amp;</type>
+          <declname>action</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" line="167" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" bodystart="167" bodyend="177"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="165">
+        <label>openscenario_interpreter::syntax::CustomCommandAction</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction"/>
+        <childnode refid="166" relation="usage">
+          <edgelabel>inner_scope</edgelabel>
+        </childnode>
+      </node>
+      <node id="166">
+        <label>openscenario_interpreter::Scope</label>
+        <link refid="structopenscenario__interpreter_1_1Scope"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" line="47" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp" bodystart="46" bodyend="178"/>
+    <listofallmembers>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a8f6369f2ef2f859968599a8df05a4196" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::CustomCommandAction</scope><name>accomplished</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a579966669f022a91874bd32ce56a2c1b" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::CustomCommandAction</scope><name>builtins</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a6994da45943a63a7b3190a70ec4118d0" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::CustomCommandAction</scope><name>content</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1ac5012f67d2e07d519fb3ca75c3054e0d" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::CustomCommandAction</scope><name>CustomCommandAction</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a632e335863177688d5d7c6d75ae8c138" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::CustomCommandAction</scope><name>error</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a3d78859027b6d438102439412bc9ab61" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::CustomCommandAction</scope><name>evaluate</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a910c1391076dde61840e239a4ec6cc73" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::CustomCommandAction</scope><name>exitFailure</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a937c46f54bffa91e84fea9540772ea5d" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::CustomCommandAction</scope><name>exitSuccess</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a404f767a226a774356f8e405a051f813" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::CustomCommandAction</scope><name>inner_scope</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1ab8a42644c542e0b204e79bb01f5e3d8a" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::CustomCommandAction</scope><name>operator&lt;&lt;</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1ac85ccbe9d4602bb256159dd6971d7ecd" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::CustomCommandAction</scope><name>segv</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a289998be3ea9e31b2c25570358897df9" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::CustomCommandAction</scope><name>split</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a145d03413641e850dd815535518105c2" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::CustomCommandAction</scope><name>test</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1aa076c6a591eb064c21475951294f15c2" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::CustomCommandAction</scope><name>type</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1ac45456894cfde79cab0efe2f3e4c31bc" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::CustomCommandAction</scope><name>walkStraightAction</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,639 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classsimulation__api_1_1math_1_1CatmullRomSpline" kind="class" language="C++" prot="public">
+    <compoundname>simulation_api::math::CatmullRomSpline</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1af3c29920b8375887f6b46439630785d8" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classsimulation__api_1_1math_1_1HermiteCurve" kindref="compound">HermiteCurve</ref> &gt;</type>
+        <definition>std::vector&lt;HermiteCurve&gt; simulation_api::math::CatmullRomSpline::curves_</definition>
+        <argsstring></argsstring>
+        <name>curves_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="99" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a4db4cc3320e1132e1a82963c78d433dc" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; simulation_api::math::CatmullRomSpline::length_list_</definition>
+        <argsstring></argsstring>
+        <name>length_list_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="100" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a7f624777c179c1d58dc6e93c27696eda" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; simulation_api::math::CatmullRomSpline::maximum_2d_curvatures_</definition>
+        <argsstring></argsstring>
+        <name>maximum_2d_curvatures_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="101" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a58d6a3905aa0cff4dac0e2a7d8832e84" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double simulation_api::math::CatmullRomSpline::total_length_</definition>
+        <argsstring></argsstring>
+        <name>total_length_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="102" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a4ddda9e30878a6636f3b43f3821670e6" prot="private" static="no" mutable="no">
+        <type>const std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>const std::vector&lt;geometry_msgs::msg::Point&gt; simulation_api::math::CatmullRomSpline::control_points</definition>
+        <argsstring></argsstring>
+        <name>control_points</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="103" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a58db828d4022e663d881ffd25bff6c18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>simulation_api::math::CatmullRomSpline::CatmullRomSpline</definition>
+        <argsstring>()=delete</argsstring>
+        <name>CatmullRomSpline</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="44" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a569c839800b47afe30228e394ee3fc2f" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>simulation_api::math::CatmullRomSpline::CatmullRomSpline</definition>
+        <argsstring>(const openscenario_msgs::msg::CatmullRomSpline &amp;spline)</argsstring>
+        <name>CatmullRomSpline</name>
+        <param>
+          <type>const openscenario_msgs::msg::CatmullRomSpline &amp;</type>
+          <declname>spline</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="45" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="140" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a6990f14293f824b68e0c84909fc194bc" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>simulation_api::math::CatmullRomSpline::CatmullRomSpline</definition>
+        <argsstring>(const std::vector&lt; openscenario_msgs::msg::HermiteCurve &gt; &amp;hermite_curves)</argsstring>
+        <name>CatmullRomSpline</name>
+        <param>
+          <type>const std::vector&lt; openscenario_msgs::msg::HermiteCurve &gt; &amp;</type>
+          <declname>hermite_curves</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="46" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="27" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a6a996c23e101a70bcc29ca2ac2c2e813" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>simulation_api::math::CatmullRomSpline::CatmullRomSpline</definition>
+        <argsstring>(const std::vector&lt; geometry_msgs::msg::Point &gt; &amp;control_points)</argsstring>
+        <name>CatmullRomSpline</name>
+        <param>
+          <type>const std::vector&lt; geometry_msgs::msg::Point &gt; &amp;</type>
+          <declname>control_points</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="48" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="147" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1ab86ceeceb6cf1209c41ee7985929654d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double simulation_api::math::CatmullRomSpline::getLength</definition>
+        <argsstring>() const</argsstring>
+        <name>getLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="49" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" bodystart="49" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1af1247c680b071e67153c27fd2b12b6ad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double simulation_api::math::CatmullRomSpline::getMaximum2DCurventure</definition>
+        <argsstring>() const</argsstring>
+        <name>getMaximum2DCurventure</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="50" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="421" bodyend="427"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1ab7ffe546c8f92848de4442133fdd36ec" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const geometry_msgs::msg::Point</type>
+        <definition>const geometry_msgs::msg::Point simulation_api::math::CatmullRomSpline::getPoint</definition>
+        <argsstring>(double s) const</argsstring>
+        <name>getPoint</name>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="51" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="415" bodyend="419"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a5d9680c674d44a7c12d8239d11569310" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const geometry_msgs::msg::Vector3</type>
+        <definition>const geometry_msgs::msg::Vector3 simulation_api::math::CatmullRomSpline::getTangentVector</definition>
+        <argsstring>(double s) const</argsstring>
+        <name>getTangentVector</name>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="52" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="435" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a964221b9c4c2fc082303f86b0b26b32b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const geometry_msgs::msg::Vector3</type>
+        <definition>const geometry_msgs::msg::Vector3 simulation_api::math::CatmullRomSpline::getNormalVector</definition>
+        <argsstring>(double s) const</argsstring>
+        <name>getNormalVector</name>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="53" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="429" bodyend="433"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1ac9c71cc1c181430c4947f0dc54e70396" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const geometry_msgs::msg::Pose</type>
+        <definition>const geometry_msgs::msg::Pose simulation_api::math::CatmullRomSpline::getPose</definition>
+        <argsstring>(double s) const</argsstring>
+        <name>getPose</name>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="54" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="441" bodyend="445"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a3d13461bc9ac343a5c1b04acb6cce543" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>const std::vector&lt; geometry_msgs::msg::Point &gt; simulation_api::math::CatmullRomSpline::getTrajectory</definition>
+        <argsstring>(int num_points) const</argsstring>
+        <name>getTrajectory</name>
+        <param>
+          <type>int</type>
+          <declname>num_points</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="55" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="349" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a34be8b11ec62bf41f42cac870acff69e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>const std::vector&lt; geometry_msgs::msg::Point &gt; simulation_api::math::CatmullRomSpline::getTrajectory</definition>
+        <argsstring>(double start_s, double end_s, double resolution) const</argsstring>
+        <name>getTrajectory</name>
+        <param>
+          <type>double</type>
+          <declname>start_s</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>end_s</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>resolution</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="56" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="115" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a29b0d6bc129c578f1676d91c1128948a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; double &gt;</type>
+        <definition>boost::optional&lt; double &gt; simulation_api::math::CatmullRomSpline::getSValue</definition>
+        <argsstring>(geometry_msgs::msg::Point position, double threadhold_distance=3.0, unsigned int initial_resolution=30, unsigned int max_iteration=30, double tolerance=0.001)</argsstring>
+        <name>getSValue</name>
+        <param>
+          <type>geometry_msgs::msg::Point</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>threadhold_distance</declname>
+          <defval>3.0</defval>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>initial_resolution</declname>
+          <defval>30</defval>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>max_iteration</declname>
+          <defval>30</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>tolerance</declname>
+          <defval>0.001</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="59" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="363" bodyend="406"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a11c69a6a43d2d1a575063a2819762267" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double simulation_api::math::CatmullRomSpline::getSquaredDistanceIn2D</definition>
+        <argsstring>(geometry_msgs::msg::Point point, double s) const</argsstring>
+        <name>getSquaredDistanceIn2D</name>
+        <param>
+          <type>geometry_msgs::msg::Point</type>
+          <declname>point</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="65" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="408" bodyend="413"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1ab31f432c404ce165263938d2e54b6a4c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; double &gt;</type>
+        <definition>boost::optional&lt; double &gt; simulation_api::math::CatmullRomSpline::getCollisionPointIn2D</definition>
+        <argsstring>(geometry_msgs::msg::Point point0, geometry_msgs::msg::Point point1, bool search_backward=false) const</argsstring>
+        <name>getCollisionPointIn2D</name>
+        <param>
+          <type>geometry_msgs::msg::Point</type>
+          <declname>point0</declname>
+        </param>
+        <param>
+          <type>geometry_msgs::msg::Point</type>
+          <declname>point1</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>search_backward</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="67" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="322" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1af0a790d0ef4c57c58019ffd73f08c5b0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; double &gt;</type>
+        <definition>boost::optional&lt; double &gt; simulation_api::math::CatmullRomSpline::getCollisionPointIn2D</definition>
+        <argsstring>(std::vector&lt; geometry_msgs::msg::Point &gt; polygon, bool search_backward=false) const</argsstring>
+        <name>getCollisionPointIn2D</name>
+        <param>
+          <type>std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+          <declname>polygon</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>search_backward</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="72" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="296" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a34241269a67b43629f399781450e2623" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const openscenario_msgs::msg::CatmullRomSpline</type>
+        <definition>const openscenario_msgs::msg::CatmullRomSpline simulation_api::math::CatmullRomSpline::toRosMsg</definition>
+        <argsstring>() const</argsstring>
+        <name>toRosMsg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="76" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="252" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a2d955b839cff8474823a3e6218454206" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const geometry_msgs::msg::Point</type>
+        <definition>const geometry_msgs::msg::Point simulation_api::math::CatmullRomSpline::getRightBoundsPoint</definition>
+        <argsstring>(double width, double s, double z_offset=0) const</argsstring>
+        <name>getRightBoundsPoint</name>
+        <param>
+          <type>double</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>z_offset</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="77" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="57" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a0023f5acebf1667e4655730a7ed7e664" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const geometry_msgs::msg::Point</type>
+        <definition>const geometry_msgs::msg::Point simulation_api::math::CatmullRomSpline::getLeftBoundsPoint</definition>
+        <argsstring>(double width, double s, double z_offset=0) const</argsstring>
+        <name>getLeftBoundsPoint</name>
+        <param>
+          <type>double</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>z_offset</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="80" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="72" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1ac2c7eda826a6451ed24774a0514602ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>const std::vector&lt; geometry_msgs::msg::Point &gt; simulation_api::math::CatmullRomSpline::getPolygon</definition>
+        <argsstring>(double width, size_t num_points=30, double z_offset=0)</argsstring>
+        <name>getPolygon</name>
+        <param>
+          <type>double</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>num_points</declname>
+          <defval>30</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>z_offset</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="83" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="35" bodyend="55"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a212713a2ee70c93fa38db9862bdfb0a9" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>const std::vector&lt; geometry_msgs::msg::Point &gt; simulation_api::math::CatmullRomSpline::getRightBounds</definition>
+        <argsstring>(double width, size_t num_points=30, double z_offset=0) const</argsstring>
+        <name>getRightBounds</name>
+        <param>
+          <type>double</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>num_points</declname>
+          <defval>30</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>z_offset</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="87" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="87" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a8010d617f52d09a4338b19aff02fcf25" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>const std::vector&lt; geometry_msgs::msg::Point &gt; simulation_api::math::CatmullRomSpline::getLeftBounds</definition>
+        <argsstring>(double width, size_t num_points=30, double z_offset=0) const</argsstring>
+        <name>getLeftBounds</name>
+        <param>
+          <type>double</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>num_points</declname>
+          <defval>30</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>z_offset</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="91" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="101" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a2ef9995173f9f1bc1521930648f114d4" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double simulation_api::math::CatmullRomSpline::getSInSplineCurve</definition>
+        <argsstring>(size_t curve_index, double s) const</argsstring>
+        <name>getSInSplineCurve</name>
+        <param>
+          <type>size_t</type>
+          <declname>curve_index</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="95" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="282" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a8135e14fa4248a11d4fb68338b77f91c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; size_t, double &gt;</type>
+        <definition>std::pair&lt; size_t, double &gt; simulation_api::math::CatmullRomSpline::getCurveIndexAndS</definition>
+        <argsstring>(double s) const</argsstring>
+        <name>getCurveIndexAndS</name>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="96" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="261" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a0d15904a5cbd5c6d86782ea9479a84b1" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool simulation_api::math::CatmullRomSpline::checkConnection</definition>
+        <argsstring>() const</argsstring>
+        <name>checkConnection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="97" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="447" bodyend="473"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1math_1_1CatmullRomSpline_1a4146c481f270191d49160b745760c244" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool simulation_api::math::CatmullRomSpline::equals</definition>
+        <argsstring>(geometry_msgs::msg::Point p0, geometry_msgs::msg::Point p1) const</argsstring>
+        <name>equals</name>
+        <param>
+          <type>geometry_msgs::msg::Point</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>geometry_msgs::msg::Point</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="98" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/math/catmull_rom_spline.cpp" bodystart="475" bodyend="488"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" line="42" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/math/catmull_rom_spline.hpp" bodystart="41" bodyend="104"/>
+    <listofallmembers>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a58db828d4022e663d881ffd25bff6c18" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>CatmullRomSpline</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a569c839800b47afe30228e394ee3fc2f" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>CatmullRomSpline</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a6990f14293f824b68e0c84909fc194bc" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>CatmullRomSpline</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a6a996c23e101a70bcc29ca2ac2c2e813" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>CatmullRomSpline</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a0d15904a5cbd5c6d86782ea9479a84b1" prot="private" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>checkConnection</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a4ddda9e30878a6636f3b43f3821670e6" prot="private" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>control_points</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1af3c29920b8375887f6b46439630785d8" prot="private" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>curves_</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a4146c481f270191d49160b745760c244" prot="private" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>equals</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1ab31f432c404ce165263938d2e54b6a4c" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>getCollisionPointIn2D</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1af0a790d0ef4c57c58019ffd73f08c5b0" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>getCollisionPointIn2D</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a8135e14fa4248a11d4fb68338b77f91c" prot="private" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>getCurveIndexAndS</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a8010d617f52d09a4338b19aff02fcf25" prot="private" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>getLeftBounds</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a0023f5acebf1667e4655730a7ed7e664" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>getLeftBoundsPoint</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1ab86ceeceb6cf1209c41ee7985929654d" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>getLength</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1af1247c680b071e67153c27fd2b12b6ad" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>getMaximum2DCurventure</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a964221b9c4c2fc082303f86b0b26b32b" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>getNormalVector</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1ab7ffe546c8f92848de4442133fdd36ec" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>getPoint</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1ac2c7eda826a6451ed24774a0514602ee" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>getPolygon</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1ac9c71cc1c181430c4947f0dc54e70396" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>getPose</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a212713a2ee70c93fa38db9862bdfb0a9" prot="private" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>getRightBounds</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a2d955b839cff8474823a3e6218454206" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>getRightBoundsPoint</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a2ef9995173f9f1bc1521930648f114d4" prot="private" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>getSInSplineCurve</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a11c69a6a43d2d1a575063a2819762267" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>getSquaredDistanceIn2D</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a29b0d6bc129c578f1676d91c1128948a" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>getSValue</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a5d9680c674d44a7c12d8239d11569310" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>getTangentVector</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a3d13461bc9ac343a5c1b04acb6cce543" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>getTrajectory</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a34be8b11ec62bf41f42cac870acff69e" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>getTrajectory</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a4db4cc3320e1132e1a82963c78d433dc" prot="private" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>length_list_</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a7f624777c179c1d58dc6e93c27696eda" prot="private" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>maximum_2d_curvatures_</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a34241269a67b43629f399781450e2623" prot="public" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>toRosMsg</name></member>
+      <member refid="classsimulation__api_1_1math_1_1CatmullRomSpline_1a58d6a3905aa0cff4dac0e2a7d8832e84" prot="private" virt="non-virtual"><scope>simulation_api::math::CatmullRomSpline</scope><name>total_length_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespaceopenscenario__interpreter_1_1utility" kind="namespace" language="C++">
+    <compoundname>openscenario_interpreter::utility</compoundname>
+    <innerclass refid="structopenscenario__interpreter_1_1utility_1_1AttributeHighlighter" prot="public">openscenario_interpreter::utility::AttributeHighlighter</innerclass>
+    <innerclass refid="structopenscenario__interpreter_1_1utility_1_1Indent" prot="public">openscenario_interpreter::utility::Indent</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="indent_8hpp_1a9a1de3a09943bbd8a4c729a86e390f03" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structopenscenario__interpreter_1_1utility_1_1Indent" kindref="compound">openscenario_interpreter::utility::Indent</ref></type>
+        <definition>struct openscenario_interpreter::utility::Indent openscenario_interpreter::utility::indent</definition>
+        <argsstring></argsstring>
+        <name>indent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/indent.hpp" line="62" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="pair_8hpp_1aa51a00cc7af24987e9729196d0e1ad81" prot="public" static="no" mutable="no">
+        <type>auto</type>
+        <definition>auto openscenario_interpreter::utility::car</definition>
+        <argsstring></argsstring>
+        <name>car</name>
+        <initializer>= [] (auto &amp;&amp; pare) noexcept-&gt;decltype(auto)
+{
+  return std::get&lt;0&gt;(pare);
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" line="24" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="pair_8hpp_1aaade0a077fd27d89726de0def6870dc6" prot="public" static="no" mutable="no">
+        <type>auto</type>
+        <definition>auto openscenario_interpreter::utility::cdr</definition>
+        <argsstring></argsstring>
+        <name>cdr</name>
+        <initializer>= [] (auto &amp;&amp; pare) noexcept-&gt;decltype(auto)
+{
+  return std::get&lt;1&gt;(pare);
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" line="29" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="highlighter_8hpp_1af81f10f7f1e17c9902bbf16aacd27aef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>decltype(auto)</type>
+        <definition>decltype(auto) openscenario_interpreter::utility::operator&lt;&lt;</definition>
+        <argsstring>(std::basic_ostream&lt; Ts... &gt; &amp;os, const AttributeHighlighter &amp;highlight)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::basic_ostream&lt; Ts... &gt; &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structopenscenario__interpreter_1_1utility_1_1AttributeHighlighter" kindref="compound">AttributeHighlighter</ref> &amp;</type>
+          <declname>highlight</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/highlighter.hpp" line="43" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/highlighter.hpp" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="highlighter_8hpp_1a5e91c16382f82f8194b9b0099f7b005b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename</type>
+            <defval>typename std::enable_if&lt;HasStreamOutputOperator&lt;T&gt;::value&gt;::type</defval>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto openscenario_interpreter::utility::highlight</definition>
+        <argsstring>(const std::string &amp;name, const T &amp;value)</argsstring>
+        <name>highlight</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/highlighter.hpp" line="53" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/highlighter.hpp" bodystart="53" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="indent_8hpp_1af0ef5cc56e13db48fd07567224d65ead" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>std::basic_ostream&lt; Ts... &gt; &amp;</type>
+        <definition>std::basic_ostream&lt;Ts...&gt;&amp; openscenario_interpreter::utility::operator&lt;&lt;</definition>
+        <argsstring>(std::basic_ostream&lt; Ts... &gt; &amp;os, const Indent &amp;indent)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::basic_ostream&lt; Ts... &gt; &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structopenscenario__interpreter_1_1utility_1_1Indent" kindref="compound">Indent</ref> &amp;</type>
+          <declname>indent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/indent.hpp" line="33" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/indent.hpp" bodystart="65" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="pair_8hpp_1ac4fd1e75262a488daba8d453d669cd1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>openscenario_interpreter::utility::COMPOSE</definition>
+        <argsstring>(caar, car, car)</argsstring>
+        <name>COMPOSE</name>
+        <param>
+          <type>caar</type>
+        </param>
+        <param>
+          <type>car</type>
+        </param>
+        <param>
+          <type>car</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" line="41" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="pair_8hpp_1afaacd771095114af4d4f24e0e2242c2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>openscenario_interpreter::utility::COMPOSE</definition>
+        <argsstring>(cadr, car, cdr)</argsstring>
+        <name>COMPOSE</name>
+        <param>
+          <type>cadr</type>
+        </param>
+        <param>
+          <type>car</type>
+        </param>
+        <param>
+          <type>cdr</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" line="42" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="pair_8hpp_1aa910cd1875d00f885dc3be7d15cec406" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>openscenario_interpreter::utility::COMPOSE</definition>
+        <argsstring>(cdar, cdr, car)</argsstring>
+        <name>COMPOSE</name>
+        <param>
+          <type>cdar</type>
+        </param>
+        <param>
+          <type>cdr</type>
+        </param>
+        <param>
+          <type>car</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" line="43" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="pair_8hpp_1a42e92e7002e938a604846a4a0c1f608c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>openscenario_interpreter::utility::COMPOSE</definition>
+        <argsstring>(cddr, cdr, cdr)</argsstring>
+        <name>COMPOSE</name>
+        <param>
+          <type>cddr</type>
+        </param>
+        <param>
+          <type>cdr</type>
+        </param>
+        <param>
+          <type>cdr</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" line="44" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/assertion_auxiliary.hpp" line="23" column="1"/>
+  </compounddef>
+</doxygen>

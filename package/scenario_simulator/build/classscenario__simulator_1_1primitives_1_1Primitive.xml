@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classscenario__simulator_1_1primitives_1_1Primitive" kind="class" language="C++" prot="public">
+    <compoundname>scenario_simulator::primitives::Primitive</compoundname>
+    <derivedcompoundref refid="classscenario__simulator_1_1primitives_1_1Box" prot="public" virt="non-virtual">scenario_simulator::primitives::Box</derivedcompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classscenario__simulator_1_1primitives_1_1Primitive_1a109e79bfb286cd01d3c2d01064ac9ffa" prot="public" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string scenario_simulator::primitives::Primitive::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/primitives/primitive.hpp" line="49" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/primitives/primitive.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classscenario__simulator_1_1primitives_1_1Primitive_1ae425e332d17f33209471ff17d13ac5f1" prot="public" static="no" mutable="no">
+        <type>const geometry_msgs::msg::Pose</type>
+        <definition>const geometry_msgs::msg::Pose scenario_simulator::primitives::Primitive::pose</definition>
+        <argsstring></argsstring>
+        <name>pose</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/primitives/primitive.hpp" line="50" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/primitives/primitive.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classscenario__simulator_1_1primitives_1_1Primitive_1afd9ef7debe74454d92fb9f0f585bce9e" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structscenario__simulator_1_1Vertex" kindref="compound">Vertex</ref> &gt;</type>
+        <definition>std::vector&lt;Vertex&gt; scenario_simulator::primitives::Primitive::vertices_</definition>
+        <argsstring></argsstring>
+        <name>vertices_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/primitives/primitive.hpp" line="57" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/primitives/primitive.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classscenario__simulator_1_1primitives_1_1Primitive_1ad1f208312da5791214007f9bc5e5a5d1" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structscenario__simulator_1_1Triangle" kindref="compound">Triangle</ref> &gt;</type>
+        <definition>std::vector&lt;Triangle&gt; scenario_simulator::primitives::Primitive::triangles_</definition>
+        <argsstring></argsstring>
+        <name>triangles_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/primitives/primitive.hpp" line="58" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/primitives/primitive.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classscenario__simulator_1_1primitives_1_1Primitive_1af92c46e3a40a099344f939ad1e341d25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scenario_simulator::primitives::Primitive::Primitive</definition>
+        <argsstring>(std::string type, geometry_msgs::msg::Pose pose)</argsstring>
+        <name>Primitive</name>
+        <param>
+          <type>std::string</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>geometry_msgs::msg::Pose</type>
+          <declname>pose</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/primitives/primitive.hpp" line="47" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/src/sensor_simulation/primitives/primitive.cpp" bodystart="28" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classscenario__simulator_1_1primitives_1_1Primitive_1a05d0eac29691efc6565a94f64c1d3141" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual scenario_simulator::primitives::Primitive::~Primitive</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Primitive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/primitives/primitive.hpp" line="48" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classscenario__simulator_1_1primitives_1_1Primitive_1ac384526b9ca2526b1365a5c51bf06989" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int scenario_simulator::primitives::Primitive::addToScene</definition>
+        <argsstring>(RTCDevice device, RTCScene scene)</argsstring>
+        <name>addToScene</name>
+        <param>
+          <type>RTCDevice</type>
+          <declname>device</declname>
+        </param>
+        <param>
+          <type>RTCScene</type>
+          <declname>scene</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/primitives/primitive.hpp" line="51" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/src/sensor_simulation/primitives/primitive.cpp" bodystart="68" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classscenario__simulator_1_1primitives_1_1Primitive_1a4181a8d72271d82779dc91bb3650d31c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="structscenario__simulator_1_1Vertex" kindref="compound">Vertex</ref> &gt;</type>
+        <definition>std::vector&lt; Vertex &gt; scenario_simulator::primitives::Primitive::getVertex</definition>
+        <argsstring>() const</argsstring>
+        <name>getVertex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/primitives/primitive.hpp" line="52" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/src/sensor_simulation/primitives/primitive.cpp" bodystart="58" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classscenario__simulator_1_1primitives_1_1Primitive_1a282b277a8108583dd0863c0a2ec313d9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="structscenario__simulator_1_1Triangle" kindref="compound">Triangle</ref> &gt;</type>
+        <definition>std::vector&lt; Triangle &gt; scenario_simulator::primitives::Primitive::getTriangles</definition>
+        <argsstring>() const</argsstring>
+        <name>getTriangles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/primitives/primitive.hpp" line="53" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/src/sensor_simulation/primitives/primitive.cpp" bodystart="63" bodyend="66"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classscenario__simulator_1_1primitives_1_1Primitive_1a44db8f175eda727d8d99e90aea68a2e9" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="structscenario__simulator_1_1Vertex" kindref="compound">Vertex</ref> &gt;</type>
+        <definition>std::vector&lt; Vertex &gt; scenario_simulator::primitives::Primitive::transform</definition>
+        <argsstring>() const</argsstring>
+        <name>transform</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/primitives/primitive.hpp" line="56" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/src/sensor_simulation/primitives/primitive.cpp" bodystart="49" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classscenario__simulator_1_1primitives_1_1Primitive_1a0460d2dc173064572365006259b10444" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structscenario__simulator_1_1Vertex" kindref="compound">Vertex</ref></type>
+        <definition>Vertex scenario_simulator::primitives::Primitive::transform</definition>
+        <argsstring>(Vertex v) const</argsstring>
+        <name>transform</name>
+        <param>
+          <type><ref refid="structscenario__simulator_1_1Vertex" kindref="compound">Vertex</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/primitives/primitive.hpp" line="61" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/src/sensor_simulation/primitives/primitive.cpp" bodystart="31" bodyend="47"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="9">
+        <label>scenario_simulator::primitives::Box</label>
+        <link refid="classscenario__simulator_1_1primitives_1_1Box"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>scenario_simulator::primitives::Primitive</label>
+        <link refid="classscenario__simulator_1_1primitives_1_1Primitive"/>
+      </node>
+    </inheritancegraph>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/primitives/primitive.hpp" line="45" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/primitives/primitive.hpp" bodystart="44" bodyend="62"/>
+    <listofallmembers>
+      <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1ac384526b9ca2526b1365a5c51bf06989" prot="public" virt="non-virtual"><scope>scenario_simulator::primitives::Primitive</scope><name>addToScene</name></member>
+      <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1a282b277a8108583dd0863c0a2ec313d9" prot="public" virt="non-virtual"><scope>scenario_simulator::primitives::Primitive</scope><name>getTriangles</name></member>
+      <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1a4181a8d72271d82779dc91bb3650d31c" prot="public" virt="non-virtual"><scope>scenario_simulator::primitives::Primitive</scope><name>getVertex</name></member>
+      <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1ae425e332d17f33209471ff17d13ac5f1" prot="public" virt="non-virtual"><scope>scenario_simulator::primitives::Primitive</scope><name>pose</name></member>
+      <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1af92c46e3a40a099344f939ad1e341d25" prot="public" virt="non-virtual"><scope>scenario_simulator::primitives::Primitive</scope><name>Primitive</name></member>
+      <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1a44db8f175eda727d8d99e90aea68a2e9" prot="protected" virt="non-virtual"><scope>scenario_simulator::primitives::Primitive</scope><name>transform</name></member>
+      <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1a0460d2dc173064572365006259b10444" prot="private" virt="non-virtual"><scope>scenario_simulator::primitives::Primitive</scope><name>transform</name></member>
+      <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1ad1f208312da5791214007f9bc5e5a5d1" prot="protected" virt="non-virtual"><scope>scenario_simulator::primitives::Primitive</scope><name>triangles_</name></member>
+      <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1a109e79bfb286cd01d3c2d01064ac9ffa" prot="public" virt="non-virtual"><scope>scenario_simulator::primitives::Primitive</scope><name>type</name></member>
+      <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1afd9ef7debe74454d92fb9f0f585bce9e" prot="protected" virt="non-virtual"><scope>scenario_simulator::primitives::Primitive</scope><name>vertices_</name></member>
+      <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1a05d0eac29691efc6565a94f64c1d3141" prot="public" virt="virtual"><scope>scenario_simulator::primitives::Primitive</scope><name>~Primitive</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

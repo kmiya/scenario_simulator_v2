@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classscenario__simulator_1_1DetectionSensor" kind="class" language="C++" prot="public">
+    <compoundname>scenario_simulator::DetectionSensor</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classscenario__simulator_1_1DetectionSensor_1a6ba691bbbef78675c01605b4b3c3923e" prot="private" static="no" mutable="no">
+        <type>simulation_api_schema::DetectionSensorConfiguration</type>
+        <definition>simulation_api_schema::DetectionSensorConfiguration scenario_simulator::DetectionSensor::configuration_</definition>
+        <argsstring></argsstring>
+        <name>configuration_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/detection_sensor/detection_sensor.hpp" line="43" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/detection_sensor/detection_sensor.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classscenario__simulator_1_1DetectionSensor_1a9f2b41f395d62977ce7f8a72927b87ce" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; rclcpp::Publisher&lt; autoware_perception_msgs::msg::DynamicObjectArray &gt; &gt;</type>
+        <definition>std::shared_ptr&lt; rclcpp::Publisher&lt;autoware_perception_msgs::msg::DynamicObjectArray&gt; &gt; scenario_simulator::DetectionSensor::publisher_ptr_</definition>
+        <argsstring></argsstring>
+        <name>publisher_ptr_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/detection_sensor/detection_sensor.hpp" line="45" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/detection_sensor/detection_sensor.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classscenario__simulator_1_1DetectionSensor_1a911b3c8ede9cfc053d57df724f446882" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double scenario_simulator::DetectionSensor::last_update_stamp_</definition>
+        <argsstring></argsstring>
+        <name>last_update_stamp_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/detection_sensor/detection_sensor.hpp" line="46" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/detection_sensor/detection_sensor.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classscenario__simulator_1_1DetectionSensor_1a5e04e3a8a105358dac282186154fdedb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scenario_simulator::DetectionSensor::DetectionSensor</definition>
+        <argsstring>(const simulation_api_schema::DetectionSensorConfiguration &amp;configuration, std::shared_ptr&lt; rclcpp::Publisher&lt; autoware_perception_msgs::msg::DynamicObjectArray &gt;&gt; publisher_ptr)</argsstring>
+        <name>DetectionSensor</name>
+        <param>
+          <type>const simulation_api_schema::DetectionSensorConfiguration &amp;</type>
+          <declname>configuration</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; rclcpp::Publisher&lt; autoware_perception_msgs::msg::DynamicObjectArray &gt;&gt;</type>
+          <declname>publisher_ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/detection_sensor/detection_sensor.hpp" line="32" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/src/sensor_simulation/detection_sensor/detection_sensor.cpp" bodystart="30" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classscenario__simulator_1_1DetectionSensor_1a14119f16eeeed7131a6dfe10779289fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void scenario_simulator::DetectionSensor::update</definition>
+        <argsstring>(double current_time, const std::vector&lt; openscenario_msgs::EntityStatus &gt; &amp;status, const rclcpp::Time &amp;stamp, const std::vector&lt; std::string &gt; &amp;detected_objects)</argsstring>
+        <name>update</name>
+        <param>
+          <type>double</type>
+          <declname>current_time</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; openscenario_msgs::EntityStatus &gt; &amp;</type>
+          <declname>status</declname>
+        </param>
+        <param>
+          <type>const rclcpp::Time &amp;</type>
+          <declname>stamp</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>detected_objects</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/detection_sensor/detection_sensor.hpp" line="36" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/src/sensor_simulation/detection_sensor/detection_sensor.cpp" bodystart="40" bodyend="83"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/detection_sensor/detection_sensor.hpp" line="30" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/detection_sensor/detection_sensor.hpp" bodystart="29" bodyend="47"/>
+    <listofallmembers>
+      <member refid="classscenario__simulator_1_1DetectionSensor_1a6ba691bbbef78675c01605b4b3c3923e" prot="private" virt="non-virtual"><scope>scenario_simulator::DetectionSensor</scope><name>configuration_</name></member>
+      <member refid="classscenario__simulator_1_1DetectionSensor_1a5e04e3a8a105358dac282186154fdedb" prot="public" virt="non-virtual"><scope>scenario_simulator::DetectionSensor</scope><name>DetectionSensor</name></member>
+      <member refid="classscenario__simulator_1_1DetectionSensor_1a911b3c8ede9cfc053d57df724f446882" prot="private" virt="non-virtual"><scope>scenario_simulator::DetectionSensor</scope><name>last_update_stamp_</name></member>
+      <member refid="classscenario__simulator_1_1DetectionSensor_1a9f2b41f395d62977ce7f8a72927b87ce" prot="private" virt="non-virtual"><scope>scenario_simulator::DetectionSensor</scope><name>publisher_ptr_</name></member>
+      <member refid="classscenario__simulator_1_1DetectionSensor_1a14119f16eeeed7131a6dfe10779289fa" prot="public" virt="non-virtual"><scope>scenario_simulator::DetectionSensor</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

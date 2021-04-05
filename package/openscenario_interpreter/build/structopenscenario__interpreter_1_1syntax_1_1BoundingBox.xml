@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structopenscenario__interpreter_1_1syntax_1_1BoundingBox" kind="struct" language="C++" prot="public">
+    <compoundname>openscenario_interpreter::syntax::BoundingBox</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1BoundingBox_1aef16dba9540427f6f9c21a729dce55d7" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structopenscenario__interpreter_1_1syntax_1_1Center" kindref="compound">Center</ref></type>
+        <definition>const Center openscenario_interpreter::syntax::BoundingBox::center</definition>
+        <argsstring></argsstring>
+        <name>center</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/bounding_box.hpp" line="37" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/bounding_box.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1BoundingBox_1aa60cd88364994d4406a7870c932c61fc" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structopenscenario__interpreter_1_1syntax_1_1Dimensions" kindref="compound">Dimensions</ref></type>
+        <definition>const Dimensions openscenario_interpreter::syntax::BoundingBox::dimensions</definition>
+        <argsstring></argsstring>
+        <name>dimensions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/bounding_box.hpp" line="39" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/bounding_box.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1BoundingBox_1ae58cac34a4bb36d6506a1ab04e983929" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>openscenario_interpreter::syntax::BoundingBox::BoundingBox</definition>
+        <argsstring>()=default</argsstring>
+        <name>BoundingBox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/bounding_box.hpp" line="41" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1BoundingBox_1a2dbf1128c78bd7bebcf94177d5be1463" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Node</type>
+          </param>
+          <param>
+            <type>typename <ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref></type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>openscenario_interpreter::syntax::BoundingBox::BoundingBox</definition>
+        <argsstring>(const Node &amp;node, Scope &amp;scope)</argsstring>
+        <name>BoundingBox</name>
+        <param>
+          <type>const Node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref> &amp;</type>
+          <declname>scope</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/bounding_box.hpp" line="44" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/bounding_box.hpp" bodystart="44" bodyend="47"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="94">
+        <label>openscenario_interpreter::syntax::Center</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Center"/>
+        <childnode refid="92" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+      <node id="91">
+        <label>openscenario_interpreter::syntax::Dimensions</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Dimensions"/>
+        <childnode refid="92" relation="usage">
+          <edgelabel>width</edgelabel>
+          <edgelabel>height</edgelabel>
+          <edgelabel>length</edgelabel>
+        </childnode>
+      </node>
+      <node id="92">
+        <label>openscenario_interpreter::syntax::Double</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Double"/>
+        <childnode refid="93" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>std_msgs::msg::Float64</label>
+      </node>
+      <node id="90">
+        <label>openscenario_interpreter::syntax::BoundingBox</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1BoundingBox"/>
+        <childnode refid="91" relation="usage">
+          <edgelabel>dimensions</edgelabel>
+        </childnode>
+        <childnode refid="94" relation="usage">
+          <edgelabel>center</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/bounding_box.hpp" line="36" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/bounding_box.hpp" bodystart="35" bodyend="48"/>
+    <listofallmembers>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1BoundingBox_1ae58cac34a4bb36d6506a1ab04e983929" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::BoundingBox</scope><name>BoundingBox</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1BoundingBox_1a2dbf1128c78bd7bebcf94177d5be1463" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::BoundingBox</scope><name>BoundingBox</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1BoundingBox_1aef16dba9540427f6f9c21a729dce55d7" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::BoundingBox</scope><name>center</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1BoundingBox_1aa60cd88364994d4406a7870c932c61fc" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::BoundingBox</scope><name>dimensions</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

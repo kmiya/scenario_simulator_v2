@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classscenario__simulator_1_1LidarSensor" kind="class" language="C++" prot="public">
+    <compoundname>scenario_simulator::LidarSensor</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classscenario__simulator_1_1LidarSensor_1ac764b80f6ab95ee3e9a76f23e7ad9fd7" prot="private" static="no" mutable="no">
+        <type>simulation_api_schema::LidarConfiguration</type>
+        <definition>simulation_api_schema::LidarConfiguration scenario_simulator::LidarSensor::configuration_</definition>
+        <argsstring></argsstring>
+        <name>configuration_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/lidar/lidar_sensor.hpp" line="42" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/lidar/lidar_sensor.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classscenario__simulator_1_1LidarSensor_1a492fb14688096066abb5f1ffbdb43785" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; rclcpp::Publisher&lt; sensor_msgs::msg::PointCloud2 &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;rclcpp::Publisher&lt;sensor_msgs::msg::PointCloud2&gt; &gt; scenario_simulator::LidarSensor::publisher_ptr_</definition>
+        <argsstring></argsstring>
+        <name>publisher_ptr_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/lidar/lidar_sensor.hpp" line="43" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/lidar/lidar_sensor.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classscenario__simulator_1_1LidarSensor_1a24576a7bfa7e904426319575124a02c4" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double scenario_simulator::LidarSensor::last_update_stamp_</definition>
+        <argsstring></argsstring>
+        <name>last_update_stamp_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/lidar/lidar_sensor.hpp" line="47" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/lidar/lidar_sensor.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classscenario__simulator_1_1LidarSensor_1ac7f350d0de992677d7b4fc9b3fcaaa1b" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; scenario_simulator::LidarSensor::detected_objects_</definition>
+        <argsstring></argsstring>
+        <name>detected_objects_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/lidar/lidar_sensor.hpp" line="48" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/lidar/lidar_sensor.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classscenario__simulator_1_1LidarSensor_1a190932ef014cecb87bae6f4c9f8f0903" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>scenario_simulator::LidarSensor::LidarSensor</definition>
+        <argsstring>(const simulation_api_schema::LidarConfiguration &amp;configuration, std::shared_ptr&lt; rclcpp::Publisher&lt; sensor_msgs::msg::PointCloud2 &gt;&gt; publisher_ptr)</argsstring>
+        <name>LidarSensor</name>
+        <param>
+          <type>const simulation_api_schema::LidarConfiguration &amp;</type>
+          <declname>configuration</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; rclcpp::Publisher&lt; sensor_msgs::msg::PointCloud2 &gt;&gt;</type>
+          <declname>publisher_ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/lidar/lidar_sensor.hpp" line="32" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/src/sensor_simulation/lidar/lidar_sensor.cpp" bodystart="29" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classscenario__simulator_1_1LidarSensor_1a1da508ebe10a17d2d703d007399818a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void scenario_simulator::LidarSensor::update</definition>
+        <argsstring>(double current_time, const std::vector&lt; openscenario_msgs::EntityStatus &gt; &amp;status, const rclcpp::Time &amp;stamp)</argsstring>
+        <name>update</name>
+        <param>
+          <type>double</type>
+          <declname>current_time</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; openscenario_msgs::EntityStatus &gt; &amp;</type>
+          <declname>status</declname>
+        </param>
+        <param>
+          <type>const rclcpp::Time &amp;</type>
+          <declname>stamp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/lidar/lidar_sensor.hpp" line="35" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/src/sensor_simulation/lidar/lidar_sensor.cpp" bodystart="42" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classscenario__simulator_1_1LidarSensor_1a8cdd7c97794d2caf9b0eec614f2a6c4b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; std::string &gt; &amp;</type>
+        <definition>const std::vector&lt; std::string &gt; &amp; scenario_simulator::LidarSensor::getDetectedObjects</definition>
+        <argsstring>() const</argsstring>
+        <name>getDetectedObjects</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/lidar/lidar_sensor.hpp" line="39" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/src/sensor_simulation/lidar/lidar_sensor.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classscenario__simulator_1_1LidarSensor_1aae0c4764111c111c02dde9f2c5555012" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const sensor_msgs::msg::PointCloud2</type>
+        <definition>const sensor_msgs::msg::PointCloud2 scenario_simulator::LidarSensor::raycast</definition>
+        <argsstring>(const std::vector&lt; openscenario_msgs::EntityStatus &gt; &amp;status, const rclcpp::Time &amp;stamp)</argsstring>
+        <name>raycast</name>
+        <param>
+          <type>const std::vector&lt; openscenario_msgs::EntityStatus &gt; &amp;</type>
+          <declname>status</declname>
+        </param>
+        <param>
+          <type>const rclcpp::Time &amp;</type>
+          <declname>stamp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/lidar/lidar_sensor.hpp" line="44" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/src/sensor_simulation/lidar/lidar_sensor.cpp" bodystart="55" bodyend="101"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/lidar/lidar_sensor.hpp" line="30" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/lidar/lidar_sensor.hpp" bodystart="29" bodyend="49"/>
+    <listofallmembers>
+      <member refid="classscenario__simulator_1_1LidarSensor_1ac764b80f6ab95ee3e9a76f23e7ad9fd7" prot="private" virt="non-virtual"><scope>scenario_simulator::LidarSensor</scope><name>configuration_</name></member>
+      <member refid="classscenario__simulator_1_1LidarSensor_1ac7f350d0de992677d7b4fc9b3fcaaa1b" prot="private" virt="non-virtual"><scope>scenario_simulator::LidarSensor</scope><name>detected_objects_</name></member>
+      <member refid="classscenario__simulator_1_1LidarSensor_1a8cdd7c97794d2caf9b0eec614f2a6c4b" prot="public" virt="non-virtual"><scope>scenario_simulator::LidarSensor</scope><name>getDetectedObjects</name></member>
+      <member refid="classscenario__simulator_1_1LidarSensor_1a24576a7bfa7e904426319575124a02c4" prot="private" virt="non-virtual"><scope>scenario_simulator::LidarSensor</scope><name>last_update_stamp_</name></member>
+      <member refid="classscenario__simulator_1_1LidarSensor_1a190932ef014cecb87bae6f4c9f8f0903" prot="public" virt="non-virtual"><scope>scenario_simulator::LidarSensor</scope><name>LidarSensor</name></member>
+      <member refid="classscenario__simulator_1_1LidarSensor_1a492fb14688096066abb5f1ffbdb43785" prot="private" virt="non-virtual"><scope>scenario_simulator::LidarSensor</scope><name>publisher_ptr_</name></member>
+      <member refid="classscenario__simulator_1_1LidarSensor_1aae0c4764111c111c02dde9f2c5555012" prot="private" virt="non-virtual"><scope>scenario_simulator::LidarSensor</scope><name>raycast</name></member>
+      <member refid="classscenario__simulator_1_1LidarSensor_1a1da508ebe10a17d2d703d007399818a2" prot="public" virt="non-virtual"><scope>scenario_simulator::LidarSensor</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

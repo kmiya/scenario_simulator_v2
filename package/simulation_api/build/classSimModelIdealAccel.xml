@@ -1,0 +1,339 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classSimModelIdealAccel" kind="class" language="C++" prot="public">
+    <compoundname>SimModelIdealAccel</compoundname>
+    <basecompoundref refid="classSimModelInterface" prot="public" virt="non-virtual">SimModelInterface</basecompoundref>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classSimModelIdealAccel_1a6b87bbca0c478a340115e83b8da46c2b" prot="private" static="no">
+        <name>IDX</name>
+        <enumvalue id="classSimModelIdealAccel_1a6b87bbca0c478a340115e83b8da46c2ba946cd0d0b8783dcdb0c8a43325611fd9" prot="private">
+          <name>X</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSimModelIdealAccel_1a6b87bbca0c478a340115e83b8da46c2ba0831b1a318c09063633231f339595af4" prot="private">
+          <name>Y</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSimModelIdealAccel_1a6b87bbca0c478a340115e83b8da46c2ba99393f9c725d7a57f88a5c9f9b7d2bdc" prot="private">
+          <name>YAW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSimModelIdealAccel_1a6b87bbca0c478a340115e83b8da46c2ba56462cf242ba39c64e1cf9683b3cf992" prot="private">
+          <name>VX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/vehicle_model/sim_model_ideal.hpp" line="203" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/vehicle_model/sim_model_ideal.hpp" bodystart="202" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="enum" id="classSimModelIdealAccel_1a68ddd604d0ac557620caff04b3df5f52" prot="private" static="no">
+        <name>IDX_U</name>
+        <enumvalue id="classSimModelIdealAccel_1a68ddd604d0ac557620caff04b3df5f52a8885111632e1b90f2ba06b264bc5c844" prot="private">
+          <name>AX_DES</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSimModelIdealAccel_1a68ddd604d0ac557620caff04b3df5f52a6711acff362f01943c6d213a8bde14b0" prot="private">
+          <name>STEER_DES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/vehicle_model/sim_model_ideal.hpp" line="210" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/vehicle_model/sim_model_ideal.hpp" bodystart="209" bodyend="213"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSimModelIdealAccel_1aa81dfd6b93f76df9412e66e9ca6830c4" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double SimModelIdealAccel::wheelbase_</definition>
+        <argsstring></argsstring>
+        <name>wheelbase_</name>
+        <briefdescription>
+<para>vehicle wheelbase length </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/vehicle_model/sim_model_ideal.hpp" line="215" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/vehicle_model/sim_model_ideal.hpp" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSimModelIdealAccel_1ab109aaa8f34bb1f0470778bfa3acf3ef" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SimModelIdealAccel::SimModelIdealAccel</definition>
+        <argsstring>(double wheelbase)</argsstring>
+        <name>SimModelIdealAccel</name>
+        <param>
+          <type>double</type>
+          <declname>wheelbase</declname>
+        </param>
+        <briefdescription>
+<para>constructor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">wheelbase</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vehicle wheelbase length [m] </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/vehicle_model/sim_model_ideal.hpp" line="194" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/vehicle_model/sim_model_ideal.cpp" bodystart="70" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classSimModelIdealAccel_1a6bdbd284857d1f0d74de76cd0dfad881" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SimModelIdealAccel::~SimModelIdealAccel</definition>
+        <argsstring>()=default</argsstring>
+        <name>~SimModelIdealAccel</name>
+        <briefdescription>
+<para>destructor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/vehicle_model/sim_model_ideal.hpp" line="199" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classSimModelIdealAccel_1a920d9071735104b8fcb33f6ed1b3dc5c" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double SimModelIdealAccel::getX</definition>
+        <argsstring>() override</argsstring>
+        <name>getX</name>
+        <reimplements refid="classSimModelInterface_1a83585f142f5446bd747a1d39de3c0ec2">getX</reimplements>
+        <briefdescription>
+<para>get vehicle position x </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/vehicle_model/sim_model_ideal.hpp" line="220" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/vehicle_model/sim_model_ideal.cpp" bodystart="73" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classSimModelIdealAccel_1a08da1ad35373b1048bd1a6140a982ef1" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double SimModelIdealAccel::getY</definition>
+        <argsstring>() override</argsstring>
+        <name>getY</name>
+        <reimplements refid="classSimModelInterface_1a4e547adacd7739dfb33a8205b44b2942">getY</reimplements>
+        <briefdescription>
+<para>get vehicle position y </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/vehicle_model/sim_model_ideal.hpp" line="225" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/vehicle_model/sim_model_ideal.cpp" bodystart="74" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classSimModelIdealAccel_1ae7c48f11019e885d8949f114e9de849c" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double SimModelIdealAccel::getYaw</definition>
+        <argsstring>() override</argsstring>
+        <name>getYaw</name>
+        <reimplements refid="classSimModelInterface_1a31710dcdbf5e39517fe62df132c6194d">getYaw</reimplements>
+        <briefdescription>
+<para>get vehicle angle yaw </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/vehicle_model/sim_model_ideal.hpp" line="230" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/vehicle_model/sim_model_ideal.cpp" bodystart="75" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classSimModelIdealAccel_1a87fb4919ee2256385ae71cc7ed11fe66" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double SimModelIdealAccel::getVx</definition>
+        <argsstring>() override</argsstring>
+        <name>getVx</name>
+        <reimplements refid="classSimModelInterface_1a66a3748e38550aa6f9dbd03cae03a22c">getVx</reimplements>
+        <briefdescription>
+<para>get vehicle velocity vx </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/vehicle_model/sim_model_ideal.hpp" line="235" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/vehicle_model/sim_model_ideal.cpp" bodystart="76" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classSimModelIdealAccel_1a4aab3a92be0dffd304f22d54588baf89" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double SimModelIdealAccel::getWz</definition>
+        <argsstring>() override</argsstring>
+        <name>getWz</name>
+        <reimplements refid="classSimModelInterface_1a094626c11df1f814b5b73aca2cf36146">getWz</reimplements>
+        <briefdescription>
+<para>get vehicle angular-velocity wz </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/vehicle_model/sim_model_ideal.hpp" line="240" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/vehicle_model/sim_model_ideal.cpp" bodystart="77" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classSimModelIdealAccel_1aa8729a8dd1bca9c12aa999ba14d4dc0d" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double SimModelIdealAccel::getSteer</definition>
+        <argsstring>() override</argsstring>
+        <name>getSteer</name>
+        <reimplements refid="classSimModelInterface_1a28e49bbbafd3ceeec2a4287796324d56">getSteer</reimplements>
+        <briefdescription>
+<para>get vehicle steering angle </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/vehicle_model/sim_model_ideal.hpp" line="245" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/vehicle_model/sim_model_ideal.cpp" bodystart="81" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classSimModelIdealAccel_1a05e8eb87749ded2f75bd3b8a00113efb" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SimModelIdealAccel::update</definition>
+        <argsstring>(const double &amp;dt) override</argsstring>
+        <name>update</name>
+        <reimplements refid="classSimModelInterface_1afc61554e73dca9e462ac5479cf32ef38">update</reimplements>
+        <param>
+          <type>const double &amp;</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>update vehicle states </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>delta time [s] </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/vehicle_model/sim_model_ideal.hpp" line="251" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/vehicle_model/sim_model_ideal.cpp" bodystart="82" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classSimModelIdealAccel_1aeaa0677d1b4e6c1011d8df28f098e83e" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>Eigen::VectorXd</type>
+        <definition>Eigen::VectorXd SimModelIdealAccel::calcModel</definition>
+        <argsstring>(const Eigen::VectorXd &amp;state, const Eigen::VectorXd &amp;input) override</argsstring>
+        <name>calcModel</name>
+        <reimplements refid="classSimModelInterface_1a69c88461c637b923df7ec2dcaf40deb4">calcModel</reimplements>
+        <param>
+          <type>const Eigen::VectorXd &amp;</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>const Eigen::VectorXd &amp;</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+<para>calculate derivative of states with ideal steering model </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>current model state </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input vector to model </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/vehicle_model/sim_model_ideal.hpp" line="258" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/vehicle_model/sim_model_ideal.cpp" bodystart="90" bodyend="105"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="155">
+        <label>SimModelIdealAccel</label>
+        <link refid="classSimModelIdealAccel"/>
+        <childnode refid="156" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="156">
+        <label>SimModelInterface</label>
+        <link refid="classSimModelInterface"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="157">
+        <label>SimModelIdealAccel</label>
+        <link refid="classSimModelIdealAccel"/>
+        <childnode refid="158" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="158">
+        <label>SimModelInterface</label>
+        <link refid="classSimModelInterface"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/vehicle_model/sim_model_ideal.hpp" line="188" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/vehicle_model/sim_model_ideal.hpp" bodystart="187" bodyend="259"/>
+    <listofallmembers>
+      <member refid="classSimModelIdealAccel_1a68ddd604d0ac557620caff04b3df5f52a8885111632e1b90f2ba06b264bc5c844" prot="private" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>AX_DES</name></member>
+      <member refid="classSimModelIdealAccel_1aeaa0677d1b4e6c1011d8df28f098e83e" prot="private" virt="virtual"><scope>SimModelIdealAccel</scope><name>calcModel</name></member>
+      <member refid="classSimModelInterface_1a205b3b7d99b9337365018afe1fc62ab0" prot="protected" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>dim_u_</name></member>
+      <member refid="classSimModelInterface_1ada7a7551a27124e1ff650e47e6f18bf1" prot="protected" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>dim_x_</name></member>
+      <member refid="classSimModelInterface_1aec1734ae15cfadbe42d35ff3a0eacf1c" prot="public" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>getInput</name></member>
+      <member refid="classSimModelInterface_1a9c0803727dc5e58c15f51e54e5c23f0d" prot="public" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>getState</name></member>
+      <member refid="classSimModelIdealAccel_1aa8729a8dd1bca9c12aa999ba14d4dc0d" prot="private" virt="virtual"><scope>SimModelIdealAccel</scope><name>getSteer</name></member>
+      <member refid="classSimModelIdealAccel_1a87fb4919ee2256385ae71cc7ed11fe66" prot="private" virt="virtual"><scope>SimModelIdealAccel</scope><name>getVx</name></member>
+      <member refid="classSimModelIdealAccel_1a4aab3a92be0dffd304f22d54588baf89" prot="private" virt="virtual"><scope>SimModelIdealAccel</scope><name>getWz</name></member>
+      <member refid="classSimModelIdealAccel_1a920d9071735104b8fcb33f6ed1b3dc5c" prot="private" virt="virtual"><scope>SimModelIdealAccel</scope><name>getX</name></member>
+      <member refid="classSimModelIdealAccel_1a08da1ad35373b1048bd1a6140a982ef1" prot="private" virt="virtual"><scope>SimModelIdealAccel</scope><name>getY</name></member>
+      <member refid="classSimModelIdealAccel_1ae7c48f11019e885d8949f114e9de849c" prot="private" virt="virtual"><scope>SimModelIdealAccel</scope><name>getYaw</name></member>
+      <member refid="classSimModelIdealAccel_1a6b87bbca0c478a340115e83b8da46c2b" prot="private" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>IDX</name></member>
+      <member refid="classSimModelIdealAccel_1a68ddd604d0ac557620caff04b3df5f52" prot="private" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>IDX_U</name></member>
+      <member refid="classSimModelInterface_1a604e3dfa204542874cb60bae9df70d97" prot="protected" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>input_</name></member>
+      <member refid="classSimModelInterface_1a58bf13eb5b2897d599e0ed95c70ea8fe" prot="public" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>setInput</name></member>
+      <member refid="classSimModelInterface_1a3753071badd72e8036db7559ce317a97" prot="public" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>setState</name></member>
+      <member refid="classSimModelIdealAccel_1ab109aaa8f34bb1f0470778bfa3acf3ef" prot="public" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>SimModelIdealAccel</name></member>
+      <member refid="classSimModelInterface_1a8381051dda5ee2907e9bb4249cceb469" prot="public" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>SimModelInterface</name></member>
+      <member refid="classSimModelInterface_1ad74e69984c97826011b5a273d3ff9cff" prot="protected" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>state_</name></member>
+      <member refid="classSimModelIdealAccel_1a68ddd604d0ac557620caff04b3df5f52a6711acff362f01943c6d213a8bde14b0" prot="private" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>STEER_DES</name></member>
+      <member refid="classSimModelIdealAccel_1a05e8eb87749ded2f75bd3b8a00113efb" prot="private" virt="virtual"><scope>SimModelIdealAccel</scope><name>update</name></member>
+      <member refid="classSimModelInterface_1a99fa9bd160c2969a0f500591ed15f327" prot="public" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>updateEuler</name></member>
+      <member refid="classSimModelInterface_1a87f7865253cd118372cfc701215cf2df" prot="public" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>updateRungeKutta</name></member>
+      <member refid="classSimModelIdealAccel_1a6b87bbca0c478a340115e83b8da46c2ba56462cf242ba39c64e1cf9683b3cf992" prot="private" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>VX</name></member>
+      <member refid="classSimModelIdealAccel_1aa81dfd6b93f76df9412e66e9ca6830c4" prot="private" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>wheelbase_</name></member>
+      <member refid="classSimModelIdealAccel_1a6b87bbca0c478a340115e83b8da46c2ba946cd0d0b8783dcdb0c8a43325611fd9" prot="private" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>X</name></member>
+      <member refid="classSimModelIdealAccel_1a6b87bbca0c478a340115e83b8da46c2ba0831b1a318c09063633231f339595af4" prot="private" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>Y</name></member>
+      <member refid="classSimModelIdealAccel_1a6b87bbca0c478a340115e83b8da46c2ba99393f9c725d7a57f88a5c9f9b7d2bdc" prot="private" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>YAW</name></member>
+      <member refid="classSimModelIdealAccel_1a6bdbd284857d1f0d74de76cd0dfad881" prot="public" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>~SimModelIdealAccel</name></member>
+      <member refid="classSimModelInterface_1a2d8bdaf9d4bfc1b42b8f507741e26830" prot="public" virt="non-virtual"><scope>SimModelIdealAccel</scope><name>~SimModelInterface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

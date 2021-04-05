@@ -1,0 +1,235 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structopenscenario__interpreter_1_1syntax_1_1Action" kind="struct" language="C++" prot="public">
+    <compoundname>openscenario_interpreter::syntax::Action</compoundname>
+    <basecompoundref refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement" prot="public" virt="non-virtual">openscenario_interpreter::syntax::StoryboardElement&lt; Action &gt;</basecompoundref>
+    <basecompoundref refid="classopenscenario__interpreter_1_1Pointer" prot="public" virt="non-virtual">openscenario_interpreter::Pointer&lt; Expression &gt;</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1Action_1acdcf30cadf4eb7c32f6436de9b1b9870" prot="public" static="no" mutable="no">
+        <type>const String</type>
+        <definition>const String openscenario_interpreter::syntax::Action::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/action.hpp" line="51" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/action.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1Action_1a6216bbb290c106126686d66c1c8a392b" prot="public" static="no" mutable="no">
+        <type><ref refid="structopenscenario__interpreter_1_1syntax_1_1Boolean" kindref="compound">Boolean</ref></type>
+        <definition>Boolean openscenario_interpreter::syntax::Action::overridden</definition>
+        <argsstring></argsstring>
+        <name>overridden</name>
+        <initializer>{false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/action.hpp" line="96" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/action.hpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1Action_1ac7dd768b72d6a6618bb5935d49d44b86" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Node</type>
+          </param>
+          <param>
+            <type>typename <ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref></type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>openscenario_interpreter::syntax::Action::Action</definition>
+        <argsstring>(const Node &amp;node, Scope &amp;scope, std::size_t maximum_execution_count)</argsstring>
+        <name>Action</name>
+        <param>
+          <type>const Node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref> &amp;</type>
+          <declname>scope</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>maximum_execution_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/action.hpp" line="57" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/action.hpp" bodystart="57" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1Action_1ace1bc4a2ccc1057040e5a3de5f12c587" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto openscenario_interpreter::syntax::Action::ready</definition>
+        <argsstring>() const</argsstring>
+        <name>ready</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/action.hpp" line="68" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/action.hpp" bodystart="68" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1Action_1a40feb62abecd3da063919a2f09784674" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void openscenario_interpreter::syntax::Action::stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/action.hpp" line="98" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/action.hpp" bodystart="98" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1Action_1a75fcf999d3854cc9139a419ca5681549" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>decltype(auto)</type>
+        <definition>decltype(auto) openscenario_interpreter::syntax::Action::run</definition>
+        <argsstring>(Ts &amp;&amp;... xs)</argsstring>
+        <name>run</name>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/action.hpp" line="108" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/action.hpp" bodystart="108" bodyend="111"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1Action_1ab1eb69d2f638db71e3ff9c8490ee01f4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr auto</type>
+        <definition>static constexpr auto openscenario_interpreter::syntax::Action::stopTriggered</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>stopTriggered</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/action.hpp" line="73" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/action.hpp" bodystart="73" bodyend="76"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="32">
+        <label>std::shared_ptr&lt; Expression  &gt;</label>
+      </node>
+      <node id="30">
+        <label>openscenario_interpreter::syntax::StoryboardElement&lt; Action &gt;</label>
+        <link refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement"/>
+      </node>
+      <node id="29">
+        <label>openscenario_interpreter::syntax::Action</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Action"/>
+        <childnode refid="30" relation="public-inheritance">
+        </childnode>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>Element</label>
+        <link refid="classopenscenario__interpreter_1_1Pointer"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="36">
+        <label>std::shared_ptr&lt; Expression  &gt;</label>
+      </node>
+      <node id="34">
+        <label>openscenario_interpreter::syntax::StoryboardElement&lt; Action &gt;</label>
+        <link refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement"/>
+        <childnode refid="35" relation="usage">
+          <edgelabel>current_state</edgelabel>
+        </childnode>
+      </node>
+      <node id="33">
+        <label>openscenario_interpreter::syntax::Action</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Action"/>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
+        <childnode refid="37" relation="public-inheritance">
+        </childnode>
+        <childnode refid="38" relation="usage">
+          <edgelabel>overridden</edgelabel>
+        </childnode>
+      </node>
+      <node id="38">
+        <label>openscenario_interpreter::syntax::Boolean</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Boolean"/>
+      </node>
+      <node id="35">
+        <label>openscenario_interpreter::Pointer&lt; Expression &gt;</label>
+        <link refid="classopenscenario__interpreter_1_1Pointer"/>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>Element</label>
+        <link refid="classopenscenario__interpreter_1_1Pointer"/>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/action.hpp" line="50" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/action.hpp" bodystart="48" bodyend="112"/>
+    <listofallmembers>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Action_1ac7dd768b72d6a6618bb5935d49d44b86" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>Action</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1a3d6376cdd71d856ebe66fe010e33b1d9" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>BOILERPLATE</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1a8fd935130dd8bf3ab092b306e5539892" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>BOILERPLATE</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1aad74e154570fa18f301f248834a4fea6" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>BOILERPLATE</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1a7337ec77fd0b107fb302c1e3726549b5" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>BOILERPLATE</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1a15b07aefa9bfbda97ae9aaddfcedd9fb" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>BOILERPLATE</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1afe0e2c7aae7ce38c25a77f042429383a" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>BOILERPLATE</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1a7816a9deb9eef600a19bb77927586dfd" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>BOILERPLATE</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1aec47337d8b30da3c060087be7f360657" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>changeStateIf</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1afdad38d8cdc90ace80b807a10af58cad" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>changeStateIf</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1acf1f12befabf2370168c0d81930d0bc1" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>changeStateIf</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1aac977dac659f036d2ef5738ab663194d" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>current_execution_count</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1a97c3157e1903d4c666786446c85f600e" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>current_state</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1aa12168a962ee2670628bcb2a2c053a9b" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>evaluate</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1ae2c6c00f125749d26c125696896dcdc8" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>maximum_execution_count</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Action_1acdcf30cadf4eb7c32f6436de9b1b9870" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>name</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1a47fca6e7d7a020124f344edb848a361c" prot="protected" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>names</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Action_1a6216bbb290c106126686d66c1c8a392b" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>overridden</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1a25c9cefa5515185a7f250bf04b136821" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>override</name></member>
+      <member refid="classopenscenario__interpreter_1_1Pointer_1a7cd639fabe0abf89dd1a83e91e97c225" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>Pointer</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1a6b8c10dd416b76048512c4dad993a7b5" prot="protected" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>readStoryboardElement</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Action_1ace1bc4a2ccc1057040e5a3de5f12c587" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>ready</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1a25bb156fc90a357c41b0811c9ff951af" prot="protected" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>rename</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Action_1a75fcf999d3854cc9139a419ca5681549" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>run</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1ae1d4c67ff7f6f262f7fb2c0c5ced2dc0" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>state</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Action_1a40feb62abecd3da063919a2f09784674" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>stop</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Action_1ab1eb69d2f638db71e3ff9c8490ee01f4" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>stopTriggered</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1a83bd148967e638f8b8739c5e469b6ead" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>StoryboardElement</name></member>
+      <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1ab0e671a56fd9826aa3edf6b1498447f6" prot="protected" virt="non-virtual"><scope>openscenario_interpreter::syntax::Action</scope><name>unique</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

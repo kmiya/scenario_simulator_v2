@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classmetrics_1_1TraveledDistanceMetric" kind="class" language="C++" prot="public">
+    <compoundname>metrics::TraveledDistanceMetric</compoundname>
+    <basecompoundref refid="classmetrics_1_1MetricBase" prot="public" virt="non-virtual">metrics::MetricBase</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classmetrics_1_1TraveledDistanceMetric_1ab3b5bf4a55162e8bcbddfbdc1a6f487d" prot="public" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string metrics::TraveledDistanceMetric::target_entity</definition>
+        <argsstring></argsstring>
+        <name>target_entity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/metrics/traveled_distance_metric.hpp" line="32" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/metrics/traveled_distance_metric.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmetrics_1_1TraveledDistanceMetric_1a93bb280f762d70edf583ed3bedf37b51" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double metrics::TraveledDistanceMetric::traveled_distance</definition>
+        <argsstring></argsstring>
+        <name>traveled_distance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/metrics/traveled_distance_metric.hpp" line="35" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/metrics/traveled_distance_metric.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmetrics_1_1TraveledDistanceMetric_1a7814594489592bf56f37e733357763d1" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>metrics::TraveledDistanceMetric::TraveledDistanceMetric</definition>
+        <argsstring>(std::string target_entity)</argsstring>
+        <name>TraveledDistanceMetric</name>
+        <param>
+          <type>std::string</type>
+          <declname>target_entity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/metrics/traveled_distance_metric.hpp" line="27" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/metrics/traveled_distance_metric.cpp" bodystart="21" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classmetrics_1_1TraveledDistanceMetric_1adc5e79ad4bf81671b8351c391d8ca942" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>metrics::TraveledDistanceMetric::~TraveledDistanceMetric</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~TraveledDistanceMetric</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/metrics/traveled_distance_metric.hpp" line="28" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classmetrics_1_1TraveledDistanceMetric_1a1c0e779b865fb5fe31685ee8d495a235" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void metrics::TraveledDistanceMetric::update</definition>
+        <argsstring>() override</argsstring>
+        <name>update</name>
+        <reimplements refid="classmetrics_1_1MetricBase_1a5535990bccf8673505854b0db5d12e51">update</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/metrics/traveled_distance_metric.hpp" line="29" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/metrics/traveled_distance_metric.cpp" bodystart="32" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classmetrics_1_1TraveledDistanceMetric_1a83a60b1a279388f2e324be39d3509b4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json metrics::TraveledDistanceMetric::to_json</definition>
+        <argsstring>()</argsstring>
+        <name>to_json</name>
+        <reimplements refid="classmetrics_1_1MetricBase_1a3ce5f237d1200357687261e5f7418022">to_json</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/metrics/traveled_distance_metric.hpp" line="30" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/metrics/traveled_distance_metric.cpp" bodystart="42" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classmetrics_1_1TraveledDistanceMetric_1aeca318ff6c5c6c50656a620c2a674e32" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool metrics::TraveledDistanceMetric::activateTrigger</definition>
+        <argsstring>() override</argsstring>
+        <name>activateTrigger</name>
+        <reimplements refid="classmetrics_1_1MetricBase_1a39065db1c4f9042d830d9086ef01bd99">activateTrigger</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/metrics/traveled_distance_metric.hpp" line="31" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/metrics/traveled_distance_metric.cpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="246">
+        <label>metrics::TraveledDistanceMetric</label>
+        <link refid="classmetrics_1_1TraveledDistanceMetric"/>
+        <childnode refid="247" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="247">
+        <label>metrics::MetricBase</label>
+        <link refid="classmetrics_1_1MetricBase"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="248">
+        <label>metrics::TraveledDistanceMetric</label>
+        <link refid="classmetrics_1_1TraveledDistanceMetric"/>
+        <childnode refid="249" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="249">
+        <label>metrics::MetricBase</label>
+        <link refid="classmetrics_1_1MetricBase"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/metrics/traveled_distance_metric.hpp" line="25" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/metrics/traveled_distance_metric.hpp" bodystart="24" bodyend="36"/>
+    <listofallmembers>
+      <member refid="classmetrics_1_1MetricBase_1ae2715921303db9ccba0092c532a386d2" prot="public" virt="non-virtual"><scope>metrics::TraveledDistanceMetric</scope><name>activate</name></member>
+      <member refid="classmetrics_1_1TraveledDistanceMetric_1aeca318ff6c5c6c50656a620c2a674e32" prot="public" virt="virtual"><scope>metrics::TraveledDistanceMetric</scope><name>activateTrigger</name></member>
+      <member refid="classmetrics_1_1MetricBase_1ae5d22012e429f91f427aef062d13e1d4" prot="protected" virt="non-virtual"><scope>metrics::TraveledDistanceMetric</scope><name>entity_manager_ptr_</name></member>
+      <member refid="classmetrics_1_1MetricBase_1a67f27b7981db0910294ab949d7ea8747" prot="public" virt="non-virtual"><scope>metrics::TraveledDistanceMetric</scope><name>failure</name></member>
+      <member refid="classmetrics_1_1MetricBase_1a0fcf4330afb3c26942ab0adc45026e65" prot="public" virt="non-virtual"><scope>metrics::TraveledDistanceMetric</scope><name>getLifecycle</name></member>
+      <member refid="classmetrics_1_1MetricBase_1ae13ba905d9469efe56cf349890327bb1" prot="public" virt="non-virtual"><scope>metrics::TraveledDistanceMetric</scope><name>MetricBase</name></member>
+      <member refid="classmetrics_1_1MetricBase_1a26827f054a849cac63e630ee6bd7cf27" prot="public" virt="non-virtual"><scope>metrics::TraveledDistanceMetric</scope><name>metrics_type</name></member>
+      <member refid="classmetrics_1_1MetricBase_1a63b7eee112acd4d52a08d20f559bbc60" prot="public" virt="non-virtual"><scope>metrics::TraveledDistanceMetric</scope><name>setEntityManager</name></member>
+      <member refid="classmetrics_1_1MetricBase_1a9121f7a9d69506281a9eb0533f09896c" prot="public" virt="non-virtual"><scope>metrics::TraveledDistanceMetric</scope><name>success</name></member>
+      <member refid="classmetrics_1_1TraveledDistanceMetric_1ab3b5bf4a55162e8bcbddfbdc1a6f487d" prot="public" virt="non-virtual"><scope>metrics::TraveledDistanceMetric</scope><name>target_entity</name></member>
+      <member refid="classmetrics_1_1MetricBase_1a3bfb57e35e135f57d65d3a9a18ae8c29" prot="public" virt="non-virtual"><scope>metrics::TraveledDistanceMetric</scope><name>throwException</name></member>
+      <member refid="classmetrics_1_1MetricBase_1a38aefd236ee82f96ca6cf138507003a7" prot="public" virt="non-virtual"><scope>metrics::TraveledDistanceMetric</scope><name>to_base_json</name></member>
+      <member refid="classmetrics_1_1TraveledDistanceMetric_1a83a60b1a279388f2e324be39d3509b4c" prot="public" virt="virtual"><scope>metrics::TraveledDistanceMetric</scope><name>to_json</name></member>
+      <member refid="classmetrics_1_1TraveledDistanceMetric_1a93bb280f762d70edf583ed3bedf37b51" prot="private" virt="non-virtual"><scope>metrics::TraveledDistanceMetric</scope><name>traveled_distance</name></member>
+      <member refid="classmetrics_1_1TraveledDistanceMetric_1a7814594489592bf56f37e733357763d1" prot="public" virt="non-virtual"><scope>metrics::TraveledDistanceMetric</scope><name>TraveledDistanceMetric</name></member>
+      <member refid="classmetrics_1_1TraveledDistanceMetric_1a1c0e779b865fb5fe31685ee8d495a235" prot="public" virt="virtual"><scope>metrics::TraveledDistanceMetric</scope><name>update</name></member>
+      <member refid="classmetrics_1_1MetricBase_1a86b9bbb2ceab6c040a954a4d926eb4fb" prot="public" virt="virtual"><scope>metrics::TraveledDistanceMetric</scope><name>~MetricBase</name></member>
+      <member refid="classmetrics_1_1TraveledDistanceMetric_1adc5e79ad4bf81671b8351c391d8ca942" prot="public" virt="non-virtual"><scope>metrics::TraveledDistanceMetric</scope><name>~TraveledDistanceMetric</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

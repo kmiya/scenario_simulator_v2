@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classsimulation__api_1_1TrafficLightManager" kind="class" language="C++" prot="public">
+    <compoundname>simulation_api::TrafficLightManager</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classsimulation__api_1_1TrafficLightManager_1a8691a02f7d755bf70c482dd6dd1bd1f4" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::int64_t, std::shared_ptr&lt; <ref refid="classsimulation__api_1_1TrafficLight" kindref="compound">TrafficLight</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::int64_t, std::shared_ptr&lt;TrafficLight&gt; &gt; simulation_api::TrafficLightManager::traffic_lights_</definition>
+        <argsstring></argsstring>
+        <name>traffic_lights_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" line="80" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimulation__api_1_1TrafficLightManager_1a344c095e094e59a594309dbe3556d3b7" prot="private" static="no" mutable="no">
+        <type>const rclcpp::Publisher&lt; visualization_msgs::msg::MarkerArray &gt;::SharedPtr</type>
+        <definition>const rclcpp::Publisher&lt;visualization_msgs::msg::MarkerArray&gt;::SharedPtr simulation_api::TrafficLightManager::marker_pub_</definition>
+        <argsstring></argsstring>
+        <name>marker_pub_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" line="81" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimulation__api_1_1TrafficLightManager_1a0a0d97e2200f0f1d16187c0d9767ef33" prot="private" static="no" mutable="no">
+        <type>const std::shared_ptr&lt; rclcpp::Clock &gt;</type>
+        <definition>const std::shared_ptr&lt;rclcpp::Clock&gt; simulation_api::TrafficLightManager::clock_ptr_</definition>
+        <argsstring></argsstring>
+        <name>clock_ptr_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" line="82" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimulation__api_1_1TrafficLightManager_1a8deb392497af137930b15492ef2adf77" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string simulation_api::TrafficLightManager::map_frame_</definition>
+        <argsstring></argsstring>
+        <name>map_frame_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" line="83" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsimulation__api_1_1TrafficLightManager_1a80a91c6810728a67b55560ad4a57e788" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>simulation_api::TrafficLightManager::TrafficLightManager</definition>
+        <argsstring>(std::shared_ptr&lt; hdmap_utils::HdMapUtils &gt; &amp;hdmap_utils_ptr, rclcpp::Publisher&lt; visualization_msgs::msg::MarkerArray &gt;::SharedPtr publisher, const std::shared_ptr&lt; rclcpp::Clock &gt; &amp;clock_ptr, const std::string &amp;map_frame=&quot;map&quot;)</argsstring>
+        <name>TrafficLightManager</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classhdmap__utils_1_1HdMapUtils" kindref="compound">hdmap_utils::HdMapUtils</ref> &gt; &amp;</type>
+          <declname>hdmap_utils_ptr</declname>
+        </param>
+        <param>
+          <type>rclcpp::Publisher&lt; visualization_msgs::msg::MarkerArray &gt;::SharedPtr</type>
+          <declname>publisher</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; rclcpp::Clock &gt; &amp;</type>
+          <declname>clock_ptr</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>map_frame</declname>
+          <defval>&quot;map&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" line="35" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/traffic_lights/traffic_light_manager.cpp" bodystart="25" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1TrafficLightManager_1a155a2668fa51d221c39f680a7ec1c1a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_api::TrafficLightManager::update</definition>
+        <argsstring>(double step_time)</argsstring>
+        <name>update</name>
+        <param>
+          <type>double</type>
+          <declname>step_time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" line="40" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/traffic_lights/traffic_light_manager.cpp" bodystart="113" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1TrafficLightManager_1a4039e18f09dcb946e719c9510bba104b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void simulation_api::TrafficLightManager::setColorPhase</definition>
+        <argsstring>(std::int64_t lanelet_id, Ts &amp;&amp;... xs)</argsstring>
+        <name>setColorPhase</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" line="42" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" bodystart="42" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1TrafficLightManager_1aefb2de99db6f66e250f9eead40f3b46a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void simulation_api::TrafficLightManager::setArrowPhase</definition>
+        <argsstring>(std::int64_t lanelet_id, Ts &amp;&amp;... xs)</argsstring>
+        <name>setArrowPhase</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" line="50" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" bodystart="50" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1TrafficLightManager_1a6c99d3b89c3ed76a3e1d7b4ad3ddc838" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void simulation_api::TrafficLightManager::setColor</definition>
+        <argsstring>(std::int64_t lanelet_id, Ts &amp;&amp;... xs)</argsstring>
+        <name>setColor</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" line="58" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" bodystart="58" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1TrafficLightManager_1a3de0c1fbbad22a6fa41f14cc802d4ffa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void simulation_api::TrafficLightManager::setArrow</definition>
+        <argsstring>(std::int64_t lanelet_id, Ts &amp;&amp;... xs)</argsstring>
+        <name>setArrow</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" line="66" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" bodystart="66" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1TrafficLightManager_1a32d867037797be7f9e71b9e13bf7ddd7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>TrafficLightColor</type>
+        <definition>TrafficLightColor simulation_api::TrafficLightManager::getColor</definition>
+        <argsstring>(std::int64_t lanelet_id) const</argsstring>
+        <name>getColor</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" line="73" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/traffic_lights/traffic_light_manager.cpp" bodystart="136" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1TrafficLightManager_1a2e01fb488fd18c65272896723ad7a6f3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>TrafficLightArrow</type>
+        <definition>TrafficLightArrow simulation_api::TrafficLightManager::getArrow</definition>
+        <argsstring>(std::int64_t lanelet_id) const</argsstring>
+        <name>getArrow</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" line="74" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/traffic_lights/traffic_light_manager.cpp" bodystart="128" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1TrafficLightManager_1acad46bc232f3d495e7e79044621bbb4a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::int64_t &gt;</type>
+        <definition>std::vector&lt; std::int64_t &gt; simulation_api::TrafficLightManager::getIds</definition>
+        <argsstring>() const</argsstring>
+        <name>getIds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" line="75" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/traffic_lights/traffic_light_manager.cpp" bodystart="59" bodyend="66"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classsimulation__api_1_1TrafficLightManager_1aaac7c9a374285e36373115890551405f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_api::TrafficLightManager::deleteAllMarkers</definition>
+        <argsstring>() const</argsstring>
+        <name>deleteAllMarkers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" line="78" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/traffic_lights/traffic_light_manager.cpp" bodystart="68" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1TrafficLightManager_1a93c6e66acb08fcd297bbb4144457ff86" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_api::TrafficLightManager::drawMarkers</definition>
+        <argsstring>() const</argsstring>
+        <name>drawMarkers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" line="79" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/traffic_lights/traffic_light_manager.cpp" bodystart="77" bodyend="111"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" line="33" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic_lights/traffic_light_manager.hpp" bodystart="32" bodyend="84"/>
+    <listofallmembers>
+      <member refid="classsimulation__api_1_1TrafficLightManager_1a0a0d97e2200f0f1d16187c0d9767ef33" prot="private" virt="non-virtual"><scope>simulation_api::TrafficLightManager</scope><name>clock_ptr_</name></member>
+      <member refid="classsimulation__api_1_1TrafficLightManager_1aaac7c9a374285e36373115890551405f" prot="private" virt="non-virtual"><scope>simulation_api::TrafficLightManager</scope><name>deleteAllMarkers</name></member>
+      <member refid="classsimulation__api_1_1TrafficLightManager_1a93c6e66acb08fcd297bbb4144457ff86" prot="private" virt="non-virtual"><scope>simulation_api::TrafficLightManager</scope><name>drawMarkers</name></member>
+      <member refid="classsimulation__api_1_1TrafficLightManager_1a2e01fb488fd18c65272896723ad7a6f3" prot="public" virt="non-virtual"><scope>simulation_api::TrafficLightManager</scope><name>getArrow</name></member>
+      <member refid="classsimulation__api_1_1TrafficLightManager_1a32d867037797be7f9e71b9e13bf7ddd7" prot="public" virt="non-virtual"><scope>simulation_api::TrafficLightManager</scope><name>getColor</name></member>
+      <member refid="classsimulation__api_1_1TrafficLightManager_1acad46bc232f3d495e7e79044621bbb4a" prot="public" virt="non-virtual"><scope>simulation_api::TrafficLightManager</scope><name>getIds</name></member>
+      <member refid="classsimulation__api_1_1TrafficLightManager_1a8deb392497af137930b15492ef2adf77" prot="private" virt="non-virtual"><scope>simulation_api::TrafficLightManager</scope><name>map_frame_</name></member>
+      <member refid="classsimulation__api_1_1TrafficLightManager_1a344c095e094e59a594309dbe3556d3b7" prot="private" virt="non-virtual"><scope>simulation_api::TrafficLightManager</scope><name>marker_pub_</name></member>
+      <member refid="classsimulation__api_1_1TrafficLightManager_1a3de0c1fbbad22a6fa41f14cc802d4ffa" prot="public" virt="non-virtual"><scope>simulation_api::TrafficLightManager</scope><name>setArrow</name></member>
+      <member refid="classsimulation__api_1_1TrafficLightManager_1aefb2de99db6f66e250f9eead40f3b46a" prot="public" virt="non-virtual"><scope>simulation_api::TrafficLightManager</scope><name>setArrowPhase</name></member>
+      <member refid="classsimulation__api_1_1TrafficLightManager_1a6c99d3b89c3ed76a3e1d7b4ad3ddc838" prot="public" virt="non-virtual"><scope>simulation_api::TrafficLightManager</scope><name>setColor</name></member>
+      <member refid="classsimulation__api_1_1TrafficLightManager_1a4039e18f09dcb946e719c9510bba104b" prot="public" virt="non-virtual"><scope>simulation_api::TrafficLightManager</scope><name>setColorPhase</name></member>
+      <member refid="classsimulation__api_1_1TrafficLightManager_1a8691a02f7d755bf70c482dd6dd1bd1f4" prot="private" virt="non-virtual"><scope>simulation_api::TrafficLightManager</scope><name>traffic_lights_</name></member>
+      <member refid="classsimulation__api_1_1TrafficLightManager_1a80a91c6810728a67b55560ad4a57e788" prot="public" virt="non-virtual"><scope>simulation_api::TrafficLightManager</scope><name>TrafficLightManager</name></member>
+      <member refid="classsimulation__api_1_1TrafficLightManager_1a155a2668fa51d221c39f680a7ec1c1a5" prot="public" virt="non-virtual"><scope>simulation_api::TrafficLightManager</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
+  <compound refid="classscenario__simulator_1_1primitives_1_1Box" kind="class"><name>scenario_simulator::primitives::Box</name>
+    <member refid="classscenario__simulator_1_1primitives_1_1Box_1afaee8da9d0eeb78f74d1a77ae66c2cb5" kind="variable"><name>depth</name></member>
+    <member refid="classscenario__simulator_1_1primitives_1_1Box_1a92dc2426e4cfa824a274e400e8b41ee5" kind="variable"><name>width</name></member>
+    <member refid="classscenario__simulator_1_1primitives_1_1Box_1a3b9a5e158a43bc5bfec3ba0fcbc28947" kind="variable"><name>height</name></member>
+    <member refid="classscenario__simulator_1_1primitives_1_1Box_1a1327b1996ce4a9e4e2a8824a68cf624c" kind="function"><name>Box</name></member>
+    <member refid="classscenario__simulator_1_1primitives_1_1Box_1a3cf690050ab109ba953ac6adb74fccc5" kind="function"><name>~Box</name></member>
+  </compound>
+  <compound refid="classscenario__simulator_1_1DetectionSensor" kind="class"><name>scenario_simulator::DetectionSensor</name>
+    <member refid="classscenario__simulator_1_1DetectionSensor_1a6ba691bbbef78675c01605b4b3c3923e" kind="variable"><name>configuration_</name></member>
+    <member refid="classscenario__simulator_1_1DetectionSensor_1a9f2b41f395d62977ce7f8a72927b87ce" kind="variable"><name>publisher_ptr_</name></member>
+    <member refid="classscenario__simulator_1_1DetectionSensor_1a911b3c8ede9cfc053d57df724f446882" kind="variable"><name>last_update_stamp_</name></member>
+    <member refid="classscenario__simulator_1_1DetectionSensor_1a5e04e3a8a105358dac282186154fdedb" kind="function"><name>DetectionSensor</name></member>
+    <member refid="classscenario__simulator_1_1DetectionSensor_1a14119f16eeeed7131a6dfe10779289fa" kind="function"><name>update</name></member>
+  </compound>
+  <compound refid="classscenario__simulator_1_1LidarSensor" kind="class"><name>scenario_simulator::LidarSensor</name>
+    <member refid="classscenario__simulator_1_1LidarSensor_1ac764b80f6ab95ee3e9a76f23e7ad9fd7" kind="variable"><name>configuration_</name></member>
+    <member refid="classscenario__simulator_1_1LidarSensor_1a492fb14688096066abb5f1ffbdb43785" kind="variable"><name>publisher_ptr_</name></member>
+    <member refid="classscenario__simulator_1_1LidarSensor_1a24576a7bfa7e904426319575124a02c4" kind="variable"><name>last_update_stamp_</name></member>
+    <member refid="classscenario__simulator_1_1LidarSensor_1ac7f350d0de992677d7b4fc9b3fcaaa1b" kind="variable"><name>detected_objects_</name></member>
+    <member refid="classscenario__simulator_1_1LidarSensor_1a190932ef014cecb87bae6f4c9f8f0903" kind="function"><name>LidarSensor</name></member>
+    <member refid="classscenario__simulator_1_1LidarSensor_1a1da508ebe10a17d2d703d007399818a2" kind="function"><name>update</name></member>
+    <member refid="classscenario__simulator_1_1LidarSensor_1a8cdd7c97794d2caf9b0eec614f2a6c4b" kind="function"><name>getDetectedObjects</name></member>
+    <member refid="classscenario__simulator_1_1LidarSensor_1aae0c4764111c111c02dde9f2c5555012" kind="function"><name>raycast</name></member>
+  </compound>
+  <compound refid="classscenario__simulator_1_1primitives_1_1Primitive" kind="class"><name>scenario_simulator::primitives::Primitive</name>
+    <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1a109e79bfb286cd01d3c2d01064ac9ffa" kind="variable"><name>type</name></member>
+    <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1ae425e332d17f33209471ff17d13ac5f1" kind="variable"><name>pose</name></member>
+    <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1afd9ef7debe74454d92fb9f0f585bce9e" kind="variable"><name>vertices_</name></member>
+    <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1ad1f208312da5791214007f9bc5e5a5d1" kind="variable"><name>triangles_</name></member>
+    <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1af92c46e3a40a099344f939ad1e341d25" kind="function"><name>Primitive</name></member>
+    <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1a05d0eac29691efc6565a94f64c1d3141" kind="function"><name>~Primitive</name></member>
+    <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1ac384526b9ca2526b1365a5c51bf06989" kind="function"><name>addToScene</name></member>
+    <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1a4181a8d72271d82779dc91bb3650d31c" kind="function"><name>getVertex</name></member>
+    <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1a282b277a8108583dd0863c0a2ec313d9" kind="function"><name>getTriangles</name></member>
+    <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1a44db8f175eda727d8d99e90aea68a2e9" kind="function"><name>transform</name></member>
+    <member refid="classscenario__simulator_1_1primitives_1_1Primitive_1a0460d2dc173064572365006259b10444" kind="function"><name>transform</name></member>
+  </compound>
+  <compound refid="classscenario__simulator_1_1Raycaster" kind="class"><name>scenario_simulator::Raycaster</name>
+    <member refid="classscenario__simulator_1_1Raycaster_1ab05e0c8ac9b4913f0b1b8fe1a515c37d" kind="variable"><name>primitive_ptrs_</name></member>
+    <member refid="classscenario__simulator_1_1Raycaster_1a0d91aa8e15a54f3c50d8a95697d40b48" kind="variable"><name>device_</name></member>
+    <member refid="classscenario__simulator_1_1Raycaster_1a2a10c426ef9600dd434a8e8e7e46f76f" kind="variable"><name>scene_</name></member>
+    <member refid="classscenario__simulator_1_1Raycaster_1a417c1f1887b4c93b8ef6cc9d5dbe6b2e" kind="variable"><name>seed_gen_</name></member>
+    <member refid="classscenario__simulator_1_1Raycaster_1a4bd200b3242b2ed3ba3e6882cde8b886" kind="variable"><name>engine_</name></member>
+    <member refid="classscenario__simulator_1_1Raycaster_1aa84efaa1f8881604ce4a5e03ade3dcf6" kind="variable"><name>detected_objects_</name></member>
+    <member refid="classscenario__simulator_1_1Raycaster_1aaacf5867299c225a05ea67ef2638f203" kind="variable"><name>geometry_ids_</name></member>
+    <member refid="classscenario__simulator_1_1Raycaster_1a9cd15021b62ad0fbf2a5ce23ac59a202" kind="function"><name>Raycaster</name></member>
+    <member refid="classscenario__simulator_1_1Raycaster_1a690110bd82b1fb9ebe694f697c574964" kind="function"><name>Raycaster</name></member>
+    <member refid="classscenario__simulator_1_1Raycaster_1a698235de6852644dedb8537fa1ff2603" kind="function"><name>~Raycaster</name></member>
+    <member refid="classscenario__simulator_1_1Raycaster_1ae1f1f647996192a74ca98c54d5f68535" kind="function"><name>addPrimitive</name></member>
+    <member refid="classscenario__simulator_1_1Raycaster_1acebcb5ef552b4301f6dfa6ec345fda5c" kind="function"><name>raycast</name></member>
+    <member refid="classscenario__simulator_1_1Raycaster_1a6f141878e6119732aea3cdf022eaa322" kind="function"><name>getDetectedObject</name></member>
+    <member refid="classscenario__simulator_1_1Raycaster_1a78b9f7d46c92d8598dfe0e1a18049fe6" kind="function"><name>raycast</name></member>
+  </compound>
+  <compound refid="classscenario__simulator_1_1ScenarioSimulator" kind="class"><name>scenario_simulator::ScenarioSimulator</name>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1a56d7c488ad98ee0d7f4eaaf6bf670a0c" kind="variable"><name>sensor_sim_</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1a1cfb5740698a6dc31de783c38ec4d765" kind="variable"><name>ego_vehicles_</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1a3a451fa4fcdb7a4fa494a579ce21c991" kind="variable"><name>vehicles_</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1a52344d73a98715f645a6d9fd8affbdc0" kind="variable"><name>pedestrians_</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1a05ed57d7289ade7a2953a96de6b74e4f" kind="variable"><name>realtime_factor_</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1ace47652b3013417db08c2b507557eb43" kind="variable"><name>step_time_</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1aeade1a96f68c411b8096dffd0e9f431c" kind="variable"><name>current_time_</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1a61084c332445e6a485b500a6bc897328" kind="variable"><name>initialized_</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1ae9f2ecc7871208633e5a667afd1b9598" kind="variable"><name>entity_status_</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1af54d8bb944937ac0e2f3fc2fe0096086" kind="variable"><name>server_</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1a54dda70e79c138242f9c54543c82527f" kind="function"><name>ScenarioSimulator</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1a149a8a1c542a6473efc08a9513cd4760" kind="function"><name>~ScenarioSimulator</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1a60f2262362e607c6e662d6f0251fd30f" kind="function"><name>initialize</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1a2a4d2d67006a33f579244c1359cc8ada" kind="function"><name>updateFrame</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1a75d4e92e2b222b468383e4d81452ba84" kind="function"><name>updateEntityStatus</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1aee390b7756d1aa6a4f2aa1f15f84c656" kind="function"><name>spawnVehicleEntity</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1a778c82769303e651dbd38c97e442276b" kind="function"><name>spawnPedestrianEntity</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1a55b361aff18467e5c6697c4d53510e36" kind="function"><name>despawnEntity</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1ada241b5bda48458c4faf0a35ba03c8c0" kind="function"><name>attachDetectionSensor</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1aa2ba0e0ea190ca8bd9fb63be63f3ebb8" kind="function"><name>attachLidarSensor</name></member>
+    <member refid="classscenario__simulator_1_1ScenarioSimulator_1ac47f7ea8e2c8369a368c631806279e2d" kind="function"><name>updateSensorFrame</name></member>
+  </compound>
+  <compound refid="classscenario__simulator_1_1SensorSimulation" kind="class"><name>scenario_simulator::SensorSimulation</name>
+    <member refid="classscenario__simulator_1_1SensorSimulation_1a58e91e5606017213fbdfb4ef21254c70" kind="variable"><name>lidar_sensors_</name></member>
+    <member refid="classscenario__simulator_1_1SensorSimulation_1a004ae8db2dad13f1b52572aba5ac7592" kind="variable"><name>detection_sensors_</name></member>
+    <member refid="classscenario__simulator_1_1SensorSimulation_1a35e9f909649e6daa346515d37cb9877b" kind="variable"><name>clock_ptr_</name></member>
+    <member refid="classscenario__simulator_1_1SensorSimulation_1aac7dd3844ea583ff42afb6f14256e437" kind="function"><name>SensorSimulation</name></member>
+    <member refid="classscenario__simulator_1_1SensorSimulation_1ae00610d6f17ae8f311f94fa0be29e7c4" kind="function"><name>attachLidarSensor</name></member>
+    <member refid="classscenario__simulator_1_1SensorSimulation_1a50089267f31625c9510d187d75fc60d6" kind="function"><name>attachDetectionSensor</name></member>
+    <member refid="classscenario__simulator_1_1SensorSimulation_1ace0dc788b10e2f9d34b0df52b24e0de2" kind="function"><name>updateSensorFrame</name></member>
+  </compound>
+  <compound refid="classscenario__simulator_1_1SimulationRuntimeError" kind="class"><name>scenario_simulator::SimulationRuntimeError</name>
+    <member refid="classscenario__simulator_1_1SimulationRuntimeError_1a936283316058bb8cfa6d34236125ca28" kind="function"><name>SimulationRuntimeError</name></member>
+  </compound>
+  <compound refid="structscenario__simulator_1_1Triangle" kind="struct"><name>scenario_simulator::Triangle</name>
+    <member refid="structscenario__simulator_1_1Triangle_1a0bb5468e1f30f35ae8edc0ace7016463" kind="variable"><name>v0</name></member>
+    <member refid="structscenario__simulator_1_1Triangle_1a786b3a5ff7c8435c696104007f97964c" kind="variable"><name>v1</name></member>
+    <member refid="structscenario__simulator_1_1Triangle_1adfcfce7e14ff13def79080889a6c7a5e" kind="variable"><name>v2</name></member>
+  </compound>
+  <compound refid="structscenario__simulator_1_1Vertex" kind="struct"><name>scenario_simulator::Vertex</name>
+    <member refid="structscenario__simulator_1_1Vertex_1a153b2901dea5fe8d2a39cec11f8b6167" kind="variable"><name>x</name></member>
+    <member refid="structscenario__simulator_1_1Vertex_1a274a7f4a50ef2f2d3497a344587fc60c" kind="variable"><name>y</name></member>
+    <member refid="structscenario__simulator_1_1Vertex_1a69e40c10104cb75dbeb0fba83adbd55c" kind="variable"><name>z</name></member>
+  </compound>
+  <compound refid="namespacescenario__simulator" kind="namespace"><name>scenario_simulator</name>
+  </compound>
+  <compound refid="namespacescenario__simulator_1_1primitives" kind="namespace"><name>scenario_simulator::primitives</name>
+  </compound>
+  <compound refid="namespacescenario__simulator_1_1return__code" kind="namespace"><name>scenario_simulator::return_code</name>
+    <member refid="constants_8hpp_1a8b2bb0757aa13ab08b4f91338197948a" kind="variable"><name>SUCCESS</name></member>
+    <member refid="constants_8hpp_1a0d556e8f8d2f40a294d358e069f61485" kind="variable"><name>FAIL</name></member>
+  </compound>
+  <compound refid="constants_8hpp" kind="file"><name>constants.hpp</name>
+  </compound>
+  <compound refid="exception_8hpp" kind="file"><name>exception.hpp</name>
+  </compound>
+  <compound refid="scenario__simulator_8hpp" kind="file"><name>scenario_simulator.hpp</name>
+    <member refid="scenario__simulator_8hpp_1ab5bb9ba2f824c96b737d5b6d417a5930" kind="define"><name>SCENARIO_SIMULATOR_SCENARIO_SIMULATOR_COMPONENT_EXPORT</name></member>
+    <member refid="scenario__simulator_8hpp_1a4377ee617955aaaa5900627162fe0955" kind="define"><name>SCENARIO_SIMULATOR_SCENARIO_SIMULATOR_COMPONENT_IMPORT</name></member>
+    <member refid="scenario__simulator_8hpp_1a9e3c68d648a6c19ae69e36e9170c69c2" kind="define"><name>SCENARIO_SIMULATOR_SCENARIO_SIMULATOR_COMPONENT_PUBLIC</name></member>
+    <member refid="scenario__simulator_8hpp_1a35baa60b308a7ba07ed77664e4de3d79" kind="define"><name>SCENARIO_SIMULATOR_SCENARIO_SIMULATOR_COMPONENT_LOCAL</name></member>
+    <member refid="scenario__simulator_8hpp_1a907cbc8a2975e26b2fe27fa111adbda4" kind="define"><name>SCENARIO_SIMULATOR_SCENARIO_SIMULATOR_COMPONENT_PUBLIC_TYPE</name></member>
+  </compound>
+  <compound refid="detection__sensor_8hpp" kind="file"><name>detection_sensor.hpp</name>
+  </compound>
+  <compound refid="lidar__sensor_8hpp" kind="file"><name>lidar_sensor.hpp</name>
+  </compound>
+  <compound refid="raycaster_8hpp" kind="file"><name>raycaster.hpp</name>
+  </compound>
+  <compound refid="box_8hpp" kind="file"><name>box.hpp</name>
+  </compound>
+  <compound refid="primitive_8hpp" kind="file"><name>primitive.hpp</name>
+  </compound>
+  <compound refid="sensor__simulation_8hpp" kind="file"><name>sensor_simulation.hpp</name>
+  </compound>
+  <compound refid="scenario__simulator_8cpp" kind="file"><name>scenario_simulator.cpp</name>
+  </compound>
+  <compound refid="scenario__simulator__node_8cpp" kind="file"><name>scenario_simulator_node.cpp</name>
+    <member refid="scenario__simulator__node_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="detection__sensor_8cpp" kind="file"><name>detection_sensor.cpp</name>
+  </compound>
+  <compound refid="lidar__sensor_8cpp" kind="file"><name>lidar_sensor.cpp</name>
+  </compound>
+  <compound refid="raycaster_8cpp" kind="file"><name>raycaster.cpp</name>
+  </compound>
+  <compound refid="box_8cpp" kind="file"><name>box.cpp</name>
+  </compound>
+  <compound refid="primitive_8cpp" kind="file"><name>primitive.cpp</name>
+  </compound>
+  <compound refid="sensor__simulation_8cpp" kind="file"><name>sensor_simulation.cpp</name>
+  </compound>
+  <compound refid="dir_3a1bd3702eca397e6a02e435fa858e54" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/detection_sensor</name>
+  </compound>
+  <compound refid="dir_4117eee221ed85568c68a5edaa4ed180" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/src/sensor_simulation/detection_sensor</name>
+  </compound>
+  <compound refid="dir_20fa0c23d39d4fe3e5575b6965f865a4" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include</name>
+  </compound>
+  <compound refid="dir_ca7ed1fbfaeeeacae970333381c86906" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/src/sensor_simulation/lidar</name>
+  </compound>
+  <compound refid="dir_994073e56c3447403fbf31b5bb657719" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/lidar</name>
+  </compound>
+  <compound refid="dir_856edb957f469f2f6afd3d544cd9321a" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/src/sensor_simulation/primitives</name>
+  </compound>
+  <compound refid="dir_87770a22932f4093de0a381a9c74db0d" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation/primitives</name>
+  </compound>
+  <compound refid="dir_5569101f21e14836a81e1c1079d22a3e" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator</name>
+  </compound>
+  <compound refid="dir_b2d415c35017390a71dc83c78655cb99" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator</name>
+  </compound>
+  <compound refid="dir_0b4ae7c21424fa817b5ae1a4d99081c2" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/include/scenario_simulator/sensor_simulation</name>
+  </compound>
+  <compound refid="dir_523099071df9c48ae635fb065e22d598" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/src/sensor_simulation</name>
+  </compound>
+  <compound refid="dir_7487f41de01cca700e4de80b884d7106" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation</name>
+  </compound>
+  <compound refid="dir_783bd4747d0224350fd68d85ad2d4e5d" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/scenario_simulator/src</name>
+  </compound>
+</doxygenindex>

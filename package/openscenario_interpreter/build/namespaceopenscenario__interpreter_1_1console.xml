@@ -1,0 +1,241 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespaceopenscenario__interpreter_1_1console" kind="namespace" language="C++">
+    <compoundname>openscenario_interpreter::console</compoundname>
+    <innernamespace refid="namespaceopenscenario__interpreter_1_1console_1_1background">openscenario_interpreter::console::background</innernamespace>
+    <innernamespace refid="namespaceopenscenario__interpreter_1_1console_1_1foreground">openscenario_interpreter::console::foreground</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="is__console_8hpp_1aecb6dfc9579a3bb52429f2e76bf181ae" prot="public" static="no" mutable="no">
+        <type>auto</type>
+        <definition>auto openscenario_interpreter::console::is_console</definition>
+        <argsstring></argsstring>
+        <name>is_console</name>
+        <initializer>= [](const auto &amp; os)
+  {
+    if (os.rdbuf() == std::cout.rdbuf()) {
+      static const auto result {static_cast&lt;bool&gt;(::isatty(STDOUT_FILENO))};
+      return result;
+    } else if (os.rdbuf() == std::cerr.rdbuf()) {
+      static const auto result {static_cast&lt;bool&gt;(::isatty(STDERR_FILENO))};
+      return result;
+    } else {
+      return false;
+    }
+  }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/console/is_console.hpp" line="26" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/console/is_console.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="escape__sequence_8hpp_1abce993fddd2887072bf8ba28d4138632" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>auto &amp;</type>
+        <definition>auto&amp; openscenario_interpreter::console::escape_sequence</definition>
+        <argsstring>(std::basic_ostream&lt; Ts... &gt; &amp;os, const std::string &amp;code)</argsstring>
+        <name>escape_sequence</name>
+        <param>
+          <type>std::basic_ostream&lt; Ts... &gt; &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/console/escape_sequence.hpp" line="27" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/console/escape_sequence.hpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="escape__sequence_8hpp_1a91eda874d2643d77fe03b1a17280fe6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>openscenario_interpreter::console::BOILERPLATE</definition>
+        <argsstring>(&quot;[0m&quot;, reset)</argsstring>
+        <name>BOILERPLATE</name>
+        <param>
+          <type>&quot;[0m&quot;</type>
+        </param>
+        <param>
+          <type>reset</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/console/escape_sequence.hpp" line="38" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="escape__sequence_8hpp_1a562b6aebb3f74eba4dfaf8c1b54c37e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>openscenario_interpreter::console::BOILERPLATE</definition>
+        <argsstring>(&quot;[1m&quot;, bold)</argsstring>
+        <name>BOILERPLATE</name>
+        <param>
+          <type>&quot;[1m&quot;</type>
+        </param>
+        <param>
+          <type>bold</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/console/escape_sequence.hpp" line="39" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="escape__sequence_8hpp_1ad05af1ec8a50969a6473d67e2a9940af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>openscenario_interpreter::console::BOILERPLATE</definition>
+        <argsstring>(&quot;[2m&quot;, faint)</argsstring>
+        <name>BOILERPLATE</name>
+        <param>
+          <type>&quot;[2m&quot;</type>
+        </param>
+        <param>
+          <type>faint</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/console/escape_sequence.hpp" line="40" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="escape__sequence_8hpp_1a13dc6547f0b3f3cf5dd5fed1d8f67e51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>openscenario_interpreter::console::BOILERPLATE</definition>
+        <argsstring>(&quot;[3m&quot;, italic)</argsstring>
+        <name>BOILERPLATE</name>
+        <param>
+          <type>&quot;[3m&quot;</type>
+        </param>
+        <param>
+          <type>italic</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/console/escape_sequence.hpp" line="41" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="escape__sequence_8hpp_1abfe546b275ae9db9c6c081a0419c3463" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>openscenario_interpreter::console::BOILERPLATE</definition>
+        <argsstring>(&quot;[4m&quot;, underline)</argsstring>
+        <name>BOILERPLATE</name>
+        <param>
+          <type>&quot;[4m&quot;</type>
+        </param>
+        <param>
+          <type>underline</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/console/escape_sequence.hpp" line="42" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="escape__sequence_8hpp_1a6fd971de6aad7e465c68a5fb7136e7f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>openscenario_interpreter::console::BOILERPLATE</definition>
+        <argsstring>(&quot;[5m&quot;, slow_blink)</argsstring>
+        <name>BOILERPLATE</name>
+        <param>
+          <type>&quot;[5m&quot;</type>
+        </param>
+        <param>
+          <type>slow_blink</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/console/escape_sequence.hpp" line="43" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="escape__sequence_8hpp_1af36de114a28ae935ed5219bfa514356c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>openscenario_interpreter::console::BOILERPLATE</definition>
+        <argsstring>(&quot;[6m&quot;, rapid_blink)</argsstring>
+        <name>BOILERPLATE</name>
+        <param>
+          <type>&quot;[6m&quot;</type>
+        </param>
+        <param>
+          <type>rapid_blink</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/console/escape_sequence.hpp" line="44" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="escape__sequence_8hpp_1a49e5d354b317d06fef31fad12c6a6a26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>openscenario_interpreter::console::BOILERPLATE</definition>
+        <argsstring>(&quot;[7m&quot;, reverse)</argsstring>
+        <name>BOILERPLATE</name>
+        <param>
+          <type>&quot;[7m&quot;</type>
+        </param>
+        <param>
+          <type>reverse</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/console/escape_sequence.hpp" line="45" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="escape__sequence_8hpp_1ab377e0a22760626ef0d1977f21de8265" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>openscenario_interpreter::console::BOILERPLATE</definition>
+        <argsstring>(&quot;[8m&quot;, conceal)</argsstring>
+        <name>BOILERPLATE</name>
+        <param>
+          <type>&quot;[8m&quot;</type>
+        </param>
+        <param>
+          <type>conceal</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/console/escape_sequence.hpp" line="46" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/console/escape_sequence.hpp" line="25" column="1"/>
+  </compounddef>
+</doxygen>

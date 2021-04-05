@@ -1,0 +1,610 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classsimulation__api_1_1entity_1_1EntityBase" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>simulation_api::entity::EntityBase</compoundname>
+    <derivedcompoundref refid="classsimulation__api_1_1entity_1_1PedestrianEntity" prot="public" virt="non-virtual">simulation_api::entity::PedestrianEntity</derivedcompoundref>
+    <derivedcompoundref refid="classsimulation__api_1_1entity_1_1VehicleEntity" prot="public" virt="non-virtual">simulation_api::entity::VehicleEntity</derivedcompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classsimulation__api_1_1entity_1_1EntityBase_1acdaf1e581d0135f5084a41b9b59c8feb" prot="public" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string simulation_api::entity::EntityBase::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="54" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimulation__api_1_1entity_1_1EntityBase_1ac4f0f8d2f6b42114273a0cb730681a93" prot="public" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string simulation_api::entity::EntityBase::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="55" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classsimulation__api_1_1entity_1_1EntityBase_1aa3d88bca49960181f90566261e27b752" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool simulation_api::entity::EntityBase::visibility_</definition>
+        <argsstring></argsstring>
+        <name>visibility_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="102" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimulation__api_1_1entity_1_1EntityBase_1a702c99d14e4a5e74029170d0ae234271" prot="protected" static="no" mutable="no">
+        <type>boost::optional&lt; openscenario_msgs::msg::LaneletPose &gt;</type>
+        <definition>boost::optional&lt;openscenario_msgs::msg::LaneletPose&gt; simulation_api::entity::EntityBase::next_waypoint_</definition>
+        <argsstring></argsstring>
+        <name>next_waypoint_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="103" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimulation__api_1_1entity_1_1EntityBase_1a612475f9f8b5ae27f3512ae6ec60e5ea" prot="protected" static="no" mutable="no">
+        <type>std::queue&lt; openscenario_msgs::msg::LaneletPose &gt;</type>
+        <definition>std::queue&lt;openscenario_msgs::msg::LaneletPose&gt; simulation_api::entity::EntityBase::waypoints_</definition>
+        <argsstring></argsstring>
+        <name>waypoints_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="104" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimulation__api_1_1entity_1_1EntityBase_1aa3873bb1d76d1307abbee2e92df91cb3" prot="protected" static="no" mutable="no">
+        <type>boost::optional&lt; openscenario_msgs::msg::EntityStatus &gt;</type>
+        <definition>boost::optional&lt;openscenario_msgs::msg::EntityStatus&gt; simulation_api::entity::EntityBase::status_</definition>
+        <argsstring></argsstring>
+        <name>status_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="105" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimulation__api_1_1entity_1_1EntityBase_1a31afebd5f1707731118c8ebe56d3de6c" prot="protected" static="no" mutable="no">
+        <type>boost::optional&lt; double &gt;</type>
+        <definition>boost::optional&lt;double&gt; simulation_api::entity::EntityBase::linear_jerk_</definition>
+        <argsstring></argsstring>
+        <name>linear_jerk_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="106" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimulation__api_1_1entity_1_1EntityBase_1ae9bbfe57d91da4a201c963f607073403" prot="protected" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classhdmap__utils_1_1HdMapUtils" kindref="compound">hdmap_utils::HdMapUtils</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;hdmap_utils::HdMapUtils&gt; simulation_api::entity::EntityBase::hdmap_utils_ptr_</definition>
+        <argsstring></argsstring>
+        <name>hdmap_utils_ptr_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="107" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimulation__api_1_1entity_1_1EntityBase_1ae299cc6c4f397b857c83c8b09252174f" prot="protected" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classsimulation__api_1_1TrafficLightManager" kindref="compound">simulation_api::TrafficLightManager</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;simulation_api::TrafficLightManager&gt; simulation_api::entity::EntityBase::traffic_light_manager_</definition>
+        <argsstring></argsstring>
+        <name>traffic_light_manager_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="108" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimulation__api_1_1entity_1_1EntityBase_1a8a1e3acbfaa3d727efaa6e0d5f82af82" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool simulation_api::entity::EntityBase::verbose_</definition>
+        <argsstring></argsstring>
+        <name>verbose_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="109" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimulation__api_1_1entity_1_1EntityBase_1ac330766889f63e9c16cc894d5cefacf4" prot="protected" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, openscenario_msgs::msg::EntityStatus &gt;</type>
+        <definition>std::unordered_map&lt;std::string, openscenario_msgs::msg::EntityStatus&gt; simulation_api::entity::EntityBase::other_status_</definition>
+        <argsstring></argsstring>
+        <name>other_status_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="110" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimulation__api_1_1entity_1_1EntityBase_1a8f98c1f039048d518899c9f15552c31b" prot="protected" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, openscenario_msgs::msg::EntityType &gt;</type>
+        <definition>std::unordered_map&lt;std::string, openscenario_msgs::msg::EntityType&gt; simulation_api::entity::EntityBase::entity_type_list_</definition>
+        <argsstring></argsstring>
+        <name>entity_type_list_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="111" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimulation__api_1_1entity_1_1EntityBase_1a6c75872512b2ba998b0793a4a6e0fd30" prot="protected" static="no" mutable="no">
+        <type>boost::optional&lt; double &gt;</type>
+        <definition>boost::optional&lt;double&gt; simulation_api::entity::EntityBase::stand_still_duration_</definition>
+        <argsstring></argsstring>
+        <name>stand_still_duration_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="112" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimulation__api_1_1entity_1_1EntityBase_1a4749953622b26118e35be29f0e45a9e5" prot="protected" static="no" mutable="no">
+        <type>visualization_msgs::msg::MarkerArray</type>
+        <definition>visualization_msgs::msg::MarkerArray simulation_api::entity::EntityBase::current_marker_</definition>
+        <argsstring></argsstring>
+        <name>current_marker_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="113" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1a4d9b66db3e033514e1b92ed877e23420" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>simulation_api::entity::EntityBase::EntityBase</definition>
+        <argsstring>(std::string type, std::string name, const openscenario_msgs::msg::EntityStatus &amp;initial_state)</argsstring>
+        <name>EntityBase</name>
+        <param>
+          <type>std::string</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const openscenario_msgs::msg::EntityStatus &amp;</type>
+          <declname>initial_state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="49" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/entity/entity_base.cpp" bodystart="29" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1a048389c46d5da0d124d880ebffbffb5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>simulation_api::entity::EntityBase::EntityBase</definition>
+        <argsstring>(std::string type, std::string name)</argsstring>
+        <name>EntityBase</name>
+        <param>
+          <type>std::string</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="52" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/entity/entity_base.cpp" bodystart="39" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1a9bdcb4a8ea6d566fa7e1aaa8941f72fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual simulation_api::entity::EntityBase::~EntityBase</definition>
+        <argsstring>()=default</argsstring>
+        <name>~EntityBase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="53" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1a87a08144836ee90d33fa23e489ef2a6d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const openscenario_msgs::msg::EntityStatus</type>
+        <definition>const openscenario_msgs::msg::EntityStatus simulation_api::entity::EntityBase::getStatus</definition>
+        <argsstring>() const</argsstring>
+        <name>getStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="56" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/entity/entity_base.cpp" bodystart="82" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1ad8ffe78d364a74abec7ab4b812a91bff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool simulation_api::entity::EntityBase::setStatus</definition>
+        <argsstring>(const openscenario_msgs::msg::EntityStatus &amp;status)</argsstring>
+        <name>setStatus</name>
+        <param>
+          <type>const openscenario_msgs::msg::EntityStatus &amp;</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="57" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/entity/entity_base.cpp" bodystart="90" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1ab7e4dc8bdb337208f9c2b93767e07887" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool simulation_api::entity::EntityBase::setVisibility</definition>
+        <argsstring>(bool visibility)</argsstring>
+        <name>setVisibility</name>
+        <param>
+          <type>bool</type>
+          <declname>visibility</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="58" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/entity/entity_base.cpp" bodystart="97" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1a9ce056f6c963d40683a6f2b497c839d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool simulation_api::entity::EntityBase::getVisibility</definition>
+        <argsstring>()</argsstring>
+        <name>getVisibility</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="59" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/entity/entity_base.cpp" bodystart="103" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1aad09e71fa77eeefcd26e3dd4e1f008a6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_api::entity::EntityBase::setHdMapUtils</definition>
+        <argsstring>(std::shared_ptr&lt; hdmap_utils::HdMapUtils &gt; ptr)</argsstring>
+        <name>setHdMapUtils</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classhdmap__utils_1_1HdMapUtils" kindref="compound">hdmap_utils::HdMapUtils</ref> &gt;</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="60" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1aca660adbcd1d0ca461666f3ee6cfa3ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_api::entity::EntityBase::setTrafficLightManager</definition>
+        <argsstring>(std::shared_ptr&lt; simulation_api::TrafficLightManager &gt; ptr)</argsstring>
+        <name>setTrafficLightManager</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classsimulation__api_1_1TrafficLightManager" kindref="compound">simulation_api::TrafficLightManager</ref> &gt;</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="64" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="64" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1abcdc68f7ec25eafadb148adb9662b0ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void simulation_api::entity::EntityBase::onUpdate</definition>
+        <argsstring>(double current_time, double step_time)=0</argsstring>
+        <name>onUpdate</name>
+        <reimplementedby refid="classsimulation__api_1_1entity_1_1PedestrianEntity_1aeb10a5d84f39f413009f0a5581874f11">onUpdate</reimplementedby>
+        <reimplementedby refid="classsimulation__api_1_1entity_1_1VehicleEntity_1a038f1356eac08ff6ccf889a46f89d811">onUpdate</reimplementedby>
+        <reimplementedby refid="classsimulation__api_1_1entity_1_1EgoEntity_1acc1b87dbab80d0d8f3e2ca9c342a89cd">onUpdate</reimplementedby>
+        <param>
+          <type>double</type>
+          <declname>current_time</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>step_time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="68" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1ad3717835d8a38165128352bc60e94d54" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool simulation_api::entity::EntityBase::statusSetted</definition>
+        <argsstring>() const</argsstring>
+        <name>statusSetted</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="69" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="69" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1ae2e16b7d6ba1e6c157004d413fe27d4f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_api::entity::EntityBase::setVerbose</definition>
+        <argsstring>(bool verbose)</argsstring>
+        <name>setVerbose</name>
+        <param>
+          <type>bool</type>
+          <declname>verbose</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="76" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="76" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1a319acf04dcc0e6a3374edde8e38a91e5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_api::entity::EntityBase::setEntityTypeList</definition>
+        <argsstring>(const std::unordered_map&lt; std::string, openscenario_msgs::msg::EntityType &gt; &amp;entity_type_list)</argsstring>
+        <name>setEntityTypeList</name>
+        <param>
+          <type>const std::unordered_map&lt; std::string, openscenario_msgs::msg::EntityType &gt; &amp;</type>
+          <declname>entity_type_list</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="80" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="80" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1a72eaf1c520db03444eced88a54a6149d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_api::entity::EntityBase::setOtherStatus</definition>
+        <argsstring>(const std::unordered_map&lt; std::string, openscenario_msgs::msg::EntityStatus &gt; &amp;status)</argsstring>
+        <name>setOtherStatus</name>
+        <param>
+          <type>const std::unordered_map&lt; std::string, openscenario_msgs::msg::EntityStatus &gt; &amp;</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="86" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/entity/entity_base.cpp" bodystart="70" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1a628066bd8ed34503c64c140d42bed438" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_api::entity::EntityBase::updateStandStillDuration</definition>
+        <argsstring>(double step_time)</argsstring>
+        <name>updateStandStillDuration</name>
+        <param>
+          <type>double</type>
+          <declname>step_time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="89" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/entity/entity_base.cpp" bodystart="52" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1a2da9f98b86351d1e74cbbb84307febb3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; double &gt;</type>
+        <definition>boost::optional&lt; double &gt; simulation_api::entity::EntityBase::getStandStillDuration</definition>
+        <argsstring>() const</argsstring>
+        <name>getStandStillDuration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="90" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/entity/entity_base.cpp" bodystart="47" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1aee40768658da440f710b666bb79e9be5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>const openscenario_msgs::msg::BoundingBox</type>
+        <definition>virtual const openscenario_msgs::msg::BoundingBox simulation_api::entity::EntityBase::getBoundingBox</definition>
+        <argsstring>() const =0</argsstring>
+        <name>getBoundingBox</name>
+        <reimplementedby refid="classsimulation__api_1_1entity_1_1PedestrianEntity_1adb0951141464602867cd849a8e99623b">getBoundingBox</reimplementedby>
+        <reimplementedby refid="classsimulation__api_1_1entity_1_1VehicleEntity_1ad74f737970ebc0bcac076676961244b0">getBoundingBox</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="91" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1af6f4956a0587012a1376d8063e884479" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>const std::string</type>
+        <definition>virtual const std::string simulation_api::entity::EntityBase::getCurrentAction</definition>
+        <argsstring>() const =0</argsstring>
+        <name>getCurrentAction</name>
+        <reimplementedby refid="classsimulation__api_1_1entity_1_1PedestrianEntity_1a9f23a248b29776c30a51f6f1bf3fdc05">getCurrentAction</reimplementedby>
+        <reimplementedby refid="classsimulation__api_1_1entity_1_1VehicleEntity_1aa40e4853640d442a429bc41af186ccb6">getCurrentAction</reimplementedby>
+        <reimplementedby refid="classsimulation__api_1_1entity_1_1EgoEntity_1aa6f1b00c9dff2e73050510b641987d0e">getCurrentAction</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="92" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1a33f3595c4cbe684e43d642d035d6f835" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_api::entity::EntityBase::stopAtEndOfRoad</definition>
+        <argsstring>()</argsstring>
+        <name>stopAtEndOfRoad</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="93" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/src/entity/entity_base.cpp" bodystart="108" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1aa461bc65426eac0ddb28ebad877f9990" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>boost::optional&lt; double &gt;</type>
+        <definition>boost::optional&lt;double&gt; simulation_api::entity::EntityBase::getLinearJerk</definition>
+        <argsstring>() const</argsstring>
+        <name>getLinearJerk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="94" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="94" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1entity_1_1EntityBase_1aaf42201489a5c03e392eee7d6a4a703d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void simulation_api::entity::EntityBase::requestAssignRoute</definition>
+        <argsstring>(const std::vector&lt; openscenario_msgs::msg::LaneletPose &gt; &amp;waypoints)=0</argsstring>
+        <name>requestAssignRoute</name>
+        <reimplementedby refid="classsimulation__api_1_1entity_1_1PedestrianEntity_1a83f2580a68d1d46d19aa6335f3c72eb6">requestAssignRoute</reimplementedby>
+        <reimplementedby refid="classsimulation__api_1_1entity_1_1VehicleEntity_1a4ce4e3893f525d50b15f968bb562d20a">requestAssignRoute</reimplementedby>
+        <reimplementedby refid="classsimulation__api_1_1entity_1_1EgoEntity_1abec64f91396638ce5fa9fc0e92b390e3">requestAssignRoute</reimplementedby>
+        <param>
+          <type>const std::vector&lt; openscenario_msgs::msg::LaneletPose &gt; &amp;</type>
+          <declname>waypoints</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="98" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="51">
+        <label>simulation_api::entity::PedestrianEntity</label>
+        <link refid="classsimulation__api_1_1entity_1_1PedestrianEntity"/>
+        <childnode refid="50" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>simulation_api::entity::EgoEntity</label>
+        <link refid="classsimulation__api_1_1entity_1_1EgoEntity"/>
+        <childnode refid="52" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>simulation_api::entity::EntityBase</label>
+        <link refid="classsimulation__api_1_1entity_1_1EntityBase"/>
+      </node>
+      <node id="52">
+        <label>simulation_api::entity::VehicleEntity</label>
+        <link refid="classsimulation__api_1_1entity_1_1VehicleEntity"/>
+        <childnode refid="50" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" line="47" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/entity/entity_base.hpp" bodystart="46" bodyend="114"/>
+    <listofallmembers>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1a4749953622b26118e35be29f0e45a9e5" prot="protected" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>current_marker_</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1a8f98c1f039048d518899c9f15552c31b" prot="protected" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>entity_type_list_</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1a4d9b66db3e033514e1b92ed877e23420" prot="public" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>EntityBase</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1a048389c46d5da0d124d880ebffbffb5f" prot="public" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>EntityBase</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1aee40768658da440f710b666bb79e9be5" prot="public" virt="pure-virtual"><scope>simulation_api::entity::EntityBase</scope><name>getBoundingBox</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1af6f4956a0587012a1376d8063e884479" prot="public" virt="pure-virtual"><scope>simulation_api::entity::EntityBase</scope><name>getCurrentAction</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1aa461bc65426eac0ddb28ebad877f9990" prot="public" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>getLinearJerk</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1a2da9f98b86351d1e74cbbb84307febb3" prot="public" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>getStandStillDuration</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1a87a08144836ee90d33fa23e489ef2a6d" prot="public" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>getStatus</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1a9ce056f6c963d40683a6f2b497c839d6" prot="public" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>getVisibility</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1ae9bbfe57d91da4a201c963f607073403" prot="protected" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>hdmap_utils_ptr_</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1a31afebd5f1707731118c8ebe56d3de6c" prot="protected" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>linear_jerk_</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1ac4f0f8d2f6b42114273a0cb730681a93" prot="public" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>name</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1a702c99d14e4a5e74029170d0ae234271" prot="protected" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>next_waypoint_</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1abcdc68f7ec25eafadb148adb9662b0ac" prot="public" virt="pure-virtual"><scope>simulation_api::entity::EntityBase</scope><name>onUpdate</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1ac330766889f63e9c16cc894d5cefacf4" prot="protected" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>other_status_</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1aaf42201489a5c03e392eee7d6a4a703d" prot="public" virt="pure-virtual"><scope>simulation_api::entity::EntityBase</scope><name>requestAssignRoute</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1a319acf04dcc0e6a3374edde8e38a91e5" prot="public" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>setEntityTypeList</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1aad09e71fa77eeefcd26e3dd4e1f008a6" prot="public" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>setHdMapUtils</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1a72eaf1c520db03444eced88a54a6149d" prot="public" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>setOtherStatus</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1ad8ffe78d364a74abec7ab4b812a91bff" prot="public" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>setStatus</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1aca660adbcd1d0ca461666f3ee6cfa3ba" prot="public" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>setTrafficLightManager</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1ae2e16b7d6ba1e6c157004d413fe27d4f" prot="public" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>setVerbose</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1ab7e4dc8bdb337208f9c2b93767e07887" prot="public" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>setVisibility</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1a6c75872512b2ba998b0793a4a6e0fd30" prot="protected" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>stand_still_duration_</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1aa3873bb1d76d1307abbee2e92df91cb3" prot="protected" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>status_</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1ad3717835d8a38165128352bc60e94d54" prot="public" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>statusSetted</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1a33f3595c4cbe684e43d642d035d6f835" prot="public" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>stopAtEndOfRoad</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1ae299cc6c4f397b857c83c8b09252174f" prot="protected" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>traffic_light_manager_</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1acdaf1e581d0135f5084a41b9b59c8feb" prot="public" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>type</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1a628066bd8ed34503c64c140d42bed438" prot="public" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>updateStandStillDuration</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1a8a1e3acbfaa3d727efaa6e0d5f82af82" prot="protected" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>verbose_</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1aa3d88bca49960181f90566261e27b752" prot="protected" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>visibility_</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1a612475f9f8b5ae27f3512ae6ec60e5ea" prot="protected" virt="non-virtual"><scope>simulation_api::entity::EntityBase</scope><name>waypoints_</name></member>
+      <member refid="classsimulation__api_1_1entity_1_1EntityBase_1a9bdcb4a8ea6d566fa7e1aaa8941f72fa" prot="public" virt="virtual"><scope>simulation_api::entity::EntityBase</scope><name>~EntityBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

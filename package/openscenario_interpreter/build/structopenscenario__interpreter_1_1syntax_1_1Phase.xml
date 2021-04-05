@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structopenscenario__interpreter_1_1syntax_1_1Phase" kind="struct" language="C++" prot="public">
+    <compoundname>openscenario_interpreter::syntax::Phase</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1Phase_1ad412b98407fa40462dc7ab7670f821ff" prot="public" static="no" mutable="no">
+        <type>const String</type>
+        <definition>const String openscenario_interpreter::syntax::Phase::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signals.hpp" line="62" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signals.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1Phase_1a0739e54e267d6345ff4e9397c6abf9b2" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structopenscenario__interpreter_1_1syntax_1_1Double" kindref="compound">Double</ref></type>
+        <definition>const Double openscenario_interpreter::syntax::Phase::duration</definition>
+        <argsstring></argsstring>
+        <name>duration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signals.hpp" line="64" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signals.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1Phase_1ac0c266c14651181c4e35a345f15c00e9" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalState" kindref="compound">TrafficSignalState</ref></type>
+        <definition>const TrafficSignalState openscenario_interpreter::syntax::Phase::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signals.hpp" line="66" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signals.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1Phase_1ab6de4596e7c5093faeddb4c6b3a75ea1" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Node</type>
+          </param>
+          <param>
+            <type>typename <ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref></type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>openscenario_interpreter::syntax::Phase::Phase</definition>
+        <argsstring>(const Node &amp;node, Scope &amp;outer_scope)</argsstring>
+        <name>Phase</name>
+        <param>
+          <type>const Node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref> &amp;</type>
+          <declname>outer_scope</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signals.hpp" line="69" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signals.hpp" bodystart="69" bodyend="75"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="509">
+        <label>openscenario_interpreter::syntax::Double</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Double"/>
+        <childnode refid="510" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="510">
+        <label>std_msgs::msg::Float64</label>
+      </node>
+      <node id="508">
+        <label>openscenario_interpreter::syntax::TrafficSignalState</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalState"/>
+      </node>
+      <node id="507">
+        <label>openscenario_interpreter::syntax::Phase</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Phase"/>
+        <childnode refid="508" relation="usage">
+          <edgelabel>state</edgelabel>
+        </childnode>
+        <childnode refid="509" relation="usage">
+          <edgelabel>duration</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signals.hpp" line="61" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signals.hpp" bodystart="60" bodyend="76"/>
+    <listofallmembers>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Phase_1a0739e54e267d6345ff4e9397c6abf9b2" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Phase</scope><name>duration</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Phase_1ad412b98407fa40462dc7ab7670f821ff" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Phase</scope><name>name</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Phase_1ab6de4596e7c5093faeddb4c6b3a75ea1" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Phase</scope><name>Phase</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Phase_1ac0c266c14651181c4e35a345f15c00e9" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Phase</scope><name>state</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

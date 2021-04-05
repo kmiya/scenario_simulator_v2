@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classsimulation__api_1_1traffic_1_1TraffiModuleBase" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>simulation_api::traffic::TraffiModuleBase</compoundname>
+    <derivedcompoundref refid="classsimulation__api_1_1traffic_1_1TrafficSink" prot="public" virt="non-virtual">simulation_api::traffic::TrafficSink</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsimulation__api_1_1traffic_1_1TraffiModuleBase_1a935fcd2ea7c2d28b2d6c2bf934725109" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>simulation_api::traffic::TraffiModuleBase::TraffiModuleBase</definition>
+        <argsstring>()</argsstring>
+        <name>TraffiModuleBase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic/traffic_module_base.hpp" line="36" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic/traffic_module_base.hpp" bodystart="36" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimulation__api_1_1traffic_1_1TraffiModuleBase_1a1164a98ff1ead65ef0160e576cd86cac" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void simulation_api::traffic::TraffiModuleBase::execute</definition>
+        <argsstring>()=0</argsstring>
+        <name>execute</name>
+        <reimplementedby refid="classsimulation__api_1_1traffic_1_1TrafficSink_1a0ac36b34cdcc53f3b0dce8c501888cfb">execute</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic/traffic_module_base.hpp" line="37" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="244">
+        <label>simulation_api::traffic::TrafficSink</label>
+        <link refid="classsimulation__api_1_1traffic_1_1TrafficSink"/>
+        <childnode refid="243" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="243">
+        <label>simulation_api::traffic::TraffiModuleBase</label>
+        <link refid="classsimulation__api_1_1traffic_1_1TraffiModuleBase"/>
+      </node>
+    </inheritancegraph>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic/traffic_module_base.hpp" line="34" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_api/include/simulation_api/traffic/traffic_module_base.hpp" bodystart="33" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classsimulation__api_1_1traffic_1_1TraffiModuleBase_1a1164a98ff1ead65ef0160e576cd86cac" prot="public" virt="pure-virtual"><scope>simulation_api::traffic::TraffiModuleBase</scope><name>execute</name></member>
+      <member refid="classsimulation__api_1_1traffic_1_1TraffiModuleBase_1a935fcd2ea7c2d28b2d6c2bf934725109" prot="public" virt="non-virtual"><scope>simulation_api::traffic::TraffiModuleBase</scope><name>TraffiModuleBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structopenscenario__interpreter_1_1Error" kind="struct" language="C++" prot="public">
+    <compoundname>openscenario_interpreter::Error</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">runtime_error</basecompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1ConnectionError" prot="public" virt="non-virtual">openscenario_interpreter::ConnectionError</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1ImplementationFault" prot="public" virt="non-virtual">openscenario_interpreter::ImplementationFault</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1SemanticError" prot="public" virt="non-virtual">openscenario_interpreter::SemanticError</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1SyntaxError" prot="public" virt="non-virtual">openscenario_interpreter::SyntaxError</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1Error_1aba06fc48df6088983480f8835b2debf0" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>openscenario_interpreter::Error::Error</definition>
+        <argsstring>(Ts &amp;&amp;... xs)</argsstring>
+        <name>Error</name>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" line="39" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" bodystart="39" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="237">
+        <label>openscenario_interpreter::SyntaxError</label>
+        <link refid="structopenscenario__interpreter_1_1SyntaxError"/>
+        <childnode refid="232" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="233">
+        <label>std::runtime_error</label>
+      </node>
+      <node id="235">
+        <label>openscenario_interpreter::ImplementationFault</label>
+        <link refid="structopenscenario__interpreter_1_1ImplementationFault"/>
+        <childnode refid="232" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="232">
+        <label>openscenario_interpreter::Error</label>
+        <link refid="structopenscenario__interpreter_1_1Error"/>
+        <childnode refid="233" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="236">
+        <label>openscenario_interpreter::SemanticError</label>
+        <link refid="structopenscenario__interpreter_1_1SemanticError"/>
+        <childnode refid="232" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="234">
+        <label>openscenario_interpreter::ConnectionError</label>
+        <link refid="structopenscenario__interpreter_1_1ConnectionError"/>
+        <childnode refid="232" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="239">
+        <label>std::runtime_error</label>
+      </node>
+      <node id="238">
+        <label>openscenario_interpreter::Error</label>
+        <link refid="structopenscenario__interpreter_1_1Error"/>
+        <childnode refid="239" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" line="37" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" bodystart="35" bodyend="43"/>
+    <listofallmembers>
+      <member refid="structopenscenario__interpreter_1_1Error_1aba06fc48df6088983480f8835b2debf0" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Error</scope><name>Error</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

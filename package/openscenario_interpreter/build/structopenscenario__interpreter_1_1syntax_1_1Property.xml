@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structopenscenario__interpreter_1_1syntax_1_1Property" kind="struct" language="C++" prot="public">
+    <compoundname>openscenario_interpreter::syntax::Property</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structopenscenario__interpreter_1_1syntax_1_1Property_1a738fcb4d403cdaf65751791aff2bff58" prot="public" static="no">
+        <type>String</type>
+        <definition>using openscenario_interpreter::syntax::Property::Name =  String</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/property.hpp" line="36" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/property.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structopenscenario__interpreter_1_1syntax_1_1Property_1a2cf3ba1e3bd0716c630e9c212ff5aaa4" prot="public" static="no">
+        <type>String</type>
+        <definition>using openscenario_interpreter::syntax::Property::Value =  String</definition>
+        <argsstring></argsstring>
+        <name>Value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/property.hpp" line="40" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/property.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1Property_1a2a0fcfcd2ab4ea5f2a22ec1cebfa8e78" prot="public" static="no" mutable="no">
+        <type>const Name</type>
+        <definition>const Name openscenario_interpreter::syntax::Property::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/property.hpp" line="38" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/property.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1Property_1a9d94218a8a9f072a8ebaacc0ee288259" prot="public" static="no" mutable="no">
+        <type>const Value</type>
+        <definition>const Value openscenario_interpreter::syntax::Property::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/property.hpp" line="42" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/property.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1Property_1a5108d4e01ffd866e0e9d00b21eb1fdb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>openscenario_interpreter::syntax::Property::Property</definition>
+        <argsstring>()=default</argsstring>
+        <name>Property</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/property.hpp" line="63" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1Property_1a9d6504dbc82620bb0cdf074195866f2c" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Node</type>
+          </param>
+          <param>
+            <type>typename <ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref></type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>openscenario_interpreter::syntax::Property::Property</definition>
+        <argsstring>(const Node &amp;node, Scope &amp;outer_scope)</argsstring>
+        <name>Property</name>
+        <param>
+          <type>const Node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref> &amp;</type>
+          <declname>outer_scope</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/property.hpp" line="69" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/property.hpp" bodystart="69" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1Property_1a0de450d47ca5e3b4cdb75b21f7efc0c9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>openscenario_interpreter::syntax::Property::operator bool</definition>
+        <argsstring>() const</argsstring>
+        <name>operator bool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/property.hpp" line="74" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/property.hpp" bodystart="74" bodyend="81"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/property.hpp" line="35" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/property.hpp" bodystart="34" bodyend="82"/>
+    <listofallmembers>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Property_1a738fcb4d403cdaf65751791aff2bff58" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Property</scope><name>Name</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Property_1a2a0fcfcd2ab4ea5f2a22ec1cebfa8e78" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Property</scope><name>name</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Property_1a0de450d47ca5e3b4cdb75b21f7efc0c9" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Property</scope><name>operator bool</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Property_1a5108d4e01ffd866e0e9d00b21eb1fdb8" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Property</scope><name>Property</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Property_1a9d6504dbc82620bb0cdf074195866f2c" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Property</scope><name>Property</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Property_1a2cf3ba1e3bd0716c630e9c212ff5aaa4" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Property</scope><name>Value</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Property_1a9d94218a8a9f072a8ebaacc0ee288259" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Property</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -14,7 +14,7 @@
     
     
       
-        <title>ZeroMQ Inter-Process Comunication - Scenario testing framework for Autoware</title>
+        <title>Communication with simulator and interpreter - Scenario testing framework for Autoware</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#zeromq-inter-process-comunication" class="md-skip">
+        <a href="#communication-with-simulator-and-interpreter" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ZeroMQ Inter-Process Comunication
+              Communication with simulator and interpreter
             
           </span>
         </div>
@@ -496,12 +496,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          ZeroMQ Inter-Process Comunication
+          Communication with simulator and interpreter
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        ZeroMQ Inter-Process Comunication
+        Communication with simulator and interpreter
       </a>
       
         
@@ -528,6 +528,19 @@
   <a href="#schema-of-the-message" class="md-nav__link">
     Schema of the message
   </a>
+  
+    <nav class="md-nav" aria-label="Schema of the message">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protobuf-definition" class="md-nav__link">
+    Protobuf Definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -638,6 +651,19 @@
     Schema of the message
   </a>
   
+    <nav class="md-nav" aria-label="Schema of the message">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protobuf-definition" class="md-nav__link">
+    Protobuf Definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -657,14 +683,17 @@
                   </a>
                 
                 
-                <h1 id="zeromq-inter-process-comunication">ZeroMQ Inter-Process Comunication<a class="headerlink" href="#zeromq-inter-process-comunication" title="Permanent link">#</a></h1>
+                <h1 id="communication-with-simulator-and-interpreter">Communication with simulator and interpreter<a class="headerlink" href="#communication-with-simulator-and-interpreter" title="Permanent link">#</a></h1>
+<p>We use ZeroMQ Inter-Process communication with simulator and interpreter.
+All communications are synchronized.</p>
 <h2 id="what-is-zeromq">What is ZeroMQ<a class="headerlink" href="#what-is-zeromq" title="Permanent link">#</a></h2>
 <p><a href="https://zeromq.org/">ZeroMQ</a> is an open-source messaging library, it supports TCP/UDP/Intra-Process messaging communication.<br />
 We use <a href="https://zeromq.org/">ZeroMQ</a> in order to communicate with the simulator and interpreter.
 We use Request/Reply socket in order to run the simulator synchronously.  </p>
 <h2 id="schema-of-the-message">Schema of the message<a class="headerlink" href="#schema-of-the-message" title="Permanent link">#</a></h2>
 <p>scenario_simulator::API send the request to the simulator, Requests are serialized by using <a href="https://developers.google.com/protocol-buffers">protobuf</a> and use different port in order to communicate with the simulator.  </p>
-<p>Ports and protobuf schemas are below.  </p>
+<h3 id="protobuf-definition">Protobuf Definition<a class="headerlink" href="#protobuf-definition" title="Permanent link">#</a></h3>
+<p><a href="../../proto_doc/protobuf/">Protobuf Definition</a> is here. all datas are serialized as string and send via TCP by using ZeroMQ.</p>
                 
               
               

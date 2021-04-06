@@ -486,7 +486,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../../design/ZeroMQ/" class="md-nav__link">
-        ZeroMQ Inter-Process Comunication
+        Communication with simulator and interpreter
       </a>
     </li>
   
@@ -934,7 +934,7 @@
         <span class="k">auto</span> <span class="n">child</span> <span class="o">=</span>
           <span class="p">[</span><span class="o">&amp;</span><span class="p">]()</span>
           <span class="p">{</span>
-            <span class="n">DEBUG_VALUE</span><span class="p">(</span><span class="n">lanelet2_map_osm</span><span class="p">);</span>
+            <span class="c1">// DEBUG_VALUE(lanelet2_map_osm);</span>
 
             <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">argv</span> <span class="p">{</span>
               <span class="s">&quot;python3&quot;</span><span class="p">,</span>
@@ -946,9 +946,9 @@
               <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;lanelet2_map_file:=&quot;</span><span class="p">)</span> <span class="o">+=</span> <span class="n">lanelet2_map_osm</span><span class="p">.</span><span class="n">filename</span><span class="p">().</span><span class="n">string</span><span class="p">()</span>
             <span class="p">};</span>
 
-            <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">each</span> <span class="p">:</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
-              <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">each</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">each</span> <span class="o">!=</span> <span class="o">&amp;</span><span class="n">argv</span><span class="p">.</span><span class="n">back</span><span class="p">()</span> <span class="o">?</span> <span class="sc">&#39; &#39;</span> <span class="o">:</span> <span class="sc">&#39;\n&#39;</span><span class="p">);</span>
-            <span class="p">}</span>
+            <span class="c1">// for (const auto &amp; each : argv) {</span>
+            <span class="c1">//   std::cout &lt;&lt; each &lt;&lt; (&amp;each != &amp;argv.back() ? &#39; &#39; : &#39;\n&#39;);</span>
+            <span class="c1">// }</span>
 
             <span class="cp">#ifdef TRAFFIC_SIMULATOR_ISOLATE_STANDARD_OUTPUT_FROM_AUTOWARE</span>
             <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;/tmp/scenario_test_runner/autoware-output.txt&quot;</span><span class="p">;</span>
@@ -1043,8 +1043,6 @@
     <span class="k">const</span> <span class="k">auto</span> <span class="n">current_entity_status</span> <span class="o">=</span> <span class="n">getStatus</span><span class="p">();</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">std</span><span class="o">::</span><span class="n">exchange</span><span class="p">(</span><span class="n">autoware_initialized</span><span class="p">,</span> <span class="nb">true</span><span class="p">))</span> <span class="p">{</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">setInitialPose</span><span class="p">(</span><span class="n">current_entity_status</span><span class="p">.</span><span class="n">pose</span><span class="p">);</span>
-
       <span class="n">waitForAutowareStateToBeInitializingVehicle</span><span class="p">(</span>
         <span class="p">[</span><span class="o">&amp;</span><span class="p">]()</span>
         <span class="p">{</span>
@@ -1062,6 +1060,7 @@
       <span class="n">waitForAutowareStateToBeWaitingForRoute</span><span class="p">(</span>
         <span class="p">[</span><span class="o">&amp;</span><span class="p">]()</span>
         <span class="p">{</span>
+          <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">setInitialPose</span><span class="p">(</span><span class="n">current_entity_status</span><span class="p">.</span><span class="n">pose</span><span class="p">);</span>
           <span class="k">return</span> <span class="n">updateAutoware</span><span class="p">(</span><span class="n">current_entity_status</span><span class="p">.</span><span class="n">pose</span><span class="p">);</span>
         <span class="p">});</span>
     <span class="p">}</span>
@@ -1228,7 +1227,7 @@
 <span class="cp">#endif  </span><span class="c1">// SIMULATION_API__ENTITY__EGO_ENTITY_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  5 April 2021 at 09:36:40 UTC</p>
+<p>Updated on  6 April 2021 at 05:53:05 UTC</p>
                 
                   
                 

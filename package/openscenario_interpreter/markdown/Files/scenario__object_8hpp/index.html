@@ -779,13 +779,22 @@
   <span class="p">{</span>
   <span class="p">}</span>
 
+  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="k">operator</span><span class="p">()(</span><span class="k">const</span> <span class="n">Vehicle</span> <span class="o">&amp;</span> <span class="n">vehicle</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="nf">spawn</span><span class="p">(</span>
+      <span class="n">object_controller</span><span class="p">.</span><span class="n">isEgo</span><span class="p">(),</span> <span class="n">name</span><span class="p">,</span>
+      <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span><span class="o">&gt;</span><span class="p">(</span><span class="n">vehicle</span><span class="p">));</span>
+  <span class="p">}</span>
+
+  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="k">operator</span><span class="p">()(</span><span class="k">const</span> <span class="n">Pedestrian</span> <span class="o">&amp;</span> <span class="n">pedestrian</span><span class="p">)</span> <span class="k">const</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="nf">spawn</span><span class="p">(</span>
+      <span class="nb">false</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PedestrianParameters</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pedestrian</span><span class="p">));</span>
+  <span class="p">}</span>
+
   <span class="k">auto</span> <span class="n">evaluate</span><span class="p">()</span>
   <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">spawn</span><span class="p">(</span>
-          <span class="n">is</span><span class="o">&lt;</span><span class="n">Vehicle</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">object_controller</span><span class="p">.</span><span class="n">isEgo</span><span class="p">(),</span> <span class="n">name</span><span class="p">,</span>
-          <span class="n">boost</span><span class="o">::</span><span class="n">lexical_cast</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span>
-            <span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">EntityObject</span> <span class="o">&amp;&gt;</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">))))</span>  <span class="c1">// XXX UGLY CODE!!!</span>
-    <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">apply</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">EntityObject</span> <span class="o">&amp;&gt;</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">)))</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">is</span><span class="o">&lt;</span><span class="n">Vehicle</span><span class="o">&gt;</span><span class="p">())</span> <span class="p">{</span>
         <span class="n">setController</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">object_controller</span><span class="p">);</span>
 
@@ -806,10 +815,13 @@
 
 <span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">ScenarioObject</span> <span class="o">&amp;</span> <span class="n">datum</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">indent</span><span class="o">++</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">blue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&lt;ScenarioObject&quot;</span>
-            <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">highlight</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">datum</span><span class="p">.</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">blue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&gt;</span><span class="se">\n</span><span class="s">&quot;</span>
-            <span class="o">&lt;&lt;</span> <span class="n">reset</span> <span class="o">&lt;&lt;</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">EntityObject</span> <span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">datum</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span>
+  <span class="c1">// clang-format off</span>
+
+  <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">indent</span><span class="o">++</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">blue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&lt;ScenarioObject &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">highlight</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">datum</span><span class="p">.</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">blue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&gt;</span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">reset</span>
+            <span class="o">&lt;&lt;</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">EntityObject</span> <span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">datum</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span>
             <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="o">--</span><span class="n">indent</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">blue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&lt;/ScenarioObject&gt;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">reset</span><span class="p">;</span>
+
+  <span class="c1">// clang-format on</span>
 <span class="p">}</span>
 <span class="p">}</span>  <span class="c1">// namespace syntax</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
@@ -817,7 +829,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__SCENARIO_OBJECT_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
+<p>Updated on  7 April 2021 at 10:36:19 UTC</p>
                 
                   
                 

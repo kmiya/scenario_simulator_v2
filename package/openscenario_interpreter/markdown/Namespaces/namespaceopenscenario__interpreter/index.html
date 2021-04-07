@@ -746,6 +746,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-operator_2" class="md-nav__link">
+    function operator&lt;&lt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-make" class="md-nav__link">
     function make
   </a>
@@ -1121,6 +1128,10 @@
 <td><strong><a href="/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter#function-operator&lt;&lt;">operator&lt;&lt;</a></strong>(std::basic_ostream&lt; Ts... &gt; &amp; os, const <a href="/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1Pointer">Pointer</a>&lt; T &gt; &amp; pointer)</td>
 </tr>
 <tr>
+<td>std::ostream &amp;</td>
+<td><strong><a href="/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter#function-operator&lt;&lt;">operator&lt;&lt;</a></strong>(std::ostream &amp; os, const pugi::xml_node &amp; datum)</td>
+</tr>
+<tr>
 <td>template \&lt;typename T ,typename... Ts></br>decltype(auto) constexpr</td>
 <td><strong><a href="/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter#function-make">make</a></strong>(Ts &amp;&amp;... xs)</td>
 </tr>
@@ -1282,6 +1293,12 @@
     <span class="k">const</span> <span class="n">Pointer</span><span class="o">&lt;</span> <span class="n">T</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">pointer</span>
 <span class="p">)</span>
 </code></pre></div>
+<h3 id="function-operator_2">function operator&lt;&lt;<a class="headerlink" href="#function-operator_2" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">pugi</span><span class="o">::</span><span class="n">xml_node</span> <span class="o">&amp;</span> <span class="n">datum</span>
+<span class="p">)</span>
+</code></pre></div>
 <h3 id="function-make">function make<a class="headerlink" href="#function-make" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span> <span class="p">,</span>
 <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
@@ -1428,7 +1445,7 @@
 <div class="highlight"><pre><span></span><code><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">API</span> <span class="o">&amp;</span> <span class="n">connection</span> <span class="p">{</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">API</span> <span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">memory</span><span class="p">)};</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 07:12:59 UTC</p>
+<p>Updated on  7 April 2021 at 10:36:18 UTC</p>
                 
                   
                 

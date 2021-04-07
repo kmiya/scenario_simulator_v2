@@ -722,8 +722,8 @@
 </thead>
 <tbody>
 <tr>
-<td>class</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1ExecutionFailedError">traffic_simulator::ExecutionFailedError</a></strong></td>
+<td>struct</td>
+<td><strong><a href="/package/traffic_simulator/markdown/Classes/structtraffic__simulator_1_1ExecutionFailedError">traffic_simulator::ExecutionFailedError</a></strong></td>
 </tr>
 <tr>
 <td>class</td>
@@ -787,6 +787,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_msgs/msg/driver_model.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;rclcpp/rclcpp.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;simulation_interface/zmq_client.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/entity_manager.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/helper/helper.hpp&gt;</span><span class="cp"></span>
@@ -797,13 +798,9 @@
 
 <span class="k">namespace</span> <span class="n">traffic_simulator</span>
 <span class="p">{</span>
-<span class="k">class</span> <span class="nc">ExecutionFailedError</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span>
+<span class="k">struct</span> <span class="nc">ExecutionFailedError</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span>
 <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">explicit</span> <span class="n">ExecutionFailedError</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="o">:</span> <span class="n">runtime_error</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...)</span>
-  <span class="p">{</span>
-  <span class="p">}</span>
+  <span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">;</span>
 
   <span class="k">virtual</span> <span class="o">~</span><span class="n">ExecutionFailedError</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
 <span class="p">};</span>
@@ -869,9 +866,6 @@
 
   <span class="kt">void</span> <span class="n">setVerbose</span><span class="p">(</span><span class="k">const</span> <span class="kt">bool</span> <span class="n">verbose</span><span class="p">);</span>
 
-  <span class="p">[[</span><span class="n">deprecated</span><span class="p">(</span><span class="s">&quot;catalog_xml will be removed in the near future&quot;</span><span class="p">)]]</span> <span class="kt">bool</span> <span class="n">spawn</span><span class="p">(</span>
-    <span class="k">const</span> <span class="kt">bool</span> <span class="n">is_ego</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">catalog_xml</span><span class="p">);</span>
-
   <span class="kt">bool</span> <span class="nf">spawn</span><span class="p">(</span>
     <span class="k">const</span> <span class="kt">bool</span> <span class="n">is_ego</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span>
     <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span> <span class="o">&amp;</span> <span class="n">params</span><span class="p">);</span>
@@ -879,14 +873,6 @@
   <span class="kt">bool</span> <span class="nf">spawn</span><span class="p">(</span>
     <span class="k">const</span> <span class="kt">bool</span> <span class="n">is_ego</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span>
     <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PedestrianParameters</span> <span class="o">&amp;</span> <span class="n">params</span><span class="p">);</span>
-
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">spawn</span><span class="p">(</span>
-    <span class="k">const</span> <span class="kt">bool</span> <span class="n">is_ego</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">catalog_xml</span><span class="p">,</span> <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="k">return</span> <span class="nf">spawn</span><span class="p">(</span><span class="n">is_ego</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">catalog_xml</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
-           <span class="n">setEntityStatus</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
-  <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span>
     <span class="k">typename</span> <span class="nc">Parameters</span><span class="p">,</span>  <span class="c1">// Maybe, VehicleParameters or PedestrianParameters</span>
@@ -1047,7 +1033,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__API__API_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 07:12:58 UTC</p>
+<p>Updated on  7 April 2021 at 10:36:17 UTC</p>
                 
                   
                 

@@ -663,8 +663,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#define-element" class="md-nav__link">
-    define ELEMENT
+  <a href="#define-boilerplate" class="md-nav__link">
+    define BOILERPLATE
   </a>
   
 </li>
@@ -741,16 +741,19 @@
 <tbody>
 <tr>
 <td></td>
-<td><strong><a href="/package/openscenario_interpreter/markdown/Files/entity__object_8hpp#define-element">ELEMENT</a></strong>(TYPE)</td>
+<td><strong><a href="/package/openscenario_interpreter/markdown/Files/entity__object_8hpp#define-boilerplate">BOILERPLATE</a></strong>(TYPE)</td>
 </tr>
 </tbody>
 </table>
 <h2 id="macro-documentation">Macro Documentation<a class="headerlink" href="#macro-documentation" title="Permanent link">#</a></h2>
-<h3 id="define-element">define ELEMENT<a class="headerlink" href="#define-element" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#define ELEMENT(</span>
+<h3 id="define-boilerplate">define BOILERPLATE<a class="headerlink" href="#define-boilerplate" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#define BOILERPLATE(</span>
     <span class="n">TYPE</span>
-<span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span>     \
-    <span class="cp">#TYPE, [&amp;](auto &amp;&amp; node) { return make&lt;TYPE&gt;(node, std::forward&lt;decltype(xs)&gt;(xs)...); })</span>
+<span class="p">)</span> <span class="p">{</span>                                                                             \
+    <span class="k">typeid</span><span class="p">(</span><span class="n">TYPE</span><span class="p">),</span> <span class="p">[](</span><span class="n">F</span> <span class="o">&amp;&amp;</span> <span class="n">f</span><span class="p">,</span> <span class="k">const</span> <span class="n">EntityObject</span> <span class="o">&amp;</span> <span class="n">entity_object</span><span class="p">,</span> <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="p">{</span> \
+      <span class="k">return</span> <span class="nf">f</span><span class="p">(</span><span class="n">entity_object</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">TYPE</span><span class="o">&gt;</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>    \
+    <span class="p">}</span>                                                                           \
+  <span class="p">}</span>
 </code></pre></div>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">// Copyright 2015-2020 Tier IV, Inc. All rights reserved.</span>
@@ -772,47 +775,71 @@
 
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/pedestrian.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/vehicle.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
 
 <span class="k">namespace</span> <span class="n">openscenario_interpreter</span>
 <span class="p">{</span>
 <span class="kr">inline</span> <span class="k">namespace</span> <span class="n">syntax</span>
 <span class="p">{</span>
-<span class="cp">#define ELEMENT(TYPE) \</span>
-<span class="cp">  std::make_pair(     \</span>
-<span class="cp">    #TYPE, [&amp;](auto &amp;&amp; node) { return make&lt;TYPE&gt;(node, std::forward&lt;decltype(xs)&gt;(xs)...); })</span>
-
 <span class="cm">/* ---- EntityObject -----------------------------------------------------------</span>
 <span class="cm"> *</span>
-<span class="cm"> * &lt;xsd:group name=&quot;EntityObject&quot;&gt;</span>
-<span class="cm"> *   &lt;xsd:choice&gt;</span>
-<span class="cm"> *     &lt;xsd:element name=&quot;CatalogReference&quot; type=&quot;CatalogReference&quot;/&gt;</span>
-<span class="cm"> *     &lt;xsd:element name=&quot;Vehicle&quot; type=&quot;Vehicle&quot;/&gt;</span>
-<span class="cm"> *     &lt;xsd:element name=&quot;Pedestrian&quot; type=&quot;Pedestrian&quot;/&gt;</span>
-<span class="cm"> *     &lt;xsd:element name=&quot;MiscObject&quot; type=&quot;MiscObject&quot;/&gt;</span>
-<span class="cm"> *   &lt;/xsd:choice&gt;</span>
-<span class="cm"> * &lt;/xsd:group&gt;</span>
+<span class="cm"> *  &lt;xsd:group name=&quot;EntityObject&quot;&gt;</span>
+<span class="cm"> *    &lt;xsd:choice&gt;</span>
+<span class="cm"> *      &lt;xsd:element name=&quot;CatalogReference&quot; type=&quot;CatalogReference&quot;/&gt;</span>
+<span class="cm"> *      &lt;xsd:element name=&quot;Vehicle&quot; type=&quot;Vehicle&quot;/&gt;</span>
+<span class="cm"> *      &lt;xsd:element name=&quot;Pedestrian&quot; type=&quot;Pedestrian&quot;/&gt;</span>
+<span class="cm"> *      &lt;xsd:element name=&quot;MiscObject&quot; type=&quot;MiscObject&quot;/&gt;</span>
+<span class="cm"> *    &lt;/xsd:choice&gt;</span>
+<span class="cm"> *  &lt;/xsd:group&gt;</span>
 <span class="cm"> *</span>
 <span class="cm"> * -------------------------------------------------------------------------- */</span>
 <span class="k">struct</span> <span class="nc">EntityObject</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Group</span>
 <span class="p">{</span>
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">explicit</span> <span class="n">EntityObject</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
-  <span class="o">:</span> <span class="n">Group</span><span class="p">(</span><span class="n">choice</span><span class="p">(</span>
-      <span class="n">node</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;CatalogReference&quot;</span><span class="p">,</span> <span class="n">UNSUPPORTED</span><span class="p">()),</span> <span class="n">ELEMENT</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">),</span>
-      <span class="n">ELEMENT</span><span class="p">(</span><span class="n">Pedestrian</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;MiscObject&quot;</span><span class="p">,</span> <span class="n">UNSUPPORTED</span><span class="p">())))</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">XML</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+  <span class="k">explicit</span> <span class="n">EntityObject</span><span class="p">(</span><span class="k">const</span> <span class="n">XML</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+  <span class="c1">// clang-format off</span>
+  <span class="o">:</span> <span class="n">Group</span><span class="p">(</span>
+      <span class="n">choice</span><span class="p">(</span>
+        <span class="n">node</span><span class="p">,</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;CatalogReference&quot;</span><span class="p">,</span> <span class="n">UNSUPPORTED</span><span class="p">()),</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;Vehicle&quot;</span><span class="p">,</span>          <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">make</span><span class="o">&lt;</span><span class="n">Vehicle</span><span class="o">&gt;</span>   <span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span> <span class="p">}),</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;Pedestrian&quot;</span><span class="p">,</span>       <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">make</span><span class="o">&lt;</span><span class="n">Pedestrian</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span> <span class="p">}),</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;MiscObject&quot;</span><span class="p">,</span>       <span class="n">UNSUPPORTED</span><span class="p">())))</span>
+  <span class="c1">// clang-format on</span>
   <span class="p">{</span>
   <span class="p">}</span>
 <span class="p">};</span>
 
-<span class="cp">#undef ELEMENT</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">R</span> <span class="o">=</span> <span class="kt">void</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">F</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">apply</span><span class="p">(</span><span class="n">F</span> <span class="o">&amp;&amp;</span> <span class="n">f</span><span class="p">,</span> <span class="k">const</span> <span class="n">EntityObject</span> <span class="o">&amp;</span> <span class="n">entity_object</span><span class="p">,</span> <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#define BOILERPLATE(TYPE)                                                       \</span>
+<span class="cp">  {                                                                             \</span>
+<span class="cp">    typeid(TYPE), [](F &amp;&amp; f, const EntityObject &amp; entity_object, Ts &amp;&amp;... xs) { \</span>
+<span class="cp">      return f(entity_object.as&lt;TYPE&gt;(), std::forward&lt;decltype(xs)&gt;(xs)...);    \</span>
+<span class="cp">    }                                                                           \</span>
+<span class="cp">  }</span>
+
+  <span class="k">static</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">type_index</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="n">R</span><span class="p">(</span><span class="n">F</span> <span class="o">&amp;&amp;</span> <span class="n">f</span><span class="p">,</span> <span class="k">const</span> <span class="n">EntityObject</span> <span class="o">&amp;</span> <span class="n">entity_object</span><span class="p">,</span> <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span><span class="o">&gt;&gt;</span>
+    <span class="n">overloads</span><span class="p">{</span>
+      <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">),</span>
+      <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">Pedestrian</span><span class="p">),</span>
+    <span class="p">};</span>
+
+<span class="cp">#undef BOILERPLATE</span>
+
+  <span class="k">return</span> <span class="n">overloads</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">entity_object</span><span class="p">.</span><span class="n">type</span><span class="p">())(</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">entity_object</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
+<span class="p">}</span>
 <span class="p">}</span>  <span class="c1">// namespace syntax</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
 
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__ENTITY_OBJECT_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
+<p>Updated on  7 April 2021 at 10:36:19 UTC</p>
                 
                   
                 

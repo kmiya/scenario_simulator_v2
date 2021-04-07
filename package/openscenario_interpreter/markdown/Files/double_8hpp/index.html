@@ -648,33 +648,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#defines" class="md-nav__link">
-    Defines
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#macro-documentation" class="md-nav__link">
-    Macro Documentation
-  </a>
-  
-    <nav class="md-nav" aria-label="Macro Documentation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#define-openscenario_interpreter_double_infinity" class="md-nav__link">
-    define OPENSCENARIO_INTERPRETER_DOUBLE_INFINITY
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#source-code" class="md-nav__link">
     Source code
   </a>
@@ -730,25 +703,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="defines">Defines<a class="headerlink" href="#defines" title="Permanent link">#</a></h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td><strong><a href="/package/openscenario_interpreter/markdown/Files/double_8hpp#define-openscenario_interpreter_double_infinity">OPENSCENARIO_INTERPRETER_DOUBLE_INFINITY</a></strong></td>
-</tr>
-</tbody>
-</table>
-<h2 id="macro-documentation">Macro Documentation<a class="headerlink" href="#macro-documentation" title="Permanent link">#</a></h2>
-<h3 id="define-openscenario_interpreter_double_infinity">define OPENSCENARIO_INTERPRETER_DOUBLE_INFINITY<a class="headerlink" href="#define-openscenario_interpreter_double_infinity" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#define OPENSCENARIO_INTERPRETER_DOUBLE_INFINITY max</span>
-</code></pre></div>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">// Copyright 2015-2020 Tier IV, Inc. All rights reserved.</span>
 <span class="c1">//</span>
@@ -769,6 +723,7 @@
 
 <span class="cp">#include</span> <span class="cpf">&lt;boost/lexical_cast.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;limits&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/error.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;regex&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;std_msgs/msg/float64.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
@@ -787,9 +742,9 @@
   <span class="k">try</span> <span class="p">{</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">boost</span><span class="o">::</span><span class="n">lexical_cast</span><span class="o">&lt;</span><span class="n">value_type</span><span class="o">&gt;</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">bad_lexical_cast</span> <span class="o">&amp;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">;</span>
     <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;can&#39;t treat value </span><span class="se">\&quot;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&quot;</span><span class="s"> as type Double&quot;</span><span class="p">;</span>
-    <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">{</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()};</span>
+    <span class="k">throw</span> <span class="nf">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
   <span class="p">}</span>
 
   <span class="k">constexpr</span> <span class="k">operator</span> <span class="n">value_type</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">data</span><span class="p">;</span> <span class="p">}</span>
@@ -812,45 +767,15 @@
   <span class="p">}</span>
 <span class="p">};</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">Double</span> <span class="o">&amp;</span> <span class="n">rhs</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">fixed</span> <span class="o">&lt;&lt;</span> <span class="n">rhs</span><span class="p">.</span><span class="n">data</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="n">is</span><span class="p">,</span> <span class="n">Double</span> <span class="o">&amp;</span> <span class="n">rhs</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">token</span><span class="p">{};</span>
-
-  <span class="n">is</span> <span class="o">&gt;&gt;</span> <span class="n">token</span><span class="p">;</span>
-
-  <span class="k">static</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">regex</span> <span class="n">infinity</span><span class="p">{</span><span class="sa">R</span><span class="s">&quot;</span><span class="dl">(</span><span class="s">[+-]?INF</span><span class="dl">)</span><span class="s">&quot;</span><span class="p">};</span>
-
-  <span class="n">std</span><span class="o">::</span><span class="n">smatch</span> <span class="n">result</span><span class="p">{};</span>
-
-  <span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">regex_match</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">infinity</span><span class="p">))</span> <span class="p">{</span>
-<span class="cp">#ifndef OPENSCENARIO_INTERPRETER_ALLOW_INFINITY</span>
-<span class="cp">#define OPENSCENARIO_INTERPRETER_DOUBLE_INFINITY max</span>
-<span class="cp">#else</span>
-<span class="cp">#define OPENSCENARIO_INTERPRETER_DOUBLE_INFINITY infinity</span>
-<span class="cp">#endif</span>
-
-    <span class="n">rhs</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">str</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="s">&quot;-&quot;</span> <span class="o">?</span> <span class="mi">-1</span> <span class="o">:</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span>
-               <span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">::</span><span class="n">value_type</span><span class="o">&gt;::</span><span class="n">OPENSCENARIO_INTERPRETER_DOUBLE_INFINITY</span><span class="p">();</span>
-
-<span class="cp">#undef OPENSCENARIO_INTERPRETER_DOUBLE_INFINITY</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n">rhs</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">boost</span><span class="o">::</span><span class="n">lexical_cast</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">::</span><span class="n">value_type</span><span class="o">&gt;</span><span class="p">(</span><span class="n">token</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="n">is</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">Double</span> <span class="o">&amp;</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span><span class="p">,</span> <span class="n">Double</span> <span class="o">&amp;</span><span class="p">);</span>
 <span class="p">}</span>  <span class="c1">// namespace syntax</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
 
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__DOUBLE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
+<p>Updated on  7 April 2021 at 10:36:19 UTC</p>
                 
                   
                 

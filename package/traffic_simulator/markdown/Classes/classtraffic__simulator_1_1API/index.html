@@ -691,20 +691,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-spawn_3" class="md-nav__link">
-    function spawn
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-spawn_4" class="md-nav__link">
-    function spawn
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#function-setverbose" class="md-nav__link">
     function setVerbose
   </a>
@@ -1067,19 +1053,11 @@
 </tr>
 <tr>
 <td>bool</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1API#function-spawn">spawn</a></strong>(const bool is_ego, const std::string &amp; name, const std::string &amp; catalog_xml)</td>
-</tr>
-<tr>
-<td>bool</td>
 <td><strong><a href="/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1API#function-spawn">spawn</a></strong>(const bool is_ego, const std::string &amp; name, const openscenario_msgs::msg::VehicleParameters &amp; params)</td>
 </tr>
 <tr>
 <td>bool</td>
 <td><strong><a href="/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1API#function-spawn">spawn</a></strong>(const bool is_ego, const std::string &amp; name, const openscenario_msgs::msg::PedestrianParameters &amp; params)</td>
-</tr>
-<tr>
-<td>template \&lt;typename... Ts></br>decltype(auto)</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1API#function-spawn">spawn</a></strong>(const bool is_ego, const std::string &amp; name, const std::string &amp; catalog_xml, Ts &amp;&amp;... xs)</td>
 </tr>
 <tr>
 <td>template \&lt;typename Parameters ,typename... Ts></br>decltype(auto)</td>
@@ -1285,33 +1263,17 @@
 <div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="n">spawn</span><span class="p">(</span>
     <span class="k">const</span> <span class="kt">bool</span> <span class="n">is_ego</span><span class="p">,</span>
     <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">catalog_xml</span>
+    <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span> <span class="o">&amp;</span> <span class="n">params</span>
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-spawn_1">function spawn<a class="headerlink" href="#function-spawn_1" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="n">spawn</span><span class="p">(</span>
     <span class="k">const</span> <span class="kt">bool</span> <span class="n">is_ego</span><span class="p">,</span>
     <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span> <span class="o">&amp;</span> <span class="n">params</span>
-<span class="p">)</span>
-</code></pre></div>
-<h3 id="function-spawn_2">function spawn<a class="headerlink" href="#function-spawn_2" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="n">spawn</span><span class="p">(</span>
-    <span class="k">const</span> <span class="kt">bool</span> <span class="n">is_ego</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span>
     <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PedestrianParameters</span> <span class="o">&amp;</span> <span class="n">params</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-spawn_3">function spawn<a class="headerlink" href="#function-spawn_3" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="kr">inline</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">spawn</span><span class="p">(</span>
-    <span class="k">const</span> <span class="kt">bool</span> <span class="n">is_ego</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">catalog_xml</span><span class="p">,</span>
-    <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span>
-<span class="p">)</span>
-</code></pre></div>
-<h3 id="function-spawn_4">function spawn<a class="headerlink" href="#function-spawn_4" title="Permanent link">#</a></h3>
+<h3 id="function-spawn_2">function spawn<a class="headerlink" href="#function-spawn_2" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Parameters</span> <span class="p">,</span>
 <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
 <span class="kr">inline</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">spawn</span><span class="p">(</span>
@@ -1568,7 +1530,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">lanelet2_map_osm</span><span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 07:12:58 UTC</p>
+<p>Updated on  7 April 2021 at 10:36:16 UTC</p>
                 
                   
                 

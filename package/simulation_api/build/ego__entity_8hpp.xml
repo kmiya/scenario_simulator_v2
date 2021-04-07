@@ -1265,7 +1265,7 @@
 <codeline lineno="393"><highlight class="normal"></highlight></codeline>
 <codeline lineno="394"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>getCurrentAction()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="395"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;none&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::atomic_load(&amp;autowares.at(name))-&gt;getAutowareStatus().autoware_state;</highlight></codeline>
 <codeline lineno="397"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="398"><highlight class="normal"></highlight></codeline>
 <codeline lineno="399"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onUpdate(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step_time);</highlight></codeline>

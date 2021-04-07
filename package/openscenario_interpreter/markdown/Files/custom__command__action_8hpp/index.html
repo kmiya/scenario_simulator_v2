@@ -713,8 +713,12 @@
   <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">true_type</span> <span class="n">accomplished</span> <span class="p">{};</span>
 
   <span class="k">static</span> <span class="kt">int</span> <span class="n">walkStraightAction</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">current_scope</span><span class="p">)</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">actors</span><span class="p">,</span> <span class="k">const</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">current_scope</span><span class="p">)</span>
   <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">actor</span> <span class="p">:</span> <span class="n">actors</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">requestWalkStraight</span><span class="p">(</span><span class="n">actor</span><span class="p">);</span>
+    <span class="p">}</span>
+
     <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="nl">actor</span> <span class="p">:</span> <span class="n">current_scope</span><span class="p">.</span><span class="n">actors</span><span class="p">)</span> <span class="p">{</span>
       <span class="n">requestWalkStraight</span><span class="p">(</span><span class="n">actor</span><span class="p">);</span>
     <span class="p">}</span>
@@ -834,7 +838,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__CUSTOM_COMMAND_ACTION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 00:15:27 UTC</p>
+<p>Updated on  7 April 2021 at 00:31:57 UTC</p>
                 
                   
                 

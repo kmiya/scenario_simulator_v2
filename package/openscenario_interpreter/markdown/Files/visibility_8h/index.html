@@ -758,7 +758,7 @@
 <div class="highlight"><pre><span></span><code><span class="cp">#define OPENSCENARIO_INTERPRETER_IMPORT</span>
 </code></pre></div>
 <h3 id="define-openscenario_interpreter_export">define OPENSCENARIO_INTERPRETER_EXPORT<a class="headerlink" href="#define-openscenario_interpreter_export" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#define OPENSCENARIO_INTERPRETER_EXPORT __attribute__ ((visibility(&quot;default&quot;)))</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#define OPENSCENARIO_INTERPRETER_EXPORT __attribute__((visibility(&quot;default&quot;)))</span>
 </code></pre></div>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">// Copyright 2015-2020 Tier IV, Inc. All rights reserved.</span>
@@ -779,42 +779,41 @@
 <span class="cp">#define OPENSCENARIO_INTERPRETER__UTILITY__VISIBILITY_H_</span>
 
 <span class="cp">#ifdef __cplusplus</span>
-<span class="k">extern</span> <span class="s">&quot;C&quot;</span>
-<span class="p">{</span>
+<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="p">{</span>
 <span class="cp">#endif</span>
 
 <span class="c1">// This logic was borrowed (then namespaced) from the examples on the gcc wiki:</span>
 <span class="c1">//     https://gcc.gnu.org/wiki/Visibility</span>
 <span class="cp">#if defined _WIN32 || defined __CYGWIN__</span>
-<span class="cp">#  ifdef __GNUC__</span>
-<span class="cp">#    define OPENSCENARIO_INTERPRETER_EXPORT __attribute__ ((dllexport))</span>
-<span class="cp">#    define OPENSCENARIO_INTERPRETER_IMPORT __attribute__ ((dllimport))</span>
-<span class="cp">#  else</span>
-<span class="cp">#    define OPENSCENARIO_INTERPRETER_EXPORT __declspec(dllexport)</span>
-<span class="cp">#    define OPENSCENARIO_INTERPRETER_IMPORT __declspec(dllimport)</span>
-<span class="cp">#  endif</span>
-
-<span class="cp">#  ifdef OPENSCENARIO_INTERPRETER_BUILDING_DLL</span>
-<span class="cp">#    define OPENSCENARIO_INTERPRETER_PUBLIC OPENSCENARIO_INTERPRETER_EXPORT</span>
-<span class="cp">#  else</span>
-<span class="cp">#    define OPENSCENARIO_INTERPRETER_PUBLIC OPENSCENARIO_INTERPRETER_IMPORT</span>
-<span class="cp">#  endif</span>
-
-<span class="cp">#  define OPENSCENARIO_INTERPRETER_PUBLIC_TYPE OPENSCENARIO_INTERPRETER_PUBLIC</span>
-<span class="cp">#  define OPENSCENARIO_INTERPRETER_LOCAL</span>
+<span class="cp">#ifdef __GNUC__</span>
+<span class="cp">#define OPENSCENARIO_INTERPRETER_EXPORT __attribute__((dllexport))</span>
+<span class="cp">#define OPENSCENARIO_INTERPRETER_IMPORT __attribute__((dllimport))</span>
 <span class="cp">#else</span>
-<span class="cp">#  define OPENSCENARIO_INTERPRETER_EXPORT __attribute__ ((visibility(&quot;default&quot;)))</span>
-<span class="cp">#  define OPENSCENARIO_INTERPRETER_IMPORT</span>
+<span class="cp">#define OPENSCENARIO_INTERPRETER_EXPORT __declspec(dllexport)</span>
+<span class="cp">#define OPENSCENARIO_INTERPRETER_IMPORT __declspec(dllimport)</span>
+<span class="cp">#endif</span>
 
-<span class="cp">#  if __GNUC__ &gt;= 4</span>
-<span class="cp">#    define OPENSCENARIO_INTERPRETER_PUBLIC __attribute__ ((visibility(&quot;default&quot;)))</span>
-<span class="cp">#    define OPENSCENARIO_INTERPRETER_LOCAL __attribute__ ((visibility(&quot;hidden&quot;)))</span>
-<span class="cp">#  else</span>
-<span class="cp">#    define OPENSCENARIO_INTERPRETER_PUBLIC</span>
-<span class="cp">#    define OPENSCENARIO_INTERPRETER_LOCAL</span>
-<span class="cp">#  endif</span>
+<span class="cp">#ifdef OPENSCENARIO_INTERPRETER_BUILDING_DLL</span>
+<span class="cp">#define OPENSCENARIO_INTERPRETER_PUBLIC OPENSCENARIO_INTERPRETER_EXPORT</span>
+<span class="cp">#else</span>
+<span class="cp">#define OPENSCENARIO_INTERPRETER_PUBLIC OPENSCENARIO_INTERPRETER_IMPORT</span>
+<span class="cp">#endif</span>
 
-<span class="cp">#  define OPENSCENARIO_INTERPRETER_PUBLIC_TYPE</span>
+<span class="cp">#define OPENSCENARIO_INTERPRETER_PUBLIC_TYPE OPENSCENARIO_INTERPRETER_PUBLIC</span>
+<span class="cp">#define OPENSCENARIO_INTERPRETER_LOCAL</span>
+<span class="cp">#else</span>
+<span class="cp">#define OPENSCENARIO_INTERPRETER_EXPORT __attribute__((visibility(&quot;default&quot;)))</span>
+<span class="cp">#define OPENSCENARIO_INTERPRETER_IMPORT</span>
+
+<span class="cp">#if __GNUC__ &gt;= 4</span>
+<span class="cp">#define OPENSCENARIO_INTERPRETER_PUBLIC __attribute__((visibility(&quot;default&quot;)))</span>
+<span class="cp">#define OPENSCENARIO_INTERPRETER_LOCAL __attribute__((visibility(&quot;hidden&quot;)))</span>
+<span class="cp">#else</span>
+<span class="cp">#define OPENSCENARIO_INTERPRETER_PUBLIC</span>
+<span class="cp">#define OPENSCENARIO_INTERPRETER_LOCAL</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#define OPENSCENARIO_INTERPRETER_PUBLIC_TYPE</span>
 <span class="cp">#endif</span>
 
 <span class="cp">#ifdef __cplusplus</span>
@@ -824,7 +823,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__UTILITY__VISIBILITY_H_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 01:42:32 UTC</p>
+<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
                 
                   
                 

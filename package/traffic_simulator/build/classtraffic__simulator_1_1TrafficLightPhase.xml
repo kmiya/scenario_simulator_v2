@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classtraffic__simulator_1_1TrafficLightPhase" kind="class" language="C++" prot="public">
+    <compoundname>traffic_simulator::TrafficLightPhase</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtraffic__simulator_1_1TrafficLightPhase_1a35394ac65f51bd138b3a2cde22a8f292" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::pair&lt; double, T &gt; &gt;</type>
+        <definition>std::vector&lt;std::pair&lt;double, T&gt; &gt; traffic_simulator::TrafficLightPhase&lt; T &gt;::phase_</definition>
+        <argsstring></argsstring>
+        <name>phase_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" line="82" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1TrafficLightPhase_1aa2249ecc977ac29438d71054c7041429" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double traffic_simulator::TrafficLightPhase&lt; T &gt;::elapsed_time_</definition>
+        <argsstring></argsstring>
+        <name>elapsed_time_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" line="83" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLightPhase_1ab9c94f5efc5b8557eeedef45c2b19775" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::TrafficLightPhase&lt; T &gt;::TrafficLightPhase</definition>
+        <argsstring>()</argsstring>
+        <name>TrafficLightPhase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" line="30" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLightPhase_1aa09103051a6f96bb36bb0ef2824dd250" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::TrafficLightPhase&lt; T &gt;::TrafficLightPhase</definition>
+        <argsstring>(const std::vector&lt; std::pair&lt; double, T &gt;&gt; &amp;phase)</argsstring>
+        <name>TrafficLightPhase</name>
+        <param>
+          <type>const std::vector&lt; std::pair&lt; double, T &gt;&gt; &amp;</type>
+          <declname>phase</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" line="31" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" bodystart="31" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLightPhase_1ab7998c3c496d6a0dec825109fa2a80b0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double traffic_simulator::TrafficLightPhase&lt; T &gt;::getPhaseLength</definition>
+        <argsstring>() const</argsstring>
+        <name>getPhaseLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" line="32" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" bodystart="32" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLightPhase_1a1eaf2441544ef09a6639ec0d6551c9a8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const T</type>
+        <definition>const T traffic_simulator::TrafficLightPhase&lt; T &gt;::getState</definition>
+        <argsstring>() const</argsstring>
+        <name>getState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" line="43" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" bodystart="43" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLightPhase_1a280eb65e6c1bffa0ff0901b7d5fd0aab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void traffic_simulator::TrafficLightPhase&lt; T &gt;::update</definition>
+        <argsstring>(double step_time)</argsstring>
+        <name>update</name>
+        <param>
+          <type>double</type>
+          <declname>step_time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" line="57" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" bodystart="57" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLightPhase_1a53ee26f06e0359d422ef5a906c2c1d80" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void traffic_simulator::TrafficLightPhase&lt; T &gt;::setState</definition>
+        <argsstring>(const T &amp;state)</argsstring>
+        <name>setState</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" line="68" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" bodystart="68" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLightPhase_1a6c62d0ad38ddf1ce67d6782a2fdabb37" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void traffic_simulator::TrafficLightPhase&lt; T &gt;::setPhase</definition>
+        <argsstring>(const std::vector&lt; std::pair&lt; double, T &gt;&gt; &amp;phase, double time_offset=0)</argsstring>
+        <name>setPhase</name>
+        <param>
+          <type>const std::vector&lt; std::pair&lt; double, T &gt;&gt; &amp;</type>
+          <declname>phase</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>time_offset</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" line="74" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" bodystart="74" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLightPhase_1a012ff1a4c66d7ce7dafb51e0257675b5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; std::pair&lt; double, T &gt; &gt;</type>
+        <definition>const std::vector&lt;std::pair&lt;double, T&gt; &gt; traffic_simulator::TrafficLightPhase&lt; T &gt;::getPhase</definition>
+        <argsstring>() const</argsstring>
+        <name>getPhase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" line="79" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" bodystart="79" bodyend="79"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" line="28" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_phase.hpp" bodystart="27" bodyend="84"/>
+    <listofallmembers>
+      <member refid="classtraffic__simulator_1_1TrafficLightPhase_1aa2249ecc977ac29438d71054c7041429" prot="private" virt="non-virtual"><scope>traffic_simulator::TrafficLightPhase</scope><name>elapsed_time_</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLightPhase_1a012ff1a4c66d7ce7dafb51e0257675b5" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLightPhase</scope><name>getPhase</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLightPhase_1ab7998c3c496d6a0dec825109fa2a80b0" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLightPhase</scope><name>getPhaseLength</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLightPhase_1a1eaf2441544ef09a6639ec0d6551c9a8" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLightPhase</scope><name>getState</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLightPhase_1a35394ac65f51bd138b3a2cde22a8f292" prot="private" virt="non-virtual"><scope>traffic_simulator::TrafficLightPhase</scope><name>phase_</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLightPhase_1a6c62d0ad38ddf1ce67d6782a2fdabb37" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLightPhase</scope><name>setPhase</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLightPhase_1a53ee26f06e0359d422ef5a906c2c1d80" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLightPhase</scope><name>setState</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLightPhase_1ab9c94f5efc5b8557eeedef45c2b19775" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLightPhase</scope><name>TrafficLightPhase</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLightPhase_1aa09103051a6f96bb36bb0ef2824dd250" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLightPhase</scope><name>TrafficLightPhase</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLightPhase_1a280eb65e6c1bffa0ff0901b7d5fd0aab" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLightPhase</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

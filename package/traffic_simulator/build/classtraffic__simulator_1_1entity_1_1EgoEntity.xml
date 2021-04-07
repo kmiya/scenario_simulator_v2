@@ -1,0 +1,629 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classtraffic__simulator_1_1entity_1_1EgoEntity" kind="class" language="C++" prot="public">
+    <compoundname>traffic_simulator::entity::EgoEntity</compoundname>
+    <basecompoundref refid="classtraffic__simulator_1_1entity_1_1VehicleEntity" prot="public" virt="non-virtual">traffic_simulator::entity::VehicleEntity</basecompoundref>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a05a24d2c44809a2deee9c4cfafcd0ffb" prot="private" static="yes" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::shared_ptr&lt; autoware_api::Accessor &gt; &gt;</type>
+        <definition>std::unordered_map&lt; std::string, std::shared_ptr&lt; autoware_api::Accessor &gt; &gt; traffic_simulator::entity::EgoEntity::autowares</definition>
+        <argsstring></argsstring>
+        <name>autowares</name>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="71" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a32c5db65da6f3920eec65a7cbad46e37" prot="private" static="no" mutable="no">
+        <type>decltype(fork())</type>
+        <definition>decltype(fork()) traffic_simulator::entity::EgoEntity::autoware_process_id</definition>
+        <argsstring></argsstring>
+        <name>autoware_process_id</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="73" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1af112a5405bc1425b1645d7d6144ef2bc" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; std::promise&lt; void &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;std::promise&lt;void&gt; &gt; traffic_simulator::entity::EgoEntity::accessor_status</definition>
+        <argsstring></argsstring>
+        <name>accessor_status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="76" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a7979386c3797f9edc8b844cc18879489" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; std::thread &gt;</type>
+        <definition>std::shared_ptr&lt;std::thread&gt; traffic_simulator::entity::EgoEntity::accessor_spinner</definition>
+        <argsstring></argsstring>
+        <name>accessor_spinner</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="79" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a4a391d045af95f50e8e531abb201d6c9" prot="private" static="no" mutable="no">
+        <type>boost::optional&lt; geometry_msgs::msg::Pose &gt;</type>
+        <definition>boost::optional&lt;geometry_msgs::msg::Pose&gt; traffic_simulator::entity::EgoEntity::initial_pose_</definition>
+        <argsstring></argsstring>
+        <name>initial_pose_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="447" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" bodystart="447" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a8edfe25f1f9b9e0ffb16f75d15a57473" prot="private" static="no" mutable="no">
+        <type>const std::shared_ptr&lt; <ref refid="classSimModelInterface" kindref="compound">SimModelInterface</ref> &gt;</type>
+        <definition>const std::shared_ptr&lt;SimModelInterface&gt; traffic_simulator::entity::EgoEntity::vehicle_model_ptr_</definition>
+        <argsstring></argsstring>
+        <name>vehicle_model_ptr_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="449" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" bodystart="449" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1ad2b60388f3bd8a7e7190db957fe94d3c" prot="private" static="no" mutable="no">
+        <type>boost::optional&lt; double &gt;</type>
+        <definition>boost::optional&lt;double&gt; traffic_simulator::entity::EgoEntity::previous_linear_velocity_</definition>
+        <argsstring></argsstring>
+        <name>previous_linear_velocity_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="451" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" bodystart="451" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1aaf8e648d4d0f6bcbfbad84f8324dd0d3" prot="private" static="no" mutable="no">
+        <type>boost::optional&lt; double &gt;</type>
+        <definition>boost::optional&lt;double&gt; traffic_simulator::entity::EgoEntity::previous_angular_velocity_</definition>
+        <argsstring></argsstring>
+        <name>previous_angular_velocity_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="452" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" bodystart="452" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a6462a02db036efef6fdd5de8190b4234" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool traffic_simulator::entity::EgoEntity::autoware_initialized</definition>
+        <argsstring></argsstring>
+        <name>autoware_initialized</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="292" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" bodystart="292" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a7f35f2903f8c4be7a4f45119443d9725" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto traffic_simulator::entity::EgoEntity::execute</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;f_xs)</argsstring>
+        <name>execute</name>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>f_xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="87" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" bodystart="87" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a38d7f11af63bc04d5d32463b05a771d1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::entity::EgoEntity::DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</definition>
+        <argsstring>(InitializingVehicle)</argsstring>
+        <name>DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</name>
+        <param>
+          <type>InitializingVehicle</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="405" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1ac2413b3fd0a32df218971fc6cc8cf688" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::entity::EgoEntity::DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</definition>
+        <argsstring>(WaitingForRoute)</argsstring>
+        <name>DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</name>
+        <param>
+          <type>WaitingForRoute</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="406" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a6c6630b1e2a9696161477df59ec766a8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::entity::EgoEntity::DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</definition>
+        <argsstring>(Planning)</argsstring>
+        <name>DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</name>
+        <param>
+          <type>Planning</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="407" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1ac7831b8cad1f06ec60599202a4126f96" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::entity::EgoEntity::DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</definition>
+        <argsstring>(WaitingForEngage)</argsstring>
+        <name>DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</name>
+        <param>
+          <type>WaitingForEngage</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="408" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1ae7e54a3a89809685550ac43318381722" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::entity::EgoEntity::DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</definition>
+        <argsstring>(Driving)</argsstring>
+        <name>DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</name>
+        <param>
+          <type>Driving</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="409" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a1e4d9e34b48e7ef222b7af18af526418" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::entity::EgoEntity::DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</definition>
+        <argsstring>(ArrivedGoal)</argsstring>
+        <name>DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</name>
+        <param>
+          <type>ArrivedGoal</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="410" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1ac8e34b39adf54e2c919d3c13e06df739" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::entity::EgoEntity::DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</definition>
+        <argsstring>(Emergency)</argsstring>
+        <name>DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</name>
+        <param>
+          <type>Emergency</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="411" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1aba30803e0bfd8b3c433b02523303f7d7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::entity::EgoEntity::DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</definition>
+        <argsstring>(Finalizing)</argsstring>
+        <name>DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</name>
+        <param>
+          <type>Finalizing</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="412" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a0b08bfef7daf67ad966fa8024c630308" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void traffic_simulator::entity::EgoEntity::updateAutoware</definition>
+        <argsstring>(const geometry_msgs::msg::Pose &amp;current_pose)</argsstring>
+        <name>updateAutoware</name>
+        <param>
+          <type>const geometry_msgs::msg::Pose &amp;</type>
+          <declname>current_pose</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="416" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" bodystart="416" bodyend="441"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1afd7c5f83b49aaf35886c2568409acb74" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const openscenario_msgs::msg::EntityStatus</type>
+        <definition>const openscenario_msgs::msg::EntityStatus traffic_simulator::entity::EgoEntity::getEntityStatus</definition>
+        <argsstring>(const double time, const double step_time) const</argsstring>
+        <name>getEntityStatus</name>
+        <param>
+          <type>const double</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>step_time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="444" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/entity/ego_entity.cpp" bodystart="99" bodyend="173"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1ade17fc297e5a3ae696628c0316257b8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::entity::EgoEntity::EgoEntity</definition>
+        <argsstring>()=delete</argsstring>
+        <name>EgoEntity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="109" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1ab1465fabfdc7d9173bf9a09040e4a710" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::entity::EgoEntity::EgoEntity</definition>
+        <argsstring>(const std::string &amp;name, const boost::filesystem::path &amp;lanelet2_map_osm, const double step_time, const openscenario_msgs::msg::VehicleParameters &amp;parameters)</argsstring>
+        <name>EgoEntity</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>lanelet2_map_osm</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>step_time</declname>
+        </param>
+        <param>
+          <type>const openscenario_msgs::msg::VehicleParameters &amp;</type>
+          <declname>parameters</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="150" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" bodystart="150" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1ac50394458450233e0413a5d61b245964" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::entity::EgoEntity::~EgoEntity</definition>
+        <argsstring>() override</argsstring>
+        <name>~EgoEntity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="276" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" bodystart="276" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a62dcb8ea63ad06a429df8b76216fcb3d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto traffic_simulator::entity::EgoEntity::initializeAutoware</definition>
+        <argsstring>()</argsstring>
+        <name>initializeAutoware</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="294" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" bodystart="294" bodyend="315"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a769beb7741f519e4554b390cd6d51525" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void traffic_simulator::entity::EgoEntity::requestAcquirePosition</definition>
+        <argsstring>(const geometry_msgs::msg::PoseStamped &amp;goal_pose, const std::vector&lt; geometry_msgs::msg::PoseStamped &gt; &amp;constraints={})</argsstring>
+        <name>requestAcquirePosition</name>
+        <param>
+          <type>const geometry_msgs::msg::PoseStamped &amp;</type>
+          <declname>goal_pose</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; geometry_msgs::msg::PoseStamped &gt; &amp;</type>
+          <declname>constraints</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="317" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" bodystart="317" bodyend="346"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a8ee9d799c888d246961072a9b6dc49d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void traffic_simulator::entity::EgoEntity::requestAssignRoute</definition>
+        <argsstring>(const std::vector&lt; openscenario_msgs::msg::LaneletPose &gt; &amp;waypoints) override</argsstring>
+        <name>requestAssignRoute</name>
+        <reimplements refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a511092715e59a7e42242fee720208995">requestAssignRoute</reimplements>
+        <param>
+          <type>const std::vector&lt; openscenario_msgs::msg::LaneletPose &gt; &amp;</type>
+          <declname>waypoints</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="348" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/entity/ego_entity.cpp" bodystart="31" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1ad0fdad29d7ec7869c429b8ce2baf6d2a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>decltype(auto)</type>
+        <definition>decltype(auto) traffic_simulator::entity::EgoEntity::setTargetSpeed</definition>
+        <argsstring>(const double value, const bool)</argsstring>
+        <name>setTargetSpeed</name>
+        <param>
+          <type>const double</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="351" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" bodystart="351" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a95e2ee08566922106b2285f570034661" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>const std::string</type>
+        <definition>const std::string traffic_simulator::entity::EgoEntity::getCurrentAction</definition>
+        <argsstring>() const</argsstring>
+        <name>getCurrentAction</name>
+        <reimplements refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a03d6e9a0e35c7449bbb86228248f114b">getCurrentAction</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="363" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" bodystart="363" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a88c5ad4d8228577e6f55735eec9d7f80" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void traffic_simulator::entity::EgoEntity::onUpdate</definition>
+        <argsstring>(double current_time, double step_time)</argsstring>
+        <name>onUpdate</name>
+        <reimplements refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a2ca560ba0e1d878e734635b021deb5a6">onUpdate</reimplements>
+        <param>
+          <type>double</type>
+          <declname>current_time</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>step_time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="368" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/entity/ego_entity.cpp" bodystart="76" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a049f32672a2aceda81cb15eb769a2c0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::entity::EgoEntity::setStatus</definition>
+        <argsstring>(const openscenario_msgs::msg::EntityStatus &amp;status)</argsstring>
+        <name>setStatus</name>
+        <param>
+          <type>const openscenario_msgs::msg::EntityStatus &amp;</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="370" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/entity/ego_entity.cpp" bodystart="58" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a7a2929b98ef6c6a6c0bdaf8d820519a3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>openscenario_msgs::msg::WaypointsArray</type>
+        <definition>openscenario_msgs::msg::WaypointsArray traffic_simulator::entity::EgoEntity::getWaypoints</definition>
+        <argsstring>() const</argsstring>
+        <name>getWaypoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="372" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/entity/ego_entity.cpp" bodystart="47" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="46">
+        <label>traffic_simulator::entity::EntityBase</label>
+        <link refid="classtraffic__simulator_1_1entity_1_1EntityBase"/>
+      </node>
+      <node id="44">
+        <label>traffic_simulator::entity::EgoEntity</label>
+        <link refid="classtraffic__simulator_1_1entity_1_1EgoEntity"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>traffic_simulator::entity::VehicleEntity</label>
+        <link refid="classtraffic__simulator_1_1entity_1_1VehicleEntity"/>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="49">
+        <label>traffic_simulator::entity::EntityBase</label>
+        <link refid="classtraffic__simulator_1_1entity_1_1EntityBase"/>
+      </node>
+      <node id="47">
+        <label>traffic_simulator::entity::EgoEntity</label>
+        <link refid="classtraffic__simulator_1_1entity_1_1EgoEntity"/>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>traffic_simulator::entity::VehicleEntity</label>
+        <link refid="classtraffic__simulator_1_1entity_1_1VehicleEntity"/>
+        <childnode refid="49" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="66" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" bodystart="65" bodyend="453"/>
+    <listofallmembers>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a7979386c3797f9edc8b844cc18879489" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>accessor_spinner</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1af112a5405bc1425b1645d7d6144ef2bc" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>accessor_status</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a6462a02db036efef6fdd5de8190b4234" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>autoware_initialized</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a32c5db65da6f3920eec65a7cbad46e37" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>autoware_process_id</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a05a24d2c44809a2deee9c4cfafcd0ffb" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>autowares</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a4f96805e870fc82a5a512383e0a5d84f" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>cancelRequest</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a663d357ca5bbde5ff198254cf910769c" prot="protected" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>current_marker_</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a38d7f11af63bc04d5d32463b05a771d1" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1ac2413b3fd0a32df218971fc6cc8cf688" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a6c6630b1e2a9696161477df59ec766a8" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1ac7831b8cad1f06ec60599202a4126f96" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1ae7e54a3a89809685550ac43318381722" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a1e4d9e34b48e7ef222b7af18af526418" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1ac8e34b39adf54e2c919d3c13e06df739" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1aba30803e0bfd8b3c433b02523303f7d7" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1ade17fc297e5a3ae696628c0316257b8c" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>EgoEntity</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1ab1465fabfdc7d9173bf9a09040e4a710" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>EgoEntity</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a8b3f77ffc95fcc4568cbc86f504a3dff" prot="protected" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>entity_type_list_</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a77cdf9bc8f0292c3aad5edaf0324b41c" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>EntityBase</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a5da5d33b65c97d4fa9ad76b58d0a4345" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>EntityBase</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a7f35f2903f8c4be7a4f45119443d9725" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>execute</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a3addacfa59627b573a0cfbcdab0f01e3" prot="public" virt="virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>getBoundingBox</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a95e2ee08566922106b2285f570034661" prot="public" virt="virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>getCurrentAction</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1afd7c5f83b49aaf35886c2568409acb74" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>getEntityStatus</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a43b81abaae12e4e5cb7d645912f5a9f0" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>getLinearJerk</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1aae1454a67fc261ebdc3f7aedd9cb62e4" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>getObstacle</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a811ebab65fb75a0aecd264a019d22f95" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>getRouteLanelets</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ab9a254ce5fd0f6661d6882060e2e8319" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>getStandStillDuration</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a5b33026593d89a6d359baeb9ac2bbd02" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>getStatus</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ac6352d01d096a916c5861cd2a45d8837" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>getVisibility</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a7a2929b98ef6c6a6c0bdaf8d820519a3" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>getWaypoints</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1aa3362866d07e30c9ef53b804e50b72e5" prot="public" virt="non-virtual" ambiguityscope="traffic_simulator::entity::VehicleEntity::"><scope>traffic_simulator::entity::EgoEntity</scope><name>getWaypoints</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a72dc3af2b74ab8f861334f24c0fcce51" prot="protected" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>hdmap_utils_ptr_</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a4a391d045af95f50e8e531abb201d6c9" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>initial_pose_</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a62dcb8ea63ad06a429df8b76216fcb3d" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>initializeAutoware</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ae894691c484f18895c70d18fb526940f" prot="protected" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>linear_jerk_</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a3a4d53f8de4fd65b8eb687f898964aac" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>name</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ae1398a179cc534a3b4b060d91b313dd7" prot="protected" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>next_waypoint_</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a88c5ad4d8228577e6f55735eec9d7f80" prot="public" virt="virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>onUpdate</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a00f9e0c0b726c1ad4b9df74fa27f00a8" prot="protected" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>other_status_</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1ad3f6d33277d6d3a7366a2f2219a5a7ee" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>parameters</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1aaf8e648d4d0f6bcbfbad84f8324dd0d3" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>previous_angular_velocity_</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1ad2b60388f3bd8a7e7190db957fe94d3c" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>previous_linear_velocity_</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a769beb7741f519e4554b390cd6d51525" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>requestAcquirePosition</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a2a6676f706f20501376d4b6216dfba3c" prot="public" virt="non-virtual" ambiguityscope="traffic_simulator::entity::VehicleEntity::"><scope>traffic_simulator::entity::EgoEntity</scope><name>requestAcquirePosition</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a8ee9d799c888d246961072a9b6dc49d9" prot="public" virt="virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>requestAssignRoute</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a09e64007199cacc4ffabf2a0e2591790" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>requestLaneChange</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a7365d3a2e7c70ad81b07c0633a9ba0e7" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>setDriverModel</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a0723e9a8c31e0727c0905b2b48236572" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>setEntityTypeList</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1aafd854727623a930b38e76251dec352c" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>setHdMapUtils</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1accd382ea1a7e68441dcb6260487ce030" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>setOtherStatus</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a049f32672a2aceda81cb15eb769a2c0b" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>setStatus</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1ad0fdad29d7ec7869c429b8ce2baf6d2a" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>setTargetSpeed</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a733e798f6ca821f994a2a82ecd55a13d" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>setTrafficLightManager</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a53e31e2a5e533dd6a4931fa12b681a8c" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>setVerbose</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a39e4e6d4b32dd1a14c3b997a025a19ab" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>setVisibility</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a1f739bcfbcc58012323926ed846c34a0" prot="protected" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>stand_still_duration_</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a59fa0432bf01dfd7a55433b4d1fb409c" prot="protected" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>status_</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a30f83a0c744bb236ddfee38827b01029" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>statusSetted</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1adaa0eee865fbbcaf8e3ebfc0d8065224" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>stopAtEndOfRoad</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a2198c8c9703f9344f685d774c4f1690e" prot="protected" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>traffic_light_manager_</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a88c9c91a08bb6bc33aa600a8653cbe02" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>type</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a0b08bfef7daf67ad966fa8024c630308" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>updateAutoware</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a085d0f4734c4d71f07c3567be6b1abae" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>updateStandStillDuration</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a8edfe25f1f9b9e0ffb16f75d15a57473" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>vehicle_model_ptr_</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a3baf6878c5a2c3e58b9f0d63db86adb7" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>VehicleEntity</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a2d76f35561e11f69af2db400bacfcffc" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>VehicleEntity</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a29d60ef36c5e02d97fdbc9b76ebd4df0" prot="protected" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>verbose_</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a0d8f076e2d340d3a76004d384d577117" prot="protected" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>visibility_</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a343cc0c0ec922c8836d1a5191f310447" prot="protected" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>waypoints_</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1ac50394458450233e0413a5d61b245964" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>~EgoEntity</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a14e9768af5cf590d7b93e0797d74c14d" prot="public" virt="virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>~EntityBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,403 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classtraffic__simulator_1_1TrafficLight" kind="class" language="C++" prot="public">
+    <compoundname>traffic_simulator::TrafficLight</compoundname>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classtraffic__simulator_1_1TrafficLight_1a14f0e6764216cff865b21bf93398f782" prot="private" static="no">
+        <type>double</type>
+        <definition>using traffic_simulator::TrafficLight::Duration =  double</definition>
+        <argsstring></argsstring>
+        <name>Duration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="32" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtraffic__simulator_1_1TrafficLight_1ab88b3cfd5c3ea4aa005ddd976ef88e48" prot="public" static="no" mutable="no">
+        <type>const std::int64_t</type>
+        <definition>const std::int64_t traffic_simulator::TrafficLight::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="50" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtraffic__simulator_1_1TrafficLight_1a9789633961061d787980be1c818c7521" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; TrafficLightColor, geometry_msgs::msg::Point &gt;</type>
+        <definition>std::unordered_map&lt;TrafficLightColor, geometry_msgs::msg::Point&gt; traffic_simulator::TrafficLight::color_positions_</definition>
+        <argsstring></argsstring>
+        <name>color_positions_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="58" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1TrafficLight_1a8a5c8385befad0bbda9834a98ce59514" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; TrafficLightArrow, geometry_msgs::msg::Point &gt;</type>
+        <definition>std::unordered_map&lt;TrafficLightArrow, geometry_msgs::msg::Point&gt; traffic_simulator::TrafficLight::arrow_positions_</definition>
+        <argsstring></argsstring>
+        <name>arrow_positions_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="59" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1TrafficLight_1ab32a68cb3d9c7122309cd0e06e8ac22f" prot="private" static="no" mutable="no">
+        <type><ref refid="classtraffic__simulator_1_1TrafficLightPhase" kindref="compound">TrafficLightPhase</ref>&lt; TrafficLightColor &gt;</type>
+        <definition>TrafficLightPhase&lt;TrafficLightColor&gt; traffic_simulator::TrafficLight::color_phase_</definition>
+        <argsstring></argsstring>
+        <name>color_phase_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="60" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1TrafficLight_1ae1f551d94ec44a8716cf0e352e81ca3e" prot="private" static="no" mutable="no">
+        <type><ref refid="classtraffic__simulator_1_1TrafficLightPhase" kindref="compound">TrafficLightPhase</ref>&lt; TrafficLightArrow &gt;</type>
+        <definition>TrafficLightPhase&lt;TrafficLightArrow&gt; traffic_simulator::TrafficLight::arrow_phase_</definition>
+        <argsstring></argsstring>
+        <name>arrow_phase_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="61" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1TrafficLight_1aaa704433cb07c63392525dfd2f046a20" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool traffic_simulator::TrafficLight::color_changed_</definition>
+        <argsstring></argsstring>
+        <name>color_changed_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="62" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1TrafficLight_1aece1ac7afa903302f999ad9fa06f0fd6" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool traffic_simulator::TrafficLight::arrow_changed_</definition>
+        <argsstring></argsstring>
+        <name>arrow_changed_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="63" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLight_1a320cf0ebf8184d5106fdc3e28a28b6cd" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::TrafficLight::TrafficLight</definition>
+        <argsstring>(std::int64_t id, const std::unordered_map&lt; TrafficLightColor, geometry_msgs::msg::Point &gt; &amp;color_positions={}, const std::unordered_map&lt; TrafficLightArrow, geometry_msgs::msg::Point &gt; &amp;arrow_positions={})</argsstring>
+        <name>TrafficLight</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const std::unordered_map&lt; TrafficLightColor, geometry_msgs::msg::Point &gt; &amp;</type>
+          <declname>color_positions</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type>const std::unordered_map&lt; TrafficLightArrow, geometry_msgs::msg::Point &gt; &amp;</type>
+          <declname>arrow_positions</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="35" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic_lights/traffic_light.cpp" bodystart="26" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLight_1ae49998f69343d6e4d28168b8999c352e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void traffic_simulator::TrafficLight::setColorPhase</definition>
+        <argsstring>(const std::vector&lt; std::pair&lt; Duration, TrafficLightColor &gt;&gt; &amp;phase, double time_offset=0)</argsstring>
+        <name>setColorPhase</name>
+        <param>
+          <type>const std::vector&lt; std::pair&lt; Duration, TrafficLightColor &gt;&gt; &amp;</type>
+          <declname>phase</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>time_offset</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="39" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic_lights/traffic_light.cpp" bodystart="44" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLight_1ae6f370cfa9d539ffc477b4e794cc3809" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void traffic_simulator::TrafficLight::setArrowPhase</definition>
+        <argsstring>(const std::vector&lt; std::pair&lt; Duration, TrafficLightArrow &gt;&gt; &amp;phase, double time_offset=0)</argsstring>
+        <name>setArrowPhase</name>
+        <param>
+          <type>const std::vector&lt; std::pair&lt; Duration, TrafficLightArrow &gt;&gt; &amp;</type>
+          <declname>phase</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>time_offset</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="41" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic_lights/traffic_light.cpp" bodystart="50" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLight_1acdf978fecd50a112245a08c81d7922cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void traffic_simulator::TrafficLight::setColor</definition>
+        <argsstring>(TrafficLightColor color)</argsstring>
+        <name>setColor</name>
+        <param>
+          <type>TrafficLightColor</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="43" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic_lights/traffic_light.cpp" bodystart="56" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLight_1aeaf9833b232a7d34425dc0fdbd256bb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void traffic_simulator::TrafficLight::setArrow</definition>
+        <argsstring>(TrafficLightArrow arrow)</argsstring>
+        <name>setArrow</name>
+        <param>
+          <type>TrafficLightArrow</type>
+          <declname>arrow</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="44" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic_lights/traffic_light.cpp" bodystart="58" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLight_1aaa4b7950cb3a408576545cb93aaa9150" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double traffic_simulator::TrafficLight::getColorPhaseLength</definition>
+        <argsstring>() const</argsstring>
+        <name>getColorPhaseLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="45" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic_lights/traffic_light.cpp" bodystart="60" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLight_1a1a2c58a3493bc35bc0fb379bb4048715" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double traffic_simulator::TrafficLight::getArrowPhaseLength</definition>
+        <argsstring>() const</argsstring>
+        <name>getArrowPhaseLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="46" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic_lights/traffic_light.cpp" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLight_1a9aa2e5a17b2998636ec999573e37b6b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void traffic_simulator::TrafficLight::update</definition>
+        <argsstring>(double step_time)</argsstring>
+        <name>update</name>
+        <param>
+          <type>double</type>
+          <declname>step_time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="47" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic_lights/traffic_light.cpp" bodystart="72" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLight_1a4087f2b89efe5ea62f7b1247cd706277" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>TrafficLightArrow</type>
+        <definition>TrafficLightArrow traffic_simulator::TrafficLight::getArrow</definition>
+        <argsstring>() const</argsstring>
+        <name>getArrow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="48" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic_lights/traffic_light.cpp" bodystart="64" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLight_1afb837b5eaa6c21dd4e54ccaab0ca054b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>TrafficLightColor</type>
+        <definition>TrafficLightColor traffic_simulator::TrafficLight::getColor</definition>
+        <argsstring>() const</argsstring>
+        <name>getColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="49" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic_lights/traffic_light.cpp" bodystart="66" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLight_1aba651d8243d0927aecb9860d288c97a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const geometry_msgs::msg::Point</type>
+        <definition>const geometry_msgs::msg::Point traffic_simulator::TrafficLight::getPosition</definition>
+        <argsstring>(const TrafficLightColor &amp;color)</argsstring>
+        <name>getPosition</name>
+        <param>
+          <type>const TrafficLightColor &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="51" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic_lights/traffic_light.cpp" bodystart="92" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLight_1a4643f2f23d630d0f77a8ab7ef353d149" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void traffic_simulator::TrafficLight::setPosition</definition>
+        <argsstring>(const TrafficLightColor &amp;color, const geometry_msgs::msg::Point &amp;position)</argsstring>
+        <name>setPosition</name>
+        <param>
+          <type>const TrafficLightColor &amp;</type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>const geometry_msgs::msg::Point &amp;</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="52" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic_lights/traffic_light.cpp" bodystart="38" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLight_1a4a71a8ce3fb7aa3896ec6141d3c7b396" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const geometry_msgs::msg::Point</type>
+        <definition>const geometry_msgs::msg::Point traffic_simulator::TrafficLight::getPosition</definition>
+        <argsstring>(const TrafficLightArrow &amp;arrow)</argsstring>
+        <name>getPosition</name>
+        <param>
+          <type>const TrafficLightArrow &amp;</type>
+          <declname>arrow</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="53" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic_lights/traffic_light.cpp" bodystart="100" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLight_1a2312cacf2e6d388fcb07ea316df7f086" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::TrafficLight::colorChanged</definition>
+        <argsstring>() const</argsstring>
+        <name>colorChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="54" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic_lights/traffic_light.cpp" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1TrafficLight_1a0a858c82a4a382315a73a5d551c6135f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::TrafficLight::arrowChanged</definition>
+        <argsstring>() const</argsstring>
+        <name>arrowChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="55" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic_lights/traffic_light.cpp" bodystart="70" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" line="31" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp" bodystart="30" bodyend="64"/>
+    <listofallmembers>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1aece1ac7afa903302f999ad9fa06f0fd6" prot="private" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>arrow_changed_</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1ae1f551d94ec44a8716cf0e352e81ca3e" prot="private" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>arrow_phase_</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1a8a5c8385befad0bbda9834a98ce59514" prot="private" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>arrow_positions_</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1a0a858c82a4a382315a73a5d551c6135f" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>arrowChanged</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1aaa704433cb07c63392525dfd2f046a20" prot="private" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>color_changed_</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1ab32a68cb3d9c7122309cd0e06e8ac22f" prot="private" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>color_phase_</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1a9789633961061d787980be1c818c7521" prot="private" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>color_positions_</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1a2312cacf2e6d388fcb07ea316df7f086" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>colorChanged</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1a14f0e6764216cff865b21bf93398f782" prot="private" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>Duration</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1a4087f2b89efe5ea62f7b1247cd706277" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>getArrow</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1a1a2c58a3493bc35bc0fb379bb4048715" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>getArrowPhaseLength</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1afb837b5eaa6c21dd4e54ccaab0ca054b" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>getColor</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1aaa4b7950cb3a408576545cb93aaa9150" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>getColorPhaseLength</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1aba651d8243d0927aecb9860d288c97a1" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>getPosition</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1a4a71a8ce3fb7aa3896ec6141d3c7b396" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>getPosition</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1ab88b3cfd5c3ea4aa005ddd976ef88e48" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>id</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1aeaf9833b232a7d34425dc0fdbd256bb5" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>setArrow</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1ae6f370cfa9d539ffc477b4e794cc3809" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>setArrowPhase</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1acdf978fecd50a112245a08c81d7922cc" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>setColor</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1ae49998f69343d6e4d28168b8999c352e" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>setColorPhase</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1a4643f2f23d630d0f77a8ab7ef353d149" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>setPosition</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1a320cf0ebf8184d5106fdc3e28a28b6cd" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>TrafficLight</name></member>
+      <member refid="classtraffic__simulator_1_1TrafficLight_1a9aa2e5a17b2998636ec999573e37b6b8" prot="public" virt="non-virtual"><scope>traffic_simulator::TrafficLight</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

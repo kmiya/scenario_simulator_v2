@@ -1,0 +1,312 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classentity__behavior_1_1vehicle_1_1BehaviorTree" kind="class" language="C++" prot="public">
+    <compoundname>entity_behavior::vehicle::BehaviorTree</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a795e3d801c6cc289e7bc83e12a9de965" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string entity_behavior::vehicle::BehaviorTree::request_</definition>
+        <argsstring></argsstring>
+        <name>request_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" line="72" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classentity__behavior_1_1vehicle_1_1BehaviorTree_1ab31c16bdc1c090376dba69af08eccd37" prot="private" static="no" mutable="no">
+        <type>BT::BehaviorTreeFactory</type>
+        <definition>BT::BehaviorTreeFactory entity_behavior::vehicle::BehaviorTree::factory_</definition>
+        <argsstring></argsstring>
+        <name>factory_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" line="73" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a942a720ce90a2197f065d28b46fb1bbe" prot="private" static="no" mutable="no">
+        <type>BT::Tree</type>
+        <definition>BT::Tree entity_behavior::vehicle::BehaviorTree::tree_</definition>
+        <argsstring></argsstring>
+        <name>tree_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" line="74" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a3d486fbe00038251f52ba0a4c862739d" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; BT::StdCoutLogger &gt;</type>
+        <definition>std::shared_ptr&lt;BT::StdCoutLogger&gt; entity_behavior::vehicle::BehaviorTree::logger_cout_ptr_</definition>
+        <argsstring></argsstring>
+        <name>logger_cout_ptr_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" line="75" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a7da09a550a3e72bc9f73c68e2e809e80" prot="private" static="no" mutable="no">
+        <type>BT::TimestampType</type>
+        <definition>BT::TimestampType entity_behavior::vehicle::BehaviorTree::type_</definition>
+        <argsstring></argsstring>
+        <name>type_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" line="80" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a77c26a54374b4ebf5477e06e895fb387" prot="private" static="no" mutable="no">
+        <type>BT::TimePoint</type>
+        <definition>BT::TimePoint entity_behavior::vehicle::BehaviorTree::first_timestamp_</definition>
+        <argsstring></argsstring>
+        <name>first_timestamp_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" line="81" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classentity__behavior_1_1vehicle_1_1BehaviorTree_1ae659242dbe88a1c8c216b0b2e5870448" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; BT::TreeNode::StatusChangeSubscriber &gt;</type>
+        <definition>std::vector&lt;BT::TreeNode::StatusChangeSubscriber&gt; entity_behavior::vehicle::BehaviorTree::subscribers_</definition>
+        <argsstring></argsstring>
+        <name>subscribers_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" line="82" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a60bb4d8a496004c48ab4a64572c1f822" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string entity_behavior::vehicle::BehaviorTree::current_action_</definition>
+        <argsstring></argsstring>
+        <name>current_action_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" line="83" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classentity__behavior_1_1vehicle_1_1BehaviorTree_1ac4b6b63cc15eb51a81286e3165096d89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>entity_behavior::vehicle::BehaviorTree::BehaviorTree</definition>
+        <argsstring>()</argsstring>
+        <name>BehaviorTree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" line="39" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/behavior/vehicle/behavior_tree.cpp" bodystart="34" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classentity__behavior_1_1vehicle_1_1BehaviorTree_1ac732bed2c4bcbd9ef096248f21fef6d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BT::NodeStatus</type>
+        <definition>BT::NodeStatus entity_behavior::vehicle::BehaviorTree::tick</definition>
+        <argsstring>(double current_time, double step_time)</argsstring>
+        <name>tick</name>
+        <param>
+          <type>double</type>
+          <declname>current_time</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>step_time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" line="40" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/behavior/vehicle/behavior_tree.cpp" bodystart="79" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classentity__behavior_1_1vehicle_1_1BehaviorTree_1adaa7d6a0900f7b83ac48e07b055fb948" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string</type>
+        <definition>const std::string entity_behavior::vehicle::BehaviorTree::getCurrentAction</definition>
+        <argsstring>() const</argsstring>
+        <name>getCurrentAction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" line="41" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a4574351bd8be9de2cb4a70c6a3e533e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void entity_behavior::vehicle::BehaviorTree::setValueToBlackBoard</definition>
+        <argsstring>(std::string key, T value)</argsstring>
+        <name>setValueToBlackBoard</name>
+        <param>
+          <type>std::string</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" line="44" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" bodystart="44" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a1d11d7ad27aa10a385d16aceda832ff1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>openscenario_msgs::msg::EntityStatus</type>
+        <definition>openscenario_msgs::msg::EntityStatus entity_behavior::vehicle::BehaviorTree::getUpdatedStatus</definition>
+        <argsstring>()</argsstring>
+        <name>getUpdatedStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" line="49" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" bodystart="49" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a1255513d34b4d65718b4562e012b25ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>openscenario_msgs::msg::WaypointsArray</type>
+        <definition>openscenario_msgs::msg::WaypointsArray entity_behavior::vehicle::BehaviorTree::getWaypoints</definition>
+        <argsstring>()</argsstring>
+        <name>getWaypoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" line="56" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" bodystart="56" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a3ffa21a663d47326b6a90077074dee1e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boost::optional&lt; openscenario_msgs::msg::Obstacle &gt;</type>
+        <definition>boost::optional&lt;openscenario_msgs::msg::Obstacle&gt; entity_behavior::vehicle::BehaviorTree::getObstacle</definition>
+        <argsstring>()</argsstring>
+        <name>getObstacle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" line="63" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" bodystart="63" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a23774953a30f91e14b8be94c947394f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void entity_behavior::vehicle::BehaviorTree::setRequest</definition>
+        <argsstring>(std::string request)</argsstring>
+        <name>setRequest</name>
+        <param>
+          <type>std::string</type>
+          <declname>request</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" line="69" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/behavior/vehicle/behavior_tree.cpp" bodystart="53" bodyend="57"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classentity__behavior_1_1vehicle_1_1BehaviorTree_1aa6c7ae539b4fd639b77766b18649e870" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void entity_behavior::vehicle::BehaviorTree::callback</definition>
+        <argsstring>(BT::Duration timestamp, const BT::TreeNode &amp;node, BT::NodeStatus prev_status, BT::NodeStatus status)</argsstring>
+        <name>callback</name>
+        <param>
+          <type>BT::Duration</type>
+          <declname>timestamp</declname>
+        </param>
+        <param>
+          <type>const BT::TreeNode &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>BT::NodeStatus</type>
+          <declname>prev_status</declname>
+        </param>
+        <param>
+          <type>BT::NodeStatus</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" line="76" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/behavior/vehicle/behavior_tree.cpp" bodystart="86" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a5d1ca853d53af7bbd6953068a64dbe80" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void entity_behavior::vehicle::BehaviorTree::setupLogger</definition>
+        <argsstring>()</argsstring>
+        <name>setupLogger</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" line="79" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/behavior/vehicle/behavior_tree.cpp" bodystart="59" bodyend="77"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" line="37" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp" bodystart="36" bodyend="84"/>
+    <listofallmembers>
+      <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1ac4b6b63cc15eb51a81286e3165096d89" prot="public" virt="non-virtual"><scope>entity_behavior::vehicle::BehaviorTree</scope><name>BehaviorTree</name></member>
+      <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1aa6c7ae539b4fd639b77766b18649e870" prot="private" virt="non-virtual"><scope>entity_behavior::vehicle::BehaviorTree</scope><name>callback</name></member>
+      <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a60bb4d8a496004c48ab4a64572c1f822" prot="private" virt="non-virtual"><scope>entity_behavior::vehicle::BehaviorTree</scope><name>current_action_</name></member>
+      <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1ab31c16bdc1c090376dba69af08eccd37" prot="private" virt="non-virtual"><scope>entity_behavior::vehicle::BehaviorTree</scope><name>factory_</name></member>
+      <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a77c26a54374b4ebf5477e06e895fb387" prot="private" virt="non-virtual"><scope>entity_behavior::vehicle::BehaviorTree</scope><name>first_timestamp_</name></member>
+      <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1adaa7d6a0900f7b83ac48e07b055fb948" prot="public" virt="non-virtual"><scope>entity_behavior::vehicle::BehaviorTree</scope><name>getCurrentAction</name></member>
+      <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a3ffa21a663d47326b6a90077074dee1e" prot="public" virt="non-virtual"><scope>entity_behavior::vehicle::BehaviorTree</scope><name>getObstacle</name></member>
+      <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a1d11d7ad27aa10a385d16aceda832ff1" prot="public" virt="non-virtual"><scope>entity_behavior::vehicle::BehaviorTree</scope><name>getUpdatedStatus</name></member>
+      <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a1255513d34b4d65718b4562e012b25ae" prot="public" virt="non-virtual"><scope>entity_behavior::vehicle::BehaviorTree</scope><name>getWaypoints</name></member>
+      <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a3d486fbe00038251f52ba0a4c862739d" prot="private" virt="non-virtual"><scope>entity_behavior::vehicle::BehaviorTree</scope><name>logger_cout_ptr_</name></member>
+      <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a795e3d801c6cc289e7bc83e12a9de965" prot="private" virt="non-virtual"><scope>entity_behavior::vehicle::BehaviorTree</scope><name>request_</name></member>
+      <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a23774953a30f91e14b8be94c947394f1" prot="public" virt="non-virtual"><scope>entity_behavior::vehicle::BehaviorTree</scope><name>setRequest</name></member>
+      <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a5d1ca853d53af7bbd6953068a64dbe80" prot="private" virt="non-virtual"><scope>entity_behavior::vehicle::BehaviorTree</scope><name>setupLogger</name></member>
+      <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a4574351bd8be9de2cb4a70c6a3e533e2" prot="public" virt="non-virtual"><scope>entity_behavior::vehicle::BehaviorTree</scope><name>setValueToBlackBoard</name></member>
+      <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1ae659242dbe88a1c8c216b0b2e5870448" prot="private" virt="non-virtual"><scope>entity_behavior::vehicle::BehaviorTree</scope><name>subscribers_</name></member>
+      <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1ac732bed2c4bcbd9ef096248f21fef6d7" prot="public" virt="non-virtual"><scope>entity_behavior::vehicle::BehaviorTree</scope><name>tick</name></member>
+      <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a942a720ce90a2197f065d28b46fb1bbe" prot="private" virt="non-virtual"><scope>entity_behavior::vehicle::BehaviorTree</scope><name>tree_</name></member>
+      <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a7da09a550a3e72bc9f73c68e2e809e80" prot="private" virt="non-virtual"><scope>entity_behavior::vehicle::BehaviorTree</scope><name>type_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

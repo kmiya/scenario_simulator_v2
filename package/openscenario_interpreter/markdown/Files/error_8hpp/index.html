@@ -806,35 +806,33 @@
 <h3 id="define-unsupported">define UNSUPPORTED<a class="headerlink" href="#define-unsupported" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#define UNSUPPORTED(</span>
 
-<span class="p">)</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> \
-  <span class="p">{</span> \
-    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span> <span class="p">{};</span> \
-    <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;given class </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">node</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> \
-      <span class="s">&quot; is valid OpenSCENARIO element, but is not supported&quot;</span><span class="p">;</span> \
-    <span class="k">throw</span> <span class="nf">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span> \
-    <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span> \
+<span class="p">)</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>                                             \
+    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>                                       \
+    <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;given class </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">node</span><span class="p">.</span><span class="n">name</span><span class="p">()</span>                         \
+       <span class="o">&lt;&lt;</span> <span class="s">&quot; is valid OpenSCENARIO element, but is not supported&quot;</span><span class="p">;</span> \
+    <span class="k">throw</span> <span class="nf">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>                                  \
+    <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span>                                           \
   <span class="p">}</span>
 </code></pre></div>
 <h3 id="define-unimplemented">define UNIMPLEMENTED<a class="headerlink" href="#define-unimplemented" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#define UNIMPLEMENTED(</span>
     <span class="n">NAME</span>
-<span class="p">)</span> <span class="k">do</span> <span class="p">{</span> \
-    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span> <span class="p">{};</span> \
-    <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;given class </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">NAME</span> <span class="o">&lt;&lt;</span> \
-      <span class="s">&quot;</span><span class="se">\&#39;</span><span class="s"> is valid OpenSCENARIO element, but is not yet implemented&quot;</span><span class="p">;</span> \
-    <span class="k">throw</span> <span class="n">ImplementationFault</span> <span class="p">{</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()};</span> \
+<span class="p">)</span> <span class="k">do</span> <span class="p">{</span>                                                                    \
+    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>                                               \
+    <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;given class </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">NAME</span>                                        \
+       <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&#39;</span><span class="s"> is valid OpenSCENARIO element, but is not yet implemented&quot;</span><span class="p">;</span> \
+    <span class="k">throw</span> <span class="n">ImplementationFault</span><span class="p">{</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()};</span>                                  \
   <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nb">false</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="define-throw_unsupported_error">define THROW_UNSUPPORTED_ERROR<a class="headerlink" href="#define-throw_unsupported_error" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#define THROW_UNSUPPORTED_ERROR(</span>
     <span class="n">PARENT</span>
-<span class="p">)</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">child</span><span class="p">)</span> \
-  <span class="p">{</span> \
-    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span> <span class="p">{};</span> \
-    <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;given class </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">child</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&#39;</span><span class="s"> (element of class </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">PARENT</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> \
-      <span class="s">&quot;</span><span class="se">\&#39;</span><span class="s">) is valid OpenSCENARIO element, but is not supported&quot;</span><span class="p">;</span> \
-    <span class="k">throw</span> <span class="nf">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span> \
-    <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span> \
+<span class="p">)</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">child</span><span class="p">)</span> <span class="p">{</span>                                                                   \
+    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>                                                              \
+    <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;given class </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">child</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&#39;</span><span class="s"> (element of class </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">PARENT</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> \
+       <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&#39;</span><span class="s">) is valid OpenSCENARIO element, but is not supported&quot;</span><span class="p">;</span>                     \
+    <span class="k">throw</span> <span class="nf">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>                                                         \
+    <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span>                                                                  \
   <span class="p">}</span>
 </code></pre></div>
 <h3 id="define-throw_implementation_fault">define THROW_IMPLEMENTATION_FAULT<a class="headerlink" href="#define-throw_implementation_fault" title="Permanent link">#</a></h3>
@@ -845,10 +843,10 @@
 <h3 id="define-throw">define THROW<a class="headerlink" href="#define-throw" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#define THROW(</span>
     <span class="n">TYPENAME</span>
-<span class="p">)</span> <span class="k">do</span> <span class="p">{</span> \
-    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span> <span class="p">{};</span> \
+<span class="p">)</span> <span class="k">do</span> <span class="p">{</span>                                 \
+    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>            \
     <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="n">__FILE__</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">__LINE__</span><span class="p">;</span> \
-    <span class="k">throw</span> <span class="n">TYPENAME</span> <span class="p">{</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()};</span> \
+    <span class="k">throw</span> <span class="n">TYPENAME</span><span class="p">{</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()};</span>          \
   <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nb">false</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
@@ -870,7 +868,6 @@
 <span class="cp">#define OPENSCENARIO_INTERPRETER__ERROR_HPP_</span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/string/cat.hpp&gt;</span><span class="cp"></span>
-
 <span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
@@ -886,94 +883,88 @@
 <span class="cm"> *      `-- ImplementationFault</span>
 <span class="cm"> *</span>
 <span class="cm"> * -------------------------------------------------------------------------- */</span>
-<span class="k">struct</span> <span class="nc">Error</span>
-  <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span>
+<span class="k">struct</span> <span class="nc">Error</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span>
 <span class="p">{</span>
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">explicit</span> <span class="n">Error</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
-  <span class="o">:</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span>
-      <span class="n">cat</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...))</span>
-  <span class="p">{}</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+  <span class="k">explicit</span> <span class="n">Error</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="o">:</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">cat</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...))</span>
+  <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">};</span>
 
-<span class="k">struct</span> <span class="nc">SyntaxError</span>
-  <span class="o">:</span> <span class="k">public</span> <span class="n">Error</span>
+<span class="k">struct</span> <span class="nc">SyntaxError</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Error</span>
 <span class="p">{</span>
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">explicit</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
-  <span class="o">:</span> <span class="n">Error</span><span class="p">(</span><span class="s">&quot;syntax-error: &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...)</span>
-  <span class="p">{}</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+  <span class="k">explicit</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="o">:</span> <span class="n">Error</span><span class="p">(</span><span class="s">&quot;syntax-error: &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...)</span>
+  <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">};</span>
 
-<span class="k">struct</span> <span class="nc">SemanticError</span>
-  <span class="o">:</span> <span class="k">public</span> <span class="n">Error</span>
+<span class="k">struct</span> <span class="nc">SemanticError</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Error</span>
 <span class="p">{</span>
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">explicit</span> <span class="n">SemanticError</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
-  <span class="o">:</span> <span class="n">Error</span><span class="p">(</span><span class="s">&quot;semantic-error: &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...)</span>
-  <span class="p">{}</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+  <span class="k">explicit</span> <span class="n">SemanticError</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="o">:</span> <span class="n">Error</span><span class="p">(</span><span class="s">&quot;semantic-error: &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...)</span>
+  <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">};</span>
 
-<span class="k">struct</span> <span class="nc">ConnectionError</span>
-  <span class="o">:</span> <span class="k">public</span> <span class="n">Error</span>
+<span class="k">struct</span> <span class="nc">ConnectionError</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Error</span>
 <span class="p">{</span>
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">explicit</span> <span class="n">ConnectionError</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+  <span class="k">explicit</span> <span class="n">ConnectionError</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
   <span class="o">:</span> <span class="n">Error</span><span class="p">(</span><span class="s">&quot;connection-error: &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...)</span>
-  <span class="p">{}</span>
+  <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">};</span>
 
-<span class="k">struct</span> <span class="nc">ImplementationFault</span>
-  <span class="o">:</span> <span class="k">public</span> <span class="n">Error</span>
+<span class="k">struct</span> <span class="nc">ImplementationFault</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Error</span>
 <span class="p">{</span>
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">explicit</span> <span class="n">ImplementationFault</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+  <span class="k">explicit</span> <span class="n">ImplementationFault</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
   <span class="o">:</span> <span class="n">Error</span><span class="p">(</span><span class="s">&quot;implementation-fault: &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...)</span>
-  <span class="p">{}</span>
+  <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">};</span>
 
-<span class="cp">#define THROW(TYPENAME) \</span>
-<span class="cp">  do { \</span>
-<span class="cp">    std::stringstream ss {}; \</span>
+<span class="cp">#define THROW(TYPENAME)                \</span>
+<span class="cp">  do {                                 \</span>
+<span class="cp">    std::stringstream ss{};            \</span>
 <span class="cp">    ss &lt;&lt; __FILE__ &lt;&lt; &quot;:&quot; &lt;&lt; __LINE__; \</span>
-<span class="cp">    throw TYPENAME {ss.str()}; \</span>
+<span class="cp">    throw TYPENAME{ss.str()};          \</span>
 <span class="cp">  } while (false)</span>
 
 <span class="cp">#define THROW_IMPLEMENTATION_FAULT() THROW(ImplementationFault)</span>
 
-<span class="cp">#define UNIMPLEMENTED(NAME) \</span>
-<span class="cp">  do { \</span>
-<span class="cp">    std::stringstream ss {}; \</span>
-<span class="cp">    ss &lt;&lt; &quot;given class \&#39;&quot; &lt;&lt; NAME &lt;&lt; \</span>
-<span class="cp">      &quot;\&#39; is valid OpenSCENARIO element, but is not yet implemented&quot;; \</span>
-<span class="cp">    throw ImplementationFault {ss.str()}; \</span>
+<span class="cp">#define UNIMPLEMENTED(NAME)                                               \</span>
+<span class="cp">  do {                                                                    \</span>
+<span class="cp">    std::stringstream ss{};                                               \</span>
+<span class="cp">    ss &lt;&lt; &quot;given class \&#39;&quot; &lt;&lt; NAME                                        \</span>
+<span class="cp">       &lt;&lt; &quot;\&#39; is valid OpenSCENARIO element, but is not yet implemented&quot;; \</span>
+<span class="cp">    throw ImplementationFault{ss.str()};                                  \</span>
 <span class="cp">  } while (false)</span>
 
-<span class="cp">#define THROW_UNSUPPORTED_ERROR(PARENT) \</span>
-<span class="cp">  [&amp;](auto &amp;&amp; child) \</span>
-<span class="cp">  { \</span>
-<span class="cp">    std::stringstream ss {}; \</span>
-<span class="cp">    ss &lt;&lt; &quot;given class \&#39;&quot; &lt;&lt; child.name() &lt;&lt; &quot;\&#39; (element of class \&#39;&quot; &lt;&lt; PARENT.name() &lt;&lt; \</span>
-<span class="cp">      &quot;\&#39;) is valid OpenSCENARIO element, but is not supported&quot;; \</span>
-<span class="cp">    throw SyntaxError(ss.str()); \</span>
-<span class="cp">    return unspecified; \</span>
+<span class="cp">#define THROW_UNSUPPORTED_ERROR(PARENT)                                                  \</span>
+<span class="cp">  [&amp;](auto &amp;&amp; child) {                                                                   \</span>
+<span class="cp">    std::stringstream ss{};                                                              \</span>
+<span class="cp">    ss &lt;&lt; &quot;given class \&#39;&quot; &lt;&lt; child.name() &lt;&lt; &quot;\&#39; (element of class \&#39;&quot; &lt;&lt; PARENT.name() \</span>
+<span class="cp">       &lt;&lt; &quot;\&#39;) is valid OpenSCENARIO element, but is not supported&quot;;                     \</span>
+<span class="cp">    throw SyntaxError(ss.str());                                                         \</span>
+<span class="cp">    return unspecified;                                                                  \</span>
 <span class="cp">  }</span>
 
-<span class="cp">#define UNSUPPORTED() \</span>
-<span class="cp">  [&amp;](auto &amp;&amp; node) \</span>
-<span class="cp">  { \</span>
-<span class="cp">    std::stringstream ss {}; \</span>
-<span class="cp">    ss &lt;&lt; &quot;given class \&#39;&quot; &lt;&lt; node.name() &lt;&lt; \</span>
-<span class="cp">      &quot; is valid OpenSCENARIO element, but is not supported&quot;; \</span>
-<span class="cp">    throw SyntaxError(ss.str()); \</span>
-<span class="cp">    return unspecified; \</span>
+<span class="cp">#define UNSUPPORTED()                                             \</span>
+<span class="cp">  [&amp;](auto &amp;&amp; node) {                                             \</span>
+<span class="cp">    std::stringstream ss{};                                       \</span>
+<span class="cp">    ss &lt;&lt; &quot;given class \&#39;&quot; &lt;&lt; node.name()                         \</span>
+<span class="cp">       &lt;&lt; &quot; is valid OpenSCENARIO element, but is not supported&quot;; \</span>
+<span class="cp">    throw SyntaxError(ss.str());                                  \</span>
+<span class="cp">    return unspecified;                                           \</span>
 <span class="cp">  }</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
 
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__ERROR_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 01:42:32 UTC</p>
+<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
                 
                   
                 

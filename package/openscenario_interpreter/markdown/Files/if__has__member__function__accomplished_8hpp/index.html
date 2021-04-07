@@ -731,31 +731,25 @@
 <span class="p">{</span>
 <span class="kr">inline</span> <span class="k">namespace</span> <span class="n">type_traits</span>
 <span class="p">{</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">,</span> <span class="k">typename</span> <span class="o">=</span> <span class="kt">void</span><span class="o">&gt;</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">,</span> <span class="k">typename</span> <span class="o">=</span> <span class="kt">void</span><span class="o">&gt;</span>
 <span class="k">struct</span> <span class="nc">IfHasMemberFunctionAccomplished</span>
 <span class="p">{</span>
-  <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">callIt</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="p">)</span> <span class="k">noexcept</span>
-  <span class="p">{</span>
-    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-  <span class="p">}</span>
+  <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">callIt</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span> <span class="p">}</span>
 <span class="p">};</span>
 
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
-<span class="k">struct</span> <span class="nc">IfHasMemberFunctionAccomplished</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span>
-  <span class="k">typename</span> <span class="nc">std</span><span class="o">::</span><span class="n">enable_if</span><span class="o">&lt;</span><span class="n">HasMemberFunctionAccomplished</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">value</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">&gt;</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="nc">IfHasMemberFunctionAccomplished</span><span class="o">&lt;</span>
+  <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">std</span><span class="o">::</span><span class="n">enable_if</span><span class="o">&lt;</span><span class="n">HasMemberFunctionAccomplished</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">value</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">&gt;</span>
 <span class="p">{</span>
-  <span class="k">static</span> <span class="nf">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">callIt</span><span class="p">(</span><span class="n">T</span> <span class="o">&amp;</span> <span class="n">is</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="k">return</span> <span class="n">is</span><span class="p">.</span><span class="n">accomplished</span><span class="p">();</span>
-  <span class="p">}</span>
+  <span class="k">static</span> <span class="nf">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">callIt</span><span class="p">(</span><span class="n">T</span> <span class="o">&amp;</span> <span class="n">is</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">is</span><span class="p">.</span><span class="n">accomplished</span><span class="p">();</span> <span class="p">}</span>
 <span class="p">};</span>
-<span class="p">}</span>  <span class="c1">// inline namespace type_traits</span>
+<span class="p">}</span>  <span class="c1">// namespace type_traits</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
 
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__TYPE_TRAITS__IF_HAS_MEMBER_FUNCTION_ACCOMPLISHED_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 01:42:32 UTC</p>
+<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
                 
                   
                 

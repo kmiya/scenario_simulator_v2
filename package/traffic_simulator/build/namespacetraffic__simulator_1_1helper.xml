@@ -1,0 +1,422 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacetraffic__simulator_1_1helper" kind="namespace" language="C++">
+    <compoundname>traffic_simulator::helper</compoundname>
+    <innerclass refid="classtraffic__simulator_1_1helper_1_1StopWatch" prot="public">traffic_simulator::helper::StopWatch</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="helper_8hpp_1aeaf5597d701d03be7983065e85866cfe" prot="public" static="no">
+        <name>LidarType</name>
+        <enumvalue id="dummy_1aeaf5597d701d03be7983065e85866cfea0089005f0e43371624733483dd92275e" prot="public">
+          <name>VLP16</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dummy_1aeaf5597d701d03be7983065e85866cfeadea111fa4f5b6aad864d590cd28eef04" prot="public">
+          <name>VLP32</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/helper/helper.hpp" line="93" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/helper/helper.hpp" bodystart="93" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="helper_8hpp_1a8b737ef1420e5893203e1f028dc56bf8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>openscenario_msgs::msg::ActionStatus</type>
+        <definition>openscenario_msgs::msg::ActionStatus traffic_simulator::helper::constructActionStatus</definition>
+        <argsstring>(double linear_vel=0, double angular_vel=0, double linear_accel=0, double angular_accel=0)</argsstring>
+        <name>constructActionStatus</name>
+        <param>
+          <type>double</type>
+          <declname>linear_vel</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>angular_vel</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>linear_accel</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>angular_accel</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>helper function for constructing action status </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>linear_vel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>linear velocity </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>angular_vel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>angluar velocity </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>linear_accel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>linear acceleration </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>angular_accel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>angular acceleration </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>openscenario_msgs::msg::ActionStatus </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/helper/helper.hpp" line="41" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/helper/helper.cpp" bodystart="24" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="helper_8hpp_1ac7dfb094a2d87d61c9300f1c28528c35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>openscenario_msgs::msg::LaneletPose</type>
+        <definition>openscenario_msgs::msg::LaneletPose traffic_simulator::helper::constructLaneletPose</definition>
+        <argsstring>(std::int64_t lanelet_id, double s, double offset=0, double roll=0, double pitch=0, double yaw=0)</argsstring>
+        <name>constructLaneletPose</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>offset</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>roll</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>pitch</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>yaw</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>helper function for constructing lanelet pose </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lanelet_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lanelet id </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>s value in lane coordinate </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>offset value in lane coordinate </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>roll</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>roll value in the lane coordinate </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pitch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pitch value in the lane coordinate </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>yaw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>yaw value in the lane coordinate </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>openscenario_msgs::msg::LaneletPose </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/helper/helper.hpp" line="55" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/helper/helper.cpp" bodystart="39" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="helper_8hpp_1a0395164bdd85ec823992dbabef8bc51d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>geometry_msgs::msg::Vector3</type>
+        <definition>geometry_msgs::msg::Vector3 traffic_simulator::helper::constructRPY</definition>
+        <argsstring>(double roll=0, double pitch=0, double yaw=0)</argsstring>
+        <name>constructRPY</name>
+        <param>
+          <type>double</type>
+          <declname>roll</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>pitch</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>yaw</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>helper function for constructing rpy </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>roll</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>roll value of the orientation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pitch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pitch value of the orientation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>yaw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>yaw value of the orientation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>geometry_msgs::msg::Vector3 RPY values </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/helper/helper.hpp" line="67" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/helper/helper.cpp" bodystart="52" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="helper_8hpp_1a2c4f3c4a1917dedcd9c56cdfeb075984" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>geometry_msgs::msg::Vector3</type>
+        <definition>geometry_msgs::msg::Vector3 traffic_simulator::helper::constructRPYfronQuaternion</definition>
+        <argsstring>(geometry_msgs::msg::Quaternion quaternion)</argsstring>
+        <name>constructRPYfronQuaternion</name>
+        <param>
+          <type>geometry_msgs::msg::Quaternion</type>
+          <declname>quaternion</declname>
+        </param>
+        <briefdescription>
+<para>helper function for constructing rpy </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>quaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>quaternion class </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>geometry_msgs::msg::Vector3 RPY value </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/helper/helper.hpp" line="75" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/helper/helper.cpp" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="helper_8hpp_1a7cef567ae0b5a25ff8b4b6d3d911e405" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>geometry_msgs::msg::Pose</type>
+        <definition>geometry_msgs::msg::Pose traffic_simulator::helper::constructPose</definition>
+        <argsstring>(double x, double y, double z, double roll, double pitch, double yaw)</argsstring>
+        <name>constructPose</name>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>z</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>roll</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>pitch</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>yaw</declname>
+        </param>
+        <briefdescription>
+<para>helper function for constructing pose </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>x value in position </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>y value in position </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>z value in position </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>roll</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>roll value in orientation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pitch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pitch value in orientation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>yaw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>yaw value in orientation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>geometry_msgs::msg::Pose </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/helper/helper.hpp" line="88" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/helper/helper.cpp" bodystart="66" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="helper_8hpp_1a1c8a7c8c638f1b1ff6dcfca0fa6a47e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; traffic_simulator::helper::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const openscenario_msgs::msg::LaneletPose &amp;ll_pose)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const openscenario_msgs::msg::LaneletPose &amp;</type>
+          <declname>ll_pose</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/helper/helper.hpp" line="91" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/helper/helper.cpp" bodystart="78" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="helper_8hpp_1a0a0ca8b8186533afc3156d7cb7a6c091" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const simulation_api_schema::LidarConfiguration</type>
+        <definition>const simulation_api_schema::LidarConfiguration traffic_simulator::helper::constructLidarConfiguration</definition>
+        <argsstring>(LidarType type, std::string entity, std::string topic_name, double horizontal_resolution=1.0/180.0 *M_PI)</argsstring>
+        <name>constructLidarConfiguration</name>
+        <param>
+          <type>LidarType</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>entity</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>topic_name</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>horizontal_resolution</declname>
+          <defval>1.0/180.0 *M_PI</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/helper/helper.hpp" line="95" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/helper/helper.cpp" bodystart="94" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="helper_8hpp_1a0fa04b2e99c5d424c6c65d3a8addf897" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const simulation_api_schema::DetectionSensorConfiguration</type>
+        <definition>const simulation_api_schema::DetectionSensorConfiguration traffic_simulator::helper::constructDetectionSensorConfiguration</definition>
+        <argsstring>(std::string entity, std::string topic_name, double update_duration)</argsstring>
+        <name>constructDetectionSensorConfiguration</name>
+        <param>
+          <type>std::string</type>
+          <declname>entity</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>topic_name</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>update_duration</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/helper/helper.hpp" line="99" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/helper/helper.cpp" bodystart="84" bodyend="92"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/helper/helper.hpp" line="31" column="1"/>
+  </compounddef>
+</doxygen>

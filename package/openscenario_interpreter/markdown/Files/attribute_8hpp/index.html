@@ -700,11 +700,10 @@
 <span class="cp">#define OPENSCENARIO_INTERPRETER__READER__ATTRIBUTE_HPP_</span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;ament_index_cpp/get_package_share_directory.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/parameter_type.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/utility/highlighter.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/utility/pugi_extension.hpp&gt;</span><span class="cp"></span>
-
-<span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;regex&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp"></span>
@@ -718,14 +717,12 @@
 <span class="cm"> * See https://design.ros2.org/articles/roslaunch_xml.html#dynamic-configuration</span>
 <span class="cm"> *</span>
 <span class="cm"> * -------------------------------------------------------------------------- */</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
 <span class="k">auto</span> <span class="n">substitute</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">scope</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">static</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">regex</span> <span class="n">substitution_syntax</span> <span class="p">{</span>
-    <span class="sa">R</span><span class="s">&quot;</span><span class="dl">(</span><span class="s">(.*)\$\((([\w-]+)\s?([^\)]*))\)(.*)</span><span class="dl">)</span><span class="s">&quot;</span>
-  <span class="p">};</span>
+  <span class="k">static</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">regex</span> <span class="n">substitution_syntax</span><span class="p">{</span><span class="sa">R</span><span class="s">&quot;</span><span class="dl">(</span><span class="s">(.*)\$\((([\w-]+)\s?([^\)]*))\)(.*)</span><span class="dl">)</span><span class="s">&quot;</span><span class="p">};</span>
 
-  <span class="n">std</span><span class="o">::</span><span class="n">smatch</span> <span class="n">match</span> <span class="p">{};</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">smatch</span> <span class="n">match</span><span class="p">{};</span>
 
   <span class="k">while</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">regex_match</span><span class="p">(</span><span class="n">attribute</span><span class="p">,</span> <span class="n">match</span><span class="p">,</span> <span class="n">substitution_syntax</span><span class="p">))</span> <span class="p">{</span>
     <span class="c1">// std::cout &lt;&lt; &quot;match 1: &quot; &lt;&lt; match.str(1) &lt;&lt; std::endl;</span>
@@ -735,51 +732,34 @@
     <span class="c1">// std::cout &lt;&lt; &quot;match 5: &quot; &lt;&lt; match.str(5) &lt;&lt; std::endl;</span>
 
     <span class="k">static</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-    <span class="o">&gt;</span>
-    <span class="n">substitutions</span>
-    <span class="p">{</span>
-      <span class="p">{</span>
-        <span class="s">&quot;find-pkg-share&quot;</span><span class="p">,</span> <span class="p">[](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">package_name</span><span class="p">,</span> <span class="k">auto</span> <span class="o">&amp;&amp;</span><span class="p">)</span>
-        <span class="p">{</span>
-          <span class="k">return</span> <span class="n">ament_index_cpp</span><span class="o">::</span><span class="n">get_package_share_directory</span><span class="p">(</span><span class="n">package_name</span><span class="p">);</span>
-        <span class="p">}</span>
-      <span class="p">},</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span> <span class="o">&gt;</span>
+      <span class="n">substitutions</span><span class="p">{</span>
+        <span class="p">{</span><span class="s">&quot;find-pkg-share&quot;</span><span class="p">,</span>
+         <span class="p">[](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">package_name</span><span class="p">,</span> <span class="k">auto</span> <span class="o">&amp;&amp;</span><span class="p">)</span> <span class="p">{</span>
+           <span class="k">return</span> <span class="n">ament_index_cpp</span><span class="o">::</span><span class="n">get_package_share_directory</span><span class="p">(</span><span class="n">package_name</span><span class="p">);</span>
+         <span class="p">}},</span>
 
-      <span class="p">{</span>
-        <span class="s">&quot;var&quot;</span><span class="p">,</span> <span class="p">[](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">scope</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">String</span>
-        <span class="p">{</span>
-          <span class="k">const</span> <span class="k">auto</span> <span class="n">iter</span> <span class="p">{</span>
-            <span class="n">scope</span><span class="p">.</span><span class="n">parameters</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-          <span class="p">};</span>
+        <span class="p">{</span><span class="s">&quot;var&quot;</span><span class="p">,</span>
+         <span class="p">[](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">scope</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">String</span> <span class="p">{</span>
+           <span class="k">const</span> <span class="k">auto</span> <span class="n">iter</span><span class="p">{</span><span class="n">scope</span><span class="p">.</span><span class="n">parameters</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">)};</span>
 
-          <span class="k">if</span> <span class="p">(</span><span class="n">iter</span> <span class="o">!=</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">scope</span><span class="p">.</span><span class="n">parameters</span><span class="p">))</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="n">boost</span><span class="o">::</span><span class="n">lexical_cast</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="n">iter</span><span class="p">));</span>
-          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
-          <span class="p">}</span>
-        <span class="p">}</span>
-      <span class="p">},</span>
+           <span class="k">if</span> <span class="p">(</span><span class="n">iter</span> <span class="o">!=</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">scope</span><span class="p">.</span><span class="n">parameters</span><span class="p">))</span> <span class="p">{</span>
+             <span class="k">return</span> <span class="n">boost</span><span class="o">::</span><span class="n">lexical_cast</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="n">iter</span><span class="p">));</span>
+           <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+             <span class="k">return</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+           <span class="p">}</span>
+         <span class="p">}},</span>
 
-      <span class="p">{</span>
-        <span class="s">&quot;dirname&quot;</span><span class="p">,</span> <span class="p">[](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span><span class="p">,</span> <span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">scope</span><span class="p">)</span>
-        <span class="p">{</span>
-          <span class="k">return</span> <span class="n">scope</span><span class="p">.</span><span class="n">scenario</span><span class="p">.</span><span class="n">parent_path</span><span class="p">().</span><span class="n">string</span><span class="p">();</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">};</span>
+        <span class="p">{</span><span class="s">&quot;dirname&quot;</span><span class="p">,</span> <span class="p">[](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span><span class="p">,</span> <span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">scope</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">scope</span><span class="p">.</span><span class="n">scenario</span><span class="p">.</span><span class="n">parent_path</span><span class="p">().</span><span class="n">string</span><span class="p">();</span> <span class="p">}}};</span>
 
     <span class="c1">// std::cout &lt;&lt; &quot;Substitute: &quot; &lt;&lt; cyan &lt;&lt; attribute &lt;&lt; reset &lt;&lt; &quot; =&gt; &quot;;</span>
 
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">iter</span> <span class="p">{</span>
-      <span class="n">substitutions</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">match</span><span class="p">.</span><span class="n">str</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-    <span class="p">};</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">iter</span><span class="p">{</span><span class="n">substitutions</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">match</span><span class="p">.</span><span class="n">str</span><span class="p">(</span><span class="mi">3</span><span class="p">))};</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="n">iter</span> <span class="o">!=</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">substitutions</span><span class="p">))</span> <span class="p">{</span>
-      <span class="n">attribute</span> <span class="o">=</span> <span class="n">match</span><span class="p">.</span><span class="n">str</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span> <span class="n">iter</span><span class="p">)(</span><span class="n">match</span><span class="p">.</span><span class="n">str</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">scope</span><span class="p">)</span> <span class="o">+</span> <span class="n">match</span><span class="p">.</span><span class="n">str</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+      <span class="n">attribute</span> <span class="o">=</span> <span class="n">match</span><span class="p">.</span><span class="n">str</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="n">iter</span><span class="p">)(</span><span class="n">match</span><span class="p">.</span><span class="n">str</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">scope</span><span class="p">)</span> <span class="o">+</span> <span class="n">match</span><span class="p">.</span><span class="n">str</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span> <span class="p">{};</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>
       <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Unknown substitution &#39;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">match</span><span class="p">.</span><span class="n">str</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&#39; specified.&quot;</span><span class="p">;</span>
       <span class="k">throw</span> <span class="nf">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
     <span class="p">}</span>
@@ -790,39 +770,27 @@
   <span class="k">return</span> <span class="n">attribute</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">template</span>
-<span class="o">&lt;</span>
-  <span class="k">typename</span> <span class="nc">T</span><span class="p">,</span>
-  <span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span>
-  <span class="k">typename</span> <span class="nc">Scope</span>
-<span class="o">&gt;</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
 <span class="n">T</span> <span class="n">readAttribute</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="k">const</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">scope</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">attribute</span> <span class="p">{</span>
-        <span class="n">node</span><span class="p">.</span><span class="n">attribute</span><span class="p">(</span><span class="n">name</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span>
-      <span class="p">})</span>
-  <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">value</span> <span class="p">{</span>
-      <span class="n">substitute</span><span class="p">(</span><span class="n">attribute</span><span class="p">.</span><span class="n">value</span><span class="p">(),</span> <span class="n">scope</span><span class="p">)</span>
-    <span class="p">};</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">attribute</span><span class="p">{</span><span class="n">node</span><span class="p">.</span><span class="n">attribute</span><span class="p">(</span><span class="n">name</span><span class="p">.</span><span class="n">c_str</span><span class="p">())})</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">value</span><span class="p">{</span><span class="n">substitute</span><span class="p">(</span><span class="n">attribute</span><span class="p">.</span><span class="n">value</span><span class="p">(),</span> <span class="n">scope</span><span class="p">)};</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="n">value</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-      <span class="cp">#ifndef OPENSCENARIO_INTERPRETER_ALLOW_ATTRIBUTES_TO_BE_BLANK</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span> <span class="p">{};</span>
-      <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Blank is not allowed for the value of attribute </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&#39;</span><span class="s"> of class </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span>
-        <span class="n">node</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&#39;</span><span class="s">&quot;</span><span class="p">;</span>
-      <span class="k">throw</span> <span class="n">SyntaxError</span> <span class="p">{</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()};</span>
-      <span class="cp">#else</span>
-      <span class="k">return</span> <span class="n">T</span> <span class="p">{};</span>
-      <span class="cp">#endif</span>
+<span class="cp">#ifndef OPENSCENARIO_INTERPRETER_ALLOW_ATTRIBUTES_TO_BE_BLANK</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>
+      <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Blank is not allowed for the value of attribute </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&#39;</span><span class="s"> of class </span><span class="se">\&#39;</span><span class="s">&quot;</span>
+         <span class="o">&lt;&lt;</span> <span class="n">node</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&#39;</span><span class="s">&quot;</span><span class="p">;</span>
+      <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">{</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()};</span>
+<span class="cp">#else</span>
+      <span class="k">return</span> <span class="n">T</span><span class="p">{};</span>
+<span class="cp">#endif</span>
     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">value</span><span class="p">.</span><span class="n">front</span><span class="p">()</span> <span class="o">==</span> <span class="sc">&#39;$&#39;</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">const</span> <span class="k">auto</span> <span class="n">iter</span> <span class="p">{</span>
-        <span class="n">scope</span><span class="p">.</span><span class="n">parameters</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">value</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-      <span class="p">};</span>
+      <span class="k">const</span> <span class="k">auto</span> <span class="n">iter</span><span class="p">{</span><span class="n">scope</span><span class="p">.</span><span class="n">parameters</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">value</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">))};</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">iter</span> <span class="o">!=</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">scope</span><span class="p">.</span><span class="n">parameters</span><span class="p">))</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">boost</span><span class="o">::</span><span class="n">lexical_cast</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">boost</span><span class="o">::</span><span class="n">lexical_cast</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="n">cdr</span><span class="p">(</span><span class="o">*</span><span class="n">iter</span><span class="p">)));</span>
       <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span> <span class="p">{};</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>
         <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;There is no parameter named &#39;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">value</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&#39; (Attribute </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span><span class="p">;</span>
         <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&#39;</span><span class="s"> of class </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">node</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&#39;</span><span class="s"> references this parameter)&quot;</span><span class="p">;</span>
         <span class="k">throw</span> <span class="nf">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
@@ -831,25 +799,20 @@
       <span class="k">try</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">boost</span><span class="o">::</span><span class="n">lexical_cast</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
       <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">bad_lexical_cast</span> <span class="o">&amp;</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span> <span class="p">{};</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>
         <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Value </span><span class="se">\&quot;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&quot;</span><span class="s"> specified for attribute </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span><span class="p">;</span>
         <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&#39;</span><span class="s"> is invalid (Is not value of type &quot;</span> <span class="o">&lt;&lt;</span> <span class="k">typeid</span><span class="p">(</span><span class="n">T</span><span class="p">).</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;)&quot;</span><span class="p">;</span>
         <span class="k">throw</span> <span class="nf">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span> <span class="p">{};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>
     <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Required attribute </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&#39;</span><span class="s"> not specified for class </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">node</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&#39;</span><span class="s">&quot;</span><span class="p">;</span>
-    <span class="k">throw</span> <span class="n">SyntaxError</span> <span class="p">{</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()};</span>
+    <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">{</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()};</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">template</span>
-<span class="o">&lt;</span>
-  <span class="k">typename</span> <span class="nc">T</span><span class="p">,</span>
-  <span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span>
-  <span class="k">typename</span> <span class="nc">Scope</span>
-<span class="o">&gt;</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
 <span class="n">T</span> <span class="n">readAttribute</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="k">const</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">scope</span><span class="p">,</span> <span class="n">T</span> <span class="o">&amp;&amp;</span> <span class="n">value</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">attribute</span><span class="p">(</span><span class="n">name</span><span class="p">.</span><span class="n">c_str</span><span class="p">()))</span> <span class="p">{</span>
@@ -858,13 +821,13 @@
     <span class="k">return</span> <span class="n">value</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
-<span class="p">}</span>
+<span class="p">}</span>  <span class="c1">// namespace reader</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
 
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__READER__ATTRIBUTE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 01:42:32 UTC</p>
+<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
                 
                   
                 

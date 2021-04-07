@@ -703,9 +703,8 @@
 <span class="cp">#include</span> <span class="cpf">&lt;sys/wait.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/string/split.hpp&gt;</span><span class="cp"></span>
-
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/string/split.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;system_error&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
@@ -716,18 +715,18 @@
 <span class="p">{</span>
 <span class="k">auto</span> <span class="nf">execvp</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">f_xs</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;&gt;</span> <span class="n">buffer</span> <span class="p">{};</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;&gt;</span> <span class="n">buffer</span><span class="p">{};</span>
 
   <span class="n">buffer</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">f_xs</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
 
-  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">add_pointer</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">&gt;</span> <span class="n">argv</span> <span class="p">{};</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">add_pointer</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">&gt;</span> <span class="n">argv</span><span class="p">{};</span>
 
   <span class="n">argv</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="n">f_xs</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
 
   <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">each</span> <span class="p">:</span> <span class="n">f_xs</span><span class="p">)</span> <span class="p">{</span>
-    <span class="cp">#ifndef NDEBUG</span>
+<span class="cp">#ifndef NDEBUG</span>
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">quoted</span><span class="p">(</span><span class="n">each</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="cp">#endif</span>
+<span class="cp">#endif</span>
     <span class="n">buffer</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">each</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">each</span><span class="p">));</span>
     <span class="n">buffer</span><span class="p">.</span><span class="n">back</span><span class="p">().</span><span class="n">push_back</span><span class="p">(</span><span class="sc">&#39;\0&#39;</span><span class="p">);</span>
 
@@ -766,10 +765,7 @@
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">auto</span> <span class="nf">fork_exec</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">f_xs</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="k">return</span> <span class="n">fork_exec</span><span class="p">(</span><span class="n">split</span><span class="p">(</span><span class="n">f_xs</span><span class="p">));</span>
-<span class="p">}</span>
+<span class="k">auto</span> <span class="nf">fork_exec</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">f_xs</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fork_exec</span><span class="p">(</span><span class="n">split</span><span class="p">(</span><span class="n">f_xs</span><span class="p">));</span> <span class="p">}</span>
 
 <span class="k">auto</span> <span class="nf">fork_exec</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">f</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">xs</span><span class="p">)</span>
 <span class="p">{</span>
@@ -781,7 +777,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__POSIX__FORK_EXEC_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 01:42:32 UTC</p>
+<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
                 
                   
                 

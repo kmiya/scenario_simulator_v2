@@ -989,9 +989,9 @@
 <codeline lineno="24"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="25" refid="structopenscenario__interpreter_1_1utility_1_1Indent" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structopenscenario__interpreter_1_1utility_1_1Indent" kindref="compound">Indent</ref></highlight></codeline>
 <codeline lineno="26"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/>std::size_t<sp/>depth<sp/>{0};</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>std::size_t<sp/>depth{0};</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/>std::size_t<sp/>width<sp/>{2};</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>std::size_t<sp/>width{2};</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>reset()</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
@@ -1013,25 +1013,25 @@
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>operator++(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structopenscenario__interpreter_1_1utility_1_1Indent" kindref="compound">Indent</ref><sp/>result<sp/>{*</highlight><highlight class="keyword">this</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structopenscenario__interpreter_1_1utility_1_1Indent" kindref="compound">Indent</ref><sp/>result{*</highlight><highlight class="keyword">this</highlight><highlight class="normal">};</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>++depth;</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>operator--(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structopenscenario__interpreter_1_1utility_1_1Indent" kindref="compound">Indent</ref><sp/>result<sp/>{*</highlight><highlight class="keyword">this</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structopenscenario__interpreter_1_1utility_1_1Indent" kindref="compound">Indent</ref><sp/>result{*</highlight><highlight class="keyword">this</highlight><highlight class="normal">};</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>depth<sp/>&amp;&amp;<sp/>--depth;</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="62"><highlight class="normal">}<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>indent;</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>...<sp/>Ts&gt;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Ts&gt;</highlight></codeline>
 <codeline lineno="65"><highlight class="normal">std::basic_ostream&lt;Ts...&gt;<sp/>&amp;<sp/>operator&lt;&lt;(std::basic_ostream&lt;Ts...&gt;<sp/>&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1utility_1_1Indent" kindref="compound">Indent</ref><sp/>&amp;<sp/>indent)</highlight></codeline>
 <codeline lineno="66"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os<sp/>&lt;&lt;<sp/>std::string(indent.depth<sp/>*<sp/>2,<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="68"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>utility</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="70"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>openscenario_interpreter</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="71"><highlight class="normal"></highlight></codeline>
 <codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>OPENSCENARIO_INTERPRETER__UTILITY__INDENT_HPP_</highlight></codeline>

@@ -733,10 +733,9 @@
 <span class="cp">#ifndef OPENSCENARIO_INTERPRETER__SYNTAX__TRAFFIC_SIGNALS_HPP_</span>
 <span class="cp">#define OPENSCENARIO_INTERPRETER__SYNTAX__TRAFFIC_SIGNALS_HPP_</span>
 
+<span class="cp">#include</span> <span class="cpf">&lt;limits&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/reader/attribute.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/reader/element.hpp&gt;</span><span class="cp"></span>
-
-<span class="cp">#include</span> <span class="cpf">&lt;limits&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
@@ -757,11 +756,12 @@
 <span class="p">{</span>
   <span class="k">const</span> <span class="n">String</span> <span class="n">traffic_signal_id</span><span class="p">,</span> <span class="n">state</span><span class="p">;</span>
 
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
   <span class="k">explicit</span> <span class="n">TrafficSignalState</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">scope</span><span class="p">)</span>
   <span class="o">:</span> <span class="n">traffic_signal_id</span><span class="p">{</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;trafficSignalId&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">scope</span><span class="p">)},</span>
     <span class="n">state</span><span class="p">{</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;state&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">scope</span><span class="p">)}</span>
-  <span class="p">{}</span>
+  <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">};</span>
 
 <span class="cm">/* ---- Phase ------------------------------------------------------------------</span>
@@ -783,14 +783,13 @@
 
   <span class="k">const</span> <span class="n">TrafficSignalState</span> <span class="n">state</span><span class="p">;</span>
 
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
   <span class="k">explicit</span> <span class="n">Phase</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">outer_scope</span><span class="p">)</span>
   <span class="o">:</span> <span class="n">name</span><span class="p">{</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">)},</span>
-    <span class="n">duration</span><span class="p">{</span>
-      <span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="p">(</span>
-        <span class="s">&quot;duration&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">,</span> <span class="n">Double</span><span class="o">::</span><span class="n">infinity</span><span class="p">())},</span>
+    <span class="n">duration</span><span class="p">{</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;duration&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">,</span> <span class="n">Double</span><span class="o">::</span><span class="n">infinity</span><span class="p">())},</span>
     <span class="n">state</span><span class="p">{</span><span class="n">readElement</span><span class="o">&lt;</span><span class="n">TrafficSignalState</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;TrafficSignalState&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">)}</span>
-  <span class="p">{}</span>
+  <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">};</span>
 
 <span class="cm">/* ---- TrafficSignalController ------------------------------------------------</span>
@@ -815,13 +814,14 @@
 
   <span class="k">const</span> <span class="n">Phase</span> <span class="n">phase</span><span class="p">;</span>
 
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
   <span class="k">explicit</span> <span class="n">TrafficSignalController</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">outer_scope</span><span class="p">)</span>
   <span class="o">:</span> <span class="n">name</span><span class="p">(</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">)),</span>
     <span class="n">delay</span><span class="p">(</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;delay&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">,</span> <span class="n">Double</span><span class="p">())),</span>
     <span class="n">reference</span><span class="p">(</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;reference&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">,</span> <span class="n">String</span><span class="p">())),</span>
     <span class="n">phase</span><span class="p">(</span><span class="n">readElement</span><span class="o">&lt;</span><span class="n">Phase</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;Phase&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">))</span>
-  <span class="p">{}</span>
+  <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">};</span>
 
 <span class="cm">/* ==== TrafficSignals =========================================================</span>
@@ -833,28 +833,25 @@
 <span class="cm"> * &lt;/xsd:complexType&gt;</span>
 <span class="cm"> *</span>
 <span class="cm"> * ========================================================================== */</span>
-<span class="k">struct</span> <span class="nc">TrafficSignals</span>
-  <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">TrafficSignalController</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="nc">TrafficSignals</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">TrafficSignalController</span><span class="o">&gt;</span>
 <span class="p">{</span>
   <span class="n">TrafficSignals</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
 
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
   <span class="k">explicit</span> <span class="n">TrafficSignals</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">outer_scope</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="n">callWithElements</span><span class="p">(</span>
-      <span class="n">node</span><span class="p">,</span> <span class="s">&quot;TrafficSignalController&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">unbounded</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span>
-      <span class="p">{</span>
-        <span class="n">emplace_back</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">);</span>
-      <span class="p">});</span>
+    <span class="n">callWithElements</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s">&quot;TrafficSignalController&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">unbounded</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">emplace_back</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">);</span>
+    <span class="p">});</span>
   <span class="p">}</span>
 <span class="p">};</span>
-<span class="p">}</span>
+<span class="p">}</span>  <span class="c1">// namespace syntax</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
 
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__TRAFFIC_SIGNALS_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 01:42:32 UTC</p>
+<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
                 
                   
                 

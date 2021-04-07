@@ -736,26 +736,28 @@
 <div class="highlight"><pre><span></span><code><span class="cp">#define STRIP_OPTIONAL(</span>
     <span class="n">IDENTIFIER</span><span class="p">,</span>
     <span class="n">ALTERNATE</span>
-<span class="p">)</span> <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span> \
-  <span class="k">auto</span> <span class="n">IDENTIFIER</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span> \
-  <span class="p">{</span> \
+<span class="p">)</span> <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>                                                       \
+  <span class="k">auto</span> <span class="n">IDENTIFIER</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>                                                    \
+  <span class="p">{</span>                                                                               \
     <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">connection</span><span class="p">.</span><span class="n">IDENTIFIER</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span> \
-    <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="p">{</span> \
-      <span class="k">return</span> <span class="n">result</span><span class="p">.</span><span class="n">get</span><span class="p">();</span> \
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> \
+    <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="p">{</span>                                                                 \
+      <span class="k">return</span> <span class="n">result</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>                                                        \
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>                                                                      \
       <span class="k">using</span> <span class="n">value_type</span> <span class="o">=</span> <span class="k">typename</span> <span class="nc">std</span><span class="o">::</span><span class="n">decay</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">::</span><span class="n">value_type</span><span class="p">;</span> \
-      <span class="k">return</span> <span class="n">ALTERNATE</span><span class="p">;</span> \
-    <span class="p">}</span> \
-  <span class="p">}</span> <span class="k">static_assert</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">ALTERNATE</span><span class="p">;</span>                                                           \
+    <span class="p">}</span>                                                                             \
+  <span class="p">}</span>                                                                               \
+  <span class="k">static_assert</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="define-forward_to_simulation_api">define FORWARD_TO_SIMULATION_API<a class="headerlink" href="#define-forward_to_simulation_api" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#define FORWARD_TO_SIMULATION_API(</span>
     <span class="n">IDENTIFIER</span>
-<span class="p">)</span> <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span> \
-  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">IDENTIFIER</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span> \
-  <span class="p">{</span> \
+<span class="p">)</span> <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>                                          \
+  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">IDENTIFIER</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>                             \
+  <span class="p">{</span>                                                                  \
     <span class="k">return</span> <span class="n">connection</span><span class="p">.</span><span class="n">IDENTIFIER</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span> \
-  <span class="p">}</span> <span class="k">static_assert</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+  <span class="p">}</span>                                                                  \
+  <span class="k">static_assert</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">// Copyright 2015-2020 Tier IV, Inc. All rights reserved.</span>
@@ -775,16 +777,15 @@
 <span class="cp">#ifndef OPENSCENARIO_INTERPRETER__PROCEDURE_HPP_</span>
 <span class="cp">#define OPENSCENARIO_INTERPRETER__PROCEDURE_HPP_</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;simulation_api/api/api.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/error.hpp&gt;</span><span class="cp"></span>
-
 <span class="cp">#include</span> <span class="cpf">&lt;limits&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/error.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/api/api.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
 
 <span class="k">namespace</span> <span class="n">openscenario_interpreter</span>
 <span class="p">{</span>
-<span class="k">extern</span> <span class="n">scenario_simulator</span><span class="o">::</span><span class="n">API</span> <span class="o">&amp;</span> <span class="n">connection</span><span class="p">;</span>
+<span class="k">extern</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">API</span> <span class="o">&amp;</span> <span class="n">connection</span><span class="p">;</span>
 
 <span class="c1">// static struct Connector</span>
 <span class="c1">// {</span>
@@ -792,26 +793,27 @@
 <span class="c1">//   ~Connector();</span>
 <span class="c1">// } connector;</span>
 
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">connect</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">connect</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">new</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">connection</span><span class="p">)</span> <span class="n">scenario_simulator</span><span class="o">::</span><span class="n">API</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
+  <span class="k">new</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">connection</span><span class="p">)</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">API</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
   <span class="k">return</span> <span class="n">connection</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">getEntityStatus</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="k">try</span> <span class="p">{</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">getEntityStatus</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+<span class="k">try</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">connection</span><span class="p">.</span><span class="n">getEntityStatus</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">simulation_api</span><span class="o">::</span><span class="n">SimulationRuntimeError</span> <span class="o">&amp;</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span> <span class="p">{};</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span> <span class="o">&amp;</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>
   <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="n">error</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
   <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Possible causes:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
   <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;  (1) The position of the corresponding entity is not specified by Teleport Action&quot;</span><span class="p">;</span>
   <span class="k">throw</span> <span class="nf">SemanticError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
 <span class="p">}</span>
 
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">isReachedPosition</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">isReachedPosition</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">return</span> <span class="n">connection</span><span class="p">.</span><span class="n">reachPosition</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
 <span class="p">}</span>
@@ -822,11 +824,12 @@
 <span class="c1">//   return connection.getRelativeDistance(std::forward&lt;decltype(xs)&gt;(xs)...);</span>
 <span class="c1">// }</span>
 
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">getRelativePose</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="k">try</span> <span class="p">{</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">getRelativePose</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+<span class="k">try</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">connection</span><span class="p">.</span><span class="n">getRelativePose</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">simulation_api</span><span class="o">::</span><span class="n">SimulationRuntimeError</span> <span class="o">&amp;</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">result</span> <span class="p">{};</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span> <span class="o">&amp;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">result</span><span class="p">{};</span>
   <span class="n">result</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">quiet_NaN</span><span class="p">();</span>
   <span class="n">result</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">quiet_NaN</span><span class="p">();</span>
   <span class="n">result</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">quiet_NaN</span><span class="p">();</span>
@@ -852,24 +855,25 @@
 <span class="c1">//   }</span>
 <span class="c1">// }</span>
 
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">setController</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">setController</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">return</span> <span class="n">connection</span><span class="p">.</span><span class="n">setDriverModel</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
 <span class="p">}</span>
 
-<span class="cp">#define STRIP_OPTIONAL(IDENTIFIER, ALTERNATE) \</span>
-<span class="cp">  template&lt;typename ... Ts&gt; \</span>
-<span class="cp">  auto IDENTIFIER(Ts &amp;&amp; ... xs) \</span>
-<span class="cp">  { \</span>
+<span class="cp">#define STRIP_OPTIONAL(IDENTIFIER, ALTERNATE)                                     \</span>
+<span class="cp">  template &lt;typename... Ts&gt;                                                       \</span>
+<span class="cp">  auto IDENTIFIER(Ts &amp;&amp;... xs)                                                    \</span>
+<span class="cp">  {                                                                               \</span>
 <span class="cp">    const auto result = connection.IDENTIFIER(std::forward&lt;decltype(xs)&gt;(xs)...); \</span>
-<span class="cp">    if (result) { \</span>
-<span class="cp">      return result.get(); \</span>
-<span class="cp">    } else { \</span>
+<span class="cp">    if (result) {                                                                 \</span>
+<span class="cp">      return result.get();                                                        \</span>
+<span class="cp">    } else {                                                                      \</span>
 <span class="cp">      using value_type = typename std::decay&lt;decltype(result)&gt;::type::value_type; \</span>
-<span class="cp">      return ALTERNATE; \</span>
-<span class="cp">    } \</span>
-<span class="cp">  } static_assert(true, &quot;&quot;)</span>
+<span class="cp">      return ALTERNATE;                                                           \</span>
+<span class="cp">    }                                                                             \</span>
+<span class="cp">  }                                                                               \</span>
+<span class="cp">  static_assert(true, &quot;&quot;)</span>
 
 <span class="n">STRIP_OPTIONAL</span><span class="p">(</span><span class="n">getBoundingBoxDistance</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">value_type</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
 <span class="n">STRIP_OPTIONAL</span><span class="p">(</span><span class="n">getStandStillDuration</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">value_type</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
@@ -877,12 +881,13 @@
 
 <span class="cp">#undef STRIP_OPTIONAL</span>
 
-<span class="cp">#define FORWARD_TO_SIMULATION_API(IDENTIFIER) \</span>
-<span class="cp">  template&lt;typename ... Ts&gt; \</span>
-<span class="cp">  decltype(auto) IDENTIFIER(Ts &amp;&amp; ... xs) \</span>
-<span class="cp">  { \</span>
+<span class="cp">#define FORWARD_TO_SIMULATION_API(IDENTIFIER)                        \</span>
+<span class="cp">  template &lt;typename... Ts&gt;                                          \</span>
+<span class="cp">  decltype(auto) IDENTIFIER(Ts &amp;&amp;... xs)                             \</span>
+<span class="cp">  {                                                                  \</span>
 <span class="cp">    return connection.IDENTIFIER(std::forward&lt;decltype(xs)&gt;(xs)...); \</span>
-<span class="cp">  } static_assert(true, &quot;&quot;)</span>
+<span class="cp">  }                                                                  \</span>
+<span class="cp">  static_assert(true, &quot;&quot;)</span>
 
 <span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">attachDetectionSensor</span><span class="p">);</span>
 <span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">attachLidarSensor</span><span class="p">);</span>
@@ -907,7 +912,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__PROCEDURE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 01:42:32 UTC</p>
+<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
                 
                   
                 

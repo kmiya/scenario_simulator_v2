@@ -2,10 +2,10 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="procedure_8hpp" kind="file" language="C++">
     <compoundname>procedure.hpp</compoundname>
-    <includes local="no">simulation_api/api/api.hpp</includes>
-    <includes refid="error_8hpp" local="no">openscenario_interpreter/error.hpp</includes>
     <includes local="no">limits</includes>
     <includes local="no">memory</includes>
+    <includes refid="error_8hpp" local="no">openscenario_interpreter/error.hpp</includes>
+    <includes local="no">traffic_simulator/api/api.hpp</includes>
     <includes local="no">utility</includes>
     <includedby refid="acceleration__condition_8hpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/acceleration_condition.hpp</includedby>
     <includedby refid="acquire__position__action_8hpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/acquire_position_action.hpp</includedby>
@@ -28,40 +28,43 @@
     <includedby refid="time__headway__condition_8hpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/time_headway_condition.hpp</includedby>
     <includedby refid="procedure_8cpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/procedure.cpp</includedby>
     <incdepgraph>
-      <node id="1288">
+      <node id="1289">
         <label>functional</label>
       </node>
-      <node id="1293">
+      <node id="1284">
         <label>limits</label>
       </node>
-      <node id="1286">
+      <node id="1287">
         <label>openscenario_interpreter/string/cat.hpp</label>
         <link refid="cat_8hpp_source"/>
-        <childnode refid="1287" relation="include">
-        </childnode>
-        <childnode refid="1290" relation="include">
+        <childnode refid="1288" relation="include">
         </childnode>
         <childnode refid="1291" relation="include">
-        </childnode>
-        <childnode refid="1289" relation="include">
-        </childnode>
-      </node>
-      <node id="1292">
-        <label>stdexcept</label>
-      </node>
-      <node id="1291">
-        <label>string</label>
-      </node>
-      <node id="1285">
-        <label>openscenario_interpreter/error.hpp</label>
-        <link refid="error_8hpp_source"/>
-        <childnode refid="1286" relation="include">
         </childnode>
         <childnode refid="1292" relation="include">
         </childnode>
-        <childnode refid="1291" relation="include">
+        <childnode refid="1290" relation="include">
         </childnode>
-        <childnode refid="1289" relation="include">
+      </node>
+      <node id="1293">
+        <label>stdexcept</label>
+      </node>
+      <node id="1292">
+        <label>string</label>
+      </node>
+      <node id="1294">
+        <label>traffic_simulator/api/api.hpp</label>
+      </node>
+      <node id="1286">
+        <label>openscenario_interpreter/error.hpp</label>
+        <link refid="error_8hpp_source"/>
+        <childnode refid="1287" relation="include">
+        </childnode>
+        <childnode refid="1293" relation="include">
+        </childnode>
+        <childnode refid="1292" relation="include">
+        </childnode>
+        <childnode refid="1290" relation="include">
         </childnode>
       </node>
       <node id="1283">
@@ -71,31 +74,28 @@
         </childnode>
         <childnode refid="1285" relation="include">
         </childnode>
-        <childnode refid="1293" relation="include">
+        <childnode refid="1286" relation="include">
         </childnode>
         <childnode refid="1294" relation="include">
         </childnode>
-        <childnode refid="1289" relation="include">
+        <childnode refid="1290" relation="include">
         </childnode>
-      </node>
-      <node id="1289">
-        <label>utility</label>
       </node>
       <node id="1290">
+        <label>utility</label>
+      </node>
+      <node id="1291">
         <label>sstream</label>
       </node>
-      <node id="1287">
+      <node id="1288">
         <label>openscenario_interpreter/functional/fold.hpp</label>
         <link refid="fold_8hpp_source"/>
-        <childnode refid="1288" relation="include">
-        </childnode>
         <childnode refid="1289" relation="include">
         </childnode>
+        <childnode refid="1290" relation="include">
+        </childnode>
       </node>
-      <node id="1284">
-        <label>simulation_api/api/api.hpp</label>
-      </node>
-      <node id="1294">
+      <node id="1285">
         <label>memory</label>
       </node>
     </incdepgraph>
@@ -415,40 +415,42 @@
         <name>STRIP_OPTIONAL</name>
         <param><defname>IDENTIFIER</defname></param>
         <param><defname>ALTERNATE</defname></param>
-        <initializer>template&lt;typename ... Ts&gt; \
-  auto IDENTIFIER(Ts &amp;&amp; ... xs) \
-  { \
+        <initializer>template &lt;typename... Ts&gt;                                                       \
+  auto IDENTIFIER(Ts &amp;&amp;... xs)                                                    \
+  {                                                                               \
     const auto result = connection.IDENTIFIER(std::forward&lt;decltype(xs)&gt;(xs)...); \
-    if (result) { \
-      return result.get(); \
-    } else { \
+    if (result) {                                                                 \
+      return result.get();                                                        \
+    } else {                                                                      \
       using value_type = typename std::decay&lt;decltype(result)&gt;::type::value_type; \
-      return ALTERNATE; \
-    } \
-  } static_assert(true, &quot;&quot;)</initializer>
+      return ALTERNATE;                                                           \
+    }                                                                             \
+  }                                                                               \
+  static_assert(true, &quot;&quot;)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="101" column="9" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" bodystart="101" bodyend="-1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="102" column="9" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" bodystart="102" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="procedure_8hpp_1ad5dad4a55ca0163c1b703e2e3f32448f" prot="public" static="no">
         <name>FORWARD_TO_SIMULATION_API</name>
         <param><defname>IDENTIFIER</defname></param>
-        <initializer>template&lt;typename ... Ts&gt; \
-  decltype(auto) IDENTIFIER(Ts &amp;&amp; ... xs) \
-  { \
+        <initializer>template &lt;typename... Ts&gt;                                          \
+  decltype(auto) IDENTIFIER(Ts &amp;&amp;... xs)                             \
+  {                                                                  \
     return connection.IDENTIFIER(std::forward&lt;decltype(xs)&gt;(xs)...); \
-  } static_assert(true, &quot;&quot;)</initializer>
+  }                                                                  \
+  static_assert(true, &quot;&quot;)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="120" column="9" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" bodystart="120" bodyend="-1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="122" column="9" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" bodystart="122" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -473,43 +475,43 @@
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>OPENSCENARIO_INTERPRETER__PROCEDURE_HPP_</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OPENSCENARIO_INTERPRETER__PROCEDURE_HPP_</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;simulation_api/api/api.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openscenario_interpreter/error.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceopenscenario__interpreter" kindref="compound">openscenario_interpreter</ref></highlight></codeline>
-<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>scenario_simulator::API<sp/>&amp;<sp/>connection;</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/>static<sp/>struct<sp/>Connector</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">//<sp/>{</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>Connector();</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>~Connector();</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">//<sp/>}<sp/>connector;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>...<sp/>Ts&gt;</highlight></codeline>
-<codeline lineno="36"><highlight class="normal">decltype(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">)<sp/>connect(Ts<sp/>&amp;&amp;<sp/>...<sp/>xs)</highlight></codeline>
-<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>(&amp;connection)<sp/>scenario_simulator::API(std::forward&lt;decltype(xs)&gt;(xs)...);</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>connection;</highlight></codeline>
-<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>...<sp/>Ts&gt;</highlight></codeline>
-<codeline lineno="43"><highlight class="normal">decltype(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">)<sp/>getEntityStatus(Ts<sp/>&amp;&amp;<sp/>...<sp/>xs)<sp/>try<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openscenario_interpreter/error.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;traffic_simulator/api/api.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceopenscenario__interpreter" kindref="compound">openscenario_interpreter</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>traffic_simulator::API<sp/>&amp;<sp/>connection;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//<sp/>static<sp/>struct<sp/>Connector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>Connector();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>~Connector();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">//<sp/>}<sp/>connector;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Ts&gt;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">decltype(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">)<sp/>connect(Ts<sp/>&amp;&amp;...<sp/>xs)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>(&amp;connection)<sp/>traffic_simulator::API(std::forward&lt;decltype(xs)&gt;(xs)...);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>connection;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Ts&gt;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">decltype(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">)<sp/>getEntityStatus(Ts<sp/>&amp;&amp;...<sp/>xs)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">try<sp/>{</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>connection.getEntityStatus(std::forward&lt;decltype(xs)&gt;(xs)...);</highlight></codeline>
-<codeline lineno="45"><highlight class="normal">}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api::SimulationRuntimeError<sp/>&amp;<sp/>error)<sp/>{</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/>std::stringstream<sp/>ss<sp/>{};</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>traffic_simulator::SimulationRuntimeError<sp/>&amp;<sp/>error)<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>std::stringstream<sp/>ss{};</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/>ss<sp/>&lt;&lt;<sp/>error.what()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/>ss<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Possible<sp/>causes:\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/>ss<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>(1)<sp/>The<sp/>position<sp/>of<sp/>the<sp/>corresponding<sp/>entity<sp/>is<sp/>not<sp/>specified<sp/>by<sp/>Teleport<sp/>Action&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>SemanticError(ss.str());</highlight></codeline>
 <codeline lineno="51"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>...<sp/>Ts&gt;</highlight></codeline>
-<codeline lineno="54"><highlight class="normal">decltype(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">)<sp/>isReachedPosition(Ts<sp/>&amp;&amp;<sp/>...<sp/>xs)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Ts&gt;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">decltype(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">)<sp/>isReachedPosition(Ts<sp/>&amp;&amp;...<sp/>xs)</highlight></codeline>
 <codeline lineno="55"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>connection.reachPosition(std::forward&lt;decltype(xs)&gt;(xs)...);</highlight></codeline>
 <codeline lineno="57"><highlight class="normal">}</highlight></codeline>
@@ -520,89 +522,92 @@
 <codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>return<sp/>connection.getRelativeDistance(std::forward&lt;decltype(xs)&gt;(xs)...);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment">//<sp/>}</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>...<sp/>Ts&gt;</highlight></codeline>
-<codeline lineno="66"><highlight class="normal">decltype(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">)<sp/>getRelativePose(Ts<sp/>&amp;&amp;<sp/>...<sp/>xs)<sp/>try<sp/>{</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>connection.getRelativePose(std::forward&lt;decltype(xs)&gt;(xs)...);</highlight></codeline>
-<codeline lineno="68"><highlight class="normal">}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api::SimulationRuntimeError<sp/>&amp;)<sp/>{</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/>geometry_msgs::msg::Pose<sp/>result<sp/>{};</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/>result.position.x<sp/>=<sp/>std::numeric_limits&lt;double&gt;::quiet_NaN();</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/>result.position.y<sp/>=<sp/>std::numeric_limits&lt;double&gt;::quiet_NaN();</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/>result.position.z<sp/>=<sp/>std::numeric_limits&lt;double&gt;::quiet_NaN();</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/>result.orientation.x<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/>result.orientation.y<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/>result.orientation.z<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/>result.orientation.w<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
-<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">//<sp/>template<sp/>&lt;typename...<sp/>Ts&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">//<sp/>auto<sp/>getDistanceAlongRoute(Ts&amp;&amp;...<sp/>xs)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">//<sp/>{</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>if<sp/>(const<sp/>auto<sp/>result<sp/>{</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>connection-&gt;entity-&gt;getLongitudinalDistance(std::forward&lt;decltype(xs)&gt;(xs)...)<sp/>})</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>{</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>return<sp/>*result;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>{</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>using<sp/>value_type<sp/>=<sp/>typename<sp/>std::decay&lt;decltype(result)&gt;::type::value_type;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>return<sp/>std::numeric_limits&lt;value_type&gt;::infinity();</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment">//<sp/>}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>...<sp/>Ts&gt;</highlight></codeline>
-<codeline lineno="96"><highlight class="normal">decltype(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">)<sp/>setController(Ts<sp/>&amp;&amp;<sp/>...<sp/>xs)</highlight></codeline>
-<codeline lineno="97"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>connection.setDriverModel(std::forward&lt;decltype(xs)&gt;(xs)...);</highlight></codeline>
-<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STRIP_OPTIONAL(IDENTIFIER,<sp/>ALTERNATE)<sp/>\</highlight></codeline>
-<codeline lineno="102"><highlight class="preprocessor"><sp/><sp/>template&lt;typename<sp/>...<sp/>Ts&gt;<sp/>\</highlight></codeline>
-<codeline lineno="103"><highlight class="preprocessor"><sp/><sp/>auto<sp/>IDENTIFIER(Ts<sp/>&amp;&amp;<sp/>...<sp/>xs)<sp/>\</highlight></codeline>
-<codeline lineno="104"><highlight class="preprocessor"><sp/><sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="105"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>const<sp/>auto<sp/>result<sp/>=<sp/>connection.IDENTIFIER(std::forward&lt;decltype(xs)&gt;(xs)...);<sp/>\</highlight></codeline>
-<codeline lineno="106"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(result)<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="107"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>result.get();<sp/>\</highlight></codeline>
-<codeline lineno="108"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>else<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="109"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>using<sp/>value_type<sp/>=<sp/>typename<sp/>std::decay&lt;decltype(result)&gt;::type::value_type;<sp/>\</highlight></codeline>
-<codeline lineno="110"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>ALTERNATE;<sp/>\</highlight></codeline>
-<codeline lineno="111"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
-<codeline lineno="112"><highlight class="preprocessor"><sp/><sp/>}<sp/>static_assert(true,<sp/>&quot;&quot;)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="113"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal">STRIP_OPTIONAL(getBoundingBoxDistance,<sp/>static_cast&lt;value_type&gt;(0));</highlight></codeline>
-<codeline lineno="115"><highlight class="normal">STRIP_OPTIONAL(getStandStillDuration,<sp/>static_cast&lt;value_type&gt;(0));</highlight></codeline>
-<codeline lineno="116"><highlight class="normal">STRIP_OPTIONAL(getTimeHeadway,<sp/>std::numeric_limits&lt;value_type&gt;::quiet_NaN());</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>STRIP_OPTIONAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Ts&gt;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">decltype(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">)<sp/>getRelativePose(Ts<sp/>&amp;&amp;...<sp/>xs)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">try<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>connection.getRelativePose(std::forward&lt;decltype(xs)&gt;(xs)...);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>traffic_simulator::SimulationRuntimeError<sp/>&amp;)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>geometry_msgs::msg::Pose<sp/>result{};</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>result.position.x<sp/>=<sp/>std::numeric_limits&lt;double&gt;::quiet_NaN();</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>result.position.y<sp/>=<sp/>std::numeric_limits&lt;double&gt;::quiet_NaN();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>result.position.z<sp/>=<sp/>std::numeric_limits&lt;double&gt;::quiet_NaN();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>result.orientation.x<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>result.orientation.y<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>result.orientation.z<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>result.orientation.w<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">//<sp/>template<sp/>&lt;typename...<sp/>Ts&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">//<sp/>auto<sp/>getDistanceAlongRoute(Ts&amp;&amp;...<sp/>xs)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment">//<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>if<sp/>(const<sp/>auto<sp/>result<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>connection-&gt;entity-&gt;getLongitudinalDistance(std::forward&lt;decltype(xs)&gt;(xs)...)<sp/>})</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>return<sp/>*result;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>using<sp/>value_type<sp/>=<sp/>typename<sp/>std::decay&lt;decltype(result)&gt;::type::value_type;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>return<sp/>std::numeric_limits&lt;value_type&gt;::infinity();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="comment">//<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Ts&gt;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">decltype(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">)<sp/>setController(Ts<sp/>&amp;&amp;...<sp/>xs)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>connection.setDriverModel(std::forward&lt;decltype(xs)&gt;(xs)...);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STRIP_OPTIONAL(IDENTIFIER,<sp/>ALTERNATE)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="103"><highlight class="preprocessor"><sp/><sp/>template<sp/>&lt;typename...<sp/>Ts&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="104"><highlight class="preprocessor"><sp/><sp/>auto<sp/>IDENTIFIER(Ts<sp/>&amp;&amp;...<sp/>xs)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="105"><highlight class="preprocessor"><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="106"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>const<sp/>auto<sp/>result<sp/>=<sp/>connection.IDENTIFIER(std::forward&lt;decltype(xs)&gt;(xs)...);<sp/>\</highlight></codeline>
+<codeline lineno="107"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(result)<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="108"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>result.get();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="109"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>else<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="110"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>using<sp/>value_type<sp/>=<sp/>typename<sp/>std::decay&lt;decltype(result)&gt;::type::value_type;<sp/>\</highlight></codeline>
+<codeline lineno="111"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>ALTERNATE;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="112"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="113"><highlight class="preprocessor"><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="114"><highlight class="preprocessor"><sp/><sp/>static_assert(true,<sp/>&quot;&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal">STRIP_OPTIONAL(getBoundingBoxDistance,<sp/>static_cast&lt;value_type&gt;(0));</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">STRIP_OPTIONAL(getStandStillDuration,<sp/>static_cast&lt;value_type&gt;(0));</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">STRIP_OPTIONAL(getTimeHeadway,<sp/>std::numeric_limits&lt;value_type&gt;::quiet_NaN());</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FORWARD_TO_SIMULATION_API(IDENTIFIER)<sp/>\</highlight></codeline>
-<codeline lineno="121"><highlight class="preprocessor"><sp/><sp/>template&lt;typename<sp/>...<sp/>Ts&gt;<sp/>\</highlight></codeline>
-<codeline lineno="122"><highlight class="preprocessor"><sp/><sp/>decltype(auto)<sp/>IDENTIFIER(Ts<sp/>&amp;&amp;<sp/>...<sp/>xs)<sp/>\</highlight></codeline>
-<codeline lineno="123"><highlight class="preprocessor"><sp/><sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="124"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>return<sp/>connection.IDENTIFIER(std::forward&lt;decltype(xs)&gt;(xs)...);<sp/>\</highlight></codeline>
-<codeline lineno="125"><highlight class="preprocessor"><sp/><sp/>}<sp/>static_assert(true,<sp/>&quot;&quot;)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal"></highlight></codeline>
-<codeline lineno="127"><highlight class="normal">FORWARD_TO_SIMULATION_API(attachDetectionSensor);</highlight></codeline>
-<codeline lineno="128"><highlight class="normal">FORWARD_TO_SIMULATION_API(attachLidarSensor);</highlight></codeline>
-<codeline lineno="129"><highlight class="normal">FORWARD_TO_SIMULATION_API(checkCollision);</highlight></codeline>
-<codeline lineno="130"><highlight class="normal">FORWARD_TO_SIMULATION_API(despawn);</highlight></codeline>
-<codeline lineno="131"><highlight class="normal">FORWARD_TO_SIMULATION_API(getCurrentTime);</highlight></codeline>
-<codeline lineno="132"><highlight class="normal">FORWARD_TO_SIMULATION_API(initialize);</highlight></codeline>
-<codeline lineno="133"><highlight class="normal">FORWARD_TO_SIMULATION_API(isInLanelet);</highlight></codeline>
-<codeline lineno="134"><highlight class="normal">FORWARD_TO_SIMULATION_API(requestAcquirePosition);</highlight></codeline>
-<codeline lineno="135"><highlight class="normal">FORWARD_TO_SIMULATION_API(requestAssignRoute);</highlight></codeline>
-<codeline lineno="136"><highlight class="normal">FORWARD_TO_SIMULATION_API(requestLaneChange);</highlight></codeline>
-<codeline lineno="137"><highlight class="normal">FORWARD_TO_SIMULATION_API(requestWalkStraight);</highlight></codeline>
-<codeline lineno="138"><highlight class="normal">FORWARD_TO_SIMULATION_API(setEntityStatus);</highlight></codeline>
-<codeline lineno="139"><highlight class="normal">FORWARD_TO_SIMULATION_API(setTargetSpeed);</highlight></codeline>
-<codeline lineno="140"><highlight class="normal">FORWARD_TO_SIMULATION_API(spawn);</highlight></codeline>
-<codeline lineno="141"><highlight class="normal">FORWARD_TO_SIMULATION_API(toMapPose);</highlight></codeline>
-<codeline lineno="142"><highlight class="normal">FORWARD_TO_SIMULATION_API(updateFrame);</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"></highlight></codeline>
-<codeline lineno="144"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>DEFINE_FORWARD</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="145"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>openscenario_interpreter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>STRIP_OPTIONAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FORWARD_TO_SIMULATION_API(IDENTIFIER)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="123"><highlight class="preprocessor"><sp/><sp/>template<sp/>&lt;typename...<sp/>Ts&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="124"><highlight class="preprocessor"><sp/><sp/>decltype(auto)<sp/>IDENTIFIER(Ts<sp/>&amp;&amp;...<sp/>xs)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="125"><highlight class="preprocessor"><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="126"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>return<sp/>connection.IDENTIFIER(std::forward&lt;decltype(xs)&gt;(xs)...);<sp/>\</highlight></codeline>
+<codeline lineno="127"><highlight class="preprocessor"><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="128"><highlight class="preprocessor"><sp/><sp/>static_assert(true,<sp/>&quot;&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal">FORWARD_TO_SIMULATION_API(attachDetectionSensor);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">FORWARD_TO_SIMULATION_API(attachLidarSensor);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">FORWARD_TO_SIMULATION_API(checkCollision);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">FORWARD_TO_SIMULATION_API(despawn);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">FORWARD_TO_SIMULATION_API(getCurrentTime);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">FORWARD_TO_SIMULATION_API(initialize);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">FORWARD_TO_SIMULATION_API(isInLanelet);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">FORWARD_TO_SIMULATION_API(requestAcquirePosition);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">FORWARD_TO_SIMULATION_API(requestAssignRoute);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">FORWARD_TO_SIMULATION_API(requestLaneChange);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">FORWARD_TO_SIMULATION_API(requestWalkStraight);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">FORWARD_TO_SIMULATION_API(setEntityStatus);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">FORWARD_TO_SIMULATION_API(setTargetSpeed);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">FORWARD_TO_SIMULATION_API(spawn);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">FORWARD_TO_SIMULATION_API(toMapPose);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">FORWARD_TO_SIMULATION_API(updateFrame);</highlight></codeline>
 <codeline lineno="146"><highlight class="normal"></highlight></codeline>
-<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>OPENSCENARIO_INTERPRETER__PROCEDURE_HPP_</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>DEFINE_FORWARD</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>openscenario_interpreter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>OPENSCENARIO_INTERPRETER__PROCEDURE_HPP_</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp"/>
   </compounddef>

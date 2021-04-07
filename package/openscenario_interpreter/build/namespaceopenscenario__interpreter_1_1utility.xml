@@ -23,10 +23,7 @@
         <definition>auto openscenario_interpreter::utility::car</definition>
         <argsstring></argsstring>
         <name>car</name>
-        <initializer>= [] (auto &amp;&amp; pare) noexcept-&gt;decltype(auto)
-{
-  return std::get&lt;0&gt;(pare);
-}</initializer>
+        <initializer>= [](auto &amp;&amp; pare) noexcept -&gt; decltype(auto) { return std::get&lt;0&gt;(pare); }</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -40,24 +37,21 @@
         <definition>auto openscenario_interpreter::utility::cdr</definition>
         <argsstring></argsstring>
         <name>cdr</name>
-        <initializer>= [] (auto &amp;&amp; pare) noexcept-&gt;decltype(auto)
-{
-  return std::get&lt;1&gt;(pare);
-}</initializer>
+        <initializer>= [](auto &amp;&amp; pare) noexcept -&gt; decltype(auto) { return std::get&lt;1&gt;(pare); }</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" line="29" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" bodystart="29" bodyend="-1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" line="26" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" bodystart="26" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
       <memberdef kind="function" id="highlighter_8hpp_1af81f10f7f1e17c9902bbf16aacd27aef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename ...</type>
+            <type>typename...</type>
             <declname>Ts</declname>
             <defname>Ts</defname>
           </param>
@@ -80,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/highlighter.hpp" line="43" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/highlighter.hpp" bodystart="43" bodyend="46"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/highlighter.hpp" line="39" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/highlighter.hpp" bodystart="39" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="highlighter_8hpp_1a5e91c16382f82f8194b9b0099f7b005b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -110,12 +104,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/highlighter.hpp" line="53" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/highlighter.hpp" bodystart="53" bodyend="58"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/highlighter.hpp" line="45" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/highlighter.hpp" bodystart="45" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="indent_8hpp_1af0ef5cc56e13db48fd07567224d65ead" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename ...</type>
+            <type>typename...</type>
             <declname>Ts</declname>
             <defname>Ts</defname>
           </param>
@@ -138,7 +132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/indent.hpp" line="33" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/indent.hpp" bodystart="65" bodyend="68"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/indent.hpp" line="32" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/indent.hpp" bodystart="65" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="pair_8hpp_1ac4fd1e75262a488daba8d453d669cd1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -160,7 +154,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" line="41" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" line="36" column="1"/>
       </memberdef>
       <memberdef kind="function" id="pair_8hpp_1afaacd771095114af4d4f24e0e2242c2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -182,7 +176,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" line="42" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" line="37" column="1"/>
       </memberdef>
       <memberdef kind="function" id="pair_8hpp_1aa910cd1875d00f885dc3be7d15cec406" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -204,7 +198,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" line="43" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" line="38" column="1"/>
       </memberdef>
       <memberdef kind="function" id="pair_8hpp_1a42e92e7002e938a604846a4a0c1f608c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -226,7 +220,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" line="44" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/pair.hpp" line="39" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

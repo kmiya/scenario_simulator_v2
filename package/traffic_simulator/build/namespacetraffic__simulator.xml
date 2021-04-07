@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacetraffic__simulator" kind="namespace" language="C++">
+    <compoundname>traffic_simulator</compoundname>
+    <innerclass refid="classtraffic__simulator_1_1API" prot="public">traffic_simulator::API</innerclass>
+    <innerclass refid="classtraffic__simulator_1_1ExecutionFailedError" prot="public">traffic_simulator::ExecutionFailedError</innerclass>
+    <innerclass refid="classtraffic__simulator_1_1RoutePlanner" prot="public">traffic_simulator::RoutePlanner</innerclass>
+    <innerclass refid="classtraffic__simulator_1_1SimulationRuntimeError" prot="public">traffic_simulator::SimulationRuntimeError</innerclass>
+    <innerclass refid="classtraffic__simulator_1_1SplineInterpolationError" prot="public">traffic_simulator::SplineInterpolationError</innerclass>
+    <innerclass refid="classtraffic__simulator_1_1TrafficLight" prot="public">traffic_simulator::TrafficLight</innerclass>
+    <innerclass refid="classtraffic__simulator_1_1TrafficLightManager" prot="public">traffic_simulator::TrafficLightManager</innerclass>
+    <innerclass refid="classtraffic__simulator_1_1TrafficLightPhase" prot="public">traffic_simulator::TrafficLightPhase</innerclass>
+    <innernamespace refid="namespacetraffic__simulator_1_1entity">traffic_simulator::entity</innernamespace>
+    <innernamespace refid="namespacetraffic__simulator_1_1helper">traffic_simulator::helper</innernamespace>
+    <innernamespace refid="namespacetraffic__simulator_1_1math">traffic_simulator::math</innernamespace>
+    <innernamespace refid="namespacetraffic__simulator_1_1traffic">traffic_simulator::traffic</innernamespace>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="traffic__light__state_8hpp_1a16fe7a8cf93e7b5e75b5b507d72dd2c3" prot="public" static="no">
+        <name>TrafficLightColor</name>
+        <enumvalue id="dummy_1a16fe7a8cf93e7b5e75b5b507d72dd2c3ab50339a10e1de285ac99d4c3990b8693" prot="public">
+          <name>NONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dummy_1a16fe7a8cf93e7b5e75b5b507d72dd2c3aa2d9547b5d3dd9f05984475f7c926da0" prot="public">
+          <name>RED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dummy_1a16fe7a8cf93e7b5e75b5b507d72dd2c3a9de0e5dd94e861317e74964bed179fa0" prot="public">
+          <name>GREEN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dummy_1a16fe7a8cf93e7b5e75b5b507d72dd2c3a8a568e5f41b7e4da88fe5c4a00aad34e" prot="public">
+          <name>YELLOW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_state.hpp" line="20" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_state.hpp" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="enum" id="traffic__light__state_8hpp_1a5a733e3579f89238c27c1532518af813" prot="public" static="no">
+        <name>TrafficLightArrow</name>
+        <enumvalue id="dummy_1a5a733e3579f89238c27c1532518af813ab50339a10e1de285ac99d4c3990b8693" prot="public">
+          <name>NONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dummy_1a5a733e3579f89238c27c1532518af813a8c5e50fab3748e9c53a6863b3dce1401" prot="public">
+          <name>STRAIGHT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dummy_1a5a733e3579f89238c27c1532518af813a684d325a7303f52e64011467ff5c5758" prot="public">
+          <name>LEFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dummy_1a5a733e3579f89238c27c1532518af813a21507b40c80068eda19865706fdc2403" prot="public">
+          <name>RIGHT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_state.hpp" line="22" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_state.hpp" bodystart="22" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="38" column="1"/>
+  </compounddef>
+</doxygen>

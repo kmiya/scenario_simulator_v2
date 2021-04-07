@@ -700,7 +700,6 @@
 <span class="cp">#define OPENSCENARIO_INTERPRETER__STRING__SPLIT_HPP_</span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;boost/algorithm/string.hpp&gt;</span><span class="cp"></span>
-
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
@@ -711,7 +710,7 @@
 <span class="p">{</span>
 <span class="k">auto</span> <span class="nf">split</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">target</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">result</span> <span class="p">{};</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">{};</span>
   <span class="n">boost</span><span class="o">::</span><span class="n">split</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">boost</span><span class="o">::</span><span class="n">is_space</span><span class="p">());</span>
   <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
 <span class="p">}</span>
@@ -721,7 +720,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__STRING__SPLIT_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 01:42:32 UTC</p>
+<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
                 
                   
                 

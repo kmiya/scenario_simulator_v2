@@ -745,7 +745,7 @@ All communications are synchronized.</p>
 We use <a href="https://zeromq.org/">ZeroMQ</a> in order to communicate with the simulator and interpreter.
 We use Request/Reply socket in order to run the simulator synchronously.  </p>
 <h2 id="schema-of-the-message">Schema of the message<a class="headerlink" href="#schema-of-the-message" title="Permanent link">#</a></h2>
-<p>scenario_simulator::API send the request to the simulator, Requests are serialized by using <a href="https://developers.google.com/protocol-buffers">protobuf</a> and use different port in order to communicate with the simulator.  </p>
+<p>traffic_simulatorr::API send the request to the simulator, Requests are serialized by using <a href="https://developers.google.com/protocol-buffers">protobuf</a> and use different port in order to communicate with the simulator.  </p>
 <h3 id="protobuf-definition">Protobuf Definition<a class="headerlink" href="#protobuf-definition" title="Permanent link">#</a></h3>
 <p><a href="../../proto_doc/protobuf/">Protobuf Definition</a> is here. all datas are serialized as string and send via TCP by using ZeroMQ.</p>
                 

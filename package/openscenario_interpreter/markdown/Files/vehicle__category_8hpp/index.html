@@ -771,23 +771,26 @@
 <h3 id="define-boilerplate">define BOILERPLATE<a class="headerlink" href="#define-boilerplate" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#define BOILERPLATE(</span>
     <span class="n">IDENTIFIER</span>
-<span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">buffer</span> <span class="o">==</span> <span class="err">#</span><span class="n">IDENTIFIER</span><span class="p">)</span> <span class="p">{</span> \
+<span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">buffer</span> <span class="o">==</span> <span class="err">#</span><span class="n">IDENTIFIER</span><span class="p">)</span> <span class="p">{</span>                    \
     <span class="n">category</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">VehicleCategory</span><span class="o">::</span><span class="n">IDENTIFIER</span><span class="p">;</span> \
-    <span class="k">return</span> <span class="n">is</span><span class="p">;</span> \
-  <span class="p">}</span> <span class="k">static_assert</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">is</span><span class="p">;</span>                                    \
+  <span class="p">}</span>                                               \
+  <span class="k">static_assert</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="define-boilerplate_1">define BOILERPLATE<a class="headerlink" href="#define-boilerplate_1" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#define BOILERPLATE(</span>
     <span class="n">IDENTIFIER</span>
-<span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">buffer</span> <span class="o">==</span> <span class="err">#</span><span class="n">IDENTIFIER</span><span class="p">)</span> <span class="p">{</span> \
+<span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">buffer</span> <span class="o">==</span> <span class="err">#</span><span class="n">IDENTIFIER</span><span class="p">)</span> <span class="p">{</span>                    \
     <span class="n">category</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">VehicleCategory</span><span class="o">::</span><span class="n">IDENTIFIER</span><span class="p">;</span> \
-    <span class="k">return</span> <span class="n">is</span><span class="p">;</span> \
-  <span class="p">}</span> <span class="k">static_assert</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">is</span><span class="p">;</span>                                    \
+  <span class="p">}</span>                                               \
+  <span class="k">static_assert</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="define-boilerplate_2">define BOILERPLATE<a class="headerlink" href="#define-boilerplate_2" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#define BOILERPLATE(</span>
     <span class="n">NAME</span>
-<span class="p">)</span> <span class="k">case</span> <span class="n">VehicleCategory</span><span class="o">::</span><span class="nl">NAME</span><span class="p">:</span> <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="err">#</span><span class="n">NAME</span><span class="p">;</span>
+<span class="p">)</span> <span class="k">case</span> <span class="n">VehicleCategory</span><span class="o">::</span><span class="nl">NAME</span><span class="p">:</span> \
+    <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="err">#</span><span class="n">NAME</span><span class="p">;</span>
 </code></pre></div>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">// Copyright 2015-2020 Tier IV, Inc. All rights reserved.</span>
@@ -808,7 +811,6 @@
 <span class="cp">#define OPENSCENARIO_INTERPRETER__SYNTAX__VEHICLE_CATEGORY_HPP_</span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/object.hpp&gt;</span><span class="cp"></span>
-
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
 
@@ -843,8 +845,7 @@
 <span class="cm"> * ======================================================================== */</span>
 <span class="k">struct</span> <span class="nc">VehicleCategory</span>
 <span class="p">{</span>
-  <span class="k">enum</span> <span class="nc">value_type</span>
-  <span class="p">{</span>
+  <span class="k">enum</span> <span class="nc">value_type</span> <span class="p">{</span>
     <span class="n">bicycle</span><span class="p">,</span>
     <span class="n">bus</span><span class="p">,</span>
     <span class="n">car</span><span class="p">,</span>
@@ -857,28 +858,24 @@
     <span class="n">van</span><span class="p">,</span>
   <span class="p">}</span> <span class="n">value</span><span class="p">;</span>
 
-  <span class="k">explicit</span> <span class="k">constexpr</span> <span class="n">VehicleCategory</span><span class="p">(</span><span class="n">value_type</span> <span class="n">value</span> <span class="o">=</span> <span class="p">{})</span>
-  <span class="o">:</span> <span class="n">value</span><span class="p">{</span><span class="n">value</span><span class="p">}</span>
-  <span class="p">{}</span>
+  <span class="k">explicit</span> <span class="k">constexpr</span> <span class="n">VehicleCategory</span><span class="p">(</span><span class="n">value_type</span> <span class="n">value</span> <span class="o">=</span> <span class="p">{})</span> <span class="o">:</span> <span class="n">value</span><span class="p">{</span><span class="n">value</span><span class="p">}</span> <span class="p">{}</span>
 
-  <span class="k">constexpr</span> <span class="k">operator</span> <span class="n">value_type</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span>
-  <span class="p">{</span>
-    <span class="k">return</span> <span class="n">value</span><span class="p">;</span>
-  <span class="p">}</span>
+  <span class="k">constexpr</span> <span class="k">operator</span> <span class="n">value_type</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">value</span><span class="p">;</span> <span class="p">}</span>
 <span class="p">};</span>
 
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
 <span class="n">std</span><span class="o">::</span><span class="n">basic_istream</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">basic_istream</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">is</span><span class="p">,</span> <span class="n">VehicleCategory</span> <span class="o">&amp;</span> <span class="n">category</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">buffer</span> <span class="p">{};</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">buffer</span><span class="p">{};</span>
 
   <span class="n">is</span> <span class="o">&gt;&gt;</span> <span class="n">buffer</span><span class="p">;</span>
 
-  <span class="cp">#define BOILERPLATE(IDENTIFIER) \</span>
-<span class="cp">  if (buffer == #IDENTIFIER) { \</span>
+<span class="cp">#define BOILERPLATE(IDENTIFIER)                   \</span>
+<span class="cp">  if (buffer == #IDENTIFIER) {                    \</span>
 <span class="cp">    category.value = VehicleCategory::IDENTIFIER; \</span>
-<span class="cp">    return is; \</span>
-<span class="cp">  } static_assert(true, &quot;&quot;)</span>
+<span class="cp">    return is;                                    \</span>
+<span class="cp">  }                                               \</span>
+<span class="cp">  static_assert(true, &quot;&quot;)</span>
 
   <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">bicycle</span><span class="p">);</span>
   <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">bus</span><span class="p">);</span>
@@ -886,16 +883,16 @@
   <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">motorbike</span><span class="p">);</span>
   <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">truck</span><span class="p">);</span>
 
-  <span class="cp">#undef BOILERPLATE</span>
+<span class="cp">#undef BOILERPLATE</span>
 
-  <span class="cp">#define BOILERPLATE(IDENTIFIER) \</span>
-<span class="cp">  if (buffer == #IDENTIFIER) { \</span>
-<span class="cp">    std::stringstream ss { \</span>
-<span class="cp">    }; \</span>
-<span class="cp">    ss &lt;&lt; &quot;given value \&#39;&quot; &lt;&lt; buffer &lt;&lt; \</span>
-<span class="cp">      &quot;\&#39; is valid OpenSCENARIO value of type VehicleCategory, but it is not supported&quot;; \</span>
-<span class="cp">    throw ImplementationFault {ss.str()}; \</span>
-<span class="cp">  } static_assert(true, &quot;&quot;)</span>
+<span class="cp">#define BOILERPLATE(IDENTIFIER)                                                              \</span>
+<span class="cp">  if (buffer == #IDENTIFIER) {                                                               \</span>
+<span class="cp">    std::stringstream ss{};                                                                  \</span>
+<span class="cp">    ss &lt;&lt; &quot;given value \&#39;&quot; &lt;&lt; buffer                                                         \</span>
+<span class="cp">       &lt;&lt; &quot;\&#39; is valid OpenSCENARIO value of type VehicleCategory, but it is not supported&quot;; \</span>
+<span class="cp">    throw ImplementationFault{ss.str()};                                                     \</span>
+<span class="cp">  }                                                                                          \</span>
+<span class="cp">  static_assert(true, &quot;&quot;)</span>
 
   <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">semitrailer</span><span class="p">);</span>
   <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">trailer</span><span class="p">);</span>
@@ -903,20 +900,21 @@
   <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">tram</span><span class="p">);</span>
   <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">van</span><span class="p">);</span>
 
-  <span class="cp">#undef BOILERPLATE</span>
+<span class="cp">#undef BOILERPLATE</span>
 
-  <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span> <span class="p">{};</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>
   <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;unexpected value </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">buffer</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&#39;</span><span class="s"> specified as type VehicleCategory&quot;</span><span class="p">;</span>
-  <span class="k">throw</span> <span class="n">SyntaxError</span> <span class="p">{</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()};</span>
+  <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">{</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()};</span>
 <span class="p">}</span>
 
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
 <span class="n">std</span><span class="o">::</span><span class="n">basic_ostream</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">basic_ostream</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span>
-  <span class="k">const</span> <span class="n">VehicleCategory</span> <span class="o">&amp;</span> <span class="n">category</span><span class="p">)</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">basic_ostream</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">VehicleCategory</span> <span class="o">&amp;</span> <span class="n">category</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">switch</span> <span class="p">(</span><span class="n">category</span><span class="p">)</span> <span class="p">{</span>
-    <span class="cp">#define BOILERPLATE(NAME) case VehicleCategory::NAME: return os &lt;&lt; #NAME;</span>
+<span class="cp">#define BOILERPLATE(NAME)     \</span>
+<span class="cp">  case VehicleCategory::NAME: \</span>
+<span class="cp">    return os &lt;&lt; #NAME;</span>
 
     <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">bicycle</span><span class="p">);</span>
     <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">bus</span><span class="p">);</span>
@@ -929,22 +927,22 @@
     <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">truck</span><span class="p">);</span>
     <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">van</span><span class="p">);</span>
 
-    <span class="cp">#undef BOILERPLATE</span>
+<span class="cp">#undef BOILERPLATE</span>
 
     <span class="k">default</span><span class="o">:</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span> <span class="p">{};</span>
-      <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;enum class VehicleCategory holds unexpected value &quot;</span> <span class="o">&lt;&lt;</span>
-        <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">VehicleCategory</span><span class="o">::</span><span class="n">value_type</span><span class="o">&gt;</span><span class="p">(</span><span class="n">category</span><span class="p">);</span>
-      <span class="k">throw</span> <span class="n">ImplementationFault</span> <span class="p">{</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()};</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>
+      <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;enum class VehicleCategory holds unexpected value &quot;</span>
+         <span class="o">&lt;&lt;</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">VehicleCategory</span><span class="o">::</span><span class="n">value_type</span><span class="o">&gt;</span><span class="p">(</span><span class="n">category</span><span class="p">);</span>
+      <span class="k">throw</span> <span class="n">ImplementationFault</span><span class="p">{</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()};</span>
   <span class="p">}</span>
 <span class="p">}</span>
-<span class="p">}</span>
+<span class="p">}</span>  <span class="c1">// namespace syntax</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
 
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__VEHICLE_CATEGORY_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 01:42:32 UTC</p>
+<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
                 
                   
                 

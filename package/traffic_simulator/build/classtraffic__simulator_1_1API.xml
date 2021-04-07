@@ -1,0 +1,1378 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classtraffic__simulator_1_1API" kind="class" language="C++" prot="public">
+    <compoundname>traffic_simulator::API</compoundname>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classtraffic__simulator_1_1API_1a9ab2517db8cc9651d46d57397f04b9e0" prot="private" static="no">
+        <type><ref refid="classtraffic__simulator_1_1entity_1_1EntityManager" kindref="compound">traffic_simulator::entity::EntityManager</ref></type>
+        <definition>using traffic_simulator::API::EntityManager =  traffic_simulator::entity::EntityManager</definition>
+        <argsstring></argsstring>
+        <name>EntityManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="52" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtraffic__simulator_1_1API_1a60f79a859e6290d567dae7f8346b7352" prot="public" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string traffic_simulator::API::lanelet2_map_osm</definition>
+        <argsstring></argsstring>
+        <name>lanelet2_map_osm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="55" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1API_1a4fd196b9782de0cc6a2a461df11b8a1e" prot="public" static="no" mutable="no">
+        <type>const bool</type>
+        <definition>const bool traffic_simulator::API::standalone_mode</definition>
+        <argsstring></argsstring>
+        <name>standalone_mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="187" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtraffic__simulator_1_1API_1a32713dd06e4e4a56a5909ebb2fa3fa3a" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classtraffic__simulator_1_1entity_1_1EntityManager" kindref="compound">traffic_simulator::entity::EntityManager</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;traffic_simulator::entity::EntityManager&gt; traffic_simulator::API::entity_manager_ptr_</definition>
+        <argsstring></argsstring>
+        <name>entity_manager_ptr_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="243" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="243" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1API_1a8d2c0fc20be1b2584412359e54a508ab" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classtraffic__simulator_1_1traffic_1_1TrafficController" kindref="compound">traffic_simulator::traffic::TrafficController</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;traffic_simulator::traffic::TrafficController&gt; traffic_simulator::API::traffic_controller_ptr_</definition>
+        <argsstring></argsstring>
+        <name>traffic_controller_ptr_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="244" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="244" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1API_1a4dd1e49b1e7736f61941a5406d45b8e5" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double traffic_simulator::API::step_time_</definition>
+        <argsstring></argsstring>
+        <name>step_time_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="245" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1API_1a7ec17f3aab08de5944e74ed96a1d8262" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double traffic_simulator::API::current_time_</definition>
+        <argsstring></argsstring>
+        <name>current_time_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="246" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1API_1a252d903eb4b259b5b59981ab1d15af45" prot="private" static="no" mutable="no">
+        <type><ref refid="classmetrics_1_1MetricsManager" kindref="compound">metrics::MetricsManager</ref></type>
+        <definition>metrics::MetricsManager traffic_simulator::API::metrics_manager_</definition>
+        <argsstring></argsstring>
+        <name>metrics_manager_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="248" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1API_1a30211a9a4f8b955ad71facf1d83c810d" prot="private" static="no" mutable="no">
+        <type>zeromq::Client&lt; simulation_api_schema::InitializeRequest, simulation_api_schema::InitializeResponse &gt;</type>
+        <definition>zeromq::Client&lt; simulation_api_schema::InitializeRequest, simulation_api_schema::InitializeResponse&gt; traffic_simulator::API::initialize_client_</definition>
+        <argsstring></argsstring>
+        <name>initialize_client_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="252" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1API_1a45d7a7b05e701152eec0c628e1cbc8cc" prot="private" static="no" mutable="no">
+        <type>zeromq::Client&lt; simulation_api_schema::UpdateFrameRequest, simulation_api_schema::UpdateFrameResponse &gt;</type>
+        <definition>zeromq::Client&lt; simulation_api_schema::UpdateFrameRequest, simulation_api_schema::UpdateFrameResponse&gt; traffic_simulator::API::update_frame_client_</definition>
+        <argsstring></argsstring>
+        <name>update_frame_client_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="255" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="255" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1API_1a7a5f3fbd7cd5b1bee74b20dfde8ca61b" prot="private" static="no" mutable="no">
+        <type>zeromq::Client&lt; simulation_api_schema::UpdateSensorFrameRequest, simulation_api_schema::UpdateSensorFrameResponse &gt;</type>
+        <definition>zeromq::Client&lt; simulation_api_schema::UpdateSensorFrameRequest, simulation_api_schema::UpdateSensorFrameResponse&gt; traffic_simulator::API::update_sensor_frame_client_</definition>
+        <argsstring></argsstring>
+        <name>update_sensor_frame_client_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="259" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="259" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1API_1af65c3beebde41b2091354484f5da7ea4" prot="private" static="no" mutable="no">
+        <type>zeromq::Client&lt; simulation_api_schema::SpawnVehicleEntityRequest, simulation_api_schema::SpawnVehicleEntityResponse &gt;</type>
+        <definition>zeromq::Client&lt; simulation_api_schema::SpawnVehicleEntityRequest, simulation_api_schema::SpawnVehicleEntityResponse&gt; traffic_simulator::API::spawn_vehicle_entity_client_</definition>
+        <argsstring></argsstring>
+        <name>spawn_vehicle_entity_client_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="263" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1API_1ac006c577516f9535d7b13e65ad6bf3de" prot="private" static="no" mutable="no">
+        <type>zeromq::Client&lt; simulation_api_schema::SpawnPedestrianEntityRequest, simulation_api_schema::SpawnPedestrianEntityResponse &gt;</type>
+        <definition>zeromq::Client&lt; simulation_api_schema::SpawnPedestrianEntityRequest, simulation_api_schema::SpawnPedestrianEntityResponse&gt; traffic_simulator::API::spawn_pedestrian_entity_client_</definition>
+        <argsstring></argsstring>
+        <name>spawn_pedestrian_entity_client_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="267" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="267" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1API_1a5ce85cea2cb277e8b1122d949403c057" prot="private" static="no" mutable="no">
+        <type>zeromq::Client&lt; simulation_api_schema::DespawnEntityRequest, simulation_api_schema::DespawnEntityResponse &gt;</type>
+        <definition>zeromq::Client&lt; simulation_api_schema::DespawnEntityRequest, simulation_api_schema::DespawnEntityResponse&gt; traffic_simulator::API::despawn_entity_client_</definition>
+        <argsstring></argsstring>
+        <name>despawn_entity_client_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="270" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="270" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1API_1aa9b8877249a83d2de54b382c225ea897" prot="private" static="no" mutable="no">
+        <type>zeromq::Client&lt; simulation_api_schema::UpdateEntityStatusRequest, simulation_api_schema::UpdateEntityStatusResponse &gt;</type>
+        <definition>zeromq::Client&lt; simulation_api_schema::UpdateEntityStatusRequest, simulation_api_schema::UpdateEntityStatusResponse&gt; traffic_simulator::API::update_entity_status_client_</definition>
+        <argsstring></argsstring>
+        <name>update_entity_status_client_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="274" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="274" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1API_1aee17063f1d521eacf8c994acccd0fc40" prot="private" static="no" mutable="no">
+        <type>zeromq::Client&lt; simulation_api_schema::AttachLidarSensorRequest, simulation_api_schema::AttachLidarSensorResponse &gt;</type>
+        <definition>zeromq::Client&lt; simulation_api_schema::AttachLidarSensorRequest, simulation_api_schema::AttachLidarSensorResponse&gt; traffic_simulator::API::attach_lidar_sensor_client_</definition>
+        <argsstring></argsstring>
+        <name>attach_lidar_sensor_client_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="278" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="278" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1API_1a2ddca493cc78ad0ad80170eb779582b8" prot="private" static="no" mutable="no">
+        <type>zeromq::Client&lt; simulation_api_schema::AttachDetectionSensorRequest, simulation_api_schema::AttachDetectionSensorResponse &gt;</type>
+        <definition>zeromq::Client&lt; simulation_api_schema::AttachDetectionSensorRequest, simulation_api_schema::AttachDetectionSensorResponse&gt; traffic_simulator::API::attach_detection_sensor_client_</definition>
+        <argsstring></argsstring>
+        <name>attach_detection_sensor_client_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="282" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="282" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1abcff3230809a407f9dba6b10cd7a9a19" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class NodeT</type>
+          </param>
+          <param>
+            <type>class AllocatorT</type>
+            <defval>std::allocator&lt;void&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>traffic_simulator::API::API</definition>
+        <argsstring>(NodeT &amp;&amp;node, const boost::filesystem::path, const std::string &amp;lanelet2_map_osm, const bool auto_sink=true, const bool verbose=false, const bool standalone_mode=false, const std::string &amp;metrics_logfile_path=&quot;/tmp/metrics.json&quot;)</argsstring>
+        <name>API</name>
+        <param>
+          <type>NodeT &amp;&amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const boost::filesystem::path</type>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>lanelet2_map_osm</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>auto_sink</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>verbose</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>standalone_mode</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>metrics_logfile_path</declname>
+          <defval>&quot;/tmp/metrics.json&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="58" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="58" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a2e1ea4dc91018ccc82c9897267668f79" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void traffic_simulator::API::addMetric</definition>
+        <argsstring>(const std::string &amp;name, Ts &amp;&amp;... xs)</argsstring>
+        <name>addMetric</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="104" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="104" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a7c971afaf5e2273489eb3cd09914da27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void traffic_simulator::API::setVerbose</definition>
+        <argsstring>(const bool verbose)</argsstring>
+        <name>setVerbose</name>
+        <param>
+          <type>const bool</type>
+          <declname>verbose</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="109" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="26" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a1537f8153eef36041b42b875e8c05c0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::spawn</definition>
+        <argsstring>(const bool is_ego, const std::string &amp;name, const std::string &amp;catalog_xml)</argsstring>
+        <name>spawn</name>
+        <param>
+          <type>const bool</type>
+          <declname>is_ego</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>catalog_xml</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="111" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="126" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a99fe59bcd7050c22ca5b0360ecbb641e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::spawn</definition>
+        <argsstring>(const bool is_ego, const std::string &amp;name, const openscenario_msgs::msg::VehicleParameters &amp;params)</argsstring>
+        <name>spawn</name>
+        <param>
+          <type>const bool</type>
+          <declname>is_ego</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const openscenario_msgs::msg::VehicleParameters &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="114" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="67" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a4754fecd5ca125ba276b7c583ba73035" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::spawn</definition>
+        <argsstring>(const bool is_ego, const std::string &amp;name, const openscenario_msgs::msg::PedestrianParameters &amp;params)</argsstring>
+        <name>spawn</name>
+        <param>
+          <type>const bool</type>
+          <declname>is_ego</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const openscenario_msgs::msg::PedestrianParameters &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="118" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="105" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a16c7001dd44952b4a1363b2b7f46d456" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>decltype(auto)</type>
+        <definition>decltype(auto) traffic_simulator::API::spawn</definition>
+        <argsstring>(const bool is_ego, const std::string &amp;name, const std::string &amp;catalog_xml, Ts &amp;&amp;... xs)</argsstring>
+        <name>spawn</name>
+        <param>
+          <type>const bool</type>
+          <declname>is_ego</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>catalog_xml</declname>
+        </param>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="123" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="123" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1aaccd2d90d9226f3c4560fe6859fe3a8a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Parameters</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>decltype(auto)</type>
+        <definition>decltype(auto) traffic_simulator::API::spawn</definition>
+        <argsstring>(const bool is_ego, const std::string &amp;name, const Parameters &amp;params, Ts &amp;&amp;... xs)</argsstring>
+        <name>spawn</name>
+        <param>
+          <type>const bool</type>
+          <declname>is_ego</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const Parameters &amp;</type>
+          <declname>params</declname>
+        </param>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="134" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="134" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1ac97aed8727b68897762ab305e75fef21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::despawn</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>despawn</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="140" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="32" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1ad8ada52d7fffe908d364f42f1c12db7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>openscenario_msgs::msg::EntityStatus</type>
+        <definition>openscenario_msgs::msg::EntityStatus traffic_simulator::API::getEntityStatus</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>getEntityStatus</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="142" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="149" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a34af32e329fe0387601afb3819b018d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>geometry_msgs::msg::Pose</type>
+        <definition>geometry_msgs::msg::Pose traffic_simulator::API::getEntityPose</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>getEntityPose</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="143" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="143" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a5a05d689e0b4428a438aea3189f7c235" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::setEntityStatus</definition>
+        <argsstring>(const std::string &amp;name, const openscenario_msgs::msg::EntityStatus &amp;status)</argsstring>
+        <name>setEntityStatus</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const openscenario_msgs::msg::EntityStatus &amp;</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="145" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="159" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1aae03f7a1d133caf5f80c359f5e35e4f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::setEntityStatus</definition>
+        <argsstring>(const std::string &amp;name, const geometry_msgs::msg::Pose &amp;map_pose, const openscenario_msgs::msg::ActionStatus &amp;action_status=traffic_simulator::helper::constructActionStatus())</argsstring>
+        <name>setEntityStatus</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const geometry_msgs::msg::Pose &amp;</type>
+          <declname>map_pose</declname>
+        </param>
+        <param>
+          <type>const openscenario_msgs::msg::ActionStatus &amp;</type>
+          <declname>action_status</declname>
+          <defval>traffic_simulator::helper::constructActionStatus()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="147" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="257" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1ac74fbfbb8c7b37c8209aa5c4f2732643" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::setEntityStatus</definition>
+        <argsstring>(const std::string &amp;name, const openscenario_msgs::msg::LaneletPose &amp;lanelet_pose, const openscenario_msgs::msg::ActionStatus &amp;action_status=traffic_simulator::helper::constructActionStatus())</argsstring>
+        <name>setEntityStatus</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const openscenario_msgs::msg::LaneletPose &amp;</type>
+          <declname>lanelet_pose</declname>
+        </param>
+        <param>
+          <type>const openscenario_msgs::msg::ActionStatus &amp;</type>
+          <declname>action_status</declname>
+          <defval>traffic_simulator::helper::constructActionStatus()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="151" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="242" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a23a7ef18d598099f0251dc445b68c8d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::setEntityStatus</definition>
+        <argsstring>(const std::string &amp;name, const std::string &amp;reference_entity_name, const geometry_msgs::msg::Pose &amp;relative_pose, const openscenario_msgs::msg::ActionStatus &amp;action_status=traffic_simulator::helper::constructActionStatus())</argsstring>
+        <name>setEntityStatus</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>reference_entity_name</declname>
+        </param>
+        <param>
+          <type>const geometry_msgs::msg::Pose &amp;</type>
+          <declname>relative_pose</declname>
+        </param>
+        <param>
+          <type>const openscenario_msgs::msg::ActionStatus &amp;</type>
+          <declname>action_status</declname>
+          <defval>traffic_simulator::helper::constructActionStatus()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="155" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="177" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1ab2b11f7bcae5b2189b2f27a8c43e1055" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::setEntityStatus</definition>
+        <argsstring>(const std::string &amp;name, const std::string &amp;reference_entity_name, const geometry_msgs::msg::Point &amp;relative_position, const geometry_msgs::msg::Vector3 &amp;relative_rpy, const openscenario_msgs::msg::ActionStatus &amp;action_status=traffic_simulator::helper::constructActionStatus())</argsstring>
+        <name>setEntityStatus</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>reference_entity_name</declname>
+        </param>
+        <param>
+          <type>const geometry_msgs::msg::Point &amp;</type>
+          <declname>relative_position</declname>
+        </param>
+        <param>
+          <type>const geometry_msgs::msg::Vector3 &amp;</type>
+          <declname>relative_rpy</declname>
+        </param>
+        <param>
+          <type>const openscenario_msgs::msg::ActionStatus &amp;</type>
+          <declname>action_status</declname>
+          <defval>traffic_simulator::helper::constructActionStatus()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="160" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="165" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1ab460f27c7bff806aca339ea78b3eb6a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; double &gt;</type>
+        <definition>boost::optional&lt; double &gt; traffic_simulator::API::getTimeHeadway</definition>
+        <argsstring>(const std::string &amp;from, const std::string &amp;to)</argsstring>
+        <name>getTimeHeadway</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>from</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>to</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="167" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="197" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a1ad85e24897c6516c9f9f1df7c4dc45d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::reachPosition</definition>
+        <argsstring>(const std::string &amp;name, const geometry_msgs::msg::Pose &amp;target_pose, const double tolerance)</argsstring>
+        <name>reachPosition</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const geometry_msgs::msg::Pose &amp;</type>
+          <declname>target_pose</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>tolerance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="169" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="216" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a294c3ed575060422bdda6bcfb24ab6b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::reachPosition</definition>
+        <argsstring>(const std::string &amp;name, const openscenario_msgs::msg::LaneletPose &amp;target_pose, const double tolerance)</argsstring>
+        <name>reachPosition</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const openscenario_msgs::msg::LaneletPose &amp;</type>
+          <declname>target_pose</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>tolerance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="171" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="223" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a9d0b732922882e65b111b090e9f30435" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::reachPosition</definition>
+        <argsstring>(const std::string &amp;name, const std::string &amp;target_name, const double tolerance) const</argsstring>
+        <name>reachPosition</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>target_name</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>tolerance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="174" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="234" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a0567308c23ed05912f1d30c34b27a506" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::attachLidarSensor</definition>
+        <argsstring>(simulation_api_schema::LidarConfiguration configuration)</argsstring>
+        <name>attachLidarSensor</name>
+        <param>
+          <type>simulation_api_schema::LidarConfiguration</type>
+          <declname>configuration</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="177" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="304" bodyend="315"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a58ecd1643d77fafa5cc5bf321d91f2ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::attachDetectionSensor</definition>
+        <argsstring>(simulation_api_schema::DetectionSensorConfiguration configuration)</argsstring>
+        <name>attachDetectionSensor</name>
+        <param>
+          <type>simulation_api_schema::DetectionSensorConfiguration</type>
+          <declname>configuration</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="178" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="291" bodyend="302"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a39808db125b0ec000159480cfe3ba519" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::initialize</definition>
+        <argsstring>(double realtime_factor, double step_time)</argsstring>
+        <name>initialize</name>
+        <param>
+          <type>double</type>
+          <declname>realtime_factor</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>step_time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="180" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="276" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1afb26c57f4c8e55ce611b8e69b9d9861c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::updateFrame</definition>
+        <argsstring>()</argsstring>
+        <name>updateFrame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="182" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="369" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1ab993dcb3cd511e84391bdc089505f2cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::updateSensorFrame</definition>
+        <argsstring>()</argsstring>
+        <name>updateSensorFrame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="183" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="317" bodyend="327"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a0c71dd9eb765af228979193e65556349" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double traffic_simulator::API::getCurrentTime</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>getCurrentTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="185" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="185" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a1f9178b1fd4c678f6c18ce3982df4d70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(checkCollision)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>checkCollision</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="198" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a5fe7992b86ac036d462462a57bd8afb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(entityExists)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>entityExists</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="199" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a619f0f22127fc1d6761398ac076e5950" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(getBoundingBoxDistance)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>getBoundingBoxDistance</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="200" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a17c3ae7808141f748bbe763988259813" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(getEntityNames)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>getEntityNames</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="201" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a8c7b1a5e22c6651e6edfa190f457c087" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(getLinearJerk)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>getLinearJerk</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="202" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1ac31230b4d345edb3fd966b7a1fa3fd42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(getLongitudinalDistance)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>getLongitudinalDistance</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="203" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a0f6c55ebde9840b46bc794dc7b84baec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(getRelativePose)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>getRelativePose</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="204" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1ac3387fece63a32d8f3a25ee2b966eb19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(getStandStillDuration)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>getStandStillDuration</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="205" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a253a3b0eb955277aa5fd6e65581bb2ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(getTrafficLightArrow)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>getTrafficLightArrow</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="206" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a3ad649de2a40b68fb6f3074a97a4ccbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(getTrafficLightColor)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>getTrafficLightColor</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="207" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a34c6e07790cdc47d6070ab07e1751abc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(isInLanelet)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>isInLanelet</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="208" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1ae661f633256d19bd430fd42c3c92b25c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(requestAcquirePosition)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>requestAcquirePosition</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="209" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a3e66073639f0a858a36f9f04516bd64d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(requestAssignRoute)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>requestAssignRoute</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="210" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a594551217f2c11fd6d3d644c641091ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(requestLaneChange)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>requestLaneChange</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="211" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1af7ff4e7986ce6ef343d91f5d0465f9e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(requestWalkStraight)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>requestWalkStraight</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="212" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1ac708c51916cdc82f892d99e16e82fd44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(setDriverModel)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>setDriverModel</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="213" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1abda96a356a45e80a11eccf04dc2fe2de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(setTargetSpeed)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>setTargetSpeed</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="214" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1ad1e81ab90cfb937eb1f31f638707aae6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(setTrafficLightArrow)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>setTrafficLightArrow</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="215" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1acc317cdbc1c81648e0a4c0f56716fcdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(setTrafficLightArrowPhase)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>setTrafficLightArrowPhase</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="216" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a62c963f84f2fd31c7a5b4f8e7f3a62ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(setTrafficLightColor)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>setTrafficLightColor</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="217" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1ae70b7004f7bc4af4b84fc0597e01a375" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(setTrafficLightColorPhase)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>setTrafficLightColorPhase</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="218" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a49ccc892b3e5801628da01a8f936c7b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(toLaneletPose)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>toLaneletPose</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="219" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a51d75ce20865ef030fec6c42193a51e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::API::FORWARD_TO_ENTITY_MANAGER</definition>
+        <argsstring>(toMapPose)</argsstring>
+        <name>FORWARD_TO_ENTITY_MANAGER</name>
+        <param>
+          <type>toMapPose</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="220" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a88d108e77cd7cba20b99324ce38c84c8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::updateEntityStatusInSim</definition>
+        <argsstring>()</argsstring>
+        <name>updateEntityStatusInSim</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="225" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="329" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a06be3fa1a9ef185bc2ba450f49dfb29f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::spawn</definition>
+        <argsstring>(const bool is_ego, const std::string &amp;catalog_xml, const openscenario_msgs::msg::EntityStatus &amp;status)</argsstring>
+        <name>spawn</name>
+        <param>
+          <type>const bool</type>
+          <declname>is_ego</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>catalog_xml</declname>
+        </param>
+        <param>
+          <type>const openscenario_msgs::msg::EntityStatus &amp;</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="226" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp" bodystart="48" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1API_1a085443fc56758e20b2371e38a7eb8e1c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Parameters</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool traffic_simulator::API::spawn</definition>
+        <argsstring>(const bool is_ego, const Parameters &amp;parameters, const openscenario_msgs::msg::EntityStatus &amp;status)</argsstring>
+        <name>spawn</name>
+        <param>
+          <type>const bool</type>
+          <declname>is_ego</declname>
+        </param>
+        <param>
+          <type>const Parameters &amp;</type>
+          <declname>parameters</declname>
+        </param>
+        <param>
+          <type>const openscenario_msgs::msg::EntityStatus &amp;</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="232" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="232" bodyend="237"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" line="51" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp" bodystart="50" bodyend="283"/>
+    <listofallmembers>
+      <member refid="classtraffic__simulator_1_1API_1a2e1ea4dc91018ccc82c9897267668f79" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>addMetric</name></member>
+      <member refid="classtraffic__simulator_1_1API_1abcff3230809a407f9dba6b10cd7a9a19" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>API</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a2ddca493cc78ad0ad80170eb779582b8" prot="private" virt="non-virtual"><scope>traffic_simulator::API</scope><name>attach_detection_sensor_client_</name></member>
+      <member refid="classtraffic__simulator_1_1API_1aee17063f1d521eacf8c994acccd0fc40" prot="private" virt="non-virtual"><scope>traffic_simulator::API</scope><name>attach_lidar_sensor_client_</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a58ecd1643d77fafa5cc5bf321d91f2ab" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>attachDetectionSensor</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a0567308c23ed05912f1d30c34b27a506" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>attachLidarSensor</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a7ec17f3aab08de5944e74ed96a1d8262" prot="private" virt="non-virtual"><scope>traffic_simulator::API</scope><name>current_time_</name></member>
+      <member refid="classtraffic__simulator_1_1API_1ac97aed8727b68897762ab305e75fef21" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>despawn</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a5ce85cea2cb277e8b1122d949403c057" prot="private" virt="non-virtual"><scope>traffic_simulator::API</scope><name>despawn_entity_client_</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a32713dd06e4e4a56a5909ebb2fa3fa3a" prot="private" virt="non-virtual"><scope>traffic_simulator::API</scope><name>entity_manager_ptr_</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a9ab2517db8cc9651d46d57397f04b9e0" prot="private" virt="non-virtual"><scope>traffic_simulator::API</scope><name>EntityManager</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a1f9178b1fd4c678f6c18ce3982df4d70" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a5fe7992b86ac036d462462a57bd8afb0" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a619f0f22127fc1d6761398ac076e5950" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a17c3ae7808141f748bbe763988259813" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a8c7b1a5e22c6651e6edfa190f457c087" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1ac31230b4d345edb3fd966b7a1fa3fd42" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a0f6c55ebde9840b46bc794dc7b84baec" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1ac3387fece63a32d8f3a25ee2b966eb19" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a253a3b0eb955277aa5fd6e65581bb2ec" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a3ad649de2a40b68fb6f3074a97a4ccbf" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a34c6e07790cdc47d6070ab07e1751abc" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1ae661f633256d19bd430fd42c3c92b25c" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a3e66073639f0a858a36f9f04516bd64d" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a594551217f2c11fd6d3d644c641091ca" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1af7ff4e7986ce6ef343d91f5d0465f9e6" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1ac708c51916cdc82f892d99e16e82fd44" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1abda96a356a45e80a11eccf04dc2fe2de" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1ad1e81ab90cfb937eb1f31f638707aae6" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1acc317cdbc1c81648e0a4c0f56716fcdf" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a62c963f84f2fd31c7a5b4f8e7f3a62ac" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1ae70b7004f7bc4af4b84fc0597e01a375" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a49ccc892b3e5801628da01a8f936c7b6" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a51d75ce20865ef030fec6c42193a51e1" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a0c71dd9eb765af228979193e65556349" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>getCurrentTime</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a34af32e329fe0387601afb3819b018d1" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>getEntityPose</name></member>
+      <member refid="classtraffic__simulator_1_1API_1ad8ada52d7fffe908d364f42f1c12db7f" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>getEntityStatus</name></member>
+      <member refid="classtraffic__simulator_1_1API_1ab460f27c7bff806aca339ea78b3eb6a1" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>getTimeHeadway</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a39808db125b0ec000159480cfe3ba519" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>initialize</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a30211a9a4f8b955ad71facf1d83c810d" prot="private" virt="non-virtual"><scope>traffic_simulator::API</scope><name>initialize_client_</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a60f79a859e6290d567dae7f8346b7352" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>lanelet2_map_osm</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a252d903eb4b259b5b59981ab1d15af45" prot="private" virt="non-virtual"><scope>traffic_simulator::API</scope><name>metrics_manager_</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a1ad85e24897c6516c9f9f1df7c4dc45d" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>reachPosition</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a294c3ed575060422bdda6bcfb24ab6b3" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>reachPosition</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a9d0b732922882e65b111b090e9f30435" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>reachPosition</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a5a05d689e0b4428a438aea3189f7c235" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>setEntityStatus</name></member>
+      <member refid="classtraffic__simulator_1_1API_1aae03f7a1d133caf5f80c359f5e35e4f3" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>setEntityStatus</name></member>
+      <member refid="classtraffic__simulator_1_1API_1ac74fbfbb8c7b37c8209aa5c4f2732643" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>setEntityStatus</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a23a7ef18d598099f0251dc445b68c8d2" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>setEntityStatus</name></member>
+      <member refid="classtraffic__simulator_1_1API_1ab2b11f7bcae5b2189b2f27a8c43e1055" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>setEntityStatus</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a7c971afaf5e2273489eb3cd09914da27" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>setVerbose</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a1537f8153eef36041b42b875e8c05c0b" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>spawn</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a99fe59bcd7050c22ca5b0360ecbb641e" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>spawn</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a4754fecd5ca125ba276b7c583ba73035" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>spawn</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a16c7001dd44952b4a1363b2b7f46d456" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>spawn</name></member>
+      <member refid="classtraffic__simulator_1_1API_1aaccd2d90d9226f3c4560fe6859fe3a8a" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>spawn</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a06be3fa1a9ef185bc2ba450f49dfb29f" prot="private" virt="non-virtual"><scope>traffic_simulator::API</scope><name>spawn</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a085443fc56758e20b2371e38a7eb8e1c" prot="private" virt="non-virtual"><scope>traffic_simulator::API</scope><name>spawn</name></member>
+      <member refid="classtraffic__simulator_1_1API_1ac006c577516f9535d7b13e65ad6bf3de" prot="private" virt="non-virtual"><scope>traffic_simulator::API</scope><name>spawn_pedestrian_entity_client_</name></member>
+      <member refid="classtraffic__simulator_1_1API_1af65c3beebde41b2091354484f5da7ea4" prot="private" virt="non-virtual"><scope>traffic_simulator::API</scope><name>spawn_vehicle_entity_client_</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a4fd196b9782de0cc6a2a461df11b8a1e" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>standalone_mode</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a4dd1e49b1e7736f61941a5406d45b8e5" prot="private" virt="non-virtual"><scope>traffic_simulator::API</scope><name>step_time_</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a8d2c0fc20be1b2584412359e54a508ab" prot="private" virt="non-virtual"><scope>traffic_simulator::API</scope><name>traffic_controller_ptr_</name></member>
+      <member refid="classtraffic__simulator_1_1API_1aa9b8877249a83d2de54b382c225ea897" prot="private" virt="non-virtual"><scope>traffic_simulator::API</scope><name>update_entity_status_client_</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a45d7a7b05e701152eec0c628e1cbc8cc" prot="private" virt="non-virtual"><scope>traffic_simulator::API</scope><name>update_frame_client_</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a7a5f3fbd7cd5b1bee74b20dfde8ca61b" prot="private" virt="non-virtual"><scope>traffic_simulator::API</scope><name>update_sensor_frame_client_</name></member>
+      <member refid="classtraffic__simulator_1_1API_1a88d108e77cd7cba20b99324ce38c84c8" prot="private" virt="non-virtual"><scope>traffic_simulator::API</scope><name>updateEntityStatusInSim</name></member>
+      <member refid="classtraffic__simulator_1_1API_1afb26c57f4c8e55ce611b8e69b9d9861c" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>updateFrame</name></member>
+      <member refid="classtraffic__simulator_1_1API_1ab993dcb3cd511e84391bdc089505f2cd" prot="public" virt="non-virtual"><scope>traffic_simulator::API</scope><name>updateSensorFrame</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

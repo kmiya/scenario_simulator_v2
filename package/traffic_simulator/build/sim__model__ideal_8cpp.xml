@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="sim__model__ideal_8cpp" kind="file" language="C++">
+    <compoundname>sim_model_ideal.cpp</compoundname>
+    <includes refid="sim__model__ideal_8hpp" local="no">traffic_simulator/vehicle_model/sim_model_ideal.hpp</includes>
+    <incdepgraph>
+      <node id="6042">
+        <label>traffic_simulator/vehicle_model/sim_model_interface.hpp</label>
+        <link refid="sim__model__interface_8hpp"/>
+        <childnode refid="6039" relation="include">
+        </childnode>
+        <childnode refid="6043" relation="include">
+        </childnode>
+      </node>
+      <node id="6040">
+        <label>eigen3/Eigen/LU</label>
+      </node>
+      <node id="6043">
+        <label>rclcpp/rclcpp.hpp</label>
+      </node>
+      <node id="6037">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/vehicle_model/sim_model_ideal.cpp</label>
+        <link refid="sim__model__ideal_8cpp"/>
+        <childnode refid="6038" relation="include">
+        </childnode>
+      </node>
+      <node id="6041">
+        <label>iostream</label>
+      </node>
+      <node id="6039">
+        <label>eigen3/Eigen/Core</label>
+      </node>
+      <node id="6038">
+        <label>traffic_simulator/vehicle_model/sim_model_ideal.hpp</label>
+        <link refid="sim__model__ideal_8hpp"/>
+        <childnode refid="6039" relation="include">
+        </childnode>
+        <childnode refid="6040" relation="include">
+        </childnode>
+        <childnode refid="6041" relation="include">
+        </childnode>
+        <childnode refid="6042" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2015-2020<sp/>Autoware<sp/>Foundation.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="sim__model__ideal_8hpp" kindref="compound">traffic_simulator/vehicle_model/sim_model_ideal.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><ref refid="classSimModelIdealTwist_1aa840326750b3cac8d33a4b6a6311206a" kindref="member">SimModelIdealTwist::SimModelIdealTwist</ref>()<sp/>:<sp/><ref refid="classSimModelInterface" kindref="compound">SimModelInterface</ref>(3<sp/></highlight><highlight class="comment">/*<sp/>dim<sp/>x<sp/>*/</highlight><highlight class="normal">,<sp/>2<sp/></highlight><highlight class="comment">/*<sp/>dim<sp/>u<sp/>*/</highlight><highlight class="normal">)<sp/>{}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>SimModelIdealTwist::getX()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>state_(IDX::X);<sp/>}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>SimModelIdealTwist::getY()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>state_(IDX::Y);<sp/>}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>SimModelIdealTwist::getYaw()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>state_(IDX::YAW);<sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>SimModelIdealTwist::getVx()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>input_(IDX_U::VX_DES);<sp/>}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>SimModelIdealTwist::getWz()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>input_(IDX_U::WZ_DES);<sp/>}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>SimModelIdealTwist::getSteer()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0.0;<sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SimModelIdealTwist::update(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;<sp/>dt)<sp/>{<sp/>updateRungeKutta(dt,<sp/>input_);<sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">Eigen::VectorXd<sp/>SimModelIdealTwist::calcModel(</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::VectorXd<sp/>&amp;<sp/>state,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::VectorXd<sp/>&amp;<sp/>input)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>yaw<sp/>=<sp/>state(IDX::YAW);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vx<sp/>=<sp/>input(IDX_U::VX_DES);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>wz<sp/>=<sp/>input(IDX_U::WZ_DES);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>Eigen::VectorXd<sp/>d_state<sp/>=<sp/>Eigen::VectorXd::Zero(dim_x_);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>d_state(IDX::X)<sp/>=<sp/>vx<sp/>*<sp/>cos(yaw);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>d_state(IDX::Y)<sp/>=<sp/>vx<sp/>*<sp/>sin(yaw);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>d_state(IDX::YAW)<sp/>=<sp/>wz;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_state;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><ref refid="classSimModelIdealSteer_1ae1d255e7be08ade6518693ab683012eb" kindref="member">SimModelIdealSteer::SimModelIdealSteer</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>wheelbase)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">:<sp/><ref refid="classSimModelInterface" kindref="compound">SimModelInterface</ref>(3<sp/></highlight><highlight class="comment">/*<sp/>dim<sp/>x<sp/>*/</highlight><highlight class="normal">,<sp/>2<sp/></highlight><highlight class="comment">/*<sp/>dim<sp/>u<sp/>*/</highlight><highlight class="normal">),<sp/>wheelbase_(wheelbase)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>SimModelIdealSteer::getX()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>state_(IDX::X);<sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>SimModelIdealSteer::getY()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>state_(IDX::Y);<sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>SimModelIdealSteer::getYaw()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>state_(IDX::YAW);<sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>SimModelIdealSteer::getVx()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>input_(IDX_U::VX_DES);<sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>SimModelIdealSteer::getWz()</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>input_(IDX_U::VX_DES)<sp/>*<sp/>std::tan(input_(IDX_U::STEER_DES))<sp/>/<sp/>wheelbase_;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>SimModelIdealSteer::getSteer()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>input_(IDX_U::STEER_DES);<sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SimModelIdealSteer::update(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;<sp/>dt)<sp/>{<sp/>updateRungeKutta(dt,<sp/>input_);<sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">Eigen::VectorXd<sp/>SimModelIdealSteer::calcModel(</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::VectorXd<sp/>&amp;<sp/>state,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::VectorXd<sp/>&amp;<sp/>input)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>yaw<sp/>=<sp/>state(IDX::YAW);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vx<sp/>=<sp/>input(IDX_U::VX_DES);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>steer<sp/>=<sp/>input(IDX_U::STEER_DES);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>Eigen::VectorXd<sp/>d_state<sp/>=<sp/>Eigen::VectorXd::Zero(dim_x_);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>d_state(IDX::X)<sp/>=<sp/>vx<sp/>*<sp/>cos(yaw);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>d_state(IDX::Y)<sp/>=<sp/>vx<sp/>*<sp/>sin(yaw);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>d_state(IDX::YAW)<sp/>=<sp/>vx<sp/>*<sp/>std::tan(steer)<sp/>/<sp/>wheelbase_;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_state;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><ref refid="classSimModelIdealAccel_1ab109aaa8f34bb1f0470778bfa3acf3ef" kindref="member">SimModelIdealAccel::SimModelIdealAccel</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>wheelbase)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">:<sp/><ref refid="classSimModelInterface" kindref="compound">SimModelInterface</ref>(4<sp/></highlight><highlight class="comment">/*<sp/>dim<sp/>x<sp/>*/</highlight><highlight class="normal">,<sp/>2<sp/></highlight><highlight class="comment">/*<sp/>dim<sp/>u<sp/>*/</highlight><highlight class="normal">),<sp/>wheelbase_(wheelbase)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>SimModelIdealAccel::getX()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>state_(IDX::X);<sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>SimModelIdealAccel::getY()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>state_(IDX::Y);<sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>SimModelIdealAccel::getYaw()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>state_(IDX::YAW);<sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>SimModelIdealAccel::getVx()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>state_(IDX::VX);<sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>SimModelIdealAccel::getWz()</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>state_(IDX::VX)<sp/>*<sp/>std::tan(input_(IDX_U::STEER_DES))<sp/>/<sp/>wheelbase_;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>SimModelIdealAccel::getSteer()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>input_(IDX_U::STEER_DES);<sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SimModelIdealAccel::update(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;<sp/>dt)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>updateRungeKutta(dt,<sp/>input_);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(state_(IDX::VX)<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>state_(IDX::VX)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">Eigen::VectorXd<sp/>SimModelIdealAccel::calcModel(</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::VectorXd<sp/>&amp;<sp/>state,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::VectorXd<sp/>&amp;<sp/>input)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vx<sp/>=<sp/>state(IDX::VX);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>yaw<sp/>=<sp/>state(IDX::YAW);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ax<sp/>=<sp/>input(IDX_U::AX_DES);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>steer<sp/>=<sp/>input(IDX_U::STEER_DES);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>Eigen::VectorXd<sp/>d_state<sp/>=<sp/>Eigen::VectorXd::Zero(dim_x_);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>d_state(IDX::X)<sp/>=<sp/>vx<sp/>*<sp/>cos(yaw);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>d_state(IDX::Y)<sp/>=<sp/>vx<sp/>*<sp/>sin(yaw);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>d_state(IDX::VX)<sp/>=<sp/>ax;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>d_state(IDX::YAW)<sp/>=<sp/>vx<sp/>*<sp/>std::tan(steer)<sp/>/<sp/>wheelbase_;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d_state;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/vehicle_model/sim_model_ideal.cpp"/>
+  </compounddef>
+</doxygen>

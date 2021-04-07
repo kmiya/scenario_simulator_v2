@@ -749,11 +749,8 @@
 <h3 id="define-element">define ELEMENT<a class="headerlink" href="#define-element" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#define ELEMENT(</span>
     <span class="n">TYPE</span>
-<span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span> \
-    <span class="cp">#TYPE, [&amp;](auto &amp;&amp; node) \</span>
-<span class="cp">    { \</span>
-<span class="cp">      return make&lt;TYPE&gt;(node, std::forward&lt;decltype(xs)&gt;(xs)...); \</span>
-<span class="cp">    })</span>
+<span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span>     \
+    <span class="cp">#TYPE, [&amp;](auto &amp;&amp; node) { return make&lt;TYPE&gt;(node, std::forward&lt;decltype(xs)&gt;(xs)...); })</span>
 </code></pre></div>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">// Copyright 2015-2020 Tier IV, Inc. All rights reserved.</span>
@@ -773,9 +770,8 @@
 <span class="cp">#ifndef OPENSCENARIO_INTERPRETER__SYNTAX__SPEED_ACTION_TARGET_HPP_</span>
 <span class="cp">#define OPENSCENARIO_INTERPRETER__SYNTAX__SPEED_ACTION_TARGET_HPP_</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/relative_target_speed.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/absolute_target_speed.hpp&gt;</span><span class="cp"></span>
-
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/relative_target_speed.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
 
 <span class="k">namespace</span> <span class="n">openscenario_interpreter</span>
@@ -793,26 +789,16 @@
 <span class="cm"> *</span>
 <span class="cm"> * -------------------------------------------------------------------------- */</span>
 <span class="cp">#define ELEMENT(TYPE) \</span>
-<span class="cp">  std::make_pair( \</span>
-<span class="cp">    #TYPE, [&amp;](auto &amp;&amp; node) \</span>
-<span class="cp">    { \</span>
-<span class="cp">      return make&lt;TYPE&gt;(node, std::forward&lt;decltype(xs)&gt;(xs)...); \</span>
-<span class="cp">    })</span>
+<span class="cp">  std::make_pair(     \</span>
+<span class="cp">    #TYPE, [&amp;](auto &amp;&amp; node) { return make&lt;TYPE&gt;(node, std::forward&lt;decltype(xs)&gt;(xs)...); })</span>
 
-<span class="k">struct</span> <span class="nc">SpeedActionTarget</span>
-  <span class="o">:</span> <span class="k">public</span> <span class="n">Element</span>
+<span class="k">struct</span> <span class="nc">SpeedActionTarget</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Element</span>
 <span class="p">{</span>
-  <span class="k">template</span>
-  <span class="o">&lt;</span>
-    <span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span>
-  <span class="o">&gt;</span>
-  <span class="k">explicit</span> <span class="n">SpeedActionTarget</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
-  <span class="o">:</span> <span class="n">Element</span><span class="p">(</span>
-      <span class="n">choice</span><span class="p">(</span>
-        <span class="n">node</span><span class="p">,</span>
-        <span class="n">ELEMENT</span><span class="p">(</span><span class="n">RelativeTargetSpeed</span><span class="p">),</span>
-        <span class="n">ELEMENT</span><span class="p">(</span><span class="n">AbsoluteTargetSpeed</span><span class="p">)))</span>
-  <span class="p">{}</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+  <span class="k">explicit</span> <span class="n">SpeedActionTarget</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+  <span class="o">:</span> <span class="n">Element</span><span class="p">(</span><span class="n">choice</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">ELEMENT</span><span class="p">(</span><span class="n">RelativeTargetSpeed</span><span class="p">),</span> <span class="n">ELEMENT</span><span class="p">(</span><span class="n">AbsoluteTargetSpeed</span><span class="p">)))</span>
+  <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">};</span>
 
 <span class="cp">#undef ELEMENT</span>
@@ -822,7 +808,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__SPEED_ACTION_TARGET_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 01:42:32 UTC</p>
+<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
                 
                   
                 

@@ -761,20 +761,22 @@
 <div class="highlight"><pre><span></span><code><span class="cp">#define DEFINE_PERFECT_FORWARD(</span>
     <span class="n">IDENTIFIER</span><span class="p">,</span>
     <span class="n">CONST</span>
-<span class="p">)</span> <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span> \
-  <span class="k">constexpr</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">IDENTIFIER</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="n">CONST</span> \
-  <span class="p">{</span> \
+<span class="p">)</span> <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>                                                             \
+  <span class="k">constexpr</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">IDENTIFIER</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="n">CONST</span>                                \
+  <span class="p">{</span>                                                                                     \
     <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CONST</span> <span class="n">T</span> <span class="o">&amp;&gt;</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">).</span><span class="n">IDENTIFIER</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span> \
-  <span class="p">}</span> <span class="k">static_assert</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+  <span class="p">}</span>                                                                                     \
+  <span class="k">static_assert</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="define-boilerplate">define BOILERPLATE<a class="headerlink" href="#define-boilerplate" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#define BOILERPLATE(</span>
     <span class="n">NAME</span><span class="p">,</span>
     <span class="n">STATE</span>
-<span class="p">)</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">NAME</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> \
-  <span class="p">{</span> \
+<span class="p">)</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">NAME</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span>                                                     \
+  <span class="p">{</span>                                                                                        \
     <span class="k">return</span> <span class="nf">state</span><span class="p">().</span><span class="k">template</span> <span class="n">as</span><span class="o">&lt;</span><span class="n">StoryboardElementState</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">==</span> <span class="n">StoryboardElementState</span><span class="o">::</span><span class="n">STATE</span><span class="p">;</span> \
-  <span class="p">}</span> <span class="k">static_assert</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+  <span class="p">}</span>                                                                                        \
+  <span class="k">static_assert</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">// Copyright 2015-2020 Tier IV, Inc. All rights reserved.</span>
@@ -797,7 +799,6 @@
 <span class="cp">#include</span> <span class="cpf">&lt;boost/mpl/and.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;boost/scope_exit.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/storyboard_element_state.hpp&gt;</span><span class="cp"></span>
-
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;type_traits&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;unordered_set&gt;</span><span class="cp"></span>
@@ -807,7 +808,7 @@
 <span class="p">{</span>
 <span class="kr">inline</span> <span class="k">namespace</span> <span class="n">syntax</span>
 <span class="p">{</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">StoryboardElement</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
@@ -821,18 +822,17 @@
   <span class="o">:</span> <span class="n">maximum_execution_count</span><span class="p">(</span><span class="n">maximum_execution_count</span><span class="p">),</span>
     <span class="n">current_execution_count</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
     <span class="n">current_state</span><span class="p">(</span><span class="n">standby_state</span><span class="p">)</span>
-  <span class="p">{}</span>
-
-  <span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">state</span><span class="p">()</span> <span class="k">const</span>
   <span class="p">{</span>
-    <span class="k">return</span> <span class="n">current_state</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="cp">#define BOILERPLATE(NAME, STATE) \</span>
-<span class="cp">  constexpr auto NAME() const noexcept \</span>
-<span class="cp">  { \</span>
+  <span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">state</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">current_state</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="cp">#define BOILERPLATE(NAME, STATE)                                                           \</span>
+<span class="cp">  constexpr auto NAME() const noexcept                                                     \</span>
+<span class="cp">  {                                                                                        \</span>
 <span class="cp">    return state().template as&lt;StoryboardElementState&gt;() == StoryboardElementState::STATE; \</span>
-<span class="cp">  } static_assert(true, &quot;&quot;)</span>
+<span class="cp">  }                                                                                        \</span>
+<span class="cp">  static_assert(true, &quot;&quot;)</span>
 
   <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">standby</span><span class="p">,</span> <span class="n">standbyState</span><span class="p">);</span>
   <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">starting</span><span class="p">,</span> <span class="n">startTransition</span><span class="p">);</span>
@@ -842,42 +842,42 @@
   <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">stopping</span><span class="p">,</span> <span class="n">stopTransition</span><span class="p">);</span>
   <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">skipping</span><span class="p">,</span> <span class="n">skipTransition</span><span class="p">);</span>
 
-  <span class="cp">#undef BOILERPLATE</span>
+<span class="cp">#undef BOILERPLATE</span>
 
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Boolean</span><span class="p">,</span> <span class="n">REQUIRES</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_convertible</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="p">,</span> <span class="kt">bool</span><span class="o">&gt;</span><span class="p">)</span><span class="o">&gt;</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Boolean</span><span class="p">,</span> <span class="n">REQUIRES</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_convertible</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="p">,</span> <span class="kt">bool</span><span class="o">&gt;</span><span class="p">)</span><span class="o">&gt;</span>
   <span class="k">auto</span> <span class="n">changeStateIf</span><span class="p">(</span>
     <span class="n">Boolean</span> <span class="o">&amp;&amp;</span> <span class="n">test</span><span class="p">,</span> <span class="k">const</span> <span class="n">Element</span> <span class="o">&amp;</span> <span class="n">consequent_state</span><span class="p">,</span> <span class="k">const</span> <span class="n">Element</span> <span class="o">&amp;</span> <span class="n">alternate_state</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">test</span><span class="p">)</span> <span class="p">{</span>
-      <span class="cp">#ifndef NDEBUG</span>
+<span class="cp">#ifndef NDEBUG</span>
       <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">indent</span><span class="p">;</span>
       <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="k">typeid</span><span class="p">(</span><span class="n">T</span><span class="p">).</span><span class="n">name</span><span class="p">();</span>
       <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;::evaluate [&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">current_state</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; =&gt; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">consequent_state</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;]&quot;</span><span class="p">;</span>
       <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-      <span class="cp">#endif</span>
+<span class="cp">#endif</span>
       <span class="k">return</span> <span class="n">current_state</span> <span class="o">=</span> <span class="n">consequent_state</span><span class="p">;</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">current_state</span> <span class="o">=</span> <span class="n">alternate_state</span><span class="p">;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Boolean</span><span class="p">,</span> <span class="n">REQUIRES</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_convertible</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="p">,</span> <span class="kt">bool</span><span class="o">&gt;</span><span class="p">)</span><span class="o">&gt;</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Boolean</span><span class="p">,</span> <span class="n">REQUIRES</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_convertible</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="p">,</span> <span class="kt">bool</span><span class="o">&gt;</span><span class="p">)</span><span class="o">&gt;</span>
   <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">changeStateIf</span><span class="p">(</span><span class="n">Boolean</span> <span class="o">&amp;&amp;</span> <span class="n">test</span><span class="p">,</span> <span class="k">const</span> <span class="n">Element</span> <span class="o">&amp;</span> <span class="n">consequent_state</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="k">return</span> <span class="nf">changeStateIf</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">consequent_state</span><span class="p">,</span> <span class="n">current_state</span><span class="p">);</span>
   <span class="p">}</span>
 
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Predicate</span><span class="p">,</span> <span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="p">,</span> <span class="n">REQUIRES</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_function</span><span class="o">&lt;</span><span class="n">Predicate</span><span class="o">&gt;</span><span class="p">)</span><span class="o">&gt;</span>
-  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">changeStateIf</span><span class="p">(</span><span class="n">Predicate</span> <span class="o">&amp;&amp;</span> <span class="n">predicate</span><span class="p">,</span> <span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Predicate</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="p">,</span> <span class="n">REQUIRES</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_function</span><span class="o">&lt;</span><span class="n">Predicate</span><span class="o">&gt;</span><span class="p">)</span><span class="o">&gt;</span>
+  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">changeStateIf</span><span class="p">(</span><span class="n">Predicate</span> <span class="o">&amp;&amp;</span> <span class="n">predicate</span><span class="p">,</span> <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="k">return</span> <span class="nf">changeStateIf</span><span class="p">(</span><span class="n">predicate</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
   <span class="p">}</span>
 
-  <span class="n">Element</span> <span class="k">override</span> <span class="p">()</span>
+  <span class="n">Element</span> <span class="k">override</span><span class="p">()</span>
   <span class="p">{</span>
-    <span class="cp">#ifndef NDEBUG</span>
+<span class="cp">#ifndef NDEBUG</span>
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">state</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="cp">#endif</span>
+<span class="cp">#endif</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">complete</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">stopping</span><span class="p">())</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">current_state</span> <span class="o">=</span> <span class="n">stop_transition</span><span class="p">;</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -886,15 +886,15 @@
   <span class="p">}</span>
 
 <span class="k">private</span><span class="o">:</span>
-  <span class="k">static</span> <span class="k">constexpr</span> <span class="kt">void</span> <span class="n">start</span><span class="p">()</span> <span class="k">noexcept</span>
-  <span class="p">{}</span>
+  <span class="k">static</span> <span class="k">constexpr</span> <span class="kt">void</span> <span class="n">start</span><span class="p">()</span> <span class="k">noexcept</span> <span class="p">{}</span>
 
-  <span class="cp">#define DEFINE_PERFECT_FORWARD(IDENTIFIER, CONST) \</span>
-<span class="cp">  template&lt;typename ... Ts&gt; \</span>
-<span class="cp">  constexpr decltype(auto) IDENTIFIER(Ts &amp;&amp; ... xs) CONST \</span>
-<span class="cp">  { \</span>
+<span class="cp">#define DEFINE_PERFECT_FORWARD(IDENTIFIER, CONST)                                       \</span>
+<span class="cp">  template &lt;typename... Ts&gt;                                                             \</span>
+<span class="cp">  constexpr decltype(auto) IDENTIFIER(Ts &amp;&amp;... xs) CONST                                \</span>
+<span class="cp">  {                                                                                     \</span>
 <span class="cp">    return static_cast&lt;CONST T &amp;&gt;(*this).IDENTIFIER(std::forward&lt;decltype(xs)&gt;(xs)...); \</span>
-<span class="cp">  } static_assert(true, &quot;&quot;)</span>
+<span class="cp">  }                                                                                     \</span>
+<span class="cp">  static_assert(true, &quot;&quot;)</span>
 
   <span class="n">DEFINE_PERFECT_FORWARD</span><span class="p">(</span><span class="n">accomplished</span><span class="p">,</span> <span class="k">const</span><span class="p">);</span>
   <span class="n">DEFINE_PERFECT_FORWARD</span><span class="p">(</span><span class="n">ready</span><span class="p">,</span> <span class="p">);</span>
@@ -902,7 +902,7 @@
   <span class="n">DEFINE_PERFECT_FORWARD</span><span class="p">(</span><span class="n">stop</span><span class="p">,</span> <span class="p">);</span>
   <span class="n">DEFINE_PERFECT_FORWARD</span><span class="p">(</span><span class="n">stopTriggered</span><span class="p">,</span> <span class="p">);</span>
 
-  <span class="cp">#undef DEFINE_PERFECT_FORWARD</span>
+<span class="cp">#undef DEFINE_PERFECT_FORWARD</span>
 
 <span class="k">protected</span><span class="o">:</span>
   <span class="k">auto</span> <span class="n">rename</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="k">const</span>
@@ -913,22 +913,18 @@
 
   <span class="n">std</span><span class="o">::</span><span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">;</span>
 
-  <span class="k">auto</span> <span class="nf">unique</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="k">return</span> <span class="n">cdr</span><span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">name</span><span class="p">));</span>
-  <span class="p">}</span>
+  <span class="k">auto</span> <span class="nf">unique</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">cdr</span><span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">name</span><span class="p">));</span> <span class="p">}</span>
 
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">U</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="p">,</span> <span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">readStoryboardElement</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">inner_scope</span><span class="p">,</span> <span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">U</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">readStoryboardElement</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">inner_scope</span><span class="p">,</span> <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="k">const</span> <span class="k">auto</span> <span class="n">name</span> <span class="o">=</span> <span class="n">rename</span><span class="p">(</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">inner_scope</span><span class="p">));</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="n">name</span><span class="p">))</span> <span class="p">{</span>
-      <span class="k">return</span>
-        <span class="n">inner_scope</span><span class="p">.</span><span class="n">storyboard_elements</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span>
-          <span class="n">make</span><span class="o">&lt;</span><span class="n">U</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">inner_scope</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
+      <span class="k">return</span> <span class="n">inner_scope</span><span class="p">.</span><span class="n">storyboard_elements</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span>
+               <span class="n">make</span><span class="o">&lt;</span><span class="n">U</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">inner_scope</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span> <span class="p">{};</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>
       <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;detected redefinition of StoryboardElement named </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&#39;</span><span class="s"> &quot;</span><span class="p">;</span>
       <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;(class &quot;</span> <span class="o">&lt;&lt;</span> <span class="k">typeid</span><span class="p">(</span><span class="n">U</span><span class="p">).</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;)&quot;</span><span class="p">;</span>
       <span class="k">throw</span> <span class="nf">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
@@ -944,22 +940,19 @@
   <span class="k">auto</span> <span class="n">evaluate</span><span class="p">()</span>
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">stopTriggered</span><span class="p">())</span> <span class="p">{</span>
-      <span class="k">override</span> <span class="p">();</span>
+      <span class="k">override</span><span class="p">();</span>
     <span class="p">}</span>
 
-    <span class="cp">#ifndef NDEBUG</span>
+<span class="cp">#ifndef NDEBUG</span>
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">indent</span><span class="o">++</span><span class="p">);</span>
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;- evaluate: </span><span class="se">\x1b</span><span class="s">[36m&quot;</span><span class="p">;</span>
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">quoted</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">T</span> <span class="o">&amp;&gt;</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">).</span><span class="n">name</span><span class="p">);</span>
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[0m&quot;</span><span class="p">;</span>
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; [&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">current_state</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;] &quot;</span><span class="p">;</span>
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="cp">#endif</span>
+<span class="cp">#endif</span>
 
-    <span class="n">BOOST_SCOPE_EXIT_ALL</span><span class="p">()</span>
-    <span class="p">{</span>
-      <span class="o">--</span><span class="n">indent</span><span class="p">;</span>
-    <span class="p">};</span>
+    <span class="n">BOOST_SCOPE_EXIT_ALL</span><span class="p">()</span> <span class="p">{</span> <span class="o">--</span><span class="n">indent</span><span class="p">;</span> <span class="p">};</span>
 
     <span class="k">switch</span> <span class="p">(</span><span class="n">state</span><span class="p">().</span><span class="k">template</span> <span class="n">as</span><span class="o">&lt;</span><span class="n">StoryboardElementState</span><span class="o">&gt;</span><span class="p">(</span><span class="n">__FILE__</span><span class="p">,</span> <span class="n">__LINE__</span><span class="p">))</span> <span class="p">{</span>
       <span class="cm">/* ---- StandBy ----------------------------------------------------------</span>
@@ -1099,24 +1092,24 @@
           <span class="n">stop</span><span class="p">();</span>
           <span class="k">return</span> <span class="n">current_state</span><span class="p">;</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-          <span class="cp">#ifndef NDEBUG</span>
+<span class="cp">#ifndef NDEBUG</span>
           <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">indent</span><span class="p">;</span>
           <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="k">typeid</span><span class="p">(</span><span class="n">T</span><span class="p">).</span><span class="n">name</span><span class="p">();</span>
           <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;::stop [&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">current_state</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; =&gt; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">complete_state</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;]&quot;</span><span class="p">;</span>
           <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-          <span class="cp">#endif</span>
+<span class="cp">#endif</span>
           <span class="k">return</span> <span class="n">current_state</span> <span class="o">=</span> <span class="n">complete_state</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">};</span>
-<span class="p">}</span>
+<span class="p">}</span>  <span class="c1">// namespace syntax</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
 
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__STORYBOARD_ELEMENT_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 01:42:32 UTC</p>
+<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
                 
                   
                 

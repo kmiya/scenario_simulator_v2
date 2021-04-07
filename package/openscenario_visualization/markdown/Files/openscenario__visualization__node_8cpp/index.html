@@ -722,23 +722,23 @@
 <span class="c1">// See the License for the specific language governing permissions and</span>
 <span class="c1">// limitations under the License.</span>
 
+<span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_visualization/openscenario_visualization_component.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;rclcpp/rclcpp.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
 <span class="p">{</span>
   <span class="n">rclcpp</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
   <span class="n">rclcpp</span><span class="o">::</span><span class="n">NodeOptions</span> <span class="n">options</span><span class="p">;</span>
-  <span class="k">auto</span> <span class="n">component</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">openscenario_visualization</span><span class="o">::</span><span class="n">OpenscenarioVisualizationComponent</span><span class="o">&gt;</span><span class="p">(</span>
-    <span class="n">options</span><span class="p">);</span>
+  <span class="k">auto</span> <span class="n">component</span> <span class="o">=</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">openscenario_visualization</span><span class="o">::</span><span class="n">OpenscenarioVisualizationComponent</span><span class="o">&gt;</span><span class="p">(</span><span class="n">options</span><span class="p">);</span>
   <span class="n">rclcpp</span><span class="o">::</span><span class="n">spin</span><span class="p">(</span><span class="n">component</span><span class="o">-&gt;</span><span class="n">get_node_base_interface</span><span class="p">());</span>
   <span class="n">rclcpp</span><span class="o">::</span><span class="n">shutdown</span><span class="p">();</span>
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 01:42:33 UTC</p>
+<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
                 
                   
                 

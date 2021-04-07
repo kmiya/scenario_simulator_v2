@@ -1,0 +1,454 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="color__utils_8hpp" kind="file" language="C++">
+    <compoundname>color_utils.hpp</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">cassert</includes>
+    <includes local="no">map</includes>
+    <includes local="no">std_msgs/msg/color_rgba.hpp</includes>
+    <includes local="no">string</includes>
+    <includedby refid="traffic__light_8hpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp</includedby>
+    <includedby refid="color__utils_8cpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/color_utils/color_utils.cpp</includedby>
+    <includedby refid="hdmap__utils_8cpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp</includedby>
+    <includedby refid="catmull__rom__visualization_8cpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/moc/catmull_rom_visualization.cpp</includedby>
+    <includedby refid="traffic__light_8cpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic_lights/traffic_light.cpp</includedby>
+    <incdepgraph>
+      <node id="1261">
+        <label>std_msgs/msg/color_rgba.hpp</label>
+      </node>
+      <node id="1259">
+        <label>cassert</label>
+      </node>
+      <node id="1262">
+        <label>string</label>
+      </node>
+      <node id="1260">
+        <label>map</label>
+      </node>
+      <node id="1257">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/color_utils/color_utils.hpp</label>
+        <link refid="color__utils_8hpp"/>
+        <childnode refid="1258" relation="include">
+        </childnode>
+        <childnode refid="1259" relation="include">
+        </childnode>
+        <childnode refid="1260" relation="include">
+        </childnode>
+        <childnode refid="1261" relation="include">
+        </childnode>
+        <childnode refid="1262" relation="include">
+        </childnode>
+      </node>
+      <node id="1258">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1265">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp</label>
+        <link refid="api_8hpp_source"/>
+      </node>
+      <node id="1278">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/traveled_distance_metric.hpp</label>
+        <link refid="traveled__distance__metric_8hpp_source"/>
+        <childnode refid="1274" relation="include">
+        </childnode>
+      </node>
+      <node id="1279">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/walk_straight_action.hpp</label>
+        <link refid="walk__straight__action_8hpp"/>
+        <childnode refid="1270" relation="include">
+        </childnode>
+        <childnode refid="1280" relation="include">
+        </childnode>
+      </node>
+      <node id="1282">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/follow_lane_sequence/follow_front_entity_action.hpp</label>
+        <link refid="follow__front__entity__action_8hpp_source"/>
+      </node>
+      <node id="1276">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/momentary_stop_metric.hpp</label>
+        <link refid="momentary__stop__metric_8hpp_source"/>
+        <childnode refid="1274" relation="include">
+        </childnode>
+      </node>
+      <node id="1284">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/follow_lane_sequence/stop_at_crossing_entity_action.hpp</label>
+        <link refid="stop__at__crossing__entity__action_8hpp_source"/>
+      </node>
+      <node id="1270">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp</label>
+        <link refid="pedestrian_2behavior__tree_8hpp_source"/>
+        <childnode refid="1271" relation="include">
+        </childnode>
+      </node>
+      <node id="1286">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/follow_lane_sequence/stop_at_traffic_light_action.hpp</label>
+        <link refid="stop__at__traffic__light__action_8hpp_source"/>
+      </node>
+      <node id="1273">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp</label>
+        <link refid="metric__base_8hpp_source"/>
+        <childnode refid="1274" relation="include">
+        </childnode>
+        <childnode refid="1275" relation="include">
+        </childnode>
+        <childnode refid="1276" relation="include">
+        </childnode>
+        <childnode refid="1277" relation="include">
+        </childnode>
+        <childnode refid="1278" relation="include">
+        </childnode>
+      </node>
+      <node id="1271">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/pedestrian_entity.hpp</label>
+        <link refid="pedestrian__entity_8hpp_source"/>
+        <childnode refid="1272" relation="include">
+        </childnode>
+      </node>
+      <node id="1267">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/action_node.hpp</label>
+        <link refid="action__node_8hpp_source"/>
+        <childnode refid="1268" relation="include">
+        </childnode>
+        <childnode refid="1281" relation="include">
+        </childnode>
+      </node>
+      <node id="1280">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/behavior/pedestrian/walk_straight_action.cpp</label>
+        <link refid="walk__straight__action_8cpp"/>
+      </node>
+      <node id="1285">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/follow_lane_sequence/stop_at_stop_line_action.hpp</label>
+        <link refid="stop__at__stop__line__action_8hpp_source"/>
+      </node>
+      <node id="1263">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/color_utils/color_utils.hpp</label>
+        <link refid="color__utils_8hpp"/>
+        <childnode refid="1264" relation="include">
+        </childnode>
+      </node>
+      <node id="1288">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/lane_change_action.hpp</label>
+        <link refid="lane__change__action_8hpp_source"/>
+        <childnode refid="1289" relation="include">
+        </childnode>
+      </node>
+      <node id="1272">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/entity_manager.hpp</label>
+        <link refid="entity__manager_8hpp_source"/>
+        <childnode refid="1265" relation="include">
+        </childnode>
+        <childnode refid="1273" relation="include">
+        </childnode>
+        <childnode refid="1275" relation="include">
+        </childnode>
+      </node>
+      <node id="1277">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/reaction_time_metric.hpp</label>
+        <link refid="reaction__time__metric_8hpp_source"/>
+        <childnode refid="1274" relation="include">
+        </childnode>
+      </node>
+      <node id="1275">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metrics_manager.hpp</label>
+        <link refid="metrics__manager_8hpp_source"/>
+        <childnode refid="1265" relation="include">
+        </childnode>
+      </node>
+      <node id="1289">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/vehicle_entity.hpp</label>
+        <link refid="vehicle__entity_8hpp_source"/>
+        <childnode refid="1290" relation="include">
+        </childnode>
+        <childnode refid="1272" relation="include">
+        </childnode>
+      </node>
+      <node id="1269">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/follow_lane_action.hpp</label>
+        <link refid="pedestrian_2follow__lane__action_8hpp_source"/>
+        <childnode refid="1270" relation="include">
+        </childnode>
+      </node>
+      <node id="1274">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metrics.hpp</label>
+        <link refid="metrics_8hpp_source"/>
+      </node>
+      <node id="1290">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp</label>
+        <link refid="ego__entity_8hpp_source"/>
+        <childnode refid="1272" relation="include">
+        </childnode>
+      </node>
+      <node id="1268">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/pedestrian_action_node.hpp</label>
+        <link refid="pedestrian__action__node_8hpp_source"/>
+        <childnode refid="1269" relation="include">
+        </childnode>
+        <childnode refid="1279" relation="include">
+        </childnode>
+      </node>
+      <node id="1281">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/vehicle_action_node.hpp</label>
+        <link refid="vehicle__action__node_8hpp_source"/>
+        <childnode refid="1282" relation="include">
+        </childnode>
+        <childnode refid="1283" relation="include">
+        </childnode>
+        <childnode refid="1284" relation="include">
+        </childnode>
+        <childnode refid="1285" relation="include">
+        </childnode>
+        <childnode refid="1286" relation="include">
+        </childnode>
+        <childnode refid="1287" relation="include">
+        </childnode>
+        <childnode refid="1288" relation="include">
+        </childnode>
+      </node>
+      <node id="1266">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light_manager.hpp</label>
+        <link refid="traffic__light__manager_8hpp_source"/>
+        <childnode refid="1267" relation="include">
+        </childnode>
+        <childnode refid="1291" relation="include">
+        </childnode>
+        <childnode refid="1272" relation="include">
+        </childnode>
+      </node>
+      <node id="1264">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights/traffic_light.hpp</label>
+        <link refid="traffic__light_8hpp_source"/>
+        <childnode refid="1265" relation="include">
+        </childnode>
+        <childnode refid="1266" relation="include">
+        </childnode>
+      </node>
+      <node id="1291">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/entity_base.hpp</label>
+        <link refid="entity__base_8hpp_source"/>
+        <childnode refid="1267" relation="include">
+        </childnode>
+        <childnode refid="1282" relation="include">
+        </childnode>
+        <childnode refid="1284" relation="include">
+        </childnode>
+        <childnode refid="1285" relation="include">
+        </childnode>
+        <childnode refid="1286" relation="include">
+        </childnode>
+        <childnode refid="1287" relation="include">
+        </childnode>
+        <childnode refid="1271" relation="include">
+        </childnode>
+        <childnode refid="1289" relation="include">
+        </childnode>
+      </node>
+      <node id="1283">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/follow_lane_sequence/follow_lane_action.hpp</label>
+        <link refid="vehicle_2follow__lane__sequence_2follow__lane__action_8hpp_source"/>
+      </node>
+      <node id="1287">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/follow_lane_sequence/yield_action.hpp</label>
+        <link refid="yield__action_8hpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacecolor__utils">color_utils</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2019<sp/>shuhei<sp/>yoshida</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining<sp/>a<sp/>copy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>of<sp/>this<sp/>software<sp/>and<sp/>associated<sp/>documentation<sp/>files<sp/>(the<sp/>&quot;Software&quot;),<sp/>to<sp/>deal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>in<sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including<sp/>without<sp/>limitation<sp/>the<sp/>rights</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute,<sp/>sublicense,<sp/>and/or<sp/>sell</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>conditions:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be<sp/>included<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>all<sp/>copies<sp/>or<sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND<sp/>NONINFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>THE<sp/>AUTHORS<sp/>OR<sp/>COPYRIGHT<sp/>HOLDERS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING<sp/>FROM,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/>DEALINGS<sp/>IN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>THE<sp/>SOFTWARE.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor">#ifndef<sp/>TRAFFIC_SIMULATOR__COLOR_UTILS__COLOR_UTILS_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TRAFFIC_SIMULATOR__COLOR_UTILS__COLOR_UTILS_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cassert&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;std_msgs/msg/color_rgba.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacecolor__utils" kindref="compound">color_utils</ref></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>printRed(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>text);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>printGreen(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>text);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>printYellow(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>text);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>printBlue(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>text);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>printMagenta(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>text);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>printCyan(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>text);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>printWhite(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>text);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std_msgs::msg::ColorRGBA<sp/>makeColorMsg(std::string<sp/>preset_name,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alpha<sp/>=<sp/>1.0);</highlight></codeline>
+<codeline lineno="47"><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std_msgs::msg::ColorRGBA<sp/>fromHsv(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>h,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>s,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>v,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alpha<sp/>=<sp/>1.0);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std_msgs::msg::ColorRGBA<sp/>fromRgba(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>g,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alpha<sp/>=<sp/>1.0);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>std::array&lt;float,<sp/>3&gt;&gt;<sp/>COLOR_NAME_DICT{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>{&quot;COLOR_NAME&quot;,<sp/>{R,<sp/>G,<sp/>B}}<sp/>//<sp/>template</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;aliceblue&quot;</highlight><highlight class="normal">,<sp/>{0.941176,<sp/>0.972549,<sp/>1}},</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;antiquewhite&quot;</highlight><highlight class="normal">,<sp/>{0.980392,<sp/>0.921569,<sp/>0.843137}},</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;aqua&quot;</highlight><highlight class="normal">,<sp/>{0,<sp/>1,<sp/>1}},</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;aquamarine&quot;</highlight><highlight class="normal">,<sp/>{0.498039,<sp/>1,<sp/>0.831373}},</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;azure&quot;</highlight><highlight class="normal">,<sp/>{0.941176,<sp/>1,<sp/>1}},</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;beige&quot;</highlight><highlight class="normal">,<sp/>{0.960784,<sp/>0.960784,<sp/>0.862745}},</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;bisque&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.894118,<sp/>0.768627}},</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;black&quot;</highlight><highlight class="normal">,<sp/>{0,<sp/>0,<sp/>0}},</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;blanchedalmond&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.921569,<sp/>0.803922}},</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;blue&quot;</highlight><highlight class="normal">,<sp/>{0,<sp/>0,<sp/>1}},</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;blueviolet&quot;</highlight><highlight class="normal">,<sp/>{0.541176,<sp/>0.168627,<sp/>0.886275}},</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;brown&quot;</highlight><highlight class="normal">,<sp/>{0.647059,<sp/>0.164706,<sp/>0.164706}},</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;burlywood&quot;</highlight><highlight class="normal">,<sp/>{0.870588,<sp/>0.721569,<sp/>0.529412}},</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;cadetblue&quot;</highlight><highlight class="normal">,<sp/>{0.372549,<sp/>0.619608,<sp/>0.627451}},</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;chartreuse&quot;</highlight><highlight class="normal">,<sp/>{0.498039,<sp/>1,<sp/>0}},</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;chocolate&quot;</highlight><highlight class="normal">,<sp/>{0.823529,<sp/>0.411765,<sp/>0.117647}},</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;coral&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.498039,<sp/>0.313725}},</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;cornflowerblue&quot;</highlight><highlight class="normal">,<sp/>{0.392157,<sp/>0.584314,<sp/>0.929412}},</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;cornsilk&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.972549,<sp/>0.862745}},</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;crimson&quot;</highlight><highlight class="normal">,<sp/>{0.862745,<sp/>0.0784314,<sp/>0.235294}},</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;cyan&quot;</highlight><highlight class="normal">,<sp/>{0,<sp/>1,<sp/>1}},</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;darkblue&quot;</highlight><highlight class="normal">,<sp/>{0,<sp/>0,<sp/>0.545098}},</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;darkcyan&quot;</highlight><highlight class="normal">,<sp/>{0,<sp/>0.545098,<sp/>0.545098}},</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;darkgoldenrod&quot;</highlight><highlight class="normal">,<sp/>{0.721569,<sp/>0.52549,<sp/>0.0431373}},</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;darkgray&quot;</highlight><highlight class="normal">,<sp/>{0.662745,<sp/>0.662745,<sp/>0.662745}},</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;darkgreen&quot;</highlight><highlight class="normal">,<sp/>{0,<sp/>0.392157,<sp/>0}},</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;darkkhaki&quot;</highlight><highlight class="normal">,<sp/>{0.741176,<sp/>0.717647,<sp/>0.419608}},</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;darkmagenta&quot;</highlight><highlight class="normal">,<sp/>{0.545098,<sp/>0,<sp/>0.545098}},</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;darkolivegreen&quot;</highlight><highlight class="normal">,<sp/>{0.333333,<sp/>0.419608,<sp/>0.184314}},</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;darkorange&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.54902,<sp/>0}},</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;darkorchid&quot;</highlight><highlight class="normal">,<sp/>{0.6,<sp/>0.196078,<sp/>0.8}},</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;darkred&quot;</highlight><highlight class="normal">,<sp/>{0.545098,<sp/>0,<sp/>0}},</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;darksalmon&quot;</highlight><highlight class="normal">,<sp/>{0.913725,<sp/>0.588235,<sp/>0.478431}},</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;darkseagreen&quot;</highlight><highlight class="normal">,<sp/>{0.560784,<sp/>0.737255,<sp/>0.560784}},</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;darkslateblue&quot;</highlight><highlight class="normal">,<sp/>{0.282353,<sp/>0.239216,<sp/>0.545098}},</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;darkslategray&quot;</highlight><highlight class="normal">,<sp/>{0.184314,<sp/>0.309804,<sp/>0.309804}},</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;darkturquoise&quot;</highlight><highlight class="normal">,<sp/>{0,<sp/>0.807843,<sp/>0.819608}},</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;darkviolet&quot;</highlight><highlight class="normal">,<sp/>{0.580392,<sp/>0,<sp/>0.827451}},</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;deeppink&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.0784314,<sp/>0.576471}},</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;deepskyblue&quot;</highlight><highlight class="normal">,<sp/>{0,<sp/>0.74902,<sp/>1}},</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;dimgray&quot;</highlight><highlight class="normal">,<sp/>{0.411765,<sp/>0.411765,<sp/>0.411765}},</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;dodgerblue&quot;</highlight><highlight class="normal">,<sp/>{0.117647,<sp/>0.564706,<sp/>1}},</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;firebrick&quot;</highlight><highlight class="normal">,<sp/>{0.698039,<sp/>0.133333,<sp/>0.133333}},</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;floralwhite&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.980392,<sp/>0.941176}},</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;forestgreen&quot;</highlight><highlight class="normal">,<sp/>{0.133333,<sp/>0.545098,<sp/>0.133333}},</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;fuchsia&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0,<sp/>1}},</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;gainsboro&quot;</highlight><highlight class="normal">,<sp/>{0.862745,<sp/>0.862745,<sp/>0.862745}},</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;ghostwhite&quot;</highlight><highlight class="normal">,<sp/>{0.972549,<sp/>0.972549,<sp/>1}},</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;gold&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.843137,<sp/>0}},</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;goldenrod&quot;</highlight><highlight class="normal">,<sp/>{0.854902,<sp/>0.647059,<sp/>0.12549}},</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;gray&quot;</highlight><highlight class="normal">,<sp/>{0.501961,<sp/>0.501961,<sp/>0.501961}},</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;green&quot;</highlight><highlight class="normal">,<sp/>{0,<sp/>0.501961,<sp/>0}},</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;greenyellow&quot;</highlight><highlight class="normal">,<sp/>{0.678431,<sp/>1,<sp/>0.184314}},</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;honeydew&quot;</highlight><highlight class="normal">,<sp/>{0.941176,<sp/>1,<sp/>0.941176}},</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;hotpink&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.411765,<sp/>0.705882}},</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;indianred&quot;</highlight><highlight class="normal">,<sp/>{0.803922,<sp/>0.360784,<sp/>0.360784}},</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;indigo&quot;</highlight><highlight class="normal">,<sp/>{0.294118,<sp/>0,<sp/>0.509804}},</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;ivory&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>1,<sp/>0.941176}},</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;khaki&quot;</highlight><highlight class="normal">,<sp/>{0.941176,<sp/>0.901961,<sp/>0.54902}},</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;lavender&quot;</highlight><highlight class="normal">,<sp/>{0.901961,<sp/>0.901961,<sp/>0.980392}},</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;lavenderblush&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.941176,<sp/>0.960784}},</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;lawngreen&quot;</highlight><highlight class="normal">,<sp/>{0.486275,<sp/>0.988235,<sp/>0}},</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;lemonchiffon&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.980392,<sp/>0.803922}},</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;lightblue&quot;</highlight><highlight class="normal">,<sp/>{0.678431,<sp/>0.847059,<sp/>0.901961}},</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;lightcoral&quot;</highlight><highlight class="normal">,<sp/>{0.941176,<sp/>0.501961,<sp/>0.501961}},</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;lightcyan&quot;</highlight><highlight class="normal">,<sp/>{0.878431,<sp/>1,<sp/>1}},</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;lightgoldenrodyellow&quot;</highlight><highlight class="normal">,<sp/>{0.980392,<sp/>0.980392,<sp/>0.823529}},</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;lightgray&quot;</highlight><highlight class="normal">,<sp/>{0.827451,<sp/>0.827451,<sp/>0.827451}},</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;lightgreen&quot;</highlight><highlight class="normal">,<sp/>{0.564706,<sp/>0.933333,<sp/>0.564706}},</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;lightpink&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.713725,<sp/>0.756863}},</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;lightsalmon&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.627451,<sp/>0.478431}},</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;lightseagreen&quot;</highlight><highlight class="normal">,<sp/>{0.12549,<sp/>0.698039,<sp/>0.666667}},</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;lightskyblue&quot;</highlight><highlight class="normal">,<sp/>{0.529412,<sp/>0.807843,<sp/>0.980392}},</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;lightslategray&quot;</highlight><highlight class="normal">,<sp/>{0.466667,<sp/>0.533333,<sp/>0.6}},</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;lightsteelblue&quot;</highlight><highlight class="normal">,<sp/>{0.690196,<sp/>0.768627,<sp/>0.870588}},</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;lightyellow&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>1,<sp/>0.878431}},</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;lime&quot;</highlight><highlight class="normal">,<sp/>{0,<sp/>1,<sp/>0}},</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;limegreen&quot;</highlight><highlight class="normal">,<sp/>{0.196078,<sp/>0.803922,<sp/>0.196078}},</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;linen&quot;</highlight><highlight class="normal">,<sp/>{0.980392,<sp/>0.941176,<sp/>0.901961}},</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;magenta&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0,<sp/>1}},</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;maroon&quot;</highlight><highlight class="normal">,<sp/>{0.501961,<sp/>0,<sp/>0}},</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;mediumaquamarine&quot;</highlight><highlight class="normal">,<sp/>{0.4,<sp/>0.803922,<sp/>0.666667}},</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;mediumblue&quot;</highlight><highlight class="normal">,<sp/>{0,<sp/>0,<sp/>0.803922}},</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;mediumorchid&quot;</highlight><highlight class="normal">,<sp/>{0.729412,<sp/>0.333333,<sp/>0.827451}},</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;mediumpurple&quot;</highlight><highlight class="normal">,<sp/>{0.576471,<sp/>0.439216,<sp/>0.858824}},</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;mediumseagreen&quot;</highlight><highlight class="normal">,<sp/>{0.235294,<sp/>0.701961,<sp/>0.443137}},</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;mediumslateblue&quot;</highlight><highlight class="normal">,<sp/>{0.482353,<sp/>0.407843,<sp/>0.933333}},</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;mediumspringgreen&quot;</highlight><highlight class="normal">,<sp/>{0,<sp/>0.980392,<sp/>0.603922}},</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;mediumturquoise&quot;</highlight><highlight class="normal">,<sp/>{0.282353,<sp/>0.819608,<sp/>0.8}},</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;mediumvioletred&quot;</highlight><highlight class="normal">,<sp/>{0.780392,<sp/>0.0823529,<sp/>0.521569}},</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;midnightblue&quot;</highlight><highlight class="normal">,<sp/>{0.0980392,<sp/>0.0980392,<sp/>0.439216}},</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;mintcream&quot;</highlight><highlight class="normal">,<sp/>{0.960784,<sp/>1,<sp/>0.980392}},</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;mistyrose&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.894118,<sp/>0.882353}},</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;moccasin&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.894118,<sp/>0.709804}},</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;navajowhite&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.870588,<sp/>0.678431}},</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;navy&quot;</highlight><highlight class="normal">,<sp/>{0,<sp/>0,<sp/>0.501961}},</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;oldlace&quot;</highlight><highlight class="normal">,<sp/>{0.992157,<sp/>0.960784,<sp/>0.901961}},</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;olive&quot;</highlight><highlight class="normal">,<sp/>{0.501961,<sp/>0.501961,<sp/>0}},</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;olivedrab&quot;</highlight><highlight class="normal">,<sp/>{0.419608,<sp/>0.556863,<sp/>0.137255}},</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;orange&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.647059,<sp/>0}},</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;orangered&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.270588,<sp/>0}},</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;orchid&quot;</highlight><highlight class="normal">,<sp/>{0.854902,<sp/>0.439216,<sp/>0.839216}},</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;palegoldenrod&quot;</highlight><highlight class="normal">,<sp/>{0.933333,<sp/>0.909804,<sp/>0.666667}},</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;palegreen&quot;</highlight><highlight class="normal">,<sp/>{0.596078,<sp/>0.984314,<sp/>0.596078}},</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;paleturquoise&quot;</highlight><highlight class="normal">,<sp/>{0.686275,<sp/>0.933333,<sp/>0.933333}},</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;palevioletred&quot;</highlight><highlight class="normal">,<sp/>{0.858824,<sp/>0.439216,<sp/>0.576471}},</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;papayawhip&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.937255,<sp/>0.835294}},</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;peachpuff&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.854902,<sp/>0.72549}},</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;peru&quot;</highlight><highlight class="normal">,<sp/>{0.803922,<sp/>0.521569,<sp/>0.247059}},</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;pink&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.752941,<sp/>0.796078}},</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;plum&quot;</highlight><highlight class="normal">,<sp/>{0.866667,<sp/>0.627451,<sp/>0.866667}},</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;powderblue&quot;</highlight><highlight class="normal">,<sp/>{0.690196,<sp/>0.878431,<sp/>0.901961}},</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;purple&quot;</highlight><highlight class="normal">,<sp/>{0.501961,<sp/>0,<sp/>0.501961}},</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;red&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0,<sp/>0}},</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;rosybrown&quot;</highlight><highlight class="normal">,<sp/>{0.737255,<sp/>0.560784,<sp/>0.560784}},</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;royalblue&quot;</highlight><highlight class="normal">,<sp/>{0.254902,<sp/>0.411765,<sp/>0.882353}},</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;saddlebrown&quot;</highlight><highlight class="normal">,<sp/>{0.545098,<sp/>0.270588,<sp/>0.0745098}},</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;salmon&quot;</highlight><highlight class="normal">,<sp/>{0.980392,<sp/>0.501961,<sp/>0.447059}},</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;sandybrown&quot;</highlight><highlight class="normal">,<sp/>{0.956863,<sp/>0.643137,<sp/>0.376471}},</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;seagreen&quot;</highlight><highlight class="normal">,<sp/>{0.180392,<sp/>0.545098,<sp/>0.341176}},</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;seashell&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.960784,<sp/>0.933333}},</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;sienna&quot;</highlight><highlight class="normal">,<sp/>{0.627451,<sp/>0.321569,<sp/>0.176471}},</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;silver&quot;</highlight><highlight class="normal">,<sp/>{0.752941,<sp/>0.752941,<sp/>0.752941}},</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;skyblue&quot;</highlight><highlight class="normal">,<sp/>{0.529412,<sp/>0.807843,<sp/>0.921569}},</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;slateblue&quot;</highlight><highlight class="normal">,<sp/>{0.415686,<sp/>0.352941,<sp/>0.803922}},</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;slategray&quot;</highlight><highlight class="normal">,<sp/>{0.439216,<sp/>0.501961,<sp/>0.564706}},</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;snow&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.980392,<sp/>0.980392}},</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;springgreen&quot;</highlight><highlight class="normal">,<sp/>{0,<sp/>1,<sp/>0.498039}},</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;steelblue&quot;</highlight><highlight class="normal">,<sp/>{0.27451,<sp/>0.509804,<sp/>0.705882}},</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;tan&quot;</highlight><highlight class="normal">,<sp/>{0.823529,<sp/>0.705882,<sp/>0.54902}},</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;teal&quot;</highlight><highlight class="normal">,<sp/>{0,<sp/>0.501961,<sp/>0.501961}},</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;thistle&quot;</highlight><highlight class="normal">,<sp/>{0.847059,<sp/>0.74902,<sp/>0.847059}},</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;tomato&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>0.388235,<sp/>0.278431}},</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;turquoise&quot;</highlight><highlight class="normal">,<sp/>{0.25098,<sp/>0.878431,<sp/>0.815686}},</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;violet&quot;</highlight><highlight class="normal">,<sp/>{0.933333,<sp/>0.509804,<sp/>0.933333}},</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;wheat&quot;</highlight><highlight class="normal">,<sp/>{0.960784,<sp/>0.870588,<sp/>0.701961}},</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;white&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>1,<sp/>1}},</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;whitesmoke&quot;</highlight><highlight class="normal">,<sp/>{0.960784,<sp/>0.960784,<sp/>0.960784}},</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;yellow&quot;</highlight><highlight class="normal">,<sp/>{1,<sp/>1,<sp/>0}},</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;yellowgreen&quot;</highlight><highlight class="normal">,<sp/>{0.603922,<sp/>0.803922,<sp/>0.196078}},</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;ERROR&quot;</highlight><highlight class="normal">,<sp/>{0,<sp/>0,<sp/>0}}};</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>color_utils</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>TRAFFIC_SIMULATOR__COLOR_UTILS__COLOR_UTILS_HPP_</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/color_utils/color_utils.hpp"/>
+  </compounddef>
+</doxygen>

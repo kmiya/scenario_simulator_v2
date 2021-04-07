@@ -761,16 +761,16 @@
 <h3 id="define-boilerplate">define BOILERPLATE<a class="headerlink" href="#define-boilerplate" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#define BOILERPLATE(</span>
     <span class="n">TYPENAME</span>
-<span class="p">)</span> <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span> \
+<span class="p">)</span> <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>                                                                    \
   <span class="n">std</span><span class="o">::</span><span class="n">basic_ostream</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">basic_ostream</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">TYPENAME</span> <span class="o">&amp;</span> <span class="n">rhs</span><span class="p">)</span> \
-  <span class="p">{</span> \
-    <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">indent</span> <span class="o">&lt;&lt;</span> <span class="n">blue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&lt;&quot;</span> <span class="err">#</span><span class="n">TYPENAME</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> \
-           <span class="n">highlight</span><span class="p">(</span><span class="s">&quot;maxSteering&quot;</span><span class="p">,</span> <span class="n">rhs</span><span class="p">.</span><span class="n">max_steering</span><span class="p">)</span> \
-              <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">highlight</span><span class="p">(</span><span class="s">&quot;wheelDiameter&quot;</span><span class="p">,</span> <span class="n">rhs</span><span class="p">.</span><span class="n">wheel_diameter</span><span class="p">)</span> \
-              <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">highlight</span><span class="p">(</span><span class="s">&quot;trackWidth&quot;</span><span class="p">,</span> <span class="n">rhs</span><span class="p">.</span><span class="n">track_width</span><span class="p">)</span> \
-              <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">highlight</span><span class="p">(</span><span class="s">&quot;positionX&quot;</span><span class="p">,</span> <span class="n">rhs</span><span class="p">.</span><span class="n">position_x</span><span class="p">)</span> \
-              <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">highlight</span><span class="p">(</span><span class="s">&quot;positionZ&quot;</span><span class="p">,</span> <span class="n">rhs</span><span class="p">.</span><span class="n">position_z</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">blue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;/&gt;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">reset</span><span class="p">;</span> \
-  <span class="p">}</span> \
+  <span class="p">{</span>                                                                                            \
+    <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">indent</span> <span class="o">&lt;&lt;</span> <span class="n">blue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&lt;&quot;</span> <span class="err">#</span><span class="n">TYPENAME</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>                                        \
+              <span class="o">&lt;&lt;</span> <span class="n">highlight</span><span class="p">(</span><span class="s">&quot;maxSteering&quot;</span><span class="p">,</span> <span class="n">rhs</span><span class="p">.</span><span class="n">max_steering</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>                             \
+              <span class="o">&lt;&lt;</span> <span class="n">highlight</span><span class="p">(</span><span class="s">&quot;wheelDiameter&quot;</span><span class="p">,</span> <span class="n">rhs</span><span class="p">.</span><span class="n">wheel_diameter</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>                         \
+              <span class="o">&lt;&lt;</span> <span class="n">highlight</span><span class="p">(</span><span class="s">&quot;trackWidth&quot;</span><span class="p">,</span> <span class="n">rhs</span><span class="p">.</span><span class="n">track_width</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>                               \
+              <span class="o">&lt;&lt;</span> <span class="n">highlight</span><span class="p">(</span><span class="s">&quot;positionX&quot;</span><span class="p">,</span> <span class="n">rhs</span><span class="p">.</span><span class="n">position_x</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>                                 \
+              <span class="o">&lt;&lt;</span> <span class="n">highlight</span><span class="p">(</span><span class="s">&quot;positionZ&quot;</span><span class="p">,</span> <span class="n">rhs</span><span class="p">.</span><span class="n">position_z</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">blue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;/&gt;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">reset</span><span class="p">;</span>              \
+  <span class="p">}</span>                                                                                            \
   <span class="k">static_assert</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
@@ -815,34 +815,34 @@
 
   <span class="n">Axle</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
 
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
   <span class="k">explicit</span> <span class="n">Axle</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">scope</span><span class="p">)</span>
   <span class="o">:</span> <span class="n">max_steering</span><span class="p">{</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;maxSteering&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">scope</span><span class="p">)},</span>
     <span class="n">wheel_diameter</span><span class="p">{</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;wheelDiameter&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">scope</span><span class="p">)},</span>
     <span class="n">track_width</span><span class="p">{</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;trackWidth&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">scope</span><span class="p">)},</span>
     <span class="n">position_x</span><span class="p">{</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;positionX&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">scope</span><span class="p">)},</span>
     <span class="n">position_z</span><span class="p">{</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;positionZ&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">scope</span><span class="p">)}</span>
-  <span class="p">{}</span>
+  <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">};</span>
 
-<span class="cp">#define BOILERPLATE(TYPENAME) \</span>
-<span class="cp">  template&lt;typename ... Ts&gt; \</span>
+<span class="cp">#define BOILERPLATE(TYPENAME)                                                                  \</span>
+<span class="cp">  template &lt;typename... Ts&gt;                                                                    \</span>
 <span class="cp">  std::basic_ostream&lt;Ts...&gt; &amp; operator&lt;&lt;(std::basic_ostream&lt;Ts...&gt; &amp; os, const TYPENAME &amp; rhs) \</span>
-<span class="cp">  { \</span>
-<span class="cp">    return os &lt;&lt; indent &lt;&lt; blue &lt;&lt; &quot;&lt;&quot; #TYPENAME &lt;&lt; &quot; &quot; &lt;&lt; \</span>
-<span class="cp">           highlight(&quot;maxSteering&quot;, rhs.max_steering) \</span>
-<span class="cp">              &lt;&lt; &quot; &quot; &lt;&lt; highlight(&quot;wheelDiameter&quot;, rhs.wheel_diameter) \</span>
-<span class="cp">              &lt;&lt; &quot; &quot; &lt;&lt; highlight(&quot;trackWidth&quot;, rhs.track_width) \</span>
-<span class="cp">              &lt;&lt; &quot; &quot; &lt;&lt; highlight(&quot;positionX&quot;, rhs.position_x) \</span>
-<span class="cp">              &lt;&lt; &quot; &quot; &lt;&lt; highlight(&quot;positionZ&quot;, rhs.position_z) &lt;&lt; blue &lt;&lt; &quot;/&gt;&quot; &lt;&lt; reset; \</span>
-<span class="cp">  } \</span>
+<span class="cp">  {                                                                                            \</span>
+<span class="cp">    return os &lt;&lt; indent &lt;&lt; blue &lt;&lt; &quot;&lt;&quot; #TYPENAME &lt;&lt; &quot; &quot;                                        \</span>
+<span class="cp">              &lt;&lt; highlight(&quot;maxSteering&quot;, rhs.max_steering) &lt;&lt; &quot; &quot;                             \</span>
+<span class="cp">              &lt;&lt; highlight(&quot;wheelDiameter&quot;, rhs.wheel_diameter) &lt;&lt; &quot; &quot;                         \</span>
+<span class="cp">              &lt;&lt; highlight(&quot;trackWidth&quot;, rhs.track_width) &lt;&lt; &quot; &quot;                               \</span>
+<span class="cp">              &lt;&lt; highlight(&quot;positionX&quot;, rhs.position_x) &lt;&lt; &quot; &quot;                                 \</span>
+<span class="cp">              &lt;&lt; highlight(&quot;positionZ&quot;, rhs.position_z) &lt;&lt; blue &lt;&lt; &quot;/&gt;&quot; &lt;&lt; reset;              \</span>
+<span class="cp">  }                                                                                            \</span>
 <span class="cp">  static_assert(true, &quot;&quot;)</span>
 
 <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">Axle</span><span class="p">);</span>
 
 <span class="c1">// NOTE: DON&#39;T REWRITE THIS STRUCT LIKE `using FrontAxle = Axle` (for Clang)</span>
-<span class="k">struct</span> <span class="nc">FrontAxle</span>
-  <span class="o">:</span> <span class="k">public</span> <span class="n">Axle</span>
+<span class="k">struct</span> <span class="nc">FrontAxle</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Axle</span>
 <span class="p">{</span>
   <span class="k">using</span> <span class="n">Axle</span><span class="o">::</span><span class="n">Axle</span><span class="p">;</span>
 <span class="p">};</span>
@@ -850,8 +850,7 @@
 <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">FrontAxle</span><span class="p">);</span>
 
 <span class="c1">// NOTE: DON&#39;T REWRITE THIS STRUCT LIKE `using RearAxle = Axle` (for Clang)</span>
-<span class="k">struct</span> <span class="nc">RearAxle</span>
-  <span class="o">:</span> <span class="k">public</span> <span class="n">Axle</span>
+<span class="k">struct</span> <span class="nc">RearAxle</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Axle</span>
 <span class="p">{</span>
   <span class="k">using</span> <span class="n">Axle</span><span class="o">::</span><span class="n">Axle</span><span class="p">;</span>
 <span class="p">};</span>
@@ -859,22 +858,21 @@
 <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">RearAxle</span><span class="p">);</span>
 
 <span class="c1">// NOTE: DON&#39;T REWRITE THIS STRUCT LIKE `using AdditionalAxle = Axle` (for Clang)</span>
-<span class="k">struct</span> <span class="nc">AdditionalAxle</span>
-  <span class="o">:</span> <span class="k">public</span> <span class="n">Axle</span>
+<span class="k">struct</span> <span class="nc">AdditionalAxle</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Axle</span>
 <span class="p">{</span>
   <span class="k">using</span> <span class="n">Axle</span><span class="o">::</span><span class="n">Axle</span><span class="p">;</span>
 <span class="p">};</span>
 
 <span class="n">BOILERPLATE</span><span class="p">(</span><span class="n">AdditionalAxle</span><span class="p">);</span>
 
-  <span class="cp">#undef BOILERPLATE</span>
-<span class="p">}</span>
+<span class="cp">#undef BOILERPLATE</span>
+<span class="p">}</span>  <span class="c1">// namespace syntax</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
 
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__AXLE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 01:42:32 UTC</p>
+<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
                 
                   
                 

@@ -723,7 +723,6 @@
 
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/parameter_declarations.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/waypoint.hpp&gt;</span><span class="cp"></span>
-
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
@@ -754,32 +753,27 @@
 
   <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Waypoint</span><span class="o">&gt;</span> <span class="n">waypoints</span><span class="p">;</span>
 
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="o">&gt;</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="o">&gt;</span>
   <span class="k">explicit</span> <span class="n">Route</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">outer_scope</span><span class="p">)</span>
   <span class="o">:</span> <span class="n">name</span><span class="p">(</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">)),</span>
     <span class="n">closed</span><span class="p">(</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;closed&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">,</span> <span class="n">Boolean</span><span class="p">())),</span>
     <span class="n">inner_scope</span><span class="p">(</span><span class="n">outer_scope</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="n">callWithElements</span><span class="p">(</span>
-      <span class="n">node</span><span class="p">,</span> <span class="s">&quot;ParameterDeclarations&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span>
-      <span class="p">{</span>
-        <span class="k">return</span> <span class="nf">ParameterDeclarations</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">inner_scope</span><span class="p">);</span>
-      <span class="p">});</span>
+    <span class="n">callWithElements</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s">&quot;ParameterDeclarations&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nf">ParameterDeclarations</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">inner_scope</span><span class="p">);</span>
+    <span class="p">});</span>
 
-    <span class="n">callWithElements</span><span class="p">(</span>
-      <span class="n">node</span><span class="p">,</span> <span class="s">&quot;Waypoint&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">unbounded</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span>
-      <span class="p">{</span>
-        <span class="k">return</span> <span class="n">waypoints</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">inner_scope</span><span class="p">);</span>
-      <span class="p">});</span>
+    <span class="n">callWithElements</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s">&quot;Waypoint&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">unbounded</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">waypoints</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">inner_scope</span><span class="p">);</span>
+    <span class="p">});</span>
   <span class="p">}</span>
 
   <span class="k">explicit</span> <span class="k">operator</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span><span class="p">()</span> <span class="k">const</span>
   <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span> <span class="n">lanelet_poses</span> <span class="p">{};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span> <span class="n">lanelet_poses</span><span class="p">{};</span>
 
     <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">waypoint</span> <span class="p">:</span> <span class="n">waypoints</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">lanelet_poses</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span>
-        <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span><span class="p">(</span><span class="n">waypoint</span><span class="p">));</span>
+      <span class="n">lanelet_poses</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span><span class="p">(</span><span class="n">waypoint</span><span class="p">));</span>
     <span class="p">}</span>
 
     <span class="k">return</span> <span class="n">lanelet_poses</span><span class="p">;</span>
@@ -791,7 +785,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__ROUTE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 01:42:32 UTC</p>
+<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
                 
                   
                 

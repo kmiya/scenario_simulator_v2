@@ -1,0 +1,751 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="vehicle__entity_8cpp" kind="file" language="C++">
+    <compoundname>vehicle_entity.cpp</compoundname>
+    <includes local="no">quaternion_operation/quaternion_operation.h</includes>
+    <includes local="no">boost/algorithm/clamp.hpp</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">openscenario_msgs/msg/vehicle_parameters.hpp</includes>
+    <includes local="no">string</includes>
+    <includes refid="exception_8hpp" local="no">traffic_simulator/entity/exception.hpp</includes>
+    <includes refid="vehicle__entity_8hpp" local="no">traffic_simulator/entity/vehicle_entity.hpp</includes>
+    <includes local="no">vector</includes>
+    <incdepgraph>
+      <node id="4880">
+        <label>traffic_simulator/behavior/route_planner.hpp</label>
+        <link refid="route__planner_8hpp_source"/>
+        <childnode refid="4871" relation="include">
+        </childnode>
+        <childnode refid="4881" relation="include">
+        </childnode>
+        <childnode refid="4882" relation="include">
+        </childnode>
+        <childnode refid="4910" relation="include">
+        </childnode>
+      </node>
+      <node id="4911">
+        <label>traffic_simulator/traffic_lights/traffic_light_state.hpp</label>
+        <link refid="traffic__light__state_8hpp_source"/>
+      </node>
+      <node id="4943">
+        <label>boost/property_tree/xml_parser.hpp</label>
+      </node>
+      <node id="4918">
+        <label>functional</label>
+      </node>
+      <node id="4881">
+        <label>queue</label>
+      </node>
+      <node id="4931">
+        <label>limits</label>
+      </node>
+      <node id="4898">
+        <label>geometry_msgs/msg/pose_stamped.hpp</label>
+      </node>
+      <node id="4935">
+        <label>std_msgs/msg/color_rgba.hpp</label>
+      </node>
+      <node id="4917">
+        <label>behaviortree_cpp_v3/loggers/bt_cout_logger.h</label>
+      </node>
+      <node id="4897">
+        <label>geographic_msgs/msg/geo_point.hpp</label>
+      </node>
+      <node id="4878">
+        <label>openscenario_msgs/msg/waypoints_array.hpp</label>
+      </node>
+      <node id="4890">
+        <label>lanelet2_routing/RoutingGraph.h</label>
+      </node>
+      <node id="4936">
+        <label>traffic_simulator/traffic_lights/traffic_light_phase.hpp</label>
+        <link refid="traffic__light__phase_8hpp_source"/>
+        <childnode refid="4931" relation="include">
+        </childnode>
+        <childnode refid="4874" relation="include">
+        </childnode>
+        <childnode refid="4882" relation="include">
+        </childnode>
+        <childnode refid="4913" relation="include">
+        </childnode>
+        <childnode refid="4910" relation="include">
+        </childnode>
+      </node>
+      <node id="4874">
+        <label>traffic_simulator/entity/exception.hpp</label>
+        <link refid="exception_8hpp_source"/>
+        <childnode refid="4875" relation="include">
+        </childnode>
+        <childnode refid="4873" relation="include">
+        </childnode>
+      </node>
+      <node id="4922">
+        <label>openscenario_msgs/msg/entity_trajectory.hpp</label>
+      </node>
+      <node id="4885">
+        <label>lanelet2_core/geometry/Lanelet.h</label>
+      </node>
+      <node id="4925">
+        <label>traffic_simulator/behavior/action_node.hpp</label>
+        <link refid="action__node_8hpp_source"/>
+        <childnode refid="4924" relation="include">
+        </childnode>
+        <childnode refid="4870" relation="include">
+        </childnode>
+        <childnode refid="4871" relation="include">
+        </childnode>
+        <childnode refid="4919" relation="include">
+        </childnode>
+        <childnode refid="4878" relation="include">
+        </childnode>
+        <childnode refid="4873" relation="include">
+        </childnode>
+        <childnode refid="4926" relation="include">
+        </childnode>
+        <childnode refid="4882" relation="include">
+        </childnode>
+        <childnode refid="4937" relation="include">
+        </childnode>
+        <childnode refid="4928" relation="include">
+        </childnode>
+        <childnode refid="4912" relation="include">
+        </childnode>
+        <childnode refid="4910" relation="include">
+        </childnode>
+      </node>
+      <node id="4903">
+        <label>openscenario_msgs/msg/entity_status.hpp</label>
+      </node>
+      <node id="4944">
+        <label>pugixml.hpp</label>
+      </node>
+      <node id="4941">
+        <label>boost/foreach.hpp</label>
+      </node>
+      <node id="4906">
+        <label>geometry_msgs/msg/pose.hpp</label>
+      </node>
+      <node id="4940">
+        <label>openscenario_msgs.pb.h</label>
+      </node>
+      <node id="4872">
+        <label>openscenario_msgs/msg/vehicle_parameters.hpp</label>
+      </node>
+      <node id="4934">
+        <label>cassert</label>
+      </node>
+      <node id="4908">
+        <label>openscenario_msgs/msg/hermite_curve.hpp</label>
+      </node>
+      <node id="4916">
+        <label>behaviortree_cpp_v3/bt_factory.h</label>
+      </node>
+      <node id="4873">
+        <label>string</label>
+      </node>
+      <node id="4919">
+        <label>openscenario_msgs/msg/obstacle.hpp</label>
+      </node>
+      <node id="4901">
+        <label>lanelet2_extension_psim/utility/utilities.hpp</label>
+      </node>
+      <node id="4902">
+        <label>map</label>
+      </node>
+      <node id="4904">
+        <label>traffic_simulator/math/hermite_curve.hpp</label>
+        <link refid="hermite__curve_8hpp_source"/>
+        <childnode refid="4869" relation="include">
+        </childnode>
+        <childnode refid="4896" relation="include">
+        </childnode>
+        <childnode refid="4905" relation="include">
+        </childnode>
+        <childnode refid="4906" relation="include">
+        </childnode>
+        <childnode refid="4907" relation="include">
+        </childnode>
+        <childnode refid="4908" relation="include">
+        </childnode>
+        <childnode refid="4909" relation="include">
+        </childnode>
+        <childnode refid="4910" relation="include">
+        </childnode>
+      </node>
+      <node id="4932">
+        <label>traffic_simulator/color_utils/color_utils.hpp</label>
+        <link refid="color__utils_8hpp_source"/>
+        <childnode refid="4933" relation="include">
+        </childnode>
+        <childnode refid="4934" relation="include">
+        </childnode>
+        <childnode refid="4902" relation="include">
+        </childnode>
+        <childnode refid="4935" relation="include">
+        </childnode>
+        <childnode refid="4873" relation="include">
+        </childnode>
+      </node>
+      <node id="4927">
+        <label>openscenario_msgs/msg/bounding_box.hpp</label>
+      </node>
+      <node id="4939">
+        <label>traffic_simulator/entity/vehicle_parameter.hpp</label>
+        <link refid="vehicle__parameter_8hpp_source"/>
+        <childnode refid="4940" relation="include">
+        </childnode>
+        <childnode refid="4941" relation="include">
+        </childnode>
+        <childnode refid="4942" relation="include">
+        </childnode>
+        <childnode refid="4943" relation="include">
+        </childnode>
+        <childnode refid="4907" relation="include">
+        </childnode>
+        <childnode refid="4927" relation="include">
+        </childnode>
+        <childnode refid="4872" relation="include">
+        </childnode>
+        <childnode refid="4944" relation="include">
+        </childnode>
+        <childnode refid="4879" relation="include">
+        </childnode>
+        <childnode refid="4945" relation="include">
+        </childnode>
+        <childnode refid="4873" relation="include">
+        </childnode>
+      </node>
+      <node id="4879">
+        <label>rclcpp/rclcpp.hpp</label>
+      </node>
+      <node id="4889">
+        <label>lanelet2_routing/RoutingCost.h</label>
+      </node>
+      <node id="4920">
+        <label>traffic_simulator/behavior/vehicle/lane_change_action.hpp</label>
+        <link refid="lane__change__action_8hpp_source"/>
+        <childnode refid="4921" relation="include">
+        </childnode>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4896" relation="include">
+        </childnode>
+        <childnode refid="4871" relation="include">
+        </childnode>
+        <childnode refid="4903" relation="include">
+        </childnode>
+        <childnode refid="4922" relation="include">
+        </childnode>
+        <childnode refid="4873" relation="include">
+        </childnode>
+        <childnode refid="4923" relation="include">
+        </childnode>
+        <childnode refid="4939" relation="include">
+        </childnode>
+        <childnode refid="4904" relation="include">
+        </childnode>
+        <childnode refid="4910" relation="include">
+        </childnode>
+      </node>
+      <node id="4894">
+        <label>tf2_geometry_msgs/tf2_geometry_msgs.h</label>
+      </node>
+      <node id="4882">
+        <label>traffic_simulator/hdmap_utils/hdmap_utils.hpp</label>
+        <link refid="hdmap__utils_8hpp_source"/>
+        <childnode refid="4883" relation="include">
+        </childnode>
+        <childnode refid="4884" relation="include">
+        </childnode>
+        <childnode refid="4885" relation="include">
+        </childnode>
+        <childnode refid="4886" relation="include">
+        </childnode>
+        <childnode refid="4887" relation="include">
+        </childnode>
+        <childnode refid="4888" relation="include">
+        </childnode>
+        <childnode refid="4889" relation="include">
+        </childnode>
+        <childnode refid="4890" relation="include">
+        </childnode>
+        <childnode refid="4891" relation="include">
+        </childnode>
+        <childnode refid="4892" relation="include">
+        </childnode>
+        <childnode refid="4893" relation="include">
+        </childnode>
+        <childnode refid="4894" relation="include">
+        </childnode>
+        <childnode refid="4895" relation="include">
+        </childnode>
+        <childnode refid="4896" relation="include">
+        </childnode>
+        <childnode refid="4897" relation="include">
+        </childnode>
+        <childnode refid="4898" relation="include">
+        </childnode>
+        <childnode refid="4899" relation="include">
+        </childnode>
+        <childnode refid="4900" relation="include">
+        </childnode>
+        <childnode refid="4901" relation="include">
+        </childnode>
+        <childnode refid="4902" relation="include">
+        </childnode>
+        <childnode refid="4871" relation="include">
+        </childnode>
+        <childnode refid="4903" relation="include">
+        </childnode>
+        <childnode refid="4879" relation="include">
+        </childnode>
+        <childnode refid="4873" relation="include">
+        </childnode>
+        <childnode refid="4904" relation="include">
+        </childnode>
+        <childnode refid="4911" relation="include">
+        </childnode>
+        <childnode refid="4912" relation="include">
+        </childnode>
+        <childnode refid="4913" relation="include">
+        </childnode>
+        <childnode refid="4910" relation="include">
+        </childnode>
+        <childnode refid="4914" relation="include">
+        </childnode>
+      </node>
+      <node id="4875">
+        <label>exception</label>
+      </node>
+      <node id="4883">
+        <label>geometry_msgs/msg/vector3.h</label>
+      </node>
+      <node id="4907">
+        <label>geometry_msgs/msg/vector3.hpp</label>
+      </node>
+      <node id="4877">
+        <label>openscenario_msgs/msg/driver_model.hpp</label>
+      </node>
+      <node id="4888">
+        <label>lanelet2_routing/Route.h</label>
+      </node>
+      <node id="4900">
+        <label>lanelet2_extension_psim/utility/query.hpp</label>
+      </node>
+      <node id="4869">
+        <label>quaternion_operation/quaternion_operation.h</label>
+      </node>
+      <node id="4924">
+        <label>behaviortree_cpp_v3/action_node.h</label>
+      </node>
+      <node id="4899">
+        <label>lanelet2_extension_psim/utility/message_conversion.hpp</label>
+      </node>
+      <node id="4905">
+        <label>geometry_msgs/msg/point.hpp</label>
+      </node>
+      <node id="4870">
+        <label>boost/algorithm/clamp.hpp</label>
+      </node>
+      <node id="4938">
+        <label>openscenario_msgs/msg/catmull_rom_spline.hpp</label>
+      </node>
+      <node id="4910">
+        <label>vector</label>
+      </node>
+      <node id="4876">
+        <label>traffic_simulator/entity/vehicle_entity.hpp</label>
+        <link refid="vehicle__entity_8hpp_source"/>
+        <childnode refid="4877" relation="include">
+        </childnode>
+        <childnode refid="4872" relation="include">
+        </childnode>
+        <childnode refid="4878" relation="include">
+        </childnode>
+        <childnode refid="4879" relation="include">
+        </childnode>
+        <childnode refid="4880" relation="include">
+        </childnode>
+        <childnode refid="4915" relation="include">
+        </childnode>
+        <childnode refid="4920" relation="include">
+        </childnode>
+        <childnode refid="4926" relation="include">
+        </childnode>
+        <childnode refid="4939" relation="include">
+        </childnode>
+        <childnode refid="4896" relation="include">
+        </childnode>
+        <childnode refid="4871" relation="include">
+        </childnode>
+        <childnode refid="4944" relation="include">
+        </childnode>
+        <childnode refid="4873" relation="include">
+        </childnode>
+        <childnode refid="4910" relation="include">
+        </childnode>
+      </node>
+      <node id="4913">
+        <label>utility</label>
+      </node>
+      <node id="4945">
+        <label>sstream</label>
+      </node>
+      <node id="4915">
+        <label>traffic_simulator/behavior/vehicle/behavior_tree.hpp</label>
+        <link refid="vehicle_2behavior__tree_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4917" relation="include">
+        </childnode>
+        <childnode refid="4918" relation="include">
+        </childnode>
+        <childnode refid="4905" relation="include">
+        </childnode>
+        <childnode refid="4902" relation="include">
+        </childnode>
+        <childnode refid="4871" relation="include">
+        </childnode>
+        <childnode refid="4903" relation="include">
+        </childnode>
+        <childnode refid="4919" relation="include">
+        </childnode>
+        <childnode refid="4878" relation="include">
+        </childnode>
+        <childnode refid="4873" relation="include">
+        </childnode>
+        <childnode refid="4882" relation="include">
+        </childnode>
+        <childnode refid="4910" relation="include">
+        </childnode>
+      </node>
+      <node id="4909">
+        <label>traffic_simulator/math/polynomial_solver.hpp</label>
+        <link refid="polynomial__solver_8hpp_source"/>
+        <childnode refid="4910" relation="include">
+        </childnode>
+      </node>
+      <node id="4892">
+        <label>lanelet2_traffic_rules/TrafficRulesFactory.h</label>
+      </node>
+      <node id="4937">
+        <label>traffic_simulator/math/catmull_rom_spline.hpp</label>
+        <link refid="catmull__rom__spline_8hpp_source"/>
+        <childnode refid="4875" relation="include">
+        </childnode>
+        <childnode refid="4905" relation="include">
+        </childnode>
+        <childnode refid="4938" relation="include">
+        </childnode>
+        <childnode refid="4873" relation="include">
+        </childnode>
+        <childnode refid="4904" relation="include">
+        </childnode>
+        <childnode refid="4913" relation="include">
+        </childnode>
+        <childnode refid="4910" relation="include">
+        </childnode>
+      </node>
+      <node id="4887">
+        <label>lanelet2_core/primitives/LaneletSequence.h</label>
+      </node>
+      <node id="4942">
+        <label>boost/property_tree/ptree.hpp</label>
+      </node>
+      <node id="4930">
+        <label>iostream</label>
+      </node>
+      <node id="4923">
+        <label>traffic_simulator/behavior/vehicle/vehicle_action_node.hpp</label>
+        <link refid="vehicle__action__node_8hpp_source"/>
+        <childnode refid="4924" relation="include">
+        </childnode>
+        <childnode refid="4871" relation="include">
+        </childnode>
+        <childnode refid="4877" relation="include">
+        </childnode>
+        <childnode refid="4922" relation="include">
+        </childnode>
+        <childnode refid="4919" relation="include">
+        </childnode>
+        <childnode refid="4872" relation="include">
+        </childnode>
+        <childnode refid="4878" relation="include">
+        </childnode>
+        <childnode refid="4873" relation="include">
+        </childnode>
+        <childnode refid="4925" relation="include">
+        </childnode>
+        <childnode refid="4939" relation="include">
+        </childnode>
+        <childnode refid="4937" relation="include">
+        </childnode>
+        <childnode refid="4910" relation="include">
+        </childnode>
+      </node>
+      <node id="4884">
+        <label>lanelet2_core/LaneletMap.h</label>
+      </node>
+      <node id="4929">
+        <label>traffic_simulator/traffic_lights/traffic_light.hpp</label>
+        <link refid="traffic__light_8hpp_source"/>
+        <childnode refid="4930" relation="include">
+        </childnode>
+        <childnode refid="4931" relation="include">
+        </childnode>
+        <childnode refid="4932" relation="include">
+        </childnode>
+        <childnode refid="4874" relation="include">
+        </childnode>
+        <childnode refid="4936" relation="include">
+        </childnode>
+        <childnode refid="4911" relation="include">
+        </childnode>
+        <childnode refid="4912" relation="include">
+        </childnode>
+        <childnode refid="4913" relation="include">
+        </childnode>
+        <childnode refid="4910" relation="include">
+        </childnode>
+      </node>
+      <node id="4928">
+        <label>traffic_simulator/traffic_lights/traffic_light_manager.hpp</label>
+        <link refid="traffic__light__manager_8hpp_source"/>
+        <childnode refid="4871" relation="include">
+        </childnode>
+        <childnode refid="4879" relation="include">
+        </childnode>
+        <childnode refid="4873" relation="include">
+        </childnode>
+        <childnode refid="4882" relation="include">
+        </childnode>
+        <childnode refid="4929" relation="include">
+        </childnode>
+        <childnode refid="4912" relation="include">
+        </childnode>
+        <childnode refid="4913" relation="include">
+        </childnode>
+        <childnode refid="4910" relation="include">
+        </childnode>
+        <childnode refid="4914" relation="include">
+        </childnode>
+      </node>
+      <node id="4912">
+        <label>unordered_map</label>
+      </node>
+      <node id="4895">
+        <label>autoware_auto_msgs/msg/had_map_bin.hpp</label>
+      </node>
+      <node id="4921">
+        <label>behaviortree_cpp_v3/behavior_tree.h</label>
+      </node>
+      <node id="4914">
+        <label>visualization_msgs/msg/marker_array.hpp</label>
+      </node>
+      <node id="4926">
+        <label>traffic_simulator/entity/entity_base.hpp</label>
+        <link refid="entity__base_8hpp_source"/>
+        <childnode refid="4896" relation="include">
+        </childnode>
+        <childnode refid="4927" relation="include">
+        </childnode>
+        <childnode refid="4903" relation="include">
+        </childnode>
+        <childnode refid="4882" relation="include">
+        </childnode>
+        <childnode refid="4928" relation="include">
+        </childnode>
+        <childnode refid="4914" relation="include">
+        </childnode>
+        <childnode refid="4871" relation="include">
+        </childnode>
+        <childnode refid="4881" relation="include">
+        </childnode>
+        <childnode refid="4873" relation="include">
+        </childnode>
+        <childnode refid="4912" relation="include">
+        </childnode>
+        <childnode refid="4910" relation="include">
+        </childnode>
+      </node>
+      <node id="4886">
+        <label>lanelet2_core/primitives/BasicRegulatoryElements.h</label>
+      </node>
+      <node id="4891">
+        <label>lanelet2_routing/RoutingGraphContainer.h</label>
+      </node>
+      <node id="4896">
+        <label>boost/optional.hpp</label>
+      </node>
+      <node id="4893">
+        <label>tf2/LinearMath/Matrix3x3.h</label>
+      </node>
+      <node id="4868">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/entity/vehicle_entity.cpp</label>
+        <link refid="vehicle__entity_8cpp"/>
+        <childnode refid="4869" relation="include">
+        </childnode>
+        <childnode refid="4870" relation="include">
+        </childnode>
+        <childnode refid="4871" relation="include">
+        </childnode>
+        <childnode refid="4872" relation="include">
+        </childnode>
+        <childnode refid="4873" relation="include">
+        </childnode>
+        <childnode refid="4874" relation="include">
+        </childnode>
+        <childnode refid="4876" relation="include">
+        </childnode>
+        <childnode refid="4910" relation="include">
+        </childnode>
+      </node>
+      <node id="4933">
+        <label>stdio.h</label>
+      </node>
+      <node id="4871">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacetraffic__simulator">traffic_simulator</innernamespace>
+    <innernamespace refid="namespacetraffic__simulator_1_1entity">traffic_simulator::entity</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2015-2020<sp/>Tier<sp/>IV,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;quaternion_operation/quaternion_operation.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/algorithm/clamp.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openscenario_msgs/msg/vehicle_parameters.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;traffic_simulator/entity/exception.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;traffic_simulator/entity/vehicle_entity.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetraffic__simulator" kindref="compound">traffic_simulator</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">entity</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">VehicleEntity::VehicleEntity(</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>std::string<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::EntityStatus<sp/>&amp;<sp/>initial_state,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>openscenario_msgs::msg::VehicleParameters<sp/>params)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">:<sp/>EntityBase(params.name,<sp/>name,<sp/>initial_state),<sp/>parameters(params)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>tree_ptr_<sp/>=<sp/>std::make_shared&lt;entity_behavior::vehicle::BehaviorTree&gt;();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>tree_ptr_-&gt;setValueToBlackBoard(</highlight><highlight class="stringliteral">&quot;vehicle_parameters&quot;</highlight><highlight class="normal">,<sp/>parameters);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>VehicleEntity::requestAssignRoute(</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;openscenario_msgs::msg::LaneletPose&gt;<sp/>&amp;<sp/>waypoints)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!status_)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!status_-&gt;lanelet_pose_valid)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>route_planner_ptr_-&gt;getRouteLanelets(status_-&gt;lanelet_pose,<sp/>waypoints);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">VehicleEntity::VehicleEntity(std::string<sp/>name,<sp/>openscenario_msgs::msg::VehicleParameters<sp/>params)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">:<sp/>EntityBase(params.name,<sp/>name),<sp/>parameters(params)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>tree_ptr_<sp/>=<sp/>std::make_shared&lt;entity_behavior::vehicle::BehaviorTree&gt;();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>tree_ptr_-&gt;setValueToBlackBoard(</highlight><highlight class="stringliteral">&quot;vehicle_parameters&quot;</highlight><highlight class="normal">,<sp/>parameters);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>VehicleEntity::requestAcquirePosition(openscenario_msgs::msg::LaneletPose<sp/>lanelet_pose)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!status_)<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!status_-&gt;lanelet_pose_valid)<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>route_planner_ptr_-&gt;getRouteLanelets(status_-&gt;lanelet_pose,<sp/>lanelet_pose);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>VehicleEntity::requestLaneChange(std::int64_t<sp/>to_lanelet_id)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>tree_ptr_-&gt;setRequest(</highlight><highlight class="stringliteral">&quot;lane_change&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>tree_ptr_-&gt;setValueToBlackBoard(</highlight><highlight class="stringliteral">&quot;to_lanelet_id&quot;</highlight><highlight class="normal">,<sp/>to_lanelet_id);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>VehicleEntity::cancelRequest()<sp/>{<sp/>tree_ptr_-&gt;setRequest(</highlight><highlight class="stringliteral">&quot;none&quot;</highlight><highlight class="normal">);<sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>VehicleEntity::setTargetSpeed(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>target_speed,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>continuous)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>target_speed_<sp/>=<sp/>target_speed;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>tree_ptr_-&gt;setValueToBlackBoard(</highlight><highlight class="stringliteral">&quot;target_speed&quot;</highlight><highlight class="normal">,<sp/>target_speed_);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(continuous)<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>target_speed_<sp/>=<sp/>boost::none;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>VehicleEntity::onUpdate(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step_time)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!status_)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>tree_ptr_-&gt;setValueToBlackBoard(</highlight><highlight class="stringliteral">&quot;other_entity_status&quot;</highlight><highlight class="normal">,<sp/>other_status_);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>tree_ptr_-&gt;setValueToBlackBoard(</highlight><highlight class="stringliteral">&quot;entity_type_list&quot;</highlight><highlight class="normal">,<sp/>entity_type_list_);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>tree_ptr_-&gt;setValueToBlackBoard(</highlight><highlight class="stringliteral">&quot;entity_status&quot;</highlight><highlight class="normal">,<sp/>status_.get());</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status_-&gt;lanelet_pose_valid)<sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>tree_ptr_-&gt;setValueToBlackBoard(</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;route_lanelets&quot;</highlight><highlight class="normal">,<sp/>route_planner_ptr_-&gt;getRouteLanelets(status_-&gt;lanelet_pose));</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::int64_t&gt;<sp/>empty<sp/>=<sp/>{};</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>tree_ptr_-&gt;setValueToBlackBoard(</highlight><highlight class="stringliteral">&quot;route_lanelets&quot;</highlight><highlight class="normal">,<sp/>empty);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>action_status_<sp/>=<sp/>tree_ptr_-&gt;tick(current_time,<sp/>step_time);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(getCurrentAction()<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;root&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>action_status_<sp/>=<sp/>tree_ptr_-&gt;tick(current_time,<sp/>step_time);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>status_updated<sp/>=<sp/>tree_ptr_-&gt;getUpdatedStatus();</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status_updated.lanelet_pose_valid)<sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>following_lanelets<sp/>=</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>hdmap_utils_ptr_-&gt;getFollowingLanelets(status_updated.lanelet_pose.lanelet_id);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>l<sp/>=<sp/>hdmap_utils_ptr_-&gt;getLaneletLength(status_updated.lanelet_pose.lanelet_id);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(following_lanelets.size()<sp/>==<sp/>1<sp/>&amp;&amp;<sp/>l<sp/>&lt;=<sp/>status_updated.lanelet_pose.s)<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stopAtEndOfRoad();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(target_speed_)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status_updated.action_status.twist.linear.x<sp/>&gt;=<sp/>target_speed_.get())<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>target_speed_<sp/>=<sp/>boost::none;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>tree_ptr_-&gt;setValueToBlackBoard(</highlight><highlight class="stringliteral">&quot;target_speed&quot;</highlight><highlight class="normal">,<sp/>target_speed_);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!status_)<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>linear_jerk_<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>linear_jerk_<sp/>=</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>(status_updated.action_status.accel.linear.x<sp/>-<sp/>status_-&gt;action_status.accel.linear.x)<sp/>/</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>step_time;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/>setStatus(status_updated);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/>updateStandStillDuration(step_time);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>entity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>traffic_simulator</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/entity/vehicle_entity.cpp"/>
+  </compounddef>
+</doxygen>

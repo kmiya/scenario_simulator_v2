@@ -731,7 +731,6 @@
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/file_header.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/road_network.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/storyboard.hpp&gt;</span><span class="cp"></span>
-
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
@@ -757,16 +756,14 @@
 <span class="p">{</span>
   <span class="n">Element</span> <span class="n">storyboard</span><span class="p">;</span>
 
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
   <span class="k">explicit</span> <span class="n">ScenarioDefinition</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">outer_scope</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="c1">// std::cout &lt;&lt; (indent++) &lt;&lt; &quot;&lt;OpenSCENARIO&gt;&quot; &lt;&lt; std::endl;</span>
 
-    <span class="n">callWithElements</span><span class="p">(</span>
-      <span class="n">node</span><span class="p">,</span> <span class="s">&quot;ParameterDeclarations&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">unbounded</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">each</span><span class="p">)</span>
-      <span class="p">{</span>
-        <span class="k">return</span> <span class="n">make</span><span class="o">&lt;</span><span class="n">ParameterDeclarations</span><span class="o">&gt;</span><span class="p">(</span><span class="n">each</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">);</span>
-      <span class="p">});</span>
+    <span class="n">callWithElements</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s">&quot;ParameterDeclarations&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">unbounded</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">each</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">make</span><span class="o">&lt;</span><span class="n">ParameterDeclarations</span><span class="o">&gt;</span><span class="p">(</span><span class="n">each</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">);</span>
+    <span class="p">});</span>
 
     <span class="c1">// for (const auto &amp; each : outer_scope.parameters) {</span>
     <span class="c1">//   std::cout &lt;&lt; indent &lt;&lt; &quot;&lt;!-- Parameter &quot; &lt;&lt; cyan &lt;&lt; &quot;\&#39;&quot; &lt;&lt; std::get&lt;0&gt;(each) &lt;&lt; &quot;\&#39;&quot; &lt;&lt;</span>
@@ -775,23 +772,16 @@
     <span class="c1">//     &quot; --&gt;&quot; &lt;&lt; std::endl;</span>
     <span class="c1">// }</span>
 
-    <span class="n">callWithElements</span><span class="p">(</span>
-      <span class="n">node</span><span class="p">,</span> <span class="s">&quot;CatalogLocations&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span>
-      <span class="p">{</span>
-        <span class="k">return</span> <span class="n">make</span><span class="o">&lt;</span><span class="n">CatalogLocations</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">);</span>
-      <span class="p">});</span>
+    <span class="n">callWithElements</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s">&quot;CatalogLocations&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">make</span><span class="o">&lt;</span><span class="n">CatalogLocations</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">);</span>
+    <span class="p">});</span>
 
-    <span class="n">callWithElements</span><span class="p">(</span>
-      <span class="n">node</span><span class="p">,</span> <span class="s">&quot;RoadNetwork&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span>
-      <span class="p">{</span>
-        <span class="k">return</span> <span class="n">make</span><span class="o">&lt;</span><span class="n">RoadNetwork</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">);</span>
-      <span class="p">});</span>
+    <span class="n">callWithElements</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s">&quot;RoadNetwork&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">make</span><span class="o">&lt;</span><span class="n">RoadNetwork</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">);</span>
+    <span class="p">});</span>
 
     <span class="n">callWithElement</span><span class="p">(</span>
-      <span class="n">node</span><span class="p">,</span> <span class="s">&quot;Entities&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span>
-      <span class="p">{</span>
-        <span class="k">return</span> <span class="n">make</span><span class="o">&lt;</span><span class="n">Entities</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">);</span>
-      <span class="p">});</span>
+      <span class="n">node</span><span class="p">,</span> <span class="s">&quot;Entities&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">make</span><span class="o">&lt;</span><span class="n">Entities</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">);</span> <span class="p">});</span>
 
     <span class="c1">// std::cout &lt;&lt; (indent++) &lt;&lt; &quot;&lt;Entities&gt;&quot; &lt;&lt; std::endl;</span>
     <span class="c1">//</span>
@@ -801,27 +791,23 @@
     <span class="c1">//</span>
     <span class="c1">// std::cout &lt;&lt; (--indent) &lt;&lt; &quot;&lt;/Entities&gt;&quot; &lt;&lt; std::endl;</span>
 
-    <span class="n">callWithElement</span><span class="p">(</span>
-      <span class="n">node</span><span class="p">,</span> <span class="s">&quot;Storyboard&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span>
-      <span class="p">{</span>
-        <span class="k">return</span> <span class="n">storyboard</span> <span class="o">=</span> <span class="n">make</span><span class="o">&lt;</span><span class="n">Storyboard</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">);</span>
-      <span class="p">});</span>
+    <span class="n">callWithElement</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s">&quot;Storyboard&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">storyboard</span> <span class="o">=</span> <span class="n">make</span><span class="o">&lt;</span><span class="n">Storyboard</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">);</span>
+    <span class="p">});</span>
 
     <span class="c1">// std::cout &lt;&lt; (--indent) &lt;&lt; &quot;&lt;/OpenSCENARIO&gt;&quot; &lt;&lt; std::endl;</span>
   <span class="p">}</span>
 
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">complete</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">complete</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="k">return</span> <span class="n">storyboard</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">Storyboard</span><span class="o">&gt;</span><span class="p">().</span><span class="n">complete</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
   <span class="p">}</span>
 
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">auto</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+  <span class="k">auto</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="p">{</span>
-      <span class="n">storyboard</span><span class="p">.</span><span class="n">evaluate</span><span class="p">()</span>
-    <span class="p">};</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span><span class="p">{</span><span class="n">storyboard</span><span class="p">.</span><span class="n">evaluate</span><span class="p">()};</span>
 
     <span class="n">updateFrame</span><span class="p">();</span>
 
@@ -857,8 +843,7 @@
 <span class="cm"> * &lt;/xsd:group&gt;</span>
 <span class="cm"> *</span>
 <span class="cm"> * -------------------------------------------------------------------------- */</span>
-<span class="k">struct</span> <span class="nc">OpenScenario</span>
-  <span class="o">:</span> <span class="k">public</span> <span class="n">pugi</span><span class="o">::</span><span class="n">xml_document</span>
+<span class="k">struct</span> <span class="nc">OpenScenario</span> <span class="o">:</span> <span class="k">public</span> <span class="n">pugi</span><span class="o">::</span><span class="n">xml_document</span>
 <span class="p">{</span>
   <span class="n">Element</span> <span class="n">category</span><span class="p">;</span>
 
@@ -866,12 +851,10 @@
 
   <span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">load</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">scenario</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="p">{</span>
-      <span class="n">load_file</span><span class="p">(</span><span class="n">scenario</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span>
-    <span class="p">};</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span><span class="p">{</span><span class="n">load_file</span><span class="p">(</span><span class="n">scenario</span><span class="p">.</span><span class="n">c_str</span><span class="p">())};</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">result</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span> <span class="p">{};</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>
       <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;while loading scenario </span><span class="se">\&quot;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">scenario</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&quot;</span><span class="s"> =&gt; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">result</span><span class="p">.</span><span class="n">description</span><span class="p">();</span>
       <span class="k">throw</span> <span class="nf">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -879,14 +862,10 @@
     <span class="p">}</span>
   <span class="p">}</span>
 
-  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">load</span><span class="p">(</span><span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span> <span class="o">&amp;</span> <span class="n">scenario</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="k">return</span> <span class="nf">load</span><span class="p">(</span><span class="n">scenario</span><span class="p">.</span><span class="n">string</span><span class="p">());</span>
-  <span class="p">}</span>
+  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">load</span><span class="p">(</span><span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span> <span class="o">&amp;</span> <span class="n">scenario</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nf">load</span><span class="p">(</span><span class="n">scenario</span><span class="p">.</span><span class="n">string</span><span class="p">());</span> <span class="p">}</span>
 
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">explicit</span> <span class="n">OpenScenario</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
-  <span class="o">:</span> <span class="n">scope</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...)</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+  <span class="k">explicit</span> <span class="n">OpenScenario</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="o">:</span> <span class="n">scope</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...)</span>
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">load</span><span class="p">(</span><span class="n">scope</span><span class="p">.</span><span class="n">scenario</span><span class="p">).</span><span class="n">child</span><span class="p">(</span><span class="s">&quot;OpenSCENARIO&quot;</span><span class="p">).</span><span class="n">child</span><span class="p">(</span><span class="s">&quot;Catalog&quot;</span><span class="p">))</span> <span class="p">{</span>
       <span class="n">THROW_IMPLEMENTATION_FAULT</span><span class="p">();</span>
@@ -895,8 +874,8 @@
     <span class="p">}</span>
   <span class="p">}</span>
 
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">complete</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">complete</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">category</span><span class="p">.</span><span class="n">is</span><span class="o">&lt;</span><span class="n">ScenarioDefinition</span><span class="o">&gt;</span><span class="p">())</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">category</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">ScenarioDefinition</span><span class="o">&gt;</span><span class="p">().</span><span class="n">complete</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
@@ -905,31 +884,31 @@
     <span class="p">}</span>
   <span class="p">}</span>
 
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="k">return</span> <span class="n">category</span><span class="p">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
   <span class="p">}</span>
 
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="k">operator</span><span class="p">()(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="k">operator</span><span class="p">()(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="k">return</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
   <span class="p">}</span>
 <span class="p">};</span>
 
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
 <span class="n">std</span><span class="o">::</span><span class="n">basic_ostream</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">basic_ostream</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">OpenScenario</span> <span class="o">&amp;</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">unspecified</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="p">}</span>
+<span class="p">}</span>  <span class="c1">// namespace syntax</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
 
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__OPENSCENARIO_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 01:42:32 UTC</p>
+<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
                 
                   
                 

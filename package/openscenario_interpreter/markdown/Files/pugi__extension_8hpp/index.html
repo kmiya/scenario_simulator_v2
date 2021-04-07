@@ -726,20 +726,19 @@
 <span class="cp">#define OPENSCENARIO_INTERPRETER__UTILITY__PUGI_EXTENSION_HPP_</span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;pugixml.hpp&gt;</span><span class="cp"></span>
-
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 
 <span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">pugi</span><span class="o">::</span><span class="n">xml_node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">depth</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+  <span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">depth</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
 
-  <span class="k">const</span> <span class="k">auto</span> <span class="n">indent</span> <span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">depth</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="sc">&#39; &#39;</span><span class="p">)};</span>
+  <span class="k">const</span> <span class="k">auto</span> <span class="n">indent</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">depth</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="sc">&#39; &#39;</span><span class="p">)};</span>
 
   <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">indent</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[34m&lt;</span><span class="se">\x1b</span><span class="s">[1m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">node</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[0m&quot;</span><span class="p">;</span>
 
   <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">attribute</span> <span class="p">:</span> <span class="n">node</span><span class="p">.</span><span class="n">attributes</span><span class="p">())</span> <span class="p">{</span>
-    <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; </span><span class="se">\x1b</span><span class="s">[33m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">attribute</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[0m=</span><span class="se">\x1b</span><span class="s">[36m</span><span class="se">\&quot;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">attribute</span><span class="p">.</span><span class="n">value</span><span class="p">()</span> <span class="o">&lt;&lt;</span>
-      <span class="s">&quot;</span><span class="se">\&quot;\x1b</span><span class="s">[0m&quot;</span><span class="p">;</span>
+    <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; </span><span class="se">\x1b</span><span class="s">[33m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">attribute</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[0m=</span><span class="se">\x1b</span><span class="s">[36m</span><span class="se">\&quot;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">attribute</span><span class="p">.</span><span class="n">value</span><span class="p">()</span>
+       <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&quot;\x1b</span><span class="s">[0m&quot;</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">first_child</span><span class="p">().</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
@@ -760,7 +759,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__UTILITY__PUGI_EXTENSION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 01:42:32 UTC</p>
+<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
                 
                   
                 

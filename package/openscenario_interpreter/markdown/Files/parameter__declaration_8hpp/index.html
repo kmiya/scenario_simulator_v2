@@ -722,7 +722,6 @@
 <span class="cp">#define OPENSCENARIO_INTERPRETER__SYNTAX__PARAMETER_DECLARATION_HPP_</span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/reader/attribute.hpp&gt;</span><span class="cp"></span>
-
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 
@@ -759,27 +758,23 @@
 
   <span class="n">ParameterDeclaration</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
 
-  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
   <span class="k">explicit</span> <span class="n">ParameterDeclaration</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">scope</span><span class="p">)</span>
   <span class="o">:</span> <span class="n">name</span><span class="p">{</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">scope</span><span class="p">)},</span>
     <span class="n">parameter_type</span><span class="p">{</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">ParameterType</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;parameterType&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">scope</span><span class="p">)},</span>
     <span class="n">value</span><span class="p">{</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;value&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">scope</span><span class="p">)}</span>
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">name</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="s">&quot;OSC&quot;</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">throw</span>
-        <span class="n">SyntaxError</span> <span class="p">{</span>
-          <span class="s">&quot;Parameter names starting with </span><span class="se">\&quot;</span><span class="s">OSC</span><span class="se">\&quot;</span><span class="s"> are reserved for special use in future versions &quot;</span>
-          <span class="s">&quot;of OpenSCENARIO. Generally, it is forbidden to use the OSC prefix.&quot;</span>
-        <span class="p">};</span>
+      <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">{</span>
+        <span class="s">&quot;Parameter names starting with </span><span class="se">\&quot;</span><span class="s">OSC</span><span class="se">\&quot;</span><span class="s"> are reserved for special use in future versions &quot;</span>
+        <span class="s">&quot;of OpenSCENARIO. Generally, it is forbidden to use the OSC prefix.&quot;</span><span class="p">};</span>
     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">includes</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="p">{</span><span class="sc">&#39; &#39;</span><span class="p">,</span> <span class="sc">&#39;$&#39;</span><span class="p">,</span> <span class="sc">&#39;\&#39;&#39;</span><span class="p">,</span> <span class="sc">&#39;&quot;&#39;</span><span class="p">}))</span> <span class="p">{</span>
-      <span class="k">throw</span>
-        <span class="n">SyntaxError</span> <span class="p">{</span>
-          <span class="s">&quot;In parameter names, usage of symbols is restricted. Symbols that must not be used are:</span><span class="se">\n</span><span class="s">&quot;</span>
-          <span class="s">&quot;  - </span><span class="se">\&quot;</span><span class="s"> </span><span class="se">\&quot;</span><span class="s"> (blank space)</span><span class="se">\n</span><span class="s">&quot;</span>
-          <span class="s">&quot;  - $</span><span class="se">\n</span><span class="s">&quot;</span>
-          <span class="s">&quot;  - </span><span class="se">\&#39;\n</span><span class="s">&quot;</span>
-          <span class="s">&quot;  - </span><span class="se">\&quot;\n</span><span class="s">&quot;</span>
-        <span class="p">};</span>
+      <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">{</span>
+        <span class="s">&quot;In parameter names, usage of symbols is restricted. Symbols that must not be used are:</span><span class="se">\n</span><span class="s">&quot;</span>
+        <span class="s">&quot;  - </span><span class="se">\&quot;</span><span class="s"> </span><span class="se">\&quot;</span><span class="s"> (blank space)</span><span class="se">\n</span><span class="s">&quot;</span>
+        <span class="s">&quot;  - $</span><span class="se">\n</span><span class="s">&quot;</span>
+        <span class="s">&quot;  - </span><span class="se">\&#39;\n</span><span class="s">&quot;</span>
+        <span class="s">&quot;  - </span><span class="se">\&quot;\n</span><span class="s">&quot;</span><span class="p">};</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="n">scope</span><span class="p">.</span><span class="n">parameters</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">evaluate</span><span class="p">());</span>
     <span class="p">}</span>
@@ -817,21 +812,18 @@
 
 <span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">ParameterDeclaration</span> <span class="o">&amp;</span> <span class="n">declaration</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">indent</span> <span class="o">&lt;&lt;</span>
-         <span class="n">blue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&lt;ParameterDeclaration&quot;</span> <span class="o">&lt;&lt;</span>
-         <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">highlight</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">declaration</span><span class="p">.</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;&lt;</span>
-         <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">highlight</span><span class="p">(</span><span class="s">&quot;parameterType&quot;</span><span class="p">,</span> <span class="n">declaration</span><span class="p">.</span><span class="n">parameter_type</span><span class="p">)</span> <span class="o">&lt;&lt;</span>
-         <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">highlight</span><span class="p">(</span><span class="s">&quot;value&quot;</span><span class="p">,</span> <span class="n">declaration</span><span class="p">.</span><span class="n">value</span><span class="p">)</span> <span class="o">&lt;&lt;</span>
-         <span class="n">blue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;/&gt;&quot;</span> <span class="o">&lt;&lt;</span>
-         <span class="n">reset</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">indent</span> <span class="o">&lt;&lt;</span> <span class="n">blue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&lt;ParameterDeclaration&quot;</span>
+            <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">highlight</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">declaration</span><span class="p">.</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+            <span class="o">&lt;&lt;</span> <span class="n">highlight</span><span class="p">(</span><span class="s">&quot;parameterType&quot;</span><span class="p">,</span> <span class="n">declaration</span><span class="p">.</span><span class="n">parameter_type</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+            <span class="o">&lt;&lt;</span> <span class="n">highlight</span><span class="p">(</span><span class="s">&quot;value&quot;</span><span class="p">,</span> <span class="n">declaration</span><span class="p">.</span><span class="n">value</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">blue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;/&gt;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">reset</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="p">}</span>
+<span class="p">}</span>  <span class="c1">// namespace syntax</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
 
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__PARAMETER_DECLARATION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 01:42:32 UTC</p>
+<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
                 
                   
                 

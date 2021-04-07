@@ -45,9 +45,10 @@
       <memberdef kind="define" id="assertion__auxiliary_8hpp_1a2dab9b60632a8cda25329e3de7866051" prot="public" static="no">
         <name>ASSERT_DEFAULT_CONSTRUCTIBLE</name>
         <param><defname>TYPE</defname></param>
-        <initializer>static_assert( \
-    std::is_default_constructible&lt;TYPE&gt;::value, \
-    &quot;OpenSCENARIO specification uses type &apos;&quot; #TYPE &quot;&apos; as optional element (as minOccurs=\&quot;0\&quot;), &quot; \
+        <initializer>static_assert(                                   \
+    std::is_default_constructible&lt;TYPE&gt;::value,    \
+    &quot;OpenSCENARIO specification uses type &apos;&quot; #TYPE \
+    &quot;&apos; as optional element (as minOccurs=\&quot;0\&quot;), &quot; \
     &quot;thus type &apos;&quot; #TYPE &quot;&apos; must be met concept DefaultConstructible.&quot;)</initializer>
         <briefdescription>
         </briefdescription>
@@ -86,15 +87,16 @@
 <codeline lineno="21"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">utility</highlight></codeline>
 <codeline lineno="23"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASSERT_DEFAULT_CONSTRUCTIBLE(TYPE)<sp/>\</highlight></codeline>
-<codeline lineno="25"><highlight class="preprocessor"><sp/><sp/>static_assert(<sp/>\</highlight></codeline>
-<codeline lineno="26"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>std::is_default_constructible&lt;TYPE&gt;::value,<sp/>\</highlight></codeline>
-<codeline lineno="27"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;OpenSCENARIO<sp/>specification<sp/>uses<sp/>type<sp/>&apos;&quot;<sp/>#TYPE<sp/>&quot;&apos;<sp/>as<sp/>optional<sp/>element<sp/>(as<sp/>minOccurs=\&quot;0\&quot;),<sp/>&quot;<sp/>\</highlight></codeline>
-<codeline lineno="28"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;thus<sp/>type<sp/>&apos;&quot;<sp/>#TYPE<sp/>&quot;&apos;<sp/>must<sp/>be<sp/>met<sp/>concept<sp/>DefaultConstructible.&quot;)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="30"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>openscenario_interpreter</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>OPENSCENARIO_INTERPRETER__UTILITY__ASSERTION_AUXILIARY_HPP_</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASSERT_DEFAULT_CONSTRUCTIBLE(TYPE)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="25"><highlight class="preprocessor"><sp/><sp/>static_assert(<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>std::is_default_constructible&lt;TYPE&gt;::value,<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;OpenSCENARIO<sp/>specification<sp/>uses<sp/>type<sp/>&apos;&quot;<sp/>#TYPE<sp/>\</highlight></codeline>
+<codeline lineno="28"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;&apos;<sp/>as<sp/>optional<sp/>element<sp/>(as<sp/>minOccurs=\&quot;0\&quot;),<sp/>&quot;<sp/>\</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;thus<sp/>type<sp/>&apos;&quot;<sp/>#TYPE<sp/>&quot;&apos;<sp/>must<sp/>be<sp/>met<sp/>concept<sp/>DefaultConstructible.&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>utility</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>openscenario_interpreter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>OPENSCENARIO_INTERPRETER__UTILITY__ASSERTION_AUXILIARY_HPP_</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/assertion_auxiliary.hpp"/>
   </compounddef>

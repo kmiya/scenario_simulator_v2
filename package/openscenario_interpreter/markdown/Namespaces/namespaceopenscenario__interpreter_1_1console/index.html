@@ -801,7 +801,7 @@
 </thead>
 <tbody>
 <tr>
-<td>template \&lt;typename ... Ts></br>auto &amp;</td>
+<td>template \&lt;typename... Ts></br>auto &amp;</td>
 <td><strong><a href="/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1console#function-escape_sequence">escape_sequence</a></strong>(std::basic_ostream&lt; Ts... &gt; &amp; os, const std::string &amp; code)</td>
 </tr>
 <tr>
@@ -859,7 +859,7 @@
 </table>
 <h2 id="functions-documentation">Functions Documentation<a class="headerlink" href="#functions-documentation" title="Permanent link">#</a></h2>
 <h3 id="function-escape_sequence">function escape_sequence<a class="headerlink" href="#function-escape_sequence" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
 <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">escape_sequence</span><span class="p">(</span>
     <span class="n">std</span><span class="o">::</span><span class="n">basic_ostream</span><span class="o">&lt;</span> <span class="n">Ts</span><span class="p">...</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span>
     <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">code</span>
@@ -921,21 +921,20 @@
 </code></pre></div>
 <h2 id="attributes-documentation">Attributes Documentation<a class="headerlink" href="#attributes-documentation" title="Permanent link">#</a></h2>
 <h3 id="variable-is_console">variable is_console<a class="headerlink" href="#variable-is_console" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">auto</span> <span class="n">is_console</span> <span class="o">=</span> <span class="p">[](</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">rdbuf</span><span class="p">()</span> <span class="o">==</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">.</span><span class="n">rdbuf</span><span class="p">())</span> <span class="p">{</span>
-      <span class="k">static</span> <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="p">{</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="o">::</span><span class="n">isatty</span><span class="p">(</span><span class="n">STDOUT_FILENO</span><span class="p">))};</span>
-      <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">rdbuf</span><span class="p">()</span> <span class="o">==</span> <span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="p">.</span><span class="n">rdbuf</span><span class="p">())</span> <span class="p">{</span>
-      <span class="k">static</span> <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="p">{</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="o">::</span><span class="n">isatty</span><span class="p">(</span><span class="n">STDERR_FILENO</span><span class="p">))};</span>
-      <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">};</span>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span> <span class="n">is_console</span> <span class="o">=</span> <span class="p">[](</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">rdbuf</span><span class="p">()</span> <span class="o">==</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">.</span><span class="n">rdbuf</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span><span class="p">{</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="o">::</span><span class="n">isatty</span><span class="p">(</span><span class="n">STDOUT_FILENO</span><span class="p">))};</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">rdbuf</span><span class="p">()</span> <span class="o">==</span> <span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="p">.</span><span class="n">rdbuf</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span><span class="p">{</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="o">::</span><span class="n">isatty</span><span class="p">(</span><span class="n">STDERR_FILENO</span><span class="p">))};</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 April 2021 at 01:42:32 UTC</p>
+<p>Updated on  7 April 2021 at 07:13:00 UTC</p>
                 
                   
                 

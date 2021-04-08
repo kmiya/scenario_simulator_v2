@@ -662,6 +662,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#defines" class="md-nav__link">
+    Defines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macro-documentation" class="md-nav__link">
+    Macro Documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Macro Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define-catch" class="md-nav__link">
+    define CATCH
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#source-code" class="md-nav__link">
     Source code
   </a>
@@ -714,6 +741,34 @@
 </tr>
 </tbody>
 </table>
+<h2 id="defines">Defines<a class="headerlink" href="#defines" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/openscenario__interpreter_8hpp#define-catch">CATCH</a></strong>(TYPE)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="macro-documentation">Macro Documentation<a class="headerlink" href="#macro-documentation" title="Permanent link">#</a></h2>
+<h3 id="define-catch">define CATCH<a class="headerlink" href="#define-catch" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#define CATCH(</span>
+    <span class="n">TYPE</span>
+<span class="p">)</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">TYPE</span> <span class="o">&amp;</span> <span class="n">error</span><span class="p">)</span>                \
+  <span class="p">{</span>                                         \
+    <span class="k">if</span> <span class="p">(</span><span class="n">intended_result</span> <span class="o">==</span> <span class="s">&quot;error&quot;</span><span class="p">)</span> <span class="p">{</span>       \
+      <span class="n">report</span><span class="p">(</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="err">#</span><span class="n">TYPE</span> <span class="s">&quot; (intended)&quot;</span><span class="p">);</span> \
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>                                \
+      <span class="n">report</span><span class="p">(</span><span class="n">ERROR</span><span class="p">,</span> <span class="err">#</span><span class="n">TYPE</span><span class="p">,</span> <span class="n">error</span><span class="p">.</span><span class="n">what</span><span class="p">());</span>   \
+    <span class="p">}</span>                                       \
+  <span class="p">}</span>
+</code></pre></div>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">// Copyright 2015-2020 Tier IV, Inc. All rights reserved.</span>
 <span class="c1">//</span>
@@ -734,10 +789,12 @@
 
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/utility/visibility.h&gt;</span><span class="cp"></span>
 
+<span class="cp">#include</span> <span class="cpf">&lt;exception&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;junit_exporter/junit_exporter.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;lifecycle_msgs/msg/state.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;lifecycle_msgs/msg/transition.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/console/escape_sequence.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/openscenario.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/utility/verbose.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;rclcpp/rclcpp.hpp&gt;</span><span class="cp"></span>
@@ -749,17 +806,6 @@
 <span class="p">{</span>
 <span class="k">class</span> <span class="nc">Interpreter</span> <span class="o">:</span> <span class="k">public</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">LifecycleNode</span>
 <span class="p">{</span>
-  <span class="cm">/* ---- NOTE -----------------------------------------------------------------</span>
-<span class="cm">   *</span>
-<span class="cm">   *  ROS Parameters</span>
-<span class="cm">   *</span>
-<span class="cm">   *    - intended_result</span>
-<span class="cm">   *    - local_frame_rate</span>
-<span class="cm">   *    - local_real_time_factor</span>
-<span class="cm">   *    - osc_path</span>
-<span class="cm">   *    - output_directory</span>
-<span class="cm">   *</span>
-<span class="cm">   * ------------------------------------------------------------------------ */</span>
   <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">intended_result</span><span class="p">;</span>
   <span class="kt">double</span> <span class="n">local_frame_rate</span><span class="p">;</span>
   <span class="kt">double</span> <span class="n">local_real_time_factor</span><span class="p">;</span>
@@ -784,26 +830,11 @@
       <span class="n">script</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">OpenScenario</span><span class="o">&gt;</span><span class="p">().</span><span class="n">scope</span><span class="p">.</span><span class="n">scenario</span><span class="p">.</span><span class="n">string</span><span class="p">(),</span>  <span class="c1">// XXX DIRTY HACK!!!</span>
       <span class="s">&quot;scenario_testing&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="n">what</span><span class="p">);</span>
 
-    <span class="k">switch</span> <span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">case</span> <span class="n">junit_exporter</span><span class="o">::</span><span class="n">TestResult</span><span class="o">::</span><span class="nl">ERROR</span><span class="p">:</span>
-      <span class="k">case</span> <span class="n">junit_exporter</span><span class="o">::</span><span class="n">TestResult</span><span class="o">::</span><span class="nl">FAILURE</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">what</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-          <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[1;31mYield &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">type</span><span class="p">.</span><span class="n">c_str</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[0m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-          <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[1;31mYield &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">type</span><span class="p">.</span><span class="n">c_str</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; (&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">what</span><span class="p">.</span><span class="n">c_str</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;)</span><span class="se">\x1b</span><span class="s">[0m&quot;</span>
-                    <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">break</span><span class="p">;</span>
-
-      <span class="k">case</span> <span class="n">junit_exporter</span><span class="o">::</span><span class="n">TestResult</span><span class="o">::</span><span class="nl">SUCCESS</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">what</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-          <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[32mYield &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">type</span><span class="p">.</span><span class="n">c_str</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[0m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-          <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[32mYield &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">type</span><span class="p">.</span><span class="n">c_str</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; (&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">what</span><span class="p">.</span><span class="n">c_str</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;)</span><span class="se">\x1b</span><span class="s">[0m&quot;</span>
-                    <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">break</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="n">SUCCESS</span> <span class="o">?</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[1;32m&quot;</span> <span class="o">:</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[1;31m&quot;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">type</span><span class="p">.</span><span class="n">c_str</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">not</span> <span class="n">what</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; (&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">what</span><span class="p">.</span><span class="n">c_str</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;)&quot;</span><span class="p">;</span>
     <span class="p">}</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[0m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
     <span class="n">exporter</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">output_directory</span> <span class="o">+</span> <span class="s">&quot;/result.junit.xml&quot;</span><span class="p">);</span>
 
@@ -816,54 +847,56 @@
     <span class="n">deactivate</span><span class="p">();</span>
   <span class="p">}</span>
 
+<span class="cp">#define CATCH(TYPE)                         \</span>
+<span class="cp">  catch (const TYPE &amp; error)                \</span>
+<span class="cp">  {                                         \</span>
+<span class="cp">    if (intended_result == &quot;error&quot;) {       \</span>
+<span class="cp">      report(SUCCESS, #TYPE &quot; (intended)&quot;); \</span>
+<span class="cp">    } else {                                \</span>
+<span class="cp">      report(ERROR, #TYPE, error.what());   \</span>
+<span class="cp">    }                                       \</span>
+<span class="cp">  }</span>
+
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Thunk</span><span class="o">&gt;</span>
   <span class="kt">void</span> <span class="n">withExceptionHandler</span><span class="p">(</span><span class="n">Thunk</span> <span class="o">&amp;&amp;</span> <span class="n">thunk</span><span class="p">)</span>
   <span class="p">{</span>
+    <span class="k">using</span> <span class="n">autoware_api</span><span class="o">::</span><span class="n">AutowareError</span><span class="p">;</span>
+
+    <span class="k">using</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">ImplementationFault</span><span class="p">;</span>
+
+    <span class="k">using</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">SemanticError</span><span class="p">;</span>
+
+    <span class="k">using</span> <span class="n">StandardException</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="p">;</span>
+
     <span class="k">try</span> <span class="p">{</span>
       <span class="k">return</span> <span class="nf">thunk</span><span class="p">();</span>
-    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="n">command</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">switch</span> <span class="p">(</span><span class="n">command</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">case</span> <span class="nl">EXIT_SUCCESS</span><span class="p">:</span>
-          <span class="k">if</span> <span class="p">(</span><span class="n">intended_result</span> <span class="o">==</span> <span class="s">&quot;success&quot;</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">report</span><span class="p">(</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="s">&quot;intended-success&quot;</span><span class="p">);</span>
-          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="n">report</span><span class="p">(</span><span class="n">FAILURE</span><span class="p">,</span> <span class="s">&quot;unintended-success&quot;</span><span class="p">,</span> <span class="s">&quot;expected &quot;</span> <span class="o">+</span> <span class="n">intended_result</span><span class="p">);</span>
-          <span class="p">}</span>
-          <span class="k">break</span><span class="p">;</span>
-
-        <span class="k">case</span> <span class="nl">EXIT_FAILURE</span><span class="p">:</span>
-          <span class="k">if</span> <span class="p">(</span><span class="n">intended_result</span> <span class="o">==</span> <span class="s">&quot;failure&quot;</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">report</span><span class="p">(</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="s">&quot;intended-failure&quot;</span><span class="p">);</span>
-          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="n">report</span><span class="p">(</span><span class="n">FAILURE</span><span class="p">,</span> <span class="s">&quot;unintended-failure&quot;</span><span class="p">,</span> <span class="s">&quot;expected &quot;</span> <span class="o">+</span> <span class="n">intended_result</span><span class="p">);</span>
-          <span class="p">}</span>
-          <span class="k">break</span><span class="p">;</span>
-
-        <span class="k">default</span><span class="o">:</span>
-          <span class="k">break</span><span class="p">;</span>
-      <span class="p">}</span>
-    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">SemanticError</span> <span class="o">&amp;</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">intended_result</span> <span class="o">==</span> <span class="s">&quot;error&quot;</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">report</span><span class="p">(</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="s">&quot;intended-error&quot;</span><span class="p">);</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="n">report</span><span class="p">(</span><span class="n">ERROR</span><span class="p">,</span> <span class="s">&quot;semantic-error&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">.</span><span class="n">what</span><span class="p">());</span>
-      <span class="p">}</span>
-    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">ImplementationFault</span> <span class="o">&amp;</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">intended_result</span> <span class="o">==</span> <span class="s">&quot;error&quot;</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">report</span><span class="p">(</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="s">&quot;intended-error&quot;</span><span class="p">);</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="n">report</span><span class="p">(</span><span class="n">ERROR</span><span class="p">,</span> <span class="s">&quot;implementation-fault&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">.</span><span class="n">what</span><span class="p">());</span>
-      <span class="p">}</span>
-    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">exception</span> <span class="o">&amp;</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">intended_result</span> <span class="o">==</span> <span class="s">&quot;error&quot;</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">report</span><span class="p">(</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="s">&quot;intended-error&quot;</span><span class="p">);</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="n">report</span><span class="p">(</span><span class="n">ERROR</span><span class="p">,</span> <span class="s">&quot;unexpected-standard-exception&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">.</span><span class="n">what</span><span class="p">());</span>
-      <span class="p">}</span>
-    <span class="p">}</span> <span class="k">catch</span> <span class="p">(...)</span> <span class="p">{</span>
-      <span class="n">report</span><span class="p">(</span><span class="n">ERROR</span><span class="p">,</span> <span class="s">&quot;unexpected-unknown-exception&quot;</span><span class="p">);</span>
     <span class="p">}</span>
+
+    <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">SpecialAction</span><span class="o">&lt;</span><span class="n">EXIT_SUCCESS</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">intended_result</span> <span class="o">==</span> <span class="s">&quot;success&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">report</span><span class="p">(</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="s">&quot;Success (intended)&quot;</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">report</span><span class="p">(</span><span class="n">FAILURE</span><span class="p">,</span> <span class="s">&quot;Success (unintended)&quot;</span><span class="p">,</span> <span class="s">&quot;expected &quot;</span> <span class="o">+</span> <span class="n">intended_result</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">SpecialAction</span><span class="o">&lt;</span><span class="n">EXIT_FAILURE</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">intended_result</span> <span class="o">==</span> <span class="s">&quot;failure&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">report</span><span class="p">(</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="s">&quot;Failure (intended)&quot;</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">report</span><span class="p">(</span><span class="n">FAILURE</span><span class="p">,</span> <span class="s">&quot;Failure (unintended)&quot;</span><span class="p">,</span> <span class="s">&quot;expected &quot;</span> <span class="o">+</span> <span class="n">intended_result</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">CATCH</span><span class="p">(</span><span class="n">AutowareError</span><span class="p">)</span>
+    <span class="n">CATCH</span><span class="p">(</span><span class="n">ImplementationFault</span><span class="p">)</span>
+    <span class="n">CATCH</span><span class="p">(</span><span class="n">SemanticError</span><span class="p">)</span>
+    <span class="n">CATCH</span><span class="p">(</span><span class="n">StandardException</span><span class="p">)</span>
+
+    <span class="k">catch</span> <span class="p">(...)</span> <span class="p">{</span> <span class="n">report</span><span class="p">(</span><span class="n">ERROR</span><span class="p">,</span> <span class="s">&quot;UnknownException (unexpected)&quot;</span><span class="p">);</span> <span class="p">}</span>
   <span class="p">}</span>
+
+<span class="cp">#undef CATCH</span>
 
 <span class="k">public</span><span class="o">:</span>
   <span class="n">OPENSCENARIO_INTERPRETER_PUBLIC</span>
@@ -888,7 +921,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__OPENSCENARIO_INTERPRETER_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  8 April 2021 at 07:18:42 UTC</p>
+<p>Updated on  8 April 2021 at 07:53:06 UTC</p>
                 
                   
                 

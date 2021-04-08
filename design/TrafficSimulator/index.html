@@ -14,7 +14,7 @@
     
     
       
-        <title>Simulation API - Scenario testing framework for Autoware</title>
+        <title>Traffic simulatior - Scenario testing framework for Autoware</title>
       
     
     
@@ -37,6 +37,8 @@
     
     
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheet/tierivcolor.css">
     
     
       
@@ -61,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#simulation-api" class="md-skip">
+        <a href="#traffic-simulatior" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Simulation API
+              Traffic simulatior
             
           </span>
         </div>
@@ -493,32 +495,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../SystemArchitecture/" class="md-nav__link">
-        System Architecture
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Tier4ScenarioFormatVersion2/" class="md-nav__link">
-        TierIV Scenario Format Version 2.0
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../OpenSCENARIOSupport/" class="md-nav__link">
-        OpenSCENARIO Support
+      <a href="../SimpleSensorSimulator/" class="md-nav__link">
+        Simple sensor simulator
       </a>
     </li>
   
@@ -538,12 +516,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Simulation API
+          Traffic simulatior
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Simulation API
+        Traffic simulatior
       </a>
       
         
@@ -560,16 +538,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#c-api" class="md-nav__link">
+    C++ API
+  </a>
+  
+    <nav class="md-nav" aria-label="C++ API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#minimal-example" class="md-nav__link">
     minimal example
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#api-documentation" class="md-nav__link">
-    API Documentation
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -600,6 +584,42 @@
     <li class="md-nav__item">
       <a href="../AutowareAPI/" class="md-nav__link">
         Autoware API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SystemArchitecture/" class="md-nav__link">
+        System Architecture
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tier4ScenarioFormatVersion2/" class="md-nav__link">
+        TierIV Scenario Format Version 2.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenSCENARIOSupport/" class="md-nav__link">
+        OpenSCENARIO Support
       </a>
     </li>
   
@@ -681,16 +701,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#c-api" class="md-nav__link">
+    C++ API
+  </a>
+  
+    <nav class="md-nav" aria-label="C++ API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#minimal-example" class="md-nav__link">
     minimal example
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#api-documentation" class="md-nav__link">
-    API Documentation
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -706,15 +732,19 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/tier4/scenario_simulator.auto/edit/master/docs/design/SimulationAPI.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/tier4/scenario_simulator.auto/edit/master/docs/design/TrafficSimulator.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="simulation-api">Simulation API<a class="headerlink" href="#simulation-api" title="Permanent link">#</a></h1>
-<p>Simulation API provides an C++ API to control NPC behavior in simulation.
+                <h1 id="traffic-simulatior">Traffic simulatior<a class="headerlink" href="#traffic-simulatior" title="Permanent link">#</a></h1>
+<p><img alt="Simple Demo" src="../../image/simple_demo.png" title="traffic simulator" /></p>
+<p>The traffic simulator simulates a traffic flow in urban area.
+Each NPC has a behavior tree and follow user's command.</p>
+<h2 id="c-api">C++ API<a class="headerlink" href="#c-api" title="Permanent link">#</a></h2>
+<p>The traffic simulator provides an C++ API to control NPC behavior in simulation.
 The sample code is below.</p>
-<h2 id="minimal-example">minimal example<a class="headerlink" href="#minimal-example" title="Permanent link">#</a></h2>
+<h3 id="minimal-example">minimal example<a class="headerlink" href="#minimal-example" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/api/api.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;quaternion_operation/quaternion_operation.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;ament_index_cpp/get_package_share_directory.hpp&gt;</span><span class="cp"></span>
@@ -841,8 +871,6 @@ The sample code is below.</p>
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="api-documentation">API Documentation<a class="headerlink" href="#api-documentation" title="Permanent link">#</a></h2>
-<p>See <a href="../../package/About/">package details</a>.</p>
                 
               
               
@@ -861,7 +889,7 @@ The sample code is below.</p>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../OpenSCENARIOSupport/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../SimpleSensorSimulator/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -870,7 +898,7 @@ The sample code is below.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              OpenSCENARIO Support
+              Simple sensor simulator
             </div>
           </div>
         </a>

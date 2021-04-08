@@ -38,6 +38,8 @@
     
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     
+      <link rel="stylesheet" href="../../../../../stylesheet/tierivcolor.css">
+    
     
       
     
@@ -491,6 +493,54 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../../design/SimpleSensorSimulator/" class="md-nav__link">
+        Simple sensor simulator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../design/TrafficSimulator/" class="md-nav__link">
+        Traffic simulatior
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../design/ZeroMQ/" class="md-nav__link">
+        Communication with simulator and interpreter
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../design/AutowareAPI/" class="md-nav__link">
+        Autoware API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../../design/SystemArchitecture/" class="md-nav__link">
         System Architecture
       </a>
@@ -517,42 +567,6 @@
     <li class="md-nav__item">
       <a href="../../../../../design/OpenSCENARIOSupport/" class="md-nav__link">
         OpenSCENARIO Support
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../design/SimulationAPI/" class="md-nav__link">
-        Simulation API
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../design/ZeroMQ/" class="md-nav__link">
-        Communication with simulator and interpreter
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../design/AutowareAPI/" class="md-nav__link">
-        Autoware API
       </a>
     </li>
   
@@ -775,7 +789,7 @@
                 
                 
                 <h1 id="metricsreactiontimemetric">metrics::ReactionTimeMetric<a class="headerlink" href="#metricsreactiontimemetric" title="Permanent link">#</a></h1>
-<p>Inherits from <a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase">metrics::MetricBase</a></p>
+<p>Inherits from <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase">metrics::MetricBase</a></p>
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">#</a></h2>
 <table>
 <thead>
@@ -787,23 +801,23 @@
 <tbody>
 <tr>
 <td></td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#function-~reactiontimemetric">~ReactionTimeMetric</a></strong>() override =default</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#function-~reactiontimemetric">~ReactionTimeMetric</a></strong>() override =default</td>
 </tr>
 <tr>
 <td>virtual void</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#function-update">update</a></strong>() override</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#function-update">update</a></strong>() override</td>
 </tr>
 <tr>
 <td>virtual nlohmann::json</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#function-to_json">to_json</a></strong>()</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#function-to_json">to_json</a></strong>()</td>
 </tr>
 <tr>
 <td>virtual bool</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#function-activatetrigger">activateTrigger</a></strong>() override</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#function-activatetrigger">activateTrigger</a></strong>() override</td>
 </tr>
 <tr>
 <td></td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#function-reactiontimemetric">ReactionTimeMetric</a></strong>(std::string target_entity, double maximum_reaction_time, double jerk_upper_threashold, double jerk_lower_threashold, bool check_upper_threashold =true, bool check_lower_threashold =true)</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#function-reactiontimemetric">ReactionTimeMetric</a></strong>(std::string target_entity, double maximum_reaction_time, double jerk_upper_threashold, double jerk_lower_threashold, bool check_upper_threashold =true, bool check_lower_threashold =true)</td>
 </tr>
 </tbody>
 </table>
@@ -818,32 +832,32 @@
 <tbody>
 <tr>
 <td>const std::string</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#variable-target_entity">target_entity</a></strong></td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#variable-target_entity">target_entity</a></strong></td>
 </tr>
 <tr>
 <td>const double</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#variable-maximum_reaction_time">maximum_reaction_time</a></strong></td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#variable-maximum_reaction_time">maximum_reaction_time</a></strong></td>
 </tr>
 <tr>
 <td>const double</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#variable-jerk_upper_threashold">jerk_upper_threashold</a></strong></td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#variable-jerk_upper_threashold">jerk_upper_threashold</a></strong></td>
 </tr>
 <tr>
 <td>const double</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#variable-jerk_lower_threashold">jerk_lower_threashold</a></strong></td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#variable-jerk_lower_threashold">jerk_lower_threashold</a></strong></td>
 </tr>
 <tr>
 <td>const bool</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#variable-check_upper_threashold">check_upper_threashold</a></strong></td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#variable-check_upper_threashold">check_upper_threashold</a></strong></td>
 </tr>
 <tr>
 <td>const bool</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#variable-check_lower_threashold">check_lower_threashold</a></strong></td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1ReactionTimeMetric#variable-check_lower_threashold">check_lower_threashold</a></strong></td>
 </tr>
 </tbody>
 </table>
 <h2 id="additional-inherited-members">Additional inherited members<a class="headerlink" href="#additional-inherited-members" title="Permanent link">#</a></h2>
-<p><strong>Public Functions inherited from <a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase">metrics::MetricBase</a></strong></p>
+<p><strong>Public Functions inherited from <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase">metrics::MetricBase</a></strong></p>
 <table>
 <thead>
 <tr>
@@ -854,43 +868,43 @@
 <tbody>
 <tr>
 <td>virtual</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-~metricbase">~MetricBase</a></strong>()</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-~metricbase">~MetricBase</a></strong>()</td>
 </tr>
 <tr>
 <td>nlohmann::json</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-to_base_json">to_base_json</a></strong>()</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-to_base_json">to_base_json</a></strong>()</td>
 </tr>
 <tr>
 <td>void</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-throwexception">throwException</a></strong>()</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-throwexception">throwException</a></strong>()</td>
 </tr>
 <tr>
 <td>void</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-success">success</a></strong>()</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-success">success</a></strong>()</td>
 </tr>
 <tr>
 <td>void</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-setentitymanager">setEntityManager</a></strong>(std::shared_ptr&lt; <a href="/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityManager">traffic_simulator::entity::EntityManager</a> &gt; entity_manager_ptr)</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-setentitymanager">setEntityManager</a></strong>(std::shared_ptr&lt; <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityManager">traffic_simulator::entity::EntityManager</a> &gt; entity_manager_ptr)</td>
 </tr>
 <tr>
 <td>MetricLifecycle</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-getlifecycle">getLifecycle</a></strong>()</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-getlifecycle">getLifecycle</a></strong>()</td>
 </tr>
 <tr>
 <td>void</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-failure">failure</a></strong>(<a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1SpecificationViolationError">SpecificationViolationError</a> error)</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-failure">failure</a></strong>(<a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1SpecificationViolationError">SpecificationViolationError</a> error)</td>
 </tr>
 <tr>
 <td>void</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-activate">activate</a></strong>()</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-activate">activate</a></strong>()</td>
 </tr>
 <tr>
 <td></td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-metricbase">MetricBase</a></strong>(std::string metrics_type)</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-metricbase">MetricBase</a></strong>(std::string metrics_type)</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Public Attributes inherited from <a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase">metrics::MetricBase</a></strong></p>
+<p><strong>Public Attributes inherited from <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase">metrics::MetricBase</a></strong></p>
 <table>
 <thead>
 <tr>
@@ -901,11 +915,11 @@
 <tbody>
 <tr>
 <td>const std::string</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#variable-metrics_type">metrics_type</a></strong></td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#variable-metrics_type">metrics_type</a></strong></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Protected Attributes inherited from <a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase">metrics::MetricBase</a></strong></p>
+<p><strong>Protected Attributes inherited from <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase">metrics::MetricBase</a></strong></p>
 <table>
 <thead>
 <tr>
@@ -915,8 +929,8 @@
 </thead>
 <tbody>
 <tr>
-<td>std::shared_ptr&lt; <a href="/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityManager">traffic_simulator::entity::EntityManager</a> &gt;</td>
-<td><strong><a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#variable-entity_manager_ptr_">entity_manager_ptr_</a></strong></td>
+<td>std::shared_ptr&lt; <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityManager">traffic_simulator::entity::EntityManager</a> &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#variable-entity_manager_ptr_">entity_manager_ptr_</a></strong></td>
 </tr>
 </tbody>
 </table>
@@ -927,15 +941,15 @@
 <h3 id="function-update">function update<a class="headerlink" href="#function-update" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">virtual</span> <span class="kt">void</span> <span class="n">update</span><span class="p">()</span> <span class="k">override</span>
 </code></pre></div>
-<p><strong>Reimplements</strong>: <a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-update">metrics::MetricBase::update</a></p>
+<p><strong>Reimplements</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-update">metrics::MetricBase::update</a></p>
 <h3 id="function-to_json">function to_json<a class="headerlink" href="#function-to_json" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">virtual</span> <span class="n">nlohmann</span><span class="o">::</span><span class="n">json</span> <span class="n">to_json</span><span class="p">()</span>
 </code></pre></div>
-<p><strong>Reimplements</strong>: <a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-to_json">metrics::MetricBase::to_json</a></p>
+<p><strong>Reimplements</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-to_json">metrics::MetricBase::to_json</a></p>
 <h3 id="function-activatetrigger">function activateTrigger<a class="headerlink" href="#function-activatetrigger" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">virtual</span> <span class="kt">bool</span> <span class="n">activateTrigger</span><span class="p">()</span> <span class="k">override</span>
 </code></pre></div>
-<p><strong>Reimplements</strong>: <a href="/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-activatetrigger">metrics::MetricBase::activateTrigger</a></p>
+<p><strong>Reimplements</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classmetrics_1_1MetricBase#function-activatetrigger">metrics::MetricBase::activateTrigger</a></p>
 <h3 id="function-reactiontimemetric_1">function ReactionTimeMetric<a class="headerlink" href="#function-reactiontimemetric_1" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">explicit</span> <span class="n">ReactionTimeMetric</span><span class="p">(</span>
     <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">target_entity</span><span class="p">,</span>
@@ -966,7 +980,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="kt">bool</span> <span class="n">check_lower_threashold</span><span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>Updated on  8 April 2021 at 00:17:27 UTC</p>
+<p>Updated on  8 April 2021 at 05:36:54 UTC</p>
                 
                   
                 

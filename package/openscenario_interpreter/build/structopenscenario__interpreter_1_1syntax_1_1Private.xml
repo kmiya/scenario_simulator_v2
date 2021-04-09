@@ -2,7 +2,6 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="structopenscenario__interpreter_1_1syntax_1_1Private" kind="struct" language="C++" prot="public">
     <compoundname>openscenario_interpreter::syntax::Private</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">std::vector&lt; PrivateAction &gt;</basecompoundref>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1Private_1a4f4365a2321921319f46a99939ade5cb" prot="public" static="no" mutable="no">
         <type><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref></type>
@@ -16,6 +15,19 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/private.hpp" line="37" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/private.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1Private_1af675066d2bf754a8331c258f8ee799c8" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structopenscenario__interpreter_1_1syntax_1_1PrivateAction" kindref="compound">PrivateAction</ref> &gt;</type>
+        <definition>std::vector&lt;PrivateAction&gt; openscenario_interpreter::syntax::Private::private_actions</definition>
+        <argsstring></argsstring>
+        <name>private_actions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/private.hpp" line="39" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/private.hpp" bodystart="39" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -43,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/private.hpp" line="40" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/private.hpp" bodystart="40" bodyend="46"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/private.hpp" line="42" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/private.hpp" bodystart="42" bodyend="49"/>
       </memberdef>
       <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1Private_1a58b348d8d7172f35f00445ff8ee80dfc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>auto</type>
@@ -56,47 +68,32 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/private.hpp" line="48" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/private.hpp" bodystart="48" bodyend="55"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/private.hpp" line="51" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/private.hpp" bodystart="51" bodyend="58"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <inheritancegraph>
+    <collaborationgraph>
       <node id="530">
         <label>openscenario_interpreter::syntax::Private</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1Private"/>
-        <childnode refid="531" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="531">
-        <label>std::vector&lt; PrivateAction &gt;</label>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="532">
-        <label>openscenario_interpreter::syntax::Private</label>
-        <link refid="structopenscenario__interpreter_1_1syntax_1_1Private"/>
-        <childnode refid="533" relation="public-inheritance">
-        </childnode>
-        <childnode refid="534" relation="usage">
+        <childnode refid="531" relation="usage">
           <edgelabel>inner_scope</edgelabel>
         </childnode>
       </node>
-      <node id="533">
-        <label>std::vector&lt; PrivateAction &gt;</label>
-      </node>
-      <node id="534">
+      <node id="531">
         <label>openscenario_interpreter::Scope</label>
         <link refid="structopenscenario__interpreter_1_1Scope"/>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/private.hpp" line="36" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/private.hpp" bodystart="35" bodyend="56"/>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/private.hpp" line="36" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/private.hpp" bodystart="35" bodyend="59"/>
     <listofallmembers>
       <member refid="structopenscenario__interpreter_1_1syntax_1_1Private_1a58b348d8d7172f35f00445ff8ee80dfc" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Private</scope><name>evaluate</name></member>
       <member refid="structopenscenario__interpreter_1_1syntax_1_1Private_1a4f4365a2321921319f46a99939ade5cb" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Private</scope><name>inner_scope</name></member>
       <member refid="structopenscenario__interpreter_1_1syntax_1_1Private_1af7e89f8e72658e317a109705c2d3396f" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Private</scope><name>Private</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Private_1af675066d2bf754a8331c258f8ee799c8" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Private</scope><name>private_actions</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

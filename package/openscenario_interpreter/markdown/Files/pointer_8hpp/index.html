@@ -805,7 +805,7 @@
     <span class="k">using</span> <span class="n">top</span> <span class="o">=</span> <span class="n">T</span><span class="p">;</span>
 
     <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-    <span class="k">explicit</span> <span class="k">constexpr</span> <span class="n">Binder</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="o">:</span> <span class="n">Bound</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...}</span>
+    <span class="k">explicit</span> <span class="k">constexpr</span> <span class="n">Binder</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="o">:</span> <span class="n">Bound</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...)</span>
     <span class="p">{</span>
     <span class="p">}</span>
 
@@ -937,7 +937,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__POINTER_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  9 April 2021 at 00:16:11 UTC</p>
+<p>Updated on  9 April 2021 at 06:53:14 UTC</p>
                 
                   
                 

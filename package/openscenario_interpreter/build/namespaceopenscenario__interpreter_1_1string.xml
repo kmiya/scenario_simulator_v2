@@ -9,7 +9,7 @@
         <argsstring></argsstring>
         <name>cat</name>
         <initializer>= [](auto &amp;&amp;... xs) {
-  std::stringstream ss{};
+  std::stringstream ss;
 
   auto write = [](auto &amp;&amp; os, auto &amp;&amp; x) {
     os.get() &lt;&lt; x;

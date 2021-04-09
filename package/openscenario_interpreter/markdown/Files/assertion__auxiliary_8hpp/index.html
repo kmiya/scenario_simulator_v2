@@ -670,8 +670,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#define-assert_default_constructible" class="md-nav__link">
-    define ASSERT_DEFAULT_CONSTRUCTIBLE
+  <a href="#define-assert_is_optional_element" class="md-nav__link">
+    define ASSERT_IS_OPTIONAL_ELEMENT
   </a>
   
 </li>
@@ -733,13 +733,13 @@
 <tbody>
 <tr>
 <td></td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/assertion__auxiliary_8hpp#define-assert_default_constructible">ASSERT_DEFAULT_CONSTRUCTIBLE</a></strong>(TYPE)</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/assertion__auxiliary_8hpp#define-assert_is_optional_element">ASSERT_IS_OPTIONAL_ELEMENT</a></strong>(TYPE)</td>
 </tr>
 </tbody>
 </table>
 <h2 id="macro-documentation">Macro Documentation<a class="headerlink" href="#macro-documentation" title="Permanent link">#</a></h2>
-<h3 id="define-assert_default_constructible">define ASSERT_DEFAULT_CONSTRUCTIBLE<a class="headerlink" href="#define-assert_default_constructible" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#define ASSERT_DEFAULT_CONSTRUCTIBLE(</span>
+<h3 id="define-assert_is_optional_element">define ASSERT_IS_OPTIONAL_ELEMENT<a class="headerlink" href="#define-assert_is_optional_element" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#define ASSERT_IS_OPTIONAL_ELEMENT(</span>
     <span class="n">TYPE</span>
 <span class="p">)</span> <span class="k">static_assert</span><span class="p">(</span>                                   \
     <span class="n">std</span><span class="o">::</span><span class="n">is_default_constructible</span><span class="o">&lt;</span><span class="n">TYPE</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">,</span>    \
@@ -771,7 +771,7 @@
 <span class="p">{</span>
 <span class="kr">inline</span> <span class="k">namespace</span> <span class="n">utility</span>
 <span class="p">{</span>
-<span class="cp">#define ASSERT_DEFAULT_CONSTRUCTIBLE(TYPE)         \</span>
+<span class="cp">#define ASSERT_IS_OPTIONAL_ELEMENT(TYPE)           \</span>
 <span class="cp">  static_assert(                                   \</span>
 <span class="cp">    std::is_default_constructible&lt;TYPE&gt;::value,    \</span>
 <span class="cp">    &quot;OpenSCENARIO specification uses type &#39;&quot; #TYPE \</span>
@@ -783,7 +783,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__UTILITY__ASSERTION_AUXILIARY_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  9 April 2021 at 00:16:11 UTC</p>
+<p>Updated on  9 April 2021 at 06:53:14 UTC</p>
                 
                   
                 

@@ -2,21 +2,48 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="namespaceopenscenario__interpreter_1_1reader" kind="namespace" language="C++">
     <compoundname>openscenario_interpreter::reader</compoundname>
-      <sectiondef kind="var">
-      <memberdef kind="variable" id="element_8hpp_1ab64ad3c482f0679c0b2de6256f9645ea" prot="public" static="no" mutable="no">
-        <type>constexpr auto</type>
-        <definition>constexpr auto openscenario_interpreter::reader::unbounded</definition>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="element_8hpp_1a507a0e430461b41f5c43cb57398489d3" prot="public" static="no">
+        <type>pugi::xml_node</type>
+        <definition>using openscenario_interpreter::reader::XML = typedef pugi::xml_node</definition>
         <argsstring></argsstring>
-        <name>unbounded</name>
-        <initializer>{std::numeric_limits&lt;
-  typename std::iterator_traits&lt;typename pugi::xml_node::iterator&gt;::difference_type&gt;::max()}</initializer>
+        <name>XML</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" line="33" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" bodystart="33" bodyend="-1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" line="40" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="element_8hpp_1a7f9e87950f56e8199290fa1b02d80326" prot="public" static="no">
+        <type>typename std::iterator_traits&lt; typename pugi::xml_node::iterator &gt;::difference_type</type>
+        <definition>using openscenario_interpreter::reader::Cardinality = typedef typename std::iterator_traits&lt;typename pugi::xml_node::iterator&gt;::difference_type</definition>
+        <argsstring></argsstring>
+        <name>Cardinality</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" line="42" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="element_8hpp_1ab64ad3c482f0679c0b2de6256f9645ea" prot="public" static="no" mutable="no">
+        <type>constexpr auto</type>
+        <definition>constexpr auto openscenario_interpreter::reader::unbounded</definition>
+        <argsstring></argsstring>
+        <name>unbounded</name>
+        <initializer>= std::numeric_limits&lt;Cardinality&gt;::max()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" line="45" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" bodystart="45" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -153,59 +180,18 @@
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/content.hpp" line="28" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/content.hpp" bodystart="28" bodyend="32"/>
       </memberdef>
-      <memberdef kind="function" id="element_8hpp_1ae32941a29d388d7f2d79e88a3b99836e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="element_8hpp_1a7e5d1fcf30b939044c9eb214287b0435" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-          <param>
-            <type>typename Node</type>
-          </param>
-          <param>
-            <type>typename...</type>
-            <declname>Ts</declname>
-            <defname>Ts</defname>
-          </param>
-        </templateparamlist>
-        <type>auto</type>
-        <definition>auto openscenario_interpreter::reader::readElement</definition>
-        <argsstring>(const std::string &amp;name, const Node &amp;parent, Ts &amp;&amp;... xs)</argsstring>
-        <name>readElement</name>
-        <param>
-          <type>const std::string &amp;</type>
-          <declname>name</declname>
-        </param>
-        <param>
-          <type>const Node &amp;</type>
-          <declname>parent</declname>
-        </param>
-        <param>
-          <type>Ts &amp;&amp;...</type>
-          <declname>xs</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" line="37" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" bodystart="37" bodyend="44"/>
-      </memberdef>
-      <memberdef kind="function" id="element_8hpp_1aef5ff5b1d122d7ea41bf6b910f45f35f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename Node</type>
-          </param>
           <param>
             <type>typename Callee</type>
           </param>
         </templateparamlist>
         <type>void</type>
         <definition>void openscenario_interpreter::reader::callWithElements</definition>
-        <argsstring>(const Node &amp;parent, const std::string &amp;name, typename std::iterator_traits&lt; typename Node::iterator &gt;::difference_type min_occurs, typename std::iterator_traits&lt; typename Node::iterator &gt;::difference_type max_occurs, Callee &amp;&amp;call_with)</argsstring>
+        <argsstring>(const XML &amp;parent, const std::string &amp;name, const Cardinality min_occurs, const Cardinality max_occurs, Callee &amp;&amp;call_with)</argsstring>
         <name>callWithElements</name>
         <param>
-          <type>const Node &amp;</type>
+          <type>const XML &amp;</type>
           <declname>parent</declname>
         </param>
         <param>
@@ -213,11 +199,11 @@
           <declname>name</declname>
         </param>
         <param>
-          <type>typename std::iterator_traits&lt; typename Node::iterator &gt;::difference_type</type>
+          <type>const Cardinality</type>
           <declname>min_occurs</declname>
         </param>
         <param>
-          <type>typename std::iterator_traits&lt; typename Node::iterator &gt;::difference_type</type>
+          <type>const Cardinality</type>
           <declname>max_occurs</declname>
         </param>
         <param>
@@ -230,40 +216,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" line="47" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" bodystart="47" bodyend="79"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" line="48" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" bodystart="48" bodyend="75"/>
       </memberdef>
-      <memberdef kind="function" id="element_8hpp_1ad9c83540bb1c4ee5e7e8c4aea657a84b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename Node</type>
-          </param>
-          <param>
-            <type>typename...</type>
-            <declname>Ts</declname>
-            <defname>Ts</defname>
-          </param>
-        </templateparamlist>
-        <type>decltype(auto)</type>
-        <definition>decltype(auto) openscenario_interpreter::reader::choice</definition>
-        <argsstring>(const Node &amp;node, Ts &amp;&amp;... xs)</argsstring>
-        <name>choice</name>
-        <param>
-          <type>const Node &amp;</type>
-          <declname>node</declname>
-        </param>
-        <param>
-          <type>Ts &amp;&amp;...</type>
-          <declname>xs</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" line="82" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" bodystart="82" bodyend="136"/>
-      </memberdef>
-      <memberdef kind="function" id="element_8hpp_1a7828735418e3be0bef4b0df5886718ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="element_8hpp_1a5d921d2100f0ea2de4c5d7f881c9bb05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename Callee</type>
@@ -271,10 +226,10 @@
         </templateparamlist>
         <type>decltype(auto)</type>
         <definition>decltype(auto) openscenario_interpreter::reader::callWithElement</definition>
-        <argsstring>(const pugi::xml_node &amp;parent, const std::string &amp;name, Callee &amp;&amp;call_with)</argsstring>
+        <argsstring>(const XML &amp;parent, const std::string &amp;name, Callee &amp;&amp;call_with)</argsstring>
         <name>callWithElement</name>
         <param>
-          <type>const pugi::xml_node &amp;</type>
+          <type>const XML &amp;</type>
           <declname>parent</declname>
         </param>
         <param>
@@ -291,7 +246,116 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" line="139" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" bodystart="139" bodyend="143"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" line="78" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" bodystart="78" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="element_8hpp_1ad998e3ffea33688cf50b9c716ee2e7a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto openscenario_interpreter::reader::readElement</definition>
+        <argsstring>(const std::string &amp;name, const XML &amp;parent, Ts &amp;&amp;... xs)</argsstring>
+        <name>readElement</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const XML &amp;</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" line="85" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" bodystart="85" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="element_8hpp_1a550b9a398ff252e2347656b84795ba68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>Cardinality</type>
+            <declname>MinOccurs</declname>
+            <defname>MinOccurs</defname>
+          </param>
+          <param>
+            <type>Cardinality</type>
+            <declname>MaxOccurs</declname>
+            <defname>MaxOccurs</defname>
+            <defval>unbounded</defval>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto openscenario_interpreter::reader::readElements</definition>
+        <argsstring>(const std::string &amp;name, const XML &amp;node, Ts &amp;&amp;... xs)</argsstring>
+        <name>readElements</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const XML &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" line="103" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" bodystart="103" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="element_8hpp_1a96ca2eceebd904187d8e65958fa7c011" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>decltype(auto)</type>
+        <definition>decltype(auto) openscenario_interpreter::reader::choice</definition>
+        <argsstring>(const XML &amp;node, Ts &amp;&amp;... xs)</argsstring>
+        <name>choice</name>
+        <param>
+          <type>const XML &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" line="115" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/reader/element.hpp" bodystart="115" bodyend="169"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

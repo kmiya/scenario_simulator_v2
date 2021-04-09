@@ -393,12 +393,6 @@
   <compound refid="structopenscenario__interpreter_1_1type__traits_1_1IfHasStreamOutputOperator_3_01T_00_01typename6dd8cb9d972ee8d8f2f38c0833776195" kind="struct"><name>openscenario_interpreter::type_traits::IfHasStreamOutputOperator&lt; T, typename std::enable_if&lt; HasStreamOutputOperator&lt; T &gt;::value &gt;::type &gt;</name>
     <member refid="structopenscenario__interpreter_1_1type__traits_1_1IfHasStreamOutputOperator_3_01T_00_01typename6dd8cb9d972ee8d8f2f38c0833776195_1a4bd7543181e036123c6627e6db0353e8" kind="function"><name>applyIt</name></member>
   </compound>
-  <compound refid="structopenscenario__interpreter_1_1type__traits_1_1IfNotDefaultConstructible" kind="struct"><name>openscenario_interpreter::type_traits::IfNotDefaultConstructible</name>
-    <member refid="structopenscenario__interpreter_1_1type__traits_1_1IfNotDefaultConstructible_1af6af65938f9eb80d7fe670355ef4d57d" kind="function"><name>error</name></member>
-  </compound>
-  <compound refid="structopenscenario__interpreter_1_1type__traits_1_1IfNotDefaultConstructible_3_01T_00_01typenamebb0cd5b30531f79b8eb9acdb8c54d9aa" kind="struct"><name>openscenario_interpreter::type_traits::IfNotDefaultConstructible&lt; T, typename std::enable_if&lt; std::is_default_constructible&lt; T &gt;::value &gt;::type &gt;</name>
-    <member refid="structopenscenario__interpreter_1_1type__traits_1_1IfNotDefaultConstructible_3_01T_00_01typenamebb0cd5b30531f79b8eb9acdb8c54d9aa_1a1bbef159e0b1f54483c03e8f3fc7c23a" kind="function"><name>error</name></member>
-  </compound>
   <compound refid="structopenscenario__interpreter_1_1type__traits_1_1IfNotNothrowDefaultConstructible" kind="struct"><name>openscenario_interpreter::type_traits::IfNotNothrowDefaultConstructible</name>
     <member refid="structopenscenario__interpreter_1_1type__traits_1_1IfNotNothrowDefaultConstructible_1a83f42c91f0babb22255400ce2b82261d" kind="function"><name>error</name></member>
   </compound>
@@ -510,6 +504,12 @@
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1ModifyRule" kind="struct"><name>openscenario_interpreter::syntax::ModifyRule</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1ModifyRule_1ae528af21fd9fb90ffb4e1967a53b0d8a" kind="function"><name>ModifyRule</name></member>
+  </compound>
+  <compound refid="structopenscenario__interpreter_1_1type__traits_1_1MustBeDefaultConstructible" kind="struct"><name>openscenario_interpreter::type_traits::MustBeDefaultConstructible</name>
+    <member refid="structopenscenario__interpreter_1_1type__traits_1_1MustBeDefaultConstructible_1ab9bfb9fc486285b362a5bb28c5f1d683" kind="function"><name>makeItOrThrow</name></member>
+  </compound>
+  <compound refid="structopenscenario__interpreter_1_1type__traits_1_1MustBeDefaultConstructible_3_01T_00_01typenam24688f50549d7ceaf5a0e18ea75de89a" kind="struct"><name>openscenario_interpreter::type_traits::MustBeDefaultConstructible&lt; T, typename std::enable_if&lt; std::is_default_constructible&lt; T &gt;::value &gt;::type &gt;</name>
+    <member refid="structopenscenario__interpreter_1_1type__traits_1_1MustBeDefaultConstructible_3_01T_00_01typenam24688f50549d7ceaf5a0e18ea75de89a_1af124d2f3445cb779850287d2eb232098" kind="function"><name>makeItOrThrow</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1ObjectController" kind="struct"><name>openscenario_interpreter::syntax::ObjectController</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1ObjectController_1aaeb16c3284175c4278f6838a6ebb5484" kind="function"><name>ObjectController</name></member>
@@ -657,6 +657,7 @@
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1Private" kind="struct"><name>openscenario_interpreter::syntax::Private</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Private_1a4f4365a2321921319f46a99939ade5cb" kind="variable"><name>inner_scope</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1Private_1af675066d2bf754a8331c258f8ee799c8" kind="variable"><name>private_actions</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Private_1af7e89f8e72658e317a109705c2d3396f" kind="function"><name>Private</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Private_1a58b348d8d7172f35f00445ff8ee80dfc" kind="function"><name>evaluate</name></member>
   </compound>
@@ -987,6 +988,7 @@
     <member refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalController_1abfc646f242393883a6d6b684da4a2939" kind="function"><name>TrafficSignalController</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignals" kind="struct"><name>openscenario_interpreter::syntax::TrafficSignals</name>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignals_1a9a726f45c4dfb9576c1a71d97632101a" kind="variable"><name>traffic_signal_controllers</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignals_1a975e9008b0835feaf45a2adcb53772e1" kind="function"><name>TrafficSignals</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignals_1afbaf33a6f0880c0d8d1ee290c7471cef" kind="function"><name>TrafficSignals</name></member>
   </compound>
@@ -1011,7 +1013,7 @@
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Trigger_1ab20aa7a2af836c497f5c85cb52a4fa3b" kind="function"><name>evaluate</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1TriggeringEntities" kind="struct"><name>openscenario_interpreter::syntax::TriggeringEntities</name>
-    <member refid="structopenscenario__interpreter_1_1syntax_1_1TriggeringEntities_1a9cc22e82034a40dee6312e27f9dfc20c" kind="variable"><name>verify</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1TriggeringEntities_1ac7b0c97316387da29586207a42ae4067" kind="variable"><name>quantify</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1TriggeringEntities_1a9ddfb68c82ece6239b0644f81fb24a40" kind="function"><name>TriggeringEntities</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1TriggeringEntities_1a69392837dfd06f24d153833da175b041" kind="function"><name>operator()</name></member>
   </compound>
@@ -1185,15 +1187,18 @@
     <member refid="fork__exec_8hpp_1a81593877742e647579fd25dd338a2eb3" kind="function"><name>fork_exec</name></member>
   </compound>
   <compound refid="namespaceopenscenario__interpreter_1_1reader" kind="namespace"><name>openscenario_interpreter::reader</name>
+    <member refid="element_8hpp_1a507a0e430461b41f5c43cb57398489d3" kind="typedef"><name>XML</name></member>
+    <member refid="element_8hpp_1a7f9e87950f56e8199290fa1b02d80326" kind="typedef"><name>Cardinality</name></member>
     <member refid="element_8hpp_1ab64ad3c482f0679c0b2de6256f9645ea" kind="variable"><name>unbounded</name></member>
     <member refid="attribute_8hpp_1a087d7c554cbb5233a576205335fb3454" kind="function"><name>substitute</name></member>
     <member refid="attribute_8hpp_1a7150ddb1d3fd82c61238bfbc18ab9c9a" kind="function"><name>readAttribute</name></member>
     <member refid="attribute_8hpp_1a068ceef88a5d361b61ada754dc8367ed" kind="function"><name>readAttribute</name></member>
     <member refid="content_8hpp_1ae2122738b07a5fe07fb875dab26f9f96" kind="function"><name>readContent</name></member>
-    <member refid="element_8hpp_1ae32941a29d388d7f2d79e88a3b99836e" kind="function"><name>readElement</name></member>
-    <member refid="element_8hpp_1aef5ff5b1d122d7ea41bf6b910f45f35f" kind="function"><name>callWithElements</name></member>
-    <member refid="element_8hpp_1ad9c83540bb1c4ee5e7e8c4aea657a84b" kind="function"><name>choice</name></member>
-    <member refid="element_8hpp_1a7828735418e3be0bef4b0df5886718ea" kind="function"><name>callWithElement</name></member>
+    <member refid="element_8hpp_1a7e5d1fcf30b939044c9eb214287b0435" kind="function"><name>callWithElements</name></member>
+    <member refid="element_8hpp_1a5d921d2100f0ea2de4c5d7f881c9bb05" kind="function"><name>callWithElement</name></member>
+    <member refid="element_8hpp_1ad998e3ffea33688cf50b9c716ee2e7a3" kind="function"><name>readElement</name></member>
+    <member refid="element_8hpp_1a550b9a398ff252e2347656b84795ba68" kind="function"><name>readElements</name></member>
+    <member refid="element_8hpp_1a96ca2eceebd904187d8e65958fa7c011" kind="function"><name>choice</name></member>
   </compound>
   <compound refid="namespaceopenscenario__interpreter_1_1string" kind="namespace"><name>openscenario_interpreter::string</name>
     <member refid="cat_8hpp_1a33959f838ac27df323c891714fe7a128" kind="variable"><name>cat</name></member>
@@ -1253,8 +1258,8 @@
     <member refid="reference__context_8hpp_1a3c3a47047cee6004e77a40a542426375" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="relative__distance__type_8hpp_1a4c50fb21e63312da5e1cb4fa5e5e0a0d" kind="function"><name>operator&gt;&gt;</name></member>
     <member refid="relative__distance__type_8hpp_1aa54da7e35d89275e126d6af7381d1a70" kind="function"><name>operator&lt;&lt;</name></member>
-    <member refid="road__network_8hpp_1aceccbf3e95a1b300dffe8177cd4d063a" kind="function"><name>ASSERT_DEFAULT_CONSTRUCTIBLE</name></member>
-    <member refid="road__network_8hpp_1a19f85b66c2d2a4aea62fc7513993fa56" kind="function"><name>ASSERT_DEFAULT_CONSTRUCTIBLE</name></member>
+    <member refid="road__network_8hpp_1af742a4eb898e111ea5687eb86bc9f246" kind="function"><name>ASSERT_IS_OPTIONAL_ELEMENT</name></member>
+    <member refid="road__network_8hpp_1aa13984e6d854e3c4ba778c11f4f9030a" kind="function"><name>ASSERT_IS_OPTIONAL_ELEMENT</name></member>
     <member refid="route__strategy_8hpp_1a5f1e1009a7cb9887d2f0ceb88cf7b823" kind="function"><name>operator&gt;&gt;</name></member>
     <member refid="route__strategy_8hpp_1a45aeeba5a04e72fadb7cc1f2d24aaf1b" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="rule_8hpp_1aea7ed77d37507900ae0675304c64c937" kind="function"><name>operator&gt;&gt;</name></member>
@@ -1515,6 +1520,8 @@
   </compound>
   <compound refid="performance_8hpp" kind="file"><name>performance.hpp</name>
   </compound>
+  <compound refid="phase_8hpp" kind="file"><name>phase.hpp</name>
+  </compound>
   <compound refid="position_8hpp" kind="file"><name>position.hpp</name>
     <member refid="position_8hpp_1a54779976125115e9d24a1c8e23a010c9" kind="define"><name>ELEMENT</name></member>
     <member refid="position_8hpp_1aa470251fbe80466c8732a0ad6c409e3a" kind="define"><name>BOILERPLATE</name></member>
@@ -1614,6 +1621,10 @@
   </compound>
   <compound refid="traffic__signal__condition_8hpp" kind="file"><name>traffic_signal_condition.hpp</name>
   </compound>
+  <compound refid="traffic__signal__controller_8hpp" kind="file"><name>traffic_signal_controller.hpp</name>
+  </compound>
+  <compound refid="traffic__signal__state_8hpp" kind="file"><name>traffic_signal_state.hpp</name>
+  </compound>
   <compound refid="traffic__signal__state__action_8hpp" kind="file"><name>traffic_signal_state_action.hpp</name>
   </compound>
   <compound refid="traffic__signals_8hpp" kind="file"><name>traffic_signals.hpp</name>
@@ -1662,14 +1673,14 @@
   </compound>
   <compound refid="if__has__stream__output__operator_8hpp" kind="file"><name>if_has_stream_output_operator.hpp</name>
   </compound>
-  <compound refid="if__not__default__constructible_8hpp" kind="file"><name>if_not_default_constructible.hpp</name>
-  </compound>
   <compound refid="if__not__nothrow__default__constructible_8hpp" kind="file"><name>if_not_nothrow_default_constructible.hpp</name>
+  </compound>
+  <compound refid="must__be__default__constructible_8hpp" kind="file"><name>must_be_default_constructible.hpp</name>
   </compound>
   <compound refid="void__t_8hpp" kind="file"><name>void_t.hpp</name>
   </compound>
   <compound refid="assertion__auxiliary_8hpp" kind="file"><name>assertion_auxiliary.hpp</name>
-    <member refid="assertion__auxiliary_8hpp_1a2dab9b60632a8cda25329e3de7866051" kind="define"><name>ASSERT_DEFAULT_CONSTRUCTIBLE</name></member>
+    <member refid="assertion__auxiliary_8hpp_1acec90ae2f8e719deafcb416853d9ecc4" kind="define"><name>ASSERT_IS_OPTIONAL_ELEMENT</name></member>
   </compound>
   <compound refid="highlighter_8hpp" kind="file"><name>highlighter.hpp</name>
   </compound>

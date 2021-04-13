@@ -11,6 +11,7 @@
     <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1Actors" prot="public">openscenario_interpreter::syntax::Actors</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1AddEntityAction" prot="public">openscenario_interpreter::syntax::AddEntityAction</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1AdditionalAxle" prot="public">openscenario_interpreter::syntax::AdditionalAxle</innerclass>
+    <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1Arrow" prot="public">openscenario_interpreter::syntax::Arrow</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1AssignControllerAction" prot="public">openscenario_interpreter::syntax::AssignControllerAction</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1AssignRouteAction" prot="public">openscenario_interpreter::syntax::AssignRouteAction</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1Axle" prot="public">openscenario_interpreter::syntax::Axle</innerclass>
@@ -24,6 +25,7 @@
     <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1CatalogLocations" prot="public">openscenario_interpreter::syntax::CatalogLocations</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1Center" prot="public">openscenario_interpreter::syntax::Center</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1CollisionCondition" prot="public">openscenario_interpreter::syntax::CollisionCondition</innerclass>
+    <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1Color" prot="public">openscenario_interpreter::syntax::Color</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1Command" prot="public">openscenario_interpreter::syntax::Command</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1Condition" prot="public">openscenario_interpreter::syntax::Condition</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1ConditionEdge" prot="public">openscenario_interpreter::syntax::ConditionEdge</innerclass>
@@ -309,6 +311,48 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
+      <memberdef kind="function" id="arrow_8hpp_1affb2fef0f4cb36aaefb3f59cb886f940" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::istream &amp;</type>
+        <definition>std::istream &amp; openscenario_interpreter::syntax::operator&gt;&gt;</definition>
+        <argsstring>(std::istream &amp;, Arrow &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>std::istream &amp;</type>
+          <defname>is</defname>
+        </param>
+        <param>
+          <type><ref refid="structopenscenario__interpreter_1_1syntax_1_1Arrow" kindref="compound">Arrow</ref> &amp;</type>
+          <defname>datum</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/arrow.hpp" line="59" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/arrow.cpp" bodystart="23" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="arrow_8hpp_1a9d3f5dc406364f213c83b39d3b658443" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; openscenario_interpreter::syntax::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;, const Arrow &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <defname>os</defname>
+        </param>
+        <param>
+          <type>const <ref refid="structopenscenario__interpreter_1_1syntax_1_1Arrow" kindref="compound">Arrow</ref> &amp;</type>
+          <defname>datum</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/arrow.hpp" line="61" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/arrow.cpp" bodystart="45" bodyend="63"/>
+      </memberdef>
       <memberdef kind="function" id="axle_8hpp_1a5bd020705cac977481b0636d863b57cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
         <definition>std::ostream&amp; openscenario_interpreter::syntax::operator&lt;&lt;</definition>
@@ -506,6 +550,48 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/center.hpp" line="63" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/center.cpp" bodystart="22" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="color_8hpp_1a9875fdff536297bf3d30228061ecf370" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::istream &amp;</type>
+        <definition>std::istream &amp; openscenario_interpreter::syntax::operator&gt;&gt;</definition>
+        <argsstring>(std::istream &amp;, Color &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>std::istream &amp;</type>
+          <defname>is</defname>
+        </param>
+        <param>
+          <type><ref refid="structopenscenario__interpreter_1_1syntax_1_1Color" kindref="compound">Color</ref> &amp;</type>
+          <defname>datum</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/color.hpp" line="59" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/color.cpp" bodystart="23" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="color_8hpp_1a8a9838a4d5704759faff8fb879d29990" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; openscenario_interpreter::syntax::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;, const Color &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <defname>os</defname>
+        </param>
+        <param>
+          <type>const <ref refid="structopenscenario__interpreter_1_1syntax_1_1Color" kindref="compound">Color</ref> &amp;</type>
+          <defname>datum</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/color.hpp" line="61" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/color.cpp" bodystart="45" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="command_8hpp_1aa9af249064070dacb775956b6950591f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -879,7 +965,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/openscenario.hpp" line="108" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/openscenario.hpp" bodystart="108" bodyend="111"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/openscenario.hpp" line="85" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/openscenario.hpp" bodystart="85" bodyend="88"/>
       </memberdef>
       <memberdef kind="function" id="openscenario_8hpp_1a946d492c8d82057b5d8a6425ff95f866" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -906,7 +992,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/openscenario.hpp" line="108" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/openscenario.hpp" bodystart="191" bodyend="194"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/openscenario.hpp" line="85" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/openscenario.hpp" bodystart="168" bodyend="171"/>
       </memberdef>
       <memberdef kind="function" id="parameter__declaration_8hpp_1a5631e2df39464499eec4d43f4e4e0da5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -1309,38 +1395,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/relative_distance_type.hpp" line="56" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/relative_distance_type.hpp" bodystart="81" bodyend="101"/>
-      </memberdef>
-      <memberdef kind="function" id="road__network_8hpp_1af742a4eb898e111ea5687eb86bc9f246" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>openscenario_interpreter::syntax::ASSERT_IS_OPTIONAL_ELEMENT</definition>
-        <argsstring>(File)</argsstring>
-        <name>ASSERT_IS_OPTIONAL_ELEMENT</name>
-        <param>
-          <type><ref refid="structopenscenario__interpreter_1_1syntax_1_1File" kindref="compound">File</ref></type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/road_network.hpp" line="37" column="1"/>
-      </memberdef>
-      <memberdef kind="function" id="road__network_8hpp_1aa13984e6d854e3c4ba778c11f4f9030a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>openscenario_interpreter::syntax::ASSERT_IS_OPTIONAL_ELEMENT</definition>
-        <argsstring>(TrafficSignals)</argsstring>
-        <name>ASSERT_IS_OPTIONAL_ELEMENT</name>
-        <param>
-          <type><ref refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignals" kindref="compound">TrafficSignals</ref></type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/road_network.hpp" line="38" column="1"/>
       </memberdef>
       <memberdef kind="function" id="route__strategy_8hpp_1a5f1e1009a7cb9887d2f0ceb88cf7b823" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

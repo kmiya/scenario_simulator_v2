@@ -4,7 +4,7 @@
     <compoundname>openscenario_interpreter::SyntaxError</compoundname>
     <basecompoundref refid="structopenscenario__interpreter_1_1Error" prot="public" virt="non-virtual">openscenario_interpreter::Error</basecompoundref>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structopenscenario__interpreter_1_1SyntaxError_1af3425f9268bab519520b2ff034d53ebb" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1SyntaxError_1ae54191205cdab76e0647ed2a1d2fb308" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename...</type>
@@ -12,8 +12,8 @@
             <defname>Ts</defname>
           </param>
         </templateparamlist>
-        <type></type>
-        <definition>openscenario_interpreter::SyntaxError::SyntaxError</definition>
+        <type>constexpr</type>
+        <definition>constexpr openscenario_interpreter::SyntaxError::SyntaxError</definition>
         <argsstring>(Ts &amp;&amp;... xs)</argsstring>
         <name>SyntaxError</name>
         <param>
@@ -26,7 +26,30 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" line="45" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" bodystart="45" bodyend="47"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" line="47" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" bodystart="47" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1SyntaxError_1a8ffe9a3a990f283ac710cbaed59ee31e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>decltype(auto)</type>
+        <definition>static decltype(auto) openscenario_interpreter::SyntaxError::invalidValue</definition>
+        <argsstring>(const std::string &amp;type, const std::string &amp;value)</argsstring>
+        <name>invalidValue</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" line="52" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" bodystart="52" bodyend="55"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -34,43 +57,44 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="710">
+      <node id="731">
         <label>openscenario_interpreter::SyntaxError</label>
         <link refid="structopenscenario__interpreter_1_1SyntaxError"/>
-        <childnode refid="711" relation="public-inheritance">
+        <childnode refid="732" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="712">
+      <node id="733">
         <label>std::runtime_error</label>
       </node>
-      <node id="711">
+      <node id="732">
         <label>openscenario_interpreter::Error</label>
         <link refid="structopenscenario__interpreter_1_1Error"/>
-        <childnode refid="712" relation="public-inheritance">
+        <childnode refid="733" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="713">
+      <node id="734">
         <label>openscenario_interpreter::SyntaxError</label>
         <link refid="structopenscenario__interpreter_1_1SyntaxError"/>
-        <childnode refid="714" relation="public-inheritance">
+        <childnode refid="735" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="715">
+      <node id="736">
         <label>std::runtime_error</label>
       </node>
-      <node id="714">
+      <node id="735">
         <label>openscenario_interpreter::Error</label>
         <link refid="structopenscenario__interpreter_1_1Error"/>
-        <childnode refid="715" relation="public-inheritance">
+        <childnode refid="736" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" line="43" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" bodystart="42" bodyend="48"/>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" line="45" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" bodystart="44" bodyend="56"/>
     <listofallmembers>
-      <member refid="structopenscenario__interpreter_1_1Error_1aba06fc48df6088983480f8835b2debf0" prot="public" virt="non-virtual"><scope>openscenario_interpreter::SyntaxError</scope><name>Error</name></member>
-      <member refid="structopenscenario__interpreter_1_1SyntaxError_1af3425f9268bab519520b2ff034d53ebb" prot="public" virt="non-virtual"><scope>openscenario_interpreter::SyntaxError</scope><name>SyntaxError</name></member>
+      <member refid="structopenscenario__interpreter_1_1Error_1a43034fc5fae6fb536088a15849868b97" prot="public" virt="non-virtual"><scope>openscenario_interpreter::SyntaxError</scope><name>Error</name></member>
+      <member refid="structopenscenario__interpreter_1_1SyntaxError_1a8ffe9a3a990f283ac710cbaed59ee31e" prot="public" virt="non-virtual"><scope>openscenario_interpreter::SyntaxError</scope><name>invalidValue</name></member>
+      <member refid="structopenscenario__interpreter_1_1SyntaxError_1ae54191205cdab76e0647ed2a1d2fb308" prot="public" virt="non-virtual"><scope>openscenario_interpreter::SyntaxError</scope><name>SyntaxError</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

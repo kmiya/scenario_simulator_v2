@@ -909,44 +909,43 @@
 
   <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">catalog_xml</span> <span class="o">=</span>
     <span class="sa">R</span><span class="s">&quot;</span><span class="dl">(</span><span class="s">&lt;Vehicle name= &#39;vehicle.volkswagen.t2&#39; vehicleCategory=&#39;car&#39;&gt;</span>
-<span class="s">            &lt;ParameterDeclarations/&gt;</span>
-<span class="s">            &lt;Performance maxSpeed=&#39;69.444&#39; maxAcceleration=&#39;200&#39; maxDeceleration=&#39;10.0&#39;/&gt;</span>
-<span class="s">            &lt;BoundingBox&gt;</span>
-<span class="s">                &lt;Center x=&#39;1.5&#39; y=&#39;0.0&#39; z=&#39;0.9&#39;/&gt;</span>
-<span class="s">                &lt;Dimensions width=&#39;2.1&#39; length=&#39;4.5&#39; height=&#39;1.8&#39;/&gt;</span>
-<span class="s">            &lt;/BoundingBox&gt;</span>
-<span class="s">            &lt;Axles&gt;</span>
-<span class="s">                &lt;FrontAxle maxSteering=&#39;0.5&#39; wheelDiameter=&#39;0.6&#39; trackWidth=&#39;1.8&#39; positionX=&#39;3.1&#39; positionZ=&#39;0.3&#39;/&gt;</span>
-<span class="s">                &lt;RearAxle maxSteering=&#39;0.0&#39; wheelDiameter=&#39;0.6&#39; trackWidth=&#39;1.8&#39; positionX=&#39;0.0&#39; positionZ=&#39;0.3&#39;/&gt;</span>
-<span class="s">            &lt;/Axles&gt;</span>
-<span class="s">            &lt;Properties&gt;</span>
-<span class="s">                &lt;Property name=&#39;type&#39; value=&#39;ego_vehicle&#39;/&gt;</span>
-<span class="s">            &lt;/Properties&gt;</span>
-<span class="s">        &lt;/Vehicle&gt;</span><span class="dl">)</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="s">         &lt;ParameterDeclarations/&gt;</span>
+<span class="s">         &lt;Performance maxSpeed=&#39;69.444&#39; maxAcceleration=&#39;200&#39; maxDeceleration=&#39;10.0&#39;/&gt;</span>
+<span class="s">         &lt;BoundingBox&gt;</span>
+<span class="s">           &lt;Center x=&#39;1.5&#39; y=&#39;0.0&#39; z=&#39;0.9&#39;/&gt;</span>
+<span class="s">           &lt;Dimensions width=&#39;2.1&#39; length=&#39;4.5&#39; height=&#39;1.8&#39;/&gt;</span>
+<span class="s">         &lt;/BoundingBox&gt;</span>
+<span class="s">         &lt;Axles&gt;</span>
+<span class="s">           &lt;FrontAxle maxSteering=&#39;0.5&#39; wheelDiameter=&#39;0.6&#39; trackWidth=&#39;1.8&#39; positionX=&#39;3.1&#39; positionZ=&#39;0.3&#39;/&gt;</span>
+<span class="s">           &lt;RearAxle maxSteering=&#39;0.0&#39; wheelDiameter=&#39;0.6&#39; trackWidth=&#39;1.8&#39; positionX=&#39;0.0&#39; positionZ=&#39;0.3&#39;/&gt;</span>
+<span class="s">         &lt;/Axles&gt;</span>
+<span class="s">         &lt;Properties&gt;</span>
+<span class="s">           &lt;Property name=&#39;type&#39; value=&#39;ego_vehicle&#39;/&gt;</span>
+<span class="s">         &lt;/Properties&gt;</span>
+<span class="s">       &lt;/Vehicle&gt;</span><span class="dl">)</span><span class="s">&quot;</span><span class="p">;</span>
 
   <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">pedestrian_xml</span> <span class="o">=</span>
-    <span class="sa">R</span><span class="s">&quot;</span><span class="dl">(</span><span class="s"></span>
-<span class="s">    &lt;Pedestrian model=&#39;bob&#39; mass=&#39;0.0&#39; name=&#39;Bob&#39; pedestrianCategory=&#39;pedestrian&#39;&gt;</span>
-<span class="s">            &lt;BoundingBox&gt;</span>
-<span class="s">                &lt;Center x=&#39;0.0&#39; y=&#39;0.0&#39; z=&#39;0.5&#39;/&gt;</span>
-<span class="s">                &lt;Dimensions width=&#39;1.0&#39; length=&#39;1.0&#39; height=&#39;2.0&#39;/&gt;</span>
-<span class="s">            &lt;/BoundingBox&gt;</span>
-<span class="s">            &lt;Properties/&gt;</span>
-<span class="s">        &lt;/Pedestrian&gt;</span><span class="dl">)</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="sa">R</span><span class="s">&quot;</span><span class="dl">(</span><span class="s">&lt;Pedestrian model=&#39;bob&#39; mass=&#39;0.0&#39; name=&#39;Bob&#39; pedestrianCategory=&#39;pedestrian&#39;&gt;</span>
+<span class="s">         &lt;BoundingBox&gt;</span>
+<span class="s">           &lt;Center x=&#39;0.0&#39; y=&#39;0.0&#39; z=&#39;0.5&#39;/&gt;</span>
+<span class="s">           &lt;Dimensions width=&#39;1.0&#39; length=&#39;1.0&#39; height=&#39;2.0&#39;/&gt;</span>
+<span class="s">         &lt;/BoundingBox&gt;</span>
+<span class="s">         &lt;Properties/&gt;</span>
+<span class="s">       &lt;/Pedestrian&gt;</span><span class="dl">)</span><span class="s">&quot;</span><span class="p">;</span>
 <span class="p">};</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
 <span class="p">{</span>
   <span class="n">rclcpp</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
   <span class="n">rclcpp</span><span class="o">::</span><span class="n">NodeOptions</span> <span class="n">options</span><span class="p">;</span>
-  <span class="k">auto</span> <span class="n">component</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">ScenarioRunnerMoc</span><span class="o">&gt;</span><span class="p">(</span><span class="n">options</span><span class="p">);</span>
+  <span class="k">const</span> <span class="k">auto</span> <span class="n">component</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">ScenarioRunnerMoc</span><span class="o">&gt;</span><span class="p">(</span><span class="n">options</span><span class="p">);</span>
   <span class="n">rclcpp</span><span class="o">::</span><span class="n">spin</span><span class="p">(</span><span class="n">component</span><span class="p">);</span>
   <span class="n">rclcpp</span><span class="o">::</span><span class="n">shutdown</span><span class="p">();</span>
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<p>Updated on 13 April 2021 at 00:17:24 UTC</p>
+<p>Updated on 13 April 2021 at 00:55:51 UTC</p>
                 
                   
                 

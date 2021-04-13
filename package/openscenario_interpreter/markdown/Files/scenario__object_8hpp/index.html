@@ -810,7 +810,7 @@
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">apply</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">EntityObject</span> <span class="o">&amp;&gt;</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">)))</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">is</span><span class="o">&lt;</span><span class="n">Vehicle</span><span class="o">&gt;</span><span class="p">())</span> <span class="p">{</span>
-        <span class="n">setController</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">object_controller</span><span class="p">);</span>
+        <span class="n">assignController</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">object_controller</span><span class="p">);</span>
 
         <span class="k">if</span> <span class="p">(</span><span class="n">object_controller</span><span class="p">.</span><span class="n">isEgo</span><span class="p">())</span> <span class="p">{</span>
           <span class="n">attachLidarSensor</span><span class="p">(</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">helper</span><span class="o">::</span><span class="n">constructLidarConfiguration</span><span class="p">(</span>
@@ -843,7 +843,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__SCENARIO_OBJECT_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 13 April 2021 at 00:17:26 UTC</p>
+<p>Updated on 13 April 2021 at 00:55:53 UTC</p>
                 
                   
                 

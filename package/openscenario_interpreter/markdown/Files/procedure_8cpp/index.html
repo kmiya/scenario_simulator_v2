@@ -715,30 +715,11 @@
 <span class="k">static</span> <span class="k">typename</span> <span class="nc">std</span><span class="o">::</span><span class="n">aligned_storage</span><span class="o">&lt;</span>
   <span class="k">sizeof</span><span class="p">(</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">API</span><span class="p">),</span> <span class="k">alignof</span><span class="p">(</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">API</span><span class="p">)</span><span class="o">&gt;::</span><span class="n">type</span> <span class="n">memory</span><span class="p">;</span>
 
-<span class="n">traffic_simulator</span><span class="o">::</span><span class="n">API</span> <span class="o">&amp;</span> <span class="n">connection</span><span class="p">{</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">API</span> <span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">memory</span><span class="p">)};</span>
-
-<span class="c1">// static int schwarz_counter { 0 };</span>
-<span class="c1">//</span>
-<span class="c1">// Connector::Connector()</span>
-<span class="c1">// {</span>
-<span class="c1">//   if (schwarz_counter++ == 0)</span>
-<span class="c1">//   {</span>
-<span class="c1">//     new (&amp;connection) traffic_simulator::API();</span>
-<span class="c1">//   }</span>
-<span class="c1">// }</span>
-<span class="c1">//</span>
-<span class="c1">// Connector::~Connector()</span>
-<span class="c1">// {</span>
-<span class="c1">//   if (--schwarz_counter == 0)</span>
-<span class="c1">//   {</span>
-<span class="c1">//     connection.~API();</span>
-<span class="c1">//   }</span>
-<span class="c1">// }</span>
-
+<span class="n">traffic_simulator</span><span class="o">::</span><span class="n">API</span> <span class="o">&amp;</span> <span class="n">connection</span> <span class="o">=</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">API</span> <span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">memory</span><span class="p">);</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
 </code></pre></div>
 <hr />
-<p>Updated on 13 April 2021 at 00:17:26 UTC</p>
+<p>Updated on 13 April 2021 at 00:55:53 UTC</p>
                 
                   
                 

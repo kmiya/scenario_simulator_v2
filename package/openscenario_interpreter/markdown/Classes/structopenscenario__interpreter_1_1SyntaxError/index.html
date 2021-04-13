@@ -670,6 +670,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#function-invalidvalue" class="md-nav__link">
+    function invalidValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-syntaxerror" class="md-nav__link">
     function SyntaxError
   </a>
@@ -710,7 +717,11 @@
 </thead>
 <tbody>
 <tr>
-<td>template \&lt;typename... Ts></br></td>
+<td>decltype(auto)</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1SyntaxError#function-invalidvalue">invalidValue</a></strong>(const std::string &amp; type, const std::string &amp; value)</td>
+</tr>
+<tr>
+<td>template \&lt;typename... Ts></br>constexpr</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1SyntaxError#function-syntaxerror">SyntaxError</a></strong>(Ts &amp;&amp;... xs)</td>
 </tr>
 </tbody>
@@ -726,20 +737,26 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
+<td>constexpr</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Error#function-error">Error</a></strong>(Ts &amp;&amp;... xs)</td>
 </tr>
 </tbody>
 </table>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">#</a></h2>
+<h3 id="function-invalidvalue">function invalidValue<a class="headerlink" href="#function-invalidvalue" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">static</span> <span class="kr">inline</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">invalidValue</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">type</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">value</span>
+<span class="p">)</span>
+</code></pre></div>
 <h3 id="function-syntaxerror">function SyntaxError<a class="headerlink" href="#function-syntaxerror" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="kr">inline</span> <span class="k">explicit</span> <span class="n">SyntaxError</span><span class="p">(</span>
+<span class="kr">inline</span> <span class="k">explicit</span> <span class="k">constexpr</span> <span class="n">SyntaxError</span><span class="p">(</span>
     <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span>
 <span class="p">)</span>
 </code></pre></div>
 <hr />
-<p>Updated on 13 April 2021 at 00:17:26 UTC</p>
+<p>Updated on 13 April 2021 at 00:55:53 UTC</p>
                 
                   
                 

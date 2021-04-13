@@ -888,10 +888,11 @@
 
 <span class="k">namespace</span> <span class="n">openscenario_interpreter</span>
 <span class="p">{</span>
-<span class="cm">/* ---- Error ------------------------------------------------------------------</span>
+<span class="cm">/* ---- NOTE -------------------------------------------------------------------</span>
 <span class="cm"> *</span>
 <span class="cm"> *  -- Error</span>
 <span class="cm"> *      |-- SyntaxError</span>
+<span class="cm"> *      |    `-- InvalidEnumeration</span>
 <span class="cm"> *      |-- ConnectionError</span>
 <span class="cm"> *      |-- SemanticError</span>
 <span class="cm"> *      `-- ImplementationFault</span>
@@ -900,7 +901,8 @@
 <span class="k">struct</span> <span class="nc">Error</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span>
 <span class="p">{</span>
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">explicit</span> <span class="n">Error</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="o">:</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">cat</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...))</span>
+  <span class="k">explicit</span> <span class="k">constexpr</span> <span class="n">Error</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+  <span class="o">:</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">cat</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...,</span> <span class="s">&quot;.&quot;</span><span class="p">))</span>
   <span class="p">{</span>
   <span class="p">}</span>
 <span class="p">};</span>
@@ -908,33 +910,36 @@
 <span class="k">struct</span> <span class="nc">SyntaxError</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Error</span>
 <span class="p">{</span>
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">explicit</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="o">:</span> <span class="n">Error</span><span class="p">(</span><span class="s">&quot;syntax-error: &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...)</span>
+  <span class="k">explicit</span> <span class="k">constexpr</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+  <span class="o">:</span> <span class="n">Error</span><span class="p">(</span><span class="s">&quot;SyntaxError: &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...)</span>
   <span class="p">{</span>
   <span class="p">}</span>
+
+  <span class="k">static</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">invalidValue</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">type</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="nf">SyntaxError</span><span class="p">(</span><span class="s">&quot;An invalid value &#39;&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="s">&quot;&#39; was specified for type &#39;&quot;</span><span class="p">,</span> <span class="n">type</span><span class="p">);</span>
+  <span class="p">};</span>
 <span class="p">};</span>
 
 <span class="k">struct</span> <span class="nc">SemanticError</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Error</span>
 <span class="p">{</span>
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">explicit</span> <span class="n">SemanticError</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="o">:</span> <span class="n">Error</span><span class="p">(</span><span class="s">&quot;semantic-error: &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...)</span>
+  <span class="k">explicit</span> <span class="n">SemanticError</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="o">:</span> <span class="n">Error</span><span class="p">(</span><span class="s">&quot;SemanticError: &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...)</span>
   <span class="p">{</span>
   <span class="p">}</span>
 <span class="p">};</span>
 
-<span class="k">struct</span> <span class="nc">ConnectionError</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Error</span>
-<span class="p">{</span>
+<span class="k">struct</span> <span class="p">[[</span><span class="n">deprecated</span><span class="p">]]</span> <span class="nl">ConnectionError</span> <span class="p">:</span> <span class="k">public</span> <span class="n">Error</span><span class="p">{</span>
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">explicit</span> <span class="n">ConnectionError</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
-  <span class="o">:</span> <span class="n">Error</span><span class="p">(</span><span class="s">&quot;connection-error: &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...)</span>
-  <span class="p">{</span>
-  <span class="p">}</span>
+  <span class="k">explicit</span> <span class="n">ConnectionError</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="o">:</span>
+    <span class="n">Error</span><span class="p">(</span><span class="s">&quot;connection-error: &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...){}</span>
 <span class="p">};</span>
 
 <span class="k">struct</span> <span class="nc">ImplementationFault</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Error</span>
 <span class="p">{</span>
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
   <span class="k">explicit</span> <span class="n">ImplementationFault</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
-  <span class="o">:</span> <span class="n">Error</span><span class="p">(</span><span class="s">&quot;implementation-fault: &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...)</span>
+  <span class="o">:</span> <span class="n">Error</span><span class="p">(</span><span class="s">&quot;ImplementationFault: &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...)</span>
   <span class="p">{</span>
   <span class="p">}</span>
 <span class="p">};</span>
@@ -978,7 +983,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__ERROR_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 13 April 2021 at 00:17:26 UTC</p>
+<p>Updated on 13 April 2021 at 00:55:53 UTC</p>
                 
                   
                 

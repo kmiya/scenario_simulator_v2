@@ -850,7 +850,7 @@
 
   <span class="n">connect</span><span class="p">(</span>
     <span class="n">shared_from_this</span><span class="p">(),</span> <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span><span class="p">(</span><span class="n">osc_path</span><span class="p">).</span><span class="n">replace_extension</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">),</span>
-    <span class="n">script</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">OpenScenario</span><span class="o">&gt;</span><span class="p">().</span><span class="n">scope</span><span class="p">.</span><span class="n">logic_file</span><span class="p">.</span><span class="n">string</span><span class="p">());</span>  <span class="c1">// NOTE: /path/to/lanelet2_map.osm</span>
+    <span class="n">script</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">OpenScenario</span><span class="o">&gt;</span><span class="p">().</span><span class="n">scope</span><span class="p">.</span><span class="n">logic_file</span><span class="p">.</span><span class="n">string</span><span class="p">(),</span> <span class="nb">true</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>  <span class="c1">// NOTE: /path/to/lanelet2_map.osm</span>
 
   <span class="k">const</span> <span class="k">auto</span> <span class="n">interval_upper_bound</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">local_frame_rate</span> <span class="o">*</span> <span class="n">local_real_time_factor</span><span class="p">;</span>
 
@@ -922,7 +922,7 @@
 <span class="n">RCLCPP_COMPONENTS_REGISTER_NODE</span><span class="p">(</span><span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">Interpreter</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<p>Updated on 14 April 2021 at 00:14:48 UTC</p>
+<p>Updated on 14 April 2021 at 11:24:26 UTC</p>
                 
                   
                 

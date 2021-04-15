@@ -40,6 +40,8 @@
     
       <link rel="stylesheet" href="../../stylesheet/tierivcolor.css">
     
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@8.0.0/dist/mermaid.css">
+    
     
       
     
@@ -625,8 +627,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#simulation-api-package" class="md-nav__link">
-    Simulation API Package
+  <a href="#traffic-simulator-package" class="md-nav__link">
+    Traffic Simulator Package
   </a>
   
 </li>
@@ -634,6 +636,13 @@
           <li class="md-nav__item">
   <a href="#simple-sensor-simulator-package" class="md-nav__link">
     Simple Sensor Simulator Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-interface-package" class="md-nav__link">
+    Simulation Interface Package
   </a>
   
 </li>
@@ -741,8 +750,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#simulation-api-package" class="md-nav__link">
-    Simulation API Package
+  <a href="#traffic-simulator-package" class="md-nav__link">
+    Traffic Simulator Package
   </a>
   
 </li>
@@ -750,6 +759,13 @@
           <li class="md-nav__item">
   <a href="#simple-sensor-simulator-package" class="md-nav__link">
     Simple Sensor Simulator Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-interface-package" class="md-nav__link">
+    Simulation Interface Package
   </a>
   
 </li>
@@ -806,8 +822,10 @@
                 <h1 id="packages">Packages<a class="headerlink" href="#packages" title="Permanent link">#</a></h1>
 <h2 id="simulation-packages">Simulation Packages<a class="headerlink" href="#simulation-packages" title="Permanent link">#</a></h2>
 <hr />
-<h3 id="simulation-api-package">Simulation API Package<a class="headerlink" href="#simulation-api-package" title="Permanent link">#</a></h3>
-<p>Provide simulator API for scenario testing.</p>
+<h3 id="traffic-simulator-package">Traffic Simulator Package<a class="headerlink" href="#traffic-simulator-package" title="Permanent link">#</a></h3>
+<p>Traffic simulator for scenario testing.<br />
+This package includes NPC logic, API etc...</p>
+<p><img alt="traffic simulator" src="../../image/simple_demo.png" title="traffic simulator" /></p>
 <ul>
 <li><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes">Classes</a></li>
 <li><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Namespaces">Namespaces</a></li>
@@ -818,6 +836,7 @@
 </ul>
 <h3 id="simple-sensor-simulator-package">Simple Sensor Simulator Package<a class="headerlink" href="#simple-sensor-simulator-package" title="Permanent link">#</a></h3>
 <p>Reference implementation of the simulator integrated with this package.</p>
+<p><img alt="simple sensor simulator" src="../../image/simple_sensor_simulator.png" title="simple sensor simulator" /></p>
 <ul>
 <li><a href="/scenario_simulator_v2/package/simple_sensor_simulator/markdown/Classes">Classes</a></li>
 <li><a href="/scenario_simulator_v2/package/simple_sensor_simulator/markdown/Namespaces">Namespaces</a></li>
@@ -826,10 +845,20 @@
 <li><a href="/scenario_simulator_v2/package/simple_sensor_simulator/markdown/Pages">Pages</a></li>
 <li><a href="/scenario_simulator_v2/package/simple_sensor_simulator/markdown/Examples">Examples</a></li>
 </ul>
+<h3 id="simulation-interface-package">Simulation Interface Package<a class="headerlink" href="#simulation-interface-package" title="Permanent link">#</a></h3>
+<p>Packages provide interface between traffic simulator and sensor simulator.</p>
+<ul>
+<li><a href="/scenario_simulator_v2/package/simulation_interface/markdown/Classes">Classes</a></li>
+<li><a href="/scenario_simulator_v2/package/simulation_interface/markdown/Namespaces">Namespaces</a></li>
+<li><a href="/scenario_simulator_v2/package/simulation_interface/markdown/Modules">Modules</a></li>
+<li><a href="/scenario_simulator_v2/package/simulation_interface/markdown/Files">Files</a></li>
+<li><a href="/scenario_simulator_v2/package/simulation_interface/markdown/Pages">Pages</a></li>
+<li><a href="/scenario_simulator_v2/package/simulation_interface/markdown/Examples">Examples</a></li>
+</ul>
 <h2 id="openscenario-packages">OpenSCENARIO Packages<a class="headerlink" href="#openscenario-packages" title="Permanent link">#</a></h2>
 <hr />
 <h3 id="openscenario-interpreter-package">OpenSCENARIO Interpreter Package<a class="headerlink" href="#openscenario-interpreter-package" title="Permanent link">#</a></h3>
-<p>Package for parsing .xosc file and send command to the simulator via Simulation API.</p>
+<p>Package for parsing .xosc file and send command to the simulator via Traffic simulator.</p>
 <ul>
 <li><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes">Classes</a></li>
 <li><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces">Namespaces</a></li>
@@ -926,6 +955,8 @@
       <script src="../../assets/javascripts/bundle.7353b375.min.js"></script>
       
         <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
       
     
   </body>

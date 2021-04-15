@@ -712,6 +712,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-operator-autoware_perception_msgsmsgtrafficlightstate" class="md-nav__link">
+    function operator autoware_perception_msgs::msg::TrafficLightState
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-getposition" class="md-nav__link">
     function getPosition
   </a>
@@ -726,8 +733,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-getcolorphaselength" class="md-nav__link">
-    function getColorPhaseLength
+  <a href="#function-getcolorphaseduration" class="md-nav__link">
+    function getColorPhaseDuration
   </a>
   
 </li>
@@ -740,8 +747,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-getarrowphaselength" class="md-nav__link">
-    function getArrowPhaseLength
+  <a href="#function-getarrowphaseduration" class="md-nav__link">
+    function getArrowPhaseDuration
   </a>
   
 </li>
@@ -828,27 +835,31 @@
 <tbody>
 <tr>
 <td>void</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-update">update</a></strong>(double step_time)</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-update">update</a></strong>(const double step_time)</td>
 </tr>
 <tr>
-<td>void</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-setposition">setPosition</a></strong>(const TrafficLightColor &amp; color, const geometry_msgs::msg::Point &amp; position)</td>
+<td>template \&lt;typename... Ts></br>decltype(auto)</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-setposition">setPosition</a></strong>(Ts &amp;&amp;... xs)</td>
 </tr>
 <tr>
-<td>void</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-setcolorphase">setColorPhase</a></strong>(const std::vector&lt; std::pair&lt; Duration, TrafficLightColor &gt;&gt; &amp; phase, double time_offset =0)</td>
+<td>template \&lt;typename... Ts></br>decltype(auto)</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-setcolorphase">setColorPhase</a></strong>(Ts &amp;&amp;... xs)</td>
 </tr>
 <tr>
 <td>void</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-setcolor">setColor</a></strong>(TrafficLightColor color)</td>
 </tr>
 <tr>
-<td>void</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-setarrowphase">setArrowPhase</a></strong>(const std::vector&lt; std::pair&lt; Duration, TrafficLightArrow &gt;&gt; &amp; phase, double time_offset =0)</td>
+<td>template \&lt;typename... Ts></br>decltype(auto)</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-setarrowphase">setArrowPhase</a></strong>(Ts &amp;&amp;... xs)</td>
 </tr>
 <tr>
 <td>void</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-setarrow">setArrow</a></strong>(TrafficLightArrow arrow)</td>
+</tr>
+<tr>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-operator-autoware_perception_msgsmsgtrafficlightstate">operator autoware_perception_msgs::msg::TrafficLightState</a></strong>() const</td>
 </tr>
 <tr>
 <td>const geometry_msgs::msg::Point</td>
@@ -860,7 +871,7 @@
 </tr>
 <tr>
 <td>double</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-getcolorphaselength">getColorPhaseLength</a></strong>() const</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-getcolorphaseduration">getColorPhaseDuration</a></strong>() const</td>
 </tr>
 <tr>
 <td>TrafficLightColor</td>
@@ -868,18 +879,18 @@
 </tr>
 <tr>
 <td>double</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-getarrowphaselength">getArrowPhaseLength</a></strong>() const</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-getarrowphaseduration">getArrowPhaseDuration</a></strong>() const</td>
 </tr>
 <tr>
 <td>TrafficLightArrow</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-getarrow">getArrow</a></strong>() const</td>
 </tr>
 <tr>
-<td>bool</td>
+<td>auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-colorchanged">colorChanged</a></strong>() const</td>
 </tr>
 <tr>
-<td>bool</td>
+<td>auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-arrowchanged">arrowChanged</a></strong>() const</td>
 </tr>
 <tr>
@@ -906,19 +917,19 @@
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">#</a></h2>
 <h3 id="function-update">function update<a class="headerlink" href="#function-update" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">update</span><span class="p">(</span>
-    <span class="kt">double</span> <span class="n">step_time</span>
+    <span class="k">const</span> <span class="kt">double</span> <span class="n">step_time</span>
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-setposition">function setPosition<a class="headerlink" href="#function-setposition" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">setPosition</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">TrafficLightColor</span> <span class="o">&amp;</span> <span class="n">color</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="o">&amp;</span> <span class="n">position</span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="kr">inline</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">setPosition</span><span class="p">(</span>
+    <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span>
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-setcolorphase">function setColorPhase<a class="headerlink" href="#function-setcolorphase" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">setColorPhase</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span> <span class="n">Duration</span><span class="p">,</span> <span class="n">TrafficLightColor</span> <span class="o">&gt;&gt;</span> <span class="o">&amp;</span> <span class="n">phase</span><span class="p">,</span>
-    <span class="kt">double</span> <span class="n">time_offset</span> <span class="o">=</span><span class="mi">0</span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="kr">inline</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">setColorPhase</span><span class="p">(</span>
+    <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span>
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-setcolor">function setColor<a class="headerlink" href="#function-setcolor" title="Permanent link">#</a></h3>
@@ -927,15 +938,18 @@
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-setarrowphase">function setArrowPhase<a class="headerlink" href="#function-setarrowphase" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">setArrowPhase</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span> <span class="n">Duration</span><span class="p">,</span> <span class="n">TrafficLightArrow</span> <span class="o">&gt;&gt;</span> <span class="o">&amp;</span> <span class="n">phase</span><span class="p">,</span>
-    <span class="kt">double</span> <span class="n">time_offset</span> <span class="o">=</span><span class="mi">0</span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="kr">inline</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">setArrowPhase</span><span class="p">(</span>
+    <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span>
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-setarrow">function setArrow<a class="headerlink" href="#function-setarrow" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">setArrow</span><span class="p">(</span>
     <span class="n">TrafficLightArrow</span> <span class="n">arrow</span>
 <span class="p">)</span>
+</code></pre></div>
+<h3 id="function-operator-autoware_perception_msgsmsgtrafficlightstate">function operator autoware_perception_msgs::msg::TrafficLightState<a class="headerlink" href="#function-operator-autoware_perception_msgsmsgtrafficlightstate" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">explicit</span> <span class="k">operator</span> <span class="n">autoware_perception_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">TrafficLightState</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
 <h3 id="function-getposition">function getPosition<a class="headerlink" href="#function-getposition" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="n">getPosition</span><span class="p">(</span>
@@ -947,23 +961,23 @@
     <span class="k">const</span> <span class="n">TrafficLightArrow</span> <span class="o">&amp;</span> <span class="n">arrow</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-getcolorphaselength">function getColorPhaseLength<a class="headerlink" href="#function-getcolorphaselength" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">double</span> <span class="n">getColorPhaseLength</span><span class="p">()</span> <span class="k">const</span>
+<h3 id="function-getcolorphaseduration">function getColorPhaseDuration<a class="headerlink" href="#function-getcolorphaseduration" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span> <span class="n">getColorPhaseDuration</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
 <h3 id="function-getcolor">function getColor<a class="headerlink" href="#function-getcolor" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">TrafficLightColor</span> <span class="n">getColor</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
-<h3 id="function-getarrowphaselength">function getArrowPhaseLength<a class="headerlink" href="#function-getarrowphaselength" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">double</span> <span class="n">getArrowPhaseLength</span><span class="p">()</span> <span class="k">const</span>
+<h3 id="function-getarrowphaseduration">function getArrowPhaseDuration<a class="headerlink" href="#function-getarrowphaseduration" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span> <span class="n">getArrowPhaseDuration</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
 <h3 id="function-getarrow">function getArrow<a class="headerlink" href="#function-getarrow" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">TrafficLightArrow</span> <span class="n">getArrow</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
 <h3 id="function-colorchanged">function colorChanged<a class="headerlink" href="#function-colorchanged" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="n">colorChanged</span><span class="p">()</span> <span class="k">const</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">auto</span> <span class="n">colorChanged</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
 <h3 id="function-arrowchanged">function arrowChanged<a class="headerlink" href="#function-arrowchanged" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="n">arrowChanged</span><span class="p">()</span> <span class="k">const</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">auto</span> <span class="n">arrowChanged</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
 <h3 id="function-trafficlight">function TrafficLight<a class="headerlink" href="#function-trafficlight" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">explicit</span> <span class="n">TrafficLight</span><span class="p">(</span>
@@ -977,7 +991,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">id</span><span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 April 2021 at 02:12:12 UTC</p>
+<p>Updated on 15 April 2021 at 03:53:27 UTC</p>
                 
                   
                 

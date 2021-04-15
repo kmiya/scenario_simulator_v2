@@ -693,29 +693,33 @@
 </tbody>
 </table>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1">// Copyright (c) 2019 shuhei yoshida</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// MIT License</span>
+<span class="c1">//</span>
+<span class="c1">// Copyright (c) 2019 Shuhei-YOSHIDA</span>
+<span class="c1">//</span>
 <span class="c1">// Permission is hereby granted, free of charge, to any person obtaining a copy</span>
 <span class="c1">// of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
 <span class="c1">// in the Software without restriction, including without limitation the rights</span>
 <span class="c1">// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
 <span class="c1">// copies of the Software, and to permit persons to whom the Software is</span>
 <span class="c1">// furnished to do so, subject to the following conditions:</span>
-<span class="c1">// The above copyright notice and this permission notice shall be included in</span>
-<span class="c1">// all copies or substantial portions of the Software.</span>
+<span class="c1">//</span>
+<span class="c1">// The above copyright notice and this permission notice shall be included in all</span>
+<span class="c1">// copies or substantial portions of the Software.</span>
+<span class="c1">//</span>
 <span class="c1">// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
 <span class="c1">// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
-<span class="c1">// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL</span>
-<span class="c1">// THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="c1">// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="c1">// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
 <span class="c1">// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
-<span class="c1">// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
-<span class="c1">// THE SOFTWARE.</span>
+<span class="c1">// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="c1">// SOFTWARE.</span>
 
 <span class="cp">#ifndef TRAFFIC_SIMULATOR__COLOR_UTILS__COLOR_UTILS_HPP_</span>
 <span class="cp">#define TRAFFIC_SIMULATOR__COLOR_UTILS__COLOR_UTILS_HPP_</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-
 <span class="cp">#include</span> <span class="cpf">&lt;cassert&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;map&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;std_msgs/msg/color_rgba.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
@@ -730,7 +734,8 @@
 <span class="kt">void</span> <span class="nf">printCyan</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">text</span><span class="p">);</span>
 <span class="kt">void</span> <span class="nf">printWhite</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">text</span><span class="p">);</span>
 
-<span class="k">const</span> <span class="n">std_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">ColorRGBA</span> <span class="n">makeColorMsg</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">preset_name</span><span class="p">,</span> <span class="kt">double</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">);</span>
+<span class="k">const</span> <span class="n">std_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">ColorRGBA</span> <span class="n">makeColorMsg</span><span class="p">(</span>
+  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">preset_name</span><span class="p">,</span> <span class="k">const</span> <span class="kt">double</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">);</span>
 <span class="k">const</span> <span class="n">std_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">ColorRGBA</span> <span class="n">fromHsv</span><span class="p">(</span><span class="kt">double</span> <span class="n">h</span><span class="p">,</span> <span class="kt">double</span> <span class="n">s</span><span class="p">,</span> <span class="kt">double</span> <span class="n">v</span><span class="p">,</span> <span class="kt">double</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">);</span>
 
 <span class="k">const</span> <span class="n">std_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">ColorRGBA</span> <span class="n">fromRgba</span><span class="p">(</span><span class="kt">double</span> <span class="n">r</span><span class="p">,</span> <span class="kt">double</span> <span class="n">g</span><span class="p">,</span> <span class="kt">double</span> <span class="n">b</span><span class="p">,</span> <span class="kt">double</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">);</span>
@@ -884,7 +889,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__COLOR_UTILS__COLOR_UTILS_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 April 2021 at 02:12:13 UTC</p>
+<p>Updated on 15 April 2021 at 03:53:28 UTC</p>
                 
                   
                 

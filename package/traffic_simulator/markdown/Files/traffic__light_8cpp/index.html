@@ -719,69 +719,37 @@
 <span class="k">namespace</span> <span class="n">traffic_simulator</span>
 <span class="p">{</span>
 <span class="n">TrafficLight</span><span class="o">::</span><span class="n">TrafficLight</span><span class="p">(</span>
-  <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">id</span><span class="p">,</span>
+  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">id</span><span class="p">,</span>
   <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">TrafficLightColor</span><span class="p">,</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">color_positions</span><span class="p">,</span>
   <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">TrafficLightArrow</span><span class="p">,</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">arrow_positions</span><span class="p">)</span>
-<span class="o">:</span> <span class="n">id</span><span class="p">(</span><span class="n">id</span><span class="p">),</span> <span class="n">color_positions_</span><span class="p">(</span><span class="n">color_positions</span><span class="p">),</span> <span class="n">arrow_positions_</span><span class="p">(</span><span class="n">arrow_positions</span><span class="p">)</span>
+<span class="o">:</span> <span class="n">id</span><span class="p">(</span><span class="n">id</span><span class="p">),</span>
+  <span class="n">color_positions_</span><span class="p">(</span><span class="n">color_positions</span><span class="p">),</span>
+  <span class="n">arrow_positions_</span><span class="p">(</span><span class="n">arrow_positions</span><span class="p">),</span>
+  <span class="n">color_changed_</span><span class="p">(</span><span class="nb">true</span><span class="p">),</span>
+  <span class="n">arrow_changed_</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="n">color_changed_</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
   <span class="n">color_phase_</span><span class="p">.</span><span class="n">setState</span><span class="p">(</span><span class="n">TrafficLightColor</span><span class="o">::</span><span class="n">NONE</span><span class="p">);</span>
-  <span class="n">arrow_changed_</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
   <span class="n">arrow_phase_</span><span class="p">.</span><span class="n">setState</span><span class="p">(</span><span class="n">TrafficLightArrow</span><span class="o">::</span><span class="n">NONE</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="kt">void</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">setPosition</span><span class="p">(</span>
-  <span class="k">const</span> <span class="n">TrafficLightColor</span> <span class="o">&amp;</span> <span class="n">color</span><span class="p">,</span> <span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="o">&amp;</span> <span class="n">position</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="n">color_positions_</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="n">color</span><span class="p">,</span> <span class="n">position</span><span class="p">});</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">setColorPhase</span><span class="p">(</span>
-  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="n">TrafficLightColor</span><span class="o">&gt;&gt;</span> <span class="o">&amp;</span> <span class="n">phase</span><span class="p">,</span> <span class="kt">double</span> <span class="n">time_offset</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="n">color_phase_</span><span class="p">.</span><span class="n">setPhase</span><span class="p">(</span><span class="n">phase</span><span class="p">,</span> <span class="n">time_offset</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">setArrowPhase</span><span class="p">(</span>
-  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="n">TrafficLightArrow</span><span class="o">&gt;&gt;</span> <span class="o">&amp;</span> <span class="n">phase</span><span class="p">,</span> <span class="kt">double</span> <span class="n">time_offset</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="n">arrow_phase_</span><span class="p">.</span><span class="n">setPhase</span><span class="p">(</span><span class="n">phase</span><span class="p">,</span> <span class="n">time_offset</span><span class="p">);</span>
-<span class="p">}</span>
-
 <span class="kt">void</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">setColor</span><span class="p">(</span><span class="n">TrafficLightColor</span> <span class="n">color</span><span class="p">)</span> <span class="p">{</span> <span class="n">color_phase_</span><span class="p">.</span><span class="n">setState</span><span class="p">(</span><span class="n">color</span><span class="p">);</span> <span class="p">}</span>
-
 <span class="kt">void</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">setArrow</span><span class="p">(</span><span class="n">TrafficLightArrow</span> <span class="n">arrow</span><span class="p">)</span> <span class="p">{</span> <span class="n">arrow_phase_</span><span class="p">.</span><span class="n">setState</span><span class="p">(</span><span class="n">arrow</span><span class="p">);</span> <span class="p">}</span>
 
-<span class="kt">double</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">getColorPhaseLength</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">color_phase_</span><span class="p">.</span><span class="n">getPhaseLength</span><span class="p">();</span> <span class="p">}</span>
-
-<span class="kt">double</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">getArrowPhaseLength</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">arrow_phase_</span><span class="p">.</span><span class="n">getPhaseLength</span><span class="p">();</span> <span class="p">}</span>
+<span class="kt">double</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">getColorPhaseDuration</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">color_phase_</span><span class="p">.</span><span class="n">getPhaseDuration</span><span class="p">();</span> <span class="p">}</span>
+<span class="kt">double</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">getArrowPhaseDuration</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">arrow_phase_</span><span class="p">.</span><span class="n">getPhaseDuration</span><span class="p">();</span> <span class="p">}</span>
 
 <span class="n">TrafficLightArrow</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">getArrow</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">arrow_phase_</span><span class="p">.</span><span class="n">getState</span><span class="p">();</span> <span class="p">}</span>
-
 <span class="n">TrafficLightColor</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">getColor</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">color_phase_</span><span class="p">.</span><span class="n">getState</span><span class="p">();</span> <span class="p">}</span>
 
-<span class="kt">bool</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">colorChanged</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">color_changed_</span><span class="p">;</span> <span class="p">}</span>
-
-<span class="kt">bool</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">arrowChanged</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">arrow_changed_</span><span class="p">;</span> <span class="p">}</span>
-
-<span class="kt">void</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">update</span><span class="p">(</span><span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span>
+<span class="kt">void</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">update</span><span class="p">(</span><span class="k">const</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">previous_arrow</span> <span class="o">=</span> <span class="n">getArrow</span><span class="p">();</span>
   <span class="n">arrow_phase_</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">step_time</span><span class="p">);</span>
-  <span class="k">const</span> <span class="k">auto</span> <span class="n">arrow</span> <span class="o">=</span> <span class="n">getArrow</span><span class="p">();</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">previous_arrow</span> <span class="o">==</span> <span class="n">arrow</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">arrow_changed_</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n">arrow_changed_</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-  <span class="p">}</span>
+  <span class="n">arrow_changed_</span> <span class="o">=</span> <span class="p">(</span><span class="n">previous_arrow</span> <span class="o">!=</span> <span class="n">getArrow</span><span class="p">());</span>
+
   <span class="k">const</span> <span class="k">auto</span> <span class="n">previous_color</span> <span class="o">=</span> <span class="n">getColor</span><span class="p">();</span>
   <span class="n">color_phase_</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">step_time</span><span class="p">);</span>
-  <span class="k">const</span> <span class="k">auto</span> <span class="n">color</span> <span class="o">=</span> <span class="n">getColor</span><span class="p">();</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">previous_color</span> <span class="o">==</span> <span class="n">color</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">color_changed_</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n">color_changed_</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-  <span class="p">}</span>
+  <span class="n">color_changed_</span> <span class="o">=</span> <span class="p">(</span><span class="n">previous_color</span> <span class="o">!=</span> <span class="n">getColor</span><span class="p">());</span>
 <span class="p">}</span>
 
 <span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">getPosition</span><span class="p">(</span><span class="k">const</span> <span class="n">TrafficLightColor</span> <span class="o">&amp;</span> <span class="n">color</span><span class="p">)</span>
@@ -802,7 +770,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 April 2021 at 02:12:13 UTC</p>
+<p>Updated on 15 April 2021 at 03:53:28 UTC</p>
                 
                   
                 

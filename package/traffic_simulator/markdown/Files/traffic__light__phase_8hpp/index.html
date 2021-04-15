@@ -744,19 +744,21 @@
 <span class="k">class</span> <span class="nc">TrafficLightPhase</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="n">TrafficLightPhase</span><span class="p">()</span> <span class="p">{</span> <span class="n">phase_</span> <span class="o">=</span> <span class="p">{};</span> <span class="p">}</span>
-  <span class="k">explicit</span> <span class="n">TrafficLightPhase</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="n">T</span><span class="o">&gt;&gt;</span> <span class="o">&amp;</span> <span class="n">phase</span><span class="p">)</span> <span class="o">:</span> <span class="n">phase_</span><span class="p">(</span><span class="n">phase</span><span class="p">)</span> <span class="p">{}</span>
-  <span class="kt">double</span> <span class="n">getPhaseLength</span><span class="p">()</span> <span class="k">const</span>
+  <span class="n">TrafficLightPhase</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+
+  <span class="k">explicit</span> <span class="nf">TrafficLightPhase</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="n">T</span><span class="o">&gt;&gt;</span> <span class="o">&amp;</span> <span class="n">phase</span><span class="p">)</span> <span class="o">:</span> <span class="n">phase_</span><span class="p">(</span><span class="n">phase</span><span class="p">)</span> <span class="p">{}</span>
+
+  <span class="kt">double</span> <span class="nf">getPhaseDuration</span><span class="p">()</span> <span class="k">const</span>
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">phase_</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="nf">SimulationRuntimeError</span><span class="p">(</span><span class="s">&quot;phase is empty&quot;</span><span class="p">);</span>
+      <span class="k">throw</span> <span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="s">&quot;phase is empty&quot;</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">accumulate</span><span class="p">(</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">phase_</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">phase_</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="p">[](</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">lhs</span><span class="p">,</span> <span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">rhs</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">lhs</span> <span class="o">+</span> <span class="n">rhs</span><span class="p">.</span><span class="n">first</span><span class="p">;</span> <span class="p">});</span>
     <span class="p">}</span>
-    <span class="kt">double</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="nl">p</span> <span class="p">:</span> <span class="n">phase_</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">l</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="n">p</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">l</span><span class="p">;</span>
   <span class="p">}</span>
+
   <span class="k">const</span> <span class="n">T</span> <span class="n">getState</span><span class="p">()</span> <span class="k">const</span>
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">phase_</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
@@ -771,6 +773,7 @@
     <span class="p">}</span>
     <span class="k">throw</span> <span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="s">&quot;failed to get state in phase&quot;</span><span class="p">);</span>
   <span class="p">}</span>
+
   <span class="kt">void</span> <span class="n">update</span><span class="p">(</span><span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">phase_</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
@@ -778,22 +781,25 @@
       <span class="k">return</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="n">elapsed_time_</span> <span class="o">=</span> <span class="n">elapsed_time_</span> <span class="o">+</span> <span class="n">step_time</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">elapsed_time_</span> <span class="o">&gt;</span> <span class="n">getPhaseLength</span><span class="p">())</span> <span class="p">{</span>
-      <span class="n">elapsed_time_</span> <span class="o">=</span> <span class="n">elapsed_time_</span> <span class="o">-</span> <span class="n">getPhaseLength</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">elapsed_time_</span> <span class="o">&gt;</span> <span class="n">getPhaseDuration</span><span class="p">())</span> <span class="p">{</span>
+      <span class="n">elapsed_time_</span> <span class="o">=</span> <span class="n">elapsed_time_</span> <span class="o">-</span> <span class="n">getPhaseDuration</span><span class="p">();</span>
     <span class="p">}</span>
   <span class="p">}</span>
+
   <span class="kt">void</span> <span class="n">setState</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span> <span class="n">state</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="n">phase_</span> <span class="o">=</span> <span class="p">{};</span>
-    <span class="n">phase_</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">infinity</span><span class="p">(),</span> <span class="n">state</span><span class="p">));</span>
+    <span class="n">phase_</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">phase_</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">infinity</span><span class="p">(),</span> <span class="n">state</span><span class="p">);</span>
     <span class="n">elapsed_time_</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
   <span class="p">}</span>
+
   <span class="kt">void</span> <span class="n">setPhase</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="n">T</span><span class="o">&gt;&gt;</span> <span class="o">&amp;</span> <span class="n">phase</span><span class="p">,</span> <span class="kt">double</span> <span class="n">time_offset</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="n">phase_</span> <span class="o">=</span> <span class="n">phase</span><span class="p">;</span>
     <span class="n">elapsed_time_</span> <span class="o">=</span> <span class="n">time_offset</span><span class="p">;</span>
   <span class="p">}</span>
-  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="n">T</span><span class="o">&gt;&gt;</span> <span class="n">getPhase</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">phase_</span><span class="p">;</span> <span class="p">}</span>
+
+  <span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">getPhase</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">phase_</span><span class="p">;</span> <span class="p">}</span>
 
 <span class="k">private</span><span class="o">:</span>
   <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="n">T</span><span class="o">&gt;&gt;</span> <span class="n">phase_</span><span class="p">;</span>
@@ -804,7 +810,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__TRAFFIC_LIGHTS__TRAFFIC_LIGHT_PHASE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 April 2021 at 02:12:13 UTC</p>
+<p>Updated on 15 April 2021 at 03:53:28 UTC</p>
                 
                   
                 

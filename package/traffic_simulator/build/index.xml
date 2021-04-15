@@ -947,49 +947,52 @@
     <member refid="classtraffic__simulator_1_1TrafficLight_1aaa704433cb07c63392525dfd2f046a20" kind="variable"><name>color_changed_</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLight_1aece1ac7afa903302f999ad9fa06f0fd6" kind="variable"><name>arrow_changed_</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLight_1a320cf0ebf8184d5106fdc3e28a28b6cd" kind="function"><name>TrafficLight</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLight_1ae49998f69343d6e4d28168b8999c352e" kind="function"><name>setColorPhase</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLight_1ae6f370cfa9d539ffc477b4e794cc3809" kind="function"><name>setArrowPhase</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLight_1a0d2b03f827383d5349f1c4888dc7cb6e" kind="function"><name>setColorPhase</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLight_1a554836df3750694631149caf6e05c10a" kind="function"><name>setArrowPhase</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLight_1acdf978fecd50a112245a08c81d7922cc" kind="function"><name>setColor</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLight_1aeaf9833b232a7d34425dc0fdbd256bb5" kind="function"><name>setArrow</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLight_1aaa4b7950cb3a408576545cb93aaa9150" kind="function"><name>getColorPhaseLength</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLight_1a1a2c58a3493bc35bc0fb379bb4048715" kind="function"><name>getArrowPhaseLength</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLight_1a9aa2e5a17b2998636ec999573e37b6b8" kind="function"><name>update</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLight_1adb7c1c91149fd013b05fd45ed5c5f5a0" kind="function"><name>getColorPhaseDuration</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLight_1ab91996294d3794d5f08a8888c0e1e816" kind="function"><name>getArrowPhaseDuration</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLight_1aff30b1fe011f1ffcbe805d390bbe200a" kind="function"><name>update</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLight_1a4087f2b89efe5ea62f7b1247cd706277" kind="function"><name>getArrow</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLight_1afb837b5eaa6c21dd4e54ccaab0ca054b" kind="function"><name>getColor</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLight_1aba651d8243d0927aecb9860d288c97a1" kind="function"><name>getPosition</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLight_1a4643f2f23d630d0f77a8ab7ef353d149" kind="function"><name>setPosition</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLight_1a4a71a8ce3fb7aa3896ec6141d3c7b396" kind="function"><name>getPosition</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLight_1a2312cacf2e6d388fcb07ea316df7f086" kind="function"><name>colorChanged</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLight_1a0a858c82a4a382315a73a5d551c6135f" kind="function"><name>arrowChanged</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLight_1abb09cf448da8b56ec45fe352910f5e96" kind="function"><name>setPosition</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLight_1aa82ece64ae945b572da9f395fca21119" kind="function"><name>colorChanged</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLight_1a7250bfc0799edc929cdd0dce8a598970" kind="function"><name>arrowChanged</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLight_1a06b9245800f116e3b23a8f993328f3ef" kind="function"><name>operator autoware_perception_msgs::msg::TrafficLightState</name></member>
   </compound>
   <compound refid="classtraffic__simulator_1_1TrafficLightManager" kind="class"><name>traffic_simulator::TrafficLightManager</name>
+    <member refid="classtraffic__simulator_1_1TrafficLightManager_1a68c37368e18e6309286ead5fdc185b56" kind="variable"><name>traffic_light_state_array_publisher_</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLightManager_1aec767126034d8347f4035f6468e9a414" kind="variable"><name>traffic_lights_</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLightManager_1a49d6f0e5d43889d38a40a400c85adec9" kind="variable"><name>marker_pub_</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLightManager_1a5cc0edc63897bc42afabfd00638a4a7a" kind="variable"><name>clock_ptr_</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLightManager_1ab87407e26ce6922ee6680a5291f14d5f" kind="variable"><name>map_frame_</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLightManager_1a4893ecec34c9a223af9ed12426c32636" kind="function"><name>TrafficLightManager</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLightManager_1a6ac7e71a3a1d2a76b550cde38d53c831" kind="function"><name>update</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLightManager_1a33d4f8f10a6a827c80ec92f09fc2dcf8" kind="function"><name>setColorPhase</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLightManager_1ab32797775eb9cd7c0711d33328b8581e" kind="function"><name>setArrowPhase</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLightManager_1ab37f1f1975e037837ee60f32dc6c1263" kind="function"><name>setColor</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLightManager_1a6da3f5b9dbd1a15f91b32c17ec8676df" kind="function"><name>setArrow</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLightManager_1a8627bf77fecf09c18397902f3081d810" kind="function"><name>getColor</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLightManager_1a88ee2156984e446445d0d3bce1ed6ee9" kind="function"><name>getArrow</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLightManager_1a50826927f5f809702a0e4af72f6187d6" kind="function"><name>TrafficLightManager</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLightManager_1a7eb747f2af2c6a3abeaf2efd0d571edd" kind="function"><name>update</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLightManager_1aca3fcc350e6e09fe19ed08055dbf48e5" kind="function"><name>FORWARD_TO_GIVEN_TRAFFIC_LIGHT</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLightManager_1a69bbf63b3db409636f375ae853139a26" kind="function"><name>FORWARD_TO_GIVEN_TRAFFIC_LIGHT</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLightManager_1a3f2ed46dae12a2659d9ee95ca317554e" kind="function"><name>FORWARD_TO_GIVEN_TRAFFIC_LIGHT</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLightManager_1a17e5b71b20f28cb1d75b1ee4eec85d06" kind="function"><name>FORWARD_TO_GIVEN_TRAFFIC_LIGHT</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLightManager_1a7a0693cf03483b66843e4328429da18f" kind="function"><name>FORWARD_TO_GIVEN_TRAFFIC_LIGHT</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLightManager_1a986bed010e1def882ebee72a745aa0f0" kind="function"><name>FORWARD_TO_GIVEN_TRAFFIC_LIGHT</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLightManager_1a03e9c8080fee226d5aaaf4ed1a438df4" kind="function"><name>getIds</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLightManager_1a1647cb11233f4702370a9c638073363b" kind="function"><name>deleteAllMarkers</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLightManager_1af8c9bccc1ca577b0c896c7dcba0d4205" kind="function"><name>drawMarkers</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLightManager_1a568dd8a2994404f4482b57db0f2f63a6" kind="function"><name>publishTrafficLightStateArray</name></member>
   </compound>
   <compound refid="classtraffic__simulator_1_1TrafficLightPhase" kind="class"><name>traffic_simulator::TrafficLightPhase</name>
     <member refid="classtraffic__simulator_1_1TrafficLightPhase_1a35394ac65f51bd138b3a2cde22a8f292" kind="variable"><name>phase_</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLightPhase_1aa2249ecc977ac29438d71054c7041429" kind="variable"><name>elapsed_time_</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLightPhase_1ab9c94f5efc5b8557eeedef45c2b19775" kind="function"><name>TrafficLightPhase</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLightPhase_1a5f4609656cd404179a545f0770cb8ba5" kind="function"><name>TrafficLightPhase</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLightPhase_1aa09103051a6f96bb36bb0ef2824dd250" kind="function"><name>TrafficLightPhase</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLightPhase_1ab7998c3c496d6a0dec825109fa2a80b0" kind="function"><name>getPhaseLength</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLightPhase_1a1f0856f126f784ad0e7b6e0098efe21b" kind="function"><name>getPhaseDuration</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLightPhase_1a1eaf2441544ef09a6639ec0d6551c9a8" kind="function"><name>getState</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLightPhase_1a280eb65e6c1bffa0ff0901b7d5fd0aab" kind="function"><name>update</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLightPhase_1a53ee26f06e0359d422ef5a906c2c1d80" kind="function"><name>setState</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLightPhase_1a6c62d0ad38ddf1ce67d6782a2fdabb37" kind="function"><name>setPhase</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLightPhase_1a012ff1a4c66d7ce7dafb51e0257675b5" kind="function"><name>getPhase</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLightPhase_1adf7c26fe70d9befefe8f44f98cf6198b" kind="function"><name>getPhase</name></member>
   </compound>
   <compound refid="classtraffic__simulator_1_1traffic_1_1TrafficSink" kind="class"><name>traffic_simulator::traffic::TrafficSink</name>
     <member refid="classtraffic__simulator_1_1traffic_1_1TrafficSink_1ae78424881ae5a3754a2368e876b4faa9" kind="variable"><name>radius</name></member>
@@ -1087,7 +1090,7 @@
     <member refid="color__utils_8hpp_1aa8dfdbe020cec8189e71d2f6d8af9450" kind="function"><name>printMagenta</name></member>
     <member refid="color__utils_8hpp_1a38f9a4512ef2bcbd2034341fe174195d" kind="function"><name>printCyan</name></member>
     <member refid="color__utils_8hpp_1a659f57b5b0c414855d07c025468e04c6" kind="function"><name>printWhite</name></member>
-    <member refid="color__utils_8hpp_1a84ac830865680a32f2e2436b671ca9c2" kind="function"><name>makeColorMsg</name></member>
+    <member refid="color__utils_8hpp_1aba0472ad57928889181d0cf9f288f667" kind="function"><name>makeColorMsg</name></member>
     <member refid="color__utils_8hpp_1a34d5d22860dbb7787d6e44c06e1872b4" kind="function"><name>fromHsv</name></member>
     <member refid="color__utils_8hpp_1aab9f6357e443657ce601540cc503126a" kind="function"><name>fromRgba</name></member>
   </compound>
@@ -1122,6 +1125,12 @@
     <member refid="dummy_1a5a733e3579f89238c27c1532518af813a8c5e50fab3748e9c53a6863b3dce1401" kind="enumvalue"><name>STRAIGHT</name></member>
     <member refid="dummy_1a5a733e3579f89238c27c1532518af813a684d325a7303f52e64011467ff5c5758" kind="enumvalue"><name>LEFT</name></member>
     <member refid="dummy_1a5a733e3579f89238c27c1532518af813a21507b40c80068eda19865706fdc2403" kind="enumvalue"><name>RIGHT</name></member>
+    <member refid="traffic__light__state_8hpp_1a62b4b2766c597b2674f91567655b7235" kind="function"><name>operator&gt;&gt;</name></member>
+    <member refid="traffic__light__state_8hpp_1a1a52e3e1ab6c2fba260837260d61f370" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="traffic__light__state_8hpp_1ad1e7b1ef6f59a134d56ffabdc3d9c608" kind="function"><name>makeLampState</name></member>
+    <member refid="traffic__light__state_8hpp_1a4d6a05e41e362a65242e5f58e3d0393c" kind="function"><name>operator&gt;&gt;</name></member>
+    <member refid="traffic__light__state_8hpp_1af5e7d1109b1a701de175834e47170587" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="traffic__light__state_8hpp_1a13be641911af33072c58d28b622ede73" kind="function"><name>makeLampState</name></member>
   </compound>
   <compound refid="namespacetraffic__simulator_1_1entity" kind="namespace"><name>traffic_simulator::entity</name>
     <member refid="entity__base_8hpp_1ab6ba6fbc387fc75d84fcb72bfaa1791c" kind="enum"><name>Direction</name></member>
@@ -1256,6 +1265,7 @@
   <compound refid="traffic__light_8hpp" kind="file"><name>traffic_light.hpp</name>
   </compound>
   <compound refid="traffic__light__manager_8hpp" kind="file"><name>traffic_light_manager.hpp</name>
+    <member refid="traffic__light__manager_8hpp_1ac9f3373e33307d703d3a9702d61caec3" kind="define"><name>FORWARD_TO_GIVEN_TRAFFIC_LIGHT</name></member>
   </compound>
   <compound refid="traffic__light__phase_8hpp" kind="file"><name>traffic_light_phase.hpp</name>
   </compound>
@@ -1356,6 +1366,8 @@
   <compound refid="traffic__light_8cpp" kind="file"><name>traffic_light.cpp</name>
   </compound>
   <compound refid="traffic__light__manager_8cpp" kind="file"><name>traffic_light_manager.cpp</name>
+  </compound>
+  <compound refid="traffic__light__state_8cpp" kind="file"><name>traffic_light_state.cpp</name>
   </compound>
   <compound refid="sim__model__ideal_8cpp" kind="file"><name>sim_model_ideal.cpp</name>
   </compound>

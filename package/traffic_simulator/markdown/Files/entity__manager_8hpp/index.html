@@ -999,12 +999,12 @@
 
     <span class="n">updateHdmapMarker</span><span class="p">();</span>
 
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">traffic_light_marker_pub</span> <span class="o">=</span> <span class="n">rclcpp</span><span class="o">::</span><span class="n">create_publisher</span><span class="o">&lt;</span><span class="n">MarkerArray</span><span class="o">&gt;</span><span class="p">(</span>
-      <span class="n">node</span><span class="p">,</span> <span class="s">&quot;traffic_light/marker&quot;</span><span class="p">,</span> <span class="n">LaneletMarkerQoS</span><span class="p">(),</span>
-      <span class="n">rclcpp</span><span class="o">::</span><span class="n">PublisherOptionsWithAllocator</span><span class="o">&lt;</span><span class="n">AllocatorT</span><span class="o">&gt;</span><span class="p">());</span>
-
-    <span class="n">traffic_light_manager_ptr_</span> <span class="o">=</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">TrafficLightManager</span><span class="o">&gt;</span><span class="p">(</span><span class="n">hdmap_utils_ptr_</span><span class="p">,</span> <span class="n">traffic_light_marker_pub</span><span class="p">,</span> <span class="n">clock_ptr_</span><span class="p">);</span>
+    <span class="n">traffic_light_manager_ptr_</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">TrafficLightManager</span><span class="o">&gt;</span><span class="p">(</span>
+      <span class="n">hdmap_utils_ptr_</span><span class="p">,</span>
+      <span class="n">rclcpp</span><span class="o">::</span><span class="n">create_publisher</span><span class="o">&lt;</span><span class="n">MarkerArray</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s">&quot;traffic_light/marker&quot;</span><span class="p">,</span> <span class="n">LaneletMarkerQoS</span><span class="p">()),</span>
+      <span class="n">rclcpp</span><span class="o">::</span><span class="n">create_publisher</span><span class="o">&lt;</span><span class="n">autoware_perception_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">TrafficLightStateArray</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="n">node</span><span class="p">,</span> <span class="s">&quot;/awapi/traffic_light/put/traffic_light_status&quot;</span><span class="p">,</span> <span class="n">rclcpp</span><span class="o">::</span><span class="n">QoS</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="n">transient_local</span><span class="p">()),</span>
+      <span class="n">clock_ptr_</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="o">~</span><span class="n">EntityManager</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
@@ -1180,7 +1180,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__ENTITY__ENTITY_MANAGER_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 April 2021 at 02:12:13 UTC</p>
+<p>Updated on 15 April 2021 at 03:53:28 UTC</p>
                 
                   
                 

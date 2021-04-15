@@ -707,6 +707,7 @@
 <span class="c1">// See the License for the specific language governing permissions and</span>
 <span class="c1">// limitations under the License.</span>
 
+<span class="cp">#include</span> <span class="cpf">&lt;boost/algorithm/clamp.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/color_utils/color_utils.hpp&gt;</span><span class="cp"></span>
@@ -810,16 +811,10 @@
   <span class="k">return</span> <span class="n">color</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">const</span> <span class="n">std_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">ColorRGBA</span> <span class="n">makeColorMsg</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">preset_name</span><span class="p">,</span> <span class="kt">double</span> <span class="n">alpha</span><span class="p">)</span>
+<span class="k">const</span> <span class="n">std_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">ColorRGBA</span> <span class="n">makeColorMsg</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">preset_name</span><span class="p">,</span> <span class="k">const</span> <span class="kt">double</span> <span class="n">alpha</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="n">std_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">ColorRGBA</span> <span class="n">c_msg</span><span class="p">;</span>
-  <span class="n">c_msg</span><span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">;</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">c_msg</span><span class="p">.</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mf">0.</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">c_msg</span><span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">c_msg</span><span class="p">.</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mf">1.</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">c_msg</span><span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">;</span>
-  <span class="p">}</span>
+  <span class="n">c_msg</span><span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">boost</span><span class="o">::</span><span class="n">algorithm</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">);</span>
 
   <span class="k">auto</span> <span class="n">found_itr</span> <span class="o">=</span> <span class="n">COLOR_NAME_DICT</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">preset_name</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">found_itr</span> <span class="o">!=</span> <span class="n">COLOR_NAME_DICT</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">{</span>
@@ -836,7 +831,7 @@
 <span class="p">}</span>  <span class="c1">// namespace color_utils</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 April 2021 at 02:12:13 UTC</p>
+<p>Updated on 15 April 2021 at 03:53:28 UTC</p>
                 
                   
                 

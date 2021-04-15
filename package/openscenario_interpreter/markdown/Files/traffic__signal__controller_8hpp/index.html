@@ -662,6 +662,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#defines" class="md-nav__link">
+    Defines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macro-documentation" class="md-nav__link">
+    Macro Documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Macro Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define-debug_value" class="md-nav__link">
+    define DEBUG_VALUE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-debug_line" class="md-nav__link">
+    define DEBUG_LINE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#source-code" class="md-nav__link">
     Source code
   </a>
@@ -717,6 +751,36 @@
 </tr>
 </tbody>
 </table>
+<h2 id="defines">Defines<a class="headerlink" href="#defines" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/traffic__signal__controller_8hpp#define-debug_value">DEBUG_VALUE</a></strong>(...)</td>
+</tr>
+<tr>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/traffic__signal__controller_8hpp#define-debug_line">DEBUG_LINE</a></strong>()</td>
+</tr>
+</tbody>
+</table>
+<h2 id="macro-documentation">Macro Documentation<a class="headerlink" href="#macro-documentation" title="Permanent link">#</a></h2>
+<h3 id="define-debug_value">define DEBUG_VALUE<a class="headerlink" href="#define-debug_value" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#define DEBUG_VALUE(</span>
+    <span class="p">...</span>
+<span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[32m&quot;</span> <span class="err">#</span><span class="n">__VA_ARGS__</span> <span class="s">&quot; = &quot;</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">__VA_ARGS__</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[0m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span>
+</code></pre></div>
+<h3 id="define-debug_line">define DEBUG_LINE<a class="headerlink" href="#define-debug_line" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#define DEBUG_LINE(</span>
+
+<span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[32m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">__FILE__</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">__LINE__</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[0m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span>
+</code></pre></div>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">// Copyright 2015-2020 Tier IV, Inc. All rights reserved.</span>
 <span class="c1">//</span>
@@ -739,6 +803,12 @@
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/double.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/phase.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/string.hpp&gt;</span><span class="cp"></span>
+
+<span class="cp">#define DEBUG_VALUE(...) \</span>
+<span class="cp">  std::cout &lt;&lt; &quot;\x1b[32m&quot; #__VA_ARGS__ &quot; = &quot; &lt;&lt; (__VA_ARGS__) &lt;&lt; &quot;\x1b[0m&quot; &lt;&lt; std::endl</span>
+
+<span class="cp">#define DEBUG_LINE() \</span>
+<span class="cp">  std::cout &lt;&lt; &quot;\x1b[32m&quot; &lt;&lt; __FILE__ &lt;&lt; &quot;:&quot; &lt;&lt; __LINE__ &lt;&lt; &quot;\x1b[0m&quot; &lt;&lt; std::endl</span>
 
 <span class="k">namespace</span> <span class="n">openscenario_interpreter</span>
 <span class="p">{</span>
@@ -814,15 +884,8 @@
   <span class="k">auto</span> <span class="nf">evaluate</span><span class="p">()</span>
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">theDurationExeeded</span><span class="p">())</span> <span class="p">{</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[31mTHE DURATION EXEEDED!</span><span class="se">\x1b</span><span class="s">[0m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
       <span class="n">std</span><span class="o">::</span><span class="n">advance</span><span class="p">(</span><span class="n">current_phase</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[31mADVANCE CURSOR</span><span class="se">\x1b</span><span class="s">[0m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-      <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[31mRESET START TIME</span><span class="se">\x1b</span><span class="s">[0m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
       <span class="n">current_phase_started_at</span> <span class="o">=</span> <span class="n">getCurrentTime</span><span class="p">();</span>
-
-      <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[31mOVERWRITE CURRENT PHASE WITH THE NEXT PHASE!</span><span class="se">\x1b</span><span class="s">[0m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
       <span class="p">(</span><span class="o">*</span><span class="n">current_phase</span><span class="p">).</span><span class="n">evaluate</span><span class="p">();</span>
     <span class="p">}</span>
 
@@ -835,7 +898,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__TRAFFIC_SIGNAL_CONTROLLER_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 April 2021 at 02:12:15 UTC</p>
+<p>Updated on 15 April 2021 at 03:53:30 UTC</p>
                 
                   
                 

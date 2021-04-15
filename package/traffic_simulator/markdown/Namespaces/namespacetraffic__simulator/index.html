@@ -669,6 +669,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#types-documentation" class="md-nav__link">
     Types Documentation
   </a>
@@ -686,6 +693,61 @@
           <li class="md-nav__item">
   <a href="#enum-trafficlightarrow" class="md-nav__link">
     enum TrafficLightArrow
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions-documentation" class="md-nav__link">
+    Functions Documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-operator" class="md-nav__link">
+    function operator&gt;&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-operator_1" class="md-nav__link">
+    function operator&gt;&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-operator_2" class="md-nav__link">
+    function operator&lt;&lt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-operator_3" class="md-nav__link">
+    function operator&lt;&lt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-makelampstate" class="md-nav__link">
+    function makeLampState
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-makelampstate_1" class="md-nav__link">
+    function makeLampState
   </a>
   
 </li>
@@ -797,6 +859,41 @@
 </tr>
 </tbody>
 </table>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>std::istream &amp;</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Namespaces/namespacetraffic__simulator#function-operator&gt;&gt;">operator&gt;&gt;</a></strong>(std::istream &amp; is, TrafficLightColor &amp; datum)</td>
+</tr>
+<tr>
+<td>std::istream &amp;</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Namespaces/namespacetraffic__simulator#function-operator&gt;&gt;">operator&gt;&gt;</a></strong>(std::istream &amp; is, TrafficLightArrow &amp; datum)</td>
+</tr>
+<tr>
+<td>std::ostream &amp;</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Namespaces/namespacetraffic__simulator#function-operator&lt;&lt;">operator&lt;&lt;</a></strong>(std::ostream &amp; os, const TrafficLightColor &amp; datum)</td>
+</tr>
+<tr>
+<td>std::ostream &amp;</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Namespaces/namespacetraffic__simulator#function-operator&lt;&lt;">operator&lt;&lt;</a></strong>(std::ostream &amp; os, const TrafficLightArrow &amp; datum)</td>
+</tr>
+<tr>
+<td>autoware_perception_msgs::msg::LampState</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Namespaces/namespacetraffic__simulator#function-makelampstate">makeLampState</a></strong>(const TrafficLightColor &amp; datum)</td>
+</tr>
+<tr>
+<td>autoware_perception_msgs::msg::LampState</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Namespaces/namespacetraffic__simulator#function-makelampstate">makeLampState</a></strong>(const TrafficLightArrow &amp; datum)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="types-documentation">Types Documentation<a class="headerlink" href="#types-documentation" title="Permanent link">#</a></h2>
 <h3 id="enum-trafficlightcolor">enum TrafficLightColor<a class="headerlink" href="#enum-trafficlightcolor" title="Permanent link">#</a></h3>
 <table>
@@ -862,8 +959,43 @@
 </tr>
 </tbody>
 </table>
+<h2 id="functions-documentation">Functions Documentation<a class="headerlink" href="#functions-documentation" title="Permanent link">#</a></h2>
+<h3 id="function-operator">function operator&gt;&gt;<a class="headerlink" href="#function-operator" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="n">is</span><span class="p">,</span>
+    <span class="n">TrafficLightColor</span> <span class="o">&amp;</span> <span class="n">datum</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-operator_1">function operator&gt;&gt;<a class="headerlink" href="#function-operator_1" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="n">is</span><span class="p">,</span>
+    <span class="n">TrafficLightArrow</span> <span class="o">&amp;</span> <span class="n">datum</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-operator_2">function operator&lt;&lt;<a class="headerlink" href="#function-operator_2" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">TrafficLightColor</span> <span class="o">&amp;</span> <span class="n">datum</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-operator_3">function operator&lt;&lt;<a class="headerlink" href="#function-operator_3" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">TrafficLightArrow</span> <span class="o">&amp;</span> <span class="n">datum</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-makelampstate">function makeLampState<a class="headerlink" href="#function-makelampstate" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">autoware_perception_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LampState</span> <span class="n">makeLampState</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">TrafficLightColor</span> <span class="o">&amp;</span> <span class="n">datum</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-makelampstate_1">function makeLampState<a class="headerlink" href="#function-makelampstate_1" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">autoware_perception_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LampState</span> <span class="n">makeLampState</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">TrafficLightArrow</span> <span class="o">&amp;</span> <span class="n">datum</span>
+<span class="p">)</span>
+</code></pre></div>
 <hr />
-<p>Updated on 15 April 2021 at 02:12:12 UTC</p>
+<p>Updated on 15 April 2021 at 03:53:27 UTC</p>
                 
                   
                 

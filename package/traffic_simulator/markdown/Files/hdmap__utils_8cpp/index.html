@@ -1212,6 +1212,18 @@
     <span class="n">p</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">point</span><span class="p">.</span><span class="n">z</span><span class="p">();</span>
     <span class="n">ret</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
   <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ret</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">p0</span> <span class="o">=</span> <span class="n">ret</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">ret</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="n">p1</span><span class="p">;</span>
+    <span class="n">p1</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">p0</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">p2</span><span class="p">.</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">;</span>
+    <span class="n">p1</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">p0</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">p2</span><span class="p">.</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">;</span>
+    <span class="n">p1</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">p0</span><span class="p">.</span><span class="n">z</span> <span class="o">+</span> <span class="n">p2</span><span class="p">.</span><span class="n">z</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">;</span>
+    <span class="n">ret</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">ret</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">p0</span><span class="p">);</span>
+    <span class="n">ret</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">p1</span><span class="p">);</span>
+    <span class="n">ret</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">p2</span><span class="p">);</span>
+  <span class="p">}</span>
   <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -1963,7 +1975,7 @@
 <span class="p">}</span>  <span class="c1">// namespace hdmap_utils</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 April 2021 at 03:53:28 UTC</p>
+<p>Updated on 15 April 2021 at 04:52:37 UTC</p>
                 
                   
                 

@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacezeromq" kind="namespace" language="C++">
+    <compoundname>zeromq</compoundname>
+    <innerclass refid="classzeromq_1_1Client" prot="public">zeromq::Client</innerclass>
+    <innerclass refid="classzeromq_1_1MultiServer" prot="public">zeromq::MultiServer</innerclass>
+    <innerclass refid="classzeromq_1_1Server" prot="public">zeromq::Server</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="zmq__multi__server_8cpp_1a48966c004b9f11c90bcc6e31b28e1ee7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Proto</type>
+          </param>
+        </templateparamlist>
+        <type>zmqpp::message</type>
+        <definition>zmqpp::message zeromq::toZMQ</definition>
+        <argsstring>(const Proto &amp;proto)</argsstring>
+        <name>toZMQ</name>
+        <param>
+          <type>const Proto &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/zmq_multi_server.cpp" line="21" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/zmq_multi_server.cpp" bodystart="21" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="zmq__multi__server_8cpp_1a11d0d132328169ac3dff4db8987d8577" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Proto</type>
+          </param>
+        </templateparamlist>
+        <type>Proto</type>
+        <definition>Proto zeromq::toProto</definition>
+        <argsstring>(const zmqpp::message &amp;msg)</argsstring>
+        <name>toProto</name>
+        <param>
+          <type>const zmqpp::message &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/zmq_multi_server.cpp" line="31" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/zmq_multi_server.cpp" bodystart="31" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_client.hpp" line="27" column="1"/>
+  </compounddef>
+</doxygen>

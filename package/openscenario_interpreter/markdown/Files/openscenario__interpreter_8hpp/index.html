@@ -869,6 +869,8 @@
 
     <span class="k">using</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">SemanticError</span><span class="p">;</span>
 
+    <span class="k">using</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">SyntaxError</span><span class="p">;</span>
+
     <span class="k">using</span> <span class="n">InternalError</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="p">;</span>
 
     <span class="k">try</span> <span class="p">{</span>
@@ -894,6 +896,7 @@
     <span class="n">CATCH</span><span class="p">(</span><span class="n">AutowareError</span><span class="p">)</span>
     <span class="n">CATCH</span><span class="p">(</span><span class="n">ImplementationFault</span><span class="p">)</span>
     <span class="n">CATCH</span><span class="p">(</span><span class="n">SemanticError</span><span class="p">)</span>
+    <span class="n">CATCH</span><span class="p">(</span><span class="n">SyntaxError</span><span class="p">)</span>
 
     <span class="n">CATCH</span><span class="p">(</span><span class="n">InternalError</span><span class="p">)</span>
 
@@ -925,7 +928,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__OPENSCENARIO_INTERPRETER_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 19 April 2021 at 00:15:38 UTC</p>
+<p>Updated on 19 April 2021 at 03:02:06 UTC</p>
                 
                   
                 

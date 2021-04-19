@@ -754,7 +754,7 @@
 <span class="cm"> *  &lt;/xsd:complexType&gt;</span>
 <span class="cm"> *</span>
 <span class="cm"> * -------------------------------------------------------------------------- */</span>
-<span class="k">struct</span> <span class="nc">Trigger</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ConditionGroup</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="nc">Trigger</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">ConditionGroup</span><span class="o">&gt;</span>
 <span class="p">{</span>
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
   <span class="k">explicit</span> <span class="n">Trigger</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">scope</span><span class="p">)</span>
@@ -789,7 +789,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__TRIGGER_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 19 April 2021 at 00:15:38 UTC</p>
+<p>Updated on 19 April 2021 at 03:02:06 UTC</p>
                 
                   
                 

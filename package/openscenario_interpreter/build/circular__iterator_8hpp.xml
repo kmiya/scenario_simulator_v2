@@ -6,54 +6,54 @@
     <includes local="no">type_traits</includes>
     <includedby refid="traffic__signal__controller_8hpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signal_controller.hpp</includedby>
     <incdepgraph>
-      <node id="721">
+      <node id="726">
         <label>iterator</label>
       </node>
-      <node id="720">
+      <node id="725">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/iterator/circular_iterator.hpp</label>
         <link refid="circular__iterator_8hpp"/>
-        <childnode refid="721" relation="include">
+        <childnode refid="726" relation="include">
         </childnode>
-        <childnode refid="722" relation="include">
-        </childnode>
-      </node>
-      <node id="722">
-        <label>type_traits</label>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="723">
-        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/iterator/circular_iterator.hpp</label>
-        <link refid="circular__iterator_8hpp"/>
-        <childnode refid="724" relation="include">
-        </childnode>
-      </node>
-      <node id="728">
-        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/openscenario_interpreter.hpp</label>
-        <link refid="openscenario__interpreter_8hpp_source"/>
-      </node>
-      <node id="726">
-        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/road_network.hpp</label>
-        <link refid="road__network_8hpp_source"/>
         <childnode refid="727" relation="include">
         </childnode>
       </node>
       <node id="727">
+        <label>type_traits</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="728">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/iterator/circular_iterator.hpp</label>
+        <link refid="circular__iterator_8hpp"/>
+        <childnode refid="729" relation="include">
+        </childnode>
+      </node>
+      <node id="733">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/openscenario_interpreter.hpp</label>
+        <link refid="openscenario__interpreter_8hpp_source"/>
+      </node>
+      <node id="731">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/road_network.hpp</label>
+        <link refid="road__network_8hpp_source"/>
+        <childnode refid="732" relation="include">
+        </childnode>
+      </node>
+      <node id="732">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/openscenario.hpp</label>
         <link refid="openscenario_8hpp_source"/>
-        <childnode refid="728" relation="include">
+        <childnode refid="733" relation="include">
         </childnode>
       </node>
-      <node id="724">
+      <node id="729">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signal_controller.hpp</label>
         <link refid="traffic__signal__controller_8hpp_source"/>
-        <childnode refid="725" relation="include">
+        <childnode refid="730" relation="include">
         </childnode>
       </node>
-      <node id="725">
+      <node id="730">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signals.hpp</label>
         <link refid="traffic__signals_8hpp_source"/>
-        <childnode refid="726" relation="include">
+        <childnode refid="731" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -107,8 +107,8 @@
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>difference_type<sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::iterator_traits&lt;ForwardIterator&gt;::difference_type;</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classopenscenario__interpreter_1_1iterator_1_1CircularIterator" kindref="compound">CircularIterator</ref>(ForwardIterator<sp/>begin,<sp/>ForwardIterator<sp/>end)</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/>:<sp/>begin(begin),<sp/>current(begin),<sp/>end(end)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classopenscenario__interpreter_1_1iterator_1_1CircularIterator" kindref="compound">CircularIterator</ref>(ForwardIterator<sp/>begin,<sp/>ForwardIterator<sp/>end,<sp/>ForwardIterator<sp/>current)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>:<sp/>begin(begin),<sp/>current(current),<sp/>end(end)</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"></highlight></codeline>

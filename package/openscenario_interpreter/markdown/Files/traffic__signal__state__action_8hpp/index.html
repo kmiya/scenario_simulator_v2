@@ -738,33 +738,53 @@
 <span class="cp">#ifndef OPENSCENARIO_INTERPRETER__SYNTAX__TRAFFIC_SIGNAL_STATE_ACTION_HPP_</span>
 <span class="cp">#define OPENSCENARIO_INTERPRETER__SYNTAX__TRAFFIC_SIGNAL_STATE_ACTION_HPP_</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/reader/attribute.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/procedure.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/scope.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/string.hpp&gt;</span><span class="cp"></span>
 
 <span class="k">namespace</span> <span class="n">openscenario_interpreter</span>
 <span class="p">{</span>
 <span class="kr">inline</span> <span class="k">namespace</span> <span class="n">syntax</span>
 <span class="p">{</span>
-<span class="cm">/* ==== TrafficSignalStateAction =============================================</span>
+<span class="cm">/* ---- NOTE -------------------------------------------------------------------</span>
 <span class="cm"> *</span>
-<span class="cm"> * &lt;xsd:complexType name=&quot;TrafficSignalStateAction&quot;&gt;</span>
-<span class="cm"> *   &lt;xsd:attribute name=&quot;name&quot; type=&quot;String&quot; use=&quot;required&quot;/&gt;</span>
-<span class="cm"> *   &lt;xsd:attribute name=&quot;state&quot; type=&quot;String&quot; use=&quot;required&quot;/&gt;</span>
-<span class="cm"> * &lt;/xsd:complexType&gt;</span>
+<span class="cm"> *  Controls the state of a traffic signal.</span>
 <span class="cm"> *</span>
-<span class="cm"> * ======================================================================== */</span>
-<span class="k">struct</span> <span class="nc">TrafficSignalStateAction</span>
+<span class="cm"> *  &lt;xsd:complexType name=&quot;TrafficSignalStateAction&quot;&gt;</span>
+<span class="cm"> *    &lt;xsd:attribute name=&quot;name&quot; type=&quot;String&quot; use=&quot;required&quot;/&gt;</span>
+<span class="cm"> *    &lt;xsd:attribute name=&quot;state&quot; type=&quot;String&quot; use=&quot;required&quot;/&gt;</span>
+<span class="cm"> *  &lt;/xsd:complexType&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * -------------------------------------------------------------------------- */</span>
+<span class="k">struct</span> <span class="nc">TrafficSignalStateAction</span> <span class="o">:</span> <span class="k">private</span> <span class="n">Scope</span>
 <span class="p">{</span>
+  <span class="cm">/* ---- NOTE -----------------------------------------------------------------</span>
+<span class="cm">   *</span>
+<span class="cm">   *  ID of a signal in a road network. The signal ID must be listed in the</span>
+<span class="cm">   *  TrafficSignal list of the RoadNetwork.</span>
+<span class="cm">   *</span>
+<span class="cm">   * ------------------------------------------------------------------------ */</span>
   <span class="k">const</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
 
+  <span class="cm">/* ---- NOTE -----------------------------------------------------------------</span>
+<span class="cm">   *</span>
+<span class="cm">   *  Targeted state of the signal. The available states are listed in the</span>
+<span class="cm">   *  TrafficSignal list of the RoadNetwork.</span>
+<span class="cm">   *</span>
+<span class="cm">   * ------------------------------------------------------------------------ */</span>
   <span class="k">const</span> <span class="n">String</span> <span class="n">state</span><span class="p">;</span>
 
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
-  <span class="k">explicit</span> <span class="n">TrafficSignalStateAction</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">scope</span><span class="p">)</span>
-  <span class="o">:</span> <span class="n">name</span><span class="p">{</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">scope</span><span class="p">)},</span>
-    <span class="n">state</span><span class="p">{</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;state&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">scope</span><span class="p">)}</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="o">&gt;</span>
+  <span class="k">explicit</span> <span class="n">TrafficSignalStateAction</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">current_scope</span><span class="p">)</span>
+  <span class="o">:</span> <span class="n">Scope</span><span class="p">(</span><span class="n">current_scope</span><span class="p">),</span>
+    <span class="n">name</span><span class="p">(</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">Scope</span> <span class="o">&amp;&gt;</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">))),</span>
+    <span class="n">state</span><span class="p">(</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;state&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">Scope</span> <span class="o">&amp;&gt;</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">)))</span>
   <span class="p">{</span>
   <span class="p">}</span>
+
+  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">true_type</span> <span class="n">accomplished</span><span class="p">{};</span>
+
+  <span class="k">auto</span> <span class="nf">start</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span> <span class="p">}</span>
 <span class="p">};</span>
 <span class="p">}</span>  <span class="c1">// namespace syntax</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
@@ -772,7 +792,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__TRAFFIC_SIGNAL_STATE_ACTION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 19 April 2021 at 00:15:38 UTC</p>
+<p>Updated on 19 April 2021 at 03:02:06 UTC</p>
                 
                   
                 

@@ -880,17 +880,15 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">U</span><span class="o">&gt;</span>
-  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">as</span><span class="p">()</span> <span class="k">const</span>
+  <span class="n">U</span> <span class="o">&amp;</span> <span class="n">as</span><span class="p">()</span> <span class="k">const</span>
   <span class="p">{</span>
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">bound</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">dynamic_pointer_cast</span><span class="o">&lt;</span><span class="n">U</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">)};</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="n">bound</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="n">bound</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">dynamic_pointer_cast</span><span class="o">&lt;</span><span class="n">U</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">))</span> <span class="p">{</span>
       <span class="k">return</span> <span class="o">*</span><span class="n">bound</span><span class="p">;</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>
-      <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;type-error: can&#39;t treat &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">binding</span><span class="p">().</span><span class="n">type</span><span class="p">().</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; as type &quot;</span>
-         <span class="o">&lt;&lt;</span> <span class="k">typeid</span><span class="p">(</span><span class="n">U</span><span class="p">).</span><span class="n">name</span><span class="p">();</span>
-      <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">{</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()};</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">what</span><span class="p">;</span>
+      <span class="n">what</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;type-error: can&#39;t treat &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">binding</span><span class="p">().</span><span class="n">type</span><span class="p">().</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; as type &quot;</span>
+           <span class="o">&lt;&lt;</span> <span class="k">typeid</span><span class="p">(</span><span class="n">U</span><span class="p">).</span><span class="n">name</span><span class="p">();</span>
+      <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">what</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
@@ -940,7 +938,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__POINTER_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 19 April 2021 at 00:15:38 UTC</p>
+<p>Updated on 19 April 2021 at 03:02:06 UTC</p>
                 
                   
                 

@@ -738,7 +738,7 @@
 <span class="cp">#ifndef OPENSCENARIO_INTERPRETER__SYNTAX__TRAFFIC_SIGNAL_ACTION_HPP_</span>
 <span class="cp">#define OPENSCENARIO_INTERPRETER__SYNTAX__TRAFFIC_SIGNAL_ACTION_HPP_</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/reader/element.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/traffic_signal_controller_action.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/traffic_signal_state_action.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
 
@@ -746,23 +746,26 @@
 <span class="p">{</span>
 <span class="kr">inline</span> <span class="k">namespace</span> <span class="n">syntax</span>
 <span class="p">{</span>
-<span class="cm">/* ==== TrafficSignalAction ==================================================</span>
+<span class="cm">/* ---- NOTE -------------------------------------------------------------------</span>
 <span class="cm"> *</span>
-<span class="cm"> * &lt;xsd:complexType name=&quot;TrafficSignalAction&quot;&gt;</span>
-<span class="cm"> *   &lt;xsd:choice&gt;</span>
-<span class="cm"> *     &lt;xsd:element name=&quot;TrafficSignalControllerAction&quot; type=&quot;TrafficSignalControllerAction&quot;/&gt;</span>
-<span class="cm"> *     &lt;xsd:element name=&quot;TrafficSignalStateAction&quot; type=&quot;TrafficSignalStateAction&quot;/&gt;</span>
-<span class="cm"> *   &lt;/xsd:choice&gt;</span>
-<span class="cm"> * &lt;/xsd:complexType&gt;</span>
+<span class="cm"> *  &lt;xsd:complexType name=&quot;TrafficSignalAction&quot;&gt;</span>
+<span class="cm"> *    &lt;xsd:choice&gt;</span>
+<span class="cm"> *      &lt;xsd:element name=&quot;TrafficSignalControllerAction&quot; type=&quot;TrafficSignalControllerAction&quot;/&gt;</span>
+<span class="cm"> *      &lt;xsd:element name=&quot;TrafficSignalStateAction&quot; type=&quot;TrafficSignalStateAction&quot;/&gt;</span>
+<span class="cm"> *    &lt;/xsd:choice&gt;</span>
+<span class="cm"> *  &lt;/xsd:complexType&gt;</span>
 <span class="cm"> *</span>
-<span class="cm"> * ======================================================================== */</span>
-<span class="k">struct</span> <span class="nc">TrafficSignalAction</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Element</span>
+<span class="cm"> * -------------------------------------------------------------------------- */</span>
+<span class="k">struct</span> <span class="nc">TrafficSignalAction</span> <span class="o">:</span> <span class="k">public</span> <span class="n">ComplexType</span>
 <span class="p">{</span>
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">explicit</span> <span class="n">TrafficSignalAction</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...)</span>
-  <span class="o">:</span> <span class="n">Element</span><span class="p">(</span><span class="n">choice</span><span class="p">(</span>
-      <span class="n">node</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;TrafficSignalControllerAction&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span> <span class="p">}),</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;TrafficSignalStateAction&quot;</span><span class="p">,</span> <span class="n">UNSUPPORTED</span><span class="p">())))</span>
+  <span class="k">explicit</span> <span class="n">TrafficSignalAction</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+  <span class="c1">// clang-format off</span>
+  <span class="o">:</span> <span class="n">ComplexType</span><span class="p">(</span>
+      <span class="n">choice</span><span class="p">(</span><span class="n">node</span><span class="p">,</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;TrafficSignalControllerAction&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">make</span><span class="o">&lt;</span><span class="n">TrafficSignalControllerAction</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span> <span class="p">}),</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;TrafficSignalStateAction&quot;</span><span class="p">,</span>      <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">make</span><span class="o">&lt;</span><span class="n">TrafficSignalStateAction</span>     <span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span> <span class="p">})))</span>
+  <span class="c1">// clang-format on</span>
   <span class="p">{</span>
   <span class="p">}</span>
 <span class="p">};</span>
@@ -772,7 +775,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__TRAFFIC_SIGNAL_ACTION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 19 April 2021 at 00:15:38 UTC</p>
+<p>Updated on 19 April 2021 at 03:02:06 UTC</p>
                 
                   
                 

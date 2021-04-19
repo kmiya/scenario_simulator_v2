@@ -2,6 +2,8 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="structopenscenario__interpreter_1_1Scope" kind="struct" language="C++" prot="public">
     <compoundname>openscenario_interpreter::Scope</compoundname>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalControllerAction" prot="private" virt="non-virtual">openscenario_interpreter::syntax::TrafficSignalControllerAction</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalStateAction" prot="private" virt="non-virtual">openscenario_interpreter::syntax::TrafficSignalStateAction</derivedcompoundref>
       <sectiondef kind="public-type">
       <memberdef kind="typedef" id="structopenscenario__interpreter_1_1Scope_1a71adbadb72f848f4dd4d08ea00bb351e" prot="public" static="no">
         <type>EntityRef</type>
@@ -16,9 +18,9 @@
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/scope.hpp" line="35" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/scope.hpp" bodystart="35" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="structopenscenario__interpreter_1_1Scope_1a2ca75d24a8051175d16b362f707f40f3" prot="public" static="no">
-        <type>std::vector&lt; Actor &gt;</type>
-        <definition>using openscenario_interpreter::Scope::Actors =  std::vector&lt;Actor&gt;</definition>
+      <memberdef kind="typedef" id="structopenscenario__interpreter_1_1Scope_1a8f47946a2ec4238dffdb1fa25137ac43" prot="public" static="no">
+        <type>std::list&lt; Actor &gt;</type>
+        <definition>using openscenario_interpreter::Scope::Actors =  std::list&lt;Actor&gt;</definition>
         <argsstring></argsstring>
         <name>Actors</name>
         <briefdescription>
@@ -202,10 +204,28 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <inheritancegraph>
+      <node id="641">
+        <label>openscenario_interpreter::syntax::TrafficSignalControllerAction</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalControllerAction"/>
+        <childnode refid="640" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="642">
+        <label>openscenario_interpreter::syntax::TrafficSignalStateAction</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalStateAction"/>
+        <childnode refid="640" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="640">
+        <label>openscenario_interpreter::Scope</label>
+        <link refid="structopenscenario__interpreter_1_1Scope"/>
+      </node>
+    </inheritancegraph>
     <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/scope.hpp" line="30" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/scope.hpp" bodystart="29" bodyend="56"/>
     <listofallmembers>
       <member refid="structopenscenario__interpreter_1_1Scope_1a71adbadb72f848f4dd4d08ea00bb351e" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Scope</scope><name>Actor</name></member>
-      <member refid="structopenscenario__interpreter_1_1Scope_1a2ca75d24a8051175d16b362f707f40f3" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Scope</scope><name>Actors</name></member>
+      <member refid="structopenscenario__interpreter_1_1Scope_1a8f47946a2ec4238dffdb1fa25137ac43" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Scope</scope><name>Actors</name></member>
       <member refid="structopenscenario__interpreter_1_1Scope_1a7e23ddea0b69991cc161f7a2c4b05304" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Scope</scope><name>actors</name></member>
       <member refid="structopenscenario__interpreter_1_1Scope_1a0682dea0459bee5fbc795e2fc9baebb2" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Scope</scope><name>entities</name></member>
       <member refid="structopenscenario__interpreter_1_1Scope_1a6eb516be10fe431f206ce01d0a3f5cd7" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Scope</scope><name>logic_file</name></member>

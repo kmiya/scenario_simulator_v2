@@ -745,7 +745,7 @@
   <span class="k">return</span> <span class="n">requestAcquirePosition</span><span class="p">(</span><span class="n">destination</span><span class="p">,</span> <span class="n">constraints</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span> <span class="n">EgoEntity</span><span class="o">::</span><span class="n">getWaypoints</span><span class="p">()</span> <span class="k">const</span>
+<span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span> <span class="n">EgoEntity</span><span class="o">::</span><span class="n">getWaypoints</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span> <span class="n">waypoints</span><span class="p">{};</span>
 
@@ -774,27 +774,40 @@
   <span class="k">return</span> <span class="n">success</span><span class="p">;</span>
 <span class="p">}</span>
 
+<span class="kt">void</span> <span class="n">EgoEntity</span><span class="o">::</span><span class="n">requestLaneChange</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">what</span><span class="p">{};</span>
+  <span class="n">what</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;From scenario, a lane change was requested to Ego type entity &#39;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&#39;. &quot;</span><span class="p">;</span>
+  <span class="n">what</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;In general, such a request is an error, &quot;</span><span class="p">;</span>
+  <span class="n">what</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;since Ego cars make autonomous decisions about everything but their destination.&quot;</span><span class="p">;</span>
+  <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">what</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
+<span class="p">}</span>
+
 <span class="kt">void</span> <span class="n">EgoEntity</span><span class="o">::</span><span class="n">onUpdate</span><span class="p">(</span><span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXd</span> <span class="n">input</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-  <span class="p">{</span>
-    <span class="n">input</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">getVehicleCommand</span><span class="p">().</span><span class="n">control</span><span class="p">.</span><span class="n">velocity</span><span class="p">,</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">getVehicleCommand</span><span class="p">().</span><span class="n">control</span><span class="p">.</span><span class="n">steering_angle</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="p">(</span><span class="o">*</span><span class="n">vehicle_model_ptr_</span><span class="p">).</span><span class="n">setInput</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
-  <span class="p">(</span><span class="o">*</span><span class="n">vehicle_model_ptr_</span><span class="p">).</span><span class="n">update</span><span class="p">(</span><span class="n">step_time</span><span class="p">);</span>
-
-  <span class="n">setStatus</span><span class="p">(</span><span class="n">getEntityStatus</span><span class="p">(</span><span class="n">current_time</span> <span class="o">+</span> <span class="n">step_time</span><span class="p">,</span> <span class="n">step_time</span><span class="p">));</span>
-
-  <span class="k">if</span> <span class="p">(</span><span class="n">previous_linear_velocity_</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">linear_jerk_</span> <span class="o">=</span> <span class="p">(</span><span class="n">vehicle_model_ptr_</span><span class="o">-&gt;</span><span class="n">getVx</span><span class="p">()</span> <span class="o">-</span> <span class="n">previous_linear_velocity_</span><span class="p">.</span><span class="n">get</span><span class="p">())</span> <span class="o">/</span> <span class="n">step_time</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">current_time</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">updateEntityStatusTimestamp</span><span class="p">(</span><span class="n">current_time</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n">linear_jerk_</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="p">}</span>
+    <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXd</span> <span class="n">input</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    <span class="p">{</span>
+      <span class="n">input</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">getVehicleCommand</span><span class="p">().</span><span class="n">control</span><span class="p">.</span><span class="n">velocity</span><span class="p">,</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">getVehicleCommand</span><span class="p">().</span><span class="n">control</span><span class="p">.</span><span class="n">steering_angle</span><span class="p">;</span>
+    <span class="p">}</span>
 
-  <span class="n">previous_linear_velocity_</span> <span class="o">=</span> <span class="n">vehicle_model_ptr_</span><span class="o">-&gt;</span><span class="n">getVx</span><span class="p">();</span>
-  <span class="n">previous_angular_velocity_</span> <span class="o">=</span> <span class="n">vehicle_model_ptr_</span><span class="o">-&gt;</span><span class="n">getWz</span><span class="p">();</span>
+    <span class="p">(</span><span class="o">*</span><span class="n">vehicle_model_ptr_</span><span class="p">).</span><span class="n">setInput</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+    <span class="p">(</span><span class="o">*</span><span class="n">vehicle_model_ptr_</span><span class="p">).</span><span class="n">update</span><span class="p">(</span><span class="n">step_time</span><span class="p">);</span>
+
+    <span class="n">setStatus</span><span class="p">(</span><span class="n">getEntityStatus</span><span class="p">(</span><span class="n">current_time</span> <span class="o">+</span> <span class="n">step_time</span><span class="p">,</span> <span class="n">step_time</span><span class="p">));</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">previous_linear_velocity_</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">linear_jerk_</span> <span class="o">=</span> <span class="p">(</span><span class="n">vehicle_model_ptr_</span><span class="o">-&gt;</span><span class="n">getVx</span><span class="p">()</span> <span class="o">-</span> <span class="n">previous_linear_velocity_</span><span class="p">.</span><span class="n">get</span><span class="p">())</span> <span class="o">/</span> <span class="n">step_time</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">linear_jerk_</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">previous_linear_velocity_</span> <span class="o">=</span> <span class="n">vehicle_model_ptr_</span><span class="o">-&gt;</span><span class="n">getVx</span><span class="p">();</span>
+    <span class="n">previous_angular_velocity_</span> <span class="o">=</span> <span class="n">vehicle_model_ptr_</span><span class="o">-&gt;</span><span class="n">getWz</span><span class="p">();</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="n">EgoEntity</span><span class="o">::</span><span class="n">getEntityStatus</span><span class="p">(</span>
@@ -876,7 +889,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 20 April 2021 at 00:15:42 UTC</p>
+<p>Updated on 20 April 2021 at 05:53:48 UTC</p>
                 
                   
                 

@@ -761,6 +761,14 @@
   <span class="p">}</span>
 <span class="p">}</span>
 
+<span class="kt">void</span> <span class="n">EntityBase</span><span class="o">::</span><span class="n">updateEntityStatusTimestamp</span><span class="p">(</span><span class="kt">double</span> <span class="n">current_time</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">status_</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">status_</span><span class="o">-&gt;</span><span class="n">time</span> <span class="o">=</span> <span class="n">current_time</span><span class="p">;</span>
+<span class="p">}</span>
+
 <span class="kt">void</span> <span class="n">EntityBase</span><span class="o">::</span><span class="n">setOtherStatus</span><span class="p">(</span>
   <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">status</span><span class="p">)</span>
 <span class="p">{</span>
@@ -808,7 +816,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 20 April 2021 at 00:15:42 UTC</p>
+<p>Updated on 20 April 2021 at 05:53:48 UTC</p>
                 
                   
                 

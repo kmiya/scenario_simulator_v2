@@ -849,7 +849,6 @@
 <span class="cp">#include</span> <span class="cpf">&lt;autoware_auto_msgs/msg/vehicle_control_command.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;autoware_auto_msgs/msg/vehicle_kinematic_state.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;autoware_auto_msgs/msg/vehicle_state_command.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;boost/any.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;boost/optional.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;map&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
@@ -861,6 +860,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="c1">  // TODO(yamacir-kit): Remove this!</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/ego_entity.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/entity_base.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/pedestrian_entity.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/vehicle_entity.hpp&gt;</span><span class="cp"></span>
@@ -900,7 +900,7 @@
 
   <span class="n">rclcpp</span><span class="o">::</span><span class="n">Clock</span><span class="o">::</span><span class="n">SharedPtr</span> <span class="n">clock_ptr_</span><span class="p">;</span>
 
-  <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">boost</span><span class="o">::</span><span class="n">any</span><span class="o">&gt;</span> <span class="n">entities_</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">entity</span><span class="o">::</span><span class="n">EntityBase</span><span class="o">&gt;&gt;</span> <span class="n">entities_</span><span class="p">;</span>
 
   <span class="c1">// rclcpp::TimerBase::SharedPtr hdmap_marker_timer_;</span>
 
@@ -1095,7 +1095,7 @@
 
   <span class="kt">bool</span> <span class="nf">isInLanelet</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">lanelet_id</span><span class="p">,</span> <span class="k">const</span> <span class="kt">double</span> <span class="n">tolerance</span><span class="p">);</span>
 
-  <span class="kt">bool</span> <span class="nf">entityStatusSetted</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="nf">entityStatusSet</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
 
   <span class="kt">void</span> <span class="nf">setTargetSpeed</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="kt">double</span> <span class="n">target_speed</span><span class="p">,</span> <span class="k">const</span> <span class="kt">bool</span> <span class="n">continuous</span><span class="p">);</span>
 
@@ -1148,7 +1148,9 @@
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="n">entity</span><span class="p">.</span><span class="n">setHdMapUtils</span><span class="p">(</span><span class="n">hdmap_utils_ptr_</span><span class="p">);</span>
       <span class="n">entity</span><span class="p">.</span><span class="n">setTrafficLightManager</span><span class="p">(</span><span class="n">traffic_light_manager_ptr_</span><span class="p">);</span>
-      <span class="n">entities_</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">entity</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">entity</span><span class="p">));</span>
+      <span class="n">entities_</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span>
+        <span class="n">entity</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">std</span><span class="o">::</span><span class="n">decay</span><span class="o">&lt;</span><span class="n">Entity</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">&gt;</span><span class="p">(</span>
+                       <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">entity</span><span class="p">)));</span>
       <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
     <span class="p">}</span>
   <span class="p">}</span>
@@ -1183,7 +1185,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__ENTITY__ENTITY_MANAGER_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 20 April 2021 at 00:15:42 UTC</p>
+<p>Updated on 20 April 2021 at 05:53:48 UTC</p>
                 
                   
                 

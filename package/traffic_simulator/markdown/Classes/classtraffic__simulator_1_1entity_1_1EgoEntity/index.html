@@ -701,6 +701,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-requestlanechange" class="md-nav__link">
+    function requestLaneChange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-requestassignroute" class="md-nav__link">
     function requestAssignRoute
   </a>
@@ -709,6 +716,20 @@
         
           <li class="md-nav__item">
   <a href="#function-requestacquireposition" class="md-nav__link">
+    function requestAcquirePosition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-requestacquireposition_1" class="md-nav__link">
+    function requestAcquirePosition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-requestacquireposition_2" class="md-nav__link">
     function requestAcquirePosition
   </a>
   
@@ -814,16 +835,28 @@
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EgoEntity#function-~egoentity">~EgoEntity</a></strong>() override</td>
 </tr>
 <tr>
-<td>decltype(auto)</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EgoEntity#function-settargetspeed">setTargetSpeed</a></strong>(const double value, const bool )</td>
+<td>virtual void</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EgoEntity#function-settargetspeed">setTargetSpeed</a></strong>(double value, bool ) override</td>
 </tr>
 <tr>
 <td>bool</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EgoEntity#function-setstatus">setStatus</a></strong>(const openscenario_msgs::msg::EntityStatus &amp; status)</td>
 </tr>
 <tr>
+<td>void</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EgoEntity#function-requestlanechange">requestLaneChange</a></strong>(const std::int64_t to_lanelet_id)</td>
+</tr>
+<tr>
 <td>virtual void</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EgoEntity#function-requestassignroute">requestAssignRoute</a></strong>(const std::vector&lt; openscenario_msgs::msg::LaneletPose &gt; &amp; waypoints) override</td>
+</tr>
+<tr>
+<td>virtual void</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EgoEntity#function-requestacquireposition">requestAcquirePosition</a></strong>(const openscenario_msgs::msg::LaneletPose &amp; lanelet_pose)</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EgoEntity#function-requestacquireposition">requestAcquirePosition</a></strong>(const openscenario_msgs::msg::LaneletPose &amp; lanelet_pose, const std::vector&lt; geometry_msgs::msg::PoseStamped &gt; &amp; constraints ={})</td>
 </tr>
 <tr>
 <td>void</td>
@@ -838,8 +871,8 @@
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EgoEntity#function-initializeautoware">initializeAutoware</a></strong>()</td>
 </tr>
 <tr>
-<td>openscenario_msgs::msg::WaypointsArray</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EgoEntity#function-getwaypoints">getWaypoints</a></strong>() const</td>
+<td>const openscenario_msgs::msg::WaypointsArray</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EgoEntity#function-getwaypoints">getWaypoints</a></strong>()</td>
 </tr>
 <tr>
 <td>virtual const std::string</td>
@@ -893,16 +926,16 @@
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1VehicleEntity#function-setdrivermodel">setDriverModel</a></strong>(const openscenario_msgs::msg::DriverModel &amp; model)</td>
 </tr>
 <tr>
-<td>void</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1VehicleEntity#function-requestlanechange">requestLaneChange</a></strong>(std::int64_t to_lanelet_id)</td>
+<td>virtual void</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1VehicleEntity#function-requestwalkstraight">requestWalkStraight</a></strong>() override</td>
 </tr>
 <tr>
-<td>std::vector&lt; std::int64_t &gt;</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1VehicleEntity#function-getroutelanelets">getRouteLanelets</a></strong>(double horizon =100)</td>
+<td>const boost::optional&lt; openscenario_msgs::msg::VehicleParameters &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1VehicleEntity#function-getvehicleparameters">getVehicleParameters</a></strong>() const</td>
 </tr>
 <tr>
-<td>boost::optional&lt; openscenario_msgs::msg::Obstacle &gt;</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1VehicleEntity#function-getobstacle">getObstacle</a></strong>()</td>
+<td>virtual std::vector&lt; std::int64_t &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1VehicleEntity#function-getroutelanelets">getRouteLanelets</a></strong>(double horizon =100) override</td>
 </tr>
 <tr>
 <td>virtual const openscenario_msgs::msg::BoundingBox</td>
@@ -956,11 +989,15 @@
 </tr>
 <tr>
 <td>void</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-updateentitystatustimestamp">updateEntityStatusTimestamp</a></strong>(double current_time)</td>
+</tr>
+<tr>
+<td>void</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-stopatendofroad">stopAtEndOfRoad</a></strong>()</td>
 </tr>
 <tr>
 <td>bool</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-statussetted">statusSetted</a></strong>() const</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-statusset">statusSet</a></strong>() const</td>
 </tr>
 <tr>
 <td>bool</td>
@@ -987,8 +1024,20 @@
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-setentitytypelist">setEntityTypeList</a></strong>(const std::unordered_map&lt; std::string, openscenario_msgs::msg::EntityType &gt; &amp; entity_type_list)</td>
 </tr>
 <tr>
+<td>void</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-setdrivermodel">setDriverModel</a></strong>(const openscenario_msgs::msg::DriverModel &amp; )</td>
+</tr>
+<tr>
+<td>virtual void</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-requestwalkstraight">requestWalkStraight</a></strong>() =0</td>
+</tr>
+<tr>
 <td>bool</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getvisibility">getVisibility</a></strong>()</td>
+</tr>
+<tr>
+<td>const boost::optional&lt; openscenario_msgs::msg::VehicleParameters &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getvehicleparameters">getVehicleParameters</a></strong>() const</td>
 </tr>
 <tr>
 <td>const openscenario_msgs::msg::EntityStatus</td>
@@ -999,8 +1048,16 @@
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getstandstillduration">getStandStillDuration</a></strong>() const</td>
 </tr>
 <tr>
+<td>virtual std::vector&lt; std::int64_t &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getroutelanelets">getRouteLanelets</a></strong>(const double horizon =100) =0</td>
+</tr>
+<tr>
 <td>boost::optional&lt; double &gt;</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getlinearjerk">getLinearJerk</a></strong>() const</td>
+</tr>
+<tr>
+<td>const openscenario_msgs::msg::EntityType</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getentitytype">getEntityType</a></strong>() const</td>
 </tr>
 <tr>
 <td>virtual const openscenario_msgs::msg::BoundingBox</td>
@@ -1089,6 +1146,10 @@
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#variable-entity_type_list_">entity_type_list_</a></strong></td>
 </tr>
 <tr>
+<td>openscenario_msgs::msg::EntityType</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#variable-entity_type_">entity_type_</a></strong></td>
+</tr>
+<tr>
 <td>visualization_msgs::msg::MarkerArray</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#variable-current_marker_">current_marker_</a></strong></td>
 </tr>
@@ -1099,14 +1160,20 @@
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="o">~</span><span class="n">EgoEntity</span><span class="p">()</span> <span class="k">override</span>
 </code></pre></div>
 <h3 id="function-settargetspeed">function setTargetSpeed<a class="headerlink" href="#function-settargetspeed" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">setTargetSpeed</span><span class="p">(</span>
-    <span class="k">const</span> <span class="kt">double</span> <span class="n">value</span><span class="p">,</span>
-    <span class="k">const</span> <span class="kt">bool</span> 
-<span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="kt">void</span> <span class="n">setTargetSpeed</span><span class="p">(</span>
+    <span class="kt">double</span> <span class="n">value</span><span class="p">,</span>
+    <span class="kt">bool</span> 
+<span class="p">)</span> <span class="k">override</span>
 </code></pre></div>
+<p><strong>Reimplements</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-settargetspeed">traffic_simulator::entity::EntityBase::setTargetSpeed</a></p>
 <h3 id="function-setstatus">function setStatus<a class="headerlink" href="#function-setstatus" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="n">setStatus</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&amp;</span> <span class="n">status</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-requestlanechange">function requestLaneChange<a class="headerlink" href="#function-requestlanechange" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">requestLaneChange</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">to_lanelet_id</span>
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-requestassignroute">function requestAssignRoute<a class="headerlink" href="#function-requestassignroute" title="Permanent link">#</a></h3>
@@ -1116,6 +1183,18 @@
 </code></pre></div>
 <p><strong>Reimplements</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-requestassignroute">traffic_simulator::entity::EntityBase::requestAssignRoute</a></p>
 <h3 id="function-requestacquireposition">function requestAcquirePosition<a class="headerlink" href="#function-requestacquireposition" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="kt">void</span> <span class="n">requestAcquirePosition</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="o">&amp;</span> <span class="n">lanelet_pose</span>
+<span class="p">)</span>
+</code></pre></div>
+<p><strong>Reimplements</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-requestacquireposition">traffic_simulator::entity::EntityBase::requestAcquirePosition</a></p>
+<h3 id="function-requestacquireposition_1">function requestAcquirePosition<a class="headerlink" href="#function-requestacquireposition_1" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="kt">void</span> <span class="n">requestAcquirePosition</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="o">&amp;</span> <span class="n">lanelet_pose</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PoseStamped</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">constraints</span> <span class="o">=</span><span class="p">{}</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-requestacquireposition_2">function requestAcquirePosition<a class="headerlink" href="#function-requestacquireposition_2" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="kt">void</span> <span class="n">requestAcquirePosition</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PoseStamped</span> <span class="o">&amp;</span> <span class="n">goal_pose</span><span class="p">,</span>
     <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PoseStamped</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">constraints</span> <span class="o">=</span><span class="p">{}</span>
@@ -1132,7 +1211,7 @@
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">auto</span> <span class="n">initializeAutoware</span><span class="p">()</span>
 </code></pre></div>
 <h3 id="function-getwaypoints">function getWaypoints<a class="headerlink" href="#function-getwaypoints" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span> <span class="n">getWaypoints</span><span class="p">()</span> <span class="k">const</span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span> <span class="n">getWaypoints</span><span class="p">()</span>
 </code></pre></div>
 <h3 id="function-getcurrentaction">function getCurrentAction<a class="headerlink" href="#function-getcurrentaction" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">getCurrentAction</span><span class="p">()</span> <span class="k">const</span>
@@ -1154,7 +1233,7 @@
 <div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="n">autoware_initialized</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>Updated on 20 April 2021 at 00:15:41 UTC</p>
+<p>Updated on 20 April 2021 at 05:53:47 UTC</p>
                 
                   
                 

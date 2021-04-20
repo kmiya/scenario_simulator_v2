@@ -746,6 +746,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/behavior/vehicle/behavior_tree.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/behavior/vehicle/lane_change_action.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/entity_base.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/vehicle_parameter.hpp&gt;</span><span class="cp"></span>
 
 <span class="c1">// headers in pugixml</span>
@@ -768,25 +769,33 @@
   <span class="n">VehicleEntity</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span> <span class="n">parameters</span><span class="p">);</span>
   <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span> <span class="n">parameters</span><span class="p">;</span>
   <span class="kt">void</span> <span class="nf">onUpdate</span><span class="p">(</span><span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
-  <span class="kt">void</span> <span class="nf">requestAcquirePosition</span><span class="p">(</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="n">lanelet_pose</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">requestAcquirePosition</span><span class="p">(</span><span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="o">&amp;</span> <span class="n">lanelet_pose</span><span class="p">);</span>
   <span class="kt">void</span> <span class="nf">requestLaneChange</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">to_lanelet_id</span><span class="p">);</span>
   <span class="kt">void</span> <span class="nf">cancelRequest</span><span class="p">();</span>
-  <span class="kt">void</span> <span class="nf">setDriverModel</span><span class="p">(</span><span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">DriverModel</span> <span class="o">&amp;</span> <span class="n">model</span><span class="p">)</span>
+  <span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span><span class="o">&gt;</span> <span class="n">getVehicleParameters</span><span class="p">()</span> <span class="k">const</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="n">parameters</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kt">void</span> <span class="n">requestWalkStraight</span><span class="p">()</span> <span class="k">override</span>
+  <span class="p">{</span>
+    <span class="k">throw</span> <span class="nf">UnsupportActionError</span><span class="p">(</span><span class="s">&quot;request walk straight command does not support in vehicle entity.&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="kt">void</span> <span class="n">setDriverModel</span><span class="p">(</span><span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">DriverModel</span> <span class="o">&amp;</span> <span class="n">model</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">setValueToBlackBoard</span><span class="p">(</span><span class="s">&quot;driver_model&quot;</span><span class="p">,</span> <span class="n">model</span><span class="p">);</span>
   <span class="p">}</span>
-  <span class="kt">void</span> <span class="nf">setHdMapUtils</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">hdmap_utils</span><span class="o">::</span><span class="n">HdMapUtils</span><span class="o">&gt;</span> <span class="n">ptr</span><span class="p">)</span>
+  <span class="kt">void</span> <span class="n">setHdMapUtils</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">hdmap_utils</span><span class="o">::</span><span class="n">HdMapUtils</span><span class="o">&gt;</span> <span class="n">ptr</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="n">hdmap_utils_ptr_</span> <span class="o">=</span> <span class="n">ptr</span><span class="p">;</span>
     <span class="n">route_planner_ptr_</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">RoutePlanner</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span>
     <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">setValueToBlackBoard</span><span class="p">(</span><span class="s">&quot;hdmap_utils&quot;</span><span class="p">,</span> <span class="n">hdmap_utils_ptr_</span><span class="p">);</span>
   <span class="p">}</span>
-  <span class="kt">void</span> <span class="nf">setTrafficLightManager</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">TrafficLightManager</span><span class="o">&gt;</span> <span class="n">ptr</span><span class="p">)</span>
+  <span class="kt">void</span> <span class="n">setTrafficLightManager</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">TrafficLightManager</span><span class="o">&gt;</span> <span class="n">ptr</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="n">traffic_light_manager_</span> <span class="o">=</span> <span class="n">ptr</span><span class="p">;</span>
     <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">setValueToBlackBoard</span><span class="p">(</span><span class="s">&quot;traffic_light_manager&quot;</span><span class="p">,</span> <span class="n">traffic_light_manager_</span><span class="p">);</span>
   <span class="p">}</span>
-  <span class="kt">void</span> <span class="nf">setTargetSpeed</span><span class="p">(</span><span class="kt">double</span> <span class="n">target_speed</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">continuous</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="n">setTargetSpeed</span><span class="p">(</span><span class="kt">double</span> <span class="n">target_speed</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">continuous</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
   <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">BoundingBox</span> <span class="n">getBoundingBox</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
   <span class="p">{</span>
     <span class="k">return</span> <span class="n">parameters</span><span class="p">.</span><span class="n">bounding_box</span><span class="p">;</span>
@@ -794,12 +803,12 @@
   <span class="kt">void</span> <span class="n">requestAssignRoute</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">waypoints</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
   <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">getCurrentAction</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">getCurrentAction</span><span class="p">();</span> <span class="p">}</span>
-  <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span> <span class="n">getWaypoints</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">getWaypoints</span><span class="p">();</span> <span class="p">}</span>
-  <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Obstacle</span><span class="o">&gt;</span> <span class="n">getObstacle</span><span class="p">()</span>
+  <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span> <span class="n">getWaypoints</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">getWaypoints</span><span class="p">();</span> <span class="p">}</span>
+  <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Obstacle</span><span class="o">&gt;</span> <span class="n">getObstacle</span><span class="p">()</span> <span class="k">override</span>
   <span class="p">{</span>
     <span class="k">return</span> <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">getObstacle</span><span class="p">();</span>
   <span class="p">}</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="o">&gt;</span> <span class="n">getRouteLanelets</span><span class="p">(</span><span class="kt">double</span> <span class="n">horizon</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="o">&gt;</span> <span class="n">getRouteLanelets</span><span class="p">(</span><span class="kt">double</span> <span class="n">horizon</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span> <span class="k">override</span>
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">status_</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">return</span> <span class="p">{};</span>
@@ -823,7 +832,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__ENTITY__VEHICLE_ENTITY_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 20 April 2021 at 00:15:42 UTC</p>
+<p>Updated on 20 April 2021 at 05:53:48 UTC</p>
                 
                   
                 

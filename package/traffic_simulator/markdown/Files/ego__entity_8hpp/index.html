@@ -844,6 +844,7 @@
 <span class="cp">#ifndef TRAFFIC_SIMULATOR__ENTITY__EGO_ENTITY_HPP_</span>
 <span class="cp">#define TRAFFIC_SIMULATOR__ENTITY__EGO_ENTITY_HPP_</span>
 
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_msgs/msg/entity_type.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/vehicle_entity.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/vehicle_model/sim_model_ideal.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/vehicle_model/sim_model_time_delay.hpp&gt;</span><span class="cp"></span>
@@ -994,6 +995,7 @@
       <span class="mf">0.0</span>         <span class="c1">// deadzone_delta_steer</span>
       <span class="p">))</span>
   <span class="p">{</span>
+    <span class="n">entity_type_</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityType</span><span class="o">::</span><span class="n">EGO</span><span class="p">;</span>
     <span class="k">auto</span> <span class="n">launch_autoware</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">]()</span> <span class="p">{</span>
       <span class="k">auto</span> <span class="n">get_parameter</span> <span class="o">=</span> <span class="p">[](</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">alternate</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">rclcpp</span><span class="o">::</span><span class="n">Node</span> <span class="n">node</span><span class="p">{</span><span class="s">&quot;get_parameter&quot;</span><span class="p">,</span> <span class="s">&quot;simulation&quot;</span><span class="p">};</span>
@@ -1143,6 +1145,21 @@
     <span class="p">}</span>
   <span class="p">}</span>
 
+  <span class="kt">void</span> <span class="nf">requestAcquirePosition</span><span class="p">(</span><span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="o">&amp;</span> <span class="n">lanelet_pose</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">requestAcquirePosition</span><span class="p">(</span><span class="n">lanelet_pose</span><span class="p">,</span> <span class="p">{});</span>
+  <span class="p">}</span>
+
+  <span class="kt">void</span> <span class="nf">requestAcquirePosition</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="o">&amp;</span> <span class="n">lanelet_pose</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PoseStamped</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">constraints</span> <span class="o">=</span> <span class="p">{})</span>
+  <span class="p">{</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">map_pose</span> <span class="o">=</span> <span class="n">hdmap_utils_ptr_</span><span class="o">-&gt;</span><span class="n">toMapPose</span><span class="p">(</span><span class="n">lanelet_pose</span><span class="p">);</span>
+    <span class="n">requestAcquirePosition</span><span class="p">(</span><span class="n">map_pose</span><span class="p">,</span> <span class="n">constraints</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kt">void</span> <span class="nf">requestLaneChange</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">to_lanelet_id</span><span class="p">);</span>
+
   <span class="kt">void</span> <span class="nf">requestAcquirePosition</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PoseStamped</span> <span class="o">&amp;</span> <span class="n">goal_pose</span><span class="p">,</span>
     <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PoseStamped</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">constraints</span> <span class="o">=</span> <span class="p">{})</span>
@@ -1177,7 +1194,7 @@
   <span class="kt">void</span> <span class="nf">requestAssignRoute</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">waypoints</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
 
-  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">setTargetSpeed</span><span class="p">(</span><span class="k">const</span> <span class="kt">double</span> <span class="n">value</span><span class="p">,</span> <span class="k">const</span> <span class="kt">bool</span><span class="p">)</span>
+  <span class="kt">void</span> <span class="nf">setTargetSpeed</span><span class="p">(</span><span class="kt">double</span> <span class="n">value</span><span class="p">,</span> <span class="kt">bool</span><span class="p">)</span> <span class="k">override</span>
   <span class="p">{</span>
     <span class="k">const</span> <span class="k">auto</span> <span class="n">current</span> <span class="o">=</span> <span class="n">getStatus</span><span class="p">();</span>
 
@@ -1198,7 +1215,7 @@
 
   <span class="kt">bool</span> <span class="nf">setStatus</span><span class="p">(</span><span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&amp;</span> <span class="n">status</span><span class="p">);</span>
 
-  <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span> <span class="n">getWaypoints</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span> <span class="n">getWaypoints</span><span class="p">();</span>
 
 <span class="k">private</span><span class="o">:</span>
 <span class="c1">// TODO(yamacir-kit): Define AutowareError type as struct based on std::runtime_error</span>
@@ -1269,6 +1286,12 @@
     <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">setVehicleVelocity</span><span class="p">(</span><span class="n">parameters</span><span class="p">.</span><span class="n">performance</span><span class="p">.</span><span class="n">max_speed</span><span class="p">);</span>
   <span class="p">}</span>
 
+  <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Obstacle</span><span class="o">&gt;</span> <span class="n">getObstacle</span><span class="p">()</span> <span class="k">override</span>
+  <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">__FILE__</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;,&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">__LINE__</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">;</span>
+  <span class="p">}</span>
+
 <span class="k">private</span><span class="o">:</span>
   <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="n">getEntityStatus</span><span class="p">(</span>
     <span class="k">const</span> <span class="kt">double</span> <span class="n">time</span><span class="p">,</span> <span class="k">const</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
@@ -1286,7 +1309,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__ENTITY__EGO_ENTITY_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 20 April 2021 at 00:15:42 UTC</p>
+<p>Updated on 20 April 2021 at 05:53:48 UTC</p>
                 
                   
                 

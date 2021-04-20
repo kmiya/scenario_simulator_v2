@@ -38,6 +38,7 @@
   <compound refid="classtraffic__simulator_1_1API" kind="class"><name>traffic_simulator::API</name>
     <member refid="classtraffic__simulator_1_1API_1a9ab2517db8cc9651d46d57397f04b9e0" kind="typedef"><name>EntityManager</name></member>
     <member refid="classtraffic__simulator_1_1API_1a60f79a859e6290d567dae7f8346b7352" kind="variable"><name>lanelet2_map_osm</name></member>
+    <member refid="classtraffic__simulator_1_1API_1a55e6250f50348d9fc07968d4ed454928" kind="variable"><name>initialize_duration</name></member>
     <member refid="classtraffic__simulator_1_1API_1a4fd196b9782de0cc6a2a461df11b8a1e" kind="variable"><name>standalone_mode</name></member>
     <member refid="classtraffic__simulator_1_1API_1a32713dd06e4e4a56a5909ebb2fa3fa3a" kind="variable"><name>entity_manager_ptr_</name></member>
     <member refid="classtraffic__simulator_1_1API_1a8d2c0fc20be1b2584412359e54a508ab" kind="variable"><name>traffic_controller_ptr_</name></member>
@@ -53,7 +54,7 @@
     <member refid="classtraffic__simulator_1_1API_1aa9b8877249a83d2de54b382c225ea897" kind="variable"><name>update_entity_status_client_</name></member>
     <member refid="classtraffic__simulator_1_1API_1aee17063f1d521eacf8c994acccd0fc40" kind="variable"><name>attach_lidar_sensor_client_</name></member>
     <member refid="classtraffic__simulator_1_1API_1a2ddca493cc78ad0ad80170eb779582b8" kind="variable"><name>attach_detection_sensor_client_</name></member>
-    <member refid="classtraffic__simulator_1_1API_1abcff3230809a407f9dba6b10cd7a9a19" kind="function"><name>API</name></member>
+    <member refid="classtraffic__simulator_1_1API_1ac292fb98dc1e2deeb17c8e5b90464b14" kind="function"><name>API</name></member>
     <member refid="classtraffic__simulator_1_1API_1a2e1ea4dc91018ccc82c9897267668f79" kind="function"><name>addMetric</name></member>
     <member refid="classtraffic__simulator_1_1API_1a7c971afaf5e2273489eb3cd09914da27" kind="function"><name>setVerbose</name></member>
     <member refid="classtraffic__simulator_1_1API_1a99fe59bcd7050c22ca5b0360ecbb641e" kind="function"><name>spawn</name></member>
@@ -246,18 +247,22 @@
     <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1ac8e34b39adf54e2c919d3c13e06df739" kind="function"><name>DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1aba30803e0bfd8b3c433b02523303f7d7" kind="function"><name>DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a0b08bfef7daf67ad966fa8024c630308" kind="function"><name>updateAutoware</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a2b6183af2b4f95b4a58c0b67a0c019bb" kind="function"><name>getObstacle</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1afd7c5f83b49aaf35886c2568409acb74" kind="function"><name>getEntityStatus</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1ade17fc297e5a3ae696628c0316257b8c" kind="function"><name>EgoEntity</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1ab1465fabfdc7d9173bf9a09040e4a710" kind="function"><name>EgoEntity</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1ac50394458450233e0413a5d61b245964" kind="function"><name>~EgoEntity</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a62dcb8ea63ad06a429df8b76216fcb3d" kind="function"><name>initializeAutoware</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1affe747ac46c433aaf90cde7776d69193" kind="function"><name>requestAcquirePosition</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1ae06c1bb4f6bfc5fbc176c6795597f709" kind="function"><name>requestAcquirePosition</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1aceb24ba84843241bf0d9d800ecf993a7" kind="function"><name>requestLaneChange</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a769beb7741f519e4554b390cd6d51525" kind="function"><name>requestAcquirePosition</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a8ee9d799c888d246961072a9b6dc49d9" kind="function"><name>requestAssignRoute</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1ad0fdad29d7ec7869c429b8ce2baf6d2a" kind="function"><name>setTargetSpeed</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a850eb05b1c7eea260eeffeb4eb1a7e09" kind="function"><name>setTargetSpeed</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a95e2ee08566922106b2285f570034661" kind="function"><name>getCurrentAction</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a88c5ad4d8228577e6f55735eec9d7f80" kind="function"><name>onUpdate</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a049f32672a2aceda81cb15eb769a2c0b" kind="function"><name>setStatus</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a7a2929b98ef6c6a6c0bdaf8d820519a3" kind="function"><name>getWaypoints</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a7b7cd8bdb0dc10650458498300e5d999" kind="function"><name>getWaypoints</name></member>
   </compound>
   <compound refid="classtraffic__simulator_1_1entity_1_1EntityBase" kind="class"><name>traffic_simulator::entity::EntityBase</name>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a88c9c91a08bb6bc33aa600a8653cbe02" kind="variable"><name>type</name></member>
@@ -274,6 +279,7 @@
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a8b3f77ffc95fcc4568cbc86f504a3dff" kind="variable"><name>entity_type_list_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a1f739bcfbcc58012323926ed846c34a0" kind="variable"><name>stand_still_duration_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a663d357ca5bbde5ff198254cf910769c" kind="variable"><name>current_marker_</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a7ac2a2df785d151c5141cb51f6b19e99" kind="variable"><name>entity_type_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a77cdf9bc8f0292c3aad5edaf0324b41c" kind="function"><name>EntityBase</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a5da5d33b65c97d4fa9ad76b58d0a4345" kind="function"><name>EntityBase</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a14e9768af5cf590d7b93e0797d74c14d" kind="function"><name>~EntityBase</name></member>
@@ -283,8 +289,11 @@
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ac6352d01d096a916c5861cd2a45d8837" kind="function"><name>getVisibility</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a0d56a9459be8d33c0a243b525f1e386f" kind="function"><name>setHdMapUtils</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a68bc9e6fb657cddffa8dce62a13e8431" kind="function"><name>setTrafficLightManager</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a17cd2acbe31f2cb0a014af3ac7bb2268" kind="function"><name>setDriverModel</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a2ca560ba0e1d878e734635b021deb5a6" kind="function"><name>onUpdate</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a30f83a0c744bb236ddfee38827b01029" kind="function"><name>statusSetted</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a2af79480f33d4a56c0e64bda062798cb" kind="function"><name>statusSet</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a1968d28fd30414a5086b427a1f05a44d" kind="function"><name>getVehicleParameters</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a1115c770484d0660ebfc0d65b39a6b99" kind="function"><name>updateEntityStatusTimestamp</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a53e31e2a5e533dd6a4931fa12b681a8c" kind="function"><name>setVerbose</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a0723e9a8c31e0727c0905b2b48236572" kind="function"><name>setEntityTypeList</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1accd382ea1a7e68441dcb6260487ce030" kind="function"><name>setOtherStatus</name></member>
@@ -295,6 +304,14 @@
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1adaa0eee865fbbcaf8e3ebfc0d8065224" kind="function"><name>stopAtEndOfRoad</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a43b81abaae12e4e5cb7d645912f5a9f0" kind="function"><name>getLinearJerk</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a511092715e59a7e42242fee720208995" kind="function"><name>requestAssignRoute</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1aec79bf793fbcff71ec713ae07e30342a" kind="function"><name>requestLaneChange</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ae502e8355bcbb8024fd940dbec71d933" kind="function"><name>requestAcquirePosition</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a16c9eb9fc01446ed20678813b944ad3d" kind="function"><name>requestWalkStraight</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a4fe7de1833ec07923c1993731df26921" kind="function"><name>getEntityType</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ae61d88f1d0aebda71285363f32c2f284" kind="function"><name>getRouteLanelets</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a10010a867a1628b54c3b95e45e033b20" kind="function"><name>setTargetSpeed</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1adb8fab165d90c35235b79f09abfbcedd" kind="function"><name>getObstacle</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1af40ef018561e2cd8ead8ce903ba9871d" kind="function"><name>getWaypoints</name></member>
   </compound>
   <compound refid="classtraffic__simulator_1_1entity_1_1EntityManager" kind="class"><name>traffic_simulator::entity::EntityManager</name>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a0fcee4c5f9e11d43e431c831135ca888" kind="typedef"><name>EntityStatusWithTrajectoryArray</name></member>
@@ -304,7 +321,7 @@
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1aec0bcea6d4e6b96ccdc1c154c25800f4" kind="variable"><name>broadcaster_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1ad86b5b1f846e590b3cd49f08a6473471" kind="variable"><name>base_link_broadcaster_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a276282cf612cebc0e720b1b7c7f1429d" kind="variable"><name>clock_ptr_</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a58faccc92f60e00e5c246e548776642d" kind="variable"><name>entities_</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a74df525bf21d417573e494813faa63af" kind="variable"><name>entities_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1afeafb416b54888a43f75202ad9ddbc4c" kind="variable"><name>control_cmd_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1ae8d50dda4ea79d31665c586acc17c9fd" kind="variable"><name>state_cmd_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a9dff7fbf4086e48d5a8f538c43935868" kind="variable"><name>step_time_</name></member>
@@ -358,7 +375,7 @@
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a15b16367522f647e24db3073a03ad57b" kind="function"><name>getEntityStatus</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1ab4dcea28902702d5c2a711de133d7ded" kind="function"><name>getSValueInRoute</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1af597ca4966705bf1c3c8f1c1314dcc25" kind="function"><name>isInLanelet</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1aee8a05f270b2a39a6d871c98565c7478" kind="function"><name>entityStatusSetted</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1ad4536ad71969c95b72b3dae2935fa26e" kind="function"><name>entityStatusSet</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1aaadaa68bb96ed05784b7873309c77ebf" kind="function"><name>setTargetSpeed</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1abcb3dc71a38dc22952d5bbb36a35d677" kind="function"><name>update</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1abbf22f043fdf82a8471bc74b913908aa" kind="function"><name>broadcastTransform</name></member>
@@ -604,16 +621,18 @@
     <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a32069e41fe94f85226053114947138d2" kind="function"><name>PedestrianEntity</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1abb24bda2d3acae4d73a27ee1ba31d50f" kind="function"><name>PedestrianEntity</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a2d74c3d8d4d701764da59811697471fa" kind="function"><name>onUpdate</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a279bb36bbe1c85fc20c320cabbe7d04b" kind="function"><name>requestAcquirePosition</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1ac03e5510333715174956c3140fa5d3c9" kind="function"><name>requestWalkStraight</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a2ea589f878fb800c1324ec05d2dc924a" kind="function"><name>requestAcquirePosition</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a0430ea701c2918aa5ddf5ccf06710be4" kind="function"><name>requestWalkStraight</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1af09691a864adc3dbba0bda82bd37e845" kind="function"><name>requestLaneChange</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a278e40cbd8d36182dee838faf83a5b3f" kind="function"><name>cancelRequest</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1ac7c3f88657b229c57ec328ecd7ca7337" kind="function"><name>setHdMapUtils</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1ac2fd5fe1cf1d5d888788a64e6f8b12a1" kind="function"><name>setTrafficLightManager</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a2fa6251594a6574d60ec1e049033b66c" kind="function"><name>setTargetSpeed</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1af5685211b4c3a9edcc7870facf493478" kind="function"><name>setTargetSpeed</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a11aa789219bf39127244ae02d8faa649" kind="function"><name>getBoundingBox</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a3cf7caa9730daf6ff2bdc8115831de8f" kind="function"><name>requestAssignRoute</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a26319d6ae3e1decd2ce08f9f976a2559" kind="function"><name>getCurrentAction</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a97592fd7e2c1d7e16ca43bda3ab32307" kind="function"><name>getRouteLanelets</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a7013266a9204695fac4563a64db5e703" kind="function"><name>getRouteLanelets</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a24452bad4a8d3a50a45d88862a7a042e" kind="function"><name>getObstacle</name></member>
   </compound>
   <compound refid="structtraffic__simulator_1_1entity_1_1PedestrianParameters" kind="struct"><name>traffic_simulator::entity::PedestrianParameters</name>
     <member refid="structtraffic__simulator_1_1entity_1_1PedestrianParameters_1a025d81a76a159ffe6f41fe86280e105a" kind="variable"><name>name</name></member>
@@ -672,7 +691,6 @@
   <compound refid="classScenarioRunnerMoc" kind="class"><name>ScenarioRunnerMoc</name>
     <member refid="classScenarioRunnerMoc_1a87784aad8ba4a8284fe9375c92f10603" kind="variable"><name>lanechange_excuted_</name></member>
     <member refid="classScenarioRunnerMoc_1a155a51eacb5db29b7f0231e962da1e77" kind="variable"><name>target_speed_setted_</name></member>
-    <member refid="classScenarioRunnerMoc_1a05b0782dc84bed0658da39397f517dab" kind="variable"><name>current_time_</name></member>
     <member refid="classScenarioRunnerMoc_1a434e7782502d2984787f9a58147e677a" kind="variable"><name>port_</name></member>
     <member refid="classScenarioRunnerMoc_1af42cc73747d80029bdb6781df30d991e" kind="variable"><name>api_</name></member>
     <member refid="classScenarioRunnerMoc_1a20271089c267026e259ea0e9f4abb794" kind="variable"><name>update_timer_</name></member>
@@ -970,7 +988,7 @@
     <member refid="classtraffic__simulator_1_1TrafficLightManager_1a5cc0edc63897bc42afabfd00638a4a7a" kind="variable"><name>clock_ptr_</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLightManager_1ab87407e26ce6922ee6680a5291f14d5f" kind="variable"><name>map_frame_</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLightManager_1a50826927f5f809702a0e4af72f6187d6" kind="function"><name>TrafficLightManager</name></member>
-    <member refid="classtraffic__simulator_1_1TrafficLightManager_1a7eb747f2af2c6a3abeaf2efd0d571edd" kind="function"><name>update</name></member>
+    <member refid="classtraffic__simulator_1_1TrafficLightManager_1a61ee4a8e7331012e350f83de8049ff62" kind="function"><name>update</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLightManager_1aca3fcc350e6e09fe19ed08055dbf48e5" kind="function"><name>FORWARD_TO_GIVEN_TRAFFIC_LIGHT</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLightManager_1a69bbf63b3db409636f375ae853139a26" kind="function"><name>FORWARD_TO_GIVEN_TRAFFIC_LIGHT</name></member>
     <member refid="classtraffic__simulator_1_1TrafficLightManager_1a3f2ed46dae12a2659d9ee95ca317554e" kind="function"><name>FORWARD_TO_GIVEN_TRAFFIC_LIGHT</name></member>
@@ -1016,6 +1034,10 @@
     <member refid="classmetrics_1_1TraveledDistanceMetric_1a83a60b1a279388f2e324be39d3509b4c" kind="function"><name>to_json</name></member>
     <member refid="classmetrics_1_1TraveledDistanceMetric_1aeca318ff6c5c6c50656a620c2a674e32" kind="function"><name>activateTrigger</name></member>
   </compound>
+  <compound refid="classtraffic__simulator_1_1UnsupportActionError" kind="class"><name>traffic_simulator::UnsupportActionError</name>
+    <member refid="classtraffic__simulator_1_1UnsupportActionError_1ae45c5447100aac4634197e1462820dc2" kind="function"><name>UnsupportActionError</name></member>
+    <member refid="classtraffic__simulator_1_1UnsupportActionError_1af648e7cc0d730a7323e8fa71df3bcce9" kind="function"><name>UnsupportActionError</name></member>
+  </compound>
   <compound refid="classentity__behavior_1_1VehicleActionNode" kind="class"><name>entity_behavior::VehicleActionNode</name>
     <member refid="classentity__behavior_1_1VehicleActionNode_1aa2efa3ca8c86b547817c7127166cba2d" kind="variable"><name>vehicle_parameters</name></member>
     <member refid="classentity__behavior_1_1VehicleActionNode_1adcb6f06ffba530422780ba45fc40779d" kind="variable"><name>driver_model</name></member>
@@ -1039,19 +1061,21 @@
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a3baf6878c5a2c3e58b9f0d63db86adb7" kind="function"><name>VehicleEntity</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a2d76f35561e11f69af2db400bacfcffc" kind="function"><name>VehicleEntity</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a244d20e0620376ce845f2b317c984945" kind="function"><name>onUpdate</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a2a6676f706f20501376d4b6216dfba3c" kind="function"><name>requestAcquirePosition</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1afa792a184e28a81af3ec642988489212" kind="function"><name>requestAcquirePosition</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a09e64007199cacc4ffabf2a0e2591790" kind="function"><name>requestLaneChange</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a4f96805e870fc82a5a512383e0a5d84f" kind="function"><name>cancelRequest</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a71ca47a68a4737560df2c30ef618ab3f" kind="function"><name>getVehicleParameters</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1aa387a91866e06af3b9e835be6bf2415b" kind="function"><name>requestWalkStraight</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a7365d3a2e7c70ad81b07c0633a9ba0e7" kind="function"><name>setDriverModel</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1aafd854727623a930b38e76251dec352c" kind="function"><name>setHdMapUtils</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a733e798f6ca821f994a2a82ecd55a13d" kind="function"><name>setTrafficLightManager</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a2a341543259e8af924d63f4fc37cb451" kind="function"><name>setTargetSpeed</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a757d8e5d2d63e237033a6edc86a3cb66" kind="function"><name>setTargetSpeed</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a3addacfa59627b573a0cfbcdab0f01e3" kind="function"><name>getBoundingBox</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a26766b08a3ab925403ffe0257c1d1250" kind="function"><name>requestAssignRoute</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a91b9fb6c08025ff4d8687be9a7313535" kind="function"><name>getCurrentAction</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1aa3362866d07e30c9ef53b804e50b72e5" kind="function"><name>getWaypoints</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1aae1454a67fc261ebdc3f7aedd9cb62e4" kind="function"><name>getObstacle</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a811ebab65fb75a0aecd264a019d22f95" kind="function"><name>getRouteLanelets</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1ae37b6eb243524f6a6b99a2eacd7da592" kind="function"><name>getWaypoints</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a9591a4efefbdd2340b02ea45ca89480f" kind="function"><name>getObstacle</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1abdaf8acad597a5f36783ec0172a1d0b4" kind="function"><name>getRouteLanelets</name></member>
   </compound>
   <compound refid="structtraffic__simulator_1_1entity_1_1VehicleParameters" kind="struct"><name>traffic_simulator::entity::VehicleParameters</name>
     <member refid="structtraffic__simulator_1_1entity_1_1VehicleParameters_1aa169842a34aa3b8b9c608128798b88fe" kind="variable"><name>performance</name></member>

@@ -764,68 +764,66 @@
 <codeline lineno="45"><highlight class="normal"><sp/><sp/>factory_.registerNodeType&lt;LaneChangeAction&gt;(</highlight><highlight class="stringliteral">&quot;LaneChange&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/>tree_<sp/>=<sp/>factory_.createTreeFromFile(path);</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/>current_action_<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;root&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>logger_cout_ptr_<sp/>=<sp/>std::make_shared&lt;BT::StdCoutLogger&gt;(tree_);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/>setupLogger();</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/>setRequest(</highlight><highlight class="stringliteral">&quot;none&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>setValueToBlackBoard&lt;boost::optional&lt;openscenario_msgs::msg::Obstacle&gt;&gt;(&quot;obstacle&quot;,<sp/>boost::none);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BehaviorTree::setRequest(std::string<sp/>request)</highlight></codeline>
-<codeline lineno="55"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/>request_<sp/>=<sp/>request;</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/>setValueToBlackBoard(</highlight><highlight class="stringliteral">&quot;request&quot;</highlight><highlight class="normal">,<sp/>request);</highlight></codeline>
-<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BehaviorTree::setupLogger()</highlight></codeline>
-<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/>first_timestamp_<sp/>=<sp/>std::chrono::high_resolution_clock::now();</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>subscribeCallback<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">](</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BT::TimePoint<sp/>timestamp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BT::TreeNode<sp/>&amp;<sp/>node,</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BT::NodeStatus<sp/>prev,<sp/>BT::NodeStatus<sp/>status)<sp/>{</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>!=<sp/>BT::NodeStatus::IDLE)<sp/>{</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type_<sp/>==<sp/>BT::TimestampType::ABSOLUTE)<sp/>{</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;callback(timestamp.time_since_epoch(),<sp/>node,<sp/>prev,<sp/>status);</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;callback(timestamp<sp/>-<sp/>first_timestamp_,<sp/>node,<sp/>prev,<sp/>status);</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>visitor<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>subscribeCallback](BT::TreeNode<sp/>*<sp/>node)<sp/>{</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>subscribers_.push_back(node-&gt;subscribeToStatusChange(std::move(subscribeCallback)));</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/>BT::applyRecursiveVisitor(tree_.rootNode(),<sp/>visitor);</highlight></codeline>
-<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal">BT::NodeStatus<sp/>BehaviorTree::tick(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step_time)</highlight></codeline>
-<codeline lineno="81"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/>setValueToBlackBoard(</highlight><highlight class="stringliteral">&quot;current_time&quot;</highlight><highlight class="normal">,<sp/>current_time);</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/>setValueToBlackBoard(</highlight><highlight class="stringliteral">&quot;step_time&quot;</highlight><highlight class="normal">,<sp/>step_time);</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tree_.rootNode()-&gt;executeTick();</highlight></codeline>
-<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BehaviorTree::callback(</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/>BT::Duration<sp/>timestamp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BT::TreeNode<sp/>&amp;<sp/>node,<sp/>BT::NodeStatus<sp/>prev_status,</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/>BT::NodeStatus<sp/>status)</highlight></codeline>
-<codeline lineno="90"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>whitespaces<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>ws_count<sp/>=<sp/>25;</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>since_epoch<sp/>=<sp/>std::chrono::duration&lt;double&gt;(timestamp).count();</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/>printf(</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;[%.3f]:<sp/>%s%s<sp/>%s<sp/>-&gt;<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>since_epoch,<sp/>node.name().c_str(),</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>&amp;whitespaces[std::min(ws_count,<sp/>node.name().size())],<sp/>toStr(prev_status,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">).c_str(),</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>toStr(status,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">).c_str());</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>!=<sp/>BT::NodeStatus::SUCCESS)<sp/>{</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>current_action_<sp/>=<sp/>node.name();</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>==<sp/>BT::NodeStatus::SUCCESS<sp/>||<sp/>status<sp/>==<sp/>BT::NodeStatus::FAILURE)<sp/>{</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(request_<sp/>==<sp/>current_action_)<sp/>{</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>setRequest(</highlight><highlight class="stringliteral">&quot;none&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="108"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>vehicle</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="109"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>entity_behavior</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>setupLogger();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>setRequest(</highlight><highlight class="stringliteral">&quot;none&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BehaviorTree::setRequest(std::string<sp/>request)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>request_<sp/>=<sp/>request;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>setValueToBlackBoard(</highlight><highlight class="stringliteral">&quot;request&quot;</highlight><highlight class="normal">,<sp/>request);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BehaviorTree::setupLogger()</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>first_timestamp_<sp/>=<sp/>std::chrono::high_resolution_clock::now();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>subscribeCallback<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">](</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BT::TimePoint<sp/>timestamp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BT::TreeNode<sp/>&amp;<sp/>node,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BT::NodeStatus<sp/>prev,<sp/>BT::NodeStatus<sp/>status)<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>!=<sp/>BT::NodeStatus::IDLE)<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type_<sp/>==<sp/>BT::TimestampType::ABSOLUTE)<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;callback(timestamp.time_since_epoch(),<sp/>node,<sp/>prev,<sp/>status);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;callback(timestamp<sp/>-<sp/>first_timestamp_,<sp/>node,<sp/>prev,<sp/>status);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>visitor<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>subscribeCallback](BT::TreeNode<sp/>*<sp/>node)<sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>subscribers_.push_back(node-&gt;subscribeToStatusChange(std::move(subscribeCallback)));</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>BT::applyRecursiveVisitor(tree_.rootNode(),<sp/>visitor);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">BT::NodeStatus<sp/>BehaviorTree::tick(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step_time)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>setValueToBlackBoard(</highlight><highlight class="stringliteral">&quot;current_time&quot;</highlight><highlight class="normal">,<sp/>current_time);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>setValueToBlackBoard(</highlight><highlight class="stringliteral">&quot;step_time&quot;</highlight><highlight class="normal">,<sp/>step_time);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tree_.rootNode()-&gt;executeTick();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BehaviorTree::callback(</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>BT::Duration<sp/>timestamp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BT::TreeNode<sp/>&amp;<sp/>node,<sp/>BT::NodeStatus<sp/>prev_status,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>BT::NodeStatus<sp/>status)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>whitespaces<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>ws_count<sp/>=<sp/>25;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>since_epoch<sp/>=<sp/>std::chrono::duration&lt;double&gt;(timestamp).count();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>printf(</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;[%.3f]:<sp/>%s%s<sp/>%s<sp/>-&gt;<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>since_epoch,<sp/>node.name().c_str(),</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>&amp;whitespaces[std::min(ws_count,<sp/>node.name().size())],<sp/>toStr(prev_status,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">).c_str(),</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>toStr(status,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">).c_str());</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>!=<sp/>BT::NodeStatus::SUCCESS)<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>current_action_<sp/>=<sp/>node.name();</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>==<sp/>BT::NodeStatus::SUCCESS<sp/>||<sp/>status<sp/>==<sp/>BT::NodeStatus::FAILURE)<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(request_<sp/>==<sp/>current_action_)<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>setRequest(</highlight><highlight class="stringliteral">&quot;none&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>vehicle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>entity_behavior</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/behavior/vehicle/behavior_tree.cpp"/>
   </compounddef>

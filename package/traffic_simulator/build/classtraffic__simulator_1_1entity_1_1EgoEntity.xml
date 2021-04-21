@@ -568,11 +568,12 @@
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/ego_entity.hpp" line="387" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/entity/ego_entity.cpp" bodystart="58" bodyend="74"/>
       </memberdef>
-      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a7b7cd8bdb0dc10650458498300e5d999" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EgoEntity_1a14e13cf18af677839d8f5d8507cff13f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>const openscenario_msgs::msg::WaypointsArray</type>
         <definition>const openscenario_msgs::msg::WaypointsArray traffic_simulator::entity::EgoEntity::getWaypoints</definition>
-        <argsstring>()</argsstring>
+        <argsstring>() override</argsstring>
         <name>getWaypoints</name>
+        <reimplements refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a25fff8199bc23ea6f6057c3b7fd76051">getWaypoints</reimplements>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -657,7 +658,7 @@
       <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a5b33026593d89a6d359baeb9ac2bbd02" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>getStatus</name></member>
       <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a71ca47a68a4737560df2c30ef618ab3f" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>getVehicleParameters</name></member>
       <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ac6352d01d096a916c5861cd2a45d8837" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>getVisibility</name></member>
-      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a7b7cd8bdb0dc10650458498300e5d999" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>getWaypoints</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a14e13cf18af677839d8f5d8507cff13f" prot="public" virt="virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>getWaypoints</name></member>
       <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a72dc3af2b74ab8f861334f24c0fcce51" prot="protected" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>hdmap_utils_ptr_</name></member>
       <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a4a391d045af95f50e8e531abb201d6c9" prot="private" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>initial_pose_</name></member>
       <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a62dcb8ea63ad06a429df8b76216fcb3d" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EgoEntity</scope><name>initializeAutoware</name></member>

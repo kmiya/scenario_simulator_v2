@@ -256,6 +256,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tutorials/RunWithDocker/" class="md-nav__link">
+        Run with docker
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -746,10 +758,8 @@
   <span class="n">factory_</span><span class="p">.</span><span class="n">registerNodeType</span><span class="o">&lt;</span><span class="n">LaneChangeAction</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;LaneChange&quot;</span><span class="p">);</span>
   <span class="n">tree_</span> <span class="o">=</span> <span class="n">factory_</span><span class="p">.</span><span class="n">createTreeFromFile</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
   <span class="n">current_action_</span> <span class="o">=</span> <span class="s">&quot;root&quot;</span><span class="p">;</span>
-  <span class="c1">// logger_cout_ptr_ = std::make_shared&lt;BT::StdCoutLogger&gt;(tree_);</span>
   <span class="n">setupLogger</span><span class="p">();</span>
   <span class="n">setRequest</span><span class="p">(</span><span class="s">&quot;none&quot;</span><span class="p">);</span>
-  <span class="c1">// setValueToBlackBoard&lt;boost::optional&lt;openscenario_msgs::msg::Obstacle&gt;&gt;(&quot;obstacle&quot;, boost::none);</span>
 <span class="p">}</span>
 
 <span class="kt">void</span> <span class="n">BehaviorTree</span><span class="o">::</span><span class="n">setRequest</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">request</span><span class="p">)</span>
@@ -810,7 +820,7 @@
 <span class="p">}</span>  <span class="c1">// namespace entity_behavior</span>
 </code></pre></div>
 <hr />
-<p>Updated on 21 April 2021 at 00:15:29 UTC</p>
+<p>Updated on 21 April 2021 at 08:11:57 UTC</p>
                 
                   
                 

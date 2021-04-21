@@ -801,17 +801,21 @@
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>route_planner_ptr_-&gt;getRouteLanelets(status_-&gt;lanelet_pose,<sp/>horizon);</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/>boost::optional&lt;openscenario_msgs::msg::Obstacle&gt;<sp/>getObstacle()</highlight><highlight class="keyword"><sp/>override<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>boost::none;<sp/>}</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;entity_behavior::pedestrian::BehaviorTree&gt;<sp/>tree_ptr_;</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/>BT::NodeStatus<sp/>action_status_;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/>boost::optional&lt;double&gt;<sp/>target_speed_;</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;traffic_simulator::RoutePlanner&gt;<sp/>route_planner_ptr_;</highlight></codeline>
-<codeline lineno="84"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="85"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>entity</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>traffic_simulator</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>TRAFFIC_SIMULATOR__ENTITY__PEDESTRIAN_ENTITY_HPP_</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::WaypointsArray<sp/>getWaypoints()</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline lineno="79"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::WaypointsArray();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;entity_behavior::pedestrian::BehaviorTree&gt;<sp/>tree_ptr_;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>BT::NodeStatus<sp/>action_status_;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>boost::optional&lt;double&gt;<sp/>target_speed_;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;traffic_simulator::RoutePlanner&gt;<sp/>route_planner_ptr_;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>entity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>traffic_simulator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>TRAFFIC_SIMULATOR__ENTITY__PEDESTRIAN_ENTITY_HPP_</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/pedestrian_entity.hpp"/>
   </compounddef>

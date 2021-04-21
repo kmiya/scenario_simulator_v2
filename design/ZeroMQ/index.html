@@ -573,6 +573,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sequence-diagram" class="md-nav__link">
+    Sequence Diagram
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#schema-of-the-message" class="md-nav__link">
     Schema of the message
   </a>
@@ -589,6 +596,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-apis-for-co-simulation" class="md-nav__link">
+    Required APIs for co-simulation
+  </a>
   
 </li>
       
@@ -732,6 +746,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sequence-diagram" class="md-nav__link">
+    Sequence Diagram
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#schema-of-the-message" class="md-nav__link">
     Schema of the message
   </a>
@@ -748,6 +769,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-apis-for-co-simulation" class="md-nav__link">
+    Required APIs for co-simulation
+  </a>
   
 </li>
       
@@ -776,11 +804,110 @@
 <p><a href="https://zeromq.org/">ZeroMQ</a> is an open-source messaging library, it supports TCP/UDP/Intra-Process messaging communication.<br />
 We use <a href="https://zeromq.org/">ZeroMQ</a> in order to communicate with the simulator and interpreter.
 We use Request/Reply socket in order to run the simulator synchronously.  </p>
+<iframe 
+  class="hatenablogcard" 
+  style="width:100%;height:155px;max-width:450px;" 
+  title="embree" 
+  src="https://hatenablog-parts.com/embed?url=https://zeromq.org/" 
+  width="300" height="150" frameborder="0" scrolling="no">
+</iframe>
+
+<h2 id="sequence-diagram">Sequence Diagram<a class="headerlink" href="#sequence-diagram" title="Permanent link">#</a></h2>
+<p>Traffic simulator has a zeromq client and sensor simulator has a zeromq server.
+We use protobuf in order to serialize data.</p>
+<div class="mermaid">sequenceDiagram
+    participant Traffic Simulator
+    participant Simple Sensor Simulator
+    participant Autoware
+    Traffic Simulator -&gt;+ Simple Sensor Simulator : InitializeRequest
+    Simple Sensor Simulator -&gt;-Traffic Simulator : InitializeResponse
+    Traffic Simulator -&gt;+ Simple Sensor Simulator : SpawnVehicleEntityRequest
+    Simple Sensor Simulator -&gt;-Traffic Simulator : SpawnVehicleEntityResponse
+    Traffic Simulator -&gt;+ Simple Sensor Simulator : AttachLidarSensorRequest
+    Simple Sensor Simulator -&gt;-Traffic Simulator : AttachLidarSensorResponse
+    Traffic Simulator -&gt;+ Simple Sensor Simulator : AttachDetectionSensorRequest
+    Simple Sensor Simulator -&gt;-Traffic Simulator : AttachDetectionSensorResponse
+    loop every frame
+      Traffic Simulator -&gt;+ Simple Sensor Simulator : UpdateFrameRequest
+      Simple Sensor Simulator -&gt;-Traffic Simulator : UpdateFrameResponse
+      Traffic Simulator -&gt;+ Simple Sensor Simulator : UpdateEntityStatusRequest
+      Simple Sensor Simulator -&gt;&gt; Autoware : Send Pointcloud (ROS2 topic)
+      Simple Sensor Simulator -&gt;&gt; Autoware : Send Detection Result (ROS2 topic)
+      Simple Sensor Simulator -&gt;-Traffic Simulator : UpdateEntityStatusResponse
+    end</div>
 <h2 id="schema-of-the-message">Schema of the message<a class="headerlink" href="#schema-of-the-message" title="Permanent link">#</a></h2>
 <p>traffic_simulatorr::API send the request to the simulator, Requests are serialized by using <a href="https://developers.google.com/protocol-buffers">protobuf</a> and use different port in order to communicate with the simulator.  </p>
 <h3 id="protobuf-definition">Protobuf Definition<a class="headerlink" href="#protobuf-definition" title="Permanent link">#</a></h3>
 <p><a href="https://github.com/tier4/scenario_simulator_v2/blob/master/simulation/simulation_interface/proto/simulation_api_schema.proto">Schema of Protobuf</a> is here.
 <a href="../../proto_doc/protobuf/">Protobuf Documentation</a> is here. all datas are serialized as string and send via TCP by using ZeroMQ.</p>
+<h2 id="required-apis-for-co-simulation">Required APIs for co-simulation<a class="headerlink" href="#required-apis-for-co-simulation" title="Permanent link">#</a></h2>
+<p>Traffic simulator and simple sensor simulator communicates with APIs below, if you want to integrate with your simulator, only you have to do is prepareing these APIs below.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>TCP Port</th>
+<th>Request</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>initialize</td>
+<td>5555</td>
+<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.InitializeRequest">InitializeRequest</a></td>
+<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.InitializeResponse">InitializeResponse</a></td>
+</tr>
+<tr>
+<td>update_frame</td>
+<td>5556</td>
+<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.UpdateFrameRequest">UpdateFrameRequest</a></td>
+<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.UpdateFrameResponse">UpdateFrameResponse</a></td>
+</tr>
+<tr>
+<td>update_sensor_frame</td>
+<td>5557</td>
+<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.UpdateSensorFrameRequest">UpdateSensorFrameRequest</a></td>
+<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.UpdateSensorFrameResponse">UpdateSensorFrameResponse</a></td>
+</tr>
+<tr>
+<td>spawn_vehicle_entity</td>
+<td>5558</td>
+<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.SpawnVehicleEntityRequest">SpawnVehicleEntityRequest</a></td>
+<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.SpawnVehicleEntityResponse">SpawnVehicleEntityResponse</a></td>
+</tr>
+<tr>
+<td>spawn_pedestrian_entity</td>
+<td>5559</td>
+<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.SpawnPedestrianEntityRequest">SpawnPedestrianEntityRequest</a></td>
+<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.SpawnPedestrianEntityResponse">SpawnPedestrianEntityResponse</a></td>
+</tr>
+<tr>
+<td>despawn_entity</td>
+<td>5560</td>
+<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.DespawnEntityRequest">DespawnEntityRequest</a></td>
+<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.DespawnEntityResponse">DespawnEntityResponse</a></td>
+</tr>
+<tr>
+<td>update_entity_status</td>
+<td>5561</td>
+<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.UpdateEntityStatusRequest">UpdateEntityStatusRequest</a></td>
+<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.UpdateEntityStatusResponse">UpdateEntityStatusResponse</a></td>
+</tr>
+<tr>
+<td>attach_lidar_sensor</td>
+<td>5562</td>
+<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.AttachLidarSensorRequest">AttachLidarSensorRequest</a></td>
+<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.AttachLidarSensorResponse">AttachLidarSensorResponse</a></td>
+</tr>
+<tr>
+<td>attach_detection_sensor</td>
+<td>5563</td>
+<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.AttachDetectionSensorRequest">AttachDetectionSensorRequest</a></td>
+<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.AttachDetectionSensorResponse">AttachDetectionSensorResponse</a></td>
+</tr>
+</tbody>
+</table>
                 
               
               

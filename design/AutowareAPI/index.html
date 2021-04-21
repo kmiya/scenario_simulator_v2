@@ -716,8 +716,36 @@
                 
                 <h1 id="autoware-api">Autoware API<a class="headerlink" href="#autoware-api" title="Permanent link">#</a></h1>
 <p>Autoware API provides features to control autoware easilly via ROS2 API.<br />
-AWAPI accessor is a C++ wrapper of the Autoware API, and it enables us to integrate with Autoware and other tools very easily!  </p>
+AWAPI accessor is a C++ wrapper of the Autoware API, and it enables us to integrate with Autoware and other tools very easily!<br />
+We can control autoware while initializa_duration of the simulation. (current_time &lt; 0)</p>
 <p><font color="#065479E"><em>Note! Autoware API is now under development and we are preparing documentation about this. We provide source code, but it is not a final version.</em></font></p>
+<div class="mermaid">sequenceDiagram
+    participant Autoware API
+    participant Autoware
+
+Autoware API --&gt;+ Autoware : launch
+Autoware --&gt;- Autoware API : launch result
+alt failed or timeout
+    Autoware API -&gt;&gt; Autoware : terminate
+end
+
+Autoware API --&gt;+ Autoware : initialize
+Autoware --&gt;- Autoware API : initialize result
+alt failed
+    Autoware API -&gt;&gt; Autoware : terminate
+end
+
+Autoware API --&gt;+ Autoware : send goal
+Autoware --&gt;- Autoware API : planing result
+alt failed
+    Autoware API -&gt;&gt; Autoware : terminate
+end
+
+loop every simulation frame
+    Autoware API -&gt;&gt; Autoware : vehicle status
+end
+
+Autoware API -&gt;&gt; Autoware : terminate</div>
                 
               
               

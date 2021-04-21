@@ -541,20 +541,6 @@
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
-        <li class="md-nav__item">
-  <a href="#sequence-diagram" class="md-nav__link">
-    Sequence Diagram
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#required-apis-for-co-simulation" class="md-nav__link">
-    Required APIs for co-simulation
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -711,20 +697,6 @@
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
-        <li class="md-nav__item">
-  <a href="#sequence-diagram" class="md-nav__link">
-    Sequence Diagram
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#required-apis-for-co-simulation" class="md-nav__link">
-    Required APIs for co-simulation
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -746,30 +718,16 @@
 <p><img alt="simple sensor simulator" src="../../image/simple_sensor_simulator.png" title="simple sensor simulator" /></p>
 <p>The simple sensor simulator is a reference implementation of the simulator which follows our scenario testing framework.
 This package includes very very simple lidar simulation and send simulated detection result to the Autoware.</p>
-<h2 id="sequence-diagram">Sequence Diagram<a class="headerlink" href="#sequence-diagram" title="Permanent link">#</a></h2>
-<p>Traffic simulator has a zeromq client and sensor simulator has a zeromq server.
-We use protobuf in order to serialize data.</p>
-<div class="mermaid">sequenceDiagram
-    participant Traffic Simulator
-    participant Simple Sensor Simulator
-    participant Autoware
-    Traffic Simulator -&gt;+ Simple Sensor Simulator : InitializeRequest
-    Simple Sensor Simulator -&gt;-Traffic Simulator : InitializeResponse
-    Traffic Simulator -&gt;+ Simple Sensor Simulator : SpawnVehicleEntityRequest
-    Simple Sensor Simulator -&gt;-Traffic Simulator : SpawnVehicleEntityResponse
-    Traffic Simulator -&gt;+ Simple Sensor Simulator : AttachLidarSensorRequest
-    Simple Sensor Simulator -&gt;-Traffic Simulator : AttachLidarSensorResponse
-    Traffic Simulator -&gt;+ Simple Sensor Simulator : AttachDetectionSensorRequest
-    Simple Sensor Simulator -&gt;-Traffic Simulator : AttachDetectionSensorResponse
-    loop every frame
-      Traffic Simulator -&gt;+ Simple Sensor Simulator : UpdateFrameRequest
-      Simple Sensor Simulator -&gt;-Traffic Simulator : UpdateFrameResponse
-      Traffic Simulator -&gt;+ Simple Sensor Simulator : UpdateEntityStatusRequest
-      Simple Sensor Simulator -&gt;&gt; Autoware : Send Pointcloud (ROS2 topic)
-      Simple Sensor Simulator -&gt;&gt; Autoware : Send Detection Result (ROS2 topic)
-      Simple Sensor Simulator -&gt;-Traffic Simulator : UpdateEntityStatusResponse
-    end</div>
+<p><font color="#065479E"><em>Note! Simple Sensor Simulator is just a reference implementation, so we can adapt any kinds of autonomous driving simulators if we can develop ZeroMQ interface to your simulator.</em></font></p>
 <p>In lidar simulation, we use intel's ray-casting library embree.</p>
+<iframe 
+  class="hatenablogcard" 
+  style="width:100%;height:155px;max-width:450px;" 
+  title="embree" 
+  src="https://hatenablog-parts.com/embed?url=https://software.intel.com/content/www/cn/zh/develop/videos/embree-ray-tracing-kernels-overview-and-new-features-siggraph-2018-tech-session.html" 
+  width="300" height="150" frameborder="0" scrolling="no">
+</iframe>
+
 <iframe 
   class="hatenablogcard" 
   style="width:100%;height:155px;max-width:450px;" 
@@ -777,75 +735,6 @@ We use protobuf in order to serialize data.</p>
   src="https://hatenablog-parts.com/embed?url=https://github.com/embree/embree" 
   width="300" height="150" frameborder="0" scrolling="no">
 </iframe>
-
-<h2 id="required-apis-for-co-simulation">Required APIs for co-simulation<a class="headerlink" href="#required-apis-for-co-simulation" title="Permanent link">#</a></h2>
-<p>Traffic simulator and simple sensor simulator communicates with APIs below, if you want to integrate with your simulator, you only prepare these APIs below.</p>
-<table>
-<thead>
-<tr>
-<th>API</th>
-<th>TCP Port</th>
-<th>Request</th>
-<th>Response</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>initialize</td>
-<td>5555</td>
-<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.InitializeRequest">InitializeRequest</a></td>
-<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.InitializeResponse">InitializeResponse</a></td>
-</tr>
-<tr>
-<td>update_frame</td>
-<td>5556</td>
-<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.UpdateFrameRequest">UpdateFrameRequest</a></td>
-<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.UpdateFrameResponse">UpdateFrameResponse</a></td>
-</tr>
-<tr>
-<td>update_sensor_frame</td>
-<td>5557</td>
-<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.UpdateSensorFrameRequest">UpdateSensorFrameRequest</a></td>
-<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.UpdateSensorFrameResponse">UpdateSensorFrameResponse</a></td>
-</tr>
-<tr>
-<td>spawn_vehicle_entity</td>
-<td>5558</td>
-<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.SpawnVehicleEntityRequest">SpawnVehicleEntityRequest</a></td>
-<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.SpawnVehicleEntityResponse">SpawnVehicleEntityResponse</a></td>
-</tr>
-<tr>
-<td>spawn_pedestrian_entity</td>
-<td>5559</td>
-<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.SpawnPedestrianEntityRequest">SpawnPedestrianEntityRequest</a></td>
-<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.SpawnPedestrianEntityResponse">SpawnPedestrianEntityResponse</a></td>
-</tr>
-<tr>
-<td>despawn_entity</td>
-<td>5560</td>
-<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.DespawnEntityRequest">DespawnEntityRequest</a></td>
-<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.DespawnEntityResponse">DespawnEntityResponse</a></td>
-</tr>
-<tr>
-<td>update_entity_status</td>
-<td>5561</td>
-<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.UpdateEntityStatusRequest">UpdateEntityStatusRequest</a></td>
-<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.UpdateEntityStatusResponse">UpdateEntityStatusResponse</a></td>
-</tr>
-<tr>
-<td>attach_lidar_sensor</td>
-<td>5562</td>
-<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.AttachLidarSensorRequest">AttachLidarSensorRequest</a></td>
-<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.AttachLidarSensorResponse">AttachLidarSensorResponse</a></td>
-</tr>
-<tr>
-<td>attach_detection_sensor</td>
-<td>5563</td>
-<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.AttachDetectionSensorRequest">AttachDetectionSensorRequest</a></td>
-<td><a href="https://tier4.github.io/scenario_simulator_v2/proto_doc/protobuf/#simulation_api_schema.AttachDetectionSensorResponse">AttachDetectionSensorResponse</a></td>
-</tr>
-</tbody>
-</table>
                 
               
               

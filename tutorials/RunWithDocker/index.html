@@ -851,6 +851,9 @@
                 
                 
                 <h1 id="run-with-docker">Run with docker<a class="headerlink" href="#run-with-docker" title="Permanent link">#</a></h1>
+<p>You can use this scenario_simulator_v2 with docker.
+We automatically build docker images by using github actions and push them into dockerhub.</p>
+<p>If you want to run scenario_simulator_v2 with docker, please follow instructions below.</p>
 <h2 id="install-docker">Install docker<a class="headerlink" href="#install-docker" title="Permanent link">#</a></h2>
 <p>Please follow instructions below.</p>
 <p><iframe
@@ -968,20 +971,15 @@ docker build -t scenario_simulator_v2 .
 <h3 id="runing-with-docker-image-from-dockerhub">Runing with docker image from dockerhub.<a class="headerlink" href="#runing-with-docker-image-from-dockerhub" title="Permanent link">#</a></h3>
 <p>We automatically build docker images of scenario_simulator_v2 by using github actions and put them into our dockerhub.</p>
 <p><a href="https://github.com/tier4/scenario_simulator_v2/actions/workflows/Docker.yaml"><img alt="Push Docker Image" src="https://github.com/tier4/scenario_simulator_v2/actions/workflows/Docker.yaml/badge.svg" /></a></p>
-<iframe 
-  class="hatenablogcard" 
-  style="width:100%;height:155px;max-width:450px;" 
-  title="rocker" 
-  src="https://hatenablog-parts.com/embed?url=https://hub.docker.com/repository/docker/tier4/scenario_simulator_v2" 
-  width="300" height="150" frameborder="0" scrolling="no">
-</iframe>
-
+<p><a href="https://hub.docker.com/r/tier4/scenario_simulator_v2"><img alt="dockeri.co" src="https://dockeri.co/image/tier4/scenario_simulator_v2" /></a></p>
 <p>We can pull docker image from dockerhub and run simulation with scenario_simulator_v2 just typing commands below.</p>
 <p>If your local machine has nvidia GPUs,</p>
-<div class="highlight"><pre><span></span><code>rocker --nvidia --x11 tier4/scenario_simulator_v2 ros2 launch traffic_simulator mock_test.launch.py
+<div class="highlight"><pre><span></span><code>docker pull tier4/scenario_simulator_v2:latest
+rocker --nvidia --x11 tier4/scenario_simulator_v2:latest ros2 launch traffic_simulator mock_test.launch.py
 </code></pre></div>
 <p>If your local machine does not have nvidia GPUs,</p>
-<div class="highlight"><pre><span></span><code>rocker --x11 tier4/scenario_simulator_v2 ros2 launch traffic_simulator mock_test.launch.py
+<div class="highlight"><pre><span></span><code>docker pull tier4/scenario_simulator_v2:latest
+rocker --x11 tier4/scenario_simulator_v2:latest ros2 launch traffic_simulator mock_test.launch.py
 </code></pre></div>
 <p><video
   class="c-video__embed"

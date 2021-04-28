@@ -740,47 +740,42 @@
 <span class="k">namespace</span> <span class="n">entity</span>
 <span class="p">{</span>
 <span class="n">VehicleEntity</span><span class="o">::</span><span class="n">VehicleEntity</span><span class="p">(</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&amp;</span> <span class="n">initial_state</span><span class="p">,</span>
-  <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span> <span class="n">params</span><span class="p">)</span>
-<span class="o">:</span> <span class="n">EntityBase</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">initial_state</span><span class="p">),</span> <span class="n">parameters</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&amp;</span> <span class="n">initial_state</span><span class="p">,</span>
+  <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span> <span class="o">&amp;</span> <span class="n">params</span><span class="p">)</span>
+<span class="o">:</span> <span class="n">EntityBase</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">initial_state</span><span class="p">),</span>
+  <span class="n">parameters</span><span class="p">(</span><span class="n">params</span><span class="p">),</span>
+  <span class="n">tree_ptr_</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">entity_behavior</span><span class="o">::</span><span class="n">vehicle</span><span class="o">::</span><span class="n">BehaviorTree</span><span class="o">&gt;</span><span class="p">())</span>
 <span class="p">{</span>
   <span class="n">entity_type_</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityType</span><span class="o">::</span><span class="n">VEHICLE</span><span class="p">;</span>
-  <span class="n">tree_ptr_</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">entity_behavior</span><span class="o">::</span><span class="n">vehicle</span><span class="o">::</span><span class="n">BehaviorTree</span><span class="o">&gt;</span><span class="p">();</span>
   <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">setValueToBlackBoard</span><span class="p">(</span><span class="s">&quot;vehicle_parameters&quot;</span><span class="p">,</span> <span class="n">parameters</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="n">VehicleEntity</span><span class="o">::</span><span class="n">VehicleEntity</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span> <span class="n">params</span><span class="p">)</span>
-<span class="o">:</span> <span class="n">EntityBase</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">parameters</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+<span class="n">VehicleEntity</span><span class="o">::</span><span class="n">VehicleEntity</span><span class="p">(</span>
+  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span> <span class="o">&amp;</span> <span class="n">params</span><span class="p">)</span>
+<span class="o">:</span> <span class="n">EntityBase</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span>
+  <span class="n">parameters</span><span class="p">(</span><span class="n">params</span><span class="p">),</span>
+  <span class="n">tree_ptr_</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">entity_behavior</span><span class="o">::</span><span class="n">vehicle</span><span class="o">::</span><span class="n">BehaviorTree</span><span class="o">&gt;</span><span class="p">())</span>
 <span class="p">{</span>
   <span class="n">entity_type_</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityType</span><span class="o">::</span><span class="n">VEHICLE</span><span class="p">;</span>
-  <span class="n">tree_ptr_</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">entity_behavior</span><span class="o">::</span><span class="n">vehicle</span><span class="o">::</span><span class="n">BehaviorTree</span><span class="o">&gt;</span><span class="p">();</span>
   <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">setValueToBlackBoard</span><span class="p">(</span><span class="s">&quot;vehicle_parameters&quot;</span><span class="p">,</span> <span class="n">parameters</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kt">void</span> <span class="n">VehicleEntity</span><span class="o">::</span><span class="n">requestAssignRoute</span><span class="p">(</span>
   <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">waypoints</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">status_</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">status_</span> <span class="n">and</span> <span class="n">status_</span><span class="o">-&gt;</span><span class="n">lanelet_pose_valid</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">route_planner_ptr_</span><span class="o">-&gt;</span><span class="n">getRouteLanelets</span><span class="p">(</span><span class="n">status_</span><span class="o">-&gt;</span><span class="n">lanelet_pose</span><span class="p">,</span> <span class="n">waypoints</span><span class="p">);</span>
   <span class="p">}</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">status_</span><span class="o">-&gt;</span><span class="n">lanelet_pose_valid</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="n">route_planner_ptr_</span><span class="o">-&gt;</span><span class="n">getRouteLanelets</span><span class="p">(</span><span class="n">status_</span><span class="o">-&gt;</span><span class="n">lanelet_pose</span><span class="p">,</span> <span class="n">waypoints</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kt">void</span> <span class="n">VehicleEntity</span><span class="o">::</span><span class="n">requestAcquirePosition</span><span class="p">(</span><span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="o">&amp;</span> <span class="n">lanelet_pose</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">status_</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">status_</span> <span class="n">and</span> <span class="n">status_</span><span class="o">-&gt;</span><span class="n">lanelet_pose_valid</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">route_planner_ptr_</span><span class="o">-&gt;</span><span class="n">getRouteLanelets</span><span class="p">(</span><span class="n">status_</span><span class="o">-&gt;</span><span class="n">lanelet_pose</span><span class="p">,</span> <span class="n">lanelet_pose</span><span class="p">);</span>
   <span class="p">}</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">status_</span><span class="o">-&gt;</span><span class="n">lanelet_pose_valid</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="n">route_planner_ptr_</span><span class="o">-&gt;</span><span class="n">getRouteLanelets</span><span class="p">(</span><span class="n">status_</span><span class="o">-&gt;</span><span class="n">lanelet_pose</span><span class="p">,</span> <span class="n">lanelet_pose</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="kt">void</span> <span class="n">VehicleEntity</span><span class="o">::</span><span class="n">requestLaneChange</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">to_lanelet_id</span><span class="p">)</span>
+<span class="kt">void</span> <span class="n">VehicleEntity</span><span class="o">::</span><span class="n">requestLaneChange</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">to_lanelet_id</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">setRequest</span><span class="p">(</span><span class="s">&quot;lane_change&quot;</span><span class="p">);</span>
   <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">setValueToBlackBoard</span><span class="p">(</span><span class="s">&quot;to_lanelet_id&quot;</span><span class="p">,</span> <span class="n">to_lanelet_id</span><span class="p">);</span>
@@ -850,7 +845,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 28 April 2021 at 01:33:44 UTC</p>
+<p>Updated on 28 April 2021 at 10:14:43 UTC</p>
                 
                   
                 

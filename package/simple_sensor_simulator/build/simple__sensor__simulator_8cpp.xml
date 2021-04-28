@@ -451,7 +451,7 @@
 <codeline lineno="164"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="165"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pub<sp/>=<sp/>this-&gt;create_publisher&lt;autoware_perception_msgs::msg::DynamicObjectArray&gt;(</highlight></codeline>
 <codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>req.configuration().topic_name(),<sp/>1);</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/>sensor_sim_.attachDetectionSensor(req.configuration(),<sp/>pub);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/>sensor_sim_.attachDetectionSensor(current_time_,<sp/>req.configuration(),<sp/>pub);</highlight></codeline>
 <codeline lineno="168"><highlight class="normal"><sp/><sp/>res<sp/>=<sp/>simulation_api_schema::AttachDetectionSensorResponse();</highlight></codeline>
 <codeline lineno="169"><highlight class="normal"><sp/><sp/>res.mutable_result()-&gt;set_success(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="170"><highlight class="normal">}</highlight></codeline>
@@ -462,7 +462,7 @@
 <codeline lineno="175"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pub<sp/>=</highlight></codeline>
 <codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;create_publisher&lt;sensor_msgs::msg::PointCloud2&gt;(req.configuration().topic_name(),<sp/>1);</highlight></codeline>
-<codeline lineno="178"><highlight class="normal"><sp/><sp/>sensor_sim_.attachLidarSensor(req.configuration(),<sp/>pub);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/>sensor_sim_.attachLidarSensor(current_time_,<sp/>req.configuration(),<sp/>pub);</highlight></codeline>
 <codeline lineno="179"><highlight class="normal"><sp/><sp/>res<sp/>=<sp/>simulation_api_schema::AttachLidarSensorResponse();</highlight></codeline>
 <codeline lineno="180"><highlight class="normal"><sp/><sp/>res.mutable_result()-&gt;set_success(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="181"><highlight class="normal">}</highlight></codeline>

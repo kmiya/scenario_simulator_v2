@@ -498,7 +498,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="129" column="9" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" bodystart="129" bodyend="-1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="131" column="9" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" bodystart="131" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -613,42 +613,44 @@
 <codeline lineno="105"><highlight class="normal">FORWARD_TO_SIMULATION_API(attachLidarSensor);</highlight></codeline>
 <codeline lineno="106"><highlight class="normal">FORWARD_TO_SIMULATION_API(checkCollision);</highlight></codeline>
 <codeline lineno="107"><highlight class="normal">FORWARD_TO_SIMULATION_API(despawn);</highlight></codeline>
-<codeline lineno="108"><highlight class="normal">FORWARD_TO_SIMULATION_API(getCurrentTime);</highlight></codeline>
-<codeline lineno="109"><highlight class="normal">FORWARD_TO_SIMULATION_API(getTrafficLightArrow);</highlight></codeline>
-<codeline lineno="110"><highlight class="normal">FORWARD_TO_SIMULATION_API(getTrafficLightColor);</highlight></codeline>
-<codeline lineno="111"><highlight class="normal">FORWARD_TO_SIMULATION_API(initialize);</highlight></codeline>
-<codeline lineno="112"><highlight class="normal">FORWARD_TO_SIMULATION_API(isInLanelet);</highlight></codeline>
-<codeline lineno="113"><highlight class="normal">FORWARD_TO_SIMULATION_API(requestAcquirePosition);</highlight></codeline>
-<codeline lineno="114"><highlight class="normal">FORWARD_TO_SIMULATION_API(requestAssignRoute);</highlight></codeline>
-<codeline lineno="115"><highlight class="normal">FORWARD_TO_SIMULATION_API(requestLaneChange);</highlight></codeline>
-<codeline lineno="116"><highlight class="normal">FORWARD_TO_SIMULATION_API(requestWalkStraight);</highlight></codeline>
-<codeline lineno="117"><highlight class="normal">FORWARD_TO_SIMULATION_API(setEntityStatus);</highlight></codeline>
-<codeline lineno="118"><highlight class="normal">FORWARD_TO_SIMULATION_API(setTargetSpeed);</highlight></codeline>
-<codeline lineno="119"><highlight class="normal">FORWARD_TO_SIMULATION_API(setTrafficLightArrow);</highlight></codeline>
-<codeline lineno="120"><highlight class="normal">FORWARD_TO_SIMULATION_API(setTrafficLightArrowPhase);</highlight></codeline>
-<codeline lineno="121"><highlight class="normal">FORWARD_TO_SIMULATION_API(setTrafficLightColor);</highlight></codeline>
-<codeline lineno="122"><highlight class="normal">FORWARD_TO_SIMULATION_API(setTrafficLightColorPhase);</highlight></codeline>
-<codeline lineno="123"><highlight class="normal">FORWARD_TO_SIMULATION_API(spawn);</highlight></codeline>
-<codeline lineno="124"><highlight class="normal">FORWARD_TO_SIMULATION_API(toMapPose);</highlight></codeline>
-<codeline lineno="125"><highlight class="normal">FORWARD_TO_SIMULATION_API(updateFrame);</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"></highlight></codeline>
-<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>FORWARD_TO_SIMULATION_API</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal">FORWARD_TO_SIMULATION_API(engage);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">FORWARD_TO_SIMULATION_API(getCurrentTime);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">FORWARD_TO_SIMULATION_API(getTrafficLightArrow);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">FORWARD_TO_SIMULATION_API(getTrafficLightColor);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">FORWARD_TO_SIMULATION_API(initialize);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">FORWARD_TO_SIMULATION_API(isInLanelet);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">FORWARD_TO_SIMULATION_API(ready);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">FORWARD_TO_SIMULATION_API(requestAcquirePosition);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">FORWARD_TO_SIMULATION_API(requestAssignRoute);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">FORWARD_TO_SIMULATION_API(requestLaneChange);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">FORWARD_TO_SIMULATION_API(requestWalkStraight);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">FORWARD_TO_SIMULATION_API(setEntityStatus);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">FORWARD_TO_SIMULATION_API(setTargetSpeed);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">FORWARD_TO_SIMULATION_API(setTrafficLightArrow);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">FORWARD_TO_SIMULATION_API(setTrafficLightArrowPhase);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">FORWARD_TO_SIMULATION_API(setTrafficLightColor);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">FORWARD_TO_SIMULATION_API(setTrafficLightColorPhase);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">FORWARD_TO_SIMULATION_API(spawn);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">FORWARD_TO_SIMULATION_API(toMapPose);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">FORWARD_TO_SIMULATION_API(updateFrame);</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"></highlight></codeline>
-<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RENAME(FROM,<sp/>TO)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="130"><highlight class="preprocessor"><sp/><sp/>template<sp/>&lt;typename...<sp/>Ts&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="131"><highlight class="preprocessor"><sp/><sp/>decltype(auto)<sp/>TO(Ts<sp/>&amp;&amp;...<sp/>xs)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="132"><highlight class="preprocessor"><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="133"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>return<sp/>connection.FROM(std::forward&lt;decltype(xs)&gt;(xs)...);<sp/>\</highlight></codeline>
-<codeline lineno="134"><highlight class="preprocessor"><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="135"><highlight class="preprocessor"><sp/><sp/>static_assert(true,<sp/>&quot;&quot;)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="136"><highlight class="normal"></highlight></codeline>
-<codeline lineno="137"><highlight class="normal">RENAME(reachPosition,<sp/>isReachedPosition);</highlight></codeline>
-<codeline lineno="138"><highlight class="normal">RENAME(setDriverModel,<sp/>assignController);</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"></highlight></codeline>
-<codeline lineno="140"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>RENAME</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="141"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>openscenario_interpreter</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="142"><highlight class="normal"></highlight></codeline>
-<codeline lineno="143"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>OPENSCENARIO_INTERPRETER__PROCEDURE_HPP_</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>FORWARD_TO_SIMULATION_API</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RENAME(FROM,<sp/>TO)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="132"><highlight class="preprocessor"><sp/><sp/>template<sp/>&lt;typename...<sp/>Ts&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="133"><highlight class="preprocessor"><sp/><sp/>decltype(auto)<sp/>TO(Ts<sp/>&amp;&amp;...<sp/>xs)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="134"><highlight class="preprocessor"><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="135"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>return<sp/>connection.FROM(std::forward&lt;decltype(xs)&gt;(xs)...);<sp/>\</highlight></codeline>
+<codeline lineno="136"><highlight class="preprocessor"><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="137"><highlight class="preprocessor"><sp/><sp/>static_assert(true,<sp/>&quot;&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal">RENAME(reachPosition,<sp/>isReachedPosition);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">RENAME(setDriverModel,<sp/>assignController);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>RENAME</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>openscenario_interpreter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>OPENSCENARIO_INTERPRETER__PROCEDURE_HPP_</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp"/>
   </compounddef>

@@ -677,47 +677,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#defines" class="md-nav__link">
-    Defines
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#macro-documentation" class="md-nav__link">
-    Macro Documentation
-  </a>
-  
-    <nav class="md-nav" aria-label="Macro Documentation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#define-define_wait_for_autoware_state_to_be" class="md-nav__link">
-    define DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#define-debug_value" class="md-nav__link">
-    define DEBUG_VALUE
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#define-debug_line" class="md-nav__link">
-    define DEBUG_LINE
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#source-code" class="md-nav__link">
     Source code
   </a>
@@ -773,71 +732,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="defines">Defines<a class="headerlink" href="#defines" title="Permanent link">#</a></h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Files/ego__entity_8hpp#define-define_wait_for_autoware_state_to_be">DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</a></strong>(STATE)</td>
-</tr>
-<tr>
-<td></td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Files/ego__entity_8hpp#define-debug_value">DEBUG_VALUE</a></strong>(...)</td>
-</tr>
-<tr>
-<td></td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Files/ego__entity_8hpp#define-debug_line">DEBUG_LINE</a></strong>()</td>
-</tr>
-</tbody>
-</table>
-<h2 id="macro-documentation">Macro Documentation<a class="headerlink" href="#macro-documentation" title="Permanent link">#</a></h2>
-<h3 id="define-define_wait_for_autoware_state_to_be">define DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE<a class="headerlink" href="#define-define_wait_for_autoware_state_to_be" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#define DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE(</span>
-    <span class="n">STATE</span>
-<span class="p">)</span> <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Thunk</span><span class="o">&gt;</span>                                                                \
-  <span class="kt">void</span> <span class="n">waitForAutowareStateToBe</span><span class="err">##</span><span class="n">STATE</span><span class="p">(</span><span class="n">Thunk</span> <span class="n">thunk</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">count_max</span> <span class="o">=</span> <span class="mi">300</span><span class="p">)</span> <span class="k">const</span>     \
-  <span class="p">{</span>                                                                                        \
-    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                                                                 \
-    <span class="k">for</span> <span class="p">(</span><span class="n">rclcpp</span><span class="o">::</span><span class="n">WallRate</span> <span class="n">rate</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">100</span><span class="p">)};</span>                            \
-         <span class="o">!</span><span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">is</span><span class="err">##</span><span class="n">STATE</span><span class="p">();</span> <span class="n">rate</span><span class="p">.</span><span class="n">sleep</span><span class="p">())</span> <span class="p">{</span>              \
-      <span class="k">if</span> <span class="p">(</span><span class="n">count</span><span class="o">++</span> <span class="o">&lt;</span> <span class="n">count_max</span><span class="p">)</span> <span class="p">{</span>                                                           \
-        <span class="n">thunk</span><span class="p">();</span>                                                                           \
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>                                                                             \
-        <span class="k">const</span> <span class="k">auto</span> <span class="n">current_state</span> <span class="o">=</span>                                                         \
-          <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">getAutowareStatus</span><span class="p">().</span><span class="n">autoware_state</span><span class="p">;</span>       \
-        <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>                                                            \
-        <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The simulator waited &quot;</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">count</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span>                                      \
-           <span class="o">&lt;&lt;</span> <span class="s">&quot; seconds, expecting the Autoware state to transitioning to &quot;</span> <span class="o">&lt;&lt;</span> <span class="err">#</span><span class="n">STATE</span>      \
-           <span class="o">&lt;&lt;</span> <span class="s">&quot;, but there was no change. The current Autoware state is &quot;</span>                  \
-           <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">current_state</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">?</span> <span class="s">&quot;NOT PUBLISHED YET&quot;</span> <span class="o">:</span> <span class="n">current_state</span><span class="p">)</span>                \
-           <span class="o">&lt;&lt;</span> <span class="s">&quot;. This error is most likely due to the Autoware state transition &quot;</span>          \
-           <span class="o">&lt;&lt;</span> <span class="s">&quot;conditions changing with the update. Please report this error to &quot;</span>          \
-           <span class="o">&lt;&lt;</span> <span class="s">&quot;the developer. This error message was written by @yamacir-kit.&quot;</span><span class="p">;</span>            \
-        <span class="k">using</span> <span class="n">AutowareError</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">;</span>                                          \
-        <span class="k">throw</span> <span class="nf">AutowareError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>                                                     \
-      <span class="p">}</span>                                                                                    \
-    <span class="p">}</span>                                                                                      \
-    <span class="n">RCLCPP_INFO_STREAM</span><span class="p">(</span>                                                                    \
-      <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">get_logger</span><span class="p">(),</span> <span class="s">&quot;Autoware is &quot;</span> <span class="err">#</span><span class="n">STATE</span> <span class="s">&quot; now.&quot;</span><span class="p">);</span> \
-  <span class="p">}</span>                                                                                        \
-  <span class="k">static_assert</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="define-debug_value">define DEBUG_VALUE<a class="headerlink" href="#define-debug_value" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#define DEBUG_VALUE(</span>
-    <span class="p">...</span>
-<span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[32m&quot;</span> <span class="err">#</span><span class="n">__VA_ARGS__</span> <span class="s">&quot; = &quot;</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">__VA_ARGS__</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[0m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span>
-</code></pre></div>
-<h3 id="define-debug_line">define DEBUG_LINE<a class="headerlink" href="#define-debug_line" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#define DEBUG_LINE(</span>
-
-<span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[32m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">__FILE__</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">__LINE__</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[0m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span>
-</code></pre></div>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">// Copyright 2015-2020 Tier IV, Inc. All rights reserved.</span>
 <span class="c1">//</span>
@@ -856,49 +750,17 @@
 <span class="cp">#ifndef TRAFFIC_SIMULATOR__ENTITY__EGO_ENTITY_HPP_</span>
 <span class="cp">#define TRAFFIC_SIMULATOR__ENTITY__EGO_ENTITY_HPP_</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;openscenario_msgs/msg/entity_type.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/vehicle_entity.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/vehicle_model/sim_model_ideal.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/vehicle_model/sim_model_time_delay.hpp&gt;</span><span class="cp"></span>
-
-<span class="cp">#undef TRAFFIC_SIMULATOR_ISOLATE_STANDARD_OUTPUT_FROM_AUTOWARE</span>
-
-<span class="cp">#ifdef TRAFFIC_SIMULATOR_ISOLATE_STANDARD_OUTPUT_FROM_AUTOWARE</span>
-<span class="cp">#include</span> <span class="cpf">&lt;fcntl.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;sys/stat.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;sys/types.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
-<span class="cp">#endif</span>
-
-<span class="cp">#include</span> <span class="cpf">&lt;sys/wait.h&gt;</span><span class="c1">  // for EgoEntity::~EgoEntity</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;tf2/utils.h&gt;</span><span class="cp"></span>
-
 <span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;autoware_auto_msgs/msg/complex32.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;autoware_auto_msgs/msg/vehicle_control_command.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;autoware_auto_msgs/msg/vehicle_kinematic_state.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;autoware_auto_msgs/msg/vehicle_state_command.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;awapi_accessor/accessor.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;boost/filesystem.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;boost/optional.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;chrono&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;cstdlib&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;future&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;concealer/autoware.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;pugixml.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_msgs/msg/entity_type.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;system_error&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;thread&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/vehicle_entity.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/vehicle_model/sim_model_time_delay.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
-
-<span class="cp">#define DEBUG_VALUE(...) \</span>
-<span class="cp">  std::cout &lt;&lt; &quot;\x1b[32m&quot; #__VA_ARGS__ &quot; = &quot; &lt;&lt; (__VA_ARGS__) &lt;&lt; &quot;\x1b[0m&quot; &lt;&lt; std::endl</span>
-
-<span class="cp">#define DEBUG_LINE() \</span>
-<span class="cp">  std::cout &lt;&lt; &quot;\x1b[32m&quot; &lt;&lt; __FILE__ &lt;&lt; &quot;:&quot; &lt;&lt; __LINE__ &lt;&lt; &quot;\x1b[0m&quot; &lt;&lt; std::endl</span>
 
 <span class="k">namespace</span> <span class="n">traffic_simulator</span>
 <span class="p">{</span>
@@ -907,71 +769,18 @@
 <span class="k">class</span> <span class="nc">EgoEntity</span> <span class="o">:</span> <span class="k">public</span> <span class="n">VehicleEntity</span>
 <span class="p">{</span>
   <span class="c1">// NOTE: One day we will have to do simultaneous simulations of multiple Autowares.</span>
-  <span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">autoware_api</span><span class="o">::</span><span class="n">Accessor</span><span class="o">&gt;</span>  <span class="c1">// TODO(yamacir-kit): virtualize accessor.</span>
-    <span class="o">&gt;</span>
-    <span class="n">autowares</span><span class="p">;</span>
+  <span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">concealer</span><span class="o">::</span><span class="n">Autoware</span><span class="o">&gt;</span> <span class="n">autowares</span><span class="p">;</span>
 
-  <span class="k">decltype</span><span class="p">(</span><span class="n">fork</span><span class="p">())</span> <span class="n">autoware_process_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="n">autoware_initialized</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>  <span class="c1">// TODO (yamacir-kit) REMOVE THIS!!!</span>
 
-  <span class="c1">// XXX DIRTY HACK: The EntityManager terribly requires Ego to be Copyable.</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">promise</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;&gt;</span> <span class="n">accessor_status</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">SimModelInterface</span><span class="o">&gt;</span> <span class="n">vehicle_model_ptr_</span><span class="p">;</span>
 
-  <span class="c1">// XXX DIRTY HACK: The EntityManager terribly requires Ego to be Copyable.</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kr">thread</span><span class="o">&gt;</span> <span class="n">accessor_spinner</span><span class="p">;</span>
+  <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span><span class="o">&gt;</span> <span class="n">initial_pose_</span><span class="p">;</span>
 
-  <span class="cm">/* ---- NOTE -----------------------------------------------------------------</span>
-<span class="cm">   *</span>
-<span class="cm">   *  If you can&#39;t explain the difference between char * and char [], don&#39;t</span>
-<span class="cm">   *  edit this function even if it looks strange.</span>
-<span class="cm">   *</span>
-<span class="cm">   * ------------------------------------------------------------------------ */</span>
-  <span class="k">auto</span> <span class="nf">execute</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">f_xs</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;&gt;</span> <span class="n">buffer</span><span class="p">{};</span>
-
-    <span class="n">buffer</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">f_xs</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
-
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">add_pointer</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">&gt;</span> <span class="n">argv</span><span class="p">{};</span>
-
-    <span class="n">argv</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="n">f_xs</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">each</span> <span class="p">:</span> <span class="n">f_xs</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">buffer</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">each</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">each</span><span class="p">));</span>
-      <span class="n">buffer</span><span class="p">.</span><span class="n">back</span><span class="p">().</span><span class="n">push_back</span><span class="p">(</span><span class="sc">&#39;\0&#39;</span><span class="p">);</span>
-      <span class="n">argv</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">buffer</span><span class="p">.</span><span class="n">back</span><span class="p">().</span><span class="n">data</span><span class="p">());</span>
-    <span class="p">}</span>
-
-    <span class="n">argv</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">add_pointer</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
-
-    <span class="k">return</span> <span class="o">::</span><span class="n">execvp</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">argv</span><span class="p">.</span><span class="n">data</span><span class="p">());</span>
-  <span class="p">}</span>
+  <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">previous_linear_velocity_</span><span class="p">,</span> <span class="n">previous_angular_velocity_</span><span class="p">;</span>
 
 <span class="k">public</span><span class="o">:</span>
   <span class="n">EgoEntity</span><span class="p">()</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
-
-  <span class="c1">// TODO(yamacir-kit): EgoEntity(EgoEntity &amp;&amp;) = delete;</span>
-  <span class="c1">// TODO(yamacir-kit): EgoEntity(const EgoEntity &amp;) = delete;</span>
-  <span class="c1">// TODO(yamacir-kit): EgoEntity &amp; operator=(EgoEntity &amp;&amp;) = delete;</span>
-  <span class="c1">// TODO(yamacir-kit): EgoEntity &amp; operator=(const EgoEntity &amp;) = delete;</span>
-
-  <span class="cm">/* ---- NOTE -----------------------------------------------------------------</span>
-<span class="cm">   *</span>
-<span class="cm">   *  This constructor makes an Ego type entity with the proper initial state.</span>
-<span class="cm">   *  It is mainly used when writing scenarios in C++.</span>
-<span class="cm">   *</span>
-<span class="cm">   * ------------------------------------------------------------------------ */</span>
-  <span class="c1">// template&lt;typename ... Ts&gt;</span>
-  <span class="c1">// explicit EgoEntity(</span>
-  <span class="c1">//   const std::string &amp; name,</span>
-  <span class="c1">//   const openscenario_msgs::msg::EntityStatus &amp; initial_state, Ts &amp;&amp; ... xs)</span>
-  <span class="c1">// : VehicleEntity(name, initial_state, std::forward&lt;decltype(xs)&gt;(xs)...),</span>
-  <span class="c1">//   vehicle_model_ptr_(</span>
-  <span class="c1">//     std::make_shared&lt;SimModelIdealSteer&gt;(</span>
-  <span class="c1">//       parameters.axles.front_axle.position_x - parameters.axles.rear_axle.position_x))</span>
-  <span class="c1">// {</span>
-  <span class="c1">//   setStatus(initial_state);</span>
-  <span class="c1">// }</span>
 
   <span class="cm">/* ---- NOTE -----------------------------------------------------------------</span>
 <span class="cm">   *</span>
@@ -990,330 +799,44 @@
 <span class="cm">   *</span>
 <span class="cm">   * ------------------------------------------------------------------------ */</span>
   <span class="k">explicit</span> <span class="nf">EgoEntity</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span> <span class="o">&amp;</span> <span class="n">lanelet2_map_osm</span><span class="p">,</span>
-    <span class="k">const</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">,</span> <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span> <span class="o">&amp;</span> <span class="n">parameters</span><span class="p">)</span>
-  <span class="o">:</span> <span class="n">VehicleEntity</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">parameters</span><span class="p">),</span>
-    <span class="n">vehicle_model_ptr_</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">SimModelTimeDelaySteer</span><span class="o">&gt;</span><span class="p">(</span>
-      <span class="n">parameters</span><span class="p">.</span><span class="n">performance</span><span class="p">.</span><span class="n">max_speed</span><span class="p">,</span>          <span class="c1">// vel_lim,</span>
-      <span class="n">parameters</span><span class="p">.</span><span class="n">axles</span><span class="p">.</span><span class="n">front_axle</span><span class="p">.</span><span class="n">max_steering</span><span class="p">,</span>  <span class="c1">// steer_lim,</span>
-      <span class="n">parameters</span><span class="p">.</span><span class="n">performance</span><span class="p">.</span><span class="n">max_acceleration</span><span class="p">,</span>   <span class="c1">// accel_rate,</span>
-      <span class="mf">5.0</span><span class="p">,</span>                                       <span class="c1">// steer_rate_lim,</span>
-      <span class="n">parameters</span><span class="p">.</span><span class="n">axles</span><span class="p">.</span><span class="n">front_axle</span><span class="p">.</span><span class="n">position_x</span> <span class="o">-</span> <span class="n">parameters</span><span class="p">.</span><span class="n">axles</span><span class="p">.</span><span class="n">rear_axle</span><span class="p">.</span><span class="n">position_x</span><span class="p">,</span>
-      <span class="n">step_time</span><span class="p">,</span>  <span class="c1">// dt,</span>
-      <span class="mf">0.25</span><span class="p">,</span>       <span class="c1">// vel_time_delay,</span>
-      <span class="mf">0.5</span><span class="p">,</span>        <span class="c1">// vel_time_constant,</span>
-      <span class="mf">0.3</span><span class="p">,</span>        <span class="c1">// steer_time_delay,</span>
-      <span class="mf">0.3</span><span class="p">,</span>        <span class="c1">// steer_time_constant,</span>
-      <span class="mf">0.0</span>         <span class="c1">// deadzone_delta_steer</span>
-      <span class="p">))</span>
-  <span class="p">{</span>
-    <span class="n">entity_type_</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityType</span><span class="o">::</span><span class="n">EGO</span><span class="p">;</span>
-    <span class="k">auto</span> <span class="n">launch_autoware</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">]()</span> <span class="p">{</span>
-      <span class="k">auto</span> <span class="n">get_parameter</span> <span class="o">=</span> <span class="p">[](</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">alternate</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">rclcpp</span><span class="o">::</span><span class="n">Node</span> <span class="n">node</span><span class="p">{</span><span class="s">&quot;get_parameter&quot;</span><span class="p">,</span> <span class="s">&quot;simulation&quot;</span><span class="p">};</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span>                          <span class="c1">//</span>
+    <span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span> <span class="o">&amp;</span> <span class="n">lanelet2_map_osm</span><span class="p">,</span>  <span class="c1">//</span>
+    <span class="k">const</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">,</span>                            <span class="c1">//</span>
+    <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span> <span class="o">&amp;</span> <span class="n">parameters</span><span class="p">);</span>
 
-        <span class="k">auto</span> <span class="n">value</span> <span class="o">=</span> <span class="n">alternate</span><span class="p">;</span>
+  <span class="o">~</span><span class="n">EgoEntity</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
 
-        <span class="k">using</span> <span class="n">value_type</span> <span class="o">=</span> <span class="k">typename</span> <span class="nc">std</span><span class="o">::</span><span class="n">decay</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">&gt;::</span><span class="n">type</span><span class="p">;</span>
+  <span class="n">EgoEntity</span><span class="p">(</span><span class="k">const</span> <span class="n">EgoEntity</span> <span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
 
-        <span class="n">node</span><span class="p">.</span><span class="n">declare_parameter</span><span class="o">&lt;</span><span class="n">value_type</span><span class="o">&gt;</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
-        <span class="n">node</span><span class="p">.</span><span class="n">get_parameter</span><span class="o">&lt;</span><span class="n">value_type</span><span class="o">&gt;</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+  <span class="n">EgoEntity</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">EgoEntity</span> <span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
 
-        <span class="k">return</span> <span class="n">value</span><span class="p">;</span>
-      <span class="p">};</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="kt">void</span> <span class="n">engage</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
 
-      <span class="cm">/* ---- NOTE -----------------------------------------------------------</span>
-<span class="cm">         *</span>
-<span class="cm">         *  The actual values of these parameters are set by</span>
-<span class="cm">         *  scenario_test_runner.launch.py as parameters of</span>
-<span class="cm">         *  openscenario_interpreter_node.</span>
-<span class="cm">         *</span>
-<span class="cm">         * ------------------------------------------------------------------ */</span>
-      <span class="k">const</span> <span class="k">auto</span> <span class="n">autoware_launch_package</span> <span class="o">=</span>
-        <span class="n">get_parameter</span><span class="p">(</span><span class="s">&quot;autoware_launch_package&quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">));</span>
-      <span class="k">const</span> <span class="k">auto</span> <span class="n">autoware_launch_file</span> <span class="o">=</span> <span class="n">get_parameter</span><span class="p">(</span><span class="s">&quot;autoware_launch_file&quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">));</span>
+  <span class="k">auto</span> <span class="nf">getCurrentAction</span><span class="p">()</span> <span class="k">const</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="k">override</span><span class="p">;</span>
 
-      <span class="k">auto</span> <span class="n">child</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">]()</span> <span class="p">{</span>
-        <span class="c1">// DEBUG_VALUE(lanelet2_map_osm);</span>
+  <span class="k">auto</span> <span class="nf">getEntityStatus</span><span class="p">(</span><span class="k">const</span> <span class="kt">double</span><span class="p">,</span> <span class="k">const</span> <span class="kt">double</span><span class="p">)</span> <span class="k">const</span>
+    <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="p">;</span>
 
-        <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">argv</span><span class="p">{</span>
-          <span class="s">&quot;python3&quot;</span><span class="p">,</span>
-          <span class="s">&quot;/opt/ros/foxy/bin/ros2&quot;</span><span class="p">,</span>  <span class="c1">// NOTE: The command &#39;ros2&#39; is a Python script.</span>
-          <span class="s">&quot;launch&quot;</span><span class="p">,</span>
-          <span class="n">autoware_launch_package</span><span class="p">,</span>
-          <span class="n">autoware_launch_file</span><span class="p">,</span>
-          <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;map_path:=&quot;</span><span class="p">)</span> <span class="o">+=</span> <span class="n">lanelet2_map_osm</span><span class="p">.</span><span class="n">parent_path</span><span class="p">().</span><span class="n">string</span><span class="p">(),</span>
-          <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;lanelet2_map_file:=&quot;</span><span class="p">)</span> <span class="o">+=</span> <span class="n">lanelet2_map_osm</span><span class="p">.</span><span class="n">filename</span><span class="p">().</span><span class="n">string</span><span class="p">()};</span>
+  <span class="k">auto</span> <span class="nf">getEntityTypename</span><span class="p">()</span> <span class="k">const</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="k">override</span><span class="p">;</span>
 
-        <span class="c1">// for (const auto &amp; each : argv) {</span>
-        <span class="c1">//   std::cout &lt;&lt; each &lt;&lt; (&amp;each != &amp;argv.back() ? &#39; &#39; : &#39;\n&#39;);</span>
-        <span class="c1">// }</span>
+  <span class="k">auto</span> <span class="nf">getObstacle</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Obstacle</span><span class="o">&gt;</span> <span class="k">override</span><span class="p">;</span>
 
-<span class="cp">#ifdef TRAFFIC_SIMULATOR_ISOLATE_STANDARD_OUTPUT_FROM_AUTOWARE</span>
-        <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;/tmp/scenario_test_runner/autoware-output.txt&quot;</span><span class="p">;</span>
-        <span class="k">const</span> <span class="k">auto</span> <span class="n">fd</span> <span class="o">=</span> <span class="o">::</span><span class="n">open</span><span class="p">(</span><span class="n">name</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">O_RDWR</span> <span class="o">|</span> <span class="n">O_CREAT</span><span class="p">,</span> <span class="n">S_IRUSR</span> <span class="o">|</span> <span class="n">S_IWUSR</span><span class="p">);</span>
-        <span class="o">::</span><span class="n">dup2</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">STDOUT_FILENO</span><span class="p">);</span>
-        <span class="o">::</span><span class="n">dup2</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">STDERR_FILENO</span><span class="p">);</span>
-        <span class="o">::</span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
-<span class="cp">#endif</span>
+  <span class="k">auto</span> <span class="nf">getWaypoints</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span> <span class="k">override</span><span class="p">;</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="n">execute</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-          <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">system_error</span><span class="p">(</span><span class="n">errno</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">system_category</span><span class="p">()).</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-          <span class="n">std</span><span class="o">::</span><span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
-        <span class="p">}</span>
-      <span class="p">};</span>
+  <span class="kt">void</span> <span class="nf">onUpdate</span><span class="p">(</span><span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
 
-      <span class="k">if</span> <span class="p">((</span><span class="n">autoware_process_id</span> <span class="o">=</span> <span class="n">fork</span><span class="p">())</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">system_error</span><span class="p">(</span><span class="n">errno</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">system_category</span><span class="p">());</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">autoware_process_id</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">child</span><span class="p">();</span>
-      <span class="p">}</span>
-    <span class="p">};</span>
+  <span class="k">auto</span> <span class="nf">ready</span><span class="p">()</span> <span class="k">const</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="k">override</span><span class="p">;</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="n">autowares</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">==</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">autowares</span><span class="p">))</span> <span class="p">{</span>
-      <span class="k">auto</span> <span class="n">my_name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">replace</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">my_name</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">my_name</span><span class="p">),</span> <span class="sc">&#39; &#39;</span><span class="p">,</span> <span class="sc">&#39;_&#39;</span><span class="p">);</span>
-      <span class="n">autowares</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span>
-        <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">autoware_api</span><span class="o">::</span><span class="n">Accessor</span><span class="o">&gt;</span><span class="p">(</span>
-                <span class="s">&quot;awapi_accessor&quot;</span><span class="p">,</span>
-                <span class="s">&quot;simulation/&quot;</span> <span class="o">+</span> <span class="n">my_name</span><span class="p">,</span>  <span class="c1">// NOTE: Specified in scenario_test_runner.launch.py</span>
-                <span class="n">rclcpp</span><span class="o">::</span><span class="n">NodeOptions</span><span class="p">().</span><span class="n">use_global_arguments</span><span class="p">(</span><span class="nb">false</span><span class="p">)));</span>
+  <span class="kt">void</span> <span class="nf">requestAcquirePosition</span><span class="p">(</span><span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="o">&amp;</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
 
-      <span class="n">launch_autoware</span><span class="p">();</span>
-    <span class="p">}</span>
+  <span class="kt">void</span> <span class="nf">requestAssignRoute</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
 
-    <span class="cm">/* ---- NOTE ---------------------------------------------------------------</span>
-<span class="cm">     *</span>
-<span class="cm">     *  The simulator needs to run in a fixed-cycle loop, but the communication</span>
-<span class="cm">     *  part with Autoware needs to run at a higher frequency (e.g. the</span>
-<span class="cm">     *  transform in map -&gt; base_link needs to be updated at a higher frequency</span>
-<span class="cm">     *  even if the value does not change). We also need to keep collecting the</span>
-<span class="cm">     *  latest values of topics from Autoware, independently of the simulator.</span>
-<span class="cm">     *</span>
-<span class="cm">     *  For this reason, autoware_api::Accessor, which is responsible for</span>
-<span class="cm">     *  communication with Autoware, should run in an independent thread. This</span>
-<span class="cm">     *  is probably an EXTREMELY DIRTY HACK.</span>
-<span class="cm">     *</span>
-<span class="cm">     *  Ideally, the constructor caller of traffic_simulator::API should</span>
-<span class="cm">     *  provide a std::shared_ptr to autoware_api::Accessor and spin that node</span>
-<span class="cm">     *  with MultiThreadedExecutor.</span>
-<span class="cm">     *</span>
-<span class="cm">     *  If you have a nice idea to solve this, and are interested in improving</span>
-<span class="cm">     *  the quality of the Tier IV simulator, please contact @yamacir-kit.</span>
-<span class="cm">     *</span>
-<span class="cm">     * ---------------------------------------------------------------------- */</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">use_count</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">accessor_status</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">promise</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;&gt;</span><span class="p">();</span>
-      <span class="n">accessor_spinner</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kr">thread</span><span class="o">&gt;</span><span class="p">(</span>
-        <span class="p">[](</span><span class="k">const</span> <span class="k">auto</span> <span class="n">node</span><span class="p">,</span> <span class="k">auto</span> <span class="n">status</span><span class="p">)</span>  <span class="c1">// NOTE: This copy increments use_count to 2 from 1.</span>
-        <span class="p">{</span>
-          <span class="k">while</span> <span class="p">(</span><span class="n">rclcpp</span><span class="o">::</span><span class="n">ok</span><span class="p">()</span> <span class="o">&amp;&amp;</span>
-                 <span class="n">status</span><span class="p">.</span><span class="n">wait_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="o">==</span> <span class="n">std</span><span class="o">::</span><span class="n">future_status</span><span class="o">::</span><span class="n">timeout</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">rclcpp</span><span class="o">::</span><span class="n">spin_some</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
-          <span class="p">}</span>
-        <span class="p">},</span>
-        <span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">accessor_status</span><span class="o">-&gt;</span><span class="n">get_future</span><span class="p">()));</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+  <span class="kt">void</span> <span class="nf">requestLaneChange</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
 
-  <span class="o">~</span><span class="n">EgoEntity</span><span class="p">()</span> <span class="k">override</span>
-  <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">accessor_spinner</span> <span class="o">&amp;&amp;</span> <span class="n">accessor_spinner</span><span class="p">.</span><span class="n">use_count</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="n">accessor_spinner</span><span class="o">-&gt;</span><span class="n">joinable</span><span class="p">())</span> <span class="p">{</span>
-      <span class="n">accessor_status</span><span class="o">-&gt;</span><span class="n">set_value</span><span class="p">();</span>
-      <span class="n">accessor_spinner</span><span class="o">-&gt;</span><span class="n">join</span><span class="p">();</span>
-      <span class="n">autowares</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
-      <span class="kt">int</span> <span class="n">status</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-      <span class="k">if</span> <span class="p">(</span>
-        <span class="o">::</span><span class="n">kill</span><span class="p">(</span><span class="n">autoware_process_id</span><span class="p">,</span> <span class="n">SIGINT</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span>
-        <span class="o">::</span><span class="n">waitpid</span><span class="p">(</span><span class="n">autoware_process_id</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">status</span><span class="p">,</span> <span class="n">WUNTRACED</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">system_error</span><span class="p">(</span><span class="n">errno</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">system_category</span><span class="p">()).</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+  <span class="k">auto</span> <span class="nf">setStatus</span><span class="p">(</span><span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&amp;</span> <span class="n">status</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="k">override</span><span class="p">;</span>
 
-  <span class="kt">bool</span> <span class="n">autoware_initialized</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-
-  <span class="k">auto</span> <span class="nf">initializeAutoware</span><span class="p">()</span>
-  <span class="p">{</span>
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">current_entity_status</span> <span class="o">=</span> <span class="n">getStatus</span><span class="p">();</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">std</span><span class="o">::</span><span class="n">exchange</span><span class="p">(</span><span class="n">autoware_initialized</span><span class="p">,</span> <span class="nb">true</span><span class="p">))</span> <span class="p">{</span>
-      <span class="n">waitForAutowareStateToBeInitializingVehicle</span><span class="p">(</span>
-        <span class="p">[</span><span class="o">&amp;</span><span class="p">]()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">updateAutoware</span><span class="p">(</span><span class="n">current_entity_status</span><span class="p">.</span><span class="n">pose</span><span class="p">);</span> <span class="p">});</span>
-
-      <span class="cm">/* ---- NOTE ---------------------------------------------------------------</span>
-<span class="cm">       *</span>
-<span class="cm">       *  awapi_awiv_adapter requires at least &#39;initialpose&#39; and &#39;initialtwist&#39;</span>
-<span class="cm">       *  and tf to be published. Member function EgoEntity::waitForAutowareToBe*</span>
-<span class="cm">       *  are depends a topic &#39;/awapi/autoware/get/status&#39; published by</span>
-<span class="cm">       *  awapi_awiv_adapter.</span>
-<span class="cm">       *</span>
-<span class="cm">       * ---------------------------------------------------------------------- */</span>
-      <span class="n">waitForAutowareStateToBeWaitingForRoute</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]()</span> <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">setInitialPose</span><span class="p">(</span><span class="n">current_entity_status</span><span class="p">.</span><span class="n">pose</span><span class="p">);</span>
-        <span class="k">return</span> <span class="n">updateAutoware</span><span class="p">(</span><span class="n">current_entity_status</span><span class="p">.</span><span class="n">pose</span><span class="p">);</span>
-      <span class="p">});</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="kt">void</span> <span class="nf">requestAcquirePosition</span><span class="p">(</span><span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="o">&amp;</span> <span class="n">lanelet_pose</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="n">requestAcquirePosition</span><span class="p">(</span><span class="n">lanelet_pose</span><span class="p">,</span> <span class="p">{});</span>
-  <span class="p">}</span>
-
-  <span class="kt">void</span> <span class="nf">requestAcquirePosition</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="o">&amp;</span> <span class="n">lanelet_pose</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PoseStamped</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">constraints</span> <span class="o">=</span> <span class="p">{})</span>
-  <span class="p">{</span>
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">map_pose</span> <span class="o">=</span> <span class="n">hdmap_utils_ptr_</span><span class="o">-&gt;</span><span class="n">toMapPose</span><span class="p">(</span><span class="n">lanelet_pose</span><span class="p">);</span>
-    <span class="n">requestAcquirePosition</span><span class="p">(</span><span class="n">map_pose</span><span class="p">,</span> <span class="n">constraints</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="kt">void</span> <span class="nf">requestLaneChange</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">to_lanelet_id</span><span class="p">);</span>
-
-  <span class="kt">void</span> <span class="nf">requestAcquirePosition</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PoseStamped</span> <span class="o">&amp;</span> <span class="n">goal_pose</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PoseStamped</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">constraints</span> <span class="o">=</span> <span class="p">{})</span>
-  <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">autoware_initialized</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">initializeAutoware</span><span class="p">();</span>
-    <span class="p">}</span>
-
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">current_pose</span> <span class="o">=</span> <span class="n">getStatus</span><span class="p">().</span><span class="n">pose</span><span class="p">;</span>
-
-    <span class="n">waitForAutowareStateToBeWaitingForRoute</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]()</span>  <span class="c1">// NOTE: This is assertion.</span>
-                                            <span class="p">{</span> <span class="k">return</span> <span class="n">updateAutoware</span><span class="p">(</span><span class="n">current_pose</span><span class="p">);</span> <span class="p">});</span>
-
-    <span class="n">waitForAutowareStateToBePlanning</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]()</span> <span class="p">{</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">setGoalPose</span><span class="p">(</span><span class="n">goal_pose</span><span class="p">);</span>
-
-      <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">constraint</span> <span class="p">:</span> <span class="n">constraints</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">setCheckpoint</span><span class="p">(</span><span class="n">constraint</span><span class="p">);</span>
-      <span class="p">}</span>
-
-      <span class="k">return</span> <span class="n">updateAutoware</span><span class="p">(</span><span class="n">current_pose</span><span class="p">);</span>
-    <span class="p">});</span>
-
-    <span class="n">waitForAutowareStateToBeWaitingForEngage</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">updateAutoware</span><span class="p">(</span><span class="n">current_pose</span><span class="p">);</span> <span class="p">});</span>
-
-    <span class="n">waitForAutowareStateToBeDriving</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]()</span> <span class="p">{</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">setAutowareEngage</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
-      <span class="k">return</span> <span class="n">updateAutoware</span><span class="p">(</span><span class="n">current_pose</span><span class="p">);</span>
-    <span class="p">});</span>
-  <span class="p">}</span>
-
-  <span class="kt">void</span> <span class="nf">requestAssignRoute</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">waypoints</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
-
-  <span class="kt">void</span> <span class="nf">setTargetSpeed</span><span class="p">(</span><span class="kt">double</span> <span class="n">value</span><span class="p">,</span> <span class="kt">bool</span><span class="p">)</span> <span class="k">override</span>
-  <span class="p">{</span>
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">current</span> <span class="o">=</span> <span class="n">getStatus</span><span class="p">();</span>
-
-    <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXd</span> <span class="n">v</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-    <span class="p">{</span>
-      <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="p">(</span><span class="o">*</span><span class="n">vehicle_model_ptr_</span><span class="p">).</span><span class="n">setState</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">getCurrentAction</span><span class="p">()</span> <span class="k">const</span>
-  <span class="p">{</span>
-    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">getAutowareStatus</span><span class="p">().</span><span class="n">autoware_state</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="kt">void</span> <span class="n">onUpdate</span><span class="p">(</span><span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">);</span>
-
-  <span class="kt">bool</span> <span class="nf">setStatus</span><span class="p">(</span><span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&amp;</span> <span class="n">status</span><span class="p">);</span>
-
-  <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span> <span class="n">getWaypoints</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
-
-<span class="k">private</span><span class="o">:</span>
-<span class="c1">// TODO(yamacir-kit): Define AutowareError type as struct based on std::runtime_error</span>
-<span class="cp">#define DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE(STATE)                                        \</span>
-<span class="cp">  template &lt;typename Thunk&gt;                                                                \</span>
-<span class="cp">  void waitForAutowareStateToBe##STATE(Thunk thunk, std::size_t count_max = 300) const     \</span>
-<span class="cp">  {                                                                                        \</span>
-<span class="cp">    std::size_t count = 0;                                                                 \</span>
-<span class="cp">    for (rclcpp::WallRate rate{std::chrono::milliseconds(100)};                            \</span>
-<span class="cp">         !std::atomic_load(&amp;autowares.at(name))-&gt;is##STATE(); rate.sleep()) {              \</span>
-<span class="cp">      if (count++ &lt; count_max) {                                                           \</span>
-<span class="cp">        thunk();                                                                           \</span>
-<span class="cp">      } else {                                                                             \</span>
-<span class="cp">        const auto current_state =                                                         \</span>
-<span class="cp">          std::atomic_load(&amp;autowares.at(name))-&gt;getAutowareStatus().autoware_state;       \</span>
-<span class="cp">        std::stringstream ss{};                                                            \</span>
-<span class="cp">        ss &lt;&lt; &quot;The simulator waited &quot; &lt;&lt; (count / 10)                                      \</span>
-<span class="cp">           &lt;&lt; &quot; seconds, expecting the Autoware state to transitioning to &quot; &lt;&lt; #STATE      \</span>
-<span class="cp">           &lt;&lt; &quot;, but there was no change. The current Autoware state is &quot;                  \</span>
-<span class="cp">           &lt;&lt; (current_state.empty() ? &quot;NOT PUBLISHED YET&quot; : current_state)                \</span>
-<span class="cp">           &lt;&lt; &quot;. This error is most likely due to the Autoware state transition &quot;          \</span>
-<span class="cp">           &lt;&lt; &quot;conditions changing with the update. Please report this error to &quot;          \</span>
-<span class="cp">           &lt;&lt; &quot;the developer. This error message was written by @yamacir-kit.&quot;;            \</span>
-<span class="cp">        using AutowareError = std::runtime_error;                                          \</span>
-<span class="cp">        throw AutowareError(ss.str());                                                     \</span>
-<span class="cp">      }                                                                                    \</span>
-<span class="cp">    }                                                                                      \</span>
-<span class="cp">    RCLCPP_INFO_STREAM(                                                                    \</span>
-<span class="cp">      std::atomic_load(&amp;autowares.at(name))-&gt;get_logger(), &quot;Autoware is &quot; #STATE &quot; now.&quot;); \</span>
-<span class="cp">  }                                                                                        \</span>
-<span class="cp">  static_assert(true, &quot;&quot;)</span>
-
-  <span class="n">DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</span><span class="p">(</span><span class="n">InitializingVehicle</span><span class="p">);</span>
-  <span class="n">DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</span><span class="p">(</span><span class="n">WaitingForRoute</span><span class="p">);</span>
-  <span class="n">DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</span><span class="p">(</span><span class="n">Planning</span><span class="p">);</span>
-  <span class="n">DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</span><span class="p">(</span><span class="n">WaitingForEngage</span><span class="p">);</span>
-  <span class="n">DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</span><span class="p">(</span><span class="n">Driving</span><span class="p">);</span>
-  <span class="n">DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</span><span class="p">(</span><span class="n">ArrivedGoal</span><span class="p">);</span>
-  <span class="n">DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</span><span class="p">(</span><span class="n">Emergency</span><span class="p">);</span>
-  <span class="n">DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</span><span class="p">(</span><span class="n">Finalizing</span><span class="p">);</span>
-
-<span class="cp">#undef DEFINE_WAIT_FOR_AUTOWARE_STATE_TO_BE</span>
-
-  <span class="kt">void</span> <span class="nf">updateAutoware</span><span class="p">(</span><span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="o">&amp;</span> <span class="n">current_pose</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Twist</span> <span class="n">current_twist</span><span class="p">;</span>
-    <span class="p">{</span>
-      <span class="n">current_twist</span><span class="p">.</span><span class="n">linear</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">vehicle_model_ptr_</span><span class="p">).</span><span class="n">getVx</span><span class="p">();</span>
-      <span class="n">current_twist</span><span class="p">.</span><span class="n">angular</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">vehicle_model_ptr_</span><span class="p">).</span><span class="n">getWz</span><span class="p">();</span>
-    <span class="p">}</span>
-
-    <span class="c1">// DEBUG_VALUE(current_twist.linear.x);</span>
-    <span class="c1">// DEBUG_VALUE(current_twist.angular.z);</span>
-    <span class="c1">//</span>
-    <span class="c1">// DEBUG_VALUE(current_pose.position.x);</span>
-    <span class="c1">// DEBUG_VALUE(current_pose.position.y);</span>
-    <span class="c1">// DEBUG_VALUE(current_pose.position.z);</span>
-
-    <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">setCurrentControlMode</span><span class="p">();</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">setCurrentPose</span><span class="p">(</span><span class="n">current_pose</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">setCurrentShift</span><span class="p">(</span><span class="n">current_twist</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">setCurrentSteering</span><span class="p">(</span><span class="n">current_twist</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">setCurrentTurnSignal</span><span class="p">();</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">setCurrentTwist</span><span class="p">(</span><span class="n">current_twist</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">setCurrentVelocity</span><span class="p">(</span><span class="n">current_twist</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">setLaneChangeApproval</span><span class="p">();</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">setTransform</span><span class="p">(</span><span class="n">current_pose</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">atomic_load</span><span class="p">(</span><span class="o">&amp;</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">setVehicleVelocity</span><span class="p">(</span><span class="n">parameters</span><span class="p">.</span><span class="n">performance</span><span class="p">.</span><span class="n">max_speed</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Obstacle</span><span class="o">&gt;</span> <span class="n">getObstacle</span><span class="p">()</span> <span class="k">override</span>
-  <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">__FILE__</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;,&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">__LINE__</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">;</span>
-  <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-  <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="n">getEntityStatus</span><span class="p">(</span>
-    <span class="k">const</span> <span class="kt">double</span> <span class="n">time</span><span class="p">,</span> <span class="k">const</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
-
-  <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span><span class="o">&gt;</span> <span class="n">initial_pose_</span><span class="p">;</span>
-
-  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">SimModelInterface</span><span class="o">&gt;</span> <span class="n">vehicle_model_ptr_</span><span class="p">;</span>
-
-  <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">previous_linear_velocity_</span><span class="p">;</span>
-  <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">previous_angular_velocity_</span><span class="p">;</span>
+  <span class="kt">void</span> <span class="nf">setTargetSpeed</span><span class="p">(</span><span class="kt">double</span><span class="p">,</span> <span class="kt">bool</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
 <span class="p">};</span>
 <span class="p">}</span>  <span class="c1">// namespace entity</span>
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
@@ -1321,7 +844,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__ENTITY__EGO_ENTITY_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 28 April 2021 at 01:33:44 UTC</p>
+<p>Updated on 28 April 2021 at 10:14:43 UTC</p>
                 
                   
                 

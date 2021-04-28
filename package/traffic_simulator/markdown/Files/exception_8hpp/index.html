@@ -724,16 +724,16 @@
 </thead>
 <tbody>
 <tr>
-<td>class</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1UnsupportActionError">traffic_simulator::UnsupportActionError</a></strong></td>
+<td>struct</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/structtraffic__simulator_1_1UnsupportedActionError">traffic_simulator::UnsupportedActionError</a></strong></td>
 </tr>
 <tr>
-<td>class</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1SplineInterpolationError">traffic_simulator::SplineInterpolationError</a></strong></td>
+<td>struct</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/structtraffic__simulator_1_1SplineInterpolationError">traffic_simulator::SplineInterpolationError</a></strong></td>
 </tr>
 <tr>
-<td>class</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1SimulationRuntimeError">traffic_simulator::SimulationRuntimeError</a></strong></td>
+<td>struct</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/structtraffic__simulator_1_1SimulationRuntimeError">traffic_simulator::SimulationRuntimeError</a></strong></td>
 </tr>
 </tbody>
 </table>
@@ -760,31 +760,26 @@
 
 <span class="k">namespace</span> <span class="n">traffic_simulator</span>
 <span class="p">{</span>
-<span class="k">class</span> <span class="nc">SimulationRuntimeError</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span>
+<span class="k">struct</span> <span class="nc">SimulationRuntimeError</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span>
 <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-  <span class="k">explicit</span> <span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">message</span><span class="p">)</span> <span class="o">:</span> <span class="n">runtime_error</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="p">{}</span>
-  <span class="k">explicit</span> <span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">message</span><span class="p">)</span> <span class="o">:</span> <span class="n">runtime_error</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span> <span class="p">{}</span>
+  <span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">;</span>
 <span class="p">};</span>
 
-<span class="k">class</span> <span class="nc">UnsupportActionError</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span>
+<span class="k">struct</span> <span class="nc">UnsupportedActionError</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span>
 <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-  <span class="k">explicit</span> <span class="n">UnsupportActionError</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">message</span><span class="p">)</span> <span class="o">:</span> <span class="n">runtime_error</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="p">{}</span>
-  <span class="k">explicit</span> <span class="n">UnsupportActionError</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">message</span><span class="p">)</span> <span class="o">:</span> <span class="n">runtime_error</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span> <span class="p">{}</span>
+  <span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">;</span>
 <span class="p">};</span>
 
-<span class="k">class</span> <span class="nc">SplineInterpolationError</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span>
+<span class="k">struct</span> <span class="nc">SplineInterpolationError</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span>
 <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-  <span class="k">explicit</span> <span class="n">SplineInterpolationError</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">message</span><span class="p">)</span> <span class="o">:</span> <span class="n">runtime_error</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">;</span>
 <span class="p">};</span>
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__ENTITY__EXCEPTION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 28 April 2021 at 01:33:44 UTC</p>
+<p>Updated on 28 April 2021 at 10:14:43 UTC</p>
                 
                   
                 

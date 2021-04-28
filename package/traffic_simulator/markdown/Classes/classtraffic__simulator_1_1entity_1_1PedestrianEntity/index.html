@@ -720,13 +720,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-requestlanechange" class="md-nav__link">
-    function requestLaneChange
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#function-requestassignroute" class="md-nav__link">
     function requestAssignRoute
   </a>
@@ -764,6 +757,13 @@
           <li class="md-nav__item">
   <a href="#function-getobstacle" class="md-nav__link">
     function getObstacle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-getentitytypename" class="md-nav__link">
+    function getEntityTypename
   </a>
   
 </li>
@@ -857,24 +857,20 @@
 </thead>
 <tbody>
 <tr>
-<td>void</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1PedestrianEntity#function-settrafficlightmanager">setTrafficLightManager</a></strong>(std::shared_ptr&lt; <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLightManager">traffic_simulator::TrafficLightManager</a> &gt; ptr)</td>
+<td>virtual void</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1PedestrianEntity#function-settrafficlightmanager">setTrafficLightManager</a></strong>(const std::shared_ptr&lt; <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLightManager">traffic_simulator::TrafficLightManager</a> &gt; &amp; ptr) override</td>
 </tr>
 <tr>
 <td>virtual void</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1PedestrianEntity#function-settargetspeed">setTargetSpeed</a></strong>(double target_speed, bool continuous) override</td>
 </tr>
 <tr>
-<td>void</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1PedestrianEntity#function-sethdmaputils">setHdMapUtils</a></strong>(std::shared_ptr&lt; <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classhdmap__utils_1_1HdMapUtils">hdmap_utils::HdMapUtils</a> &gt; ptr)</td>
+<td>virtual void</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1PedestrianEntity#function-sethdmaputils">setHdMapUtils</a></strong>(const std::shared_ptr&lt; <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classhdmap__utils_1_1HdMapUtils">hdmap_utils::HdMapUtils</a> &gt; &amp; ptr) override</td>
 </tr>
 <tr>
 <td>virtual void</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1PedestrianEntity#function-requestwalkstraight">requestWalkStraight</a></strong>() override</td>
-</tr>
-<tr>
-<td>void</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1PedestrianEntity#function-requestlanechange">requestLaneChange</a></strong>(std::int64_t to_lanelet_id)</td>
 </tr>
 <tr>
 <td>virtual void</td>
@@ -901,8 +897,12 @@
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1PedestrianEntity#function-getobstacle">getObstacle</a></strong>() override</td>
 </tr>
 <tr>
+<td>virtual auto</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1PedestrianEntity#function-getentitytypename">getEntityTypename</a></strong>() const</td>
+</tr>
+<tr>
 <td>virtual const std::string</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1PedestrianEntity#function-getcurrentaction">getCurrentAction</a></strong>() const</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1PedestrianEntity#function-getcurrentaction">getCurrentAction</a></strong>() const override</td>
 </tr>
 <tr>
 <td>virtual const openscenario_msgs::msg::BoundingBox</td>
@@ -914,11 +914,11 @@
 </tr>
 <tr>
 <td></td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1PedestrianEntity#function-pedestrianentity">PedestrianEntity</a></strong>(std::string name, const openscenario_msgs::msg::EntityStatus &amp; initial_state, openscenario_msgs::msg::PedestrianParameters parameters)</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1PedestrianEntity#function-pedestrianentity">PedestrianEntity</a></strong>(const std::string &amp; name, const openscenario_msgs::msg::EntityStatus &amp; initial_state, const openscenario_msgs::msg::PedestrianParameters &amp; parameters)</td>
 </tr>
 <tr>
 <td></td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1PedestrianEntity#function-pedestrianentity">PedestrianEntity</a></strong>(std::string name, openscenario_msgs::msg::PedestrianParameters parameters)</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1PedestrianEntity#function-pedestrianentity">PedestrianEntity</a></strong>(const std::string &amp; name, const openscenario_msgs::msg::PedestrianParameters &amp; parameters)</td>
 </tr>
 </tbody>
 </table>
@@ -953,30 +953,30 @@
 </tr>
 <tr>
 <td>void</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-updatestandstillduration">updateStandStillDuration</a></strong>(double step_time)</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-updatestandstillduration">updateStandStillDuration</a></strong>(const double step_time)</td>
 </tr>
 <tr>
 <td>void</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-updateentitystatustimestamp">updateEntityStatusTimestamp</a></strong>(double current_time)</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-updateentitystatustimestamp">updateEntityStatusTimestamp</a></strong>(const double current_time)</td>
 </tr>
 <tr>
 <td>void</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-stopatendofroad">stopAtEndOfRoad</a></strong>()</td>
 </tr>
 <tr>
-<td>bool</td>
+<td>auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-statusset">statusSet</a></strong>() const</td>
 </tr>
 <tr>
-<td>bool</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-setvisibility">setVisibility</a></strong>(bool visibility)</td>
+<td>auto</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-setvisibility">setVisibility</a></strong>(const bool visibility)</td>
 </tr>
 <tr>
 <td>void</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-setverbose">setVerbose</a></strong>(bool verbose)</td>
 </tr>
 <tr>
-<td>bool</td>
+<td>virtual auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-setstatus">setStatus</a></strong>(const openscenario_msgs::msg::EntityStatus &amp; status)</td>
 </tr>
 <tr>
@@ -988,40 +988,52 @@
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-setentitytypelist">setEntityTypeList</a></strong>(const std::unordered_map&lt; std::string, openscenario_msgs::msg::EntityType &gt; &amp; entity_type_list)</td>
 </tr>
 <tr>
-<td>void</td>
+<td>virtual void</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-setdrivermodel">setDriverModel</a></strong>(const openscenario_msgs::msg::DriverModel &amp; )</td>
 </tr>
 <tr>
-<td>bool</td>
+<td>virtual void</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-requestlanechange">requestLaneChange</a></strong>(const std::int64_t )</td>
+</tr>
+<tr>
+<td>virtual auto</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-ready">ready</a></strong>() const</td>
+</tr>
+<tr>
+<td>auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getvisibility">getVisibility</a></strong>()</td>
 </tr>
 <tr>
-<td>const boost::optional&lt; openscenario_msgs::msg::VehicleParameters &gt;</td>
+<td>auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getvehicleparameters">getVehicleParameters</a></strong>() const</td>
 </tr>
 <tr>
-<td>const openscenario_msgs::msg::EntityStatus</td>
+<td>auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getstatus">getStatus</a></strong>() const</td>
 </tr>
 <tr>
-<td>boost::optional&lt; double &gt;</td>
+<td>auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getstandstillduration">getStandStillDuration</a></strong>() const</td>
 </tr>
 <tr>
-<td>boost::optional&lt; double &gt;</td>
+<td>auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getlinearjerk">getLinearJerk</a></strong>() const</td>
 </tr>
 <tr>
-<td>const openscenario_msgs::msg::EntityType</td>
+<td>auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getentitytype">getEntityType</a></strong>() const</td>
 </tr>
 <tr>
-<td></td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-entitybase">EntityBase</a></strong>(std::string type, std::string name, const openscenario_msgs::msg::EntityStatus &amp; initial_state)</td>
+<td>virtual void</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-engage">engage</a></strong>()</td>
 </tr>
 <tr>
 <td></td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-entitybase">EntityBase</a></strong>(std::string type, std::string name)</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-entitybase">EntityBase</a></strong>(const std::string &amp; type, const std::string &amp; name)</td>
+</tr>
+<tr>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-entitybase">EntityBase</a></strong>(const std::string &amp; type, const std::string &amp; name, const openscenario_msgs::msg::EntityStatus &amp; initial_state)</td>
 </tr>
 </tbody>
 </table>
@@ -1109,10 +1121,11 @@
 </table>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">#</a></h2>
 <h3 id="function-settrafficlightmanager">function setTrafficLightManager<a class="headerlink" href="#function-settrafficlightmanager" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="kt">void</span> <span class="n">setTrafficLightManager</span><span class="p">(</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">TrafficLightManager</span> <span class="o">&gt;</span> <span class="n">ptr</span>
-<span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="kt">void</span> <span class="n">setTrafficLightManager</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">TrafficLightManager</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">ptr</span>
+<span class="p">)</span> <span class="k">override</span>
 </code></pre></div>
+<p><strong>Reimplements</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-settrafficlightmanager">traffic_simulator::entity::EntityBase::setTrafficLightManager</a></p>
 <h3 id="function-settargetspeed">function setTargetSpeed<a class="headerlink" href="#function-settargetspeed" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">virtual</span> <span class="kt">void</span> <span class="n">setTargetSpeed</span><span class="p">(</span>
     <span class="kt">double</span> <span class="n">target_speed</span><span class="p">,</span>
@@ -1121,19 +1134,15 @@
 </code></pre></div>
 <p><strong>Reimplements</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-settargetspeed">traffic_simulator::entity::EntityBase::setTargetSpeed</a></p>
 <h3 id="function-sethdmaputils">function setHdMapUtils<a class="headerlink" href="#function-sethdmaputils" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="kt">void</span> <span class="n">setHdMapUtils</span><span class="p">(</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span> <span class="n">hdmap_utils</span><span class="o">::</span><span class="n">HdMapUtils</span> <span class="o">&gt;</span> <span class="n">ptr</span>
-<span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="kt">void</span> <span class="n">setHdMapUtils</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span> <span class="n">hdmap_utils</span><span class="o">::</span><span class="n">HdMapUtils</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">ptr</span>
+<span class="p">)</span> <span class="k">override</span>
 </code></pre></div>
+<p><strong>Reimplements</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-sethdmaputils">traffic_simulator::entity::EntityBase::setHdMapUtils</a></p>
 <h3 id="function-requestwalkstraight">function requestWalkStraight<a class="headerlink" href="#function-requestwalkstraight" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">virtual</span> <span class="kt">void</span> <span class="n">requestWalkStraight</span><span class="p">()</span> <span class="k">override</span>
 </code></pre></div>
 <p><strong>Reimplements</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-requestwalkstraight">traffic_simulator::entity::EntityBase::requestWalkStraight</a></p>
-<h3 id="function-requestlanechange">function requestLaneChange<a class="headerlink" href="#function-requestlanechange" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">requestLaneChange</span><span class="p">(</span>
-    <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">to_lanelet_id</span>
-<span class="p">)</span>
-</code></pre></div>
 <h3 id="function-requestassignroute">function requestAssignRoute<a class="headerlink" href="#function-requestassignroute" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">virtual</span> <span class="kt">void</span> <span class="n">requestAssignRoute</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">waypoints</span>
@@ -1167,8 +1176,12 @@
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Obstacle</span> <span class="o">&gt;</span> <span class="n">getObstacle</span><span class="p">()</span> <span class="k">override</span>
 </code></pre></div>
 <p><strong>Reimplements</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getobstacle">traffic_simulator::entity::EntityBase::getObstacle</a></p>
+<h3 id="function-getentitytypename">function getEntityTypename<a class="headerlink" href="#function-getentitytypename" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="k">auto</span> <span class="n">getEntityTypename</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>
+<p><strong>Reimplements</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getentitytypename">traffic_simulator::entity::EntityBase::getEntityTypename</a></p>
 <h3 id="function-getcurrentaction">function getCurrentAction<a class="headerlink" href="#function-getcurrentaction" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">getCurrentAction</span><span class="p">()</span> <span class="k">const</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">getCurrentAction</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
 </code></pre></div>
 <p><strong>Reimplements</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getcurrentaction">traffic_simulator::entity::EntityBase::getCurrentAction</a></p>
 <h3 id="function-getboundingbox">function getBoundingBox<a class="headerlink" href="#function-getboundingbox" title="Permanent link">#</a></h3>
@@ -1180,15 +1193,15 @@
 </code></pre></div>
 <h3 id="function-pedestrianentity">function PedestrianEntity<a class="headerlink" href="#function-pedestrianentity" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">PedestrianEntity</span><span class="p">(</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span>
     <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&amp;</span> <span class="n">initial_state</span><span class="p">,</span>
-    <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PedestrianParameters</span> <span class="n">parameters</span>
+    <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PedestrianParameters</span> <span class="o">&amp;</span> <span class="n">parameters</span>
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-pedestrianentity_1">function PedestrianEntity<a class="headerlink" href="#function-pedestrianentity_1" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">PedestrianEntity</span><span class="p">(</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span>
-    <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PedestrianParameters</span> <span class="n">parameters</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PedestrianParameters</span> <span class="o">&amp;</span> <span class="n">parameters</span>
 <span class="p">)</span>
 </code></pre></div>
 <h2 id="public-attributes-documentation">Public Attributes Documentation<a class="headerlink" href="#public-attributes-documentation" title="Permanent link">#</a></h2>
@@ -1196,7 +1209,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PedestrianParameters</span> <span class="n">parameters</span><span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>Updated on 28 April 2021 at 01:33:44 UTC</p>
+<p>Updated on 28 April 2021 at 10:14:43 UTC</p>
                 
                   
                 

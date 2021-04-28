@@ -197,11 +197,11 @@
 <codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacesimple__sensor__simulator" kindref="compound">simple_sensor_simulator</ref></highlight></codeline>
 <codeline lineno="27"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="28"><highlight class="normal">LidarSensor::LidarSensor(</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::LidarConfiguration<sp/>&amp;<sp/>configuration,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::LidarConfiguration<sp/>&amp;<sp/>configuration,</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;rclcpp::Publisher&lt;sensor_msgs::msg::PointCloud2&gt;&gt;<sp/>publisher_ptr)</highlight></codeline>
 <codeline lineno="31"><highlight class="normal">:<sp/>configuration_(configuration),<sp/>publisher_ptr_(publisher_ptr)</highlight></codeline>
 <codeline lineno="32"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/>last_update_stamp_<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>last_update_stamp_<sp/>=<sp/>current_time;</highlight></codeline>
 <codeline lineno="34"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;<sp/>&amp;<sp/>LidarSensor::getDetectedObjects()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>

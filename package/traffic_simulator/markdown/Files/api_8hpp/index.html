@@ -809,7 +809,6 @@
 
 <span class="cp">#include</span> <span class="cpf">&lt;autoware_auto_msgs/msg/vehicle_control_command.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;autoware_auto_msgs/msg/vehicle_state_command.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;awapi_accessor/accessor.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;boost/filesystem.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;cassert&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
@@ -840,18 +839,25 @@
 
 <span class="k">public</span><span class="o">:</span>
   <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">lanelet2_map_osm</span><span class="p">;</span>
+
   <span class="k">const</span> <span class="kt">double</span> <span class="n">initialize_duration</span><span class="p">;</span>
+
+  <span class="k">const</span> <span class="kt">bool</span> <span class="n">standalone_mode</span><span class="p">;</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">NodeT</span><span class="p">,</span> <span class="k">class</span> <span class="nc">AllocatorT</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">allocator</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;&gt;</span>
   <span class="k">explicit</span> <span class="n">API</span><span class="p">(</span>
     <span class="n">NodeT</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">lanelet2_map_osm</span><span class="p">,</span>
-    <span class="k">const</span> <span class="kt">double</span> <span class="n">initialize_duration</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="k">const</span> <span class="kt">bool</span> <span class="n">auto_sink</span> <span class="o">=</span> <span class="nb">true</span><span class="p">,</span> <span class="k">const</span> <span class="kt">bool</span> <span class="n">verbose</span> <span class="o">=</span> <span class="nb">false</span><span class="p">,</span>
+    <span class="k">const</span> <span class="kt">double</span> <span class="n">initialize_duration</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="k">const</span> <span class="kt">bool</span> <span class="n">auto_sink</span> <span class="o">=</span> <span class="nb">true</span><span class="p">,</span> <span class="k">const</span> <span class="kt">bool</span> <span class="n">verbose</span> <span class="o">=</span> <span class="nb">false</span><span class="p">,</span>
     <span class="k">const</span> <span class="kt">bool</span> <span class="n">standalone_mode</span> <span class="o">=</span> <span class="nb">false</span><span class="p">,</span>
     <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">metrics_logfile_path</span> <span class="o">=</span> <span class="s">&quot;/tmp/metrics.json&quot;</span><span class="p">)</span>
   <span class="o">:</span> <span class="n">lanelet2_map_osm</span><span class="p">(</span><span class="n">lanelet2_map_osm</span><span class="p">),</span>
     <span class="n">initialize_duration</span><span class="p">(</span><span class="n">initialize_duration</span><span class="p">),</span>
     <span class="n">standalone_mode</span><span class="p">(</span><span class="n">standalone_mode</span><span class="p">),</span>
     <span class="n">entity_manager_ptr_</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">EntityManager</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">lanelet2_map_osm</span><span class="p">)),</span>
+    <span class="n">traffic_controller_ptr_</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">traffic</span><span class="o">::</span><span class="n">TrafficController</span><span class="o">&gt;</span><span class="p">(</span>
+      <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">getHdmapUtils</span><span class="p">(),</span> <span class="p">[</span><span class="k">this</span><span class="p">]()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">API</span><span class="o">::</span><span class="n">getEntityNames</span><span class="p">();</span> <span class="p">},</span>
+      <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">API</span><span class="o">::</span><span class="n">getEntityPose</span><span class="p">(</span><span class="n">name</span><span class="p">);</span> <span class="p">},</span>
+      <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">API</span><span class="o">::</span><span class="n">despawn</span><span class="p">(</span><span class="n">name</span><span class="p">);</span> <span class="p">},</span> <span class="n">auto_sink</span><span class="p">)),</span>
     <span class="n">metrics_manager_</span><span class="p">(</span><span class="n">verbose</span><span class="p">,</span> <span class="n">metrics_logfile_path</span><span class="p">),</span>
     <span class="n">initialize_client_</span><span class="p">(</span>
       <span class="n">simulation_interface</span><span class="o">::</span><span class="n">protocol</span><span class="p">,</span> <span class="n">simulation_interface</span><span class="o">::</span><span class="n">HostName</span><span class="o">::</span><span class="n">LOCLHOST</span><span class="p">,</span>
@@ -881,11 +887,6 @@
       <span class="n">simulation_interface</span><span class="o">::</span><span class="n">protocol</span><span class="p">,</span> <span class="n">simulation_interface</span><span class="o">::</span><span class="n">HostName</span><span class="o">::</span><span class="n">LOCLHOST</span><span class="p">,</span>
       <span class="n">simulation_interface</span><span class="o">::</span><span class="n">ports</span><span class="o">::</span><span class="n">attach_detection_sensor</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="k">static</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">address</span> <span class="o">=</span> <span class="s">&quot;127.0.0.1&quot;</span><span class="p">;</span>
-    <span class="n">traffic_controller_ptr_</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">traffic</span><span class="o">::</span><span class="n">TrafficController</span><span class="o">&gt;</span><span class="p">(</span>
-      <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">getHdmapUtils</span><span class="p">(),</span> <span class="p">[</span><span class="k">this</span><span class="p">]()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">API</span><span class="o">::</span><span class="n">getEntityNames</span><span class="p">();</span> <span class="p">},</span>
-      <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">API</span><span class="o">::</span><span class="n">getEntityPose</span><span class="p">(</span><span class="n">name</span><span class="p">);</span> <span class="p">},</span>
-      <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">API</span><span class="o">::</span><span class="n">despawn</span><span class="p">(</span><span class="n">name</span><span class="p">);</span> <span class="p">},</span> <span class="n">auto_sink</span><span class="p">);</span>
     <span class="n">metrics_manager_</span><span class="p">.</span><span class="n">setEntityManager</span><span class="p">(</span><span class="n">entity_manager_ptr_</span><span class="p">);</span>
     <span class="n">setVerbose</span><span class="p">(</span><span class="n">verbose</span><span class="p">);</span>
   <span class="p">}</span>
@@ -906,10 +907,7 @@
     <span class="k">const</span> <span class="kt">bool</span> <span class="n">is_ego</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span>
     <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PedestrianParameters</span> <span class="o">&amp;</span> <span class="n">params</span><span class="p">);</span>
 
-  <span class="k">template</span> <span class="o">&lt;</span>
-    <span class="k">typename</span> <span class="nc">Parameters</span><span class="p">,</span>  <span class="c1">// Maybe, VehicleParameters or PedestrianParameters</span>
-    <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span>        <span class="c1">// Arguments for setEntityStatus</span>
-    <span class="o">&gt;</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Parameters</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
   <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">spawn</span><span class="p">(</span>
     <span class="k">const</span> <span class="kt">bool</span> <span class="n">is_ego</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">Parameters</span> <span class="o">&amp;</span> <span class="n">params</span><span class="p">,</span> <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
   <span class="p">{</span>
@@ -963,8 +961,6 @@
 
   <span class="kt">double</span> <span class="nf">getCurrentTime</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">current_time_</span><span class="p">;</span> <span class="p">}</span>
 
-  <span class="k">const</span> <span class="kt">bool</span> <span class="n">standalone_mode</span><span class="p">;</span>
-
 <span class="cp">#define FORWARD_TO_ENTITY_MANAGER(NAME)                                    \</span>
 <span class="cp">  template &lt;typename... Ts&gt;                                                \</span>
 <span class="cp">  decltype(auto) NAME(Ts &amp;&amp;... xs)                                         \</span>
@@ -975,6 +971,7 @@
 <span class="cp">  static_assert(true, &quot;&quot;)</span>
 
   <span class="n">FORWARD_TO_ENTITY_MANAGER</span><span class="p">(</span><span class="n">checkCollision</span><span class="p">);</span>
+  <span class="n">FORWARD_TO_ENTITY_MANAGER</span><span class="p">(</span><span class="n">engage</span><span class="p">);</span>
   <span class="n">FORWARD_TO_ENTITY_MANAGER</span><span class="p">(</span><span class="n">entityExists</span><span class="p">);</span>
   <span class="n">FORWARD_TO_ENTITY_MANAGER</span><span class="p">(</span><span class="n">getBoundingBoxDistance</span><span class="p">);</span>
   <span class="n">FORWARD_TO_ENTITY_MANAGER</span><span class="p">(</span><span class="n">getEntityNames</span><span class="p">);</span>
@@ -985,6 +982,7 @@
   <span class="n">FORWARD_TO_ENTITY_MANAGER</span><span class="p">(</span><span class="n">getTrafficLightArrow</span><span class="p">);</span>
   <span class="n">FORWARD_TO_ENTITY_MANAGER</span><span class="p">(</span><span class="n">getTrafficLightColor</span><span class="p">);</span>
   <span class="n">FORWARD_TO_ENTITY_MANAGER</span><span class="p">(</span><span class="n">isInLanelet</span><span class="p">);</span>
+  <span class="n">FORWARD_TO_ENTITY_MANAGER</span><span class="p">(</span><span class="n">ready</span><span class="p">);</span>
   <span class="n">FORWARD_TO_ENTITY_MANAGER</span><span class="p">(</span><span class="n">requestAcquirePosition</span><span class="p">);</span>
   <span class="n">FORWARD_TO_ENTITY_MANAGER</span><span class="p">(</span><span class="n">requestAssignRoute</span><span class="p">);</span>
   <span class="n">FORWARD_TO_ENTITY_MANAGER</span><span class="p">(</span><span class="n">requestLaneChange</span><span class="p">);</span>
@@ -1002,9 +1000,6 @@
 
 <span class="k">private</span><span class="o">:</span>
   <span class="kt">bool</span> <span class="n">updateEntityStatusInSim</span><span class="p">();</span>
-  <span class="kt">bool</span> <span class="nf">spawn</span><span class="p">(</span>
-    <span class="k">const</span> <span class="kt">bool</span> <span class="n">is_ego</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">catalog_xml</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&amp;</span> <span class="n">status</span><span class="p">);</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Parameters</span><span class="o">&gt;</span>
   <span class="kt">bool</span> <span class="n">spawn</span><span class="p">(</span>
@@ -1014,12 +1009,10 @@
     <span class="k">return</span> <span class="nf">spawn</span><span class="p">(</span><span class="n">is_ego</span><span class="p">,</span> <span class="n">parameters</span><span class="p">.</span><span class="n">toXml</span><span class="p">(),</span> <span class="n">status</span><span class="p">);</span>
   <span class="p">}</span>
 
-  <span class="c1">// openscenario_msgs::msg::EntityStatus toStatus(XmlRpc::XmlRpcValue param);</span>
-  <span class="c1">// XmlRpc::XmlRpcValue toValue(openscenario_msgs::msg::EntityStatus status);</span>
+  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">entity</span><span class="o">::</span><span class="n">EntityManager</span><span class="o">&gt;</span> <span class="n">entity_manager_ptr_</span><span class="p">;</span>
 
-  <span class="c1">// std::shared_ptr&lt;XmlRpc::XmlRpcClient&gt; client_ptr_;</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">entity</span><span class="o">::</span><span class="n">EntityManager</span><span class="o">&gt;</span> <span class="n">entity_manager_ptr_</span><span class="p">;</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">traffic</span><span class="o">::</span><span class="n">TrafficController</span><span class="o">&gt;</span> <span class="n">traffic_controller_ptr_</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">traffic</span><span class="o">::</span><span class="n">TrafficController</span><span class="o">&gt;</span> <span class="n">traffic_controller_ptr_</span><span class="p">;</span>
+
   <span class="kt">double</span> <span class="n">step_time_</span><span class="p">;</span>
   <span class="kt">double</span> <span class="n">current_time_</span><span class="p">;</span>
 
@@ -1064,7 +1057,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__API__API_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 28 April 2021 at 01:33:45 UTC</p>
+<p>Updated on 28 April 2021 at 10:14:43 UTC</p>
                 
                   
                 

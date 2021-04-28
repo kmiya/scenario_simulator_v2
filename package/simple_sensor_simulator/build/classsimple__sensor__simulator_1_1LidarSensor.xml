@@ -57,11 +57,15 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classsimple__sensor__simulator_1_1LidarSensor_1a715df08b652705431d440fb98b85bd9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classsimple__sensor__simulator_1_1LidarSensor_1ab93feed9ade5b865bbb0d45636d0a7e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>simple_sensor_simulator::LidarSensor::LidarSensor</definition>
-        <argsstring>(const simulation_api_schema::LidarConfiguration &amp;configuration, std::shared_ptr&lt; rclcpp::Publisher&lt; sensor_msgs::msg::PointCloud2 &gt;&gt; publisher_ptr)</argsstring>
+        <argsstring>(const double current_time, const simulation_api_schema::LidarConfiguration &amp;configuration, std::shared_ptr&lt; rclcpp::Publisher&lt; sensor_msgs::msg::PointCloud2 &gt;&gt; publisher_ptr)</argsstring>
         <name>LidarSensor</name>
+        <param>
+          <type>const double</type>
+          <declname>current_time</declname>
+        </param>
         <param>
           <type>const simulation_api_schema::LidarConfiguration &amp;</type>
           <declname>configuration</declname>
@@ -150,7 +154,7 @@
       <member refid="classsimple__sensor__simulator_1_1LidarSensor_1a709acd2fbcdd86466c56011522fec0f1" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::LidarSensor</scope><name>detected_objects_</name></member>
       <member refid="classsimple__sensor__simulator_1_1LidarSensor_1a2b8179c2e1556726194282becac5a26d" prot="public" virt="non-virtual"><scope>simple_sensor_simulator::LidarSensor</scope><name>getDetectedObjects</name></member>
       <member refid="classsimple__sensor__simulator_1_1LidarSensor_1a9835cdf137754de5045fb547d9248f84" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::LidarSensor</scope><name>last_update_stamp_</name></member>
-      <member refid="classsimple__sensor__simulator_1_1LidarSensor_1a715df08b652705431d440fb98b85bd9d" prot="public" virt="non-virtual"><scope>simple_sensor_simulator::LidarSensor</scope><name>LidarSensor</name></member>
+      <member refid="classsimple__sensor__simulator_1_1LidarSensor_1ab93feed9ade5b865bbb0d45636d0a7e7" prot="public" virt="non-virtual"><scope>simple_sensor_simulator::LidarSensor</scope><name>LidarSensor</name></member>
       <member refid="classsimple__sensor__simulator_1_1LidarSensor_1acde029656585f1678cd782bc54fb1400" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::LidarSensor</scope><name>publisher_ptr_</name></member>
       <member refid="classsimple__sensor__simulator_1_1LidarSensor_1a4f89ef3fb2c4c40ce8e9876adcb458e5" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::LidarSensor</scope><name>raycast</name></member>
       <member refid="classsimple__sensor__simulator_1_1LidarSensor_1a13ce73ce188cc3328b85373dee12d286" prot="public" virt="non-virtual"><scope>simple_sensor_simulator::LidarSensor</scope><name>update</name></member>

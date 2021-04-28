@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="43" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" bodystart="43" bodyend="-1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="44" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classsimple__sensor__simulator_1_1SensorSimulation_1a0b700fe56cf8b678b8f0a2762f9703df" prot="private" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="classsimple__sensor__simulator_1_1DetectionSensor" kindref="compound">DetectionSensor</ref> &gt;</type>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="44" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" bodystart="44" bodyend="-1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="45" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" bodystart="45" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classsimple__sensor__simulator_1_1SensorSimulation_1a23a6cc1487cd9901f42bbc7bdbd7bd52" prot="private" static="no" mutable="no">
         <type>std::shared_ptr&lt; rclcpp::Clock &gt;</type>
@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="45" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" bodystart="45" bodyend="-1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="46" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" bodystart="46" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -61,11 +61,15 @@
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="31" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/sensor_simulation/sensor_simulation.cpp" bodystart="22" bodyend="25"/>
       </memberdef>
-      <memberdef kind="function" id="classsimple__sensor__simulator_1_1SensorSimulation_1a70bf91c08f64e88b2ccc7cb5d7197242" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classsimple__sensor__simulator_1_1SensorSimulation_1a4a35c9f7cc74b78ccc0fe07f298d6088" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void simple_sensor_simulator::SensorSimulation::attachLidarSensor</definition>
-        <argsstring>(const simulation_api_schema::LidarConfiguration &amp;configuration, std::shared_ptr&lt; rclcpp::Publisher&lt; sensor_msgs::msg::PointCloud2 &gt;&gt; publisher_ptr)</argsstring>
+        <argsstring>(const double current_time, const simulation_api_schema::LidarConfiguration &amp;configuration, std::shared_ptr&lt; rclcpp::Publisher&lt; sensor_msgs::msg::PointCloud2 &gt;&gt; publisher_ptr)</argsstring>
         <name>attachLidarSensor</name>
+        <param>
+          <type>const double</type>
+          <declname>current_time</declname>
+        </param>
         <param>
           <type>const simulation_api_schema::LidarConfiguration &amp;</type>
           <declname>configuration</declname>
@@ -82,11 +86,15 @@
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="32" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/sensor_simulation/sensor_simulation.cpp" bodystart="27" bodyend="33"/>
       </memberdef>
-      <memberdef kind="function" id="classsimple__sensor__simulator_1_1SensorSimulation_1a0a501adaef3d0558b942091b7a5f770a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classsimple__sensor__simulator_1_1SensorSimulation_1ae02b4a1d91ea6e746492c04282b3abdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void simple_sensor_simulator::SensorSimulation::attachDetectionSensor</definition>
-        <argsstring>(const simulation_api_schema::DetectionSensorConfiguration &amp;configuration, std::shared_ptr&lt; rclcpp::Publisher&lt; autoware_perception_msgs::msg::DynamicObjectArray &gt;&gt; publisher_ptr)</argsstring>
+        <argsstring>(const double current_time, const simulation_api_schema::DetectionSensorConfiguration &amp;configuration, std::shared_ptr&lt; rclcpp::Publisher&lt; autoware_perception_msgs::msg::DynamicObjectArray &gt;&gt; publisher_ptr)</argsstring>
         <name>attachDetectionSensor</name>
+        <param>
+          <type>const double</type>
+          <declname>current_time</declname>
+        </param>
         <param>
           <type>const simulation_api_schema::DetectionSensorConfiguration &amp;</type>
           <declname>configuration</declname>
@@ -101,7 +109,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="35" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/sensor_simulation/sensor_simulation.cpp" bodystart="35" bodyend="42"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="35" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/sensor_simulation/sensor_simulation.cpp" bodystart="35" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="classsimple__sensor__simulator_1_1SensorSimulation_1af4524d329dab12d4071e11ee472fa4e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -122,17 +130,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="39" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/sensor_simulation/sensor_simulation.cpp" bodystart="44" bodyend="61"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="40" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/sensor_simulation/sensor_simulation.cpp" bodystart="45" bodyend="62"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="29" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" bodystart="28" bodyend="46"/>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="29" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" bodystart="28" bodyend="47"/>
     <listofallmembers>
-      <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1a0a501adaef3d0558b942091b7a5f770a" prot="public" virt="non-virtual"><scope>simple_sensor_simulator::SensorSimulation</scope><name>attachDetectionSensor</name></member>
-      <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1a70bf91c08f64e88b2ccc7cb5d7197242" prot="public" virt="non-virtual"><scope>simple_sensor_simulator::SensorSimulation</scope><name>attachLidarSensor</name></member>
+      <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1ae02b4a1d91ea6e746492c04282b3abdf" prot="public" virt="non-virtual"><scope>simple_sensor_simulator::SensorSimulation</scope><name>attachDetectionSensor</name></member>
+      <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1a4a35c9f7cc74b78ccc0fe07f298d6088" prot="public" virt="non-virtual"><scope>simple_sensor_simulator::SensorSimulation</scope><name>attachLidarSensor</name></member>
       <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1a23a6cc1487cd9901f42bbc7bdbd7bd52" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::SensorSimulation</scope><name>clock_ptr_</name></member>
       <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1a0b700fe56cf8b678b8f0a2762f9703df" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::SensorSimulation</scope><name>detection_sensors_</name></member>
       <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1ab559619a71d688e3ed989051a3948aa5" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::SensorSimulation</scope><name>lidar_sensors_</name></member>

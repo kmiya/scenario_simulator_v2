@@ -756,9 +756,9 @@
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/object.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">openscenario_interpreter</span>
+<span class="k">namespace</span> <span class="nn">openscenario_interpreter</span>
 <span class="p">{</span>
-<span class="kr">inline</span> <span class="k">namespace</span> <span class="n">syntax</span>
+<span class="kr">inline</span> <span class="k">namespace</span> <span class="nn">syntax</span>
 <span class="p">{</span>
 <span class="cm">/* ---- Boolean ----------------------------------------------------------------</span>
 <span class="cm"> *</span>
@@ -779,7 +779,7 @@
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">interpreter</span> <span class="o">&lt;&lt;</span> <span class="n">target</span> <span class="o">&amp;&amp;</span> <span class="n">interpreter</span> <span class="o">&gt;&gt;</span> <span class="n">std</span><span class="o">::</span><span class="n">boolalpha</span> <span class="o">&gt;&gt;</span> <span class="n">data</span><span class="p">))</span> <span class="p">{</span>
       <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>
       <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;can&#39;t treat value &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">quoted</span><span class="p">(</span><span class="n">target</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; as type Boolean&quot;</span><span class="p">;</span>
-      <span class="k">throw</span> <span class="nf">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
+      <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
@@ -798,14 +798,14 @@
 <span class="k">extern</span> <span class="k">const</span> <span class="n">Element</span> <span class="n">true_v</span><span class="p">;</span>
 <span class="k">extern</span> <span class="k">const</span> <span class="n">Element</span> <span class="n">false_v</span><span class="p">;</span>
 
-<span class="k">const</span> <span class="n">Element</span> <span class="o">&amp;</span> <span class="n">asBoolean</span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
+<span class="k">const</span> <span class="n">Element</span> <span class="o">&amp;</span> <span class="nf">asBoolean</span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
 <span class="p">}</span>  <span class="c1">// namespace syntax</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
 
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__BOOLEAN_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  3 May 2021 at 00:13:16 UTC</p>
+<p>Updated on  4 May 2021 at 00:06:49 UTC</p>
                 
                   
                 

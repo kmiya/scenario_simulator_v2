@@ -762,13 +762,13 @@
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/vehicle_parameter.hpp&gt;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">traffic_simulator</span>
+<span class="k">namespace</span> <span class="nn">traffic_simulator</span>
 <span class="p">{</span>
-<span class="k">namespace</span> <span class="n">entity</span>
+<span class="k">namespace</span> <span class="nn">entity</span>
 <span class="p">{</span>
 <span class="k">struct</span> <span class="nc">PedestrianParameters</span>
 <span class="p">{</span>
-  <span class="k">explicit</span> <span class="nf">PedestrianParameters</span><span class="p">(</span><span class="k">const</span> <span class="n">pugi</span><span class="o">::</span><span class="n">xml_node</span> <span class="o">&amp;</span> <span class="n">xml</span><span class="p">)</span>
+  <span class="k">explicit</span> <span class="n">PedestrianParameters</span><span class="p">(</span><span class="k">const</span> <span class="n">pugi</span><span class="o">::</span><span class="n">xml_node</span> <span class="o">&amp;</span> <span class="n">xml</span><span class="p">)</span>
   <span class="o">:</span> <span class="n">name</span><span class="p">(</span><span class="n">xml</span><span class="p">.</span><span class="n">child</span><span class="p">(</span><span class="s">&quot;Pedestrian&quot;</span><span class="p">).</span><span class="n">attribute</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">).</span><span class="n">as_string</span><span class="p">()),</span>
     <span class="n">pedestrian_category</span><span class="p">(</span><span class="n">xml</span><span class="p">.</span><span class="n">child</span><span class="p">(</span><span class="s">&quot;Pedestrian&quot;</span><span class="p">).</span><span class="n">attribute</span><span class="p">(</span><span class="s">&quot;pedestrianCategory&quot;</span><span class="p">).</span><span class="n">as_string</span><span class="p">()),</span>
     <span class="n">bounding_box</span><span class="p">(</span><span class="n">xml</span><span class="p">.</span><span class="n">child</span><span class="p">(</span><span class="s">&quot;Pedestrian&quot;</span><span class="p">))</span>
@@ -782,7 +782,7 @@
   <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">pedestrian_category</span><span class="p">;</span>
   <span class="k">const</span> <span class="n">BoundingBox</span> <span class="n">bounding_box</span><span class="p">;</span>
 
-  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">toXml</span><span class="p">()</span> <span class="k">const</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="nf">toXml</span><span class="p">()</span> <span class="k">const</span>
   <span class="p">{</span>
     <span class="k">using</span> <span class="n">boost</span><span class="o">::</span><span class="n">property_tree</span><span class="o">::</span><span class="n">ptree</span><span class="p">;</span>
     <span class="n">ptree</span> <span class="n">pt</span><span class="p">;</span>
@@ -802,7 +802,7 @@
     <span class="k">return</span> <span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">();</span>
   <span class="p">}</span>
 
-  <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PedestrianParameters</span> <span class="n">toRosMsg</span><span class="p">()</span> <span class="k">const</span>
+  <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PedestrianParameters</span> <span class="nf">toRosMsg</span><span class="p">()</span> <span class="k">const</span>
   <span class="p">{</span>
     <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PedestrianParameters</span> <span class="n">msg</span><span class="p">;</span>
     <span class="n">msg</span><span class="p">.</span><span class="n">bounding_box</span> <span class="o">=</span> <span class="n">bounding_box</span><span class="p">.</span><span class="n">toRosMsg</span><span class="p">();</span>
@@ -817,7 +817,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__ENTITY__PEDESTRIAN_PARAMETER_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  3 May 2021 at 00:13:14 UTC</p>
+<p>Updated on  4 May 2021 at 00:06:46 UTC</p>
                 
                   
                 

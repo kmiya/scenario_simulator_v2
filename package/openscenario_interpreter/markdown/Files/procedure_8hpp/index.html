@@ -834,7 +834,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/api/api.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">openscenario_interpreter</span>
+<span class="k">namespace</span> <span class="nn">openscenario_interpreter</span>
 <span class="p">{</span>
 <span class="k">extern</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">API</span> <span class="o">&amp;</span> <span class="n">connection</span><span class="p">;</span>
 
@@ -850,7 +850,7 @@
 <span class="k">try</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">connection</span><span class="p">.</span><span class="n">getEntityStatus</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
 <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span> <span class="o">&amp;</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">throw</span> <span class="nf">SemanticError</span><span class="p">(</span>
+  <span class="k">throw</span> <span class="n">SemanticError</span><span class="p">(</span>
     <span class="n">error</span><span class="p">.</span><span class="n">what</span><span class="p">(),</span> <span class="s">&quot;.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Possible causes:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
     <span class="s">&quot;  (1) The position of the corresponding entity is not specified by Teleport Action&quot;</span><span class="p">);</span>
 <span class="p">}</span>
@@ -958,7 +958,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__PROCEDURE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  3 May 2021 at 00:13:16 UTC</p>
+<p>Updated on  4 May 2021 at 00:06:49 UTC</p>
                 
                   
                 

@@ -757,9 +757,9 @@
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">openscenario_interpreter</span>
+<span class="k">namespace</span> <span class="nn">openscenario_interpreter</span>
 <span class="p">{</span>
-<span class="kr">inline</span> <span class="k">namespace</span> <span class="n">syntax</span>
+<span class="kr">inline</span> <span class="k">namespace</span> <span class="nn">syntax</span>
 <span class="p">{</span>
 <span class="cm">/* ---- SpeedAction ------------------------------------------------------------</span>
 <span class="cm"> *</span>
@@ -790,7 +790,7 @@
 
   <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Boolean</span><span class="o">&gt;</span> <span class="n">accomplishments</span><span class="p">;</span>
 
-  <span class="k">auto</span> <span class="nf">reset</span><span class="p">()</span>
+  <span class="k">auto</span> <span class="n">reset</span><span class="p">()</span>
   <span class="p">{</span>
     <span class="n">accomplishments</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
     <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">actor</span> <span class="p">:</span> <span class="n">inner_scope</span><span class="p">.</span><span class="n">actors</span><span class="p">)</span> <span class="p">{</span>
@@ -801,7 +801,7 @@
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
   <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">setLinearTransition</span><span class="p">(</span><span class="k">const</span> <span class="n">Scope</span><span class="o">::</span><span class="n">Actor</span> <span class="o">&amp;</span> <span class="n">actor</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="n">value</span><span class="p">)</span> <span class="k">const</span>
   <span class="p">{</span>
-    <span class="k">return</span> <span class="nf">setTargetSpeed</span><span class="p">(</span><span class="n">actor</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">setTargetSpeed</span><span class="p">(</span><span class="n">actor</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
@@ -810,7 +810,7 @@
     <span class="k">auto</span> <span class="n">status</span> <span class="o">=</span> <span class="n">getEntityStatus</span><span class="p">(</span><span class="n">actor</span><span class="p">);</span>
     <span class="n">status</span><span class="p">.</span><span class="n">action_status</span><span class="p">.</span><span class="n">twist</span><span class="p">.</span><span class="n">linear</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
     <span class="n">setEntityStatus</span><span class="p">(</span><span class="n">actor</span><span class="p">,</span> <span class="n">status</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nf">setTargetSpeed</span><span class="p">(</span><span class="n">actor</span><span class="p">,</span> <span class="n">status</span><span class="p">.</span><span class="n">action_status</span><span class="p">.</span><span class="n">twist</span><span class="p">.</span><span class="n">linear</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">setTargetSpeed</span><span class="p">(</span><span class="n">actor</span><span class="p">,</span> <span class="n">status</span><span class="p">.</span><span class="n">action_status</span><span class="p">.</span><span class="n">twist</span><span class="p">.</span><span class="n">linear</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="k">operator</span><span class="p">()(</span><span class="k">const</span> <span class="n">Scope</span><span class="o">::</span><span class="n">Actor</span> <span class="o">&amp;</span> <span class="n">actor</span><span class="p">)</span> <span class="k">const</span>
@@ -845,7 +845,7 @@
     <span class="k">const</span> <span class="k">auto</span> <span class="n">compare</span> <span class="o">=</span> <span class="n">Rule</span><span class="p">(</span><span class="n">Rule</span><span class="o">::</span><span class="n">equalTo</span><span class="p">);</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="n">speed_action_target</span><span class="p">.</span><span class="n">is</span><span class="o">&lt;</span><span class="n">AbsoluteTargetSpeed</span><span class="o">&gt;</span><span class="p">())</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nf">compare</span><span class="p">(</span>
+      <span class="k">return</span> <span class="n">compare</span><span class="p">(</span>
         <span class="n">getEntityStatus</span><span class="p">(</span><span class="n">actor</span><span class="p">).</span><span class="n">action_status</span><span class="p">.</span><span class="n">twist</span><span class="p">.</span><span class="n">linear</span><span class="p">.</span><span class="n">x</span><span class="p">,</span>
         <span class="n">speed_action_target</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">AbsoluteTargetSpeed</span><span class="o">&gt;</span><span class="p">().</span><span class="n">value</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -874,7 +874,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__SPEED_ACTION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  3 May 2021 at 00:13:16 UTC</p>
+<p>Updated on  4 May 2021 at 00:06:49 UTC</p>
                 
                   
                 

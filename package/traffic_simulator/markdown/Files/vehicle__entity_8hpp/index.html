@@ -768,9 +768,9 @@
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">traffic_simulator</span>
+<span class="k">namespace</span> <span class="nn">traffic_simulator</span>
 <span class="p">{</span>
-<span class="k">namespace</span> <span class="n">entity</span>
+<span class="k">namespace</span> <span class="nn">entity</span>
 <span class="p">{</span>
 <span class="k">class</span> <span class="nc">VehicleEntity</span> <span class="o">:</span> <span class="k">public</span> <span class="n">EntityBase</span>
 <span class="p">{</span>
@@ -786,13 +786,13 @@
 
   <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span> <span class="n">parameters</span><span class="p">;</span>
 
-  <span class="k">auto</span> <span class="nf">getEntityTypename</span><span class="p">()</span> <span class="k">const</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="k">override</span>
+  <span class="k">auto</span> <span class="n">getEntityTypename</span><span class="p">()</span> <span class="k">const</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="k">override</span>
   <span class="p">{</span>
     <span class="k">static</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">result</span> <span class="o">=</span> <span class="s">&quot;VehicleEntity&quot;</span><span class="p">;</span>
     <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="kt">void</span> <span class="nf">onUpdate</span><span class="p">(</span><span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="kt">void</span> <span class="n">onUpdate</span><span class="p">(</span><span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
 
   <span class="kt">void</span> <span class="nf">requestAcquirePosition</span><span class="p">(</span><span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="o">&amp;</span> <span class="n">lanelet_pose</span><span class="p">);</span>
 
@@ -826,17 +826,17 @@
 
   <span class="kt">void</span> <span class="n">setTargetSpeed</span><span class="p">(</span><span class="kt">double</span> <span class="n">target_speed</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">continuous</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
 
-  <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">BoundingBox</span> <span class="n">getBoundingBox</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
+  <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">BoundingBox</span> <span class="nf">getBoundingBox</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
   <span class="p">{</span>
     <span class="k">return</span> <span class="n">parameters</span><span class="p">.</span><span class="n">bounding_box</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="kt">void</span> <span class="n">requestAssignRoute</span><span class="p">(</span>
+  <span class="kt">void</span> <span class="nf">requestAssignRoute</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">waypoints</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
 
-  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">getCurrentAction</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">getCurrentAction</span><span class="p">();</span> <span class="p">}</span>
+  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="nf">getCurrentAction</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">getCurrentAction</span><span class="p">();</span> <span class="p">}</span>
 
-  <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span> <span class="n">getWaypoints</span><span class="p">()</span> <span class="k">override</span>
+  <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span> <span class="nf">getWaypoints</span><span class="p">()</span> <span class="k">override</span>
   <span class="p">{</span>
     <span class="k">return</span> <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">getWaypoints</span><span class="p">();</span>
   <span class="p">}</span>
@@ -870,7 +870,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__ENTITY__VEHICLE_ENTITY_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  3 May 2021 at 00:13:14 UTC</p>
+<p>Updated on  4 May 2021 at 00:06:46 UTC</p>
                 
                   
                 

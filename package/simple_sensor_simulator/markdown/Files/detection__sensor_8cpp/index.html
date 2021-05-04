@@ -732,7 +732,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">simple_sensor_simulator</span>
+<span class="k">namespace</span> <span class="nn">simple_sensor_simulator</span>
 <span class="p">{</span>
 <span class="n">DetectionSensor</span><span class="o">::</span><span class="n">DetectionSensor</span><span class="p">(</span>
   <span class="k">const</span> <span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span>
@@ -769,7 +769,7 @@
         <span class="p">}</span>
         <span class="n">boost</span><span class="o">::</span><span class="n">uuids</span><span class="o">::</span><span class="n">uuid</span> <span class="n">base</span> <span class="o">=</span>
           <span class="n">boost</span><span class="o">::</span><span class="n">uuids</span><span class="o">::</span><span class="n">string_generator</span><span class="p">()(</span><span class="s">&quot;0123456789abcdef0123456789abcdef&quot;</span><span class="p">);</span>
-        <span class="n">boost</span><span class="o">::</span><span class="n">uuids</span><span class="o">::</span><span class="n">name_generator</span> <span class="n">gen</span><span class="p">(</span><span class="n">base</span><span class="p">);</span>
+        <span class="n">boost</span><span class="o">::</span><span class="n">uuids</span><span class="o">::</span><span class="n">name_generator</span> <span class="nf">gen</span><span class="p">(</span><span class="n">base</span><span class="p">);</span>
         <span class="n">boost</span><span class="o">::</span><span class="n">uuids</span><span class="o">::</span><span class="n">uuid</span> <span class="n">uuid</span> <span class="o">=</span> <span class="n">gen</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">name</span><span class="p">());</span>
         <span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">uuid</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">uuid</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">object</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">uuid</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
         <span class="n">simulation_interface</span><span class="o">::</span><span class="n">toMsg</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">bounding_box</span><span class="p">().</span><span class="n">dimensions</span><span class="p">(),</span> <span class="n">object</span><span class="p">.</span><span class="n">shape</span><span class="p">.</span><span class="n">dimensions</span><span class="p">);</span>
@@ -789,7 +789,7 @@
 <span class="p">}</span>  <span class="c1">// namespace simple_sensor_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on  3 May 2021 at 00:13:14 UTC</p>
+<p>Updated on  4 May 2021 at 00:06:47 UTC</p>
                 
                   
                 

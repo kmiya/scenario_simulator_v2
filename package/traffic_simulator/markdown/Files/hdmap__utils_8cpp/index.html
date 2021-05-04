@@ -802,14 +802,14 @@
 
 <span class="cp">#define EXPERIMENTAL_AUTOWARE_IV_SUPPORT</span>
 
-<span class="k">namespace</span> <span class="n">hdmap_utils</span>
+<span class="k">namespace</span> <span class="nn">hdmap_utils</span>
 <span class="p">{</span>
 <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">HdMapUtils</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">lanelet_path</span><span class="p">,</span> <span class="n">geographic_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">GeoPoint</span> <span class="n">origin</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="cp">#ifndef EXPERIMENTAL_AUTOWARE_IV_SUPPORT</span>
   <span class="n">lanelet</span><span class="o">::</span><span class="n">GPSPoint</span> <span class="n">origin_gps_point</span><span class="p">{</span><span class="n">origin</span><span class="p">.</span><span class="n">latitude</span><span class="p">,</span> <span class="n">origin</span><span class="p">.</span><span class="n">longitude</span><span class="p">,</span> <span class="n">origin</span><span class="p">.</span><span class="n">altitude</span><span class="p">};</span>
   <span class="n">lanelet</span><span class="o">::</span><span class="n">Origin</span> <span class="n">origin_lanelet</span><span class="p">{</span><span class="n">origin_gps_point</span><span class="p">};</span>
-  <span class="n">lanelet</span><span class="o">::</span><span class="n">projection</span><span class="o">::</span><span class="n">UtmProjector</span> <span class="n">projector</span><span class="p">(</span><span class="n">origin_lanelet</span><span class="p">);</span>
+  <span class="n">lanelet</span><span class="o">::</span><span class="n">projection</span><span class="o">::</span><span class="n">UtmProjector</span> <span class="nf">projector</span><span class="p">(</span><span class="n">origin_lanelet</span><span class="p">);</span>
 <span class="cp">#else</span>
   <span class="n">lanelet</span><span class="o">::</span><span class="n">projection</span><span class="o">::</span><span class="n">MGRSProjector</span> <span class="n">projector</span><span class="p">{};</span>  <span class="c1">// TODO(yamacir-kit)</span>
 <span class="cp">#endif</span>
@@ -861,13 +861,13 @@
 
 <span class="kt">double</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">getHeight</span><span class="p">(</span><span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="o">&amp;</span> <span class="n">lanelet_pose</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">return</span> <span class="nf">toMapPose</span><span class="p">(</span><span class="n">lanelet_pose</span><span class="p">).</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">toMapPose</span><span class="p">(</span><span class="n">lanelet_pose</span><span class="p">).</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">getCollisionPointInLaneCoordinate</span><span class="p">(</span>
   <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">lanelet_id</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">crossing_lanelet_id</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">namespace</span> <span class="n">bg</span> <span class="o">=</span> <span class="n">boost</span><span class="o">::</span><span class="n">geometry</span><span class="p">;</span>
+  <span class="k">namespace</span> <span class="nn">bg</span> <span class="o">=</span> <span class="nn">boost</span><span class="o">::</span><span class="nn">geometry</span><span class="p">;</span>
   <span class="k">using</span> <span class="n">Point</span> <span class="o">=</span> <span class="n">bg</span><span class="o">::</span><span class="n">model</span><span class="o">::</span><span class="n">d2</span><span class="o">::</span><span class="n">point_xy</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">;</span>
   <span class="k">using</span> <span class="n">Line</span> <span class="o">=</span> <span class="n">bg</span><span class="o">::</span><span class="n">model</span><span class="o">::</span><span class="n">linestring</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;</span><span class="p">;</span>
   <span class="k">using</span> <span class="n">Polygon</span> <span class="o">=</span> <span class="n">bg</span><span class="o">::</span><span class="n">model</span><span class="o">::</span><span class="n">polygon</span><span class="o">&lt;</span><span class="n">Point</span><span class="p">,</span> <span class="nb">false</span><span class="o">&gt;</span><span class="p">;</span>
@@ -919,7 +919,7 @@
   <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">lanelet</span><span class="o">::</span><span class="n">routing</span><span class="o">::</span><span class="n">RoutingGraphConstPtr</span><span class="o">&gt;</span> <span class="n">graphs</span><span class="p">;</span>
   <span class="n">graphs</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">vehicle_routing_graph_ptr_</span><span class="p">);</span>
   <span class="n">graphs</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">pedestrian_routing_graph_ptr_</span><span class="p">);</span>
-  <span class="n">lanelet</span><span class="o">::</span><span class="n">routing</span><span class="o">::</span><span class="n">RoutingGraphContainer</span> <span class="n">container</span><span class="p">(</span><span class="n">graphs</span><span class="p">);</span>
+  <span class="n">lanelet</span><span class="o">::</span><span class="n">routing</span><span class="o">::</span><span class="n">RoutingGraphContainer</span> <span class="nf">container</span><span class="p">(</span><span class="n">graphs</span><span class="p">);</span>
   <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">lanelet_id</span> <span class="p">:</span> <span class="n">lanelet_ids</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">const</span> <span class="k">auto</span> <span class="n">lanelet</span> <span class="o">=</span> <span class="n">lanelet_map_ptr_</span><span class="o">-&gt;</span><span class="n">laneletLayer</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">lanelet_id</span><span class="p">);</span>
     <span class="kt">double</span> <span class="n">height_clearance</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
@@ -1001,7 +1001,7 @@
     <span class="k">return</span> <span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">;</span>
   <span class="p">}</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">center_points</span> <span class="o">=</span> <span class="n">getCenterPoints</span><span class="p">(</span><span class="n">lanelet_id</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
-  <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">CatmullRomSpline</span> <span class="n">spline</span><span class="p">(</span><span class="n">center_points</span><span class="p">);</span>
+  <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">CatmullRomSpline</span> <span class="nf">spline</span><span class="p">(</span><span class="n">center_points</span><span class="p">);</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">s</span> <span class="o">=</span> <span class="n">spline</span><span class="p">.</span><span class="n">getSValue</span><span class="p">(</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">;</span>
@@ -1021,7 +1021,7 @@
 <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="o">&gt;</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">getClosetLanletId</span><span class="p">(</span>
   <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">pose</span><span class="p">,</span> <span class="kt">double</span> <span class="n">distance_thresh</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="n">lanelet</span><span class="o">::</span><span class="n">BasicPoint2d</span> <span class="n">search_point</span><span class="p">(</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+  <span class="n">lanelet</span><span class="o">::</span><span class="n">BasicPoint2d</span> <span class="nf">search_point</span><span class="p">(</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
   <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="n">lanelet</span><span class="o">::</span><span class="n">Lanelet</span><span class="o">&gt;&gt;</span> <span class="n">nearest_lanelet</span> <span class="o">=</span>
     <span class="n">lanelet</span><span class="o">::</span><span class="n">geometry</span><span class="o">::</span><span class="n">findNearest</span><span class="p">(</span><span class="n">lanelet_map_ptr_</span><span class="o">-&gt;</span><span class="n">laneletLayer</span><span class="p">,</span> <span class="n">search_point</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">nearest_road_lanelet</span> <span class="o">=</span>
@@ -1041,7 +1041,7 @@
 <span class="p">{</span>
   <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">limits</span><span class="p">;</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">lanelet_ids</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="nf">HdMapError</span><span class="p">(</span><span class="s">&quot;size of the vector lanelet ids should be more than 1&quot;</span><span class="p">);</span>
+    <span class="k">throw</span> <span class="n">HdMapError</span><span class="p">(</span><span class="s">&quot;size of the vector lanelet ids should be more than 1&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">itr</span> <span class="o">=</span> <span class="n">lanelet_ids</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">itr</span> <span class="o">!=</span> <span class="n">lanelet_ids</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">itr</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">const</span> <span class="k">auto</span> <span class="n">lanelet</span> <span class="o">=</span> <span class="n">lanelet_map_ptr_</span><span class="o">-&gt;</span><span class="n">laneletLayer</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="o">*</span><span class="n">itr</span><span class="p">);</span>
@@ -1133,7 +1133,7 @@
     <span class="p">}</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">found</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="nf">HdMapError</span><span class="p">(</span><span class="s">&quot;lanelet id did not match.&quot;</span><span class="p">);</span>
+    <span class="k">throw</span> <span class="n">HdMapError</span><span class="p">(</span><span class="s">&quot;lanelet id did not match.&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">total_dist</span> <span class="o">&gt;</span> <span class="n">distance</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
@@ -1212,10 +1212,10 @@
 <span class="p">{</span>
   <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span><span class="o">&gt;</span> <span class="n">ret</span><span class="p">;</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">lanelet_map_ptr_</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="nf">HdMapError</span><span class="p">(</span><span class="s">&quot;lanelet map is null pointer.&quot;</span><span class="p">);</span>
+    <span class="k">throw</span> <span class="n">HdMapError</span><span class="p">(</span><span class="s">&quot;lanelet map is null pointer.&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">lanelet_map_ptr_</span><span class="o">-&gt;</span><span class="n">laneletLayer</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="nf">HdMapError</span><span class="p">(</span><span class="s">&quot;lanelet layer is empty.&quot;</span><span class="p">);</span>
+    <span class="k">throw</span> <span class="n">HdMapError</span><span class="p">(</span><span class="s">&quot;lanelet layer is empty.&quot;</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="k">const</span> <span class="k">auto</span> <span class="n">lanelet</span> <span class="o">=</span> <span class="n">lanelet_map_ptr_</span><span class="o">-&gt;</span><span class="n">laneletLayer</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">lanelet_id</span><span class="p">);</span>
@@ -1412,7 +1412,7 @@
   <span class="n">goal_vec</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">goal_vec</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">tangent_vector_size</span><span class="p">;</span>
   <span class="n">goal_vec</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">goal_vec</span><span class="p">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">tangent_vector_size</span><span class="p">;</span>
   <span class="n">goal_vec</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">goal_vec</span><span class="p">.</span><span class="n">z</span> <span class="o">*</span> <span class="n">tangent_vector_size</span><span class="p">;</span>
-  <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">HermiteCurve</span> <span class="n">curve</span><span class="p">(</span><span class="n">from_pose</span><span class="p">,</span> <span class="n">goal_pose</span><span class="p">.</span><span class="n">pose</span><span class="p">,</span> <span class="n">start_vec</span><span class="p">,</span> <span class="n">goal_vec</span><span class="p">);</span>
+  <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">HermiteCurve</span> <span class="nf">curve</span><span class="p">(</span><span class="n">from_pose</span><span class="p">,</span> <span class="n">goal_pose</span><span class="p">.</span><span class="n">pose</span><span class="p">,</span> <span class="n">start_vec</span><span class="p">,</span> <span class="n">goal_vec</span><span class="p">);</span>
   <span class="k">return</span> <span class="n">curve</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -1431,7 +1431,7 @@
 <span class="kt">bool</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">isInLanelet</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">lanelet_id</span><span class="p">,</span> <span class="kt">double</span> <span class="n">s</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">center_points</span> <span class="o">=</span> <span class="n">getCenterPoints</span><span class="p">(</span><span class="n">lanelet_id</span><span class="p">);</span>
-  <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">CatmullRomSpline</span> <span class="n">spline</span><span class="p">(</span><span class="n">center_points</span><span class="p">);</span>
+  <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">CatmullRomSpline</span> <span class="nf">spline</span><span class="p">(</span><span class="n">center_points</span><span class="p">);</span>
   <span class="kt">double</span> <span class="n">l</span> <span class="o">=</span> <span class="n">spline</span><span class="p">.</span><span class="n">getLength</span><span class="p">();</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="o">&gt;</span> <span class="n">l</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
@@ -1446,7 +1446,7 @@
 <span class="p">{</span>
   <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span><span class="o">&gt;</span> <span class="n">ret</span><span class="p">;</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">center_points</span> <span class="o">=</span> <span class="n">getCenterPoints</span><span class="p">(</span><span class="n">lanelet_id</span><span class="p">);</span>
-  <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">CatmullRomSpline</span> <span class="n">spline</span><span class="p">(</span><span class="n">center_points</span><span class="p">);</span>
+  <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">CatmullRomSpline</span> <span class="nf">spline</span><span class="p">(</span><span class="n">center_points</span><span class="p">);</span>
   <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">s_value</span> <span class="p">:</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">ret</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">spline</span><span class="p">.</span><span class="n">getPoint</span><span class="p">(</span><span class="n">s_value</span><span class="p">));</span>
   <span class="p">}</span>
@@ -1459,7 +1459,7 @@
   <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PoseStamped</span> <span class="n">ret</span><span class="p">;</span>
   <span class="n">ret</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="s">&quot;map&quot;</span><span class="p">;</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">center_points</span> <span class="o">=</span> <span class="n">getCenterPoints</span><span class="p">(</span><span class="n">lanelet_id</span><span class="p">);</span>
-  <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">CatmullRomSpline</span> <span class="n">spline</span><span class="p">(</span><span class="n">center_points</span><span class="p">);</span>
+  <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">CatmullRomSpline</span> <span class="nf">spline</span><span class="p">(</span><span class="n">center_points</span><span class="p">);</span>
   <span class="n">ret</span><span class="p">.</span><span class="n">pose</span> <span class="o">=</span> <span class="n">spline</span><span class="p">.</span><span class="n">getPose</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">tangent_vec</span> <span class="o">=</span> <span class="n">spline</span><span class="p">.</span><span class="n">getTangentVector</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
   <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Vector3</span> <span class="n">rpy</span><span class="p">;</span>
@@ -1477,7 +1477,7 @@
 <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PoseStamped</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">toMapPose</span><span class="p">(</span>
   <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="n">lanlet_pose</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">return</span> <span class="nf">toMapPose</span><span class="p">(</span>
+  <span class="k">return</span> <span class="n">toMapPose</span><span class="p">(</span>
     <span class="n">lanlet_pose</span><span class="p">.</span><span class="n">lanelet_id</span><span class="p">,</span> <span class="n">lanlet_pose</span><span class="p">.</span><span class="n">s</span><span class="p">,</span> <span class="n">lanlet_pose</span><span class="p">.</span><span class="n">offset</span><span class="p">,</span>
     <span class="n">quaternion_operation</span><span class="o">::</span><span class="n">convertEulerAngleToQuaternion</span><span class="p">(</span><span class="n">lanlet_pose</span><span class="p">.</span><span class="n">rpy</span><span class="p">));</span>
 <span class="p">}</span>
@@ -1489,14 +1489,14 @@
   <span class="n">lanelet_pose</span><span class="p">.</span><span class="n">lanelet_id</span> <span class="o">=</span> <span class="n">lanelet_id</span><span class="p">;</span>
   <span class="n">lanelet_pose</span><span class="p">.</span><span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
   <span class="n">lanelet_pose</span><span class="p">.</span><span class="n">offset</span> <span class="o">=</span> <span class="n">offset</span><span class="p">;</span>
-  <span class="k">return</span> <span class="nf">toMapPose</span><span class="p">(</span><span class="n">lanelet_pose</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">toMapPose</span><span class="p">(</span><span class="n">lanelet_pose</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Vector3</span><span class="o">&gt;</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">getTangentVector</span><span class="p">(</span>
   <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">lanelet_id</span><span class="p">,</span> <span class="kt">double</span> <span class="n">s</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">center_points</span> <span class="o">=</span> <span class="n">getCenterPoints</span><span class="p">(</span><span class="n">lanelet_id</span><span class="p">);</span>
-  <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">CatmullRomSpline</span> <span class="n">spline</span><span class="p">(</span><span class="n">center_points</span><span class="p">);</span>
+  <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">CatmullRomSpline</span> <span class="nf">spline</span><span class="p">(</span><span class="n">center_points</span><span class="p">);</span>
   <span class="k">return</span> <span class="n">spline</span><span class="p">.</span><span class="n">getTangentVector</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -1510,7 +1510,7 @@
 <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">getLongitudinalDistance</span><span class="p">(</span>
   <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="n">from</span><span class="p">,</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="n">to</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">return</span> <span class="nf">getLongitudinalDistance</span><span class="p">(</span><span class="n">from</span><span class="p">.</span><span class="n">lanelet_id</span><span class="p">,</span> <span class="n">from</span><span class="p">.</span><span class="n">s</span><span class="p">,</span> <span class="n">to</span><span class="p">.</span><span class="n">lanelet_id</span><span class="p">,</span> <span class="n">to</span><span class="p">.</span><span class="n">s</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">getLongitudinalDistance</span><span class="p">(</span><span class="n">from</span><span class="p">.</span><span class="n">lanelet_id</span><span class="p">,</span> <span class="n">from</span><span class="p">.</span><span class="n">s</span><span class="p">,</span> <span class="n">to</span><span class="p">.</span><span class="n">lanelet_id</span><span class="p">,</span> <span class="n">to</span><span class="p">.</span><span class="n">s</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">getLongitudinalDistance</span><span class="p">(</span>
@@ -1550,7 +1550,7 @@
 <span class="k">const</span> <span class="n">autoware_auto_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">HADMapBin</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">toMapBin</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">;</span>
-  <span class="n">boost</span><span class="o">::</span><span class="n">archive</span><span class="o">::</span><span class="n">binary_oarchive</span> <span class="n">oa</span><span class="p">(</span><span class="n">ss</span><span class="p">);</span>
+  <span class="n">boost</span><span class="o">::</span><span class="n">archive</span><span class="o">::</span><span class="n">binary_oarchive</span> <span class="nf">oa</span><span class="p">(</span><span class="n">ss</span><span class="p">);</span>
   <span class="n">oa</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">lanelet_map_ptr_</span><span class="p">;</span>
   <span class="k">auto</span> <span class="n">id_counter</span> <span class="o">=</span> <span class="n">lanelet</span><span class="o">::</span><span class="n">utils</span><span class="o">::</span><span class="n">getId</span><span class="p">();</span>
   <span class="n">oa</span> <span class="o">&lt;&lt;</span> <span class="n">id_counter</span><span class="p">;</span>
@@ -1752,7 +1752,7 @@
     <span class="p">}</span>
   <span class="p">}</span>
   <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;traffic_light_id does not match. ID : &quot;</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">traffic_light_id</span><span class="p">);</span>
-  <span class="k">throw</span> <span class="nf">HdMapError</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+  <span class="k">throw</span> <span class="n">HdMapError</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
 <span class="p">}</span>
 
 <span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="o">&gt;</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">getTrafficLightStopLineId</span><span class="p">(</span>
@@ -1961,11 +1961,11 @@
   <span class="k">const</span> <span class="k">auto</span> <span class="n">right_points</span> <span class="o">=</span> <span class="n">resamplePoints</span><span class="p">(</span><span class="n">lanelet_obj</span><span class="p">.</span><span class="n">rightBound</span><span class="p">(),</span> <span class="n">num_segments</span><span class="p">);</span>
 
   <span class="c1">// Create centerline</span>
-  <span class="n">lanelet</span><span class="o">::</span><span class="n">LineString3d</span> <span class="n">centerline</span><span class="p">(</span><span class="n">lanelet</span><span class="o">::</span><span class="n">utils</span><span class="o">::</span><span class="n">getId</span><span class="p">());</span>
+  <span class="n">lanelet</span><span class="o">::</span><span class="n">LineString3d</span> <span class="nf">centerline</span><span class="p">(</span><span class="n">lanelet</span><span class="o">::</span><span class="n">utils</span><span class="o">::</span><span class="n">getId</span><span class="p">());</span>
   <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">num_segments</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Add ID for the average point of left and right</span>
     <span class="k">const</span> <span class="k">auto</span> <span class="n">center_basic_point</span> <span class="o">=</span> <span class="p">(</span><span class="n">right_points</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">left_points</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">;</span>
-    <span class="k">const</span> <span class="n">lanelet</span><span class="o">::</span><span class="n">Point3d</span> <span class="n">center_point</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">lanelet</span><span class="o">::</span><span class="n">Point3d</span> <span class="nf">center_point</span><span class="p">(</span>
       <span class="n">lanelet</span><span class="o">::</span><span class="n">utils</span><span class="o">::</span><span class="n">getId</span><span class="p">(),</span> <span class="n">center_basic_point</span><span class="p">.</span><span class="n">x</span><span class="p">(),</span> <span class="n">center_basic_point</span><span class="p">.</span><span class="n">y</span><span class="p">(),</span>
       <span class="n">center_basic_point</span><span class="p">.</span><span class="n">z</span><span class="p">());</span>
     <span class="n">centerline</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">center_point</span><span class="p">);</span>
@@ -1990,7 +1990,7 @@
 <span class="p">}</span>  <span class="c1">// namespace hdmap_utils</span>
 </code></pre></div>
 <hr />
-<p>Updated on  3 May 2021 at 00:13:14 UTC</p>
+<p>Updated on  4 May 2021 at 00:06:46 UTC</p>
                 
                   
                 

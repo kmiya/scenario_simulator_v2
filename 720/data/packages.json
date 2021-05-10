@@ -1,383 +1,349 @@
 {
   "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
   "children" : [ {
-    "name" : "simulation_interface",
+    "name" : "simple_sensor_simulator",
     "children" : [ {
       "name" : "clang_format",
       "children" : [ {
-        "name" : "include/simulation_interface/conversions.hpp",
-        "uid" : "9c937d03cf9b7afe",
-        "parentUid" : "f822966627cb6230856a93f528993d2a",
+        "name" : "src/sensor_simulation/detection_sensor/detection_sensor.cpp",
+        "uid" : "ee50e38d376beb31",
+        "parentUid" : "5de1d550563df31afd6f507ed9711276",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "include/simulation_interface/zmq_multi_server.hpp",
-        "uid" : "b8dfdd1c9730d699",
-        "parentUid" : "f822966627cb6230856a93f528993d2a",
+        "name" : "src/simple_sensor_simulator_node.cpp",
+        "uid" : "b1a17f0a12b167a9",
+        "parentUid" : "5de1d550563df31afd6f507ed9711276",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "test/test_conversions.cpp",
-        "uid" : "76903a69cc872f70",
-        "parentUid" : "f822966627cb6230856a93f528993d2a",
+        "name" : "src/sensor_simulation/primitives/primitive.cpp",
+        "uid" : "b6fb01c8732b68e6",
+        "parentUid" : "5de1d550563df31afd6f507ed9711276",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "include/simulation_interface/zmq_client.hpp",
-        "uid" : "dbd345ef5d47f817",
-        "parentUid" : "f822966627cb6230856a93f528993d2a",
+        "name" : "src/sensor_simulation/lidar/raycaster.cpp",
+        "uid" : "73d3a3348608ae52",
+        "parentUid" : "5de1d550563df31afd6f507ed9711276",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "src/constants.cpp",
-        "uid" : "4453fe0985c3f38b",
-        "parentUid" : "f822966627cb6230856a93f528993d2a",
+        "name" : "include/simple_sensor_simulator/sensor_simulation/lidar/lidar_sensor.hpp",
+        "uid" : "a671f969dd8e9c78",
+        "parentUid" : "5de1d550563df31afd6f507ed9711276",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "include/simulation_interface/constants.hpp",
-        "uid" : "eb53b1489002f147",
-        "parentUid" : "f822966627cb6230856a93f528993d2a",
+        "name" : "include/simple_sensor_simulator/constants.hpp",
+        "uid" : "35b87bb2e5148a72",
+        "parentUid" : "5de1d550563df31afd6f507ed9711276",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "src/zmq_multi_server.cpp",
-        "uid" : "6d292ed6099e2453",
-        "parentUid" : "f822966627cb6230856a93f528993d2a",
+        "name" : "include/simple_sensor_simulator/sensor_simulation/primitives/primitive.hpp",
+        "uid" : "113c26f906eeb7c7",
+        "parentUid" : "5de1d550563df31afd6f507ed9711276",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "src/example.cpp",
-        "uid" : "8ec79fce8267b13e",
-        "parentUid" : "f822966627cb6230856a93f528993d2a",
+        "name" : "include/simple_sensor_simulator/sensor_simulation/detection_sensor/detection_sensor.hpp",
+        "uid" : "ad6db6c06aa6f7bc",
+        "parentUid" : "5de1d550563df31afd6f507ed9711276",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "include/simulation_interface/zmq_server.hpp",
-        "uid" : "e3bc27a139bba6aa",
-        "parentUid" : "f822966627cb6230856a93f528993d2a",
+        "name" : "include/simple_sensor_simulator/sensor_simulation/primitives/box.hpp",
+        "uid" : "b07067176fde6400",
+        "parentUid" : "5de1d550563df31afd6f507ed9711276",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "src/conversions.cpp",
-        "uid" : "67ff21e5acb466d4",
-        "parentUid" : "f822966627cb6230856a93f528993d2a",
+        "name" : "src/sensor_simulation/primitives/box.cpp",
+        "uid" : "80d75dae3c25593c",
+        "parentUid" : "5de1d550563df31afd6f507ed9711276",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
-      } ],
-      "uid" : "f822966627cb6230856a93f528993d2a"
-    }, {
-      "name" : "Conversion",
-      "children" : [ {
-        "name" : "ConvertVector",
-        "uid" : "1e0cf70a7ea5c44b",
-        "parentUid" : "32984871c97639871844a076b21a4ed8",
+      }, {
+        "name" : "src/sensor_simulation/lidar/lidar_sensor.cpp",
+        "uid" : "88c497ac5ab04bfa",
+        "parentUid" : "5de1d550563df31afd6f507ed9711276",
         "status" : "passed",
-        "time" : {
-          "duration" : 0
-        },
+        "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "ConvertPose",
-        "uid" : "84e107b326051a76",
-        "parentUid" : "32984871c97639871844a076b21a4ed8",
+        "name" : "include/simple_sensor_simulator/simple_sensor_simulator.hpp",
+        "uid" : "e132b1cff5c6a875",
+        "parentUid" : "5de1d550563df31afd6f507ed9711276",
         "status" : "passed",
-        "time" : {
-          "duration" : 0
-        },
+        "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "ConvertQuaternion",
-        "uid" : "3e33a258e4399080",
-        "parentUid" : "32984871c97639871844a076b21a4ed8",
+        "name" : "include/simple_sensor_simulator/sensor_simulation/lidar/raycaster.hpp",
+        "uid" : "5de5a145557b9da7",
+        "parentUid" : "5de1d550563df31afd6f507ed9711276",
         "status" : "passed",
-        "time" : {
-          "duration" : 0
-        },
+        "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "ConvertAxles",
-        "uid" : "b1d6a1d5023b36ba",
-        "parentUid" : "32984871c97639871844a076b21a4ed8",
+        "name" : "include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp",
+        "uid" : "af0890abcbc39c09",
+        "parentUid" : "5de1d550563df31afd6f507ed9711276",
         "status" : "passed",
-        "time" : {
-          "duration" : 0
-        },
+        "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "ConvertAxle",
-        "uid" : "4d0c7eea415984b6",
-        "parentUid" : "32984871c97639871844a076b21a4ed8",
+        "name" : "src/simple_sensor_simulator.cpp",
+        "uid" : "b698c1160366750",
+        "parentUid" : "5de1d550563df31afd6f507ed9711276",
         "status" : "passed",
-        "time" : {
-          "duration" : 0
-        },
+        "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "ConvertPoint",
-        "uid" : "4e309951e7e23d33",
-        "parentUid" : "32984871c97639871844a076b21a4ed8",
+        "name" : "include/simple_sensor_simulator/exception.hpp",
+        "uid" : "ccd38cd51d77a1f7",
+        "parentUid" : "5de1d550563df31afd6f507ed9711276",
         "status" : "passed",
-        "time" : {
-          "duration" : 0
-        },
+        "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "ConvertVehicleParametrs",
-        "uid" : "d2c7d8c2e0e35bce",
-        "parentUid" : "32984871c97639871844a076b21a4ed8",
-        "status" : "passed",
-        "time" : {
-          "duration" : 0
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "ConvertActionStatus",
-        "uid" : "55db7e93bfcad0ae",
-        "parentUid" : "32984871c97639871844a076b21a4ed8",
-        "status" : "passed",
-        "time" : {
-          "duration" : 0
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "ConvertTwist",
-        "uid" : "b4871551ee2426e",
-        "parentUid" : "32984871c97639871844a076b21a4ed8",
-        "status" : "passed",
-        "time" : {
-          "duration" : 0
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "ConvertPerformance",
-        "uid" : "8ce678d612a7833d",
-        "parentUid" : "32984871c97639871844a076b21a4ed8",
-        "status" : "passed",
-        "time" : {
-          "duration" : 0
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "ConvertAccel",
-        "uid" : "1e7dff0c76e43077",
-        "parentUid" : "32984871c97639871844a076b21a4ed8",
-        "status" : "passed",
-        "time" : {
-          "duration" : 0
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      } ],
-      "uid" : "32984871c97639871844a076b21a4ed8"
-    }, {
-      "name" : "pep257",
-      "children" : [ {
-        "name" : "./launch/example.launch.py",
-        "uid" : "9402c004b649a134",
-        "parentUid" : "a446a06dfcd6776da677796e654f5371",
+        "name" : "src/sensor_simulation/sensor_simulation.cpp",
+        "uid" : "697f4ddaf9a3782",
+        "parentUid" : "5de1d550563df31afd6f507ed9711276",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "a446a06dfcd6776da677796e654f5371"
-    }, {
-      "name" : "flake8",
-      "children" : [ {
-        "name" : "flake8",
-        "uid" : "c227186b5286c84f",
-        "parentUid" : "e8862e1df93d204ee854a67231b01d6f",
-        "status" : "passed",
-        "time" : { },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      } ],
-      "uid" : "e8862e1df93d204ee854a67231b01d6f"
+      "uid" : "5de1d550563df31afd6f507ed9711276"
     }, {
       "name" : "copyright",
       "children" : [ {
-        "name" : "src/conversions.cpp",
-        "uid" : "dd3467578eb7ebc3",
-        "parentUid" : "3773b694b280fd4b5edca4f08ce8a944",
+        "name" : "include/simple_sensor_simulator/sensor_simulation/lidar/lidar_sensor.hpp",
+        "uid" : "1a81ffbb43cf65ee",
+        "parentUid" : "2c1e6e7ab2e0a362c1742c183ef38dbd",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "include/simulation_interface/constants.hpp",
-        "uid" : "dca4318e0e4369c2",
-        "parentUid" : "3773b694b280fd4b5edca4f08ce8a944",
+        "name" : "include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp",
+        "uid" : "cd24da08f26a06fe",
+        "parentUid" : "2c1e6e7ab2e0a362c1742c183ef38dbd",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "include/simulation_interface/zmq_multi_server.hpp",
-        "uid" : "1e76925f0945f749",
-        "parentUid" : "3773b694b280fd4b5edca4f08ce8a944",
+        "name" : "src/sensor_simulation/lidar/raycaster.cpp",
+        "uid" : "fbd8ef57f6738342",
+        "parentUid" : "2c1e6e7ab2e0a362c1742c183ef38dbd",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "include/simulation_interface/zmq_client.hpp",
-        "uid" : "97d3c444ecc00abb",
-        "parentUid" : "3773b694b280fd4b5edca4f08ce8a944",
+        "name" : "include/simple_sensor_simulator/sensor_simulation/primitives/box.hpp",
+        "uid" : "36c7bfc7f8747010",
+        "parentUid" : "2c1e6e7ab2e0a362c1742c183ef38dbd",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "src/constants.cpp",
-        "uid" : "3fbcf15e72b2236a",
-        "parentUid" : "3773b694b280fd4b5edca4f08ce8a944",
+        "name" : "include/simple_sensor_simulator/sensor_simulation/lidar/raycaster.hpp",
+        "uid" : "cbfcce1caf69ea06",
+        "parentUid" : "2c1e6e7ab2e0a362c1742c183ef38dbd",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "src/zmq_multi_server.cpp",
-        "uid" : "707ef16b011d6f58",
-        "parentUid" : "3773b694b280fd4b5edca4f08ce8a944",
+        "name" : "include/simple_sensor_simulator/sensor_simulation/detection_sensor/detection_sensor.hpp",
+        "uid" : "75d67b306e75dff3",
+        "parentUid" : "2c1e6e7ab2e0a362c1742c183ef38dbd",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "src/example.cpp",
-        "uid" : "e1354143157081a5",
-        "parentUid" : "3773b694b280fd4b5edca4f08ce8a944",
+        "name" : "include/simple_sensor_simulator/exception.hpp",
+        "uid" : "3b42a3f08d78312c",
+        "parentUid" : "2c1e6e7ab2e0a362c1742c183ef38dbd",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "launch/example.launch.py",
-        "uid" : "94fda5eb54c33319",
-        "parentUid" : "3773b694b280fd4b5edca4f08ce8a944",
+        "name" : "src/simple_sensor_simulator_node.cpp",
+        "uid" : "939ef78c8091794b",
+        "parentUid" : "2c1e6e7ab2e0a362c1742c183ef38dbd",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "include/simulation_interface/conversions.hpp",
-        "uid" : "f156cf6ff8d76f7f",
-        "parentUid" : "3773b694b280fd4b5edca4f08ce8a944",
+        "name" : "src/sensor_simulation/lidar/lidar_sensor.cpp",
+        "uid" : "cd289791bf1b27a2",
+        "parentUid" : "2c1e6e7ab2e0a362c1742c183ef38dbd",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "include/simulation_interface/zmq_server.hpp",
-        "uid" : "402fa1bf463d8557",
-        "parentUid" : "3773b694b280fd4b5edca4f08ce8a944",
+        "name" : "src/sensor_simulation/sensor_simulation.cpp",
+        "uid" : "54a6e9af7e3befc7",
+        "parentUid" : "2c1e6e7ab2e0a362c1742c183ef38dbd",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "test/test_conversions.cpp",
-        "uid" : "cc61da71f8781526",
-        "parentUid" : "3773b694b280fd4b5edca4f08ce8a944",
+        "name" : "src/simple_sensor_simulator.cpp",
+        "uid" : "5011bac6ae4a6a5c",
+        "parentUid" : "2c1e6e7ab2e0a362c1742c183ef38dbd",
+        "status" : "passed",
+        "time" : { },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "include/simple_sensor_simulator/constants.hpp",
+        "uid" : "cf37fb5258b6fa23",
+        "parentUid" : "2c1e6e7ab2e0a362c1742c183ef38dbd",
+        "status" : "passed",
+        "time" : { },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "src/sensor_simulation/detection_sensor/detection_sensor.cpp",
+        "uid" : "1fc6dde4d7fbe7d1",
+        "parentUid" : "2c1e6e7ab2e0a362c1742c183ef38dbd",
+        "status" : "passed",
+        "time" : { },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "include/simple_sensor_simulator/simple_sensor_simulator.hpp",
+        "uid" : "8dd566ee8375330d",
+        "parentUid" : "2c1e6e7ab2e0a362c1742c183ef38dbd",
+        "status" : "passed",
+        "time" : { },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "include/simple_sensor_simulator/sensor_simulation/primitives/primitive.hpp",
+        "uid" : "9bfa2545b5121ab3",
+        "parentUid" : "2c1e6e7ab2e0a362c1742c183ef38dbd",
+        "status" : "passed",
+        "time" : { },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "src/sensor_simulation/primitives/box.cpp",
+        "uid" : "aa9708934eaefe82",
+        "parentUid" : "2c1e6e7ab2e0a362c1742c183ef38dbd",
+        "status" : "passed",
+        "time" : { },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "src/sensor_simulation/primitives/primitive.cpp",
+        "uid" : "2bd3b1c470c2d476",
+        "parentUid" : "2c1e6e7ab2e0a362c1742c183ef38dbd",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "3773b694b280fd4b5edca4f08ce8a944"
-    }, {
-      "name" : "xmllint",
-      "children" : [ {
-        "name" : "package.xml",
-        "uid" : "97cbd9d90a0434d9",
-        "parentUid" : "8dfaf02425cbdd2bfa4c5c4aff202c50",
-        "status" : "passed",
-        "time" : { },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      } ],
-      "uid" : "8dfaf02425cbdd2bfa4c5c4aff202c50"
+      "uid" : "2c1e6e7ab2e0a362c1742c183ef38dbd"
     }, {
       "name" : "lint_cmake",
       "children" : [ {
         "name" : "CMakeLists.txt",
-        "uid" : "414095e23e1b6985",
-        "parentUid" : "d592ce2c94e465f1eb5de5e2c1ad8e0f",
+        "uid" : "61a8e2887b545bc9",
+        "parentUid" : "5b919f6ff1d02d8ffa17827ead501bea",
         "status" : "passed",
         "time" : { },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "d592ce2c94e465f1eb5de5e2c1ad8e0f"
+      "uid" : "5b919f6ff1d02d8ffa17827ead501bea"
+    }, {
+      "name" : "xmllint",
+      "children" : [ {
+        "name" : "package.xml",
+        "uid" : "cb4585129a7ffac5",
+        "parentUid" : "2f1f30482d9af57775c962fea6b7e958",
+        "status" : "passed",
+        "time" : { },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "2f1f30482d9af57775c962fea6b7e958"
     } ],
-    "uid" : "a2bd2524f475dca2cc1564924d55bb62"
+    "uid" : "6c521463a6ac3452fabc6f52f01d7fc2"
   } ],
   "name" : "packages"
 }

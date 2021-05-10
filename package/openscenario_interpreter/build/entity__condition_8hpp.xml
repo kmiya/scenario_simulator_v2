@@ -1,0 +1,857 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="entity__condition_8hpp" kind="file" language="C++">
+    <compoundname>entity_condition.hpp</compoundname>
+    <includes refid="acceleration__condition_8hpp" local="no">openscenario_interpreter/syntax/acceleration_condition.hpp</includes>
+    <includes refid="collision__condition_8hpp" local="no">openscenario_interpreter/syntax/collision_condition.hpp</includes>
+    <includes refid="distance__condition_8hpp" local="no">openscenario_interpreter/syntax/distance_condition.hpp</includes>
+    <includes refid="reach__position__condition_8hpp" local="no">openscenario_interpreter/syntax/reach_position_condition.hpp</includes>
+    <includes refid="relative__distance__condition_8hpp" local="no">openscenario_interpreter/syntax/relative_distance_condition.hpp</includes>
+    <includes refid="speed__condition_8hpp" local="no">openscenario_interpreter/syntax/speed_condition.hpp</includes>
+    <includes refid="stand__still__condition_8hpp" local="no">openscenario_interpreter/syntax/stand_still_condition.hpp</includes>
+    <includes refid="time__headway__condition_8hpp" local="no">openscenario_interpreter/syntax/time_headway_condition.hpp</includes>
+    <includes local="no">utility</includes>
+    <includedby refid="by__entity__condition_8hpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/by_entity_condition.hpp</includedby>
+    <incdepgraph>
+      <node id="5076">
+        <label>list</label>
+      </node>
+      <node id="5121">
+        <label>openscenario_interpreter/syntax/lane_position.hpp</label>
+        <link refid="lane__position_8hpp_source"/>
+        <childnode refid="5122" relation="include">
+        </childnode>
+        <childnode refid="5125" relation="include">
+        </childnode>
+      </node>
+      <node id="5074">
+        <label>iomanip</label>
+      </node>
+      <node id="5059">
+        <label>functional</label>
+      </node>
+      <node id="5054">
+        <label>limits</label>
+      </node>
+      <node id="5057">
+        <label>openscenario_interpreter/string/cat.hpp</label>
+        <link refid="cat_8hpp_source"/>
+        <childnode refid="5058" relation="include">
+        </childnode>
+        <childnode refid="5061" relation="include">
+        </childnode>
+        <childnode refid="5062" relation="include">
+        </childnode>
+        <childnode refid="5060" relation="include">
+        </childnode>
+      </node>
+      <node id="5120">
+        <label>boost/function_types/result_type.hpp</label>
+      </node>
+      <node id="5093">
+        <label>openscenario_interpreter/type_traits/has_stream_output_operator.hpp</label>
+        <link refid="has__stream__output__operator_8hpp_source"/>
+        <childnode refid="5092" relation="include">
+        </childnode>
+        <childnode refid="5081" relation="include">
+        </childnode>
+      </node>
+      <node id="5098">
+        <label>boost/lexical_cast.hpp</label>
+      </node>
+      <node id="5114">
+        <label>openscenario_interpreter/syntax/entity_ref.hpp</label>
+        <link refid="entity__ref_8hpp_source"/>
+        <childnode refid="5069" relation="include">
+        </childnode>
+        <childnode refid="5060" relation="include">
+        </childnode>
+      </node>
+      <node id="5125">
+        <label>openscenario_msgs/msg/lanelet_pose.hpp</label>
+      </node>
+      <node id="5134">
+        <label>openscenario_interpreter/syntax/relative_distance_type.hpp</label>
+        <link refid="relative__distance__type_8hpp_source"/>
+        <childnode refid="5062" relation="include">
+        </childnode>
+      </node>
+      <node id="5115">
+        <label>openscenario_interpreter/syntax/triggering_entities_rule.hpp</label>
+        <link refid="triggering__entities__rule_8hpp_source"/>
+        <childnode refid="5075" relation="include">
+        </childnode>
+        <childnode refid="5062" relation="include">
+        </childnode>
+        <childnode refid="5060" relation="include">
+        </childnode>
+        <childnode refid="5116" relation="include">
+        </childnode>
+      </node>
+      <node id="5065">
+        <label>openscenario_interpreter/syntax/rule.hpp</label>
+        <link refid="rule_8hpp_source"/>
+        <childnode refid="5059" relation="include">
+        </childnode>
+        <childnode refid="5066" relation="include">
+        </childnode>
+        <childnode refid="5069" relation="include">
+        </childnode>
+        <childnode refid="5062" relation="include">
+        </childnode>
+        <childnode refid="5060" relation="include">
+        </childnode>
+      </node>
+      <node id="5111">
+        <label>pugixml.hpp</label>
+      </node>
+      <node id="5075">
+        <label>openscenario_interpreter/object.hpp</label>
+        <link refid="object_8hpp_source"/>
+        <childnode refid="5076" relation="include">
+        </childnode>
+        <childnode refid="5077" relation="include">
+        </childnode>
+        <childnode refid="5068" relation="include">
+        </childnode>
+        <childnode refid="5060" relation="include">
+        </childnode>
+      </node>
+      <node id="5077">
+        <label>openscenario_interpreter/expression.hpp</label>
+        <link refid="expression_8hpp_source"/>
+        <childnode refid="5078" relation="include">
+        </childnode>
+      </node>
+      <node id="5130">
+        <label>geometry_msgs/msg/pose.hpp</label>
+      </node>
+      <node id="5132">
+        <label>traffic_simulator/helper/helper.hpp</label>
+      </node>
+      <node id="5067">
+        <label>cmath</label>
+      </node>
+      <node id="5117">
+        <label>openscenario_interpreter/syntax/collision_condition.hpp</label>
+        <link refid="collision__condition_8hpp_source"/>
+        <childnode refid="5053" relation="include">
+        </childnode>
+        <childnode refid="5114" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+        <childnode refid="5060" relation="include">
+        </childnode>
+      </node>
+      <node id="5063">
+        <label>stdexcept</label>
+      </node>
+      <node id="5101">
+        <label>openscenario_interpreter/syntax/integer.hpp</label>
+        <link refid="integer_8hpp_source"/>
+        <childnode refid="5098" relation="include">
+        </childnode>
+        <childnode refid="5056" relation="include">
+        </childnode>
+        <childnode refid="5102" relation="include">
+        </childnode>
+        <childnode refid="5062" relation="include">
+        </childnode>
+      </node>
+      <node id="5102">
+        <label>std_msgs/msg/int64.hpp</label>
+      </node>
+      <node id="5062">
+        <label>string</label>
+      </node>
+      <node id="5129">
+        <label>openscenario_interpreter/syntax/world_position.hpp</label>
+        <link refid="world__position_8hpp_source"/>
+        <childnode refid="5127" relation="include">
+        </childnode>
+        <childnode refid="5130" relation="include">
+        </childnode>
+        <childnode refid="5123" relation="include">
+        </childnode>
+        <childnode refid="5125" relation="include">
+        </childnode>
+      </node>
+      <node id="5097">
+        <label>openscenario_interpreter/syntax/double.hpp</label>
+        <link refid="double_8hpp_source"/>
+        <childnode refid="5098" relation="include">
+        </childnode>
+        <childnode refid="5054" relation="include">
+        </childnode>
+        <childnode refid="5056" relation="include">
+        </childnode>
+        <childnode refid="5099" relation="include">
+        </childnode>
+        <childnode refid="5100" relation="include">
+        </childnode>
+        <childnode refid="5062" relation="include">
+        </childnode>
+      </node>
+      <node id="5136">
+        <label>openscenario_interpreter/syntax/stand_still_condition.hpp</label>
+        <link refid="stand__still__condition_8hpp_source"/>
+        <childnode refid="5053" relation="include">
+        </childnode>
+        <childnode refid="5065" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5081">
+        <label>openscenario_interpreter/type_traits/void_t.hpp</label>
+        <link refid="void__t_8hpp_source"/>
+        <childnode refid="5068" relation="include">
+        </childnode>
+      </node>
+      <node id="5078">
+        <label>openscenario_interpreter/pointer.hpp</label>
+        <link refid="pointer_8hpp_source"/>
+        <childnode refid="5055" relation="include">
+        </childnode>
+        <childnode refid="5056" relation="include">
+        </childnode>
+        <childnode refid="5079" relation="include">
+        </childnode>
+        <childnode refid="5082" relation="include">
+        </childnode>
+        <childnode refid="5084" relation="include">
+        </childnode>
+        <childnode refid="5086" relation="include">
+        </childnode>
+        <childnode refid="5088" relation="include">
+        </childnode>
+        <childnode refid="5095" relation="include">
+        </childnode>
+        <childnode refid="5096" relation="include">
+        </childnode>
+        <childnode refid="5060" relation="include">
+        </childnode>
+      </node>
+      <node id="5089">
+        <label>openscenario_interpreter/console/escape_sequence.hpp</label>
+        <link refid="escape__sequence_8hpp_source"/>
+        <childnode refid="5090" relation="include">
+        </childnode>
+        <childnode refid="5062" relation="include">
+        </childnode>
+      </node>
+      <node id="5099">
+        <label>regex</label>
+      </node>
+      <node id="5084">
+        <label>openscenario_interpreter/type_traits/if_has_member_function_start.hpp</label>
+        <link refid="if__has__member__function__start_8hpp_source"/>
+        <childnode refid="5085" relation="include">
+        </childnode>
+      </node>
+      <node id="5103">
+        <label>openscenario_interpreter/syntax/string.hpp</label>
+        <link refid="string_8hpp_source"/>
+        <childnode refid="5075" relation="include">
+        </childnode>
+        <childnode refid="5062" relation="include">
+        </childnode>
+      </node>
+      <node id="5064">
+        <label>traffic_simulator/api/api.hpp</label>
+      </node>
+      <node id="5124">
+        <label>openscenario_interpreter/syntax/reference_context.hpp</label>
+        <link refid="reference__context_8hpp_source"/>
+        <childnode refid="5075" relation="include">
+        </childnode>
+        <childnode refid="5062" relation="include">
+        </childnode>
+      </node>
+      <node id="5110">
+        <label>ostream</label>
+      </node>
+      <node id="5107">
+        <label>std_msgs/msg/u_int16.hpp</label>
+      </node>
+      <node id="5056">
+        <label>openscenario_interpreter/error.hpp</label>
+        <link refid="error_8hpp_source"/>
+        <childnode refid="5057" relation="include">
+        </childnode>
+        <childnode refid="5063" relation="include">
+        </childnode>
+        <childnode refid="5062" relation="include">
+        </childnode>
+        <childnode refid="5060" relation="include">
+        </childnode>
+      </node>
+      <node id="5082">
+        <label>openscenario_interpreter/type_traits/if_has_member_function_evaluate.hpp</label>
+        <link refid="if__has__member__function__evaluate_8hpp_source"/>
+        <childnode refid="5083" relation="include">
+        </childnode>
+        <childnode refid="5060" relation="include">
+        </childnode>
+      </node>
+      <node id="5123">
+        <label>geometry_msgs/msg/vector3.hpp</label>
+      </node>
+      <node id="5071">
+        <label>openscenario_interpreter/syntax/parameter_type.hpp</label>
+        <link refid="parameter__type_8hpp_source"/>
+        <childnode refid="5072" relation="include">
+        </childnode>
+        <childnode refid="5097" relation="include">
+        </childnode>
+        <childnode refid="5101" relation="include">
+        </childnode>
+        <childnode refid="5103" relation="include">
+        </childnode>
+        <childnode refid="5104" relation="include">
+        </childnode>
+        <childnode refid="5106" relation="include">
+        </childnode>
+        <childnode refid="5062" relation="include">
+        </childnode>
+      </node>
+      <node id="5069">
+        <label>openscenario_interpreter/reader/attribute.hpp</label>
+        <link refid="attribute_8hpp_source"/>
+        <childnode refid="5070" relation="include">
+        </childnode>
+        <childnode refid="5059" relation="include">
+        </childnode>
+        <childnode refid="5071" relation="include">
+        </childnode>
+        <childnode refid="5108" relation="include">
+        </childnode>
+        <childnode refid="5109" relation="include">
+        </childnode>
+        <childnode refid="5099" relation="include">
+        </childnode>
+        <childnode refid="5062" relation="include">
+        </childnode>
+        <childnode refid="5112" relation="include">
+        </childnode>
+      </node>
+      <node id="5053">
+        <label>openscenario_interpreter/procedure.hpp</label>
+        <link refid="procedure_8hpp_source"/>
+        <childnode refid="5054" relation="include">
+        </childnode>
+        <childnode refid="5055" relation="include">
+        </childnode>
+        <childnode refid="5056" relation="include">
+        </childnode>
+        <childnode refid="5064" relation="include">
+        </childnode>
+        <childnode refid="5060" relation="include">
+        </childnode>
+      </node>
+      <node id="5127">
+        <label>quaternion_operation/quaternion_operation.h</label>
+      </node>
+      <node id="5118">
+        <label>openscenario_interpreter/syntax/distance_condition.hpp</label>
+        <link refid="distance__condition_8hpp_source"/>
+        <childnode refid="5067" relation="include">
+        </childnode>
+        <childnode refid="5053" relation="include">
+        </childnode>
+        <childnode refid="5072" relation="include">
+        </childnode>
+        <childnode refid="5097" relation="include">
+        </childnode>
+        <childnode refid="5119" relation="include">
+        </childnode>
+        <childnode refid="5065" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5128">
+        <label>geometry_msgs/msg/point.hpp</label>
+      </node>
+      <node id="5070">
+        <label>ament_index_cpp/get_package_share_directory.hpp</label>
+      </node>
+      <node id="5096">
+        <label>typeinfo</label>
+      </node>
+      <node id="5085">
+        <label>openscenario_interpreter/type_traits/has_member_function_start.hpp</label>
+        <link refid="has__member__function__start_8hpp_source"/>
+        <childnode refid="5081" relation="include">
+        </childnode>
+      </node>
+      <node id="5052">
+        <label>openscenario_interpreter/syntax/acceleration_condition.hpp</label>
+        <link refid="acceleration__condition_8hpp_source"/>
+        <childnode refid="5053" relation="include">
+        </childnode>
+        <childnode refid="5065" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5119">
+        <label>openscenario_interpreter/syntax/position.hpp</label>
+        <link refid="position_8hpp_source"/>
+        <childnode refid="5120" relation="include">
+        </childnode>
+        <childnode refid="5121" relation="include">
+        </childnode>
+        <childnode refid="5126" relation="include">
+        </childnode>
+        <childnode refid="5129" relation="include">
+        </childnode>
+        <childnode refid="5112" relation="include">
+        </childnode>
+        <childnode refid="5060" relation="include">
+        </childnode>
+      </node>
+      <node id="5100">
+        <label>std_msgs/msg/float64.hpp</label>
+      </node>
+      <node id="5133">
+        <label>openscenario_interpreter/syntax/relative_distance_condition.hpp</label>
+        <link refid="relative__distance__condition_8hpp_source"/>
+        <childnode refid="5053" relation="include">
+        </childnode>
+        <childnode refid="5134" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+        <childnode refid="5060" relation="include">
+        </childnode>
+      </node>
+      <node id="5080">
+        <label>openscenario_interpreter/type_traits/has_member_function_accomplished.hpp</label>
+        <link refid="has__member__function__accomplished_8hpp_source"/>
+        <childnode refid="5081" relation="include">
+        </childnode>
+      </node>
+      <node id="5104">
+        <label>openscenario_interpreter/syntax/unsigned_integer.hpp</label>
+        <link refid="unsigned__integer_8hpp_source"/>
+        <childnode refid="5098" relation="include">
+        </childnode>
+        <childnode refid="5105" relation="include">
+        </childnode>
+        <childnode refid="5062" relation="include">
+        </childnode>
+      </node>
+      <node id="5091">
+        <label>unistd.h</label>
+      </node>
+      <node id="5116">
+        <label>vector</label>
+      </node>
+      <node id="5086">
+        <label>openscenario_interpreter/type_traits/if_has_member_function_state.hpp</label>
+        <link refid="if__has__member__function__state_8hpp_source"/>
+        <childnode refid="5087" relation="include">
+        </childnode>
+        <childnode refid="5061" relation="include">
+        </childnode>
+      </node>
+      <node id="5072">
+        <label>openscenario_interpreter/syntax/boolean.hpp</label>
+        <link refid="boolean_8hpp_source"/>
+        <childnode refid="5073" relation="include">
+        </childnode>
+        <childnode refid="5074" relation="include">
+        </childnode>
+        <childnode refid="5056" relation="include">
+        </childnode>
+        <childnode refid="5075" relation="include">
+        </childnode>
+        <childnode refid="5062" relation="include">
+        </childnode>
+      </node>
+      <node id="5122">
+        <label>openscenario_interpreter/syntax/orientation.hpp</label>
+        <link refid="orientation_8hpp_source"/>
+        <childnode refid="5123" relation="include">
+        </childnode>
+        <childnode refid="5069" relation="include">
+        </childnode>
+        <childnode refid="5124" relation="include">
+        </childnode>
+      </node>
+      <node id="5066">
+        <label>openscenario_interpreter/functional/equal_to.hpp</label>
+        <link refid="equal__to_8hpp_source"/>
+        <childnode refid="5067" relation="include">
+        </childnode>
+        <childnode refid="5059" relation="include">
+        </childnode>
+        <childnode refid="5054" relation="include">
+        </childnode>
+        <childnode refid="5068" relation="include">
+        </childnode>
+      </node>
+      <node id="5073">
+        <label>boost/io/ios_state.hpp</label>
+      </node>
+      <node id="5109">
+        <label>openscenario_interpreter/utility/pugi_extension.hpp</label>
+        <link refid="pugi__extension_8hpp_source"/>
+        <childnode refid="5110" relation="include">
+        </childnode>
+        <childnode refid="5111" relation="include">
+        </childnode>
+      </node>
+      <node id="5060">
+        <label>utility</label>
+      </node>
+      <node id="5061">
+        <label>sstream</label>
+      </node>
+      <node id="5108">
+        <label>openscenario_interpreter/utility/highlighter.hpp</label>
+        <link refid="highlighter_8hpp_source"/>
+        <childnode refid="5092" relation="include">
+        </childnode>
+        <childnode refid="5093" relation="include">
+        </childnode>
+        <childnode refid="5062" relation="include">
+        </childnode>
+        <childnode refid="5060" relation="include">
+        </childnode>
+      </node>
+      <node id="5083">
+        <label>openscenario_interpreter/type_traits/has_member_function_evaluate.hpp</label>
+        <link refid="has__member__function__evaluate_8hpp_source"/>
+        <childnode refid="5081" relation="include">
+        </childnode>
+      </node>
+      <node id="5058">
+        <label>openscenario_interpreter/functional/fold.hpp</label>
+        <link refid="fold_8hpp_source"/>
+        <childnode refid="5059" relation="include">
+        </childnode>
+        <childnode refid="5060" relation="include">
+        </childnode>
+      </node>
+      <node id="5092">
+        <label>iostream</label>
+      </node>
+      <node id="5105">
+        <label>std_msgs/msg/u_int64.hpp</label>
+      </node>
+      <node id="5112">
+        <label>unordered_map</label>
+      </node>
+      <node id="5051">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/entity_condition.hpp</label>
+        <link refid="entity__condition_8hpp"/>
+        <childnode refid="5052" relation="include">
+        </childnode>
+        <childnode refid="5117" relation="include">
+        </childnode>
+        <childnode refid="5118" relation="include">
+        </childnode>
+        <childnode refid="5131" relation="include">
+        </childnode>
+        <childnode refid="5133" relation="include">
+        </childnode>
+        <childnode refid="5135" relation="include">
+        </childnode>
+        <childnode refid="5136" relation="include">
+        </childnode>
+        <childnode refid="5137" relation="include">
+        </childnode>
+        <childnode refid="5060" relation="include">
+        </childnode>
+      </node>
+      <node id="5137">
+        <label>openscenario_interpreter/syntax/time_headway_condition.hpp</label>
+        <link refid="time__headway__condition_8hpp_source"/>
+        <childnode refid="5053" relation="include">
+        </childnode>
+        <childnode refid="5065" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5135">
+        <label>openscenario_interpreter/syntax/speed_condition.hpp</label>
+        <link refid="speed__condition_8hpp_source"/>
+        <childnode refid="5053" relation="include">
+        </childnode>
+        <childnode refid="5065" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+      </node>
+      <node id="5087">
+        <label>openscenario_interpreter/type_traits/has_member_function_state.hpp</label>
+        <link refid="has__member__function__state_8hpp_source"/>
+        <childnode refid="5081" relation="include">
+        </childnode>
+      </node>
+      <node id="5079">
+        <label>openscenario_interpreter/type_traits/if_has_member_function_accomplished.hpp</label>
+        <link refid="if__has__member__function__accomplished_8hpp_source"/>
+        <childnode refid="5080" relation="include">
+        </childnode>
+      </node>
+      <node id="5088">
+        <label>openscenario_interpreter/type_traits/if_has_stream_output_operator.hpp</label>
+        <link refid="if__has__stream__output__operator_8hpp_source"/>
+        <childnode refid="5089" relation="include">
+        </childnode>
+        <childnode refid="5093" relation="include">
+        </childnode>
+        <childnode refid="5094" relation="include">
+        </childnode>
+      </node>
+      <node id="5068">
+        <label>type_traits</label>
+      </node>
+      <node id="5090">
+        <label>openscenario_interpreter/console/is_console.hpp</label>
+        <link refid="is__console_8hpp_source"/>
+        <childnode refid="5091" relation="include">
+        </childnode>
+        <childnode refid="5092" relation="include">
+        </childnode>
+      </node>
+      <node id="5106">
+        <label>openscenario_interpreter/syntax/unsigned_short.hpp</label>
+        <link refid="unsigned__short_8hpp_source"/>
+        <childnode refid="5098" relation="include">
+        </childnode>
+        <childnode refid="5107" relation="include">
+        </childnode>
+        <childnode refid="5062" relation="include">
+        </childnode>
+      </node>
+      <node id="5131">
+        <label>openscenario_interpreter/syntax/reach_position_condition.hpp</label>
+        <link refid="reach__position__condition_8hpp_source"/>
+        <childnode refid="5053" relation="include">
+        </childnode>
+        <childnode refid="5119" relation="include">
+        </childnode>
+        <childnode refid="5113" relation="include">
+        </childnode>
+        <childnode refid="5132" relation="include">
+        </childnode>
+      </node>
+      <node id="5094">
+        <label>openscenario_interpreter/utility/indent.hpp</label>
+        <link refid="indent_8hpp_source"/>
+        <childnode refid="5092" relation="include">
+        </childnode>
+        <childnode refid="5062" relation="include">
+        </childnode>
+      </node>
+      <node id="5126">
+        <label>openscenario_interpreter/syntax/relative_world_position.hpp</label>
+        <link refid="relative__world__position_8hpp_source"/>
+        <childnode refid="5127" relation="include">
+        </childnode>
+        <childnode refid="5128" relation="include">
+        </childnode>
+        <childnode refid="5114" relation="include">
+        </childnode>
+        <childnode refid="5125" relation="include">
+        </childnode>
+      </node>
+      <node id="5055">
+        <label>memory</label>
+      </node>
+      <node id="5113">
+        <label>openscenario_interpreter/syntax/triggering_entities.hpp</label>
+        <link refid="triggering__entities_8hpp_source"/>
+        <childnode refid="5114" relation="include">
+        </childnode>
+        <childnode refid="5115" relation="include">
+        </childnode>
+        <childnode refid="5060" relation="include">
+        </childnode>
+        <childnode refid="5116" relation="include">
+        </childnode>
+      </node>
+      <node id="5095">
+        <label>openscenario_interpreter/utility/pair.hpp</label>
+        <link refid="pair_8hpp_source"/>
+        <childnode refid="5060" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5145">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/maneuver_group.hpp</label>
+        <link refid="maneuver__group_8hpp_source"/>
+        <childnode refid="5146" relation="include">
+        </childnode>
+      </node>
+      <node id="5141">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/condition_group.hpp</label>
+        <link refid="condition__group_8hpp_source"/>
+        <childnode refid="5142" relation="include">
+        </childnode>
+      </node>
+      <node id="5139">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/by_entity_condition.hpp</label>
+        <link refid="by__entity__condition_8hpp_source"/>
+        <childnode refid="5140" relation="include">
+        </childnode>
+      </node>
+      <node id="5140">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/condition.hpp</label>
+        <link refid="condition_8hpp_source"/>
+        <childnode refid="5141" relation="include">
+        </childnode>
+      </node>
+      <node id="5148">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/storyboard.hpp</label>
+        <link refid="storyboard_8hpp_source"/>
+        <childnode refid="5149" relation="include">
+        </childnode>
+      </node>
+      <node id="5150">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/openscenario_interpreter.hpp</label>
+        <link refid="openscenario__interpreter_8hpp_source"/>
+      </node>
+      <node id="5143">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/event.hpp</label>
+        <link refid="event_8hpp_source"/>
+        <childnode refid="5144" relation="include">
+        </childnode>
+      </node>
+      <node id="5146">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/act.hpp</label>
+        <link refid="act_8hpp_source"/>
+        <childnode refid="5147" relation="include">
+        </childnode>
+      </node>
+      <node id="5149">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/openscenario.hpp</label>
+        <link refid="openscenario_8hpp_source"/>
+        <childnode refid="5150" relation="include">
+        </childnode>
+      </node>
+      <node id="5147">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/story.hpp</label>
+        <link refid="story_8hpp_source"/>
+        <childnode refid="5148" relation="include">
+        </childnode>
+      </node>
+      <node id="5138">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/entity_condition.hpp</label>
+        <link refid="entity__condition_8hpp"/>
+        <childnode refid="5139" relation="include">
+        </childnode>
+      </node>
+      <node id="5144">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/maneuver.hpp</label>
+        <link refid="maneuver_8hpp_source"/>
+        <childnode refid="5145" relation="include">
+        </childnode>
+      </node>
+      <node id="5142">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/trigger.hpp</label>
+        <link refid="trigger_8hpp_source"/>
+        <childnode refid="5143" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1EntityCondition" prot="public">openscenario_interpreter::syntax::EntityCondition</innerclass>
+    <innernamespace refid="namespaceopenscenario__interpreter">openscenario_interpreter</innernamespace>
+    <innernamespace refid="namespaceopenscenario__interpreter_1_1syntax">openscenario_interpreter::syntax</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2015-2020<sp/>Tier<sp/>IV,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>OPENSCENARIO_INTERPRETER__SYNTAX__ENTITY_CONDITION_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OPENSCENARIO_INTERPRETER__SYNTAX__ENTITY_CONDITION_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openscenario_interpreter/syntax/acceleration_condition.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openscenario_interpreter/syntax/collision_condition.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openscenario_interpreter/syntax/distance_condition.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openscenario_interpreter/syntax/reach_position_condition.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openscenario_interpreter/syntax/relative_distance_condition.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openscenario_interpreter/syntax/speed_condition.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openscenario_interpreter/syntax/stand_still_condition.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openscenario_interpreter/syntax/time_headway_condition.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceopenscenario__interpreter" kindref="compound">openscenario_interpreter</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">syntax</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>----<sp/>EntityCondition<sp/>--------------------------------------------------------</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/><sp/>&lt;xsd:complexType<sp/>name=&quot;EntityCondition&quot;&gt;</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>&lt;xsd:choice&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>&lt;xsd:element<sp/>name=&quot;EndOfRoadCondition&quot;<sp/>type=&quot;EndOfRoadCondition&quot;/&gt;</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>&lt;xsd:element<sp/>name=&quot;CollisionCondition&quot;<sp/>type=&quot;CollisionCondition&quot;/&gt;</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>&lt;xsd:element<sp/>name=&quot;OffroadCondition&quot;<sp/>type=&quot;OffroadCondition&quot;/&gt;</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>&lt;xsd:element<sp/>name=&quot;TimeHeadwayCondition&quot;<sp/>type=&quot;TimeHeadwayCondition&quot;/&gt;</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>&lt;xsd:element<sp/>name=&quot;TimeToCollisionCondition&quot;<sp/>type=&quot;TimeToCollisionCondition&quot;/&gt;</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>&lt;xsd:element<sp/>name=&quot;AccelerationCondition&quot;<sp/>type=&quot;AccelerationCondition&quot;/&gt;</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>&lt;xsd:element<sp/>name=&quot;StandStillCondition&quot;<sp/>type=&quot;StandStillCondition&quot;/&gt;</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>&lt;xsd:element<sp/>name=&quot;SpeedCondition&quot;<sp/>type=&quot;SpeedCondition&quot;/&gt;</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>&lt;xsd:element<sp/>name=&quot;RelativeSpeedCondition&quot;<sp/>type=&quot;RelativeSpeedCondition&quot;/&gt;</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>&lt;xsd:element<sp/>name=&quot;TraveledDistanceCondition&quot;<sp/>type=&quot;TraveledDistanceCondition&quot;/&gt;</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>&lt;xsd:element<sp/>name=&quot;ReachPositionCondition&quot;<sp/>type=&quot;ReachPositionCondition&quot;/&gt;</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>&lt;xsd:element<sp/>name=&quot;DistanceCondition&quot;<sp/>type=&quot;DistanceCondition&quot;/&gt;</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>&lt;xsd:element<sp/>name=&quot;RelativeDistanceCondition&quot;<sp/>type=&quot;RelativeDistanceCondition&quot;/&gt;</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>&lt;/xsd:choice&gt;</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/><sp/>&lt;/xsd:complexType&gt;</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>--------------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="structopenscenario__interpreter_1_1syntax_1_1EntityCondition" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structopenscenario__interpreter_1_1syntax_1_1EntityCondition" kindref="compound">EntityCondition</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classopenscenario__interpreter_1_1Pointer" kindref="compound">Element</ref></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Node,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Ts&gt;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1syntax_1_1EntityCondition" kindref="compound">EntityCondition</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Node<sp/>&amp;<sp/>node,<sp/>Ts<sp/>&amp;&amp;...<sp/>xs)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>clang-format<sp/>off</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>:<sp/><ref refid="classopenscenario__interpreter_1_1Pointer" kindref="compound">Element</ref>(</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>choice(node,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;EndOfRoadCondition&quot;</highlight><highlight class="normal">,<sp/>UNSUPPORTED()),</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;CollisionCondition&quot;</highlight><highlight class="normal">,<sp/>[&amp;](</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>node)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>make&lt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/>CollisionCondition&gt;(std::forward&lt;decltype(node)&gt;(node),<sp/>std::forward&lt;decltype(xs)&gt;(xs)...);<sp/>}),</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;OffroadCondition&quot;</highlight><highlight class="normal">,<sp/>UNSUPPORTED()),</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;TimeHeadwayCondition&quot;</highlight><highlight class="normal">,<sp/>[&amp;](</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>node)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>make&lt;<sp/><sp/><sp/><sp/><sp/>TimeHeadwayCondition&gt;(std::forward&lt;decltype(node)&gt;(node),<sp/>std::forward&lt;decltype(xs)&gt;(xs)...);<sp/>}),</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(<sp/></highlight><highlight class="stringliteral">&quot;TimeToCollisionCondition&quot;</highlight><highlight class="normal">,<sp/>UNSUPPORTED()),</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(<sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;AccelerationCondition&quot;</highlight><highlight class="normal">,<sp/>[&amp;](</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>node)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>make&lt;<sp/><sp/><sp/><sp/>AccelerationCondition&gt;(std::forward&lt;decltype(node)&gt;(node),<sp/>std::forward&lt;decltype(xs)&gt;(xs)...);<sp/>}),</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;StandStillCondition&quot;</highlight><highlight class="normal">,<sp/>[&amp;](</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>node)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>make&lt;<sp/><sp/><sp/><sp/><sp/><sp/>StandStillCondition&gt;(std::forward&lt;decltype(node)&gt;(node),<sp/>std::forward&lt;decltype(xs)&gt;(xs)...);<sp/>}),</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;SpeedCondition&quot;</highlight><highlight class="normal">,<sp/>[&amp;](</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>node)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>make&lt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SpeedCondition&gt;(std::forward&lt;decltype(node)&gt;(node),<sp/>std::forward&lt;decltype(xs)&gt;(xs)...);<sp/>}),</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(<sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;RelativeSpeedCondition&quot;</highlight><highlight class="normal">,<sp/>UNSUPPORTED()),</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(</highlight><highlight class="stringliteral">&quot;TraveledDistanceCondition&quot;</highlight><highlight class="normal">,<sp/>UNSUPPORTED()),</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(<sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;ReachPositionCondition&quot;</highlight><highlight class="normal">,<sp/>[&amp;](</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>node)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>make&lt;<sp/><sp/><sp/>ReachPositionCondition&gt;(std::forward&lt;decltype(node)&gt;(node),<sp/>std::forward&lt;decltype(xs)&gt;(xs)...);<sp/>}),</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;DistanceCondition&quot;</highlight><highlight class="normal">,<sp/>[&amp;](</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>node)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>make&lt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DistanceCondition&gt;(std::forward&lt;decltype(node)&gt;(node),<sp/>std::forward&lt;decltype(xs)&gt;(xs)...);<sp/>}),</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(</highlight><highlight class="stringliteral">&quot;RelativeDistanceCondition&quot;</highlight><highlight class="normal">,<sp/>[&amp;](</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>node)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>make&lt;RelativeDistanceCondition&gt;(std::forward&lt;decltype(node)&gt;(node),<sp/>std::forward&lt;decltype(xs)&gt;(xs)...);<sp/>})</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>))</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>clang-format<sp/>on</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>syntax</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>openscenario_interpreter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>OPENSCENARIO_INTERPRETER__SYNTAX__ENTITY_CONDITION_HPP_</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/entity_condition.hpp"/>
+  </compounddef>
+</doxygen>

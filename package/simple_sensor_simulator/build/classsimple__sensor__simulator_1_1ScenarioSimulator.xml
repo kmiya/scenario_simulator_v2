@@ -1,0 +1,412 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classsimple__sensor__simulator_1_1ScenarioSimulator" kind="class" language="C++" prot="public">
+    <compoundname>simple_sensor_simulator::ScenarioSimulator</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Node</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1ad60314c4e606665b9bb873bab6fcf13c" prot="private" static="no" mutable="no">
+        <type><ref refid="classsimple__sensor__simulator_1_1SensorSimulation" kindref="compound">SensorSimulation</ref></type>
+        <definition>SensorSimulation simple_sensor_simulator::ScenarioSimulator::sensor_sim_</definition>
+        <argsstring></argsstring>
+        <name>sensor_sim_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="89" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1a955901a6205c97625a5f69da26621252" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; openscenario_msgs::VehicleParameters &gt;</type>
+        <definition>std::vector&lt;openscenario_msgs::VehicleParameters&gt; simple_sensor_simulator::ScenarioSimulator::ego_vehicles_</definition>
+        <argsstring></argsstring>
+        <name>ego_vehicles_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="117" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1a9e788ca04c15aeb760dbfb06de040852" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; openscenario_msgs::VehicleParameters &gt;</type>
+        <definition>std::vector&lt;openscenario_msgs::VehicleParameters&gt; simple_sensor_simulator::ScenarioSimulator::vehicles_</definition>
+        <argsstring></argsstring>
+        <name>vehicles_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="118" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1a5de9ffcd3a3d2b178600c05bae2c1286" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; openscenario_msgs::PedestrianParameters &gt;</type>
+        <definition>std::vector&lt;openscenario_msgs::PedestrianParameters&gt; simple_sensor_simulator::ScenarioSimulator::pedestrians_</definition>
+        <argsstring></argsstring>
+        <name>pedestrians_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="119" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1a5d091dc615e27ad634f1b4a05bee1852" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double simple_sensor_simulator::ScenarioSimulator::realtime_factor_</definition>
+        <argsstring></argsstring>
+        <name>realtime_factor_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="120" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1a41f8e345ce50d1632d8fc7508b80801d" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double simple_sensor_simulator::ScenarioSimulator::step_time_</definition>
+        <argsstring></argsstring>
+        <name>step_time_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="121" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1a121660c3024a7685a1379cba067f5d2b" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double simple_sensor_simulator::ScenarioSimulator::current_time_</definition>
+        <argsstring></argsstring>
+        <name>current_time_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="122" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1a1d22a82dd0c63e5d7155d0160d49e888" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool simple_sensor_simulator::ScenarioSimulator::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="123" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1a42c75a68d104171ca308898b3bc936af" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; openscenario_msgs::EntityStatus &gt;</type>
+        <definition>std::vector&lt;openscenario_msgs::EntityStatus&gt; simple_sensor_simulator::ScenarioSimulator::entity_status_</definition>
+        <argsstring></argsstring>
+        <name>entity_status_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="124" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1a27c8df76120cdfac9f96645a044b564d" prot="private" static="no" mutable="no">
+        <type>zeromq::MultiServer</type>
+        <definition>zeromq::MultiServer simple_sensor_simulator::ScenarioSimulator::server_</definition>
+        <argsstring></argsstring>
+        <name>server_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="125" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1adc4b6a520e3cc4eb99decd840a89e1dc" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_PUBLIC</type>
+        <definition>simple_sensor_simulator::ScenarioSimulator::ScenarioSimulator</definition>
+        <argsstring>(const rclcpp::NodeOptions &amp;options)</argsstring>
+        <name>ScenarioSimulator</name>
+        <param>
+          <type>const rclcpp::NodeOptions &amp;</type>
+          <declname>options</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="85" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/simple_sensor_simulator.cpp" bodystart="31" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1a475c3fd3cb2e36c88f13de975f35b509" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>simple_sensor_simulator::ScenarioSimulator::~ScenarioSimulator</definition>
+        <argsstring>()</argsstring>
+        <name>~ScenarioSimulator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="86" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/simple_sensor_simulator.cpp" bodystart="57" bodyend="57"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1a9036067eacec4c737be05625a8ce41c8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simple_sensor_simulator::ScenarioSimulator::initialize</definition>
+        <argsstring>(const simulation_api_schema::InitializeRequest &amp;req, simulation_api_schema::InitializeResponse &amp;res)</argsstring>
+        <name>initialize</name>
+        <param>
+          <type>const simulation_api_schema::InitializeRequest &amp;</type>
+          <declname>req</declname>
+        </param>
+        <param>
+          <type>simulation_api_schema::InitializeResponse &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="90" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/simple_sensor_simulator.cpp" bodystart="59" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1afc456b79632b793b970f2ae15ab603e8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simple_sensor_simulator::ScenarioSimulator::updateFrame</definition>
+        <argsstring>(const simulation_api_schema::UpdateFrameRequest &amp;req, simulation_api_schema::UpdateFrameResponse &amp;res)</argsstring>
+        <name>updateFrame</name>
+        <param>
+          <type>const simulation_api_schema::UpdateFrameRequest &amp;</type>
+          <declname>req</declname>
+        </param>
+        <param>
+          <type>simulation_api_schema::UpdateFrameResponse &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="93" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/simple_sensor_simulator.cpp" bodystart="74" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1a4233d8313e27c110131aed7a252e66bd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simple_sensor_simulator::ScenarioSimulator::updateEntityStatus</definition>
+        <argsstring>(const simulation_api_schema::UpdateEntityStatusRequest &amp;req, simulation_api_schema::UpdateEntityStatusResponse &amp;res)</argsstring>
+        <name>updateEntityStatus</name>
+        <param>
+          <type>const simulation_api_schema::UpdateEntityStatusRequest &amp;</type>
+          <declname>req</declname>
+        </param>
+        <param>
+          <type>simulation_api_schema::UpdateEntityStatusResponse &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="96" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/simple_sensor_simulator.cpp" bodystart="89" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1ac66854cce611363f2c36b3f69a6cde32" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simple_sensor_simulator::ScenarioSimulator::spawnVehicleEntity</definition>
+        <argsstring>(const simulation_api_schema::SpawnVehicleEntityRequest &amp;req, simulation_api_schema::SpawnVehicleEntityResponse &amp;res)</argsstring>
+        <name>spawnVehicleEntity</name>
+        <param>
+          <type>const simulation_api_schema::SpawnVehicleEntityRequest &amp;</type>
+          <declname>req</declname>
+        </param>
+        <param>
+          <type>simulation_api_schema::SpawnVehicleEntityResponse &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="99" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/simple_sensor_simulator.cpp" bodystart="102" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1a214b4fb848a027cbfa89ee00aac6ca0f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simple_sensor_simulator::ScenarioSimulator::spawnPedestrianEntity</definition>
+        <argsstring>(const simulation_api_schema::SpawnPedestrianEntityRequest &amp;req, simulation_api_schema::SpawnPedestrianEntityResponse &amp;res)</argsstring>
+        <name>spawnPedestrianEntity</name>
+        <param>
+          <type>const simulation_api_schema::SpawnPedestrianEntityRequest &amp;</type>
+          <declname>req</declname>
+        </param>
+        <param>
+          <type>simulation_api_schema::SpawnPedestrianEntityResponse &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="102" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/simple_sensor_simulator.cpp" bodystart="119" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1a8b64dffba28ad461147210fba3364ab7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simple_sensor_simulator::ScenarioSimulator::despawnEntity</definition>
+        <argsstring>(const simulation_api_schema::DespawnEntityRequest &amp;req, simulation_api_schema::DespawnEntityResponse &amp;res)</argsstring>
+        <name>despawnEntity</name>
+        <param>
+          <type>const simulation_api_schema::DespawnEntityRequest &amp;</type>
+          <declname>req</declname>
+        </param>
+        <param>
+          <type>simulation_api_schema::DespawnEntityResponse &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="105" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/simple_sensor_simulator.cpp" bodystart="129" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1a14da08426619a21a167a90a9977b73a3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simple_sensor_simulator::ScenarioSimulator::attachDetectionSensor</definition>
+        <argsstring>(const simulation_api_schema::AttachDetectionSensorRequest &amp;req, simulation_api_schema::AttachDetectionSensorResponse &amp;res)</argsstring>
+        <name>attachDetectionSensor</name>
+        <param>
+          <type>const simulation_api_schema::AttachDetectionSensorRequest &amp;</type>
+          <declname>req</declname>
+        </param>
+        <param>
+          <type>simulation_api_schema::AttachDetectionSensorResponse &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="108" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/simple_sensor_simulator.cpp" bodystart="160" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1a812c3323ca68c5e1116e55be85e568c9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simple_sensor_simulator::ScenarioSimulator::attachLidarSensor</definition>
+        <argsstring>(const simulation_api_schema::AttachLidarSensorRequest &amp;req, simulation_api_schema::AttachLidarSensorResponse &amp;res)</argsstring>
+        <name>attachLidarSensor</name>
+        <param>
+          <type>const simulation_api_schema::AttachLidarSensorRequest &amp;</type>
+          <declname>req</declname>
+        </param>
+        <param>
+          <type>simulation_api_schema::AttachLidarSensorResponse &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="111" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/simple_sensor_simulator.cpp" bodystart="171" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__sensor__simulator_1_1ScenarioSimulator_1abe38e6ca125a6bedd839975d544bbe9c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simple_sensor_simulator::ScenarioSimulator::updateSensorFrame</definition>
+        <argsstring>(const simulation_api_schema::UpdateSensorFrameRequest &amp;req, simulation_api_schema::UpdateSensorFrameResponse &amp;res)</argsstring>
+        <name>updateSensorFrame</name>
+        <param>
+          <type>const simulation_api_schema::UpdateSensorFrameRequest &amp;</type>
+          <declname>req</declname>
+        </param>
+        <param>
+          <type>simulation_api_schema::UpdateSensorFrameResponse &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="114" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/simple_sensor_simulator.cpp" bodystart="182" bodyend="194"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="13">
+        <label>simple_sensor_simulator::ScenarioSimulator</label>
+        <link refid="classsimple__sensor__simulator_1_1ScenarioSimulator"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>rclcpp::Node</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="15">
+        <label>simple_sensor_simulator::ScenarioSimulator</label>
+        <link refid="classsimple__sensor__simulator_1_1ScenarioSimulator"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>rclcpp::Node</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="82" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" bodystart="81" bodyend="126"/>
+    <listofallmembers>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a14da08426619a21a167a90a9977b73a3" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>attachDetectionSensor</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a812c3323ca68c5e1116e55be85e568c9" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>attachLidarSensor</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a121660c3024a7685a1379cba067f5d2b" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>current_time_</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a8b64dffba28ad461147210fba3364ab7" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>despawnEntity</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a955901a6205c97625a5f69da26621252" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>ego_vehicles_</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a42c75a68d104171ca308898b3bc936af" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>entity_status_</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a9036067eacec4c737be05625a8ce41c8" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>initialize</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a1d22a82dd0c63e5d7155d0160d49e888" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>initialized_</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a5de9ffcd3a3d2b178600c05bae2c1286" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>pedestrians_</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a5d091dc615e27ad634f1b4a05bee1852" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>realtime_factor_</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1adc4b6a520e3cc4eb99decd840a89e1dc" prot="public" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>ScenarioSimulator</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1ad60314c4e606665b9bb873bab6fcf13c" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>sensor_sim_</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a27c8df76120cdfac9f96645a044b564d" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>server_</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a214b4fb848a027cbfa89ee00aac6ca0f" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>spawnPedestrianEntity</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1ac66854cce611363f2c36b3f69a6cde32" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>spawnVehicleEntity</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a41f8e345ce50d1632d8fc7508b80801d" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>step_time_</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a4233d8313e27c110131aed7a252e66bd" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>updateEntityStatus</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1afc456b79632b793b970f2ae15ab603e8" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>updateFrame</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1abe38e6ca125a6bedd839975d544bbe9c" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>updateSensorFrame</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a9e788ca04c15aeb760dbfb06de040852" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>vehicles_</name></member>
+      <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a475c3fd3cb2e36c88f13de975f35b509" prot="public" virt="non-virtual"><scope>simple_sensor_simulator::ScenarioSimulator</scope><name>~ScenarioSimulator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

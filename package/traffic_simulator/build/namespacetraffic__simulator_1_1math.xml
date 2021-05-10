@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacetraffic__simulator_1_1math" kind="namespace" language="C++">
+    <compoundname>traffic_simulator::math</compoundname>
+    <innerclass refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline" prot="public">traffic_simulator::math::CatmullRomSpline</innerclass>
+    <innerclass refid="classtraffic__simulator_1_1math_1_1HermiteCurve" prot="public">traffic_simulator::math::HermiteCurve</innerclass>
+    <innerclass refid="classtraffic__simulator_1_1math_1_1PolynomialSolver" prot="public">traffic_simulator::math::PolynomialSolver</innerclass>
+    <innerclass refid="classtraffic__simulator_1_1math_1_1SplineInterpolationError" prot="public">traffic_simulator::math::SplineInterpolationError</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="bounding__box_8hpp_1ad0c9a39d318db3f108fe90af1841fb2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; double &gt;</type>
+        <definition>boost::optional&lt; double &gt; traffic_simulator::math::getPolygonDistance</definition>
+        <argsstring>(const geometry_msgs::msg::Pose &amp;pose0, const openscenario_msgs::msg::BoundingBox &amp;bbox0, const geometry_msgs::msg::Pose &amp;pose1, const openscenario_msgs::msg::BoundingBox &amp;bbox1)</argsstring>
+        <name>getPolygonDistance</name>
+        <param>
+          <type>const geometry_msgs::msg::Pose &amp;</type>
+          <declname>pose0</declname>
+        </param>
+        <param>
+          <type>const openscenario_msgs::msg::BoundingBox &amp;</type>
+          <declname>bbox0</declname>
+        </param>
+        <param>
+          <type>const geometry_msgs::msg::Pose &amp;</type>
+          <declname>pose1</declname>
+        </param>
+        <param>
+          <type>const openscenario_msgs::msg::BoundingBox &amp;</type>
+          <declname>bbox1</declname>
+        </param>
+        <briefdescription>
+<para>Get the Polygon Distance object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pose0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pose of the first bounding box </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bbox0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of the first bounding box </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pose1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pose of the second bounding box </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bbox1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of the second bounding box </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>boost::none</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bounding box intersects </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&lt;= distance between two bounding boxes </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/bounding_box.hpp" line="33" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/bounding_box.cpp" bodystart="38" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="bounding__box_8hpp_1a86ebe048a51e9d6db64f517d002d23ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const boost::geometry::model::polygon&lt; boost::geometry::model::d2::point_xy&lt; double &gt; &gt;</type>
+        <definition>const boost::geometry::model::polygon&lt; boost::geometry::model::d2::point_xy&lt; double &gt; &gt; traffic_simulator::math::get2DPolygon</definition>
+        <argsstring>(const geometry_msgs::msg::Pose &amp;pose, const openscenario_msgs::msg::BoundingBox &amp;bbox)</argsstring>
+        <name>get2DPolygon</name>
+        <param>
+          <type>const geometry_msgs::msg::Pose &amp;</type>
+          <declname>pose</declname>
+        </param>
+        <param>
+          <type>const openscenario_msgs::msg::BoundingBox &amp;</type>
+          <declname>bbox</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/bounding_box.hpp" line="36" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/bounding_box.cpp" bodystart="57" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="bounding__box_8hpp_1aabe367aaffe07ea4ee206ce8e272f865" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>std::vector&lt; geometry_msgs::msg::Point &gt; traffic_simulator::math::transformPoints</definition>
+        <argsstring>(geometry_msgs::msg::Pose pose, std::vector&lt; geometry_msgs::msg::Point &gt; points)</argsstring>
+        <name>transformPoints</name>
+        <param>
+          <type>geometry_msgs::msg::Pose</type>
+          <declname>pose</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+          <declname>points</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/bounding_box.hpp" line="38" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/bounding_box.cpp" bodystart="98" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="bounding__box_8hpp_1abf45ee410943df743e2275b10e4c4bbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>std::vector&lt; geometry_msgs::msg::Point &gt; traffic_simulator::math::getPointsFromBbox</definition>
+        <argsstring>(openscenario_msgs::msg::BoundingBox bbox)</argsstring>
+        <name>getPointsFromBbox</name>
+        <param>
+          <type>openscenario_msgs::msg::BoundingBox</type>
+          <declname>bbox</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/bounding_box.hpp" line="40" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/bounding_box.cpp" bodystart="72" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="collision_8hpp_1a47e40a5a94efa1eccd4af79d15adad47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::math::checkCollision2D</definition>
+        <argsstring>(geometry_msgs::msg::Pose pose0, openscenario_msgs::msg::BoundingBox bbox0, geometry_msgs::msg::Pose pose1, openscenario_msgs::msg::BoundingBox bbox1)</argsstring>
+        <name>checkCollision2D</name>
+        <param>
+          <type>geometry_msgs::msg::Pose</type>
+          <declname>pose0</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::msg::BoundingBox</type>
+          <declname>bbox0</declname>
+        </param>
+        <param>
+          <type>geometry_msgs::msg::Pose</type>
+          <declname>pose1</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::msg::BoundingBox</type>
+          <declname>bbox1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/collision.hpp" line="27" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/collision.cpp" bodystart="31" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="distance_8hpp_1afa5e9360cd433275639106a70596a585" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double traffic_simulator::math::getDistance</definition>
+        <argsstring>(const geometry_msgs::msg::Point &amp;p0, const geometry_msgs::msg::Point &amp;p1)</argsstring>
+        <name>getDistance</name>
+        <param>
+          <type>const geometry_msgs::msg::Point &amp;</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const geometry_msgs::msg::Point &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/distance.hpp" line="35" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/distance.cpp" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="distance_8hpp_1a11b4bc865c0d1703e5b226d0fab48450" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double traffic_simulator::math::getDistance</definition>
+        <argsstring>(const geometry_msgs::msg::Pose &amp;p0, const geometry_msgs::msg::Point &amp;p1)</argsstring>
+        <name>getDistance</name>
+        <param>
+          <type>const geometry_msgs::msg::Pose &amp;</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const geometry_msgs::msg::Point &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/distance.hpp" line="36" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/distance.cpp" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="distance_8hpp_1a072483d07dc64c1d4d6186de3a49fded" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double traffic_simulator::math::getDistance</definition>
+        <argsstring>(const geometry_msgs::msg::Point &amp;p0, const geometry_msgs::msg::Pose &amp;p1)</argsstring>
+        <name>getDistance</name>
+        <param>
+          <type>const geometry_msgs::msg::Point &amp;</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const geometry_msgs::msg::Pose &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/distance.hpp" line="37" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/distance.cpp" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="distance_8hpp_1a880fb36daf884a2d4ee418a9f87eb8c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double traffic_simulator::math::getDistance</definition>
+        <argsstring>(const geometry_msgs::msg::Pose &amp;p0, const geometry_msgs::msg::Pose &amp;p1)</argsstring>
+        <name>getDistance</name>
+        <param>
+          <type>const geometry_msgs::msg::Pose &amp;</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const geometry_msgs::msg::Pose &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/distance.hpp" line="38" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/distance.cpp" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="uuid_8hpp_1ac44506ab08432fd5aa59252bc6f09e6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string traffic_simulator::math::generateUUID</definition>
+        <argsstring>(const std::string &amp;seed)</argsstring>
+        <name>generateUUID</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>seed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/uuid.hpp" line="35" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/uuid.cpp" bodystart="36" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/bounding_box.hpp" line="32" column="1"/>
+  </compounddef>
+</doxygen>

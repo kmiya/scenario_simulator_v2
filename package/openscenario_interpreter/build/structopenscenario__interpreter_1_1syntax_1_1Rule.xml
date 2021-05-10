@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structopenscenario__interpreter_1_1syntax_1_1Rule" kind="struct" language="C++" prot="public">
+    <compoundname>openscenario_interpreter::syntax::Rule</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="structopenscenario__interpreter_1_1syntax_1_1Rule_1ac17ed7783d1242de9ee2a412d65ecbab" prot="public" static="no">
+        <name>value_type</name>
+        <enumvalue id="structopenscenario__interpreter_1_1syntax_1_1Rule_1ac17ed7783d1242de9ee2a412d65ecbabaf4e546edad3b5dd75403e0f28d779784" prot="public">
+          <name>greaterThan</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structopenscenario__interpreter_1_1syntax_1_1Rule_1ac17ed7783d1242de9ee2a412d65ecbaba1bffa573f4831cf3373e99e840701751" prot="public">
+          <name>lessThan</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structopenscenario__interpreter_1_1syntax_1_1Rule_1ac17ed7783d1242de9ee2a412d65ecbabade7f779eeff1e30f8964d26d9ec2d98b" prot="public">
+          <name>equalTo</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/rule.hpp" line="48" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/rule.hpp" bodystart="48" bodyend="52"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1Rule_1a92c311544b30fe1497ed8fc6dd4a1b13" prot="public" static="no" mutable="no">
+        <type>enum openscenario_interpreter::syntax::Rule::value_type</type>
+        <definition>enum openscenario_interpreter::syntax::Rule::value_type  openscenario_interpreter::syntax::Rule::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/rule.hpp" line="52" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1Rule_1ab1f477c5e1b98103e00c593934c6626d" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr openscenario_interpreter::syntax::Rule::Rule</definition>
+        <argsstring>(value_type value={})</argsstring>
+        <name>Rule</name>
+        <param>
+          <type>value_type</type>
+          <declname>value</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/rule.hpp" line="54" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/rule.hpp" bodystart="54" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1Rule_1a5d45e73cdb70284793575fc428393392" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr openscenario_interpreter::syntax::Rule::operator value_type</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>operator value_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/rule.hpp" line="56" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/rule.hpp" bodystart="56" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1Rule_1a4a18a92c76e99626901f36b4481029c0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+            <defval>T</defval>
+          </param>
+        </templateparamlist>
+        <type>decltype(auto) constexpr</type>
+        <definition>decltype(auto) constexpr openscenario_interpreter::syntax::Rule::operator()</definition>
+        <argsstring>(const T &amp;lhs, const U &amp;rhs) const noexcept</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const U &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/rule.hpp" line="59" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/rule.hpp" bodystart="59" bodyend="76"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/rule.hpp" line="47" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/rule.hpp" bodystart="46" bodyend="77"/>
+    <listofallmembers>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Rule_1ac17ed7783d1242de9ee2a412d65ecbabade7f779eeff1e30f8964d26d9ec2d98b" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Rule</scope><name>equalTo</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Rule_1ac17ed7783d1242de9ee2a412d65ecbabaf4e546edad3b5dd75403e0f28d779784" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Rule</scope><name>greaterThan</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Rule_1ac17ed7783d1242de9ee2a412d65ecbaba1bffa573f4831cf3373e99e840701751" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Rule</scope><name>lessThan</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Rule_1a5d45e73cdb70284793575fc428393392" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Rule</scope><name>operator value_type</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Rule_1a4a18a92c76e99626901f36b4481029c0" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Rule</scope><name>operator()</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Rule_1ab1f477c5e1b98103e00c593934c6626d" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Rule</scope><name>Rule</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Rule_1a92c311544b30fe1497ed8fc6dd4a1b13" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Rule</scope><name>value</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Rule_1ac17ed7783d1242de9ee2a412d65ecbab" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Rule</scope><name>value_type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespaceopenscenario__interpreter_1_1functional" kind="namespace" language="C++">
+    <compoundname>openscenario_interpreter::functional</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="fold_8hpp_1a954dfdfad82b883d4ec07ad0023e8a7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>decltype(auto) constexpr</type>
+        <definition>decltype(auto) constexpr openscenario_interpreter::functional::fold_left</definition>
+        <argsstring>(F &amp;&amp;, T &amp;&amp;x)</argsstring>
+        <name>fold_left</name>
+        <param>
+          <type>F &amp;&amp;</type>
+        </param>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/functional/fold.hpp" line="26" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/functional/fold.hpp" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="fold_8hpp_1ae2cfb12dc745b017db86fcfb5a1e2430" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>decltype(auto) constexpr</type>
+        <definition>decltype(auto) constexpr openscenario_interpreter::functional::fold_left</definition>
+        <argsstring>(F &amp;&amp;f, T &amp;&amp;x, U &amp;&amp;y, Ts &amp;&amp;... xs)</argsstring>
+        <name>fold_left</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>U &amp;&amp;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/functional/fold.hpp" line="32" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/functional/fold.hpp" bodystart="32" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="fold_8hpp_1af53b2409526e2310824d2d14bda12a2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>decltype(auto) constexpr</type>
+        <definition>decltype(auto) constexpr openscenario_interpreter::functional::fold_right</definition>
+        <argsstring>(F &amp;&amp;, T &amp;&amp;x)</argsstring>
+        <name>fold_right</name>
+        <param>
+          <type>F &amp;&amp;</type>
+        </param>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/functional/fold.hpp" line="40" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/functional/fold.hpp" bodystart="40" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="fold_8hpp_1a256ad94603bfe63a407e95cba68e0045" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>decltype(auto) constexpr</type>
+        <definition>decltype(auto) constexpr openscenario_interpreter::functional::fold_right</definition>
+        <argsstring>(F &amp;&amp;f, T &amp;&amp;x, Ts &amp;&amp;... xs)</argsstring>
+        <name>fold_right</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/functional/fold.hpp" line="46" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/functional/fold.hpp" bodystart="46" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/functional/fold.hpp" line="24" column="1"/>
+  </compounddef>
+</doxygen>

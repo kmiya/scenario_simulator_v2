@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structopenscenario__interpreter_1_1syntax_1_1Waypoint" kind="struct" language="C++" prot="public">
+    <compoundname>openscenario_interpreter::syntax::Waypoint</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1Waypoint_1a1e2fbf4bf8e686b6f80f7d75e0e217b1" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structopenscenario__interpreter_1_1syntax_1_1RouteStrategy" kindref="compound">RouteStrategy</ref></type>
+        <definition>const RouteStrategy openscenario_interpreter::syntax::Waypoint::route_strategy</definition>
+        <argsstring></argsstring>
+        <name>route_strategy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/waypoint.hpp" line="38" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/waypoint.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1Waypoint_1a2df5d7d14b252c069d807cd2b1321b18" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structopenscenario__interpreter_1_1syntax_1_1Position" kindref="compound">Position</ref></type>
+        <definition>const Position openscenario_interpreter::syntax::Waypoint::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/waypoint.hpp" line="40" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/waypoint.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1Waypoint_1a4e83b94a788b6d73dde12205c3ef2377" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Node</type>
+          </param>
+          <param>
+            <type>typename <ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref></type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>openscenario_interpreter::syntax::Waypoint::Waypoint</definition>
+        <argsstring>(const Node &amp;node, Scope &amp;outer_scope)</argsstring>
+        <name>Waypoint</name>
+        <param>
+          <type>const Node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref> &amp;</type>
+          <declname>outer_scope</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/waypoint.hpp" line="43" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/waypoint.hpp" bodystart="43" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1Waypoint_1a99f3f60a6d17cf53e3969e2a2f8a6d34" prot="public" static="no" const="yes" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>openscenario_interpreter::syntax::Waypoint::operator openscenario_msgs::msg::LaneletPose</definition>
+        <argsstring>() const</argsstring>
+        <name>operator openscenario_msgs::msg::LaneletPose</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/waypoint.hpp" line="49" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/waypoint.hpp" bodystart="49" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="834">
+        <label>std::shared_ptr&lt; Expression  &gt;</label>
+      </node>
+      <node id="831">
+        <label>openscenario_interpreter::syntax::Waypoint</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Waypoint"/>
+        <childnode refid="832" relation="usage">
+          <edgelabel>position</edgelabel>
+        </childnode>
+        <childnode refid="835" relation="usage">
+          <edgelabel>route_strategy</edgelabel>
+        </childnode>
+      </node>
+      <node id="832">
+        <label>openscenario_interpreter::syntax::Position</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Position"/>
+        <childnode refid="833" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="835">
+        <label>openscenario_interpreter::syntax::RouteStrategy</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1RouteStrategy"/>
+      </node>
+      <node id="833">
+        <label>Element</label>
+        <link refid="classopenscenario__interpreter_1_1Pointer"/>
+        <childnode refid="834" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/waypoint.hpp" line="37" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/waypoint.hpp" bodystart="36" bodyend="57"/>
+    <listofallmembers>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Waypoint_1a99f3f60a6d17cf53e3969e2a2f8a6d34" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Waypoint</scope><name>operator openscenario_msgs::msg::LaneletPose</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Waypoint_1a2df5d7d14b252c069d807cd2b1321b18" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Waypoint</scope><name>position</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Waypoint_1a1e2fbf4bf8e686b6f80f7d75e0e217b1" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Waypoint</scope><name>route_strategy</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Waypoint_1a4e83b94a788b6d73dde12205c3ef2377" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Waypoint</scope><name>Waypoint</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,639 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classtraffic__simulator_1_1math_1_1CatmullRomSpline" kind="class" language="C++" prot="public">
+    <compoundname>traffic_simulator::math::CatmullRomSpline</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a9a263941485b7d021a30276fa7fd5b37" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classtraffic__simulator_1_1math_1_1HermiteCurve" kindref="compound">HermiteCurve</ref> &gt;</type>
+        <definition>std::vector&lt;HermiteCurve&gt; traffic_simulator::math::CatmullRomSpline::curves_</definition>
+        <argsstring></argsstring>
+        <name>curves_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="80" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a6106cba00024685684a1ae2ae48ce00e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; traffic_simulator::math::CatmullRomSpline::length_list_</definition>
+        <argsstring></argsstring>
+        <name>length_list_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="81" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a38f834092f096e31660664bd54a611c0" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; traffic_simulator::math::CatmullRomSpline::maximum_2d_curvatures_</definition>
+        <argsstring></argsstring>
+        <name>maximum_2d_curvatures_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="82" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a3a8463d122ca2995d1c1f157e15d3c93" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double traffic_simulator::math::CatmullRomSpline::total_length_</definition>
+        <argsstring></argsstring>
+        <name>total_length_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="83" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a1e97d2eecb3034fc2cac4796e24ac174" prot="private" static="no" mutable="no">
+        <type>const std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>const std::vector&lt;geometry_msgs::msg::Point&gt; traffic_simulator::math::CatmullRomSpline::control_points</definition>
+        <argsstring></argsstring>
+        <name>control_points</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="84" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1acf0755fc00a2d5b6f68a5db85bd3ded0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::math::CatmullRomSpline::CatmullRomSpline</definition>
+        <argsstring>()=delete</argsstring>
+        <name>CatmullRomSpline</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="39" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a128c3b4a0292c3511240b6fe71b9cf12" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::math::CatmullRomSpline::CatmullRomSpline</definition>
+        <argsstring>(const openscenario_msgs::msg::CatmullRomSpline &amp;spline)</argsstring>
+        <name>CatmullRomSpline</name>
+        <param>
+          <type>const openscenario_msgs::msg::CatmullRomSpline &amp;</type>
+          <declname>spline</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="40" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="128" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a6a8f61124515167a71ac2d41df910302" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::math::CatmullRomSpline::CatmullRomSpline</definition>
+        <argsstring>(const std::vector&lt; openscenario_msgs::msg::HermiteCurve &gt; &amp;hermite_curves)</argsstring>
+        <name>CatmullRomSpline</name>
+        <param>
+          <type>const std::vector&lt; openscenario_msgs::msg::HermiteCurve &gt; &amp;</type>
+          <declname>hermite_curves</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="41" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="26" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a104a9a379bf7ea43b52bf677db566d34" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>traffic_simulator::math::CatmullRomSpline::CatmullRomSpline</definition>
+        <argsstring>(const std::vector&lt; geometry_msgs::msg::Point &gt; &amp;control_points)</argsstring>
+        <name>CatmullRomSpline</name>
+        <param>
+          <type>const std::vector&lt; geometry_msgs::msg::Point &gt; &amp;</type>
+          <declname>control_points</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="43" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="135" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a4882552609c5d464a6202683ddc2ae30" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double traffic_simulator::math::CatmullRomSpline::getLength</definition>
+        <argsstring>() const</argsstring>
+        <name>getLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="44" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" bodystart="44" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a2c696d16cd9227e467079cf96a69d235" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double traffic_simulator::math::CatmullRomSpline::getMaximum2DCurventure</definition>
+        <argsstring>() const</argsstring>
+        <name>getMaximum2DCurventure</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="45" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="398" bodyend="404"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a5fe42be509098d453ff6812f76c3c97b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const geometry_msgs::msg::Point</type>
+        <definition>const geometry_msgs::msg::Point traffic_simulator::math::CatmullRomSpline::getPoint</definition>
+        <argsstring>(double s) const</argsstring>
+        <name>getPoint</name>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="46" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="392" bodyend="396"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a12b98fa62c9d42a371e81a334e8fe583" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const geometry_msgs::msg::Vector3</type>
+        <definition>const geometry_msgs::msg::Vector3 traffic_simulator::math::CatmullRomSpline::getTangentVector</definition>
+        <argsstring>(double s) const</argsstring>
+        <name>getTangentVector</name>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="47" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="412" bodyend="416"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a6a1fd62558e00d829c3640a0489b9618" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const geometry_msgs::msg::Vector3</type>
+        <definition>const geometry_msgs::msg::Vector3 traffic_simulator::math::CatmullRomSpline::getNormalVector</definition>
+        <argsstring>(double s) const</argsstring>
+        <name>getNormalVector</name>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="48" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="406" bodyend="410"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a5304342863d4537b1090c77f50ca7dd7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const geometry_msgs::msg::Pose</type>
+        <definition>const geometry_msgs::msg::Pose traffic_simulator::math::CatmullRomSpline::getPose</definition>
+        <argsstring>(double s) const</argsstring>
+        <name>getPose</name>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="49" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="418" bodyend="422"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a7eab089b81e86c58bc40dac26aa1dfa2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>const std::vector&lt; geometry_msgs::msg::Point &gt; traffic_simulator::math::CatmullRomSpline::getTrajectory</definition>
+        <argsstring>(int num_points) const</argsstring>
+        <name>getTrajectory</name>
+        <param>
+          <type>int</type>
+          <declname>num_points</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="50" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="331" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a8739e87a3e27ae24b162358d522e3a90" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>const std::vector&lt; geometry_msgs::msg::Point &gt; traffic_simulator::math::CatmullRomSpline::getTrajectory</definition>
+        <argsstring>(double start_s, double end_s, double resolution) const</argsstring>
+        <name>getTrajectory</name>
+        <param>
+          <type>double</type>
+          <declname>start_s</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>end_s</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>resolution</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="51" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="106" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a8e267a2674def7f84d23c62330c52a74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; double &gt;</type>
+        <definition>boost::optional&lt; double &gt; traffic_simulator::math::CatmullRomSpline::getSValue</definition>
+        <argsstring>(geometry_msgs::msg::Point position, double threadhold_distance=3.0, unsigned int initial_resolution=30, unsigned int max_iteration=30, double tolerance=0.001)</argsstring>
+        <name>getSValue</name>
+        <param>
+          <type>geometry_msgs::msg::Point</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>threadhold_distance</declname>
+          <defval>3.0</defval>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>initial_resolution</declname>
+          <defval>30</defval>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>max_iteration</declname>
+          <defval>30</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>tolerance</declname>
+          <defval>0.001</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="53" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="345" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1ab013ab32161293bed6ba0304f51f2ecd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double traffic_simulator::math::CatmullRomSpline::getSquaredDistanceIn2D</definition>
+        <argsstring>(geometry_msgs::msg::Point point, double s) const</argsstring>
+        <name>getSquaredDistanceIn2D</name>
+        <param>
+          <type>geometry_msgs::msg::Point</type>
+          <declname>point</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="57" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="386" bodyend="390"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1af1d6edaab7c71babf45c84dec74d57de" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; double &gt;</type>
+        <definition>boost::optional&lt; double &gt; traffic_simulator::math::CatmullRomSpline::getCollisionPointIn2D</definition>
+        <argsstring>(geometry_msgs::msg::Point point0, geometry_msgs::msg::Point point1, bool search_backward=false) const</argsstring>
+        <name>getCollisionPointIn2D</name>
+        <param>
+          <type>geometry_msgs::msg::Point</type>
+          <declname>point0</declname>
+        </param>
+        <param>
+          <type>geometry_msgs::msg::Point</type>
+          <declname>point1</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>search_backward</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="58" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="307" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a8ad39f4882bb0866179439662188cffa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; double &gt;</type>
+        <definition>boost::optional&lt; double &gt; traffic_simulator::math::CatmullRomSpline::getCollisionPointIn2D</definition>
+        <argsstring>(std::vector&lt; geometry_msgs::msg::Point &gt; polygon, bool search_backward=false) const</argsstring>
+        <name>getCollisionPointIn2D</name>
+        <param>
+          <type>std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+          <declname>polygon</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>search_backward</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="61" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="283" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1ae5ef284e45c3fbbf1d6d2db4831d3e6a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const openscenario_msgs::msg::CatmullRomSpline</type>
+        <definition>const openscenario_msgs::msg::CatmullRomSpline traffic_simulator::math::CatmullRomSpline::toRosMsg</definition>
+        <argsstring>() const</argsstring>
+        <name>toRosMsg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="63" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="240" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a6498cdee4a53d1dfce9b2b661476f481" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const geometry_msgs::msg::Point</type>
+        <definition>const geometry_msgs::msg::Point traffic_simulator::math::CatmullRomSpline::getRightBoundsPoint</definition>
+        <argsstring>(double width, double s, double z_offset=0) const</argsstring>
+        <name>getRightBoundsPoint</name>
+        <param>
+          <type>double</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>z_offset</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="64" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="56" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a83d9ff77867ca6db62317461ac88871b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const geometry_msgs::msg::Point</type>
+        <definition>const geometry_msgs::msg::Point traffic_simulator::math::CatmullRomSpline::getLeftBoundsPoint</definition>
+        <argsstring>(double width, double s, double z_offset=0) const</argsstring>
+        <name>getLeftBoundsPoint</name>
+        <param>
+          <type>double</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>z_offset</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="66" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="69" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1ae998453f5c12a5ede3f6fe5e3cd4bffa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>const std::vector&lt; geometry_msgs::msg::Point &gt; traffic_simulator::math::CatmullRomSpline::getPolygon</definition>
+        <argsstring>(double width, size_t num_points=30, double z_offset=0)</argsstring>
+        <name>getPolygon</name>
+        <param>
+          <type>double</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>num_points</declname>
+          <defval>30</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>z_offset</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="68" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="34" bodyend="54"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a65938d8a835edf96da4b0ef36bb9cc2a" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>const std::vector&lt; geometry_msgs::msg::Point &gt; traffic_simulator::math::CatmullRomSpline::getRightBounds</definition>
+        <argsstring>(double width, size_t num_points=30, double z_offset=0) const</argsstring>
+        <name>getRightBounds</name>
+        <param>
+          <type>double</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>num_points</declname>
+          <defval>30</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>z_offset</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="72" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="82" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a0972008c44717aed958b37dc31621e75" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>const std::vector&lt; geometry_msgs::msg::Point &gt; traffic_simulator::math::CatmullRomSpline::getLeftBounds</definition>
+        <argsstring>(double width, size_t num_points=30, double z_offset=0) const</argsstring>
+        <name>getLeftBounds</name>
+        <param>
+          <type>double</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>num_points</declname>
+          <defval>30</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>z_offset</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="74" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="94" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a03b610cf98a14a94b56204e8fee15949" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double traffic_simulator::math::CatmullRomSpline::getSInSplineCurve</definition>
+        <argsstring>(size_t curve_index, double s) const</argsstring>
+        <name>getSInSplineCurve</name>
+        <param>
+          <type>size_t</type>
+          <declname>curve_index</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="76" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="269" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a89735c6a870bb8e9f9cbec9042d6e8da" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; size_t, double &gt;</type>
+        <definition>std::pair&lt; size_t, double &gt; traffic_simulator::math::CatmullRomSpline::getCurveIndexAndS</definition>
+        <argsstring>(double s) const</argsstring>
+        <name>getCurveIndexAndS</name>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="77" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="249" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1aa39ee41414345d0c79c69edf8cb2e2b3" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::math::CatmullRomSpline::checkConnection</definition>
+        <argsstring>() const</argsstring>
+        <name>checkConnection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="78" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="424" bodyend="448"/>
+      </memberdef>
+      <memberdef kind="function" id="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1ad7f32210b31644ed3c52550213209dcf" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool traffic_simulator::math::CatmullRomSpline::equals</definition>
+        <argsstring>(geometry_msgs::msg::Point p0, geometry_msgs::msg::Point p1) const</argsstring>
+        <name>equals</name>
+        <param>
+          <type>geometry_msgs::msg::Point</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>geometry_msgs::msg::Point</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="79" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp" bodystart="450" bodyend="463"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" line="37" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math/catmull_rom_spline.hpp" bodystart="36" bodyend="85"/>
+    <listofallmembers>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1acf0755fc00a2d5b6f68a5db85bd3ded0" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>CatmullRomSpline</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a128c3b4a0292c3511240b6fe71b9cf12" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>CatmullRomSpline</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a6a8f61124515167a71ac2d41df910302" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>CatmullRomSpline</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a104a9a379bf7ea43b52bf677db566d34" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>CatmullRomSpline</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1aa39ee41414345d0c79c69edf8cb2e2b3" prot="private" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>checkConnection</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a1e97d2eecb3034fc2cac4796e24ac174" prot="private" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>control_points</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a9a263941485b7d021a30276fa7fd5b37" prot="private" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>curves_</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1ad7f32210b31644ed3c52550213209dcf" prot="private" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>equals</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1af1d6edaab7c71babf45c84dec74d57de" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>getCollisionPointIn2D</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a8ad39f4882bb0866179439662188cffa" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>getCollisionPointIn2D</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a89735c6a870bb8e9f9cbec9042d6e8da" prot="private" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>getCurveIndexAndS</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a0972008c44717aed958b37dc31621e75" prot="private" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>getLeftBounds</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a83d9ff77867ca6db62317461ac88871b" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>getLeftBoundsPoint</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a4882552609c5d464a6202683ddc2ae30" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>getLength</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a2c696d16cd9227e467079cf96a69d235" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>getMaximum2DCurventure</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a6a1fd62558e00d829c3640a0489b9618" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>getNormalVector</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a5fe42be509098d453ff6812f76c3c97b" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>getPoint</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1ae998453f5c12a5ede3f6fe5e3cd4bffa" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>getPolygon</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a5304342863d4537b1090c77f50ca7dd7" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>getPose</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a65938d8a835edf96da4b0ef36bb9cc2a" prot="private" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>getRightBounds</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a6498cdee4a53d1dfce9b2b661476f481" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>getRightBoundsPoint</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a03b610cf98a14a94b56204e8fee15949" prot="private" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>getSInSplineCurve</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1ab013ab32161293bed6ba0304f51f2ecd" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>getSquaredDistanceIn2D</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a8e267a2674def7f84d23c62330c52a74" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>getSValue</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a12b98fa62c9d42a371e81a334e8fe583" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>getTangentVector</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a7eab089b81e86c58bc40dac26aa1dfa2" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>getTrajectory</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a8739e87a3e27ae24b162358d522e3a90" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>getTrajectory</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a6106cba00024685684a1ae2ae48ce00e" prot="private" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>length_list_</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a38f834092f096e31660664bd54a611c0" prot="private" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>maximum_2d_curvatures_</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1ae5ef284e45c3fbbf1d6d2db4831d3e6a" prot="public" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>toRosMsg</name></member>
+      <member refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline_1a3a8463d122ca2995d1c1f157e15d3c93" prot="private" virt="non-virtual"><scope>traffic_simulator::math::CatmullRomSpline</scope><name>total_length_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,413 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classzeromq_1_1MultiServer" kind="class" language="C++" prot="public">
+    <compoundname>zeromq::MultiServer</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1a06429726c4d55b865539f219fe898fad" prot="private" static="no" mutable="no">
+        <type>std::thread</type>
+        <definition>std::thread zeromq::MultiServer::thread_</definition>
+        <argsstring></argsstring>
+        <name>thread_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="75" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1a5b84bba2e9e8f2452709ecf424f9fb75" prot="private" static="no" mutable="no">
+        <type>const zmqpp::context</type>
+        <definition>const zmqpp::context zeromq::MultiServer::context_</definition>
+        <argsstring></argsstring>
+        <name>context_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="76" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1a76cc5da8525bf18c963db360917d55b3" prot="private" static="no" mutable="no">
+        <type>const zmqpp::socket_type</type>
+        <definition>const zmqpp::socket_type zeromq::MultiServer::type_</definition>
+        <argsstring></argsstring>
+        <name>type_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="77" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1abdead9f600cda9dd02053a16597e5fce" prot="private" static="no" mutable="no">
+        <type>zmqpp::poller</type>
+        <definition>zmqpp::poller zeromq::MultiServer::poller_</definition>
+        <argsstring></argsstring>
+        <name>poller_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="78" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1a23f3e2f95a20611bb198b34f6339338c" prot="private" static="no" mutable="no">
+        <type>zmqpp::socket</type>
+        <definition>zmqpp::socket zeromq::MultiServer::initialize_sock_</definition>
+        <argsstring></argsstring>
+        <name>initialize_sock_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="79" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1adb79c7b244d43c2216449e0f5c4033bc" prot="private" static="no" mutable="no">
+        <type>std::function&lt; void(const simulation_api_schema::InitializeRequest &amp;, simulation_api_schema::InitializeResponse &amp;)&gt;</type>
+        <definition>std::function&lt;void( const simulation_api_schema::InitializeRequest &amp;, simulation_api_schema::InitializeResponse &amp;)&gt; zeromq::MultiServer::initialize_func_</definition>
+        <argsstring></argsstring>
+        <name>initialize_func_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="82" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1ae97935a61d4bdd7e1997525d547d8ed7" prot="private" static="no" mutable="no">
+        <type>zmqpp::socket</type>
+        <definition>zmqpp::socket zeromq::MultiServer::update_frame_sock_</definition>
+        <argsstring></argsstring>
+        <name>update_frame_sock_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="83" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1a2ddbc8d6f9a2d0d72ced1fed0e0b8691" prot="private" static="no" mutable="no">
+        <type>std::function&lt; void(const simulation_api_schema::UpdateFrameRequest &amp;, simulation_api_schema::UpdateFrameResponse &amp;)&gt;</type>
+        <definition>std::function&lt;void( const simulation_api_schema::UpdateFrameRequest &amp;, simulation_api_schema::UpdateFrameResponse &amp;)&gt; zeromq::MultiServer::update_frame_func_</definition>
+        <argsstring></argsstring>
+        <name>update_frame_func_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="87" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1ac4b32caf3c4fae09bf2f5220a8d7467e" prot="private" static="no" mutable="no">
+        <type>zmqpp::socket</type>
+        <definition>zmqpp::socket zeromq::MultiServer::update_sensor_frame_sock_</definition>
+        <argsstring></argsstring>
+        <name>update_sensor_frame_sock_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="88" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1a121db1c4fc6e559cd287048ee2dc8b4a" prot="private" static="no" mutable="no">
+        <type>std::function&lt; void(const simulation_api_schema::UpdateSensorFrameRequest &amp;, simulation_api_schema::UpdateSensorFrameResponse &amp;)&gt;</type>
+        <definition>std::function&lt;void( const simulation_api_schema::UpdateSensorFrameRequest &amp;, simulation_api_schema::UpdateSensorFrameResponse &amp;)&gt; zeromq::MultiServer::update_sensor_frame_func_</definition>
+        <argsstring></argsstring>
+        <name>update_sensor_frame_func_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="92" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1a2b81bd1f112d638fc71d4385b39610da" prot="private" static="no" mutable="no">
+        <type>zmqpp::socket</type>
+        <definition>zmqpp::socket zeromq::MultiServer::spawn_vehicle_entity_sock_</definition>
+        <argsstring></argsstring>
+        <name>spawn_vehicle_entity_sock_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="93" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1ac1ad41366e15e239975fec6c8af2bb51" prot="private" static="no" mutable="no">
+        <type>std::function&lt; void(const simulation_api_schema::SpawnVehicleEntityRequest &amp;, simulation_api_schema::SpawnVehicleEntityResponse &amp;)&gt;</type>
+        <definition>std::function&lt;void( const simulation_api_schema::SpawnVehicleEntityRequest &amp;, simulation_api_schema::SpawnVehicleEntityResponse &amp;)&gt; zeromq::MultiServer::spawn_vehicle_entity_func_</definition>
+        <argsstring></argsstring>
+        <name>spawn_vehicle_entity_func_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="97" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1aec287f3e812a4a3a348b88dfab15baf9" prot="private" static="no" mutable="no">
+        <type>zmqpp::socket</type>
+        <definition>zmqpp::socket zeromq::MultiServer::spawn_pedestrian_entity_sock_</definition>
+        <argsstring></argsstring>
+        <name>spawn_pedestrian_entity_sock_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="98" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1ad1cd716a3c4d4d1474d8318d9b2f399c" prot="private" static="no" mutable="no">
+        <type>std::function&lt; void(const simulation_api_schema::SpawnPedestrianEntityRequest &amp;, simulation_api_schema::SpawnPedestrianEntityResponse &amp;)&gt;</type>
+        <definition>std::function&lt;void( const simulation_api_schema::SpawnPedestrianEntityRequest &amp;, simulation_api_schema::SpawnPedestrianEntityResponse &amp;)&gt; zeromq::MultiServer::spawn_pedestrian_entity_func_</definition>
+        <argsstring></argsstring>
+        <name>spawn_pedestrian_entity_func_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="102" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1aa60f1b5586953542c269107c79442bbb" prot="private" static="no" mutable="no">
+        <type>zmqpp::socket</type>
+        <definition>zmqpp::socket zeromq::MultiServer::despawn_entity_sock_</definition>
+        <argsstring></argsstring>
+        <name>despawn_entity_sock_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="103" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1a221c90410c2973908caae8202ceb935e" prot="private" static="no" mutable="no">
+        <type>std::function&lt; void(const simulation_api_schema::DespawnEntityRequest &amp;, simulation_api_schema::DespawnEntityResponse &amp;)&gt;</type>
+        <definition>std::function&lt;void( const simulation_api_schema::DespawnEntityRequest &amp;, simulation_api_schema::DespawnEntityResponse &amp;)&gt; zeromq::MultiServer::despawn_entity_func_</definition>
+        <argsstring></argsstring>
+        <name>despawn_entity_func_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="107" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1a7700c949f40053ad3b9106d40b76124f" prot="private" static="no" mutable="no">
+        <type>zmqpp::socket</type>
+        <definition>zmqpp::socket zeromq::MultiServer::update_entity_status_sock_</definition>
+        <argsstring></argsstring>
+        <name>update_entity_status_sock_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="108" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1ab29b97fe09e1e7c8ca313c6c17f51831" prot="private" static="no" mutable="no">
+        <type>std::function&lt; void(const simulation_api_schema::UpdateEntityStatusRequest &amp;, simulation_api_schema::UpdateEntityStatusResponse &amp;)&gt;</type>
+        <definition>std::function&lt;void( const simulation_api_schema::UpdateEntityStatusRequest &amp;, simulation_api_schema::UpdateEntityStatusResponse &amp;)&gt; zeromq::MultiServer::update_entity_status_func_</definition>
+        <argsstring></argsstring>
+        <name>update_entity_status_func_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="112" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1a84310693a8656530167d2bc0977805b6" prot="private" static="no" mutable="no">
+        <type>zmqpp::socket</type>
+        <definition>zmqpp::socket zeromq::MultiServer::attach_lidar_sensor_sock_</definition>
+        <argsstring></argsstring>
+        <name>attach_lidar_sensor_sock_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="113" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1a92ee67e2dcad31b11c1fb260ded0e49d" prot="private" static="no" mutable="no">
+        <type>std::function&lt; void(const simulation_api_schema::AttachLidarSensorRequest &amp;, simulation_api_schema::AttachLidarSensorResponse &amp;)&gt;</type>
+        <definition>std::function&lt;void( const simulation_api_schema::AttachLidarSensorRequest &amp;, simulation_api_schema::AttachLidarSensorResponse &amp;)&gt; zeromq::MultiServer::attach_lidar_sensor_func_</definition>
+        <argsstring></argsstring>
+        <name>attach_lidar_sensor_func_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="117" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1a5971209d95cb23f4b4cc999776e9bc3f" prot="private" static="no" mutable="no">
+        <type>zmqpp::socket</type>
+        <definition>zmqpp::socket zeromq::MultiServer::attach_detection_sensor_sock_</definition>
+        <argsstring></argsstring>
+        <name>attach_detection_sensor_sock_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="118" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classzeromq_1_1MultiServer_1acbd64f784e0b4e25714407b059efcd97" prot="private" static="no" mutable="no">
+        <type>std::function&lt; void(const simulation_api_schema::AttachDetectionSensorRequest &amp;, simulation_api_schema::AttachDetectionSensorResponse &amp;)&gt;</type>
+        <definition>std::function&lt;void( const simulation_api_schema::AttachDetectionSensorRequest &amp;, simulation_api_schema::AttachDetectionSensorResponse &amp;)&gt; zeromq::MultiServer::attach_detection_sensor_func_</definition>
+        <argsstring></argsstring>
+        <name>attach_detection_sensor_func_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="122" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classzeromq_1_1MultiServer_1a81f1363b85f16b6497c60e98b3e344de" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>zeromq::MultiServer::MultiServer</definition>
+        <argsstring>(const simulation_interface::TransportProtocol &amp;protocol, const simulation_interface::HostName &amp;hostname, std::function&lt; void(const simulation_api_schema::InitializeRequest &amp;, simulation_api_schema::InitializeResponse &amp;)&gt; initialize_func, std::function&lt; void(const simulation_api_schema::UpdateFrameRequest &amp;, simulation_api_schema::UpdateFrameResponse &amp;)&gt; update_frame_func, std::function&lt; void(const simulation_api_schema::UpdateSensorFrameRequest &amp;, simulation_api_schema::UpdateSensorFrameResponse &amp;)&gt; update_sensor_frame_func, std::function&lt; void(const simulation_api_schema::SpawnVehicleEntityRequest &amp;, simulation_api_schema::SpawnVehicleEntityResponse &amp;)&gt; spawn_vehicle_entity_func, std::function&lt; void(const simulation_api_schema::SpawnPedestrianEntityRequest &amp;, simulation_api_schema::SpawnPedestrianEntityResponse &amp;)&gt; spawn_pedestrian_entity_func, std::function&lt; void(const simulation_api_schema::DespawnEntityRequest &amp;, simulation_api_schema::DespawnEntityResponse &amp;)&gt; despawn_entity_func, std::function&lt; void(const simulation_api_schema::UpdateEntityStatusRequest &amp;, simulation_api_schema::UpdateEntityStatusResponse &amp;)&gt; update_entity_status_func, std::function&lt; void(const simulation_api_schema::AttachLidarSensorRequest &amp;, simulation_api_schema::AttachLidarSensorResponse &amp;)&gt; attach_lidar_sensor_func, std::function&lt; void(const simulation_api_schema::AttachDetectionSensorRequest &amp;, simulation_api_schema::AttachDetectionSensorResponse &amp;)&gt; attach_detection_sensor_func)</argsstring>
+        <name>MultiServer</name>
+        <param>
+          <type>const simulation_interface::TransportProtocol &amp;</type>
+          <declname>protocol</declname>
+        </param>
+        <param>
+          <type>const simulation_interface::HostName &amp;</type>
+          <declname>hostname</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void(const simulation_api_schema::InitializeRequest &amp;, simulation_api_schema::InitializeResponse &amp;)&gt;</type>
+          <declname>initialize_func</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void(const simulation_api_schema::UpdateFrameRequest &amp;, simulation_api_schema::UpdateFrameResponse &amp;)&gt;</type>
+          <declname>update_frame_func</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void(const simulation_api_schema::UpdateSensorFrameRequest &amp;, simulation_api_schema::UpdateSensorFrameResponse &amp;)&gt;</type>
+          <declname>update_sensor_frame_func</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void(const simulation_api_schema::SpawnVehicleEntityRequest &amp;, simulation_api_schema::SpawnVehicleEntityResponse &amp;)&gt;</type>
+          <declname>spawn_vehicle_entity_func</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void(const simulation_api_schema::SpawnPedestrianEntityRequest &amp;, simulation_api_schema::SpawnPedestrianEntityResponse &amp;)&gt;</type>
+          <declname>spawn_pedestrian_entity_func</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void(const simulation_api_schema::DespawnEntityRequest &amp;, simulation_api_schema::DespawnEntityResponse &amp;)&gt;</type>
+          <declname>despawn_entity_func</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void(const simulation_api_schema::UpdateEntityStatusRequest &amp;, simulation_api_schema::UpdateEntityStatusResponse &amp;)&gt;</type>
+          <declname>update_entity_status_func</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void(const simulation_api_schema::AttachLidarSensorRequest &amp;, simulation_api_schema::AttachLidarSensorResponse &amp;)&gt;</type>
+          <declname>attach_lidar_sensor_func</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void(const simulation_api_schema::AttachDetectionSensorRequest &amp;, simulation_api_schema::AttachDetectionSensorResponse &amp;)&gt;</type>
+          <declname>attach_detection_sensor_func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="32" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/zmq_multi_server.cpp" bodystart="39" bodyend="126"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classzeromq_1_1MultiServer_1ad55c5a6a82c340a6f6d60859a0e96cc7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void zeromq::MultiServer::poll</definition>
+        <argsstring>()</argsstring>
+        <name>poll</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="73" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/zmq_multi_server.cpp" bodystart="128" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="classzeromq_1_1MultiServer_1ac36b3ebda0b34c7e6348631d20e172f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void zeromq::MultiServer::start_poll</definition>
+        <argsstring>()</argsstring>
+        <name>start_poll</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="74" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/zmq_multi_server.cpp" bodystart="210" bodyend="215"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" line="30" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp" bodystart="29" bodyend="123"/>
+    <listofallmembers>
+      <member refid="classzeromq_1_1MultiServer_1acbd64f784e0b4e25714407b059efcd97" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>attach_detection_sensor_func_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1a5971209d95cb23f4b4cc999776e9bc3f" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>attach_detection_sensor_sock_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1a92ee67e2dcad31b11c1fb260ded0e49d" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>attach_lidar_sensor_func_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1a84310693a8656530167d2bc0977805b6" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>attach_lidar_sensor_sock_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1a5b84bba2e9e8f2452709ecf424f9fb75" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>context_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1a221c90410c2973908caae8202ceb935e" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>despawn_entity_func_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1aa60f1b5586953542c269107c79442bbb" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>despawn_entity_sock_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1adb79c7b244d43c2216449e0f5c4033bc" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>initialize_func_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1a23f3e2f95a20611bb198b34f6339338c" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>initialize_sock_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1a81f1363b85f16b6497c60e98b3e344de" prot="public" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>MultiServer</name></member>
+      <member refid="classzeromq_1_1MultiServer_1ad55c5a6a82c340a6f6d60859a0e96cc7" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>poll</name></member>
+      <member refid="classzeromq_1_1MultiServer_1abdead9f600cda9dd02053a16597e5fce" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>poller_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1ad1cd716a3c4d4d1474d8318d9b2f399c" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>spawn_pedestrian_entity_func_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1aec287f3e812a4a3a348b88dfab15baf9" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>spawn_pedestrian_entity_sock_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1ac1ad41366e15e239975fec6c8af2bb51" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>spawn_vehicle_entity_func_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1a2b81bd1f112d638fc71d4385b39610da" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>spawn_vehicle_entity_sock_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1ac36b3ebda0b34c7e6348631d20e172f6" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>start_poll</name></member>
+      <member refid="classzeromq_1_1MultiServer_1a06429726c4d55b865539f219fe898fad" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>thread_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1a76cc5da8525bf18c963db360917d55b3" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>type_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1ab29b97fe09e1e7c8ca313c6c17f51831" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>update_entity_status_func_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1a7700c949f40053ad3b9106d40b76124f" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>update_entity_status_sock_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1a2ddbc8d6f9a2d0d72ced1fed0e0b8691" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>update_frame_func_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1ae97935a61d4bdd7e1997525d547d8ed7" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>update_frame_sock_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1a121db1c4fc6e559cd287048ee2dc8b4a" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>update_sensor_frame_func_</name></member>
+      <member refid="classzeromq_1_1MultiServer_1ac4b32caf3c4fae09bf2f5220a8d7467e" prot="private" virt="non-virtual"><scope>zeromq::MultiServer</scope><name>update_sensor_frame_sock_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

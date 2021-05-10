@@ -1,0 +1,425 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="simple__sensor__simulator_8hpp" kind="file" language="C++">
+    <compoundname>simple_sensor_simulator.hpp</compoundname>
+    <includes local="no">tf2/LinearMath/Quaternion.h</includes>
+    <includes local="no">tf2_ros/transform_broadcaster.h</includes>
+    <includes local="no">geometry_msgs/msg/pose_stamped.hpp</includes>
+    <includes local="no">geometry_msgs/msg/transform_stamped.hpp</includes>
+    <includes local="no">map</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">rclcpp/rclcpp.hpp</includes>
+    <includes refid="lidar__sensor_8hpp" local="no">simple_sensor_simulator/sensor_simulation/lidar/lidar_sensor.hpp</includes>
+    <includes refid="raycaster_8hpp" local="no">simple_sensor_simulator/sensor_simulation/lidar/raycaster.hpp</includes>
+    <includes refid="sensor__simulation_8hpp" local="no">simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp</includes>
+    <includes local="no">simulation_interface/zmq_multi_server.hpp</includes>
+    <includes local="no">simulation_interface/zmq_server.hpp</includes>
+    <includes local="no">string</includes>
+    <includes local="no">thread</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">visualization_msgs/msg/marker_array.hpp</includes>
+    <includedby refid="simple__sensor__simulator_8cpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/simple_sensor_simulator.cpp</includedby>
+    <includedby refid="simple__sensor__simulator__node_8cpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/simple_sensor_simulator_node.cpp</includedby>
+    <incdepgraph>
+      <node id="79">
+        <label>geometry_msgs/msg/pose_stamped.hpp</label>
+      </node>
+      <node id="84">
+        <label>simple_sensor_simulator/sensor_simulation/lidar/lidar_sensor.hpp</label>
+        <link refid="lidar__sensor_8hpp_source"/>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>geometry_msgs/msg/pose.hpp</label>
+      </node>
+      <node id="80">
+        <label>geometry_msgs/msg/transform_stamped.hpp</label>
+      </node>
+      <node id="102">
+        <label>autoware_perception_msgs/msg/dynamic_object_array.hpp</label>
+      </node>
+      <node id="76">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp</label>
+        <link refid="simple__sensor__simulator_8hpp"/>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>string</label>
+      </node>
+      <node id="81">
+        <label>map</label>
+      </node>
+      <node id="83">
+        <label>rclcpp/rclcpp.hpp</label>
+      </node>
+      <node id="86">
+        <label>sensor_msgs/msg/point_cloud2.hpp</label>
+      </node>
+      <node id="90">
+        <label>embree3/rtcore.h</label>
+      </node>
+      <node id="104">
+        <label>simulation_interface/zmq_server.hpp</label>
+      </node>
+      <node id="93">
+        <label>geometry_msgs/msg/vector3.hpp</label>
+      </node>
+      <node id="94">
+        <label>random</label>
+      </node>
+      <node id="103">
+        <label>simulation_interface/zmq_multi_server.hpp</label>
+      </node>
+      <node id="96">
+        <label>simple_sensor_simulator/sensor_simulation/primitives/primitive.hpp</label>
+        <link refid="primitive_8hpp_source"/>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+      <node id="95">
+        <label>simple_sensor_simulator/sensor_simulation/primitives/box.hpp</label>
+        <link refid="box_8hpp_source"/>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>vector</label>
+      </node>
+      <node id="101">
+        <label>simple_sensor_simulator/sensor_simulation/detection_sensor/detection_sensor.hpp</label>
+        <link refid="detection__sensor_8hpp_source"/>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>utility</label>
+      </node>
+      <node id="89">
+        <label>simple_sensor_simulator/sensor_simulation/lidar/raycaster.hpp</label>
+        <link refid="raycaster_8hpp_source"/>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+      <node id="98">
+        <label>unordered_map</label>
+      </node>
+      <node id="77">
+        <label>tf2/LinearMath/Quaternion.h</label>
+      </node>
+      <node id="106">
+        <label>visualization_msgs/msg/marker_array.hpp</label>
+      </node>
+      <node id="78">
+        <label>tf2_ros/transform_broadcaster.h</label>
+      </node>
+      <node id="105">
+        <label>thread</label>
+      </node>
+      <node id="97">
+        <label>algorithm</label>
+      </node>
+      <node id="91">
+        <label>pcl_conversions/pcl_conversions.h</label>
+      </node>
+      <node id="100">
+        <label>simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp</label>
+        <link refid="sensor__simulation_8hpp_source"/>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+      <node id="85">
+        <label>simulation_api_schema.pb.h</label>
+      </node>
+      <node id="82">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classsimple__sensor__simulator_1_1ScenarioSimulator" prot="public">simple_sensor_simulator::ScenarioSimulator</innerclass>
+    <innernamespace refid="namespacesimple__sensor__simulator">simple_sensor_simulator</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="simple__sensor__simulator_8hpp_1a593c8be71f66d7ff8632f2538d706bb3" prot="public" static="no">
+        <name>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_EXPORT</name>
+        <initializer>__attribute__((visibility(&quot;default&quot;)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="61" column="10" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="simple__sensor__simulator_8hpp_1a39f9319e4d39e60ccbd0174659913835" prot="public" static="no">
+        <name>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_IMPORT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="63" column="9" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="simple__sensor__simulator_8hpp_1a49d05fd7f8868551a8215db8dd6275e4" prot="public" static="no">
+        <name>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_PUBLIC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="70" column="10" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="simple__sensor__simulator_8hpp_1aec9c88ea1b7786c49ef8f209d4474d1f" prot="public" static="no">
+        <name>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_LOCAL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="71" column="9" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="simple__sensor__simulator_8hpp_1a255204bd90373e4a5222402ae1c4dbca" prot="public" static="no">
+        <name>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_PUBLIC_TYPE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" line="73" column="10" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2015-2020<sp/>Tier<sp/>IV,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SIMPLE_SENSOR_SIMULATOR__SIMPLE_SENSOR_SIMULATOR_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIMPLE_SENSOR_SIMULATOR__SIMPLE_SENSOR_SIMULATOR_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tf2/LinearMath/Quaternion.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tf2_ros/transform_broadcaster.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;geometry_msgs/msg/pose_stamped.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;geometry_msgs/msg/transform_stamped.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rclcpp/rclcpp.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;simple_sensor_simulator/sensor_simulation/lidar/lidar_sensor.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;simple_sensor_simulator/sensor_simulation/lidar/raycaster.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;simulation_interface/zmq_multi_server.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;simulation_interface/zmq_server.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;visualization_msgs/msg/marker_array.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>below<sp/>macros<sp/>are<sp/>taken<sp/>from<sp/>https://gcc.gnu.org/wiki/Visibility<sp/>and<sp/>from</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">//<sp/>demos/composition/include/composition/visibility_control.h<sp/>at<sp/>https://github.com/ros2/demos</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>_WIN32<sp/>||<sp/>defined<sp/>__CYGWIN__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__GNUC__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_EXPORT<sp/>__attribute__((dllexport))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_IMPORT<sp/>__attribute__((dllimport))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_EXPORT<sp/>__declspec(dllexport)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_IMPORT<sp/>__declspec(dllimport)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_BUILDING_DLL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_PUBLIC<sp/>\</highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor"><sp/><sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_EXPORT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_PUBLIC<sp/>\</highlight></codeline>
+<codeline lineno="55"><highlight class="preprocessor"><sp/><sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_IMPORT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_PUBLIC_TYPE<sp/>\</highlight></codeline>
+<codeline lineno="58"><highlight class="preprocessor"><sp/><sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_PUBLIC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_LOCAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_EXPORT<sp/>\</highlight></codeline>
+<codeline lineno="62"><highlight class="preprocessor"><sp/><sp/>__attribute__((visibility(&quot;default&quot;)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_IMPORT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>__GNUC__<sp/>&gt;=<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_PUBLIC<sp/>\</highlight></codeline>
+<codeline lineno="66"><highlight class="preprocessor"><sp/><sp/>__attribute__((visibility(&quot;default&quot;)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_LOCAL<sp/>\</highlight></codeline>
+<codeline lineno="68"><highlight class="preprocessor"><sp/><sp/>__attribute__((visibility(&quot;hidden&quot;)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_PUBLIC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_LOCAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_PUBLIC_TYPE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacesimple__sensor__simulator" kindref="compound">simple_sensor_simulator</ref></highlight></codeline>
+<codeline lineno="80"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81" refid="classsimple__sensor__simulator_1_1ScenarioSimulator" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classsimple__sensor__simulator_1_1ScenarioSimulator" kindref="compound">ScenarioSimulator</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>rclcpp::Node</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_PUBLIC</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classsimple__sensor__simulator_1_1ScenarioSimulator" kindref="compound">ScenarioSimulator</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>rclcpp::NodeOptions<sp/>&amp;<sp/>options);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>~ScenarioSimulator();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><ref refid="classsimple__sensor__simulator_1_1SensorSimulation" kindref="compound">SensorSimulation</ref><sp/>sensor_sim_;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initialize(</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::InitializeRequest<sp/>&amp;<sp/>req,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::InitializeResponse<sp/>&amp;<sp/>res);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateFrame(</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::UpdateFrameRequest<sp/>&amp;<sp/>req,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::UpdateFrameResponse<sp/>&amp;<sp/>res);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateEntityStatus(</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::UpdateEntityStatusRequest<sp/>&amp;<sp/>req,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::UpdateEntityStatusResponse<sp/>&amp;<sp/>res);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>spawnVehicleEntity(</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::SpawnVehicleEntityRequest<sp/>&amp;<sp/>req,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::SpawnVehicleEntityResponse<sp/>&amp;<sp/>res);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>spawnPedestrianEntity(</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::SpawnPedestrianEntityRequest<sp/>&amp;<sp/>req,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::SpawnPedestrianEntityResponse<sp/>&amp;<sp/>res);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>despawnEntity(</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::DespawnEntityRequest<sp/>&amp;<sp/>req,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::DespawnEntityResponse<sp/>&amp;<sp/>res);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>attachDetectionSensor(</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::AttachDetectionSensorRequest<sp/>&amp;<sp/>req,</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::AttachDetectionSensorResponse<sp/>&amp;<sp/>res);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>attachLidarSensor(</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::AttachLidarSensorRequest<sp/>&amp;<sp/>req,</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::AttachLidarSensorResponse<sp/>&amp;<sp/>res);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateSensorFrame(</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::UpdateSensorFrameRequest<sp/>&amp;<sp/>req,</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::UpdateSensorFrameResponse<sp/>&amp;<sp/>res);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>std::vector&lt;openscenario_msgs::VehicleParameters&gt;<sp/>ego_vehicles_;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>std::vector&lt;openscenario_msgs::VehicleParameters&gt;<sp/>vehicles_;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/>std::vector&lt;openscenario_msgs::PedestrianParameters&gt;<sp/>pedestrians_;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>realtime_factor_;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step_time_;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time_;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initialized_;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>std::vector&lt;openscenario_msgs::EntityStatus&gt;<sp/>entity_status_;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/>zeromq::MultiServer<sp/>server_;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>simple_sensor_simulator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>SIMPLE_SENSOR_SIMULATOR__SIMPLE_SENSOR_SIMULATOR_HPP_</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/simple_sensor_simulator.hpp"/>
+  </compounddef>
+</doxygen>

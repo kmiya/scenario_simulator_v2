@@ -1,0 +1,651 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classSimModelTimeDelaySteer" kind="class" language="C++" prot="public">
+    <compoundname>SimModelTimeDelaySteer</compoundname>
+    <basecompoundref refid="classSimModelInterface" prot="public" virt="non-virtual">SimModelInterface</basecompoundref>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classSimModelTimeDelaySteer_1aa61148f45c01bd3552c68983df4e5172" prot="private" static="no">
+        <name>IDX</name>
+        <enumvalue id="classSimModelTimeDelaySteer_1aa61148f45c01bd3552c68983df4e5172a2a180e0a3a9c1977534fcde60fc03247" prot="private">
+          <name>X</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSimModelTimeDelaySteer_1aa61148f45c01bd3552c68983df4e5172a6f3b7a1e859445d100ce4aef883368f1" prot="private">
+          <name>Y</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSimModelTimeDelaySteer_1aa61148f45c01bd3552c68983df4e5172a467b64f6524a201c873c0f5b9cecd280" prot="private">
+          <name>YAW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSimModelTimeDelaySteer_1aa61148f45c01bd3552c68983df4e5172a62260b52ebe9b08a65750a20671a8e49" prot="private">
+          <name>VX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSimModelTimeDelaySteer_1aa61148f45c01bd3552c68983df4e5172a3dcc9ee35409d632a5e205caa624499f" prot="private">
+          <name>STEER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="172" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" bodystart="172" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="enum" id="classSimModelTimeDelaySteer_1a5cd2956e1ca335324e9d7cc9784557a3" prot="private" static="no">
+        <name>IDX_U</name>
+        <enumvalue id="classSimModelTimeDelaySteer_1a5cd2956e1ca335324e9d7cc9784557a3ac5d74007334d735820efd8b3baaea185" prot="private">
+          <name>VX_DES</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSimModelTimeDelaySteer_1a5cd2956e1ca335324e9d7cc9784557a3a65521fbdc00675512c5adf85d0727699" prot="private">
+          <name>STEER_DES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="179" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" bodystart="179" bodyend="182"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSimModelTimeDelaySteer_1a28b24ea458c8244e03ddb342354ba3f3" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double SimModelTimeDelaySteer::MIN_TIME_CONSTANT</definition>
+        <argsstring></argsstring>
+        <name>MIN_TIME_CONSTANT</name>
+        <briefdescription>
+<para>minimum time constant </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="170" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSimModelTimeDelaySteer_1a44efdfadb7071fa45d52e2b448c66581" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double SimModelTimeDelaySteer::vx_lim_</definition>
+        <argsstring></argsstring>
+        <name>vx_lim_</name>
+        <briefdescription>
+<para>velocity limit [m/s] </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="184" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSimModelTimeDelaySteer_1abd45958177d742faa511835580ef131d" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double SimModelTimeDelaySteer::vx_rate_lim_</definition>
+        <argsstring></argsstring>
+        <name>vx_rate_lim_</name>
+        <briefdescription>
+<para>acceleration limit [m/ss] </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="185" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSimModelTimeDelaySteer_1a7eccc4a2440def5ec28864dd72c4d92b" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double SimModelTimeDelaySteer::steer_lim_</definition>
+        <argsstring></argsstring>
+        <name>steer_lim_</name>
+        <briefdescription>
+<para>steering limit [rad] </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="186" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSimModelTimeDelaySteer_1ae489d52b33a9ad5c80554b72d93ade0b" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double SimModelTimeDelaySteer::steer_rate_lim_</definition>
+        <argsstring></argsstring>
+        <name>steer_rate_lim_</name>
+        <briefdescription>
+<para>steering angular velocity limit [rad/s] </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="187" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSimModelTimeDelaySteer_1a5f6d0d537c9ba089698a8db25d7dafae" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double SimModelTimeDelaySteer::wheelbase_</definition>
+        <argsstring></argsstring>
+        <name>wheelbase_</name>
+        <briefdescription>
+<para>vehicle wheelbase length [m] </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="188" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSimModelTimeDelaySteer_1a50cfdb1d1b0e20e3a00730b851634a27" prot="private" static="no" mutable="no">
+        <type>std::deque&lt; double &gt;</type>
+        <definition>std::deque&lt;double&gt; SimModelTimeDelaySteer::vx_input_queue_</definition>
+        <argsstring></argsstring>
+        <name>vx_input_queue_</name>
+        <briefdescription>
+<para>buffer for velocity command </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="190" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSimModelTimeDelaySteer_1aab41c66aa34496f87e82f01ac7f1a9b0" prot="private" static="no" mutable="no">
+        <type>std::deque&lt; double &gt;</type>
+        <definition>std::deque&lt;double&gt; SimModelTimeDelaySteer::steer_input_queue_</definition>
+        <argsstring></argsstring>
+        <name>steer_input_queue_</name>
+        <briefdescription>
+<para>buffer for steering command </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="191" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSimModelTimeDelaySteer_1a36c32607c6a288462aae13625a1cd25a" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double SimModelTimeDelaySteer::vx_delay_</definition>
+        <argsstring></argsstring>
+        <name>vx_delay_</name>
+        <briefdescription>
+<para>time delay for velocity command [s] </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="192" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSimModelTimeDelaySteer_1a5232a155b6420dd8dc31be2bfcb00f88" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double SimModelTimeDelaySteer::vx_time_constant_</definition>
+        <argsstring></argsstring>
+        <name>vx_time_constant_</name>
+        <briefdescription>
+<para>time constant for 1D model of velocity dynamics </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="193" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSimModelTimeDelaySteer_1a86300711013d8749b25918a05d9ecb31" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double SimModelTimeDelaySteer::steer_delay_</definition>
+        <argsstring></argsstring>
+        <name>steer_delay_</name>
+        <briefdescription>
+<para>time delay for steering command [s] </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="194" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSimModelTimeDelaySteer_1adc515c9bc0e49ae7fa1fed1119a2888b" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double SimModelTimeDelaySteer::steer_time_constant_</definition>
+        <argsstring></argsstring>
+        <name>steer_time_constant_</name>
+        <briefdescription>
+<para>time constant for 1D model of steering dynamics </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="195" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSimModelTimeDelaySteer_1a0ef8922e0dbb36997fc6131d620d45fb" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double SimModelTimeDelaySteer::deadzone_delta_steer_</definition>
+        <argsstring></argsstring>
+        <name>deadzone_delta_steer_</name>
+        <briefdescription>
+<para>@ brief deadzone value of steer </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="196" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSimModelTimeDelaySteer_1a7bcb8d1a171d1e3db9d7da84d0c0f2b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SimModelTimeDelaySteer::SimModelTimeDelaySteer</definition>
+        <argsstring>(double vx_lim, double steer_lim, double vx_rate_lim, double steer_rate_lim, double wheelbase, double dt, double vx_delay, double vx_time_constant, double steer_delay, double steer_time_constant, double deadzone_delta_steer)</argsstring>
+        <name>SimModelTimeDelaySteer</name>
+        <param>
+          <type>double</type>
+          <declname>vx_lim</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>steer_lim</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>vx_rate_lim</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>steer_rate_lim</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>wheelbase</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>vx_delay</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>vx_time_constant</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>steer_delay</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>steer_time_constant</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>deadzone_delta_steer</declname>
+        </param>
+        <briefdescription>
+<para>constructor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">vx_lim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>velocity limit [m/s] </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">steer_lim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>steering limit [rad] </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vx_rate_lim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>acceleration limit [m/ss] </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">steer_rate_lim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>steering angular velocity limit [rad/ss] </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">wheelbase</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vehicle wheelbase length [m] </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>delta time information to set input buffer for delay </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vx_delay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time delay for velocity command [s] </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">vx_time_constant</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time constant for 1D model of velocity dynamics </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">steer_delay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time delay for steering command [s] </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">steer_time_constant</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time constant for 1D model of steering dynamics </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">deadzone_delta_steer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>deadzone value of steer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="159" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/vehicle_model/sim_model_time_delay.cpp" bodystart="111" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classSimModelTimeDelaySteer_1a939ce100fd635705cbc3c31b89291146" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SimModelTimeDelaySteer::~SimModelTimeDelaySteer</definition>
+        <argsstring>()=default</argsstring>
+        <name>~SimModelTimeDelaySteer</name>
+        <briefdescription>
+<para>default destructor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="167" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classSimModelTimeDelaySteer_1a673b9c1a7a9ea6c1ee0c4320106a1543" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SimModelTimeDelaySteer::initializeInputQueue</definition>
+        <argsstring>(const double &amp;dt)</argsstring>
+        <name>initializeInputQueue</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>set queue buffer for input command </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>delta time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="202" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/vehicle_model/sim_model_time_delay.cpp" bodystart="164" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="classSimModelTimeDelaySteer_1a45de43cfb14c27d21e20af874a13e1d3" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double SimModelTimeDelaySteer::getX</definition>
+        <argsstring>() override</argsstring>
+        <name>getX</name>
+        <reimplements refid="classSimModelInterface_1a83585f142f5446bd747a1d39de3c0ec2">getX</reimplements>
+        <briefdescription>
+<para>get vehicle position x </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="207" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/vehicle_model/sim_model_time_delay.cpp" bodystart="140" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classSimModelTimeDelaySteer_1a134653b38494624b7d5fab07441ec7c3" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double SimModelTimeDelaySteer::getY</definition>
+        <argsstring>() override</argsstring>
+        <name>getY</name>
+        <reimplements refid="classSimModelInterface_1a4e547adacd7739dfb33a8205b44b2942">getY</reimplements>
+        <briefdescription>
+<para>get vehicle position y </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="212" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/vehicle_model/sim_model_time_delay.cpp" bodystart="141" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classSimModelTimeDelaySteer_1ad4ec8e2f84864709470fe749df682896" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double SimModelTimeDelaySteer::getYaw</definition>
+        <argsstring>() override</argsstring>
+        <name>getYaw</name>
+        <reimplements refid="classSimModelInterface_1a31710dcdbf5e39517fe62df132c6194d">getYaw</reimplements>
+        <briefdescription>
+<para>get vehicle angle yaw </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="217" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/vehicle_model/sim_model_time_delay.cpp" bodystart="142" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classSimModelTimeDelaySteer_1aaacd2f3aa9eb65516724cbea63f78e9b" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double SimModelTimeDelaySteer::getVx</definition>
+        <argsstring>() override</argsstring>
+        <name>getVx</name>
+        <reimplements refid="classSimModelInterface_1a66a3748e38550aa6f9dbd03cae03a22c">getVx</reimplements>
+        <briefdescription>
+<para>get vehicle velocity vx </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="222" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/vehicle_model/sim_model_time_delay.cpp" bodystart="143" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classSimModelTimeDelaySteer_1ac7ae0d52aac9b837d214f0a9acf478fb" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double SimModelTimeDelaySteer::getWz</definition>
+        <argsstring>() override</argsstring>
+        <name>getWz</name>
+        <reimplements refid="classSimModelInterface_1a094626c11df1f814b5b73aca2cf36146">getWz</reimplements>
+        <briefdescription>
+<para>get vehicle angular-velocity wz </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="227" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/vehicle_model/sim_model_time_delay.cpp" bodystart="144" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classSimModelTimeDelaySteer_1a49339b416cbb4b077aa0a620b947ad7a" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double SimModelTimeDelaySteer::getSteer</definition>
+        <argsstring>() override</argsstring>
+        <name>getSteer</name>
+        <reimplements refid="classSimModelInterface_1a28e49bbbafd3ceeec2a4287796324d56">getSteer</reimplements>
+        <briefdescription>
+<para>get vehicle steering angle </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="232" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/vehicle_model/sim_model_time_delay.cpp" bodystart="148" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="classSimModelTimeDelaySteer_1a45ab43a2129549fb487f6647a7c35379" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SimModelTimeDelaySteer::update</definition>
+        <argsstring>(const double &amp;dt) override</argsstring>
+        <name>update</name>
+        <reimplements refid="classSimModelInterface_1afc61554e73dca9e462ac5479cf32ef38">update</reimplements>
+        <param>
+          <type>const double &amp;</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>update vehicle states </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>delta time [s] </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="238" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/vehicle_model/sim_model_time_delay.cpp" bodystart="149" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="classSimModelTimeDelaySteer_1ab07aa2830969e02b93323c2c9f908d67" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>Eigen::VectorXd</type>
+        <definition>Eigen::VectorXd SimModelTimeDelaySteer::calcModel</definition>
+        <argsstring>(const Eigen::VectorXd &amp;state, const Eigen::VectorXd &amp;input) override</argsstring>
+        <name>calcModel</name>
+        <reimplements refid="classSimModelInterface_1a69c88461c637b923df7ec2dcaf40deb4">calcModel</reimplements>
+        <param>
+          <type>const Eigen::VectorXd &amp;</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>const Eigen::VectorXd &amp;</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+<para>calculate derivative of states with time delay steering model </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>current model state </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input vector to model </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="245" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/vehicle_model/sim_model_time_delay.cpp" bodystart="176" bodyend="199"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="175">
+        <label>SimModelTimeDelaySteer</label>
+        <link refid="classSimModelTimeDelaySteer"/>
+        <childnode refid="176" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="176">
+        <label>SimModelInterface</label>
+        <link refid="classSimModelInterface"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="177">
+        <label>SimModelTimeDelaySteer</label>
+        <link refid="classSimModelTimeDelaySteer"/>
+        <childnode refid="178" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="178">
+        <label>SimModelInterface</label>
+        <link refid="classSimModelInterface"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" line="143" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model/sim_model_time_delay.hpp" bodystart="142" bodyend="246"/>
+    <listofallmembers>
+      <member refid="classSimModelTimeDelaySteer_1ab07aa2830969e02b93323c2c9f908d67" prot="private" virt="virtual"><scope>SimModelTimeDelaySteer</scope><name>calcModel</name></member>
+      <member refid="classSimModelTimeDelaySteer_1a0ef8922e0dbb36997fc6131d620d45fb" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>deadzone_delta_steer_</name></member>
+      <member refid="classSimModelInterface_1a205b3b7d99b9337365018afe1fc62ab0" prot="protected" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>dim_u_</name></member>
+      <member refid="classSimModelInterface_1ada7a7551a27124e1ff650e47e6f18bf1" prot="protected" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>dim_x_</name></member>
+      <member refid="classSimModelInterface_1aec1734ae15cfadbe42d35ff3a0eacf1c" prot="public" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>getInput</name></member>
+      <member refid="classSimModelInterface_1a9c0803727dc5e58c15f51e54e5c23f0d" prot="public" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>getState</name></member>
+      <member refid="classSimModelTimeDelaySteer_1a49339b416cbb4b077aa0a620b947ad7a" prot="private" virt="virtual"><scope>SimModelTimeDelaySteer</scope><name>getSteer</name></member>
+      <member refid="classSimModelTimeDelaySteer_1aaacd2f3aa9eb65516724cbea63f78e9b" prot="private" virt="virtual"><scope>SimModelTimeDelaySteer</scope><name>getVx</name></member>
+      <member refid="classSimModelTimeDelaySteer_1ac7ae0d52aac9b837d214f0a9acf478fb" prot="private" virt="virtual"><scope>SimModelTimeDelaySteer</scope><name>getWz</name></member>
+      <member refid="classSimModelTimeDelaySteer_1a45de43cfb14c27d21e20af874a13e1d3" prot="private" virt="virtual"><scope>SimModelTimeDelaySteer</scope><name>getX</name></member>
+      <member refid="classSimModelTimeDelaySteer_1a134653b38494624b7d5fab07441ec7c3" prot="private" virt="virtual"><scope>SimModelTimeDelaySteer</scope><name>getY</name></member>
+      <member refid="classSimModelTimeDelaySteer_1ad4ec8e2f84864709470fe749df682896" prot="private" virt="virtual"><scope>SimModelTimeDelaySteer</scope><name>getYaw</name></member>
+      <member refid="classSimModelTimeDelaySteer_1aa61148f45c01bd3552c68983df4e5172" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>IDX</name></member>
+      <member refid="classSimModelTimeDelaySteer_1a5cd2956e1ca335324e9d7cc9784557a3" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>IDX_U</name></member>
+      <member refid="classSimModelTimeDelaySteer_1a673b9c1a7a9ea6c1ee0c4320106a1543" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>initializeInputQueue</name></member>
+      <member refid="classSimModelInterface_1a604e3dfa204542874cb60bae9df70d97" prot="protected" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>input_</name></member>
+      <member refid="classSimModelTimeDelaySteer_1a28b24ea458c8244e03ddb342354ba3f3" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>MIN_TIME_CONSTANT</name></member>
+      <member refid="classSimModelInterface_1a58bf13eb5b2897d599e0ed95c70ea8fe" prot="public" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>setInput</name></member>
+      <member refid="classSimModelInterface_1a3753071badd72e8036db7559ce317a97" prot="public" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>setState</name></member>
+      <member refid="classSimModelInterface_1a8381051dda5ee2907e9bb4249cceb469" prot="public" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>SimModelInterface</name></member>
+      <member refid="classSimModelTimeDelaySteer_1a7bcb8d1a171d1e3db9d7da84d0c0f2b6" prot="public" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>SimModelTimeDelaySteer</name></member>
+      <member refid="classSimModelInterface_1ad74e69984c97826011b5a273d3ff9cff" prot="protected" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>state_</name></member>
+      <member refid="classSimModelTimeDelaySteer_1aa61148f45c01bd3552c68983df4e5172a3dcc9ee35409d632a5e205caa624499f" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>STEER</name></member>
+      <member refid="classSimModelTimeDelaySteer_1a86300711013d8749b25918a05d9ecb31" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>steer_delay_</name></member>
+      <member refid="classSimModelTimeDelaySteer_1a5cd2956e1ca335324e9d7cc9784557a3a65521fbdc00675512c5adf85d0727699" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>STEER_DES</name></member>
+      <member refid="classSimModelTimeDelaySteer_1aab41c66aa34496f87e82f01ac7f1a9b0" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>steer_input_queue_</name></member>
+      <member refid="classSimModelTimeDelaySteer_1a7eccc4a2440def5ec28864dd72c4d92b" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>steer_lim_</name></member>
+      <member refid="classSimModelTimeDelaySteer_1ae489d52b33a9ad5c80554b72d93ade0b" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>steer_rate_lim_</name></member>
+      <member refid="classSimModelTimeDelaySteer_1adc515c9bc0e49ae7fa1fed1119a2888b" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>steer_time_constant_</name></member>
+      <member refid="classSimModelTimeDelaySteer_1a45ab43a2129549fb487f6647a7c35379" prot="private" virt="virtual"><scope>SimModelTimeDelaySteer</scope><name>update</name></member>
+      <member refid="classSimModelInterface_1a99fa9bd160c2969a0f500591ed15f327" prot="public" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>updateEuler</name></member>
+      <member refid="classSimModelInterface_1a87f7865253cd118372cfc701215cf2df" prot="public" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>updateRungeKutta</name></member>
+      <member refid="classSimModelTimeDelaySteer_1aa61148f45c01bd3552c68983df4e5172a62260b52ebe9b08a65750a20671a8e49" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>VX</name></member>
+      <member refid="classSimModelTimeDelaySteer_1a36c32607c6a288462aae13625a1cd25a" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>vx_delay_</name></member>
+      <member refid="classSimModelTimeDelaySteer_1a5cd2956e1ca335324e9d7cc9784557a3ac5d74007334d735820efd8b3baaea185" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>VX_DES</name></member>
+      <member refid="classSimModelTimeDelaySteer_1a50cfdb1d1b0e20e3a00730b851634a27" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>vx_input_queue_</name></member>
+      <member refid="classSimModelTimeDelaySteer_1a44efdfadb7071fa45d52e2b448c66581" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>vx_lim_</name></member>
+      <member refid="classSimModelTimeDelaySteer_1abd45958177d742faa511835580ef131d" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>vx_rate_lim_</name></member>
+      <member refid="classSimModelTimeDelaySteer_1a5232a155b6420dd8dc31be2bfcb00f88" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>vx_time_constant_</name></member>
+      <member refid="classSimModelTimeDelaySteer_1a5f6d0d537c9ba089698a8db25d7dafae" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>wheelbase_</name></member>
+      <member refid="classSimModelTimeDelaySteer_1aa61148f45c01bd3552c68983df4e5172a2a180e0a3a9c1977534fcde60fc03247" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>X</name></member>
+      <member refid="classSimModelTimeDelaySteer_1aa61148f45c01bd3552c68983df4e5172a6f3b7a1e859445d100ce4aef883368f1" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>Y</name></member>
+      <member refid="classSimModelTimeDelaySteer_1aa61148f45c01bd3552c68983df4e5172a467b64f6524a201c873c0f5b9cecd280" prot="private" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>YAW</name></member>
+      <member refid="classSimModelInterface_1a2d8bdaf9d4bfc1b42b8f507741e26830" prot="public" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>~SimModelInterface</name></member>
+      <member refid="classSimModelTimeDelaySteer_1a939ce100fd635705cbc3c31b89291146" prot="public" virt="non-virtual"><scope>SimModelTimeDelaySteer</scope><name>~SimModelTimeDelaySteer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

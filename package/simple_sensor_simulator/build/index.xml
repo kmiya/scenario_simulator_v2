@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
+  <compound refid="classsimple__sensor__simulator_1_1primitives_1_1Box" kind="class"><name>simple_sensor_simulator::primitives::Box</name>
+    <member refid="classsimple__sensor__simulator_1_1primitives_1_1Box_1a87ea1e64b68f7822697d6d558a5acc52" kind="variable"><name>depth</name></member>
+    <member refid="classsimple__sensor__simulator_1_1primitives_1_1Box_1aadeded1d3495053f45caed99895df917" kind="variable"><name>width</name></member>
+    <member refid="classsimple__sensor__simulator_1_1primitives_1_1Box_1a4fd5271f466eb71da9c152d6e53ad827" kind="variable"><name>height</name></member>
+    <member refid="classsimple__sensor__simulator_1_1primitives_1_1Box_1a68a932eaa4008f356ad8bdb68df852da" kind="function"><name>Box</name></member>
+    <member refid="classsimple__sensor__simulator_1_1primitives_1_1Box_1ae1c5d716559ca74301e33dc3a81d2429" kind="function"><name>~Box</name></member>
+  </compound>
+  <compound refid="classsimple__sensor__simulator_1_1DetectionSensor" kind="class"><name>simple_sensor_simulator::DetectionSensor</name>
+    <member refid="classsimple__sensor__simulator_1_1DetectionSensor_1a8595bf5f35e26a5e69ae498db51fea95" kind="variable"><name>configuration_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1DetectionSensor_1ada9b46e6fa083d1fe8a93aa13fb58fc3" kind="variable"><name>publisher_ptr_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1DetectionSensor_1a072b7be22d6334029b582603132664cc" kind="variable"><name>last_update_stamp_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1DetectionSensor_1a356ae782b94d7336904d0e334965e1d6" kind="function"><name>DetectionSensor</name></member>
+    <member refid="classsimple__sensor__simulator_1_1DetectionSensor_1abd99947425ffea71696e8d8d98e412b1" kind="function"><name>update</name></member>
+  </compound>
+  <compound refid="classsimple__sensor__simulator_1_1LidarSensor" kind="class"><name>simple_sensor_simulator::LidarSensor</name>
+    <member refid="classsimple__sensor__simulator_1_1LidarSensor_1a0f79cc783921a14013ef712bfda8b0f7" kind="variable"><name>configuration_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1LidarSensor_1acde029656585f1678cd782bc54fb1400" kind="variable"><name>publisher_ptr_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1LidarSensor_1a9835cdf137754de5045fb547d9248f84" kind="variable"><name>last_update_stamp_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1LidarSensor_1a709acd2fbcdd86466c56011522fec0f1" kind="variable"><name>detected_objects_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1LidarSensor_1ab93feed9ade5b865bbb0d45636d0a7e7" kind="function"><name>LidarSensor</name></member>
+    <member refid="classsimple__sensor__simulator_1_1LidarSensor_1a13ce73ce188cc3328b85373dee12d286" kind="function"><name>update</name></member>
+    <member refid="classsimple__sensor__simulator_1_1LidarSensor_1a2b8179c2e1556726194282becac5a26d" kind="function"><name>getDetectedObjects</name></member>
+    <member refid="classsimple__sensor__simulator_1_1LidarSensor_1a4f89ef3fb2c4c40ce8e9876adcb458e5" kind="function"><name>raycast</name></member>
+  </compound>
+  <compound refid="classsimple__sensor__simulator_1_1primitives_1_1Primitive" kind="class"><name>simple_sensor_simulator::primitives::Primitive</name>
+    <member refid="classsimple__sensor__simulator_1_1primitives_1_1Primitive_1aa139d364d2a3b415e63aa899cd79bc65" kind="variable"><name>type</name></member>
+    <member refid="classsimple__sensor__simulator_1_1primitives_1_1Primitive_1a6144f22d21b985311db2242e21a01962" kind="variable"><name>pose</name></member>
+    <member refid="classsimple__sensor__simulator_1_1primitives_1_1Primitive_1abb9b631dd256bb8f4d65dbc7e3d2f36f" kind="variable"><name>vertices_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1primitives_1_1Primitive_1a0112bb1bba28a228fa81197af60e7a5e" kind="variable"><name>triangles_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1primitives_1_1Primitive_1a2b278b1c66b79d5f184bf686cb2b3398" kind="function"><name>Primitive</name></member>
+    <member refid="classsimple__sensor__simulator_1_1primitives_1_1Primitive_1ad18256f73b4b26b3cf59bee6bed82704" kind="function"><name>~Primitive</name></member>
+    <member refid="classsimple__sensor__simulator_1_1primitives_1_1Primitive_1a129f2d8c4b7e8846fdc9a11ffada1264" kind="function"><name>addToScene</name></member>
+    <member refid="classsimple__sensor__simulator_1_1primitives_1_1Primitive_1a1bac509da9facfb625f96b8e8c3562be" kind="function"><name>getVertex</name></member>
+    <member refid="classsimple__sensor__simulator_1_1primitives_1_1Primitive_1acb9dbbab3e5da521dc3a8bb360f3766f" kind="function"><name>getTriangles</name></member>
+    <member refid="classsimple__sensor__simulator_1_1primitives_1_1Primitive_1a91981a7a97f1d0d9838708f2ff869c7d" kind="function"><name>transform</name></member>
+    <member refid="classsimple__sensor__simulator_1_1primitives_1_1Primitive_1a1ea93680f6485fb22f15fda846658862" kind="function"><name>transform</name></member>
+  </compound>
+  <compound refid="classsimple__sensor__simulator_1_1Raycaster" kind="class"><name>simple_sensor_simulator::Raycaster</name>
+    <member refid="classsimple__sensor__simulator_1_1Raycaster_1a38c1315be0e9303a8a7af44e2139249b" kind="variable"><name>primitive_ptrs_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1Raycaster_1adf938e6398b10f1ba325fb5086e012c4" kind="variable"><name>device_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1Raycaster_1a3ecc207a59ee5e7e49c2f10f5493e9a8" kind="variable"><name>scene_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1Raycaster_1a4e763cb3ccf416fac784f936b725a691" kind="variable"><name>seed_gen_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1Raycaster_1abe263385ed9b0180f471492c9b7662c3" kind="variable"><name>engine_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1Raycaster_1a18d54c2bd1438a74d7d71271d42ad806" kind="variable"><name>detected_objects_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1Raycaster_1a6199e1e8c262d15fdd03923a7b085b97" kind="variable"><name>geometry_ids_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1Raycaster_1a7d1d5f80519402694af50d074509123d" kind="function"><name>Raycaster</name></member>
+    <member refid="classsimple__sensor__simulator_1_1Raycaster_1adc81ea4c9436b2a5a0ffa7f58bb6038f" kind="function"><name>Raycaster</name></member>
+    <member refid="classsimple__sensor__simulator_1_1Raycaster_1a5df8417f7ccdf64c03782dd8010c8b75" kind="function"><name>~Raycaster</name></member>
+    <member refid="classsimple__sensor__simulator_1_1Raycaster_1a5c029574c004399ebaa784cf58da0ee7" kind="function"><name>addPrimitive</name></member>
+    <member refid="classsimple__sensor__simulator_1_1Raycaster_1a55637b80fa47f86063e52ace5f3bcece" kind="function"><name>raycast</name></member>
+    <member refid="classsimple__sensor__simulator_1_1Raycaster_1ae530bf58a2696c27fcf62472a00e4af9" kind="function"><name>getDetectedObject</name></member>
+    <member refid="classsimple__sensor__simulator_1_1Raycaster_1addb10854657b81b874e9c0ac62c8ead6" kind="function"><name>raycast</name></member>
+  </compound>
+  <compound refid="classsimple__sensor__simulator_1_1ScenarioSimulator" kind="class"><name>simple_sensor_simulator::ScenarioSimulator</name>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1ad60314c4e606665b9bb873bab6fcf13c" kind="variable"><name>sensor_sim_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a955901a6205c97625a5f69da26621252" kind="variable"><name>ego_vehicles_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a9e788ca04c15aeb760dbfb06de040852" kind="variable"><name>vehicles_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a5de9ffcd3a3d2b178600c05bae2c1286" kind="variable"><name>pedestrians_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a5d091dc615e27ad634f1b4a05bee1852" kind="variable"><name>realtime_factor_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a41f8e345ce50d1632d8fc7508b80801d" kind="variable"><name>step_time_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a121660c3024a7685a1379cba067f5d2b" kind="variable"><name>current_time_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a1d22a82dd0c63e5d7155d0160d49e888" kind="variable"><name>initialized_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a42c75a68d104171ca308898b3bc936af" kind="variable"><name>entity_status_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a27c8df76120cdfac9f96645a044b564d" kind="variable"><name>server_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1adc4b6a520e3cc4eb99decd840a89e1dc" kind="function"><name>ScenarioSimulator</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a475c3fd3cb2e36c88f13de975f35b509" kind="function"><name>~ScenarioSimulator</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a9036067eacec4c737be05625a8ce41c8" kind="function"><name>initialize</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1afc456b79632b793b970f2ae15ab603e8" kind="function"><name>updateFrame</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a4233d8313e27c110131aed7a252e66bd" kind="function"><name>updateEntityStatus</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1ac66854cce611363f2c36b3f69a6cde32" kind="function"><name>spawnVehicleEntity</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a214b4fb848a027cbfa89ee00aac6ca0f" kind="function"><name>spawnPedestrianEntity</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a8b64dffba28ad461147210fba3364ab7" kind="function"><name>despawnEntity</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a14da08426619a21a167a90a9977b73a3" kind="function"><name>attachDetectionSensor</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1a812c3323ca68c5e1116e55be85e568c9" kind="function"><name>attachLidarSensor</name></member>
+    <member refid="classsimple__sensor__simulator_1_1ScenarioSimulator_1abe38e6ca125a6bedd839975d544bbe9c" kind="function"><name>updateSensorFrame</name></member>
+  </compound>
+  <compound refid="classsimple__sensor__simulator_1_1SensorSimulation" kind="class"><name>simple_sensor_simulator::SensorSimulation</name>
+    <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1ab559619a71d688e3ed989051a3948aa5" kind="variable"><name>lidar_sensors_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1a0b700fe56cf8b678b8f0a2762f9703df" kind="variable"><name>detection_sensors_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1a23a6cc1487cd9901f42bbc7bdbd7bd52" kind="variable"><name>clock_ptr_</name></member>
+    <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1a8d4c0719bf5380e10bfafd03c3b3c1c9" kind="function"><name>SensorSimulation</name></member>
+    <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1a4a35c9f7cc74b78ccc0fe07f298d6088" kind="function"><name>attachLidarSensor</name></member>
+    <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1ae02b4a1d91ea6e746492c04282b3abdf" kind="function"><name>attachDetectionSensor</name></member>
+    <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1af4524d329dab12d4071e11ee472fa4e0" kind="function"><name>updateSensorFrame</name></member>
+  </compound>
+  <compound refid="classsimple__sensor__simulator_1_1SimulationRuntimeError" kind="class"><name>simple_sensor_simulator::SimulationRuntimeError</name>
+    <member refid="classsimple__sensor__simulator_1_1SimulationRuntimeError_1a61f348319ce74f1e733f3d1274371a41" kind="function"><name>SimulationRuntimeError</name></member>
+  </compound>
+  <compound refid="structsimple__sensor__simulator_1_1Triangle" kind="struct"><name>simple_sensor_simulator::Triangle</name>
+    <member refid="structsimple__sensor__simulator_1_1Triangle_1a60226821f8aaa9b71146971bccfd1c5a" kind="variable"><name>v0</name></member>
+    <member refid="structsimple__sensor__simulator_1_1Triangle_1af33baf2c18f67947f9b23ec533403e43" kind="variable"><name>v1</name></member>
+    <member refid="structsimple__sensor__simulator_1_1Triangle_1a083d0f3f4179efcee59d5c1c2e18c214" kind="variable"><name>v2</name></member>
+  </compound>
+  <compound refid="structsimple__sensor__simulator_1_1Vertex" kind="struct"><name>simple_sensor_simulator::Vertex</name>
+    <member refid="structsimple__sensor__simulator_1_1Vertex_1a7a83500bd13e617d0ba73000274770db" kind="variable"><name>x</name></member>
+    <member refid="structsimple__sensor__simulator_1_1Vertex_1af1aac7be00b6a18d859216f142ec3e98" kind="variable"><name>y</name></member>
+    <member refid="structsimple__sensor__simulator_1_1Vertex_1aa092d3917c9157f7a08b37b779a8bccf" kind="variable"><name>z</name></member>
+  </compound>
+  <compound refid="namespacesimple__sensor__simulator" kind="namespace"><name>simple_sensor_simulator</name>
+  </compound>
+  <compound refid="namespacesimple__sensor__simulator_1_1primitives" kind="namespace"><name>simple_sensor_simulator::primitives</name>
+  </compound>
+  <compound refid="namespacesimple__sensor__simulator_1_1return__code" kind="namespace"><name>simple_sensor_simulator::return_code</name>
+    <member refid="constants_8hpp_1abcca7eb2cdffaa2ac3d43ea8bf427492" kind="variable"><name>SUCCESS</name></member>
+    <member refid="constants_8hpp_1ac0c9a5ffaeb3d0d0859e33398b9570b1" kind="variable"><name>FAIL</name></member>
+  </compound>
+  <compound refid="constants_8hpp" kind="file"><name>constants.hpp</name>
+  </compound>
+  <compound refid="exception_8hpp" kind="file"><name>exception.hpp</name>
+  </compound>
+  <compound refid="detection__sensor_8hpp" kind="file"><name>detection_sensor.hpp</name>
+  </compound>
+  <compound refid="lidar__sensor_8hpp" kind="file"><name>lidar_sensor.hpp</name>
+  </compound>
+  <compound refid="raycaster_8hpp" kind="file"><name>raycaster.hpp</name>
+  </compound>
+  <compound refid="box_8hpp" kind="file"><name>box.hpp</name>
+  </compound>
+  <compound refid="primitive_8hpp" kind="file"><name>primitive.hpp</name>
+  </compound>
+  <compound refid="sensor__simulation_8hpp" kind="file"><name>sensor_simulation.hpp</name>
+  </compound>
+  <compound refid="simple__sensor__simulator_8hpp" kind="file"><name>simple_sensor_simulator.hpp</name>
+    <member refid="simple__sensor__simulator_8hpp_1a593c8be71f66d7ff8632f2538d706bb3" kind="define"><name>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_EXPORT</name></member>
+    <member refid="simple__sensor__simulator_8hpp_1a39f9319e4d39e60ccbd0174659913835" kind="define"><name>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_IMPORT</name></member>
+    <member refid="simple__sensor__simulator_8hpp_1a49d05fd7f8868551a8215db8dd6275e4" kind="define"><name>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_PUBLIC</name></member>
+    <member refid="simple__sensor__simulator_8hpp_1aec9c88ea1b7786c49ef8f209d4474d1f" kind="define"><name>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_LOCAL</name></member>
+    <member refid="simple__sensor__simulator_8hpp_1a255204bd90373e4a5222402ae1c4dbca" kind="define"><name>SIMPLE_SENSOR_SIMULATOR_SIMPLE_SENSOR_SIMULATOR_COMPONENT_PUBLIC_TYPE</name></member>
+  </compound>
+  <compound refid="detection__sensor_8cpp" kind="file"><name>detection_sensor.cpp</name>
+  </compound>
+  <compound refid="lidar__sensor_8cpp" kind="file"><name>lidar_sensor.cpp</name>
+  </compound>
+  <compound refid="raycaster_8cpp" kind="file"><name>raycaster.cpp</name>
+  </compound>
+  <compound refid="box_8cpp" kind="file"><name>box.cpp</name>
+  </compound>
+  <compound refid="primitive_8cpp" kind="file"><name>primitive.cpp</name>
+  </compound>
+  <compound refid="sensor__simulation_8cpp" kind="file"><name>sensor_simulation.cpp</name>
+  </compound>
+  <compound refid="simple__sensor__simulator_8cpp" kind="file"><name>simple_sensor_simulator.cpp</name>
+  </compound>
+  <compound refid="simple__sensor__simulator__node_8cpp" kind="file"><name>simple_sensor_simulator_node.cpp</name>
+    <member refid="simple__sensor__simulator__node_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="dir_8d79e157320e792261944f567c57e830" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/detection_sensor</name>
+  </compound>
+  <compound refid="dir_eabd1af670d42027330e6be2b1c68319" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/sensor_simulation/detection_sensor</name>
+  </compound>
+  <compound refid="dir_d05e5c05837df6544ae0aa88429bc886" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include</name>
+  </compound>
+  <compound refid="dir_5451b40605059a5edccf7506a9b66bd6" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/sensor_simulation/lidar</name>
+  </compound>
+  <compound refid="dir_b0e7297da74135db8558f1062dffded0" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/lidar</name>
+  </compound>
+  <compound refid="dir_14a7c32fb777ec4173f794e154c2364c" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/sensor_simulation/primitives</name>
+  </compound>
+  <compound refid="dir_7e1aa8eb9ea61bc9f78fe73be949006c" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/primitives</name>
+  </compound>
+  <compound refid="dir_18b62852215b94887244b301982b6f21" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation</name>
+  </compound>
+  <compound refid="dir_b08e5eb4e09e352648882d6a68ca7d92" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/sensor_simulation</name>
+  </compound>
+  <compound refid="dir_c0216c2f5e278c9e60e9018f84bdf1a6" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator</name>
+  </compound>
+  <compound refid="dir_28d4bd41190f2424bef4cd140c47cd43" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator</name>
+  </compound>
+  <compound refid="dir_7487f41de01cca700e4de80b884d7106" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation</name>
+  </compound>
+  <compound refid="dir_508554689b0c00babae7cf21a2d3ef21" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src</name>
+  </compound>
+</doxygenindex>

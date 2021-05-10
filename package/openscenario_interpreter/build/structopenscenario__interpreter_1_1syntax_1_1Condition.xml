@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structopenscenario__interpreter_1_1syntax_1_1Condition" kind="struct" language="C++" prot="public">
+    <compoundname>openscenario_interpreter::syntax::Condition</compoundname>
+    <basecompoundref refid="classopenscenario__interpreter_1_1Pointer" prot="public" virt="non-virtual">openscenario_interpreter::Pointer&lt; Expression &gt;</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1Condition_1ad402e2c98873b2dba4169123b1e3255c" prot="public" static="no" mutable="no">
+        <type>const String</type>
+        <definition>const String openscenario_interpreter::syntax::Condition::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/condition.hpp" line="42" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/condition.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1Condition_1ae58b2e0175cc69f27e303ea0c5373829" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structopenscenario__interpreter_1_1syntax_1_1Double" kindref="compound">Double</ref></type>
+        <definition>const Double openscenario_interpreter::syntax::Condition::delay</definition>
+        <argsstring></argsstring>
+        <name>delay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/condition.hpp" line="44" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/condition.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1Condition_1ad347315c8078bdeacbf233fe4cbad63d" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structopenscenario__interpreter_1_1syntax_1_1ConditionEdge" kindref="compound">ConditionEdge</ref></type>
+        <definition>const ConditionEdge openscenario_interpreter::syntax::Condition::condition_edge</definition>
+        <argsstring></argsstring>
+        <name>condition_edge</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/condition.hpp" line="46" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/condition.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1Condition_1abcfa8e5da3c9101f295709a15195c539" prot="public" static="no" mutable="no">
+        <type><ref refid="classopenscenario__interpreter_1_1Pointer" kindref="compound">Element</ref></type>
+        <definition>Element openscenario_interpreter::syntax::Condition::result</definition>
+        <argsstring></argsstring>
+        <name>result</name>
+        <initializer>= false_v</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/condition.hpp" line="62" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/condition.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1Condition_1a960255d964017e384ac254689aab5f34" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Node</type>
+          </param>
+          <param>
+            <type>typename <ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref></type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>openscenario_interpreter::syntax::Condition::Condition</definition>
+        <argsstring>(const Node &amp;node, Scope &amp;scope)</argsstring>
+        <name>Condition</name>
+        <param>
+          <type>const Node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref> &amp;</type>
+          <declname>scope</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/condition.hpp" line="49" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/condition.hpp" bodystart="49" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1Condition_1a17e78b7472d8397c5eb3225224f1eee0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const auto &amp;</type>
+        <definition>const auto&amp; openscenario_interpreter::syntax::Condition::evaluate</definition>
+        <argsstring>()</argsstring>
+        <name>evaluate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/condition.hpp" line="64" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/condition.hpp" bodystart="64" bodyend="71"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="137">
+        <label>std::shared_ptr&lt; Expression  &gt;</label>
+      </node>
+      <node id="135">
+        <label>openscenario_interpreter::syntax::Condition</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Condition"/>
+        <childnode refid="136" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="136">
+        <label>Element</label>
+        <link refid="classopenscenario__interpreter_1_1Pointer"/>
+        <childnode refid="137" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="140">
+        <label>std::shared_ptr&lt; Expression  &gt;</label>
+      </node>
+      <node id="143">
+        <label>openscenario_interpreter::syntax::Double</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Double"/>
+        <childnode refid="144" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="141">
+        <label>openscenario_interpreter::syntax::ConditionEdge</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1ConditionEdge"/>
+      </node>
+      <node id="144">
+        <label>std_msgs::msg::Float64</label>
+      </node>
+      <node id="138">
+        <label>openscenario_interpreter::syntax::Condition</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Condition"/>
+        <childnode refid="139" relation="public-inheritance">
+        </childnode>
+        <childnode refid="141" relation="usage">
+          <edgelabel>condition_edge</edgelabel>
+        </childnode>
+        <childnode refid="142" relation="usage">
+          <edgelabel>result</edgelabel>
+        </childnode>
+        <childnode refid="143" relation="usage">
+          <edgelabel>delay</edgelabel>
+        </childnode>
+      </node>
+      <node id="142">
+        <label>openscenario_interpreter::Pointer&lt; Expression &gt;</label>
+        <link refid="classopenscenario__interpreter_1_1Pointer"/>
+        <childnode refid="140" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="139">
+        <label>Element</label>
+        <link refid="classopenscenario__interpreter_1_1Pointer"/>
+        <childnode refid="140" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/condition.hpp" line="41" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/condition.hpp" bodystart="40" bodyend="72"/>
+    <listofallmembers>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Condition_1a960255d964017e384ac254689aab5f34" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Condition</scope><name>Condition</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Condition_1ad347315c8078bdeacbf233fe4cbad63d" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Condition</scope><name>condition_edge</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Condition_1ae58b2e0175cc69f27e303ea0c5373829" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Condition</scope><name>delay</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Condition_1a17e78b7472d8397c5eb3225224f1eee0" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Condition</scope><name>evaluate</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Condition_1ad402e2c98873b2dba4169123b1e3255c" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Condition</scope><name>name</name></member>
+      <member refid="classopenscenario__interpreter_1_1Pointer_1a7cd639fabe0abf89dd1a83e91e97c225" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Condition</scope><name>Pointer</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1Condition_1abcfa8e5da3c9101f295709a15195c539" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::Condition</scope><name>result</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

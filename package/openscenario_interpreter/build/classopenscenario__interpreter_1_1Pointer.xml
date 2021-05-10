@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classopenscenario__interpreter_1_1Pointer" kind="class" language="C++" prot="public">
+    <compoundname>openscenario_interpreter::Pointer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::shared_ptr&lt; T &gt;</basecompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1EntityAction" prot="public" virt="non-virtual">openscenario_interpreter::syntax::EntityAction</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1ObjectController" prot="public" virt="non-virtual">openscenario_interpreter::syntax::ObjectController</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1PrivateAction" prot="public" virt="non-virtual">openscenario_interpreter::syntax::PrivateAction</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1RoutingAction" prot="public" virt="non-virtual">openscenario_interpreter::syntax::RoutingAction</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1SpeedActionTarget" prot="public" virt="non-virtual">openscenario_interpreter::syntax::SpeedActionTarget</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalAction" prot="public" virt="non-virtual">openscenario_interpreter::syntax::TrafficSignalAction</derivedcompoundref>
+    <innerclass refid="structopenscenario__interpreter_1_1Pointer_1_1Binder" prot="private">openscenario_interpreter::Pointer::Binder</innerclass>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classopenscenario__interpreter_1_1Pointer_1a7cd639fabe0abf89dd1a83e91e97c225" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr</type>
+        <definition>constexpr openscenario_interpreter::Pointer&lt; T &gt;::Pointer</definition>
+        <argsstring>(Ts &amp;&amp;... xs)</argsstring>
+        <name>Pointer</name>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" line="78" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" bodystart="78" bodyend="78"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="517">
+        <label>std::shared_ptr&lt; T &gt;</label>
+      </node>
+      <node id="522">
+        <label>openscenario_interpreter::syntax::SpeedActionTarget&lt; Expression &gt;</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1SpeedActionTarget"/>
+        <childnode refid="516" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="520">
+        <label>openscenario_interpreter::syntax::PrivateAction&lt; Expression &gt;</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1PrivateAction"/>
+        <childnode refid="516" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="519">
+        <label>openscenario_interpreter::syntax::ObjectController&lt; Expression &gt;</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1ObjectController"/>
+        <childnode refid="516" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="523">
+        <label>openscenario_interpreter::syntax::TrafficSignalAction&lt; Expression &gt;</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalAction"/>
+        <childnode refid="516" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="516">
+        <label>openscenario_interpreter::Pointer&lt; T &gt;</label>
+        <link refid="classopenscenario__interpreter_1_1Pointer"/>
+        <childnode refid="517" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="518">
+        <label>openscenario_interpreter::syntax::EntityAction&lt; Expression &gt;</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1EntityAction"/>
+        <childnode refid="516" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="521">
+        <label>openscenario_interpreter::syntax::RoutingAction&lt; Expression &gt;</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1RoutingAction"/>
+        <childnode refid="516" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="525">
+        <label>std::shared_ptr&lt; T &gt;</label>
+      </node>
+      <node id="524">
+        <label>openscenario_interpreter::Pointer&lt; T &gt;</label>
+        <link refid="classopenscenario__interpreter_1_1Pointer"/>
+        <childnode refid="525" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" line="36" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" bodystart="35" bodyend="161"/>
+    <listofallmembers>
+      <member refid="classopenscenario__interpreter_1_1Pointer_1a7cd639fabe0abf89dd1a83e91e97c225" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Pointer</scope><name>Pointer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

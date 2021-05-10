@@ -1,0 +1,834 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacesimulation__interface" kind="namespace" language="C++">
+    <compoundname>simulation_interface</compoundname>
+    <innerclass refid="classsimulation__interface_1_1ProtobufConversionError" prot="public">simulation_interface::ProtobufConversionError</innerclass>
+    <innerclass refid="classsimulation__interface_1_1XmlParameterError" prot="public">simulation_interface::XmlParameterError</innerclass>
+    <innernamespace refid="namespacesimulation__interface_1_1ports">simulation_interface::ports</innernamespace>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="constants_8hpp_1a6d935a4e115a42b775e3aac5aa8795a3" prot="public" static="no">
+        <name>TransportProtocol</name>
+        <enumvalue id="dummy_1a6d935a4e115a42b775e3aac5aa8795a3ab136ef5f6a01d816991fe3cf7a6ac763" prot="public">
+          <name>TCP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dummy_1a6d935a4e115a42b775e3aac5aa8795a3af5ef036b4d8b630721e51fe23489fbc9" prot="public">
+          <name>UDP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/constants.hpp" line="22" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/constants.hpp" bodystart="22" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="enum" id="constants_8hpp_1a40b6c5aa3da129f5dd1b0729db36ff0d" prot="public" static="no">
+        <name>HostName</name>
+        <enumvalue id="dummy_1a40b6c5aa3da129f5dd1b0729db36ff0da8f115e30b89dd6db2382a52a24bf6d19" prot="public">
+          <name>LOCLHOST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dummy_1a40b6c5aa3da129f5dd1b0729db36ff0da8e1bde3c3d303163521522cf1d62f21f" prot="public">
+          <name>ANY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/constants.hpp" line="26" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/constants.hpp" bodystart="26" bodyend="26"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="constants_8hpp_1a89c7749333bf93c6cb028ec1524a06f7" prot="public" static="no" mutable="no">
+        <type>const TransportProtocol</type>
+        <definition>const TransportProtocol simulation_interface::protocol</definition>
+        <argsstring></argsstring>
+        <name>protocol</name>
+        <initializer>= TransportProtocol::TCP</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/constants.hpp" line="30" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/constants.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="constants_8hpp_1a46f9dd71a0d9785d4504c19010d83735" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string simulation_interface::enumToString</definition>
+        <argsstring>(const TransportProtocol &amp;protocol)</argsstring>
+        <name>enumToString</name>
+        <param>
+          <type>const TransportProtocol &amp;</type>
+          <declname>protocol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/constants.hpp" line="24" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/constants.cpp" bodystart="27" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="constants_8hpp_1a3ab842cd0deea1034a8309b90b592916" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string simulation_interface::enumToString</definition>
+        <argsstring>(const HostName &amp;hostname)</argsstring>
+        <name>enumToString</name>
+        <param>
+          <type>const HostName &amp;</type>
+          <declname>hostname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/constants.hpp" line="28" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/constants.cpp" bodystart="39" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="constants_8hpp_1ac0b5dc5d88d93e14e1d61026df413402" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string simulation_interface::getEndPoint</definition>
+        <argsstring>(const TransportProtocol &amp;protocol, const HostName &amp;hostname, const unsigned int &amp;port)</argsstring>
+        <name>getEndPoint</name>
+        <param>
+          <type>const TransportProtocol &amp;</type>
+          <declname>protocol</declname>
+        </param>
+        <param>
+          <type>const HostName &amp;</type>
+          <declname>hostname</declname>
+        </param>
+        <param>
+          <type>const unsigned int &amp;</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/constants.hpp" line="45" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/constants.cpp" bodystart="20" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1a43d4c593790ea3775d4345c251fb1d7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toProto</definition>
+        <argsstring>(const geometry_msgs::msg::Point &amp;p, geometry_msgs::Point &amp;proto)</argsstring>
+        <name>toProto</name>
+        <param>
+          <type>const geometry_msgs::msg::Point &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>geometry_msgs::Point &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="75" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="21" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1a914fce4b34a353dcf2527669b43e69d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toMsg</definition>
+        <argsstring>(const geometry_msgs::Point &amp;proto, geometry_msgs::msg::Point &amp;p)</argsstring>
+        <name>toMsg</name>
+        <param>
+          <type>const geometry_msgs::Point &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <param>
+          <type>geometry_msgs::msg::Point &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="76" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="28" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1ae6dd7f8b4f4eb1842f2da1b270daf12f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toProto</definition>
+        <argsstring>(const geometry_msgs::msg::Quaternion &amp;q, geometry_msgs::Quaternion &amp;proto)</argsstring>
+        <name>toProto</name>
+        <param>
+          <type>const geometry_msgs::msg::Quaternion &amp;</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>geometry_msgs::Quaternion &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="77" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="35" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1acc1777b6e10128dce0d72390d516bebd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toMsg</definition>
+        <argsstring>(const geometry_msgs::Quaternion &amp;proto, geometry_msgs::msg::Quaternion &amp;q)</argsstring>
+        <name>toMsg</name>
+        <param>
+          <type>const geometry_msgs::Quaternion &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <param>
+          <type>geometry_msgs::msg::Quaternion &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="78" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="43" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1aa1e4585a9983022779f7e3f50e6da402" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toProto</definition>
+        <argsstring>(const geometry_msgs::msg::Pose &amp;p, geometry_msgs::Pose &amp;proto)</argsstring>
+        <name>toProto</name>
+        <param>
+          <type>const geometry_msgs::msg::Pose &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>geometry_msgs::Pose &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="79" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="51" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1a66c42c8c4b830d0e03195095ed437a9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toMsg</definition>
+        <argsstring>(const geometry_msgs::Pose &amp;proto, geometry_msgs::msg::Pose &amp;p)</argsstring>
+        <name>toMsg</name>
+        <param>
+          <type>const geometry_msgs::Pose &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <param>
+          <type>geometry_msgs::msg::Pose &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="80" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="57" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1aef5a3a784f82c11bc8c6be03576dd567" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toProto</definition>
+        <argsstring>(const geometry_msgs::msg::Vector3 &amp;v, geometry_msgs::Vector3 &amp;proto)</argsstring>
+        <name>toProto</name>
+        <param>
+          <type>const geometry_msgs::msg::Vector3 &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>geometry_msgs::Vector3 &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="81" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="63" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1a1bd5bcde7eb4d8ee82a8dbec4eceb0f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toMsg</definition>
+        <argsstring>(const geometry_msgs::Vector3 &amp;proto, geometry_msgs::msg::Vector3 &amp;v)</argsstring>
+        <name>toMsg</name>
+        <param>
+          <type>const geometry_msgs::Vector3 &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <param>
+          <type>geometry_msgs::msg::Vector3 &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="82" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="70" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1abe29568680d6a45f14e3a580e32eec6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toProto</definition>
+        <argsstring>(const geometry_msgs::msg::Twist &amp;t, geometry_msgs::Twist &amp;proto)</argsstring>
+        <name>toProto</name>
+        <param>
+          <type>const geometry_msgs::msg::Twist &amp;</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>geometry_msgs::Twist &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="83" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="77" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1a758cb98aef76298b2d0568dc1c8a6af5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toMsg</definition>
+        <argsstring>(const geometry_msgs::Twist &amp;proto, geometry_msgs::msg::Twist &amp;t)</argsstring>
+        <name>toMsg</name>
+        <param>
+          <type>const geometry_msgs::Twist &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <param>
+          <type>geometry_msgs::msg::Twist &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="84" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="83" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1a35c053e00819d9d774ed61ef000cf07a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toProto</definition>
+        <argsstring>(const geometry_msgs::msg::Accel &amp;a, geometry_msgs::Accel &amp;proto)</argsstring>
+        <name>toProto</name>
+        <param>
+          <type>const geometry_msgs::msg::Accel &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>geometry_msgs::Accel &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="85" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="89" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1abe0cd118586574e577e21241857d56a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toMsg</definition>
+        <argsstring>(const geometry_msgs::Accel &amp;proto, geometry_msgs::msg::Accel &amp;a)</argsstring>
+        <name>toMsg</name>
+        <param>
+          <type>const geometry_msgs::Accel &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <param>
+          <type>geometry_msgs::msg::Accel &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="86" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="95" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1ab01c21b40b95aaf4585aeb1302a26bf9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toProto</definition>
+        <argsstring>(const openscenario_msgs::msg::BoundingBox &amp;box, openscenario_msgs::BoundingBox &amp;proto)</argsstring>
+        <name>toProto</name>
+        <param>
+          <type>const openscenario_msgs::msg::BoundingBox &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::BoundingBox &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="87" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="101" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1a015bee060dbb0528b06ef4cb1067968e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toMsg</definition>
+        <argsstring>(const openscenario_msgs::BoundingBox &amp;proto, openscenario_msgs::msg::BoundingBox &amp;box)</argsstring>
+        <name>toMsg</name>
+        <param>
+          <type>const openscenario_msgs::BoundingBox &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::msg::BoundingBox &amp;</type>
+          <declname>box</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="89" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="108" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1acebab6dc74443fe6e17b05ba586f9eee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toProto</definition>
+        <argsstring>(const openscenario_msgs::msg::Performance &amp;performance, openscenario_msgs::Performance &amp;proto)</argsstring>
+        <name>toProto</name>
+        <param>
+          <type>const openscenario_msgs::msg::Performance &amp;</type>
+          <declname>performance</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::Performance &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="90" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="114" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1ae4f70d2b655d4d58bf8417e94b702239" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toMsg</definition>
+        <argsstring>(const openscenario_msgs::Performance &amp;proto, openscenario_msgs::msg::Performance &amp;performance)</argsstring>
+        <name>toMsg</name>
+        <param>
+          <type>const openscenario_msgs::Performance &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::msg::Performance &amp;</type>
+          <declname>performance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="92" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="122" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1a8896ab2dcb45f288d8ee1a68c82b54e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toProto</definition>
+        <argsstring>(const openscenario_msgs::msg::Axle &amp;axle, openscenario_msgs::Axle &amp;proto)</argsstring>
+        <name>toProto</name>
+        <param>
+          <type>const openscenario_msgs::msg::Axle &amp;</type>
+          <declname>axle</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::Axle &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="94" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="130" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1a4135fafdf40c0db04d484e54948673ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toMsg</definition>
+        <argsstring>(const openscenario_msgs::Axle &amp;proto, openscenario_msgs::msg::Axle &amp;axle)</argsstring>
+        <name>toMsg</name>
+        <param>
+          <type>const openscenario_msgs::Axle &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::msg::Axle &amp;</type>
+          <declname>axle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="95" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="139" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1a89f187180c1295c3a143361db14f3057" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toProto</definition>
+        <argsstring>(const openscenario_msgs::msg::Axles &amp;axles, openscenario_msgs::Axles &amp;proto)</argsstring>
+        <name>toProto</name>
+        <param>
+          <type>const openscenario_msgs::msg::Axles &amp;</type>
+          <declname>axles</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::Axles &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="96" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="148" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1a576c66571af85cf9cc2179523d9ceb53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toMsg</definition>
+        <argsstring>(const openscenario_msgs::Axles &amp;proto, openscenario_msgs::msg::Axles &amp;axles)</argsstring>
+        <name>toMsg</name>
+        <param>
+          <type>const openscenario_msgs::Axles &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::msg::Axles &amp;</type>
+          <declname>axles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="97" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="154" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1a3a6351634b49099fa598b3aa99613f3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toProto</definition>
+        <argsstring>(const openscenario_msgs::msg::VehicleParameters &amp;p, openscenario_msgs::VehicleParameters &amp;proto)</argsstring>
+        <name>toProto</name>
+        <param>
+          <type>const openscenario_msgs::msg::VehicleParameters &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::VehicleParameters &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="106" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="176" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1a7d96bef8199e6692f74a594690f64672" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toMsg</definition>
+        <argsstring>(const openscenario_msgs::VehicleParameters &amp;proto, openscenario_msgs::msg::VehicleParameters &amp;p)</argsstring>
+        <name>toMsg</name>
+        <param>
+          <type>const openscenario_msgs::VehicleParameters &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::msg::VehicleParameters &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="109" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="187" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1ad994a2ac4fa99ff52b80c0e371d59864" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toProto</definition>
+        <argsstring>(const openscenario_msgs::msg::PedestrianParameters &amp;p, openscenario_msgs::PedestrianParameters &amp;proto)</argsstring>
+        <name>toProto</name>
+        <param>
+          <type>const openscenario_msgs::msg::PedestrianParameters &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::PedestrianParameters &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="112" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="198" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1a46c8f64c84c95a0639987c962005cbc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toMsg</definition>
+        <argsstring>(const openscenario_msgs::PedestrianParameters &amp;proto, openscenario_msgs::msg::PedestrianParameters &amp;p)</argsstring>
+        <name>toMsg</name>
+        <param>
+          <type>const openscenario_msgs::PedestrianParameters &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::msg::PedestrianParameters &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="115" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="207" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1ae52389712d16c3b4975a5306c4f2eb25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toProto</definition>
+        <argsstring>(const openscenario_msgs::msg::ActionStatus &amp;s, openscenario_msgs::ActionStatus &amp;proto)</argsstring>
+        <name>toProto</name>
+        <param>
+          <type>const openscenario_msgs::msg::ActionStatus &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::ActionStatus &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="118" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="216" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1ad66d9cb0bcdc3536d6446f0eb8d19c2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toMsg</definition>
+        <argsstring>(openscenario_msgs::ActionStatus &amp;proto, const openscenario_msgs::msg::ActionStatus &amp;s)</argsstring>
+        <name>toMsg</name>
+        <param>
+          <type>openscenario_msgs::ActionStatus &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <param>
+          <type>const openscenario_msgs::msg::ActionStatus &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="120" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1a6919a9529e61b14a681e2d594607cc4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toProto</definition>
+        <argsstring>(const openscenario_msgs::msg::LaneletPose &amp;pose, openscenario_msgs::LaneletPose &amp;proto)</argsstring>
+        <name>toProto</name>
+        <param>
+          <type>const openscenario_msgs::msg::LaneletPose &amp;</type>
+          <declname>pose</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::LaneletPose &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="121" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="231" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1a211e4a0b02a423df9adc40a47d115edb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toMsg</definition>
+        <argsstring>(const openscenario_msgs::LaneletPose &amp;proto, openscenario_msgs::msg::LaneletPose &amp;pose)</argsstring>
+        <name>toMsg</name>
+        <param>
+          <type>const openscenario_msgs::LaneletPose &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::msg::LaneletPose &amp;</type>
+          <declname>pose</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="123" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="240" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1a66a6fa1af54345f402abdf13ecb4a5f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toProto</definition>
+        <argsstring>(const openscenario_msgs::msg::EntityType &amp;type, openscenario_msgs::EntityType &amp;proto)</argsstring>
+        <name>toProto</name>
+        <param>
+          <type>const openscenario_msgs::msg::EntityType &amp;</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::EntityType &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="125" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="248" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1aa527261382aff224270ffdc9750b481f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toMsg</definition>
+        <argsstring>(const openscenario_msgs::EntityType &amp;proto, openscenario_msgs::msg::EntityType &amp;type)</argsstring>
+        <name>toMsg</name>
+        <param>
+          <type>const openscenario_msgs::EntityType &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::msg::EntityType &amp;</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="127" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="264" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1ae31a05b279f1ca46f87fec84375394fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toProto</definition>
+        <argsstring>(const openscenario_msgs::msg::EntityStatus &amp;status, openscenario_msgs::EntityStatus &amp;proto)</argsstring>
+        <name>toProto</name>
+        <param>
+          <type>const openscenario_msgs::msg::EntityStatus &amp;</type>
+          <declname>status</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::EntityStatus &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="128" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="282" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8hpp_1ac01aa94fb5b2ad8ed7d635a11a1af2d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toMsg</definition>
+        <argsstring>(const openscenario_msgs::EntityStatus &amp;proto, openscenario_msgs::msg::EntityStatus &amp;status)</argsstring>
+        <name>toMsg</name>
+        <param>
+          <type>const openscenario_msgs::EntityStatus &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::msg::EntityStatus &amp;</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/conversions.hpp" line="130" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="297" bodyend="310"/>
+      </memberdef>
+      <memberdef kind="function" id="conversions_8cpp_1a957e63c533c9e98caa47d043417d7cf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulation_interface::toMsg</definition>
+        <argsstring>(const openscenario_msgs::ActionStatus &amp;proto, openscenario_msgs::msg::ActionStatus &amp;s)</argsstring>
+        <name>toMsg</name>
+        <param>
+          <type>const openscenario_msgs::ActionStatus &amp;</type>
+          <declname>proto</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::msg::ActionStatus &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" line="224" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/conversions.cpp" bodystart="224" bodyend="229"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/constants.hpp" line="21" column="1"/>
+  </compounddef>
+</doxygen>

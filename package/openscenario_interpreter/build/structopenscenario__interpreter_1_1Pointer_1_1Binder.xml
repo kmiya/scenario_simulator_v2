@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structopenscenario__interpreter_1_1Pointer_1_1Binder" kind="struct" language="C++" prot="private">
+    <compoundname>openscenario_interpreter::Pointer::Binder</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">T</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Bound</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>typename Bound</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structopenscenario__interpreter_1_1Pointer_1_1Binder_1a4a4ef9ae9c1d80e7899462905c2a177b" prot="public" static="no">
+        <type>T</type>
+        <definition>using openscenario_interpreter::Pointer&lt; T &gt;::Binder&lt; Bound &gt;::top =  T</definition>
+        <argsstring></argsstring>
+        <name>top</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" line="40" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1Pointer_1_1Binder_1a7525f5987cee8a404a10f3adc1fa61ce" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr</type>
+        <definition>constexpr openscenario_interpreter::Pointer&lt; T &gt;::Binder&lt; Bound &gt;::Binder</definition>
+        <argsstring>(Ts &amp;&amp;... xs)</argsstring>
+        <name>Binder</name>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" line="43" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" bodystart="43" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1Pointer_1_1Binder_1abded4c08c9d35d92b860e741c0852032" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual openscenario_interpreter::Pointer&lt; T &gt;::Binder&lt; Bound &gt;::~Binder</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Binder</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" line="47" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1Pointer_1_1Binder_1a48b4d8d010aaf0951e708fa2ca8d6682" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::type_info &amp;</type>
+        <definition>const std::type_info&amp; openscenario_interpreter::Pointer&lt; T &gt;::Binder&lt; Bound &gt;::type</definition>
+        <argsstring>() const noexcept override</argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" line="49" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" bodystart="49" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1Pointer_1_1Binder_1a9106223080d8ce6c038310533dc69222" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; openscenario_interpreter::Pointer&lt; T &gt;::Binder&lt; Bound &gt;::write</definition>
+        <argsstring>(std::ostream &amp;os) const override</argsstring>
+        <name>write</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" line="53" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1Pointer_1_1Binder_1a3c1b2f3fb2efb4c04661b4dda6f44376" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classopenscenario__interpreter_1_1Pointer" kindref="compound">Pointer</ref></type>
+        <definition>Pointer openscenario_interpreter::Pointer&lt; T &gt;::Binder&lt; Bound &gt;::evaluate</definition>
+        <argsstring>(const Pointer &amp;else_) override</argsstring>
+        <name>evaluate</name>
+        <param>
+          <type>const <ref refid="classopenscenario__interpreter_1_1Pointer" kindref="compound">Pointer</ref> &amp;</type>
+          <declname>else_</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" line="58" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" bodystart="58" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1Pointer_1_1Binder_1a47ba290287f23dbbd6c476affe220a1d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool openscenario_interpreter::Pointer&lt; T &gt;::Binder&lt; Bound &gt;::accomplished</definition>
+        <argsstring>() override</argsstring>
+        <name>accomplished</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" line="63" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" bodystart="63" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1Pointer_1_1Binder_1ad4331e279cdac80fcd9788e283b5bfdb" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classopenscenario__interpreter_1_1Pointer" kindref="compound">Pointer</ref> &amp;</type>
+        <definition>const Pointer&amp; openscenario_interpreter::Pointer&lt; T &gt;::Binder&lt; Bound &gt;::state</definition>
+        <argsstring>() const override</argsstring>
+        <name>state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" line="65" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" bodystart="65" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1Pointer_1_1Binder_1a6ba8fa63d2ae7e2076fc7e86594fc528" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void openscenario_interpreter::Pointer&lt; T &gt;::Binder&lt; Bound &gt;::start</definition>
+        <argsstring>() override</argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" line="70" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" bodystart="70" bodyend="73"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="84">
+        <label>T</label>
+      </node>
+      <node id="83">
+        <label>openscenario_interpreter::Pointer&lt; T &gt;::Binder&lt; Bound &gt;</label>
+        <childnode refid="84" relation="public-inheritance">
+        </childnode>
+        <childnode refid="85" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="85">
+        <label>Bound</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="87">
+        <label>T</label>
+      </node>
+      <node id="86">
+        <label>openscenario_interpreter::Pointer&lt; T &gt;::Binder&lt; Bound &gt;</label>
+        <childnode refid="87" relation="public-inheritance">
+        </childnode>
+        <childnode refid="88" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>Bound</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" line="39" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/pointer.hpp" bodystart="38" bodyend="74"/>
+    <listofallmembers>
+      <member refid="structopenscenario__interpreter_1_1Pointer_1_1Binder_1a47ba290287f23dbbd6c476affe220a1d" prot="private" virt="non-virtual"><scope>openscenario_interpreter::Pointer::Binder</scope><name>accomplished</name></member>
+      <member refid="structopenscenario__interpreter_1_1Pointer_1_1Binder_1a7525f5987cee8a404a10f3adc1fa61ce" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Pointer::Binder</scope><name>Binder</name></member>
+      <member refid="structopenscenario__interpreter_1_1Pointer_1_1Binder_1a3c1b2f3fb2efb4c04661b4dda6f44376" prot="private" virt="non-virtual"><scope>openscenario_interpreter::Pointer::Binder</scope><name>evaluate</name></member>
+      <member refid="structopenscenario__interpreter_1_1Pointer_1_1Binder_1a6ba8fa63d2ae7e2076fc7e86594fc528" prot="private" virt="non-virtual"><scope>openscenario_interpreter::Pointer::Binder</scope><name>start</name></member>
+      <member refid="structopenscenario__interpreter_1_1Pointer_1_1Binder_1ad4331e279cdac80fcd9788e283b5bfdb" prot="private" virt="non-virtual"><scope>openscenario_interpreter::Pointer::Binder</scope><name>state</name></member>
+      <member refid="structopenscenario__interpreter_1_1Pointer_1_1Binder_1a4a4ef9ae9c1d80e7899462905c2a177b" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Pointer::Binder</scope><name>top</name></member>
+      <member refid="structopenscenario__interpreter_1_1Pointer_1_1Binder_1a48b4d8d010aaf0951e708fa2ca8d6682" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Pointer::Binder</scope><name>type</name></member>
+      <member refid="structopenscenario__interpreter_1_1Pointer_1_1Binder_1a9106223080d8ce6c038310533dc69222" prot="private" virt="non-virtual"><scope>openscenario_interpreter::Pointer::Binder</scope><name>write</name></member>
+      <member refid="structopenscenario__interpreter_1_1Pointer_1_1Binder_1abded4c08c9d35d92b860e741c0852032" prot="public" virt="virtual"><scope>openscenario_interpreter::Pointer::Binder</scope><name>~Binder</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1378 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classhdmap__utils_1_1HdMapUtils" kind="class" language="C++" prot="public">
+    <compoundname>hdmap_utils::HdMapUtils</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classhdmap__utils_1_1HdMapUtils_1a2503f7ddbdb1bc5ce0d30c7a50273ea4" prot="private" static="no" mutable="no">
+        <type>lanelet::LaneletMapPtr</type>
+        <definition>lanelet::LaneletMapPtr hdmap_utils::HdMapUtils::lanelet_map_ptr_</definition>
+        <argsstring></argsstring>
+        <name>lanelet_map_ptr_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="152" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhdmap__utils_1_1HdMapUtils_1ae59be95d1d2a3bb3256690fe519e7d06" prot="private" static="no" mutable="no">
+        <type>lanelet::routing::RoutingGraphConstPtr</type>
+        <definition>lanelet::routing::RoutingGraphConstPtr hdmap_utils::HdMapUtils::vehicle_routing_graph_ptr_</definition>
+        <argsstring></argsstring>
+        <name>vehicle_routing_graph_ptr_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="153" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhdmap__utils_1_1HdMapUtils_1ae8004d15ae917c91f7365e1b4a2f3123" prot="private" static="no" mutable="no">
+        <type>lanelet::traffic_rules::TrafficRulesPtr</type>
+        <definition>lanelet::traffic_rules::TrafficRulesPtr hdmap_utils::HdMapUtils::traffic_rules_vehicle_ptr_</definition>
+        <argsstring></argsstring>
+        <name>traffic_rules_vehicle_ptr_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="154" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhdmap__utils_1_1HdMapUtils_1a8e2edeff74482f7be543a2389ff28448" prot="private" static="no" mutable="no">
+        <type>lanelet::routing::RoutingGraphConstPtr</type>
+        <definition>lanelet::routing::RoutingGraphConstPtr hdmap_utils::HdMapUtils::pedestrian_routing_graph_ptr_</definition>
+        <argsstring></argsstring>
+        <name>pedestrian_routing_graph_ptr_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="155" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhdmap__utils_1_1HdMapUtils_1a3c3b992f745c2fd2e111c82e0b243c02" prot="private" static="no" mutable="no">
+        <type>lanelet::traffic_rules::TrafficRulesPtr</type>
+        <definition>lanelet::traffic_rules::TrafficRulesPtr hdmap_utils::HdMapUtils::traffic_rules_pedestrian_ptr_</definition>
+        <argsstring></argsstring>
+        <name>traffic_rules_pedestrian_ptr_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="156" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a32634bbd23d25f73cf20aab19268868b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>hdmap_utils::HdMapUtils::HdMapUtils</definition>
+        <argsstring>(std::string lanelet_path, geographic_msgs::msg::GeoPoint origin)</argsstring>
+        <name>HdMapUtils</name>
+        <param>
+          <type>std::string</type>
+          <declname>lanelet_path</declname>
+        </param>
+        <param>
+          <type>geographic_msgs::msg::GeoPoint</type>
+          <declname>origin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="61" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="51" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a7e0f3b53892c0b9b7e824e307d9660bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const autoware_auto_msgs::msg::HADMapBin</type>
+        <definition>const autoware_auto_msgs::msg::HADMapBin hdmap_utils::HdMapUtils::toMapBin</definition>
+        <argsstring>()</argsstring>
+        <name>toMapBin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="62" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="794" bodyend="808"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a5f00f2fd1398b6a58e695f5b880a34f6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hdmap_utils::HdMapUtils::insertMarkerArray</definition>
+        <argsstring>(visualization_msgs::msg::MarkerArray &amp;a1, const visualization_msgs::msg::MarkerArray &amp;a2) const</argsstring>
+        <name>insertMarkerArray</name>
+        <param>
+          <type>visualization_msgs::msg::MarkerArray &amp;</type>
+          <declname>a1</declname>
+        </param>
+        <param>
+          <type>const visualization_msgs::msg::MarkerArray &amp;</type>
+          <declname>a2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="63" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="810" bodyend="814"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a890f6e4058b9704ba7b21bf7e9ba7cfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>std::vector&lt; geometry_msgs::msg::Point &gt; hdmap_utils::HdMapUtils::toMapPoints</definition>
+        <argsstring>(std::int64_t lanelet_id, std::vector&lt; double &gt; s)</argsstring>
+        <name>toMapPoints</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; double &gt;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="66" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="688" bodyend="698"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a662e687d18c55609cd97ca312bde6466" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; openscenario_msgs::msg::LaneletPose &gt;</type>
+        <definition>boost::optional&lt; openscenario_msgs::msg::LaneletPose &gt; hdmap_utils::HdMapUtils::toLaneletPose</definition>
+        <argsstring>(geometry_msgs::msg::Pose pose)</argsstring>
+        <name>toLaneletPose</name>
+        <param>
+          <type>geometry_msgs::msg::Pose</type>
+          <declname>pose</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="68" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="240" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a8ff28117a37d1b2c18a3d6e0e05bd44d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>geometry_msgs::msg::PoseStamped</type>
+        <definition>geometry_msgs::msg::PoseStamped hdmap_utils::HdMapUtils::toMapPose</definition>
+        <argsstring>(std::int64_t lanelet_id, double s, double offset, geometry_msgs::msg::Quaternion quat)</argsstring>
+        <name>toMapPose</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type>geometry_msgs::msg::Quaternion</type>
+          <declname>quat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="70" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="700" bodyend="719"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a778d8f9f50bd59413512d88548d3e875" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>geometry_msgs::msg::PoseStamped</type>
+        <definition>geometry_msgs::msg::PoseStamped hdmap_utils::HdMapUtils::toMapPose</definition>
+        <argsstring>(openscenario_msgs::msg::LaneletPose lanlet_pose)</argsstring>
+        <name>toMapPose</name>
+        <param>
+          <type>openscenario_msgs::msg::LaneletPose</type>
+          <declname>lanlet_pose</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="72" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="721" bodyend="727"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a016c6a485712b3b1fcd2f3b450bb0f97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>geometry_msgs::msg::PoseStamped</type>
+        <definition>geometry_msgs::msg::PoseStamped hdmap_utils::HdMapUtils::toMapPose</definition>
+        <argsstring>(std::int64_t lanelet_id, double s, double offset)</argsstring>
+        <name>toMapPose</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="73" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="729" bodyend="737"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1aa35bd4e350e420693590923a23da0946" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double hdmap_utils::HdMapUtils::getHeight</definition>
+        <argsstring>(const openscenario_msgs::msg::LaneletPose &amp;lanelet_pose)</argsstring>
+        <name>getHeight</name>
+        <param>
+          <type>const openscenario_msgs::msg::LaneletPose &amp;</type>
+          <declname>lanelet_pose</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="75" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="106" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1ae4209f9e7210d321adfee8a59c8a5ee9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; std::int64_t &gt;</type>
+        <definition>const std::vector&lt; std::int64_t &gt; hdmap_utils::HdMapUtils::getLaneletIds</definition>
+        <argsstring>()</argsstring>
+        <name>getLaneletIds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="77" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="82" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a50e8fe42679f6401fa0ffbed41fea943" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::int64_t &gt;</type>
+        <definition>std::vector&lt; std::int64_t &gt; hdmap_utils::HdMapUtils::getNextLaneletIds</definition>
+        <argsstring>(std::int64_t lanelet_id, std::string turn_direction)</argsstring>
+        <name>getNextLaneletIds</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>turn_direction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="78" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="531" bodyend="544"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1add27d75106d2d9aa08cd477d3740ff0c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::int64_t &gt;</type>
+        <definition>std::vector&lt; std::int64_t &gt; hdmap_utils::HdMapUtils::getNextLaneletIds</definition>
+        <argsstring>(std::int64_t lanelet_id) const</argsstring>
+        <name>getNextLaneletIds</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="79" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="520" bodyend="529"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a81086c2c4abc3542b97959ca8c99551c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::int64_t &gt;</type>
+        <definition>std::vector&lt; std::int64_t &gt; hdmap_utils::HdMapUtils::getPreviousLaneletIds</definition>
+        <argsstring>(std::int64_t lanelet_id, std::string turn_direction)</argsstring>
+        <name>getPreviousLaneletIds</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>turn_direction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="80" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="505" bodyend="518"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1acec4c5b7331fb02b4a0bda5364e5bb41" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::int64_t &gt;</type>
+        <definition>std::vector&lt; std::int64_t &gt; hdmap_utils::HdMapUtils::getPreviousLaneletIds</definition>
+        <argsstring>(std::int64_t lanelet_id) const</argsstring>
+        <name>getPreviousLaneletIds</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="82" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="494" bodyend="503"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a4d63dbf1164f53fec2949b8ae0e76dd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; int &gt;</type>
+        <definition>boost::optional&lt; int &gt; hdmap_utils::HdMapUtils::getLaneChangeableLenletId</definition>
+        <argsstring>(std::int64_t lanelet_id, std::string direction)</argsstring>
+        <name>getLaneChangeableLenletId</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>direction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="83" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="298" bodyend="315"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a68ce25f523b3d394dda32cdab779e9db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; double &gt;</type>
+        <definition>boost::optional&lt; double &gt; hdmap_utils::HdMapUtils::getDistanceToStopLine</definition>
+        <argsstring>(const std::vector&lt; std::int64_t &gt; &amp;route_lanelets, const std::vector&lt; geometry_msgs::msg::Point &gt; &amp;waypoints)</argsstring>
+        <name>getDistanceToStopLine</name>
+        <param>
+          <type>const std::vector&lt; std::int64_t &gt; &amp;</type>
+          <declname>route_lanelets</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; geometry_msgs::msg::Point &gt; &amp;</type>
+          <declname>waypoints</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="84" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="1099" bodyend="1130"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a7ff7e68e4c20a9b549dedd7481921724" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double hdmap_utils::HdMapUtils::getLaneletLength</definition>
+        <argsstring>(std::int64_t lanelet_id) const</argsstring>
+        <name>getLaneletLength</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="87" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="489" bodyend="492"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1aa63b1b12321bab453ad6e2d9cf53bd06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool hdmap_utils::HdMapUtils::isInLanelet</definition>
+        <argsstring>(std::int64_t lanelet_id, double s)</argsstring>
+        <name>isInLanelet</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="88" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="675" bodyend="686"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1ad3c18262465e99e4b1179582afa55548" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; double &gt;</type>
+        <definition>boost::optional&lt; double &gt; hdmap_utils::HdMapUtils::getLongitudinalDistance</definition>
+        <argsstring>(openscenario_msgs::msg::LaneletPose from, openscenario_msgs::msg::LaneletPose to)</argsstring>
+        <name>getLongitudinalDistance</name>
+        <param>
+          <type>openscenario_msgs::msg::LaneletPose</type>
+          <declname>from</declname>
+        </param>
+        <param>
+          <type>openscenario_msgs::msg::LaneletPose</type>
+          <declname>to</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="89" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="754" bodyend="758"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1ab19d2c04d59532fa200e770c7c34913f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; double &gt;</type>
+        <definition>boost::optional&lt; double &gt; hdmap_utils::HdMapUtils::getLongitudinalDistance</definition>
+        <argsstring>(std::int64_t from_lanelet_id, double from_s, std::int64_t to_lanelet_id, double to_s)</argsstring>
+        <name>getLongitudinalDistance</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>from_lanelet_id</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>from_s</declname>
+        </param>
+        <param>
+          <type>std::int64_t</type>
+          <declname>to_lanelet_id</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>to_s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="91" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="760" bodyend="792"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a705101d2d8e2e0a981a6fa405f3bdb89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double hdmap_utils::HdMapUtils::getSpeedLimit</definition>
+        <argsstring>(std::vector&lt; std::int64_t &gt; lanelet_ids)</argsstring>
+        <name>getSpeedLimit</name>
+        <param>
+          <type>std::vector&lt; std::int64_t &gt;</type>
+          <declname>lanelet_ids</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="93" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="284" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a6ffad0c394dde3d4ff0a04fe415d11cf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool hdmap_utils::HdMapUtils::isInRoute</definition>
+        <argsstring>(std::int64_t lanelet_id, std::vector&lt; std::int64_t &gt; route) const</argsstring>
+        <name>isInRoute</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::int64_t &gt;</type>
+          <declname>route</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="94" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="344" bodyend="352"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1aba130625102cc0edf6ba616ced61d759" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::int64_t &gt;</type>
+        <definition>std::vector&lt; std::int64_t &gt; hdmap_utils::HdMapUtils::getFollowingLanelets</definition>
+        <argsstring>(std::int64_t lanelet_id, double distance=100, bool include_self=true)</argsstring>
+        <name>getFollowingLanelets</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>distance</declname>
+          <defval>100</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>include_self</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="95" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="391" bodyend="418"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1ab206fd5dc3b72d3c571999eb7f49a50b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::int64_t &gt;</type>
+        <definition>std::vector&lt; std::int64_t &gt; hdmap_utils::HdMapUtils::getFollowingLanelets</definition>
+        <argsstring>(std::int64_t lanelet_id, std::vector&lt; std::int64_t &gt; candidate_lanelet_ids, double distance=100, bool include_self=true)</argsstring>
+        <name>getFollowingLanelets</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::int64_t &gt;</type>
+          <declname>candidate_lanelet_ids</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>distance</declname>
+          <defval>100</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>include_self</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="97" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="354" bodyend="389"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1afc73f75893fe3a4d181e971f23401c86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::int64_t &gt;</type>
+        <definition>std::vector&lt; std::int64_t &gt; hdmap_utils::HdMapUtils::getPreviousLanelets</definition>
+        <argsstring>(std::int64_t lanelet_id, double distance=100)</argsstring>
+        <name>getPreviousLanelets</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>distance</declname>
+          <defval>100</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="100" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="317" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a880579321ca7cb649cbd8b416b61bf5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>std::vector&lt; geometry_msgs::msg::Point &gt; hdmap_utils::HdMapUtils::getCenterPoints</definition>
+        <argsstring>(std::int64_t lanelet_id)</argsstring>
+        <name>getCenterPoints</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="101" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="455" bodyend="487"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1ad0c632adb1d18b094e96648a8d80542e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>std::vector&lt; geometry_msgs::msg::Point &gt; hdmap_utils::HdMapUtils::getCenterPoints</definition>
+        <argsstring>(std::vector&lt; std::int64_t &gt; lanelet_ids)</argsstring>
+        <name>getCenterPoints</name>
+        <param>
+          <type>std::vector&lt; std::int64_t &gt;</type>
+          <declname>lanelet_ids</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="102" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="441" bodyend="453"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a1811e090140bf271da228dcba73c95f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>std::vector&lt; geometry_msgs::msg::Point &gt; hdmap_utils::HdMapUtils::clipTrajectoryFromLaneletIds</definition>
+        <argsstring>(std::int64_t lanelet_id, double s, std::vector&lt; std::int64_t &gt; lanelet_ids, double foward_distance=20)</argsstring>
+        <name>clipTrajectoryFromLaneletIds</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::int64_t &gt;</type>
+          <declname>lanelet_ids</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>foward_distance</declname>
+          <defval>20</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="103" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="180" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a74e7d1c4fbf11b9f8949f40a982aae10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool hdmap_utils::HdMapUtils::canChangeLane</definition>
+        <argsstring>(std::int64_t from_lanelet_id, std::int64_t to_lanelet_id)</argsstring>
+        <name>canChangeLane</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>from_lanelet_id</declname>
+        </param>
+        <param>
+          <type>std::int64_t</type>
+          <declname>to_lanelet_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="106" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="747" bodyend="752"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a359ef582724a276cf32874d07fdc87c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; std::pair&lt; <ref refid="classtraffic__simulator_1_1math_1_1HermiteCurve" kindref="compound">traffic_simulator::math::HermiteCurve</ref>, double &gt; &gt;</type>
+        <definition>boost::optional&lt; std::pair&lt; traffic_simulator::math::HermiteCurve, double &gt; &gt; hdmap_utils::HdMapUtils::getLaneChangeTrajectory</definition>
+        <argsstring>(geometry_msgs::msg::Pose from_pose, std::int64_t to_lanelet_id)</argsstring>
+        <name>getLaneChangeTrajectory</name>
+        <param>
+          <type>geometry_msgs::msg::Pose</type>
+          <declname>from_pose</declname>
+        </param>
+        <param>
+          <type>std::int64_t</type>
+          <declname>to_lanelet_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="107" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="617" bodyend="645"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1aa870aa77293083bc2340366b4b2dca7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; <ref refid="classtraffic__simulator_1_1math_1_1HermiteCurve" kindref="compound">traffic_simulator::math::HermiteCurve</ref> &gt;</type>
+        <definition>boost::optional&lt; traffic_simulator::math::HermiteCurve &gt; hdmap_utils::HdMapUtils::getLaneChangeTrajectory</definition>
+        <argsstring>(geometry_msgs::msg::Pose from_pose, std::int64_t to_lanelet_id, double to_s, double tangent_vector_size=100)</argsstring>
+        <name>getLaneChangeTrajectory</name>
+        <param>
+          <type>geometry_msgs::msg::Pose</type>
+          <declname>from_pose</declname>
+        </param>
+        <param>
+          <type>std::int64_t</type>
+          <declname>to_lanelet_id</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>to_s</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>tangent_vector_size</declname>
+          <defval>100</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="109" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="647" bodyend="661"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1af90ae8bff96aeaf305348487ad3a9d79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; geometry_msgs::msg::Vector3 &gt;</type>
+        <definition>boost::optional&lt; geometry_msgs::msg::Vector3 &gt; hdmap_utils::HdMapUtils::getTangentVector</definition>
+        <argsstring>(std::int64_t lanelet_id, double s)</argsstring>
+        <name>getTangentVector</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="112" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="739" bodyend="745"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1aaec29af041148541c5de5ae0cfcba494" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::int64_t &gt;</type>
+        <definition>std::vector&lt; std::int64_t &gt; hdmap_utils::HdMapUtils::getRoute</definition>
+        <argsstring>(std::int64_t from_lanelet_id, std::int64_t to_lanelet_id)</argsstring>
+        <name>getRoute</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>from_lanelet_id</declname>
+        </param>
+        <param>
+          <type>std::int64_t</type>
+          <declname>to_lanelet_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="113" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="420" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a388da431962ae88547ca753eac42054f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::int64_t &gt;</type>
+        <definition>std::vector&lt; std::int64_t &gt; hdmap_utils::HdMapUtils::getConflictingCrosswalkIds</definition>
+        <argsstring>(std::vector&lt; std::int64_t &gt; lanelet_ids) const</argsstring>
+        <name>getConflictingCrosswalkIds</name>
+        <param>
+          <type>std::vector&lt; std::int64_t &gt;</type>
+          <declname>lanelet_ids</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="114" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="159" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1ab807c4fe26355728beed8222132189b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; double &gt;</type>
+        <definition>boost::optional&lt; double &gt; hdmap_utils::HdMapUtils::getCollisionPointInLaneCoordinate</definition>
+        <argsstring>(std::int64_t lanelet_id, std::int64_t crossing_lanelet_id)</argsstring>
+        <name>getCollisionPointInLaneCoordinate</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <param>
+          <type>std::int64_t</type>
+          <declname>crossing_lanelet_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="115" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="111" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1abcbb3443e352b352773e08f3b8d9db73" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const visualization_msgs::msg::MarkerArray</type>
+        <definition>const visualization_msgs::msg::MarkerArray hdmap_utils::HdMapUtils::generateMarker</definition>
+        <argsstring>() const</argsstring>
+        <name>generateMarker</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="117" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="816" bodyend="875"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1af2dd81ca4051851c81494bfbe08fed8d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; std::int64_t &gt;</type>
+        <definition>const std::vector&lt; std::int64_t &gt; hdmap_utils::HdMapUtils::getRightOfWayLaneletIds</definition>
+        <argsstring>(std::int64_t lanelet_id) const</argsstring>
+        <name>getRightOfWayLaneletIds</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="118" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="924" bodyend="936"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a2f2091800f6dba7990eb819a46a8d457" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::unordered_map&lt; std::int64_t, std::vector&lt; std::int64_t &gt; &gt;</type>
+        <definition>const std::unordered_map&lt; std::int64_t, std::vector&lt; std::int64_t &gt; &gt; hdmap_utils::HdMapUtils::getRightOfWayLaneletIds</definition>
+        <argsstring>(std::vector&lt; std::int64_t &gt; lanelet_ids) const</argsstring>
+        <name>getRightOfWayLaneletIds</name>
+        <param>
+          <type>std::vector&lt; std::int64_t &gt;</type>
+          <declname>lanelet_ids</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="119" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="915" bodyend="922"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a68bcbdc279b8ed28abbe3022805cd121" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; std::int64_t &gt;</type>
+        <definition>boost::optional&lt; std::int64_t &gt; hdmap_utils::HdMapUtils::getClosetLanletId</definition>
+        <argsstring>(geometry_msgs::msg::Pose pose, double distance_thresh=30.0)</argsstring>
+        <name>getClosetLanletId</name>
+        <param>
+          <type>geometry_msgs::msg::Pose</type>
+          <declname>pose</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>distance_thresh</declname>
+          <defval>30.0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="121" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="265" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1aa73ca234cb0979f1c113624508395823" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>const std::vector&lt; geometry_msgs::msg::Point &gt; hdmap_utils::HdMapUtils::getLaneletPolygon</definition>
+        <argsstring>(std::int64_t lanelet_id)</argsstring>
+        <name>getLaneletPolygon</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="123" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="91" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a71203a3037207afec9c31fc70c0ec5a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>const std::vector&lt; geometry_msgs::msg::Point &gt; hdmap_utils::HdMapUtils::getStopLinePolygon</definition>
+        <argsstring>(std::int64_t lanelet_id)</argsstring>
+        <name>getStopLinePolygon</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>lanelet_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="124" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="1030" bodyend="1042"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a57108c20cc4accbcac79bdaf07f5ece5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; std::int64_t &gt;</type>
+        <definition>const std::vector&lt; std::int64_t &gt; hdmap_utils::HdMapUtils::getTrafficLightIds</definition>
+        <argsstring>() const</argsstring>
+        <name>getTrafficLightIds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="125" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="546" bodyend="562"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1ad21294b308f008386bedd52d181b0950" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const boost::optional&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>const boost::optional&lt; geometry_msgs::msg::Point &gt; hdmap_utils::HdMapUtils::getTrafficLightBulbPosition</definition>
+        <argsstring>(std::int64_t traffic_light_id, traffic_simulator::TrafficLightColor color) const</argsstring>
+        <name>getTrafficLightBulbPosition</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>traffic_light_id</declname>
+        </param>
+        <param>
+          <type>traffic_simulator::TrafficLightColor</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="126" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="564" bodyend="614"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a7589fc716703486baea9339d3d346866" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const boost::optional&lt; std::int64_t &gt;</type>
+        <definition>const boost::optional&lt; std::int64_t &gt; hdmap_utils::HdMapUtils::getTrafficLightStopLineId</definition>
+        <argsstring>(const std::int64_t &amp;traffic_light_id) const</argsstring>
+        <name>getTrafficLightStopLineId</name>
+        <param>
+          <type>const std::int64_t &amp;</type>
+          <declname>traffic_light_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="128" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="1002" bodyend="1010"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a2efceb7ba7e507433e2b8fd63a2fecb6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; geometry_msgs::msg::Point &gt;</type>
+        <definition>const std::vector&lt; geometry_msgs::msg::Point &gt; hdmap_utils::HdMapUtils::getTrafficLightStopLinePoints</definition>
+        <argsstring>(std::int64_t traffic_light_id) const</argsstring>
+        <name>getTrafficLightStopLinePoints</name>
+        <param>
+          <type>std::int64_t</type>
+          <declname>traffic_light_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="130" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="1012" bodyend="1028"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a1d42a9ddfa338ba463ef8e37b7ed764e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const boost::optional&lt; double &gt;</type>
+        <definition>const boost::optional&lt; double &gt; hdmap_utils::HdMapUtils::getDistanceToTrafficLightStopLine</definition>
+        <argsstring>(const std::vector&lt; geometry_msgs::msg::Point &gt; &amp;waypoints, const std::int64_t &amp;traffic_light_id) const</argsstring>
+        <name>getDistanceToTrafficLightStopLine</name>
+        <param>
+          <type>const std::vector&lt; geometry_msgs::msg::Point &gt; &amp;</type>
+          <declname>waypoints</declname>
+        </param>
+        <param>
+          <type>const std::int64_t &amp;</type>
+          <declname>traffic_light_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="132" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="1083" bodyend="1097"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a35c16298c33b23f0ddb4e17952f4522d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const boost::optional&lt; double &gt;</type>
+        <definition>const boost::optional&lt; double &gt; hdmap_utils::HdMapUtils::getDistanceToTrafficLightStopLine</definition>
+        <argsstring>(const std::vector&lt; std::int64_t &gt; &amp;route_lanelets, const std::vector&lt; geometry_msgs::msg::Point &gt; &amp;waypoints) const</argsstring>
+        <name>getDistanceToTrafficLightStopLine</name>
+        <param>
+          <type>const std::vector&lt; std::int64_t &gt; &amp;</type>
+          <declname>route_lanelets</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; geometry_msgs::msg::Point &gt; &amp;</type>
+          <declname>waypoints</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="135" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="1062" bodyend="1081"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a28b40fdb07396f56007602f350e14fc5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; std::int64_t &gt;</type>
+        <definition>const std::vector&lt; std::int64_t &gt; hdmap_utils::HdMapUtils::getTrafficLightIdsOnPath</definition>
+        <argsstring>(const std::vector&lt; std::int64_t &gt; &amp;route_lanelets) const</argsstring>
+        <name>getTrafficLightIdsOnPath</name>
+        <param>
+          <type>const std::vector&lt; std::int64_t &gt; &amp;</type>
+          <declname>route_lanelets</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="138" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="1044" bodyend="1060"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1adc98cc60a7f3a2064c86f8114bac05c1" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>lanelet::AutowareTrafficLightConstPtr</type>
+        <definition>lanelet::AutowareTrafficLightConstPtr hdmap_utils::HdMapUtils::getTrafficLight</definition>
+        <argsstring>(const std::int64_t traffic_light_id) const</argsstring>
+        <name>getTrafficLight</name>
+        <param>
+          <type>const std::int64_t</type>
+          <declname>traffic_light_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="142" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="983" bodyend="1000"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a43d8ccd6702d631c1172f1cbc824194a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::pair&lt; double, lanelet::Lanelet &gt; &gt;</type>
+        <definition>std::vector&lt; std::pair&lt; double, lanelet::Lanelet &gt; &gt; hdmap_utils::HdMapUtils::excludeSubtypeLaneletsWithDistance</definition>
+        <argsstring>(const std::vector&lt; std::pair&lt; double, lanelet::Lanelet &gt;&gt; &amp;lls, const char subtype[])</argsstring>
+        <name>excludeSubtypeLaneletsWithDistance</name>
+        <param>
+          <type>const std::vector&lt; std::pair&lt; double, lanelet::Lanelet &gt;&gt; &amp;</type>
+          <declname>lls</declname>
+        </param>
+        <param>
+          <type>const char</type>
+          <declname>subtype</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="143" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="225" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1ae55996fd36eadf015644f947a2d25823" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; const lanelet::autoware::AutowareTrafficLight &gt; &gt;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; const lanelet::autoware::AutowareTrafficLight &gt; &gt; hdmap_utils::HdMapUtils::getTrafficLightRegElementsOnPath</definition>
+        <argsstring>(const std::vector&lt; std::int64_t &gt; &amp;lanelet_ids) const</argsstring>
+        <name>getTrafficLightRegElementsOnPath</name>
+        <param>
+          <type>const std::vector&lt; std::int64_t &gt; &amp;</type>
+          <declname>lanelet_ids</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="146" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="953" bodyend="965"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1ac84592a96434afe9ecce35c18908ed72" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; const lanelet::TrafficSign &gt; &gt;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; const lanelet::TrafficSign &gt; &gt; hdmap_utils::HdMapUtils::getTrafficSignRegElementsOnPath</definition>
+        <argsstring>(std::vector&lt; std::int64_t &gt; lanelet_ids)</argsstring>
+        <name>getTrafficSignRegElementsOnPath</name>
+        <param>
+          <type>std::vector&lt; std::int64_t &gt;</type>
+          <declname>lanelet_ids</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="147" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="939" bodyend="950"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a36469111d528986618e019c77891047a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; lanelet::ConstLineString3d &gt;</type>
+        <definition>std::vector&lt; lanelet::ConstLineString3d &gt; hdmap_utils::HdMapUtils::getStopLinesOnPath</definition>
+        <argsstring>(std::vector&lt; std::int64_t &gt; lanelet_ids)</argsstring>
+        <name>getStopLinesOnPath</name>
+        <param>
+          <type>std::vector&lt; std::int64_t &gt;</type>
+          <declname>lanelet_ids</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="149" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="967" bodyend="981"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a3b35657ec2cb8f2e6f98a0542718a3f1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>geometry_msgs::msg::Vector3</type>
+        <definition>geometry_msgs::msg::Vector3 hdmap_utils::HdMapUtils::getVectorFromPose</definition>
+        <argsstring>(geometry_msgs::msg::Pose pose, double magnitude)</argsstring>
+        <name>getVectorFromPose</name>
+        <param>
+          <type>geometry_msgs::msg::Pose</type>
+          <declname>pose</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>magnitude</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="150" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="663" bodyend="673"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a2cf12c782d0309d681629821db425a76" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hdmap_utils::HdMapUtils::mapCallback</definition>
+        <argsstring>(const autoware_auto_msgs::msg::HADMapBin &amp;msg)</argsstring>
+        <name>mapCallback</name>
+        <param>
+          <type>const autoware_auto_msgs::msg::HADMapBin &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="151" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1aed565e092ba4578b2e3c537740583399" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt; double &gt; hdmap_utils::HdMapUtils::calcEuclidDist</definition>
+        <argsstring>(const std::vector&lt; double &gt; &amp;x, const std::vector&lt; double &gt; &amp;y, const std::vector&lt; double &gt; &amp;z)</argsstring>
+        <name>calcEuclidDist</name>
+        <param>
+          <type>const std::vector&lt; double &gt; &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; double &gt; &amp;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; double &gt; &amp;</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="157" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="1220" bodyend="1233"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a28a06784d8b820437dcbac7e665b6561" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hdmap_utils::HdMapUtils::overwriteLaneletsCenterline</definition>
+        <argsstring>()</argsstring>
+        <name>overwriteLaneletsCenterline</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="159" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="877" bodyend="885"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1ae226d6ae5e49da337e1e953d14711301" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>lanelet::LineString3d</type>
+        <definition>lanelet::LineString3d hdmap_utils::HdMapUtils::generateFineCenterline</definition>
+        <argsstring>(const lanelet::ConstLanelet &amp;lanelet_obj, const double resolution)</argsstring>
+        <name>generateFineCenterline</name>
+        <param>
+          <type>const lanelet::ConstLanelet &amp;</type>
+          <declname>lanelet_obj</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>resolution</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="160" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="1191" bodyend="1218"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1aa474212785de0bde2e3def3d6227f4d8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; lanelet::BasicPoint3d &gt;</type>
+        <definition>std::vector&lt; lanelet::BasicPoint3d &gt; hdmap_utils::HdMapUtils::resamplePoints</definition>
+        <argsstring>(const lanelet::ConstLineString3d &amp;line_string, const int32_t num_segments)</argsstring>
+        <name>resamplePoints</name>
+        <param>
+          <type>const lanelet::ConstLineString3d &amp;</type>
+          <declname>line_string</declname>
+        </param>
+        <param>
+          <type>const int32_t</type>
+          <declname>num_segments</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="162" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="1157" bodyend="1189"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1ace6c6549dab73fb6f8638d3ffecbe297" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; size_t, size_t &gt;</type>
+        <definition>std::pair&lt; size_t, size_t &gt; hdmap_utils::HdMapUtils::findNearestIndexPair</definition>
+        <argsstring>(const std::vector&lt; double &gt; &amp;accumulated_lengths, const double target_length)</argsstring>
+        <name>findNearestIndexPair</name>
+        <param>
+          <type>const std::vector&lt; double &gt; &amp;</type>
+          <declname>accumulated_lengths</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>target_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="164" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="887" bodyend="912"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1ac55345f3c4e73884fcd56af3b9b42050" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt; double &gt; hdmap_utils::HdMapUtils::calculateAccumulatedLengths</definition>
+        <argsstring>(const lanelet::ConstLineString3d &amp;line_string)</argsstring>
+        <name>calculateAccumulatedLengths</name>
+        <param>
+          <type>const lanelet::ConstLineString3d &amp;</type>
+          <declname>line_string</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="166" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="1144" bodyend="1155"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1aacdd04f3efb1e4324b7c0822d4cebb17" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt; double &gt; hdmap_utils::HdMapUtils::calculateSegmentDistances</definition>
+        <argsstring>(const lanelet::ConstLineString3d &amp;line_string)</argsstring>
+        <name>calculateSegmentDistances</name>
+        <param>
+          <type>const lanelet::ConstLineString3d &amp;</type>
+          <declname>line_string</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="167" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="1132" bodyend="1142"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="59" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" bodystart="58" bodyend="168"/>
+    <listofallmembers>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1aed565e092ba4578b2e3c537740583399" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>calcEuclidDist</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1ac55345f3c4e73884fcd56af3b9b42050" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>calculateAccumulatedLengths</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1aacdd04f3efb1e4324b7c0822d4cebb17" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>calculateSegmentDistances</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a74e7d1c4fbf11b9f8949f40a982aae10" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>canChangeLane</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a1811e090140bf271da228dcba73c95f4" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>clipTrajectoryFromLaneletIds</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a43d8ccd6702d631c1172f1cbc824194a" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>excludeSubtypeLaneletsWithDistance</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1ace6c6549dab73fb6f8638d3ffecbe297" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>findNearestIndexPair</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1ae226d6ae5e49da337e1e953d14711301" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>generateFineCenterline</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1abcbb3443e352b352773e08f3b8d9db73" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>generateMarker</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a880579321ca7cb649cbd8b416b61bf5a" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getCenterPoints</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1ad0c632adb1d18b094e96648a8d80542e" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getCenterPoints</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a68bcbdc279b8ed28abbe3022805cd121" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getClosetLanletId</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1ab807c4fe26355728beed8222132189b4" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getCollisionPointInLaneCoordinate</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a388da431962ae88547ca753eac42054f" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getConflictingCrosswalkIds</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a68ce25f523b3d394dda32cdab779e9db" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getDistanceToStopLine</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a1d42a9ddfa338ba463ef8e37b7ed764e" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getDistanceToTrafficLightStopLine</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a35c16298c33b23f0ddb4e17952f4522d" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getDistanceToTrafficLightStopLine</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1aba130625102cc0edf6ba616ced61d759" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getFollowingLanelets</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1ab206fd5dc3b72d3c571999eb7f49a50b" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getFollowingLanelets</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1aa35bd4e350e420693590923a23da0946" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getHeight</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a4d63dbf1164f53fec2949b8ae0e76dd6" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getLaneChangeableLenletId</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a359ef582724a276cf32874d07fdc87c5" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getLaneChangeTrajectory</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1aa870aa77293083bc2340366b4b2dca7d" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getLaneChangeTrajectory</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1ae4209f9e7210d321adfee8a59c8a5ee9" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getLaneletIds</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a7ff7e68e4c20a9b549dedd7481921724" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getLaneletLength</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1aa73ca234cb0979f1c113624508395823" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getLaneletPolygon</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1ad3c18262465e99e4b1179582afa55548" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getLongitudinalDistance</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1ab19d2c04d59532fa200e770c7c34913f" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getLongitudinalDistance</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a50e8fe42679f6401fa0ffbed41fea943" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getNextLaneletIds</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1add27d75106d2d9aa08cd477d3740ff0c" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getNextLaneletIds</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a81086c2c4abc3542b97959ca8c99551c" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getPreviousLaneletIds</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1acec4c5b7331fb02b4a0bda5364e5bb41" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getPreviousLaneletIds</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1afc73f75893fe3a4d181e971f23401c86" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getPreviousLanelets</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1af2dd81ca4051851c81494bfbe08fed8d" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getRightOfWayLaneletIds</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a2f2091800f6dba7990eb819a46a8d457" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getRightOfWayLaneletIds</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1aaec29af041148541c5de5ae0cfcba494" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getRoute</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a705101d2d8e2e0a981a6fa405f3bdb89" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getSpeedLimit</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a71203a3037207afec9c31fc70c0ec5a3" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getStopLinePolygon</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a36469111d528986618e019c77891047a" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getStopLinesOnPath</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1af90ae8bff96aeaf305348487ad3a9d79" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getTangentVector</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1adc98cc60a7f3a2064c86f8114bac05c1" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getTrafficLight</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1ad21294b308f008386bedd52d181b0950" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getTrafficLightBulbPosition</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a57108c20cc4accbcac79bdaf07f5ece5" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getTrafficLightIds</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a28b40fdb07396f56007602f350e14fc5" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getTrafficLightIdsOnPath</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1ae55996fd36eadf015644f947a2d25823" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getTrafficLightRegElementsOnPath</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a7589fc716703486baea9339d3d346866" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getTrafficLightStopLineId</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a2efceb7ba7e507433e2b8fd63a2fecb6" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getTrafficLightStopLinePoints</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1ac84592a96434afe9ecce35c18908ed72" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getTrafficSignRegElementsOnPath</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a3b35657ec2cb8f2e6f98a0542718a3f1" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getVectorFromPose</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a32634bbd23d25f73cf20aab19268868b" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>HdMapUtils</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a5f00f2fd1398b6a58e695f5b880a34f6" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>insertMarkerArray</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1aa63b1b12321bab453ad6e2d9cf53bd06" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>isInLanelet</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a6ffad0c394dde3d4ff0a04fe415d11cf" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>isInRoute</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a2503f7ddbdb1bc5ce0d30c7a50273ea4" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>lanelet_map_ptr_</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a2cf12c782d0309d681629821db425a76" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>mapCallback</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a28a06784d8b820437dcbac7e665b6561" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>overwriteLaneletsCenterline</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a8e2edeff74482f7be543a2389ff28448" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>pedestrian_routing_graph_ptr_</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1aa474212785de0bde2e3def3d6227f4d8" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>resamplePoints</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a662e687d18c55609cd97ca312bde6466" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>toLaneletPose</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a7e0f3b53892c0b9b7e824e307d9660bc" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>toMapBin</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a890f6e4058b9704ba7b21bf7e9ba7cfe" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>toMapPoints</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a8ff28117a37d1b2c18a3d6e0e05bd44d" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>toMapPose</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a778d8f9f50bd59413512d88548d3e875" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>toMapPose</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a016c6a485712b3b1fcd2f3b450bb0f97" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>toMapPose</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a3c3b992f745c2fd2e111c82e0b243c02" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>traffic_rules_pedestrian_ptr_</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1ae8004d15ae917c91f7365e1b4a2f3123" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>traffic_rules_vehicle_ptr_</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1ae59be95d1d2a3bb3256690fe519e7d06" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>vehicle_routing_graph_ptr_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

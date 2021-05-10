@@ -1,0 +1,284 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classentity__behavior_1_1pedestrian_1_1BehaviorTree" kind="class" language="C++" prot="public">
+    <compoundname>entity_behavior::pedestrian::BehaviorTree</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1afa6e7785d063619348533d28f630ae5a" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string entity_behavior::pedestrian::BehaviorTree::request_</definition>
+        <argsstring></argsstring>
+        <name>request_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" line="56" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a145c11946c4936f7c487b3e03324d668" prot="private" static="no" mutable="no">
+        <type>BT::BehaviorTreeFactory</type>
+        <definition>BT::BehaviorTreeFactory entity_behavior::pedestrian::BehaviorTree::factory_</definition>
+        <argsstring></argsstring>
+        <name>factory_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" line="57" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a8d1164de00eda614ef128ac3b9e23864" prot="private" static="no" mutable="no">
+        <type>BT::Tree</type>
+        <definition>BT::Tree entity_behavior::pedestrian::BehaviorTree::tree_</definition>
+        <argsstring></argsstring>
+        <name>tree_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" line="58" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a4c19d31f9fa73fe09dd0632448123db0" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; BT::StdCoutLogger &gt;</type>
+        <definition>std::shared_ptr&lt;BT::StdCoutLogger&gt; entity_behavior::pedestrian::BehaviorTree::logger_cout_ptr_</definition>
+        <argsstring></argsstring>
+        <name>logger_cout_ptr_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" line="59" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a163360b4276fddb31cdedfe84191d83a" prot="private" static="no" mutable="no">
+        <type>BT::TimestampType</type>
+        <definition>BT::TimestampType entity_behavior::pedestrian::BehaviorTree::type_</definition>
+        <argsstring></argsstring>
+        <name>type_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" line="64" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a8d413d33d0fa7160387931be2c05a1d2" prot="private" static="no" mutable="no">
+        <type>BT::TimePoint</type>
+        <definition>BT::TimePoint entity_behavior::pedestrian::BehaviorTree::first_timestamp_</definition>
+        <argsstring></argsstring>
+        <name>first_timestamp_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" line="65" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a96cea00ee518186b177e0156534c03c4" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; BT::TreeNode::StatusChangeSubscriber &gt;</type>
+        <definition>std::vector&lt;BT::TreeNode::StatusChangeSubscriber&gt; entity_behavior::pedestrian::BehaviorTree::subscribers_</definition>
+        <argsstring></argsstring>
+        <name>subscribers_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" line="66" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a390acc6959456f15aa32de4bf6e434b1" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string entity_behavior::pedestrian::BehaviorTree::current_action_</definition>
+        <argsstring></argsstring>
+        <name>current_action_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" line="67" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a12d9c92261514e0b813dc1401c95d6f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>entity_behavior::pedestrian::BehaviorTree::BehaviorTree</definition>
+        <argsstring>()</argsstring>
+        <name>BehaviorTree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" line="39" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/behavior/pedestrian/behavior_tree.cpp" bodystart="26" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1ab254a45f251ede34900779ca38463bd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BT::NodeStatus</type>
+        <definition>BT::NodeStatus entity_behavior::pedestrian::BehaviorTree::tick</definition>
+        <argsstring>(double current_time, double step_time)</argsstring>
+        <name>tick</name>
+        <param>
+          <type>double</type>
+          <declname>current_time</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>step_time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" line="40" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/behavior/pedestrian/behavior_tree.cpp" bodystart="65" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a106f160afe74f8ae26a3fb46918a7779" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string</type>
+        <definition>const std::string entity_behavior::pedestrian::BehaviorTree::getCurrentAction</definition>
+        <argsstring>() const</argsstring>
+        <name>getCurrentAction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" line="41" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1adaa31d1e820525d651264d2128a0fb20" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void entity_behavior::pedestrian::BehaviorTree::setValueToBlackBoard</definition>
+        <argsstring>(std::string key, T value)</argsstring>
+        <name>setValueToBlackBoard</name>
+        <param>
+          <type>std::string</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" line="43" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1adfdd91efe93706252c1bfe915d5c211c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>openscenario_msgs::msg::EntityStatus</type>
+        <definition>openscenario_msgs::msg::EntityStatus entity_behavior::pedestrian::BehaviorTree::getUpdatedStatus</definition>
+        <argsstring>()</argsstring>
+        <name>getUpdatedStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" line="47" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" bodystart="47" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a929d09a53c1f867a63befbfab4ce235d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void entity_behavior::pedestrian::BehaviorTree::setRequest</definition>
+        <argsstring>(std::string request)</argsstring>
+        <name>setRequest</name>
+        <param>
+          <type>std::string</type>
+          <declname>request</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" line="53" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/behavior/pedestrian/behavior_tree.cpp" bodystart="39" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a059d5772f80abba33d029733c1627cf0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void entity_behavior::pedestrian::BehaviorTree::callback</definition>
+        <argsstring>(BT::Duration timestamp, const BT::TreeNode &amp;node, BT::NodeStatus prev_status, BT::NodeStatus status)</argsstring>
+        <name>callback</name>
+        <param>
+          <type>BT::Duration</type>
+          <declname>timestamp</declname>
+        </param>
+        <param>
+          <type>const BT::TreeNode &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>BT::NodeStatus</type>
+          <declname>prev_status</declname>
+        </param>
+        <param>
+          <type>BT::NodeStatus</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" line="60" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/behavior/pedestrian/behavior_tree.cpp" bodystart="73" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1ade32fd6c8427b162e63dad8bc6069382" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void entity_behavior::pedestrian::BehaviorTree::setupLogger</definition>
+        <argsstring>()</argsstring>
+        <name>setupLogger</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" line="63" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/behavior/pedestrian/behavior_tree.cpp" bodystart="45" bodyend="63"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" line="37" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/pedestrian/behavior_tree.hpp" bodystart="36" bodyend="68"/>
+    <listofallmembers>
+      <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a12d9c92261514e0b813dc1401c95d6f1" prot="public" virt="non-virtual"><scope>entity_behavior::pedestrian::BehaviorTree</scope><name>BehaviorTree</name></member>
+      <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a059d5772f80abba33d029733c1627cf0" prot="private" virt="non-virtual"><scope>entity_behavior::pedestrian::BehaviorTree</scope><name>callback</name></member>
+      <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a390acc6959456f15aa32de4bf6e434b1" prot="private" virt="non-virtual"><scope>entity_behavior::pedestrian::BehaviorTree</scope><name>current_action_</name></member>
+      <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a145c11946c4936f7c487b3e03324d668" prot="private" virt="non-virtual"><scope>entity_behavior::pedestrian::BehaviorTree</scope><name>factory_</name></member>
+      <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a8d413d33d0fa7160387931be2c05a1d2" prot="private" virt="non-virtual"><scope>entity_behavior::pedestrian::BehaviorTree</scope><name>first_timestamp_</name></member>
+      <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a106f160afe74f8ae26a3fb46918a7779" prot="public" virt="non-virtual"><scope>entity_behavior::pedestrian::BehaviorTree</scope><name>getCurrentAction</name></member>
+      <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1adfdd91efe93706252c1bfe915d5c211c" prot="public" virt="non-virtual"><scope>entity_behavior::pedestrian::BehaviorTree</scope><name>getUpdatedStatus</name></member>
+      <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a4c19d31f9fa73fe09dd0632448123db0" prot="private" virt="non-virtual"><scope>entity_behavior::pedestrian::BehaviorTree</scope><name>logger_cout_ptr_</name></member>
+      <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1afa6e7785d063619348533d28f630ae5a" prot="private" virt="non-virtual"><scope>entity_behavior::pedestrian::BehaviorTree</scope><name>request_</name></member>
+      <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a929d09a53c1f867a63befbfab4ce235d" prot="public" virt="non-virtual"><scope>entity_behavior::pedestrian::BehaviorTree</scope><name>setRequest</name></member>
+      <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1ade32fd6c8427b162e63dad8bc6069382" prot="private" virt="non-virtual"><scope>entity_behavior::pedestrian::BehaviorTree</scope><name>setupLogger</name></member>
+      <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1adaa31d1e820525d651264d2128a0fb20" prot="public" virt="non-virtual"><scope>entity_behavior::pedestrian::BehaviorTree</scope><name>setValueToBlackBoard</name></member>
+      <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a96cea00ee518186b177e0156534c03c4" prot="private" virt="non-virtual"><scope>entity_behavior::pedestrian::BehaviorTree</scope><name>subscribers_</name></member>
+      <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1ab254a45f251ede34900779ca38463bd3" prot="public" virt="non-virtual"><scope>entity_behavior::pedestrian::BehaviorTree</scope><name>tick</name></member>
+      <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a8d1164de00eda614ef128ac3b9e23864" prot="private" virt="non-virtual"><scope>entity_behavior::pedestrian::BehaviorTree</scope><name>tree_</name></member>
+      <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a163360b4276fddb31cdedfe84191d83a" prot="private" virt="non-virtual"><scope>entity_behavior::pedestrian::BehaviorTree</scope><name>type_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

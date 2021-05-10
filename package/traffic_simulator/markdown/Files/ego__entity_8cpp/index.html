@@ -926,7 +926,8 @@
 
 <span class="k">auto</span> <span class="n">EgoEntity</span><span class="o">::</span><span class="n">getCurrentAction</span><span class="p">()</span> <span class="k">const</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span>
 <span class="p">{</span>
-  <span class="k">return</span> <span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">getAutowareStatus</span><span class="p">().</span><span class="n">autoware_state</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">state</span><span class="p">{</span><span class="n">autowares</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">getAutowareStatus</span><span class="p">().</span><span class="n">autoware_state</span><span class="p">};</span>
+  <span class="k">return</span> <span class="n">state</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">?</span> <span class="s">&quot;Unknown&quot;</span> <span class="o">:</span> <span class="n">state</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">auto</span> <span class="n">EgoEntity</span><span class="o">::</span><span class="n">getEntityStatus</span><span class="p">(</span><span class="k">const</span> <span class="kt">double</span> <span class="n">time</span><span class="p">,</span> <span class="k">const</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span> <span class="k">const</span>
@@ -1158,7 +1159,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 10 May 2021 at 10:05:03 UTC</p>
+<p>Updated on 10 May 2021 at 10:09:11 UTC</p>
                 
                   
                 

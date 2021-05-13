@@ -775,10 +775,10 @@
 <span class="p">{</span>
 <span class="cm">/* ---- SpeedCondition ---------------------------------------------------------</span>
 <span class="cm"> *</span>
-<span class="cm"> * &lt;xsd:complexType name=&quot;SpeedCondition&quot;&gt;</span>
-<span class="cm"> *   &lt;xsd:attribute name=&quot;value&quot; type=&quot;Double&quot; use=&quot;required&quot;/&gt;</span>
-<span class="cm"> *   &lt;xsd:attribute name=&quot;rule&quot; type=&quot;Rule&quot; use=&quot;required&quot;/&gt;</span>
-<span class="cm"> * &lt;/xsd:complexType&gt;</span>
+<span class="cm"> *  &lt;xsd:complexType name=&quot;SpeedCondition&quot;&gt;</span>
+<span class="cm"> *    &lt;xsd:attribute name=&quot;value&quot; type=&quot;Double&quot; use=&quot;required&quot;/&gt;</span>
+<span class="cm"> *    &lt;xsd:attribute name=&quot;rule&quot; type=&quot;Rule&quot; use=&quot;required&quot;/&gt;</span>
+<span class="cm"> *  &lt;/xsd:complexType&gt;</span>
 <span class="cm"> *</span>
 <span class="cm"> * -------------------------------------------------------------------------- */</span>
 <span class="k">struct</span> <span class="nc">SpeedCondition</span>
@@ -800,26 +800,9 @@
 
   <span class="k">auto</span> <span class="n">evaluate</span><span class="p">()</span>
   <span class="p">{</span>
-<span class="cp">#ifndef NDEBUG</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">indent</span><span class="o">++</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;- BEC.SC:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-<span class="cp">#endif</span>
-
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">asBoolean</span><span class="p">(</span><span class="n">for_each</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">triggering_entity</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span>
-        <span class="n">compare</span><span class="p">(</span><span class="n">getEntityStatus</span><span class="p">(</span><span class="n">triggering_entity</span><span class="p">).</span><span class="n">action_status</span><span class="p">.</span><span class="n">twist</span><span class="p">.</span><span class="n">linear</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
-<span class="cp">#ifndef NDEBUG</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">indent</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;  &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">triggering_entity</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&#39;s speed = &quot;</span><span class="p">;</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">getEntityStatus</span><span class="p">(</span><span class="n">triggering_entity</span><span class="p">).</span><span class="n">action_status</span><span class="p">.</span><span class="n">twist</span><span class="p">.</span><span class="n">linear</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">compare</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;? =&gt; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">result</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="cp">#endif</span>
-      <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">asBoolean</span><span class="p">(</span><span class="n">for_each</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">triggering_entity</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">compare</span><span class="p">(</span><span class="n">getEntityStatus</span><span class="p">(</span><span class="n">triggering_entity</span><span class="p">).</span><span class="n">action_status</span><span class="p">.</span><span class="n">twist</span><span class="p">.</span><span class="n">linear</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
     <span class="p">}));</span>
-
-<span class="cp">#ifndef NDEBUG</span>
-    <span class="o">--</span><span class="n">indent</span><span class="p">;</span>
-<span class="cp">#endif</span>
-
-    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">};</span>
 <span class="p">}</span>  <span class="c1">// namespace syntax</span>
@@ -828,7 +811,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__SPEED_CONDITION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 13 May 2021 at 06:35:26 UTC</p>
+<p>Updated on 13 May 2021 at 11:21:22 UTC</p>
                 
                   
                 

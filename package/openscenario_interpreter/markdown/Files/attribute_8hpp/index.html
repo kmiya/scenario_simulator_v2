@@ -758,7 +758,7 @@
 <span class="p">{</span>
 <span class="cm">/* ---- Dynamic Configuration --------------------------------------------------</span>
 <span class="cm"> *</span>
-<span class="cm"> * See https://design.ros2.org/articles/roslaunch_xml.html#dynamic-configuration</span>
+<span class="cm"> *  See https://design.ros2.org/articles/roslaunch_xml.html#dynamic-configuration</span>
 <span class="cm"> *</span>
 <span class="cm"> * -------------------------------------------------------------------------- */</span>
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
@@ -769,12 +769,6 @@
   <span class="n">std</span><span class="o">::</span><span class="n">smatch</span> <span class="n">match</span><span class="p">{};</span>
 
   <span class="k">while</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">regex_match</span><span class="p">(</span><span class="n">attribute</span><span class="p">,</span> <span class="n">match</span><span class="p">,</span> <span class="n">substitution_syntax</span><span class="p">))</span> <span class="p">{</span>
-    <span class="c1">// std::cout &lt;&lt; &quot;match 1: &quot; &lt;&lt; match.str(1) &lt;&lt; std::endl;</span>
-    <span class="c1">// std::cout &lt;&lt; &quot;match 2: &quot; &lt;&lt; match.str(2) &lt;&lt; std::endl;</span>
-    <span class="c1">// std::cout &lt;&lt; &quot;match 3: &quot; &lt;&lt; match.str(3) &lt;&lt; std::endl;</span>
-    <span class="c1">// std::cout &lt;&lt; &quot;match 4: &quot; &lt;&lt; match.str(4) &lt;&lt; std::endl;</span>
-    <span class="c1">// std::cout &lt;&lt; &quot;match 5: &quot; &lt;&lt; match.str(5) &lt;&lt; std::endl;</span>
-
     <span class="k">static</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span>
       <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span> <span class="o">&gt;</span>
       <span class="n">substitutions</span><span class="p">{</span>
@@ -786,7 +780,6 @@
         <span class="p">{</span><span class="s">&quot;var&quot;</span><span class="p">,</span>
          <span class="p">[](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">scope</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">String</span> <span class="p">{</span>
            <span class="k">const</span> <span class="k">auto</span> <span class="n">iter</span><span class="p">{</span><span class="n">scope</span><span class="p">.</span><span class="n">parameters</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">)};</span>
-
            <span class="k">if</span> <span class="p">(</span><span class="n">iter</span> <span class="o">!=</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">scope</span><span class="p">.</span><span class="n">parameters</span><span class="p">))</span> <span class="p">{</span>
              <span class="k">return</span> <span class="n">boost</span><span class="o">::</span><span class="n">lexical_cast</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="n">iter</span><span class="p">));</span>
            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -795,8 +788,6 @@
          <span class="p">}},</span>
 
         <span class="p">{</span><span class="s">&quot;dirname&quot;</span><span class="p">,</span> <span class="p">[](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span><span class="p">,</span> <span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">scope</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">scope</span><span class="p">.</span><span class="n">scenario</span><span class="p">.</span><span class="n">parent_path</span><span class="p">().</span><span class="n">string</span><span class="p">();</span> <span class="p">}}};</span>
-
-    <span class="c1">// std::cout &lt;&lt; &quot;Substitute: &quot; &lt;&lt; cyan &lt;&lt; attribute &lt;&lt; reset &lt;&lt; &quot; =&gt; &quot;;</span>
 
     <span class="k">const</span> <span class="k">auto</span> <span class="n">iter</span><span class="p">{</span><span class="n">substitutions</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">match</span><span class="p">.</span><span class="n">str</span><span class="p">(</span><span class="mi">3</span><span class="p">))};</span>
 
@@ -807,8 +798,6 @@
       <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Unknown substitution &#39;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">match</span><span class="p">.</span><span class="n">str</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&#39; specified.&quot;</span><span class="p">;</span>
       <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
     <span class="p">}</span>
-
-    <span class="c1">// std::cout &lt;&lt; cyan &lt;&lt; attribute &lt;&lt; reset &lt;&lt; std::endl;</span>
   <span class="p">}</span>
 
   <span class="k">return</span> <span class="n">attribute</span><span class="p">;</span>
@@ -871,7 +860,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__READER__ATTRIBUTE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 13 May 2021 at 06:35:27 UTC</p>
+<p>Updated on 13 May 2021 at 11:21:22 UTC</p>
                 
                   
                 

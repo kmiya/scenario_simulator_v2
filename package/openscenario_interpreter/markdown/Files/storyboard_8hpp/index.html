@@ -692,33 +692,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#defines" class="md-nav__link">
-    Defines
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#macro-documentation" class="md-nav__link">
-    Macro Documentation
-  </a>
-  
-    <nav class="md-nav" aria-label="Macro Documentation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#define-debug_value" class="md-nav__link">
-    define DEBUG_VALUE
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#source-code" class="md-nav__link">
     Source code
   </a>
@@ -774,27 +747,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="defines">Defines<a class="headerlink" href="#defines" title="Permanent link">#</a></h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/storyboard_8hpp#define-debug_value">DEBUG_VALUE</a></strong>(...)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="macro-documentation">Macro Documentation<a class="headerlink" href="#macro-documentation" title="Permanent link">#</a></h2>
-<h3 id="define-debug_value">define DEBUG_VALUE<a class="headerlink" href="#define-debug_value" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#define DEBUG_VALUE(</span>
-    <span class="p">...</span>
-<span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[32m&quot;</span> <span class="err">#</span><span class="n">__VA_ARGS__</span> <span class="s">&quot; = &quot;</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">__VA_ARGS__</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[0m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span>
-</code></pre></div>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">// Copyright 2015-2020 Tier IV, Inc. All rights reserved.</span>
 <span class="c1">//</span>
@@ -881,9 +833,6 @@
     <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">all_of</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">),</span> <span class="n">check</span><span class="p">);</span>
   <span class="p">}</span>
 
-<span class="cp">#define DEBUG_VALUE(...) \</span>
-<span class="cp">  std::cout &lt;&lt; &quot;\x1b[32m&quot; #__VA_ARGS__ &quot; = &quot; &lt;&lt; (__VA_ARGS__) &lt;&lt; &quot;\x1b[0m&quot; &lt;&lt; std::endl</span>
-
   <span class="kt">bool</span> <span class="n">engaged</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
 
   <span class="k">auto</span> <span class="n">run</span><span class="p">()</span>
@@ -910,7 +859,8 @@
         <span class="p">}</span>
         <span class="n">engaged</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
       <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">throw</span> <span class="n">concealer</span><span class="o">::</span><span class="n">AutowareError</span><span class="p">(</span><span class="s">&quot;SOMETHING WENT WRONG.&quot;</span><span class="p">);</span>
+        <span class="k">throw</span> <span class="n">concealer</span><span class="o">::</span><span class="n">AutowareError</span><span class="p">(</span>
+          <span class="s">&quot;Autoware does not respond. It is likely that some nodes were corrupted during launch&quot;</span><span class="p">);</span>
       <span class="p">}</span>
     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">engaged</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="nl">story</span> <span class="p">:</span> <span class="o">*</span><span class="k">this</span><span class="p">)</span> <span class="p">{</span>
@@ -925,7 +875,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__STORYBOARD_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 13 May 2021 at 06:35:26 UTC</p>
+<p>Updated on 13 May 2021 at 11:21:22 UTC</p>
                 
                   
                 

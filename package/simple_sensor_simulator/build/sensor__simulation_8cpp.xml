@@ -116,48 +116,43 @@
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacesimple__sensor__simulator" kindref="compound">simple_sensor_simulator</ref></highlight></codeline>
 <codeline lineno="21"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="22"><highlight class="normal">SensorSimulation::SensorSimulation(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;rclcpp::Clock&gt;<sp/>&amp;<sp/>clock_ptr)</highlight></codeline>
-<codeline lineno="23"><highlight class="normal">:<sp/>clock_ptr_(clock_ptr)</highlight></codeline>
-<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SensorSimulation::attachLidarSensor(</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::LidarConfiguration<sp/>&amp;<sp/>configuration,</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;rclcpp::Publisher&lt;sensor_msgs::msg::PointCloud2&gt;&gt;<sp/>publisher_ptr)</highlight></codeline>
-<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/>LidarSensor<sp/>lidar_sensor(current_time,<sp/>configuration,<sp/>publisher_ptr);</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/>lidar_sensors_.push_back(lidar_sensor);</highlight></codeline>
-<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SensorSimulation::attachDetectionSensor(</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time,</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::DetectionSensorConfiguration<sp/>&amp;<sp/>configuration,</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;rclcpp::Publisher&lt;autoware_perception_msgs::msg::DynamicObjectArray&gt;&gt;</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>publisher_ptr)</highlight></codeline>
-<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/>DetectionSensor<sp/>detection_sensor(current_time,<sp/>configuration,<sp/>publisher_ptr);</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/>detection_sensors_.push_back(detection_sensor);</highlight></codeline>
-<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SensorSimulation::updateSensorFrame(</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;openscenario_msgs::EntityStatus&gt;<sp/>&amp;<sp/>status)</highlight></codeline>
-<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/>std::vector&lt;std::string&gt;<sp/>detected_objects<sp/>=<sp/>{};</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>now<sp/>=<sp/>clock_ptr_-&gt;now();</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>sensor<sp/>:<sp/>lidar_sensors_)<sp/>{</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>sensor.update(current_time,<sp/>status,<sp/>now);</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>objects<sp/>=<sp/>sensor.getDetectedObjects();</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>obj<sp/>:<sp/>objects)<sp/>{</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(std::count(detected_objects.begin(),<sp/>detected_objects.end(),<sp/>obj)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>detected_objects.emplace_back(obj);</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>sensor<sp/>:<sp/>detection_sensors_)<sp/>{</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>sensor.update(current_time,<sp/>status,<sp/>now,<sp/>detected_objects);</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="63"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>simple_sensor_simulator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SensorSimulation::attachLidarSensor(</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::LidarConfiguration<sp/>&amp;<sp/>configuration,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;rclcpp::Publisher&lt;sensor_msgs::msg::PointCloud2&gt;&gt;<sp/>publisher_ptr)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/>LidarSensor<sp/>lidar_sensor(current_time,<sp/>configuration,<sp/>publisher_ptr);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>lidar_sensors_.push_back(lidar_sensor);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SensorSimulation::attachDetectionSensor(</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::DetectionSensorConfiguration<sp/>&amp;<sp/>configuration,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;rclcpp::Publisher&lt;autoware_perception_msgs::msg::DynamicObjectArray&gt;&gt;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>publisher_ptr)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>DetectionSensor<sp/>detection_sensor(current_time,<sp/>configuration,<sp/>publisher_ptr);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>detection_sensors_.push_back(detection_sensor);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SensorSimulation::updateSensorFrame(</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>rclcpp::Time<sp/>&amp;<sp/>current_ros_time,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;openscenario_msgs::EntityStatus&gt;<sp/>&amp;<sp/>status)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>std::vector&lt;std::string&gt;<sp/>detected_objects<sp/>=<sp/>{};</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>sensor<sp/>:<sp/>lidar_sensors_)<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>sensor.update(current_time,<sp/>status,<sp/>current_ros_time);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>objects<sp/>=<sp/>sensor.getDetectedObjects();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>obj<sp/>:<sp/>objects)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(std::count(detected_objects.begin(),<sp/>detected_objects.end(),<sp/>obj)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>detected_objects.emplace_back(obj);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>sensor<sp/>:<sp/>detection_sensors_)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>sensor.update(current_time,<sp/>status,<sp/>current_ros_time,<sp/>detected_objects);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>simple_sensor_simulator</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/sensor_simulation/sensor_simulation.cpp"/>
   </compounddef>

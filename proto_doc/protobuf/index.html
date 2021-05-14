@@ -685,6 +685,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#builtin_interfacesproto" class="md-nav__link">
+    builtin_interfaces.proto
+  </a>
+  
+    <nav class="md-nav" aria-label="builtin_interfaces.proto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#duration" class="md-nav__link">
+    Duration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time" class="md-nav__link">
+    Time
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#geometry_msgsproto" class="md-nav__link">
     geometry_msgs.proto
   </a>
@@ -827,6 +854,26 @@
           <li class="md-nav__item">
   <a href="#entitytype" class="md-nav__link">
     EntityType
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rosgraph_msgsproto" class="md-nav__link">
+    rosgraph_msgs.proto
+  </a>
+  
+    <nav class="md-nav" aria-label="rosgraph_msgs.proto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clock" class="md-nav__link">
+    Clock
   </a>
   
 </li>
@@ -1032,6 +1079,13 @@
 <h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">#</a></h2>
 <ul>
 <li>
+<p><a href="#builtin_interfaces.proto">builtin_interfaces.proto</a></p>
+<ul>
+<li><a href="#builtin_interfaces.Duration">Duration</a></li>
+<li><a href="#builtin_interfaces.Time">Time</a></li>
+</ul>
+</li>
+<li>
 <p><a href="#geometry_msgs.proto">geometry_msgs.proto</a></p>
 <ul>
 <li><a href="#geometry_msgs.Accel">Accel</a></li>
@@ -1061,6 +1115,12 @@
 <li>
 <p><a href="#openscenario_msgs.EntityType">EntityType</a></p>
 </li>
+</ul>
+</li>
+<li>
+<p><a href="#rosgraph_msgs.proto">rosgraph_msgs.proto</a></p>
+<ul>
+<li><a href="#rosgraph_msgs.Clock">Clock</a></li>
 </ul>
 </li>
 <li>
@@ -1094,6 +1154,64 @@
 <p><a href="#scalar-value-types">Scalar Value Types</a></p>
 </li>
 </ul>
+<p><a name="builtin_interfaces.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+
+<h2 id="builtin_interfacesproto">builtin_interfaces.proto<a class="headerlink" href="#builtin_interfacesproto" title="Permanent link">#</a></h2>
+<p><a name="builtin_interfaces.Duration"></a></p>
+<h3 id="duration">Duration<a class="headerlink" href="#duration" title="Permanent link">#</a></h3>
+<p>Protobuf definiciton of builtin_interface/msg/Duration type in ROS2.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sec</td>
+<td><a href="#int32">int32</a></td>
+<td></td>
+<td>The seconds component, valid over all int32 values.</td>
+</tr>
+<tr>
+<td>nanosec</td>
+<td><a href="#uint32">uint32</a></td>
+<td></td>
+<td>The nanoseconds component, valid in the range [0, 10e9).</td>
+</tr>
+</tbody>
+</table>
+<p><a name="builtin_interfaces.Time"></a></p>
+<h3 id="time">Time<a class="headerlink" href="#time" title="Permanent link">#</a></h3>
+<p>Protobuf definiciton of builtin_interface/msg/Time type in ROS2.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sec</td>
+<td><a href="#int32">int32</a></td>
+<td></td>
+<td>The seconds component, valid over all int32 values.</td>
+</tr>
+<tr>
+<td>nanosec</td>
+<td><a href="#uint32">uint32</a></td>
+<td></td>
+<td>The nanoseconds component, valid in the range [0, 10e9).</td>
+</tr>
+</tbody>
+</table>
 <p><a name="geometry_msgs.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -1692,6 +1810,31 @@
 </tr>
 </tbody>
 </table>
+<p><a name="rosgraph_msgs.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+
+<h2 id="rosgraph_msgsproto">rosgraph_msgs.proto<a class="headerlink" href="#rosgraph_msgsproto" title="Permanent link">#</a></h2>
+<p><a name="rosgraph_msgs.Clock"></a></p>
+<h3 id="clock">Clock<a class="headerlink" href="#clock" title="Permanent link">#</a></h3>
+<p>Protobuf defintion of the rosgraph_msgs/msg/Clock type in ROS2.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clock</td>
+<td><a href="#builtin_interfaces.Time">builtin_interfaces.Time</a></td>
+<td></td>
+<td>Describe current ros time.</td>
+</tr>
+</tbody>
+</table>
 <p><a name="simulation_api_schema.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -2132,6 +2275,12 @@
 <td></td>
 <td>Current simulation time</td>
 </tr>
+<tr>
+<td>current_ros_time</td>
+<td><a href="#builtin_interfaces.Time">builtin_interfaces.Time</a></td>
+<td></td>
+<td>Current ROS time</td>
+</tr>
 </tbody>
 </table>
 <p><a name="simulation_api_schema.UpdateFrameResponse"></a></p>
@@ -2173,6 +2322,12 @@
 <td><a href="#double">double</a></td>
 <td></td>
 <td>Current simulation timestamp.</td>
+</tr>
+<tr>
+<td>current_ros_time</td>
+<td><a href="#builtin_interfaces.Time">builtin_interfaces.Time</a></td>
+<td></td>
+<td>Current ROS time</td>
 </tr>
 </tbody>
 </table>

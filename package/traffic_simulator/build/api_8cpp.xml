@@ -1458,27 +1458,28 @@
 <codeline lineno="331"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!standalone_mode)<sp/>{</highlight></codeline>
 <codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::UpdateFrameRequest<sp/>req;</highlight></codeline>
 <codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/>req.set_current_time(clock_.getCurrentSimulationTime());</highlight></codeline>
-<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::UpdateFrameResponse<sp/>res;</highlight></codeline>
-<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/>update_frame_client_.call(req,<sp/>res);</highlight></codeline>
-<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!res.result().success())<sp/>{</highlight></codeline>
-<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/>entity_manager_ptr_-&gt;broadcastEntityTransform();</highlight></codeline>
-<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/>clock_.update();</highlight></codeline>
-<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/>clock_pub_-&gt;publish(clock_.getCurrentRosTimeAsMsg());</highlight></codeline>
-<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/>metrics_manager_.calculate();</highlight></codeline>
-<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!updateEntityStatusInSim())<sp/>{</highlight></codeline>
-<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>updateSensorFrame();</highlight></codeline>
-<codeline lineno="347"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="348"><highlight class="normal"><sp/><sp/>entity_manager_ptr_-&gt;broadcastEntityTransform();</highlight></codeline>
-<codeline lineno="349"><highlight class="normal"><sp/><sp/>clock_.update();</highlight></codeline>
-<codeline lineno="350"><highlight class="normal"><sp/><sp/>clock_pub_-&gt;publish(clock_.getCurrentRosTimeAsMsg());</highlight></codeline>
-<codeline lineno="351"><highlight class="normal"><sp/><sp/>metrics_manager_.calculate();</highlight></codeline>
-<codeline lineno="352"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="353"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="354"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>traffic_simulator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_interface::toProto(clock_.getCurrentRosTime(),<sp/>*req.mutable_current_ros_time());</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::UpdateFrameResponse<sp/>res;</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/>update_frame_client_.call(req,<sp/>res);</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!res.result().success())<sp/>{</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/>entity_manager_ptr_-&gt;broadcastEntityTransform();</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/>clock_.update();</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/>clock_pub_-&gt;publish(clock_.getCurrentRosTimeAsMsg());</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/>metrics_manager_.calculate();</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!updateEntityStatusInSim())<sp/>{</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>updateSensorFrame();</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/>entity_manager_ptr_-&gt;broadcastEntityTransform();</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/>clock_.update();</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/>clock_pub_-&gt;publish(clock_.getCurrentRosTimeAsMsg());</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/>metrics_manager_.calculate();</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="354"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="355"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>traffic_simulator</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/api/api.cpp"/>
   </compounddef>

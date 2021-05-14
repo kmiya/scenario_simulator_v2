@@ -1033,10 +1033,45 @@
   <span class="n">toMsg</span><span class="p">(</span><span class="n">proto</span><span class="p">.</span><span class="n">lanelet_pose</span><span class="p">(),</span> <span class="n">status</span><span class="p">.</span><span class="n">lanelet_pose</span><span class="p">);</span>
   <span class="n">status</span><span class="p">.</span><span class="n">lanelet_pose_valid</span> <span class="o">=</span> <span class="n">proto</span><span class="p">.</span><span class="n">lanelet_pose_valid</span><span class="p">();</span>
 <span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">toProto</span><span class="p">(</span>
+  <span class="k">const</span> <span class="n">builtin_interfaces</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Duration</span> <span class="o">&amp;</span> <span class="n">duration</span><span class="p">,</span> <span class="n">builtin_interfaces</span><span class="o">::</span><span class="n">Duration</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">proto</span><span class="p">.</span><span class="n">set_sec</span><span class="p">(</span><span class="n">duration</span><span class="p">.</span><span class="n">sec</span><span class="p">);</span>
+  <span class="n">proto</span><span class="p">.</span><span class="n">set_nanosec</span><span class="p">(</span><span class="n">duration</span><span class="p">.</span><span class="n">nanosec</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">toMsg</span><span class="p">(</span><span class="k">const</span> <span class="n">builtin_interfaces</span><span class="o">::</span><span class="n">Duration</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span> <span class="n">builtin_interfaces</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Duration</span> <span class="o">&amp;</span> <span class="n">duration</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">duration</span><span class="p">.</span><span class="n">sec</span> <span class="o">=</span> <span class="n">proto</span><span class="p">.</span><span class="n">sec</span><span class="p">();</span>
+  <span class="n">duration</span><span class="p">.</span><span class="n">nanosec</span> <span class="o">=</span> <span class="n">proto</span><span class="p">.</span><span class="n">nanosec</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">toProto</span><span class="p">(</span><span class="k">const</span> <span class="n">builtin_interfaces</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Time</span> <span class="o">&amp;</span> <span class="n">time</span><span class="p">,</span> <span class="n">builtin_interfaces</span><span class="o">::</span><span class="n">Time</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">proto</span><span class="p">.</span><span class="n">set_sec</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">sec</span><span class="p">);</span>
+  <span class="n">proto</span><span class="p">.</span><span class="n">set_nanosec</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">nanosec</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">toMsg</span><span class="p">(</span><span class="k">const</span> <span class="n">builtin_interfaces</span><span class="o">::</span><span class="n">Time</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span> <span class="n">builtin_interfaces</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Time</span> <span class="o">&amp;</span> <span class="n">time</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">time</span><span class="p">.</span><span class="n">sec</span> <span class="o">=</span> <span class="n">proto</span><span class="p">.</span><span class="n">sec</span><span class="p">();</span>
+  <span class="n">time</span><span class="p">.</span><span class="n">nanosec</span> <span class="o">=</span> <span class="n">proto</span><span class="p">.</span><span class="n">nanosec</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">toProto</span><span class="p">(</span><span class="k">const</span> <span class="n">rosgraph_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Clock</span> <span class="o">&amp;</span> <span class="n">clock</span><span class="p">,</span> <span class="n">rosgraph_msgs</span><span class="o">::</span><span class="n">Clock</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">toProto</span><span class="p">(</span><span class="n">clock</span><span class="p">.</span><span class="n">clock</span><span class="p">,</span> <span class="o">*</span><span class="n">proto</span><span class="p">.</span><span class="n">mutable_clock</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">toMsg</span><span class="p">(</span><span class="k">const</span> <span class="n">rosgraph_msgs</span><span class="o">::</span><span class="n">Clock</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span> <span class="n">rosgraph_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Clock</span> <span class="o">&amp;</span> <span class="n">clock</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">toMsg</span><span class="p">(</span><span class="n">proto</span><span class="p">.</span><span class="n">clock</span><span class="p">(),</span> <span class="n">clock</span><span class="p">.</span><span class="n">clock</span><span class="p">);</span>
+<span class="p">}</span>
 <span class="p">}</span>  <span class="c1">// namespace simulation_interface</span>
 </code></pre></div>
 <hr />
-<p>Updated on 14 May 2021 at 05:19:40 UTC</p>
+<p>Updated on 14 May 2021 at 10:10:05 UTC</p>
                 
                   
                 

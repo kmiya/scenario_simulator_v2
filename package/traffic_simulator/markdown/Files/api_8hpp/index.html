@@ -977,7 +977,6 @@
   <span class="kt">bool</span> <span class="nf">initialize</span><span class="p">(</span><span class="kt">double</span> <span class="n">realtime_factor</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">);</span>
 
   <span class="kt">bool</span> <span class="nf">updateFrame</span><span class="p">();</span>
-  <span class="kt">bool</span> <span class="nf">updateSensorFrame</span><span class="p">();</span>
 
   <span class="kt">double</span> <span class="nf">getCurrentTime</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">clock_</span><span class="p">.</span><span class="n">getCurrentSimulationTime</span><span class="p">();</span> <span class="p">}</span>
 
@@ -1019,7 +1018,8 @@
 <span class="cp">#undef FORWARD_TO_ENTITY_MANAGER</span>
 
 <span class="k">private</span><span class="o">:</span>
-  <span class="kt">bool</span> <span class="n">updateEntityStatusInSim</span><span class="p">();</span>
+  <span class="kt">bool</span> <span class="n">updateSensorFrame</span><span class="p">();</span>
+  <span class="kt">bool</span> <span class="nf">updateEntityStatusInSim</span><span class="p">();</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Parameters</span><span class="o">&gt;</span>
   <span class="kt">bool</span> <span class="n">spawn</span><span class="p">(</span>
@@ -1077,7 +1077,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__API__API_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 14 May 2021 at 05:19:40 UTC</p>
+<p>Updated on 14 May 2021 at 10:10:04 UTC</p>
                 
                   
                 

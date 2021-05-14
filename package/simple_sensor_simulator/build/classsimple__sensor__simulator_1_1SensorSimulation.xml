@@ -29,38 +29,8 @@
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="45" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" bodystart="45" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classsimple__sensor__simulator_1_1SensorSimulation_1a23a6cc1487cd9901f42bbc7bdbd7bd52" prot="private" static="no" mutable="no">
-        <type>std::shared_ptr&lt; rclcpp::Clock &gt;</type>
-        <definition>std::shared_ptr&lt;rclcpp::Clock&gt; simple_sensor_simulator::SensorSimulation::clock_ptr_</definition>
-        <argsstring></argsstring>
-        <name>clock_ptr_</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="46" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" bodystart="46" bodyend="-1"/>
-      </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classsimple__sensor__simulator_1_1SensorSimulation_1a8d4c0719bf5380e10bfafd03c3b3c1c9" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>simple_sensor_simulator::SensorSimulation::SensorSimulation</definition>
-        <argsstring>(const std::shared_ptr&lt; rclcpp::Clock &gt; &amp;clock_ptr)</argsstring>
-        <name>SensorSimulation</name>
-        <param>
-          <type>const std::shared_ptr&lt; rclcpp::Clock &gt; &amp;</type>
-          <declname>clock_ptr</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="31" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/sensor_simulation/sensor_simulation.cpp" bodystart="22" bodyend="25"/>
-      </memberdef>
       <memberdef kind="function" id="classsimple__sensor__simulator_1_1SensorSimulation_1a4a35c9f7cc74b78ccc0fe07f298d6088" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void simple_sensor_simulator::SensorSimulation::attachLidarSensor</definition>
@@ -84,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="32" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/sensor_simulation/sensor_simulation.cpp" bodystart="27" bodyend="33"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="31" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/sensor_simulation/sensor_simulation.cpp" bodystart="22" bodyend="28"/>
       </memberdef>
       <memberdef kind="function" id="classsimple__sensor__simulator_1_1SensorSimulation_1ae02b4a1d91ea6e746492c04282b3abdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -109,16 +79,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="35" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/sensor_simulation/sensor_simulation.cpp" bodystart="35" bodyend="43"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="34" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/sensor_simulation/sensor_simulation.cpp" bodystart="30" bodyend="38"/>
       </memberdef>
-      <memberdef kind="function" id="classsimple__sensor__simulator_1_1SensorSimulation_1af4524d329dab12d4071e11ee472fa4e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classsimple__sensor__simulator_1_1SensorSimulation_1a59c172670eeee8578f10507f9ec8e2f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void simple_sensor_simulator::SensorSimulation::updateSensorFrame</definition>
-        <argsstring>(double current_time, const std::vector&lt; openscenario_msgs::EntityStatus &gt; &amp;status)</argsstring>
+        <argsstring>(double current_time, const rclcpp::Time &amp;current_ros_time, const std::vector&lt; openscenario_msgs::EntityStatus &gt; &amp;status)</argsstring>
         <name>updateSensorFrame</name>
         <param>
           <type>double</type>
           <declname>current_time</declname>
+        </param>
+        <param>
+          <type>const rclcpp::Time &amp;</type>
+          <declname>current_ros_time</declname>
         </param>
         <param>
           <type>const std::vector&lt; openscenario_msgs::EntityStatus &gt; &amp;</type>
@@ -130,22 +104,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="40" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/sensor_simulation/sensor_simulation.cpp" bodystart="45" bodyend="62"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="39" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/src/sensor_simulation/sensor_simulation.cpp" bodystart="40" bodyend="57"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="29" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" bodystart="28" bodyend="47"/>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" line="29" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simple_sensor_simulator/include/simple_sensor_simulator/sensor_simulation/sensor_simulation.hpp" bodystart="28" bodyend="46"/>
     <listofallmembers>
       <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1ae02b4a1d91ea6e746492c04282b3abdf" prot="public" virt="non-virtual"><scope>simple_sensor_simulator::SensorSimulation</scope><name>attachDetectionSensor</name></member>
       <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1a4a35c9f7cc74b78ccc0fe07f298d6088" prot="public" virt="non-virtual"><scope>simple_sensor_simulator::SensorSimulation</scope><name>attachLidarSensor</name></member>
-      <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1a23a6cc1487cd9901f42bbc7bdbd7bd52" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::SensorSimulation</scope><name>clock_ptr_</name></member>
       <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1a0b700fe56cf8b678b8f0a2762f9703df" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::SensorSimulation</scope><name>detection_sensors_</name></member>
       <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1ab559619a71d688e3ed989051a3948aa5" prot="private" virt="non-virtual"><scope>simple_sensor_simulator::SensorSimulation</scope><name>lidar_sensors_</name></member>
-      <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1a8d4c0719bf5380e10bfafd03c3b3c1c9" prot="public" virt="non-virtual"><scope>simple_sensor_simulator::SensorSimulation</scope><name>SensorSimulation</name></member>
-      <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1af4524d329dab12d4071e11ee472fa4e0" prot="public" virt="non-virtual"><scope>simple_sensor_simulator::SensorSimulation</scope><name>updateSensorFrame</name></member>
+      <member refid="classsimple__sensor__simulator_1_1SensorSimulation_1a59c172670eeee8578f10507f9ec8e2f8" prot="public" virt="non-virtual"><scope>simple_sensor_simulator::SensorSimulation</scope><name>updateSensorFrame</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

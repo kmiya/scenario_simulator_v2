@@ -778,7 +778,7 @@
     <span class="k">if</span> <span class="p">(</span>
       <span class="o">!</span><span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">entityExists</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
       <span class="o">!</span><span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">spawnEntity</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">entity</span><span class="o">::</span><span class="n">EgoEntity</span><span class="o">&gt;</span><span class="p">(</span>
-        <span class="n">name</span><span class="p">,</span> <span class="n">lanelet2_map_osm</span><span class="p">,</span> <span class="n">step_time_</span><span class="p">,</span> <span class="n">params</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">name</span><span class="p">,</span> <span class="n">lanelet2_map_osm</span><span class="p">,</span> <span class="n">clock_</span><span class="p">.</span><span class="n">getCurrentSimulationTime</span><span class="p">(),</span> <span class="n">params</span><span class="p">))</span> <span class="p">{</span>
       <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">standalone_mode</span><span class="p">)</span> <span class="p">{</span>
@@ -869,7 +869,7 @@
 <span class="p">{</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">pose</span> <span class="o">=</span> <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">getMapPose</span><span class="p">(</span><span class="n">reference_entity_name</span><span class="p">,</span> <span class="n">relative_pose</span><span class="p">);</span>
   <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="n">status</span><span class="p">;</span>
-  <span class="n">status</span><span class="p">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">current_time_</span><span class="p">;</span>
+  <span class="n">status</span><span class="p">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">clock_</span><span class="p">.</span><span class="n">getCurrentSimulationTime</span><span class="p">();</span>
   <span class="n">status</span><span class="p">.</span><span class="n">pose</span> <span class="o">=</span> <span class="n">pose</span><span class="p">;</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">lanelet_pose</span> <span class="o">=</span> <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">toLaneletPose</span><span class="p">(</span><span class="n">pose</span><span class="p">);</span>
   <span class="n">status</span><span class="p">.</span><span class="n">action_status</span> <span class="o">=</span> <span class="n">action_status</span><span class="p">;</span>
@@ -959,8 +959,7 @@
 
 <span class="kt">bool</span> <span class="n">API</span><span class="o">::</span><span class="n">initialize</span><span class="p">(</span><span class="kt">double</span> <span class="n">realtime_factor</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="n">step_time_</span> <span class="o">=</span> <span class="n">step_time</span><span class="p">;</span>
-  <span class="n">current_time_</span> <span class="o">=</span> <span class="mi">-1</span> <span class="o">*</span> <span class="n">initialize_duration</span><span class="p">;</span>
+  <span class="n">clock_</span><span class="p">.</span><span class="n">initialize</span><span class="p">(</span><span class="mi">-1</span> <span class="o">*</span> <span class="n">initialize_duration</span><span class="p">,</span> <span class="n">step_time</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">standalone_mode</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
   <span class="p">}</span>
@@ -1004,7 +1003,7 @@
     <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
   <span class="p">}</span>
   <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateSensorFrameRequest</span> <span class="n">req</span><span class="p">;</span>
-  <span class="n">req</span><span class="p">.</span><span class="n">set_current_time</span><span class="p">(</span><span class="n">current_time_</span><span class="p">);</span>
+  <span class="n">req</span><span class="p">.</span><span class="n">set_current_time</span><span class="p">(</span><span class="n">clock_</span><span class="p">.</span><span class="n">getCurrentSimulationTime</span><span class="p">());</span>
   <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateSensorFrameResponse</span> <span class="n">res</span><span class="p">;</span>
   <span class="n">update_sensor_frame_client_</span><span class="p">.</span><span class="n">call</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">);</span>
   <span class="k">return</span> <span class="n">res</span><span class="p">.</span><span class="n">result</span><span class="p">().</span><span class="n">success</span><span class="p">();</span>
@@ -1052,18 +1051,19 @@
 
 <span class="kt">bool</span> <span class="n">API</span><span class="o">::</span><span class="n">updateFrame</span><span class="p">()</span>
 <span class="p">{</span>
-  <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">update</span><span class="p">(</span><span class="n">current_time_</span><span class="p">,</span> <span class="n">step_time_</span><span class="p">);</span>
+  <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">update</span><span class="p">(</span><span class="n">clock_</span><span class="p">.</span><span class="n">getCurrentSimulationTime</span><span class="p">(),</span> <span class="n">clock_</span><span class="p">.</span><span class="n">getStepTime</span><span class="p">());</span>
   <span class="n">traffic_controller_ptr_</span><span class="o">-&gt;</span><span class="n">execute</span><span class="p">();</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">standalone_mode</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateFrameRequest</span> <span class="n">req</span><span class="p">;</span>
-    <span class="n">req</span><span class="p">.</span><span class="n">set_current_time</span><span class="p">(</span><span class="n">current_time_</span><span class="p">);</span>
+    <span class="n">req</span><span class="p">.</span><span class="n">set_current_time</span><span class="p">(</span><span class="n">clock_</span><span class="p">.</span><span class="n">getCurrentSimulationTime</span><span class="p">());</span>
     <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateFrameResponse</span> <span class="n">res</span><span class="p">;</span>
     <span class="n">update_frame_client_</span><span class="p">.</span><span class="n">call</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">res</span><span class="p">.</span><span class="n">result</span><span class="p">().</span><span class="n">success</span><span class="p">())</span> <span class="p">{</span>
       <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">broadcastEntityTransform</span><span class="p">();</span>
-    <span class="n">current_time_</span> <span class="o">=</span> <span class="n">current_time_</span> <span class="o">+</span> <span class="n">step_time_</span><span class="p">;</span>
+    <span class="n">clock_</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+    <span class="n">clock_pub_</span><span class="o">-&gt;</span><span class="n">publish</span><span class="p">(</span><span class="n">clock_</span><span class="p">.</span><span class="n">getCurrentRosTimeAsMsg</span><span class="p">());</span>
     <span class="n">metrics_manager_</span><span class="p">.</span><span class="n">calculate</span><span class="p">();</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">updateEntityStatusInSim</span><span class="p">())</span> <span class="p">{</span>
       <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
@@ -1071,14 +1071,15 @@
     <span class="k">return</span> <span class="n">updateSensorFrame</span><span class="p">();</span>
   <span class="p">}</span>
   <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">broadcastEntityTransform</span><span class="p">();</span>
-  <span class="n">current_time_</span> <span class="o">=</span> <span class="n">current_time_</span> <span class="o">+</span> <span class="n">step_time_</span><span class="p">;</span>
+  <span class="n">clock_</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+  <span class="n">clock_pub_</span><span class="o">-&gt;</span><span class="n">publish</span><span class="p">(</span><span class="n">clock_</span><span class="p">.</span><span class="n">getCurrentRosTimeAsMsg</span><span class="p">());</span>
   <span class="n">metrics_manager_</span><span class="p">.</span><span class="n">calculate</span><span class="p">();</span>
   <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 14 May 2021 at 00:09:48 UTC</p>
+<p>Updated on 14 May 2021 at 01:56:29 UTC</p>
                 
                   
                 

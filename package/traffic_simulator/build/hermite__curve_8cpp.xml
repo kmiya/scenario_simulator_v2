@@ -9,29 +9,50 @@
     <includes refid="hermite__curve_8hpp" local="no">traffic_simulator/math/hermite_curve.hpp</includes>
     <includes local="no">vector</includes>
     <incdepgraph>
-      <node id="5209">
+      <node id="5218">
         <label>limits</label>
       </node>
-      <node id="5214">
+      <node id="5223">
         <label>geometry_msgs/msg/pose.hpp</label>
       </node>
-      <node id="5207">
+      <node id="5216">
         <label>cmath</label>
       </node>
-      <node id="5216">
+      <node id="5225">
         <label>openscenario_msgs/msg/hermite_curve.hpp</label>
       </node>
-      <node id="5210">
+      <node id="5219">
         <label>traffic_simulator/math/hermite_curve.hpp</label>
         <link refid="hermite__curve_8hpp_source"/>
-        <childnode refid="5211" relation="include">
+        <childnode refid="5220" relation="include">
         </childnode>
-        <childnode refid="5212" relation="include">
+        <childnode refid="5221" relation="include">
         </childnode>
-        <childnode refid="5213" relation="include">
+        <childnode refid="5222" relation="include">
         </childnode>
-        <childnode refid="5214" relation="include">
+        <childnode refid="5223" relation="include">
         </childnode>
+        <childnode refid="5224" relation="include">
+        </childnode>
+        <childnode refid="5225" relation="include">
+        </childnode>
+        <childnode refid="5226" relation="include">
+        </childnode>
+        <childnode refid="5227" relation="include">
+        </childnode>
+      </node>
+      <node id="5224">
+        <label>geometry_msgs/msg/vector3.hpp</label>
+      </node>
+      <node id="5220">
+        <label>quaternion_operation/quaternion_operation.h</label>
+      </node>
+      <node id="5222">
+        <label>geometry_msgs/msg/point.hpp</label>
+      </node>
+      <node id="5214">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/hermite_curve.cpp</label>
+        <link refid="hermite__curve_8cpp"/>
         <childnode refid="5215" relation="include">
         </childnode>
         <childnode refid="5216" relation="include">
@@ -40,48 +61,27 @@
         </childnode>
         <childnode refid="5218" relation="include">
         </childnode>
-      </node>
-      <node id="5215">
-        <label>geometry_msgs/msg/vector3.hpp</label>
-      </node>
-      <node id="5211">
-        <label>quaternion_operation/quaternion_operation.h</label>
-      </node>
-      <node id="5213">
-        <label>geometry_msgs/msg/point.hpp</label>
-      </node>
-      <node id="5205">
-        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/hermite_curve.cpp</label>
-        <link refid="hermite__curve_8cpp"/>
-        <childnode refid="5206" relation="include">
+        <childnode refid="5219" relation="include">
         </childnode>
-        <childnode refid="5207" relation="include">
-        </childnode>
-        <childnode refid="5208" relation="include">
-        </childnode>
-        <childnode refid="5209" relation="include">
-        </childnode>
-        <childnode refid="5210" relation="include">
-        </childnode>
-        <childnode refid="5218" relation="include">
+        <childnode refid="5227" relation="include">
         </childnode>
       </node>
-      <node id="5218">
+      <node id="5227">
         <label>vector</label>
       </node>
-      <node id="5217">
+      <node id="5226">
         <label>traffic_simulator/math/polynomial_solver.hpp</label>
         <link refid="polynomial__solver_8hpp_source"/>
-        <childnode refid="5218" relation="include">
+        <childnode refid="5227" relation="include">
         </childnode>
       </node>
-      <node id="5208">
+      <node id="5217">
         <label>iostream</label>
       </node>
-      <node id="5212">
+      <node id="5221">
         <label>boost/optional.hpp</label>
       </node>
-      <node id="5206">
+      <node id="5215">
         <label>algorithm</label>
       </node>
     </incdepgraph>

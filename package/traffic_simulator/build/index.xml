@@ -42,9 +42,9 @@
     <member refid="classtraffic__simulator_1_1API_1a4fd196b9782de0cc6a2a461df11b8a1e" kind="variable"><name>standalone_mode</name></member>
     <member refid="classtraffic__simulator_1_1API_1aab23398abda0efc2453a1f2e38e4b95b" kind="variable"><name>entity_manager_ptr_</name></member>
     <member refid="classtraffic__simulator_1_1API_1a5ab45fbade259798b76a5251cd2887da" kind="variable"><name>traffic_controller_ptr_</name></member>
-    <member refid="classtraffic__simulator_1_1API_1a4dd1e49b1e7736f61941a5406d45b8e5" kind="variable"><name>step_time_</name></member>
-    <member refid="classtraffic__simulator_1_1API_1a7ec17f3aab08de5944e74ed96a1d8262" kind="variable"><name>current_time_</name></member>
     <member refid="classtraffic__simulator_1_1API_1a252d903eb4b259b5b59981ab1d15af45" kind="variable"><name>metrics_manager_</name></member>
+    <member refid="classtraffic__simulator_1_1API_1a79af8d9d2c68448668af0d7a930dbf78" kind="variable"><name>clock_pub_</name></member>
+    <member refid="classtraffic__simulator_1_1API_1a67546a89f57af53542266ef0a37436fe" kind="variable"><name>clock_</name></member>
     <member refid="classtraffic__simulator_1_1API_1a30211a9a4f8b955ad71facf1d83c810d" kind="variable"><name>initialize_client_</name></member>
     <member refid="classtraffic__simulator_1_1API_1a45d7a7b05e701152eec0c628e1cbc8cc" kind="variable"><name>update_frame_client_</name></member>
     <member refid="classtraffic__simulator_1_1API_1a7a5f3fbd7cd5b1bee74b20dfde8ca61b" kind="variable"><name>update_sensor_frame_client_</name></member>
@@ -885,6 +885,26 @@
   </compound>
   <compound refid="classsimple__planning__simulator" kind="class"><name>simple_planning_simulator</name>
   </compound>
+  <compound refid="classtraffic__simulator_1_1SimulationClock" kind="class"><name>traffic_simulator::SimulationClock</name>
+    <member refid="classtraffic__simulator_1_1SimulationClock_1a2d412fff71dd466a2d393486dd3bb54b" kind="variable"><name>step_time_duration_</name></member>
+    <member refid="classtraffic__simulator_1_1SimulationClock_1ad38d3e030dd04c4331d9d6e8607c0b16" kind="variable"><name>system_time_on_initialize_</name></member>
+    <member refid="classtraffic__simulator_1_1SimulationClock_1a2416bd3fa774d9ed9a198fa95ccf6f61" kind="variable"><name>current_simulation_time_</name></member>
+    <member refid="classtraffic__simulator_1_1SimulationClock_1ad222d8c74fc9da381423868ddd19a45e" kind="variable"><name>initial_simulation_time_</name></member>
+    <member refid="classtraffic__simulator_1_1SimulationClock_1a193ea25b5f040458b7aa94dac44b222b" kind="variable"><name>step_time_</name></member>
+    <member refid="classtraffic__simulator_1_1SimulationClock_1ad27cd758681124d027b3293a3ed801a4" kind="variable"><name>initialized_</name></member>
+    <member refid="classtraffic__simulator_1_1SimulationClock_1a854ac199d69e615a4df39be715e3355b" kind="function"><name>SimulationClock</name></member>
+    <member refid="classtraffic__simulator_1_1SimulationClock_1ac5bc2b02bc880c3a7dce710237383acc" kind="function"><name>initialize</name></member>
+    <member refid="classtraffic__simulator_1_1SimulationClock_1a7b773e3098c67c69f32c23d1df195750" kind="function"><name>update</name></member>
+    <member refid="classtraffic__simulator_1_1SimulationClock_1ac2b3e30926fd01c7ad2565ba90437884" kind="function"><name>getCurrentSimulationTime</name></member>
+    <member refid="classtraffic__simulator_1_1SimulationClock_1ad957493d7f7b2a82c596dda381f163db" kind="function"><name>getStepTime</name></member>
+    <member refid="classtraffic__simulator_1_1SimulationClock_1af82c3b5f95bf74c4bae5994b3b9bb59f" kind="function"><name>getCurrentRosTime</name></member>
+    <member refid="classtraffic__simulator_1_1SimulationClock_1a33506289dd97fec066636307bbb9e249" kind="function"><name>getCurrentRosTimeAsMsg</name></member>
+  </compound>
+  <compound refid="classtraffic__simulator_1_1SimulationClockError" kind="class"><name>traffic_simulator::SimulationClockError</name>
+    <member refid="classtraffic__simulator_1_1SimulationClockError_1a448ed316a3e33171d338d7e66f003097" kind="function"><name>SimulationClockError</name></member>
+    <member refid="classtraffic__simulator_1_1SimulationClockError_1a4f605f7e422322738015ff17c14052dd" kind="function"><name>SimulationClockError</name></member>
+    <member refid="classtraffic__simulator_1_1SimulationClockError_1aa33efaa1feb25bead6fe07a787cbbd59" kind="function"><name>SimulationClockError</name></member>
+  </compound>
   <compound refid="structtraffic__simulator_1_1SimulationRuntimeError" kind="struct"><name>traffic_simulator::SimulationRuntimeError</name>
   </compound>
   <compound refid="classmetrics_1_1SpecificationViolationError" kind="class"><name>metrics::SpecificationViolationError</name>
@@ -1270,6 +1290,9 @@
   </compound>
   <compound refid="traveled__distance__metric_8hpp" kind="file"><name>traveled_distance_metric.hpp</name>
   </compound>
+  <compound refid="simulation__clock_8hpp" kind="file"><name>simulation_clock.hpp</name>
+    <member refid="simulation__clock_8hpp_1a9f64d03817883e3a0089166b0873dd04" kind="define"><name>THROW_SIMULATION_CLOCK_ERROR</name></member>
+  </compound>
   <compound refid="traffic__controller_8hpp" kind="file"><name>traffic_controller.hpp</name>
   </compound>
   <compound refid="traffic__module__base_8hpp" kind="file"><name>traffic_module_base.hpp</name>
@@ -1376,6 +1399,8 @@
   <compound refid="scenario__runner__moc__node_8cpp" kind="file"><name>scenario_runner_moc_node.cpp</name>
     <member refid="scenario__runner__moc__node_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
   </compound>
+  <compound refid="simulation__clock_8cpp" kind="file"><name>simulation_clock.cpp</name>
+  </compound>
   <compound refid="traffic__controller_8cpp" kind="file"><name>traffic_controller.cpp</name>
   </compound>
   <compound refid="traffic__sink_8cpp" kind="file"><name>traffic_sink.cpp</name>
@@ -1450,9 +1475,9 @@
   </compound>
   <compound refid="dir_ebd9203a9be144e2c3b6de4f1f8bb9ba" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include</name>
   </compound>
-  <compound refid="dir_89926193ebc9886a4e07ae71e2f86f16" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math</name>
-  </compound>
   <compound refid="dir_d5b022ff6d07d1d434437376ce9ce522" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/math</name>
+  </compound>
+  <compound refid="dir_89926193ebc9886a4e07ae71e2f86f16" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math</name>
   </compound>
   <compound refid="dir_6783561ed50a18ebdaa3a196ad9f2cf6" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/metrics</name>
   </compound>
@@ -1466,9 +1491,13 @@
   </compound>
   <compound refid="dir_7487f41de01cca700e4de80b884d7106" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation</name>
   </compound>
-  <compound refid="dir_9dee3dfbd1e9411fe6deafdda6d570fd" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src</name>
+  <compound refid="dir_5df72218899bc5c945fc78c283fa2498" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock</name>
+  </compound>
+  <compound refid="dir_1deb13de37a8ca708988d8952c9a69f5" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/simulation_clock</name>
   </compound>
   <compound refid="dir_bf40e2f7a50cd790bb038a432aaa74d3" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/test/src</name>
+  </compound>
+  <compound refid="dir_9dee3dfbd1e9411fe6deafdda6d570fd" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src</name>
   </compound>
   <compound refid="dir_d5bf51ef5b3c8bdf6b6565696dc25097" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/test</name>
   </compound>
@@ -1480,16 +1509,16 @@
   </compound>
   <compound refid="dir_675ce22d09a5a78e6a63f5f36337dee4" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic_lights</name>
   </compound>
-  <compound refid="dir_5229c5c80e1beeb41e5cbea006789ee7" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator</name>
-  </compound>
   <compound refid="dir_a1f2d8220e61e65a4d5040b23c80eedf" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator</name>
   </compound>
-  <compound refid="dir_a380353df616a3b30c5fcfd2cfeb6ca0" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle</name>
+  <compound refid="dir_5229c5c80e1beeb41e5cbea006789ee7" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator</name>
   </compound>
   <compound refid="dir_b96efc5979f89bd9ba73645ba58773b5" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/behavior/vehicle</name>
   </compound>
-  <compound refid="dir_57741dd24952e660e789fd19928b2131" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/vehicle_model</name>
+  <compound refid="dir_a380353df616a3b30c5fcfd2cfeb6ca0" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle</name>
   </compound>
   <compound refid="dir_5e266e6a38fdf13e727ead813749c3be" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/vehicle_model</name>
+  </compound>
+  <compound refid="dir_57741dd24952e660e789fd19928b2131" kind="dir"><name>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/vehicle_model</name>
   </compound>
 </doxygenindex>

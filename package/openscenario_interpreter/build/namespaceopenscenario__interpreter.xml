@@ -118,6 +118,20 @@
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="26" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/procedure.cpp" bodystart="23" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="openscenario__interpreter_8cpp_1a766228ab279f7cdb0f1be2fa8d6acf8f" prot="public" static="no" mutable="no">
+        <type>pid_t</type>
+        <definition>pid_t openscenario_interpreter::record_process_id</definition>
+        <argsstring></argsstring>
+        <name>record_process_id</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/openscenario_interpreter.cpp" line="93" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/openscenario_interpreter.cpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="procedure_8cpp_1a64086f89ecfc728324ad82fdaf65ee85" prot="public" static="yes" mutable="no">
         <type>std::aligned_storage&lt; sizeof(traffic_simulator::API), alignof(traffic_simulator::API)&gt;::type</type>
         <definition>std::aligned_storage&lt; sizeof(traffic_simulator::API), alignof(traffic_simulator::API)&gt;::type openscenario_interpreter::memory</definition>
@@ -787,6 +801,43 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="140" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="openscenario__interpreter_8cpp_1a9d2ab5fd7105832ed6285b187f8bc0d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto openscenario_interpreter::record_start</definition>
+        <argsstring>(Ts &amp;&amp;... xs)</argsstring>
+        <name>record_start</name>
+        <param>
+          <type>Ts &amp;&amp;...</type>
+          <declname>xs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/openscenario_interpreter.cpp" line="96" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/openscenario_interpreter.cpp" bodystart="96" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="openscenario__interpreter_8cpp_1ab39e4e2fe4bc269fe829ef87810fa32a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto openscenario_interpreter::record_end</definition>
+        <argsstring>()</argsstring>
+        <name>record_end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/openscenario_interpreter.cpp" line="113" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/openscenario_interpreter.cpp" bodystart="113" bodyend="120"/>
       </memberdef>
       <memberdef kind="function" id="pugi__extension_8cpp_1a5ba7dc74bc81e1ea576607fd14d0d4c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>

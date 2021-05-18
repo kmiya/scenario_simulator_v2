@@ -769,6 +769,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#function-record_start" class="md-nav__link">
+    function record_start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-record_end" class="md-nav__link">
+    function record_end
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-operator" class="md-nav__link">
     function operator&lt;&lt;
   </a>
@@ -1048,6 +1062,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#variable-record_process_id" class="md-nav__link">
+    variable record_process_id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#variable-memory" class="md-nav__link">
     variable memory
   </a>
@@ -1216,6 +1237,14 @@
 </thead>
 <tbody>
 <tr>
+<td>template \&lt;typename... Ts></br>auto</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter#function-record_start">record_start</a></strong>(Ts &amp;&amp;... xs)</td>
+</tr>
+<tr>
+<td>auto</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter#function-record_end">record_end</a></strong>()</td>
+</tr>
+<tr>
 <td>std::ostream &amp;</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter#function-operator&lt;&lt;">operator&lt;&lt;</a></strong>(std::ostream &amp; os, const <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Unspecified">Unspecified</a> &amp; )</td>
 </tr>
@@ -1379,6 +1408,10 @@
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter#variable-unspecified">unspecified</a></strong></td>
 </tr>
 <tr>
+<td>pid_t</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter#variable-record_process_id">record_process_id</a></strong></td>
+</tr>
+<tr>
 <td>std::aligned_storage&lt; sizeof(traffic_simulator::API), alignof(traffic_simulator::API)&gt;::type</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter#variable-memory">memory</a></strong></td>
 </tr>
@@ -1405,6 +1438,15 @@
 <div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">ComplexType</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">Element</span><span class="p">;</span>
 </code></pre></div>
 <h2 id="functions-documentation">Functions Documentation<a class="headerlink" href="#functions-documentation" title="Permanent link">#</a></h2>
+<h3 id="function-record_start">function record_start<a class="headerlink" href="#function-record_start" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="k">auto</span> <span class="n">record_start</span><span class="p">(</span>
+    <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-record_end">function record_end<a class="headerlink" href="#function-record_end" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span> <span class="n">record_end</span><span class="p">()</span>
+</code></pre></div>
 <h3 id="function-operator">function operator&lt;&lt;<a class="headerlink" href="#function-operator" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
     <span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span>
@@ -1610,6 +1652,9 @@
 <h3 id="variable-unspecified">variable unspecified<a class="headerlink" href="#variable-unspecified" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">Element</span> <span class="n">unspecified</span> <span class="p">{</span><span class="n">make</span><span class="o">&lt;</span><span class="p">[</span><span class="n">Unspecified</span><span class="p">](</span><span class="o">/</span><span class="n">scenario_simulator_v2</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">openscenario_interpreter</span><span class="o">/</span><span class="n">markdown</span><span class="o">/</span><span class="n">Classes</span><span class="o">/</span><span class="n">structopenscenario__interpreter_1_1Unspecified</span><span class="p">)</span><span class="o">&gt;</span><span class="p">()};</span>
 </code></pre></div>
+<h3 id="variable-record_process_id">variable record_process_id<a class="headerlink" href="#variable-record_process_id" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">pid_t</span> <span class="n">record_process_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</code></pre></div>
 <h3 id="variable-memory">variable memory<a class="headerlink" href="#variable-memory" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="n">aligned_storage</span><span class="o">&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">API</span><span class="p">),</span> <span class="k">alignof</span><span class="p">(</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">API</span><span class="p">)</span><span class="o">&gt;::</span><span class="n">type</span> <span class="n">memory</span><span class="p">;</span>
 </code></pre></div>
@@ -1617,7 +1662,7 @@
 <div class="highlight"><pre><span></span><code><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">API</span> <span class="o">&amp;</span> <span class="n">connection</span> <span class="o">=</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">API</span> <span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">memory</span><span class="p">);</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 00:09:33 UTC</p>
+<p>Updated on 18 May 2021 at 05:15:05 UTC</p>
                 
                   
                 

@@ -743,6 +743,7 @@
 <span class="c1">// See the License for the specific language governing permissions and</span>
 <span class="c1">// limitations under the License.</span>
 
+<span class="cp">#include</span> <span class="cpf">&lt;scenario_simulator_exception/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/behavior/vehicle/behavior_tree.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/behavior/vehicle/follow_lane_sequence/stop_at_crossing_entity_action.hpp&gt;</span><span class="cp"></span>
@@ -786,7 +787,7 @@
 <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span> <span class="n">StopAtCrossingEntityAction</span><span class="o">::</span><span class="n">calculateWaypoints</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">entity_status</span><span class="p">.</span><span class="n">lanelet_pose_valid</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">BehaviorTreeRuntimeError</span><span class="p">(</span><span class="s">&quot;failed to assign lane&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to assign lane&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">entity_status</span><span class="p">.</span><span class="n">action_status</span><span class="p">.</span><span class="n">twist</span><span class="p">.</span><span class="n">linear</span><span class="p">.</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span> <span class="n">waypoints</span><span class="p">;</span>
@@ -888,7 +889,7 @@
 <span class="p">}</span>  <span class="c1">// namespace entity_behavior</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:10 UTC</p>
                 
                   
                 

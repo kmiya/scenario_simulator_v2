@@ -738,9 +738,9 @@
 <span class="c1">// limitations under the License.</span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;limits&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;scenario_simulator_exception/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/color_utils/color_utils.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/traffic_lights/traffic_light.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
@@ -785,7 +785,7 @@
 <span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">getPosition</span><span class="p">(</span><span class="k">const</span> <span class="n">TrafficLightColor</span> <span class="o">&amp;</span> <span class="n">color</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">color_positions_</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">color</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="s">&quot;target color does not exists&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;target color does not exists&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">color_positions_</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">color</span><span class="p">);</span>
 <span class="p">}</span>
@@ -793,14 +793,14 @@
 <span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">getPosition</span><span class="p">(</span><span class="k">const</span> <span class="n">TrafficLightArrow</span> <span class="o">&amp;</span> <span class="n">arrow</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">arrow_positions_</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">arrow</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="s">&quot;target arrow does not exists&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;target arrow does not exists&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">arrow_positions_</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">arrow</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:10 UTC</p>
                 
                   
                 

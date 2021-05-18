@@ -737,6 +737,7 @@
 <span class="c1">// See the License for the specific language governing permissions and</span>
 <span class="c1">// limitations under the License.</span>
 
+<span class="cp">#include</span> <span class="cpf">&lt;scenario_simulator_exception/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;simulation_interface/conversions.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
@@ -983,7 +984,7 @@
     <span class="k">return</span><span class="p">;</span>
   <span class="p">}</span>
   <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;type of the Entity Type is inavlid!</span><span class="se">\n</span><span class="s">type is &quot;</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">type</span><span class="p">.</span><span class="n">type</span><span class="p">);</span>
-  <span class="n">THROW_PROTOBUF_PARAMETER_ERROR</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+  <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kt">void</span> <span class="nf">toMsg</span><span class="p">(</span><span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">EntityType</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityType</span> <span class="o">&amp;</span> <span class="n">type</span><span class="p">)</span>
@@ -1001,7 +1002,7 @@
     <span class="k">return</span><span class="p">;</span>
   <span class="p">}</span>
   <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;type of the Entity Type is inavlid!&quot;</span><span class="p">;</span>
-  <span class="n">THROW_PROTOBUF_PARAMETER_ERROR</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+  <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kt">void</span> <span class="nf">toProto</span><span class="p">(</span>
@@ -1071,7 +1072,7 @@
 <span class="p">}</span>  <span class="c1">// namespace simulation_interface</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:11 UTC</p>
                 
                   
                 

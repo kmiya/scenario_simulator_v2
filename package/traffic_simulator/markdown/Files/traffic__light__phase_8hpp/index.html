@@ -763,7 +763,7 @@
 <span class="cp">#define TRAFFIC_SIMULATOR__TRAFFIC_LIGHTS__TRAFFIC_LIGHT_PHASE_HPP_</span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;limits&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/exception.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;scenario_simulator_exception/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/hdmap_utils/hdmap_utils.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
@@ -781,7 +781,7 @@
   <span class="kt">double</span> <span class="n">getPhaseDuration</span><span class="p">()</span> <span class="k">const</span>
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">phase_</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="s">&quot;phase is empty&quot;</span><span class="p">);</span>
+      <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;phase is empty&quot;</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">accumulate</span><span class="p">(</span>
         <span class="n">std</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">phase_</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">phase_</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span>
@@ -792,7 +792,7 @@
   <span class="k">const</span> <span class="n">T</span> <span class="n">getState</span><span class="p">()</span> <span class="k">const</span>
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">phase_</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="s">&quot;phase is empty&quot;</span><span class="p">);</span>
+      <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;phase is empty&quot;</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="kt">double</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="nl">p</span> <span class="p">:</span> <span class="n">phase_</span><span class="p">)</span> <span class="p">{</span>
@@ -801,7 +801,7 @@
         <span class="k">return</span> <span class="n">p</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
       <span class="p">}</span>
     <span class="p">}</span>
-    <span class="k">throw</span> <span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="s">&quot;failed to get state in phase&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to get state of the traffic light, time does not match&quot;</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="kt">void</span> <span class="n">update</span><span class="p">(</span><span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span>
@@ -840,7 +840,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__TRAFFIC_LIGHTS__TRAFFIC_LIGHT_PHASE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:10 UTC</p>
                 
                   
                 

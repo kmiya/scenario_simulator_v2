@@ -762,7 +762,7 @@
 <span class="p">{</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">jerk</span> <span class="o">=</span> <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">getLinearJerk</span><span class="p">(</span><span class="n">target_entity</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">jerk</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">THROW_METRICS_CALCULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to calculate linear jerk.&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to calculate linear jerk.&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="n">current_linear_jerk_</span> <span class="o">=</span> <span class="n">jerk</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">check_lower_threashold</span> <span class="o">&amp;&amp;</span> <span class="n">jerk_lower_threashold</span> <span class="o">&gt;=</span> <span class="n">jerk</span><span class="p">.</span><span class="n">get</span><span class="p">())</span> <span class="p">{</span>
@@ -774,7 +774,7 @@
     <span class="k">return</span><span class="p">;</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">elapsed_duration_</span> <span class="o">&gt;</span> <span class="n">maximum_reaction_time</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">failure</span><span class="p">(</span><span class="n">SPECIFICATION_VIOLATION_ERROR</span><span class="p">(</span><span class="s">&quot;maximum reaction time is expired.&quot;</span><span class="p">));</span>
+    <span class="n">failure</span><span class="p">(</span><span class="n">SPECIFICATION_VIOLATION</span><span class="p">(</span><span class="s">&quot;maximum reaction time is expired.&quot;</span><span class="p">));</span>
     <span class="k">return</span><span class="p">;</span>
   <span class="p">}</span>
   <span class="n">elapsed_duration_</span> <span class="o">=</span> <span class="n">elapsed_duration_</span> <span class="o">+</span> <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">getStepTime</span><span class="p">();</span>
@@ -792,7 +792,7 @@
 <span class="p">}</span>  <span class="c1">// namespace metrics</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:10 UTC</p>
                 
                   
                 

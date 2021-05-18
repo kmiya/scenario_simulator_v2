@@ -760,7 +760,7 @@
 <span class="kt">void</span> <span class="n">MetricBase</span><span class="o">::</span><span class="n">success</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">lifecycle_</span> <span class="o">!=</span> <span class="n">MetricLifecycle</span><span class="o">::</span><span class="n">ACTIVE</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">THROW_METRICS_CALCULATION_ERROR</span><span class="p">(</span><span class="s">&quot;lifecycle of the metric should be active&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;lifecycle of the metric should be active&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="n">lifecycle_</span> <span class="o">=</span> <span class="n">MetricLifecycle</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">;</span>
 <span class="p">}</span>
@@ -768,15 +768,15 @@
 <span class="kt">void</span> <span class="n">MetricBase</span><span class="o">::</span><span class="n">activate</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">lifecycle_</span> <span class="o">!=</span> <span class="n">MetricLifecycle</span><span class="o">::</span><span class="n">INACTIVE</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">THROW_METRICS_CALCULATION_ERROR</span><span class="p">(</span><span class="s">&quot;lifecycle of the metric should be inactive&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;lifecycle of the metric should be inactive&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="n">lifecycle_</span> <span class="o">=</span> <span class="n">MetricLifecycle</span><span class="o">::</span><span class="n">ACTIVE</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kt">void</span> <span class="n">MetricBase</span><span class="o">::</span><span class="n">failure</span><span class="p">(</span><span class="n">SpecificationViolationError</span> <span class="n">error</span><span class="p">)</span>
+<span class="kt">void</span> <span class="n">MetricBase</span><span class="o">::</span><span class="n">failure</span><span class="p">(</span><span class="k">const</span> <span class="n">common</span><span class="o">::</span><span class="n">scenario_simulator_exception</span><span class="o">::</span><span class="n">SpecificationViolation</span> <span class="o">&amp;</span> <span class="n">error</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">lifecycle_</span> <span class="o">!=</span> <span class="n">MetricLifecycle</span><span class="o">::</span><span class="n">ACTIVE</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">THROW_METRICS_CALCULATION_ERROR</span><span class="p">(</span><span class="s">&quot;lifecycle of the metric should be active&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;lifecycle of the metric should be active&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="n">error_</span> <span class="o">=</span> <span class="n">error</span><span class="p">;</span>
   <span class="n">lifecycle_</span> <span class="o">=</span> <span class="n">MetricLifecycle</span><span class="o">::</span><span class="n">FAILURE</span><span class="p">;</span>
@@ -810,12 +810,12 @@
   <span class="k">if</span> <span class="p">(</span><span class="n">error_</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">throw</span> <span class="n">error_</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
   <span class="p">}</span>
-  <span class="n">THROW_METRICS_CALCULATION_ERROR</span><span class="p">(</span><span class="s">&quot;error is empty&quot;</span><span class="p">);</span>
+  <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;error is empty&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="p">}</span>  <span class="c1">// namespace metrics</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:10 UTC</p>
                 
                   
                 

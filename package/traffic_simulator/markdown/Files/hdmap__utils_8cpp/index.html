@@ -805,6 +805,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;lanelet2_extension_psim/utility/utilities.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;lanelet2_extension_psim/visualization/visualization.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;scenario_simulator_exception/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;set&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/color_utils/color_utils.hpp&gt;</span><span class="cp"></span>
@@ -831,10 +832,11 @@
   <span class="n">lanelet</span><span class="o">::</span><span class="n">ErrorMessages</span> <span class="n">errors</span><span class="p">;</span>
   <span class="n">lanelet_map_ptr_</span> <span class="o">=</span> <span class="n">lanelet</span><span class="o">::</span><span class="n">load</span><span class="p">(</span><span class="n">lanelet_path</span><span class="p">,</span> <span class="n">projector</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">errors</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">errors</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">;</span>
     <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">error</span> <span class="p">:</span> <span class="n">errors</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="n">error</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+      <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;error : &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">error</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="k">throw</span> <span class="n">HdMapError</span><span class="p">(</span><span class="s">&quot;failed to load lanelet map&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to load lanelet map&quot;</span><span class="p">,</span> <span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
   <span class="p">}</span>
   <span class="n">overwriteLaneletsCenterline</span><span class="p">();</span>
   <span class="n">traffic_rules_vehicle_ptr_</span> <span class="o">=</span> <span class="n">lanelet</span><span class="o">::</span><span class="n">traffic_rules</span><span class="o">::</span><span class="n">TrafficRulesFactory</span><span class="o">::</span><span class="n">create</span><span class="p">(</span>
@@ -1056,7 +1058,7 @@
 <span class="p">{</span>
   <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">limits</span><span class="p">;</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">lanelet_ids</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">HdMapError</span><span class="p">(</span><span class="s">&quot;size of the vector lanelet ids should be more than 1&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;size of the vector lanelet ids should be more than 1&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">itr</span> <span class="o">=</span> <span class="n">lanelet_ids</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">itr</span> <span class="o">!=</span> <span class="n">lanelet_ids</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">itr</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">const</span> <span class="k">auto</span> <span class="n">lanelet</span> <span class="o">=</span> <span class="n">lanelet_map_ptr_</span><span class="o">-&gt;</span><span class="n">laneletLayer</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="o">*</span><span class="n">itr</span><span class="p">);</span>
@@ -1148,7 +1150,7 @@
     <span class="p">}</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">found</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">HdMapError</span><span class="p">(</span><span class="s">&quot;lanelet id did not match.&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;lanelet id does not match&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">total_dist</span> <span class="o">&gt;</span> <span class="n">distance</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
@@ -1227,10 +1229,10 @@
 <span class="p">{</span>
   <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span><span class="o">&gt;</span> <span class="n">ret</span><span class="p">;</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">lanelet_map_ptr_</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">HdMapError</span><span class="p">(</span><span class="s">&quot;lanelet map is null pointer.&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;lanelet map is null pointer&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">lanelet_map_ptr_</span><span class="o">-&gt;</span><span class="n">laneletLayer</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">HdMapError</span><span class="p">(</span><span class="s">&quot;lanelet layer is empty.&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;lanelet layer is empty&quot;</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="k">const</span> <span class="k">auto</span> <span class="n">lanelet</span> <span class="o">=</span> <span class="n">lanelet_map_ptr_</span><span class="o">-&gt;</span><span class="n">laneletLayer</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">lanelet_id</span><span class="p">);</span>
@@ -1679,7 +1681,7 @@
   <span class="p">}</span>
 
   <span class="c1">// Throw an exception because this never happens</span>
-  <span class="k">throw</span> <span class="n">HdMapError</span><span class="p">(</span><span class="s">&quot;findNearestIndexPair(): No nearest point found.&quot;</span><span class="p">);</span>
+  <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;findNearestIndexPair(): No nearest point found.&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="o">&gt;&gt;</span>
@@ -1766,8 +1768,7 @@
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;traffic_light_id does not match. ID : &quot;</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">traffic_light_id</span><span class="p">);</span>
-  <span class="k">throw</span> <span class="n">HdMapError</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+  <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;traffic_light_id does not match. ID : &quot;</span><span class="p">,</span> <span class="n">traffic_light_id</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="o">&gt;</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">getTrafficLightStopLineId</span><span class="p">(</span>
@@ -2005,7 +2006,7 @@
 <span class="p">}</span>  <span class="c1">// namespace hdmap_utils</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:10 UTC</p>
                 
                   
                 

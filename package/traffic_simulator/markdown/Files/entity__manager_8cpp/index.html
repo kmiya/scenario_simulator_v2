@@ -744,6 +744,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;limits&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;queue&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;scenario_simulator_exception/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;sstream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
@@ -827,12 +828,11 @@
   <span class="p">}</span>
   <span class="k">auto</span> <span class="n">status0</span> <span class="o">=</span> <span class="n">getEntityStatus</span><span class="p">(</span><span class="n">name0</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">status0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="s">&quot;failed to calculate map pose : &quot;</span> <span class="o">+</span> <span class="n">name0</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;eneity : &quot;</span><span class="p">,</span> <span class="n">name0</span><span class="p">,</span> <span class="s">&quot; status does not exist.&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">auto</span> <span class="n">status1</span> <span class="o">=</span> <span class="n">getEntityStatus</span><span class="p">(</span><span class="n">name1</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">status1</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="s">&quot;failed to calculate map pose : &quot;</span> <span class="o">+</span> <span class="n">name1</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;failed to calculate map pose : &quot;</span> <span class="o">+</span> <span class="n">name1</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">auto</span> <span class="n">bbox0</span> <span class="o">=</span> <span class="n">getBoundingBox</span><span class="p">(</span><span class="n">name0</span><span class="p">);</span>
   <span class="k">auto</span> <span class="n">bbox1</span> <span class="o">=</span> <span class="n">getBoundingBox</span><span class="p">(</span><span class="n">name1</span><span class="p">);</span>
@@ -869,7 +869,7 @@
 <span class="p">{</span>
   <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">entities_</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">==</span> <span class="n">entities_</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="s">&quot;entity &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot; does not exist&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;entity : &quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s">&quot; does not exist&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">route</span> <span class="o">=</span> <span class="n">getRouteLanelets</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">horizon</span><span class="p">);</span>
   <span class="k">return</span> <span class="n">hdmap_utils_ptr_</span><span class="o">-&gt;</span><span class="n">getConflictingCrosswalkIds</span><span class="p">(</span><span class="n">route</span><span class="p">);</span>
@@ -922,7 +922,7 @@
   <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="n">status_msg</span><span class="p">;</span>
   <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">entities_</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">==</span> <span class="n">entities_</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">;</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;entity : &quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s">&quot; does not exist.&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="n">status_msg</span> <span class="o">=</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">getStatus</span><span class="p">();</span>
   <span class="n">status_msg</span><span class="p">.</span><span class="n">bounding_box</span> <span class="o">=</span> <span class="n">getBoundingBox</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
@@ -995,8 +995,7 @@
 <span class="p">{</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">status</span> <span class="o">=</span> <span class="n">getEntityStatus</span><span class="p">(</span><span class="n">entity_name</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">status</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span><span class="p">(</span>
-      <span class="s">&quot;failed to get status of &quot;</span> <span class="o">+</span> <span class="n">entity_name</span> <span class="o">+</span> <span class="s">&quot; entity in getMapPose&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;entity : &quot;</span><span class="p">,</span> <span class="n">entity_name</span><span class="p">,</span> <span class="s">&quot; status is empty&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">status</span><span class="o">-&gt;</span><span class="n">pose</span><span class="p">;</span>
 <span class="p">}</span>
@@ -1006,8 +1005,7 @@
 <span class="p">{</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">ref_status</span> <span class="o">=</span> <span class="n">getEntityStatus</span><span class="p">(</span><span class="n">reference_entity_name</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ref_status</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span><span class="p">(</span>
-      <span class="s">&quot;failed to get status of &quot;</span> <span class="o">+</span> <span class="n">reference_entity_name</span> <span class="o">+</span> <span class="s">&quot; entity in getMapPose&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;entity : &quot;</span><span class="p">,</span> <span class="n">reference_entity_name</span><span class="p">,</span> <span class="s">&quot; status is empty&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="n">tf2</span><span class="o">::</span><span class="n">Transform</span> <span class="n">ref_transfrom</span><span class="p">,</span> <span class="n">relative_transform</span><span class="p">;</span>
   <span class="n">tf2</span><span class="o">::</span><span class="n">fromMsg</span><span class="p">(</span><span class="n">ref_status</span><span class="o">-&gt;</span><span class="n">pose</span><span class="p">,</span> <span class="n">ref_transfrom</span><span class="p">);</span>
@@ -1078,8 +1076,7 @@
 <span class="p">{</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">to_status</span> <span class="o">=</span> <span class="n">getEntityStatus</span><span class="p">(</span><span class="n">to</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">to_status</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span><span class="p">(</span>
-      <span class="s">&quot;failed to get status of &quot;</span> <span class="o">+</span> <span class="n">to</span> <span class="o">+</span> <span class="s">&quot; entity in getRelativePose&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;entity : &quot;</span> <span class="o">+</span> <span class="n">to</span> <span class="o">+</span> <span class="s">&quot; status is empty&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">getRelativePose</span><span class="p">(</span><span class="n">from</span><span class="p">,</span> <span class="n">to_status</span><span class="o">-&gt;</span><span class="n">pose</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1089,8 +1086,7 @@
 <span class="p">{</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">from_status</span> <span class="o">=</span> <span class="n">getEntityStatus</span><span class="p">(</span><span class="n">from</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">from_status</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span><span class="p">(</span>
-      <span class="s">&quot;failed to get status of &quot;</span> <span class="o">+</span> <span class="n">from</span> <span class="o">+</span> <span class="s">&quot; entity in getRelativePose&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;entity : &quot;</span> <span class="o">+</span> <span class="n">from</span> <span class="o">+</span> <span class="s">&quot; status is empty&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">getRelativePose</span><span class="p">(</span><span class="n">from_status</span><span class="o">-&gt;</span><span class="n">pose</span><span class="p">,</span> <span class="n">to</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1101,12 +1097,10 @@
   <span class="k">const</span> <span class="k">auto</span> <span class="n">from_status</span> <span class="o">=</span> <span class="n">getEntityStatus</span><span class="p">(</span><span class="n">from</span><span class="p">);</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">to_status</span> <span class="o">=</span> <span class="n">getEntityStatus</span><span class="p">(</span><span class="n">to</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">from_status</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span><span class="p">(</span>
-      <span class="s">&quot;failed to get status of &quot;</span> <span class="o">+</span> <span class="n">from</span> <span class="o">+</span> <span class="s">&quot; entity in getRelativePose&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;entity : &quot;</span> <span class="o">+</span> <span class="n">from</span> <span class="o">+</span> <span class="s">&quot; status is empty&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">to_status</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span><span class="p">(</span>
-      <span class="s">&quot;failed to get status of &quot;</span> <span class="o">+</span> <span class="n">to</span> <span class="o">+</span> <span class="s">&quot; entity in getRelativePose&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;entity : &quot;</span> <span class="o">+</span> <span class="n">to</span> <span class="o">+</span> <span class="s">&quot; status is empty&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">getRelativePose</span><span class="p">(</span><span class="n">from_status</span><span class="o">-&gt;</span><span class="n">pose</span><span class="p">,</span> <span class="n">to_status</span><span class="o">-&gt;</span><span class="n">pose</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1188,7 +1182,7 @@
 <span class="p">{</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">status</span> <span class="o">=</span> <span class="n">getEntityStatus</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">status</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="s">&quot;failed to get entity : &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot; status&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;entity : &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot; status is empty&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">fabs</span><span class="p">(</span><span class="n">status</span><span class="o">-&gt;</span><span class="n">action_status</span><span class="p">.</span><span class="n">twist</span><span class="p">.</span><span class="n">linear</span><span class="p">.</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">epsilon</span><span class="p">();</span>
 <span class="p">}</span>
@@ -1206,8 +1200,7 @@
 <span class="p">{</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">status</span> <span class="o">=</span> <span class="n">getEntityStatus</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">status</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span><span class="p">(</span>
-      <span class="s">&quot;error occurs while getting entity stauts, target entity : &quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;entity : &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot; status is empty&quot;</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="k">const</span> <span class="k">auto</span> <span class="n">pose</span> <span class="o">=</span> <span class="n">status</span><span class="o">-&gt;</span><span class="n">pose</span><span class="p">;</span>
@@ -1292,7 +1285,7 @@
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;current_time : &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">current_time_</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">getNumberOfEgo</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="s">&quot;multi ego simulation does not support yet.&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;multi ego simulation does not support yet&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="n">setVerbose</span><span class="p">(</span><span class="n">verbose_</span><span class="p">);</span>
   <span class="k">auto</span> <span class="n">type_list</span> <span class="o">=</span> <span class="n">getEntityTypeList</span><span class="p">();</span>
@@ -1367,7 +1360,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:10 UTC</p>
                 
                   
                 

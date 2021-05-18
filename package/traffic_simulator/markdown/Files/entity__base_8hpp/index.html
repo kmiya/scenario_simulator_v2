@@ -877,9 +877,7 @@
 
   <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">requestWalkStraight</span><span class="p">()</span>
   <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">what</span><span class="p">;</span>
-    <span class="n">what</span> <span class="o">&lt;&lt;</span> <span class="n">getEntityTypename</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; type entities do not support WalkStraightAction&quot;</span><span class="p">;</span>
-    <span class="k">throw</span> <span class="n">UnsupportedActionError</span><span class="p">(</span><span class="n">what</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="n">getEntityTypename</span><span class="p">(),</span> <span class="s">&quot; type entities do not support WalkStraightAction&quot;</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="cm">/*   */</span> <span class="k">auto</span> <span class="n">statusSet</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">status_</span><span class="p">);</span> <span class="p">}</span>
@@ -917,7 +915,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__ENTITY__ENTITY_BASE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:11 UTC</p>
                 
                   
                 

@@ -798,7 +798,7 @@
     <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span> <span class="o">&amp;</span><span class="p">)</span> <span class="p">{</span>                                                   \
       <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">what</span><span class="p">;</span>                                                               \
       <span class="n">what</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Given lanelet ID &#39;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">lanelet_id</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&#39; is not a valid traffic-light ID.&quot;</span><span class="p">;</span>   \
-      <span class="k">throw</span> <span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="n">what</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>                                             \
+      <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="n">what</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>                                                     \
     <span class="p">}</span>                                                                                       \
   <span class="p">}</span>                                                                                         \
   <span class="k">static_assert</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
@@ -858,7 +858,7 @@
 <span class="cp">    } catch (const std::out_of_range &amp;) {                                                   \</span>
 <span class="cp">      std::stringstream what;                                                               \</span>
 <span class="cp">      what &lt;&lt; &quot;Given lanelet ID &#39;&quot; &lt;&lt; lanelet_id &lt;&lt; &quot;&#39; is not a valid traffic-light ID.&quot;;   \</span>
-<span class="cp">      throw SimulationRuntimeError(what.str());                                             \</span>
+<span class="cp">      THROW_SEMANTIC_ERROR(what.str());                                                     \</span>
 <span class="cp">    }                                                                                       \</span>
 <span class="cp">  }                                                                                         \</span>
 <span class="cp">  static_assert(true, &quot;&quot;)</span>
@@ -908,7 +908,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__TRAFFIC_LIGHTS__TRAFFIC_LIGHT_MANAGER_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:10 UTC</p>
                 
                   
                 

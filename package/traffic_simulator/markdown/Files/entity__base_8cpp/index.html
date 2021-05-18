@@ -743,9 +743,9 @@
 <span class="cp">#include</span> <span class="cpf">&lt;limits&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;queue&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;rclcpp/rclcpp.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;scenario_simulator_exception/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/entity_base.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 
@@ -807,7 +807,7 @@
 <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="n">EntityBase</span><span class="o">::</span><span class="n">getStatus</span><span class="p">()</span> <span class="k">const</span>
 <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">status_</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="s">&quot;status is not set&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;status is not set&quot;</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">status_</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
   <span class="p">}</span>
@@ -823,7 +823,7 @@
 <span class="kt">void</span> <span class="n">EntityBase</span><span class="o">::</span><span class="n">stopAtEndOfRoad</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">status_</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="s">&quot;status is not set&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;status is not set&quot;</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="n">status_</span><span class="p">.</span><span class="n">get</span><span class="p">().</span><span class="n">action_status</span><span class="p">.</span><span class="n">twist</span> <span class="o">=</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Twist</span><span class="p">();</span>
     <span class="n">status_</span><span class="p">.</span><span class="n">get</span><span class="p">().</span><span class="n">action_status</span><span class="p">.</span><span class="n">accel</span> <span class="o">=</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Accel</span><span class="p">();</span>
@@ -833,7 +833,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:10 UTC</p>
                 
                   
                 

@@ -1010,7 +1010,7 @@
 
     <span class="k">const</span> <span class="k">auto</span> <span class="n">closest_lanelet_id</span> <span class="o">=</span> <span class="n">hdmap_utils_ptr_</span><span class="o">-&gt;</span><span class="n">getClosetLanletId</span><span class="p">(</span><span class="n">status</span><span class="p">.</span><span class="n">pose</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">closest_lanelet_id</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="s">&quot;failed to closest lane.&quot;</span><span class="p">);</span>
+      <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;failed to find closest lane, lane is too far away.&quot;</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">CatmullRomSpline</span> <span class="n">spline</span><span class="p">(</span>
@@ -1140,11 +1140,10 @@
 
 <span class="kt">void</span> <span class="n">EgoEntity</span><span class="o">::</span><span class="n">requestLaneChange</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">what</span><span class="p">;</span>
-  <span class="n">what</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;From scenario, a lane change was requested to Ego type entity &#39;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&#39;. &quot;</span>
-       <span class="o">&lt;&lt;</span> <span class="s">&quot;In general, such a request is an error, &quot;</span>
-       <span class="o">&lt;&lt;</span> <span class="s">&quot;since Ego cars make autonomous decisions about everything but their destination.&quot;</span><span class="p">;</span>
-  <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">what</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
+  <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span>
+    <span class="s">&quot;From scenario, a lane change was requested to Ego type entity &quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span>
+    <span class="s">&quot; In general, such a request is an error, since Ego cars make autonomous decisions about &quot;</span>
+    <span class="s">&quot;everything but their destination.&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kt">bool</span> <span class="n">EgoEntity</span><span class="o">::</span><span class="n">setStatus</span><span class="p">(</span><span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&amp;</span> <span class="n">status</span><span class="p">)</span>
@@ -1185,7 +1184,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:10 UTC</p>
                 
                   
                 

@@ -737,6 +737,7 @@
 <span class="c1">// See the License for the specific language governing permissions and</span>
 <span class="c1">// limitations under the License.</span>
 
+<span class="cp">#include</span> <span class="cpf">&lt;scenario_simulator_exception/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;sstream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
@@ -763,10 +764,9 @@
   <span class="k">try</span> <span class="p">{</span>
     <span class="n">datum</span> <span class="o">=</span> <span class="n">conversions</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span> <span class="o">&amp;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">what</span><span class="p">;</span>
-    <span class="n">what</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;An invalid value &#39;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">value</span>
-         <span class="o">&lt;&lt;</span> <span class="s">&quot;&#39; was specified for type &#39;traffic_simulator::TrafficLightColor&#39;.&quot;</span><span class="p">;</span>
-    <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">what</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span>
+      <span class="s">&quot;an invalid value : &quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span>
+      <span class="s">&quot;was specified for type &#39;traffic_simulator::TrafficLightColor&#39;&quot;</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="k">return</span> <span class="n">is</span><span class="p">;</span>
@@ -832,10 +832,9 @@
   <span class="k">try</span> <span class="p">{</span>
     <span class="n">datum</span> <span class="o">=</span> <span class="n">conversions</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span> <span class="o">&amp;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">what</span><span class="p">;</span>
-    <span class="n">what</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;An invalid value &#39;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">value</span>
-         <span class="o">&lt;&lt;</span> <span class="s">&quot;&#39; was specified for type &#39;traffic_simulator::TrafficLightArrow&#39;.&quot;</span><span class="p">;</span>
-    <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">what</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span>
+      <span class="s">&quot;An invalid value : &quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span>
+      <span class="s">&quot; was specified for type &#39;traffic_simulator::TrafficLightArrow&#39;&quot;</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="k">return</span> <span class="n">is</span><span class="p">;</span>
@@ -885,7 +884,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:10 UTC</p>
                 
                   
                 

@@ -5,6 +5,7 @@
     <includes local="no">simulation_api_schema.pb.h</includes>
     <includes local="no">functional</includes>
     <includes local="no">rclcpp/rclcpp.hpp</includes>
+    <includes local="no">scenario_simulator_exception/exception.hpp</includes>
     <includes refid="constants_8hpp" local="no">simulation_interface/constants.hpp</includes>
     <includes local="no">string</includes>
     <includes local="no">thread</includes>
@@ -12,18 +13,23 @@
     <includedby refid="example_8cpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/example.cpp</includedby>
     <includedby refid="zmq__multi__server_8cpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/src/zmq_multi_server.cpp</includedby>
     <incdepgraph>
-      <node id="50">
+      <node id="51">
+        <label>scenario_simulator_exception/exception.hpp</label>
+      </node>
+      <node id="49">
         <label>functional</label>
       </node>
       <node id="53">
         <label>string</label>
       </node>
-      <node id="51">
+      <node id="50">
         <label>rclcpp/rclcpp.hpp</label>
       </node>
-      <node id="48">
+      <node id="47">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp</label>
         <link refid="zmq__multi__server_8hpp"/>
+        <childnode refid="48" relation="include">
+        </childnode>
         <childnode refid="49" relation="include">
         </childnode>
         <childnode refid="50" relation="include">
@@ -51,7 +57,7 @@
       <node id="55">
         <label>zmqpp/zmqpp.hpp</label>
       </node>
-      <node id="49">
+      <node id="48">
         <label>simulation_api_schema.pb.h</label>
       </node>
     </incdepgraph>
@@ -83,111 +89,112 @@
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rclcpp/rclcpp.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;simulation_interface/constants.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;zmqpp/zmqpp.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacezeromq" kindref="compound">zeromq</ref></highlight></codeline>
-<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="29" refid="classzeromq_1_1MultiServer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classzeromq_1_1MultiServer" kindref="compound">MultiServer</ref></highlight></codeline>
-<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classzeromq_1_1MultiServer" kindref="compound">MultiServer</ref>(</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_interface::TransportProtocol<sp/>&amp;<sp/>protocol,</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_interface::HostName<sp/>&amp;<sp/>hostname,</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::InitializeRequest<sp/>&amp;,</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>simulation_api_schema::InitializeResponse<sp/>&amp;)&gt;</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>initialize_func,</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::UpdateFrameRequest<sp/>&amp;,</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>simulation_api_schema::UpdateFrameResponse<sp/>&amp;)&gt;</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>update_frame_func,</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::UpdateSensorFrameRequest<sp/>&amp;,</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>simulation_api_schema::UpdateSensorFrameResponse<sp/>&amp;)&gt;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>update_sensor_frame_func,</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::SpawnVehicleEntityRequest<sp/>&amp;,</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>simulation_api_schema::SpawnVehicleEntityResponse<sp/>&amp;)&gt;</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>spawn_vehicle_entity_func,</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::SpawnPedestrianEntityRequest<sp/>&amp;,</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>simulation_api_schema::SpawnPedestrianEntityResponse<sp/>&amp;)&gt;</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>spawn_pedestrian_entity_func,</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::DespawnEntityRequest<sp/>&amp;,</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>simulation_api_schema::DespawnEntityResponse<sp/>&amp;)&gt;</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>despawn_entity_func,</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::UpdateEntityStatusRequest<sp/>&amp;,</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>simulation_api_schema::UpdateEntityStatusResponse<sp/>&amp;)&gt;</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>update_entity_status_func,</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::AttachLidarSensorRequest<sp/>&amp;,</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>simulation_api_schema::AttachLidarSensorResponse<sp/>&amp;)&gt;</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>attach_lidar_sensor_func,</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::AttachDetectionSensorRequest<sp/>&amp;,</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>simulation_api_schema::AttachDetectionSensorResponse<sp/>&amp;)&gt;</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>attach_detection_sensor_func);</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>poll();</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>start_poll();</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/>std::thread<sp/>thread_;</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>zmqpp::context<sp/>context_;</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>zmqpp::socket_type<sp/>type_;</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/>zmqpp::poller<sp/>poller_;</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/>zmqpp::socket<sp/>initialize_sock_;</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/>std::function&lt;void(</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::InitializeRequest<sp/>&amp;,<sp/>simulation_api_schema::InitializeResponse<sp/>&amp;)&gt;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>initialize_func_;</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/>zmqpp::socket<sp/>update_frame_sock_;</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/>std::function&lt;void(</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::UpdateFrameRequest<sp/>&amp;,</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::UpdateFrameResponse<sp/>&amp;)&gt;</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>update_frame_func_;</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/>zmqpp::socket<sp/>update_sensor_frame_sock_;</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/>std::function&lt;void(</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::UpdateSensorFrameRequest<sp/>&amp;,</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::UpdateSensorFrameResponse<sp/>&amp;)&gt;</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>update_sensor_frame_func_;</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/>zmqpp::socket<sp/>spawn_vehicle_entity_sock_;</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/>std::function&lt;void(</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::SpawnVehicleEntityRequest<sp/>&amp;,</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::SpawnVehicleEntityResponse<sp/>&amp;)&gt;</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>spawn_vehicle_entity_func_;</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/>zmqpp::socket<sp/>spawn_pedestrian_entity_sock_;</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/>std::function&lt;void(</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::SpawnPedestrianEntityRequest<sp/>&amp;,</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::SpawnPedestrianEntityResponse<sp/>&amp;)&gt;</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>spawn_pedestrian_entity_func_;</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/>zmqpp::socket<sp/>despawn_entity_sock_;</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/>std::function&lt;void(</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::DespawnEntityRequest<sp/>&amp;,</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::DespawnEntityResponse<sp/>&amp;)&gt;</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>despawn_entity_func_;</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/>zmqpp::socket<sp/>update_entity_status_sock_;</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/>std::function&lt;void(</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::UpdateEntityStatusRequest<sp/>&amp;,</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::UpdateEntityStatusResponse<sp/>&amp;)&gt;</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>update_entity_status_func_;</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/>zmqpp::socket<sp/>attach_lidar_sensor_sock_;</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/>std::function&lt;void(</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::AttachLidarSensorRequest<sp/>&amp;,</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::AttachLidarSensorResponse<sp/>&amp;)&gt;</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>attach_lidar_sensor_func_;</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/>zmqpp::socket<sp/>attach_detection_sensor_sock_;</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/>std::function&lt;void(</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::AttachDetectionSensorRequest<sp/>&amp;,</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::AttachDetectionSensorResponse<sp/>&amp;)&gt;</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>attach_detection_sensor_func_;</highlight></codeline>
-<codeline lineno="123"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="124"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>zeromq</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="125"><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>SIMULATION_INTERFACE__ZMQ_MULTI_SERVER_HPP_</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;scenario_simulator_exception/exception.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;simulation_interface/constants.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;zmqpp/zmqpp.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacezeromq" kindref="compound">zeromq</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30" refid="classzeromq_1_1MultiServer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classzeromq_1_1MultiServer" kindref="compound">MultiServer</ref></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classzeromq_1_1MultiServer" kindref="compound">MultiServer</ref>(</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_interface::TransportProtocol<sp/>&amp;<sp/>protocol,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_interface::HostName<sp/>&amp;<sp/>hostname,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::InitializeRequest<sp/>&amp;,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>simulation_api_schema::InitializeResponse<sp/>&amp;)&gt;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>initialize_func,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::UpdateFrameRequest<sp/>&amp;,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>simulation_api_schema::UpdateFrameResponse<sp/>&amp;)&gt;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>update_frame_func,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::UpdateSensorFrameRequest<sp/>&amp;,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>simulation_api_schema::UpdateSensorFrameResponse<sp/>&amp;)&gt;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>update_sensor_frame_func,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::SpawnVehicleEntityRequest<sp/>&amp;,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>simulation_api_schema::SpawnVehicleEntityResponse<sp/>&amp;)&gt;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>spawn_vehicle_entity_func,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::SpawnPedestrianEntityRequest<sp/>&amp;,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>simulation_api_schema::SpawnPedestrianEntityResponse<sp/>&amp;)&gt;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>spawn_pedestrian_entity_func,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::DespawnEntityRequest<sp/>&amp;,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>simulation_api_schema::DespawnEntityResponse<sp/>&amp;)&gt;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>despawn_entity_func,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::UpdateEntityStatusRequest<sp/>&amp;,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>simulation_api_schema::UpdateEntityStatusResponse<sp/>&amp;)&gt;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>update_entity_status_func,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::AttachLidarSensorRequest<sp/>&amp;,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>simulation_api_schema::AttachLidarSensorResponse<sp/>&amp;)&gt;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>attach_lidar_sensor_func,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::AttachDetectionSensorRequest<sp/>&amp;,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>simulation_api_schema::AttachDetectionSensorResponse<sp/>&amp;)&gt;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>attach_detection_sensor_func);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>poll();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>start_poll();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>std::thread<sp/>thread_;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>zmqpp::context<sp/>context_;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>zmqpp::socket_type<sp/>type_;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>zmqpp::poller<sp/>poller_;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>zmqpp::socket<sp/>initialize_sock_;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>std::function&lt;void(</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::InitializeRequest<sp/>&amp;,<sp/>simulation_api_schema::InitializeResponse<sp/>&amp;)&gt;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>initialize_func_;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>zmqpp::socket<sp/>update_frame_sock_;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>std::function&lt;void(</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::UpdateFrameRequest<sp/>&amp;,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::UpdateFrameResponse<sp/>&amp;)&gt;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>update_frame_func_;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>zmqpp::socket<sp/>update_sensor_frame_sock_;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>std::function&lt;void(</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::UpdateSensorFrameRequest<sp/>&amp;,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::UpdateSensorFrameResponse<sp/>&amp;)&gt;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>update_sensor_frame_func_;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>zmqpp::socket<sp/>spawn_vehicle_entity_sock_;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>std::function&lt;void(</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::SpawnVehicleEntityRequest<sp/>&amp;,</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::SpawnVehicleEntityResponse<sp/>&amp;)&gt;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>spawn_vehicle_entity_func_;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>zmqpp::socket<sp/>spawn_pedestrian_entity_sock_;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>std::function&lt;void(</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::SpawnPedestrianEntityRequest<sp/>&amp;,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::SpawnPedestrianEntityResponse<sp/>&amp;)&gt;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>spawn_pedestrian_entity_func_;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>zmqpp::socket<sp/>despawn_entity_sock_;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>std::function&lt;void(</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::DespawnEntityRequest<sp/>&amp;,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::DespawnEntityResponse<sp/>&amp;)&gt;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>despawn_entity_func_;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>zmqpp::socket<sp/>update_entity_status_sock_;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>std::function&lt;void(</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::UpdateEntityStatusRequest<sp/>&amp;,</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::UpdateEntityStatusResponse<sp/>&amp;)&gt;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>update_entity_status_func_;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/>zmqpp::socket<sp/>attach_lidar_sensor_sock_;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>std::function&lt;void(</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::AttachLidarSensorRequest<sp/>&amp;,</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::AttachLidarSensorResponse<sp/>&amp;)&gt;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>attach_lidar_sensor_func_;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/>zmqpp::socket<sp/>attach_detection_sensor_sock_;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>std::function&lt;void(</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>simulation_api_schema::AttachDetectionSensorRequest<sp/>&amp;,</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation_api_schema::AttachDetectionSensorResponse<sp/>&amp;)&gt;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>attach_detection_sensor_func_;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>zeromq</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>SIMULATION_INTERFACE__ZMQ_MULTI_SERVER_HPP_</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/simulation_interface/include/simulation_interface/zmq_multi_server.hpp"/>
   </compounddef>

@@ -764,6 +764,7 @@
 
 <span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;rclcpp/rclcpp.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;scenario_simulator_exception/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;simulation_interface/constants.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;thread&gt;</span><span class="cp"></span>
@@ -828,7 +829,7 @@
       <span class="n">func_</span><span class="p">(</span><span class="n">req_proto</span><span class="p">,</span> <span class="n">res_proto</span><span class="p">);</span>
       <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">res_serialized_str</span><span class="p">;</span>
       <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">res_proto</span><span class="p">.</span><span class="n">SerializeToString</span><span class="p">(</span><span class="o">&amp;</span><span class="n">res_serialized_str</span><span class="p">))</span> <span class="p">{</span>
-        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;failed to serialize from proto&quot;</span><span class="p">);</span>
+        <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to serialize from proto&quot;</span><span class="p">);</span>
       <span class="p">}</span>
       <span class="n">zmqpp</span><span class="o">::</span><span class="n">message</span> <span class="n">response</span><span class="p">;</span>
       <span class="n">response</span> <span class="o">&lt;&lt;</span> <span class="n">res_serialized_str</span><span class="p">;</span>
@@ -854,7 +855,7 @@
 <span class="cp">#endif  </span><span class="c1">// SIMULATION_INTERFACE__ZMQ_SERVER_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:11 UTC</p>
                 
                   
                 

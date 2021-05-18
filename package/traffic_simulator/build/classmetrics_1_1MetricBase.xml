@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="71" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" bodystart="71" bodyend="-1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="44" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" bodystart="44" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-attrib">
@@ -32,13 +32,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="76" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" bodystart="76" bodyend="-1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="49" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" bodystart="49" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classmetrics_1_1MetricBase_1a8c93e59a1351e649953fdc386d13e0a7" prot="private" static="no" mutable="no">
-        <type>boost::optional&lt; <ref refid="classmetrics_1_1SpecificationViolationError" kindref="compound">SpecificationViolationError</ref> &gt;</type>
-        <definition>boost::optional&lt;SpecificationViolationError&gt; metrics::MetricBase::error_</definition>
+      <memberdef kind="variable" id="classmetrics_1_1MetricBase_1a8f160d561efc4de63c11cfe78c20f3e5" prot="private" static="no" mutable="no">
+        <type>boost::optional&lt; common::scenario_simulator_exception::SpecificationViolation &gt;</type>
+        <definition>boost::optional&lt;common::scenario_simulator_exception::SpecificationViolation&gt; metrics::MetricBase::error_</definition>
         <argsstring></argsstring>
         <name>error_</name>
         <briefdescription>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="79" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" bodystart="79" bodyend="-1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="52" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" bodystart="52" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classmetrics_1_1MetricBase_1a3f3304a866ae70cdc4e1cee7b627ebea" prot="private" static="no" mutable="no">
         <type>MetricLifecycle</type>
@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="80" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" bodystart="80" bodyend="-1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="53" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" bodystart="53" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -79,7 +79,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="60" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/metrics/metric_base.cpp" bodystart="21" bodyend="25"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="33" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/metrics/metric_base.cpp" bodystart="21" bodyend="25"/>
       </memberdef>
       <memberdef kind="function" id="classmetrics_1_1MetricBase_1a86b9bbb2ceab6c040a954a4d926eb4fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -92,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="61" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/metrics/metric_base.cpp" bodystart="27" bodyend="27"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="34" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/metrics/metric_base.cpp" bodystart="27" bodyend="27"/>
       </memberdef>
       <memberdef kind="function" id="classmetrics_1_1MetricBase_1a39065db1c4f9042d830d9086ef01bd99" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -108,7 +108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="62" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="35" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classmetrics_1_1MetricBase_1a5535990bccf8673505854b0db5d12e51" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -124,7 +124,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="63" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="36" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classmetrics_1_1MetricBase_1a9121f7a9d69506281a9eb0533f09896c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -137,15 +137,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="64" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/metrics/metric_base.cpp" bodystart="35" bodyend="41"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="37" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/metrics/metric_base.cpp" bodystart="35" bodyend="41"/>
       </memberdef>
-      <memberdef kind="function" id="classmetrics_1_1MetricBase_1a67f27b7981db0910294ab949d7ea8747" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classmetrics_1_1MetricBase_1aab9f2b64fa570816fe577fca1b685af2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void metrics::MetricBase::failure</definition>
-        <argsstring>(SpecificationViolationError error)</argsstring>
+        <argsstring>(const common::scenario_simulator_exception::SpecificationViolation &amp;error)</argsstring>
         <name>failure</name>
         <param>
-          <type><ref refid="classmetrics_1_1SpecificationViolationError" kindref="compound">SpecificationViolationError</ref></type>
+          <type>const common::scenario_simulator_exception::SpecificationViolation &amp;</type>
           <declname>error</declname>
         </param>
         <briefdescription>
@@ -154,7 +154,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="65" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/metrics/metric_base.cpp" bodystart="51" bodyend="58"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="38" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/metrics/metric_base.cpp" bodystart="51" bodyend="58"/>
       </memberdef>
       <memberdef kind="function" id="classmetrics_1_1MetricBase_1ae2715921303db9ccba0092c532a386d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -167,7 +167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="66" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/metrics/metric_base.cpp" bodystart="43" bodyend="49"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="39" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/metrics/metric_base.cpp" bodystart="43" bodyend="49"/>
       </memberdef>
       <memberdef kind="function" id="classmetrics_1_1MetricBase_1a3ce5f237d1200357687261e5f7418022" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>nlohmann::json</type>
@@ -183,7 +183,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="67" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="40" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classmetrics_1_1MetricBase_1a38aefd236ee82f96ca6cf138507003a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>nlohmann::json</type>
@@ -196,7 +196,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="68" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/metrics/metric_base.cpp" bodystart="60" bodyend="81"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="41" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/metrics/metric_base.cpp" bodystart="60" bodyend="81"/>
       </memberdef>
       <memberdef kind="function" id="classmetrics_1_1MetricBase_1a406041977f3badc4bf8a29568d0a3040" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -213,7 +213,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="69" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/metrics/metric_base.cpp" bodystart="29" bodyend="33"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="42" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/metrics/metric_base.cpp" bodystart="29" bodyend="33"/>
       </memberdef>
       <memberdef kind="function" id="classmetrics_1_1MetricBase_1a0fcf4330afb3c26942ab0adc45026e65" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>MetricLifecycle</type>
@@ -226,7 +226,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="72" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" bodystart="72" bodyend="72"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="45" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" bodystart="45" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="classmetrics_1_1MetricBase_1a3bfb57e35e135f57d65d3a9a18ae8c29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -239,7 +239,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="73" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/metrics/metric_base.cpp" bodystart="83" bodyend="89"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="46" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/metrics/metric_base.cpp" bodystart="83" bodyend="89"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -247,36 +247,36 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="111">
+      <node id="99">
         <label>metrics::ReactionTimeMetric</label>
         <link refid="classmetrics_1_1ReactionTimeMetric"/>
-        <childnode refid="109" relation="public-inheritance">
+        <childnode refid="97" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="112">
+      <node id="100">
         <label>metrics::TraveledDistanceMetric</label>
         <link refid="classmetrics_1_1TraveledDistanceMetric"/>
-        <childnode refid="109" relation="public-inheritance">
+        <childnode refid="97" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="109">
+      <node id="97">
         <label>metrics::MetricBase</label>
         <link refid="classmetrics_1_1MetricBase"/>
       </node>
-      <node id="110">
+      <node id="98">
         <label>metrics::MomentaryStopMetric</label>
         <link refid="classmetrics_1_1MomentaryStopMetric"/>
-        <childnode refid="109" relation="public-inheritance">
+        <childnode refid="97" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="58" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" bodystart="57" bodyend="81"/>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" line="31" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp" bodystart="30" bodyend="54"/>
     <listofallmembers>
       <member refid="classmetrics_1_1MetricBase_1ae2715921303db9ccba0092c532a386d2" prot="public" virt="non-virtual"><scope>metrics::MetricBase</scope><name>activate</name></member>
       <member refid="classmetrics_1_1MetricBase_1a39065db1c4f9042d830d9086ef01bd99" prot="public" virt="pure-virtual"><scope>metrics::MetricBase</scope><name>activateTrigger</name></member>
       <member refid="classmetrics_1_1MetricBase_1ad10d16a7f9bf83a0952d63c8daa0c751" prot="protected" virt="non-virtual"><scope>metrics::MetricBase</scope><name>entity_manager_ptr_</name></member>
-      <member refid="classmetrics_1_1MetricBase_1a8c93e59a1351e649953fdc386d13e0a7" prot="private" virt="non-virtual"><scope>metrics::MetricBase</scope><name>error_</name></member>
-      <member refid="classmetrics_1_1MetricBase_1a67f27b7981db0910294ab949d7ea8747" prot="public" virt="non-virtual"><scope>metrics::MetricBase</scope><name>failure</name></member>
+      <member refid="classmetrics_1_1MetricBase_1a8f160d561efc4de63c11cfe78c20f3e5" prot="private" virt="non-virtual"><scope>metrics::MetricBase</scope><name>error_</name></member>
+      <member refid="classmetrics_1_1MetricBase_1aab9f2b64fa570816fe577fca1b685af2" prot="public" virt="non-virtual"><scope>metrics::MetricBase</scope><name>failure</name></member>
       <member refid="classmetrics_1_1MetricBase_1a0fcf4330afb3c26942ab0adc45026e65" prot="public" virt="non-virtual"><scope>metrics::MetricBase</scope><name>getLifecycle</name></member>
       <member refid="classmetrics_1_1MetricBase_1a3f3304a866ae70cdc4e1cee7b627ebea" prot="private" virt="non-virtual"><scope>metrics::MetricBase</scope><name>lifecycle_</name></member>
       <member refid="classmetrics_1_1MetricBase_1ae13ba905d9469efe56cf349890327bb1" prot="public" virt="non-virtual"><scope>metrics::MetricBase</scope><name>MetricBase</name></member>

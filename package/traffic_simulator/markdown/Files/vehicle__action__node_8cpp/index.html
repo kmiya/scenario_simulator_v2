@@ -738,6 +738,7 @@
 <span class="c1">// limitations under the License.</span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;scenario_simulator_exception/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/behavior/vehicle/vehicle_action_node.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
@@ -758,7 +759,7 @@
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">getInput</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span><span class="o">&gt;</span><span class="p">(</span>
         <span class="s">&quot;vehicle_parameters&quot;</span><span class="p">,</span> <span class="n">vehicle_parameters</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">BehaviorTreeRuntimeError</span><span class="p">(</span><span class="s">&quot;failed to get input vehicle_parameters in VehicleActionNode&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to get input vehicle_parameters in VehicleActionNode&quot;</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
@@ -826,7 +827,7 @@
       <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">calculation_success</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="n">BehaviorTreeRuntimeError</span><span class="p">(</span>
+      <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span>
         <span class="s">&quot;failed to calculate next status calculateEntityStatusUpdated function&quot;</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="n">entity_status_updated</span><span class="p">;</span>
@@ -840,8 +841,7 @@
     <span class="n">entity_status_updated</span><span class="p">.</span><span class="n">action_status</span><span class="p">.</span><span class="n">accel</span> <span class="o">=</span> <span class="n">accel_new</span><span class="p">;</span>
     <span class="k">return</span> <span class="n">entity_status_updated</span><span class="p">;</span>
   <span class="p">}</span>
-  <span class="k">throw</span> <span class="n">BehaviorTreeRuntimeError</span><span class="p">(</span>
-    <span class="s">&quot;failed to calculate next status calculateEntityStatusUpdated function&quot;</span><span class="p">);</span>
+  <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to calculate next status calculateEntityStatusUpdated function&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="n">VehicleActionNode</span><span class="o">::</span><span class="n">calculateEntityStatusUpdatedInWorldFrame</span><span class="p">(</span>
@@ -903,7 +903,7 @@
 <span class="p">}</span>  <span class="c1">// namespace entity_behavior</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:10 UTC</p>
                 
                   
                 

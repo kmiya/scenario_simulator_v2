@@ -10,6 +10,9 @@
     <includedby refid="vehicle_2behavior__tree_8cpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/behavior/vehicle/behavior_tree.cpp</includedby>
     <includedby refid="stop__at__traffic__light__action_8cpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/behavior/vehicle/follow_lane_sequence/stop_at_traffic_light_action.cpp</includedby>
     <incdepgraph>
+      <node id="1061">
+        <label>scenario_simulator_exception/exception.hpp</label>
+      </node>
       <node id="1044">
         <label>traffic_simulator/traffic_lights/traffic_light_state.hpp</label>
         <link refid="traffic__light__state_8hpp_source"/>
@@ -61,26 +64,18 @@
       <node id="1023">
         <label>lanelet2_routing/RoutingGraph.h</label>
       </node>
-      <node id="1062">
+      <node id="1060">
         <label>traffic_simulator/traffic_lights/traffic_light_phase.hpp</label>
         <link refid="traffic__light__phase_8hpp_source"/>
         <childnode refid="1055" relation="include">
         </childnode>
-        <childnode refid="1060" relation="include">
+        <childnode refid="1061" relation="include">
         </childnode>
         <childnode refid="1015" relation="include">
         </childnode>
         <childnode refid="1049" relation="include">
         </childnode>
         <childnode refid="1043" relation="include">
-        </childnode>
-      </node>
-      <node id="1060">
-        <label>traffic_simulator/entity/exception.hpp</label>
-        <link refid="exception_8hpp_source"/>
-        <childnode refid="1061" relation="include">
-        </childnode>
-        <childnode refid="999" relation="include">
         </childnode>
       </node>
       <node id="998">
@@ -111,7 +106,7 @@
         </childnode>
         <childnode refid="1015" relation="include">
         </childnode>
-        <childnode refid="1063" relation="include">
+        <childnode refid="1062" relation="include">
         </childnode>
         <childnode refid="1051" relation="include">
         </childnode>
@@ -298,7 +293,7 @@
         <childnode refid="1050" relation="include">
         </childnode>
       </node>
-      <node id="1061">
+      <node id="1063">
         <label>exception</label>
       </node>
       <node id="1016">
@@ -358,10 +353,10 @@
       <node id="1025">
         <label>lanelet2_traffic_rules/TrafficRulesFactory.h</label>
       </node>
-      <node id="1063">
+      <node id="1062">
         <label>traffic_simulator/math/catmull_rom_spline.hpp</label>
         <link refid="catmull__rom__spline_8hpp_source"/>
-        <childnode refid="1061" relation="include">
+        <childnode refid="1063" relation="include">
         </childnode>
         <childnode refid="1038" relation="include">
         </childnode>
@@ -408,7 +403,7 @@
         </childnode>
         <childnode refid="1065" relation="include">
         </childnode>
-        <childnode refid="1063" relation="include">
+        <childnode refid="1062" relation="include">
         </childnode>
         <childnode refid="1043" relation="include">
         </childnode>
@@ -430,8 +425,6 @@
         <childnode refid="1056" relation="include">
         </childnode>
         <childnode refid="1060" relation="include">
-        </childnode>
-        <childnode refid="1062" relation="include">
         </childnode>
         <childnode refid="1044" relation="include">
         </childnode>

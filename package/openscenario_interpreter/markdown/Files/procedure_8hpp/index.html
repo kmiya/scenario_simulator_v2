@@ -864,7 +864,7 @@
 <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">getEntityStatus</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
 <span class="k">try</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">connection</span><span class="p">.</span><span class="n">getEntityStatus</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span> <span class="o">&amp;</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">common</span><span class="o">::</span><span class="n">scenario_simulator_exception</span><span class="o">::</span><span class="n">SimulationError</span> <span class="o">&amp;</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">throw</span> <span class="n">SemanticError</span><span class="p">(</span>
     <span class="n">error</span><span class="p">.</span><span class="n">what</span><span class="p">(),</span> <span class="s">&quot;.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Possible causes:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
     <span class="s">&quot;  (1) The position of the corresponding entity is not specified by Teleport Action&quot;</span><span class="p">);</span>
@@ -874,7 +874,7 @@
 <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">getRelativePose</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
 <span class="k">try</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">connection</span><span class="p">.</span><span class="n">getRelativePose</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span> <span class="o">&amp;</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">common</span><span class="o">::</span><span class="n">scenario_simulator_exception</span><span class="o">::</span><span class="n">SimulationError</span> <span class="o">&amp;</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">result</span><span class="p">{};</span>
   <span class="n">result</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">quiet_NaN</span><span class="p">();</span>
   <span class="n">result</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">quiet_NaN</span><span class="p">();</span>
@@ -973,7 +973,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__PROCEDURE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:06 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:13 UTC</p>
                 
                   
                 

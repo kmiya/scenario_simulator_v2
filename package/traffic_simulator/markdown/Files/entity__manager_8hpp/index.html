@@ -850,7 +850,7 @@
   <span class="k">try</span> <span class="p">{</span>                                                                        \
     <span class="k">return</span> <span class="n">entities_</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">IDENTIFIER</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>  \
   <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span> <span class="o">&amp;</span><span class="p">)</span> <span class="p">{</span>                                        \
-    <span class="k">throw</span> <span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="s">&quot;Unknown entity &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot; was specified&quot;</span><span class="p">);</span> \
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;entity : &quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s">&quot;does not exist&quot;</span><span class="p">);</span>                 \
   <span class="p">}</span>                                                                            \
   <span class="k">static_assert</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
 </code></pre></div>
@@ -907,11 +907,11 @@
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_msgs/msg/entity_status_with_trajectory_array.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_msgs/msg/vehicle_parameters.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;rclcpp/rclcpp.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;scenario_simulator_exception/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/ego_entity.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/entity_base.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/pedestrian_entity.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/vehicle_entity.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/hdmap_utils/hdmap_utils.hpp&gt;</span><span class="cp"></span>
@@ -1068,7 +1068,7 @@
 <span class="cp">  try {                                                                        \</span>
 <span class="cp">    return entities_.at(name)-&gt;IDENTIFIER(std::forward&lt;decltype(xs)&gt;(xs)...);  \</span>
 <span class="cp">  } catch (const std::out_of_range &amp;) {                                        \</span>
-<span class="cp">    throw SimulationRuntimeError(&quot;Unknown entity &quot; + name + &quot; was specified&quot;); \</span>
+<span class="cp">    THROW_SEMANTIC_ERROR(&quot;entity : &quot;, name, &quot;does not exist&quot;);                 \</span>
 <span class="cp">  }                                                                            \</span>
 <span class="cp">  static_assert(true, &quot;&quot;)</span>
 
@@ -1192,7 +1192,7 @@
       <span class="n">result</span><span class="p">.</span><span class="n">first</span><span class="o">-&gt;</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">setTrafficLightManager</span><span class="p">(</span><span class="n">traffic_light_manager_ptr_</span><span class="p">);</span>
       <span class="k">return</span> <span class="n">result</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="s">&quot;Entity &#39;&quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;&#39; is already exists.&quot;</span><span class="p">);</span>
+      <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;entity : &quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s">&quot; is already exists.&quot;</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
@@ -1209,7 +1209,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__ENTITY__ENTITY_MANAGER_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:11 UTC</p>
                 
                   
                 

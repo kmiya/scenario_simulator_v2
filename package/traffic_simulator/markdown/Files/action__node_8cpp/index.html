@@ -739,6 +739,7 @@
 
 <span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;scenario_simulator_exception/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;set&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/behavior/action_node.hpp&gt;</span><span class="cp"></span>
@@ -758,23 +759,23 @@
 <span class="kt">void</span> <span class="n">ActionNode</span><span class="o">::</span><span class="n">getBlackBoardValues</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">getInput</span><span class="p">(</span><span class="s">&quot;request&quot;</span><span class="p">,</span> <span class="n">request</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">BehaviorTreeRuntimeError</span><span class="p">(</span><span class="s">&quot;failed to get input request in ActionNode&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to get input request in ActionNode&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">getInput</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;step_time&quot;</span><span class="p">,</span> <span class="n">step_time</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">BehaviorTreeRuntimeError</span><span class="p">(</span><span class="s">&quot;failed to get input step_time in ActionNode&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to get input step_time in ActionNode&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">getInput</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;current_time&quot;</span><span class="p">,</span> <span class="n">current_time</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">BehaviorTreeRuntimeError</span><span class="p">(</span><span class="s">&quot;failed to get input current_time in ActionNode&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to get input current_time in ActionNode&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">getInput</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">hdmap_utils</span><span class="o">::</span><span class="n">HdMapUtils</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="s">&quot;hdmap_utils&quot;</span><span class="p">,</span> <span class="n">hdmap_utils</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">BehaviorTreeRuntimeError</span><span class="p">(</span><span class="s">&quot;failed to get input hdmap_utils in ActionNode&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to get input hdmap_utils in ActionNode&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">getInput</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">TrafficLightManager</span><span class="o">&gt;&gt;</span><span class="p">(</span>
         <span class="s">&quot;traffic_light_manager&quot;</span><span class="p">,</span> <span class="n">traffic_light_manager</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">BehaviorTreeRuntimeError</span><span class="p">(</span><span class="s">&quot;failed to get input traffic_light_manager in ActionNode&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to get input traffic_light_manager in ActionNode&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">getInput</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;entity_status&quot;</span><span class="p">,</span> <span class="n">entity_status</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">BehaviorTreeRuntimeError</span><span class="p">(</span><span class="s">&quot;failed to get input entity_status in ActionNode&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to get input entity_status in ActionNode&quot;</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">getInput</span><span class="o">&lt;</span><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="s">&quot;target_speed&quot;</span><span class="p">,</span> <span class="n">target_speed</span><span class="p">))</span> <span class="p">{</span>
@@ -783,14 +784,14 @@
 
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">getInput</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="o">&gt;&gt;</span><span class="p">(</span>
         <span class="s">&quot;other_entity_status&quot;</span><span class="p">,</span> <span class="n">other_entity_status</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">BehaviorTreeRuntimeError</span><span class="p">(</span><span class="s">&quot;failed to get input other_entity_status in ActionNode&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to get input other_entity_status in ActionNode&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">getInput</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityType</span><span class="o">&gt;&gt;</span><span class="p">(</span>
         <span class="s">&quot;entity_type_list&quot;</span><span class="p">,</span> <span class="n">entity_type_list</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">BehaviorTreeRuntimeError</span><span class="p">(</span><span class="s">&quot;failed to get input entity_type_list in ActionNode&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to get input entity_type_list in ActionNode&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">getInput</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="s">&quot;route_lanelets&quot;</span><span class="p">,</span> <span class="n">route_lanelets</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">BehaviorTreeRuntimeError</span><span class="p">(</span><span class="s">&quot;failed to get input route_lanelets in ActionNode&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to get input route_lanelets in ActionNode&quot;</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
@@ -1111,7 +1112,7 @@
 <span class="p">}</span>  <span class="c1">// namespace entity_behavior</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:10 UTC</p>
                 
                   
                 

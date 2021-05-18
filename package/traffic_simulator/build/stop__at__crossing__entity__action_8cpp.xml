@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="stop__at__crossing__entity__action_8cpp" kind="file" language="C++">
     <compoundname>stop_at_crossing_entity_action.cpp</compoundname>
+    <includes local="no">scenario_simulator_exception/exception.hpp</includes>
     <includes local="no">string</includes>
     <includes refid="vehicle_2behavior__tree_8hpp" local="no">traffic_simulator/behavior/vehicle/behavior_tree.hpp</includes>
     <includes refid="stop__at__crossing__entity__action_8hpp" local="no">traffic_simulator/behavior/vehicle/follow_lane_sequence/stop_at_crossing_entity_action.hpp</includes>
@@ -9,575 +10,570 @@
     <includes local="no">utility</includes>
     <includes local="no">vector</includes>
     <incdepgraph>
-      <node id="4170">
-        <label>traffic_simulator/traffic_lights/traffic_light_state.hpp</label>
-        <link refid="traffic__light__state_8hpp_source"/>
-        <childnode refid="4171" relation="include">
-        </childnode>
-        <childnode refid="4172" relation="include">
-        </childnode>
-        <childnode refid="4173" relation="include">
-        </childnode>
-      </node>
-      <node id="4207">
-        <label>boost/property_tree/xml_parser.hpp</label>
-      </node>
-      <node id="4135">
-        <label>functional</label>
-      </node>
-      <node id="4188">
-        <label>queue</label>
-      </node>
-      <node id="4193">
-        <label>limits</label>
-      </node>
-      <node id="4158">
-        <label>geometry_msgs/msg/pose_stamped.hpp</label>
-      </node>
-      <node id="4187">
-        <label>openscenario_msgs/msg/entity_type.hpp</label>
-      </node>
-      <node id="4177">
-        <label>traffic_simulator/behavior/vehicle/follow_lane_sequence/stop_at_crossing_entity_action.hpp</label>
-        <link refid="stop__at__crossing__entity__action_8hpp_source"/>
-        <childnode refid="4178" relation="include">
-        </childnode>
-        <childnode refid="4131" relation="include">
-        </childnode>
-        <childnode refid="4179" relation="include">
-        </childnode>
-        <childnode refid="4185" relation="include">
-        </childnode>
-        <childnode refid="4169" relation="include">
-        </childnode>
-      </node>
-      <node id="4197">
-        <label>std_msgs/msg/color_rgba.hpp</label>
+      <node id="4094">
+        <label>scenario_simulator_exception/exception.hpp</label>
       </node>
       <node id="4134">
-        <label>behaviortree_cpp_v3/loggers/bt_cout_logger.h</label>
-      </node>
-      <node id="4157">
-        <label>geographic_msgs/msg/geo_point.hpp</label>
-      </node>
-      <node id="4141">
-        <label>openscenario_msgs/msg/waypoints_array.hpp</label>
-      </node>
-      <node id="4150">
-        <label>lanelet2_routing/RoutingGraph.h</label>
-      </node>
-      <node id="4200">
-        <label>traffic_simulator/traffic_lights/traffic_light_phase.hpp</label>
-        <link refid="traffic__light__phase_8hpp_source"/>
-        <childnode refid="4193" relation="include">
-        </childnode>
-        <childnode refid="4198" relation="include">
-        </childnode>
-        <childnode refid="4142" relation="include">
-        </childnode>
-        <childnode refid="4175" relation="include">
-        </childnode>
-        <childnode refid="4169" relation="include">
-        </childnode>
-      </node>
-      <node id="4198">
-        <label>traffic_simulator/entity/exception.hpp</label>
-        <link refid="exception_8hpp_source"/>
-        <childnode refid="4199" relation="include">
-        </childnode>
-        <childnode refid="4131" relation="include">
-        </childnode>
-      </node>
-      <node id="4178">
-        <label>openscenario_msgs/msg/entity_trajectory.hpp</label>
-      </node>
-      <node id="4145">
-        <label>lanelet2_core/geometry/Lanelet.h</label>
-      </node>
-      <node id="4190">
-        <label>autoware_perception_msgs/msg/traffic_light_state_array.hpp</label>
-      </node>
-      <node id="4183">
-        <label>traffic_simulator/behavior/action_node.hpp</label>
-        <link refid="action__node_8hpp_source"/>
-        <childnode refid="4180" relation="include">
-        </childnode>
-        <childnode refid="4184" relation="include">
-        </childnode>
-        <childnode refid="4138" relation="include">
-        </childnode>
-        <childnode refid="4140" relation="include">
-        </childnode>
-        <childnode refid="4141" relation="include">
-        </childnode>
-        <childnode refid="4131" relation="include">
-        </childnode>
-        <childnode refid="4185" relation="include">
-        </childnode>
-        <childnode refid="4142" relation="include">
-        </childnode>
-        <childnode refid="4201" relation="include">
-        </childnode>
-        <childnode refid="4189" relation="include">
-        </childnode>
-        <childnode refid="4174" relation="include">
-        </childnode>
-        <childnode refid="4169" relation="include">
-        </childnode>
-      </node>
-      <node id="4130">
-        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/behavior/vehicle/follow_lane_sequence/stop_at_crossing_entity_action.cpp</label>
-        <link refid="stop__at__crossing__entity__action_8cpp"/>
-        <childnode refid="4131" relation="include">
-        </childnode>
-        <childnode refid="4132" relation="include">
-        </childnode>
-        <childnode refid="4177" relation="include">
-        </childnode>
-        <childnode refid="4201" relation="include">
-        </childnode>
-        <childnode refid="4175" relation="include">
-        </childnode>
-        <childnode refid="4169" relation="include">
-        </childnode>
-      </node>
-      <node id="4139">
-        <label>openscenario_msgs/msg/entity_status.hpp</label>
-      </node>
-      <node id="4208">
-        <label>pugixml.hpp</label>
-      </node>
-      <node id="4171">
-        <label>autoware_perception_msgs/msg/lamp_state.hpp</label>
-      </node>
-      <node id="4205">
-        <label>boost/foreach.hpp</label>
-      </node>
-      <node id="4165">
-        <label>geometry_msgs/msg/pose.hpp</label>
-      </node>
-      <node id="4204">
-        <label>openscenario_msgs.pb.h</label>
-      </node>
-      <node id="4182">
-        <label>openscenario_msgs/msg/vehicle_parameters.hpp</label>
-      </node>
-      <node id="4195">
-        <label>cassert</label>
-      </node>
-      <node id="4173">
-        <label>stdexcept</label>
-      </node>
-      <node id="4167">
-        <label>openscenario_msgs/msg/hermite_curve.hpp</label>
-      </node>
-      <node id="4133">
-        <label>behaviortree_cpp_v3/bt_factory.h</label>
-      </node>
-      <node id="4131">
-        <label>string</label>
-      </node>
-      <node id="4140">
-        <label>openscenario_msgs/msg/obstacle.hpp</label>
-      </node>
-      <node id="4161">
-        <label>lanelet2_extension_psim/utility/utilities.hpp</label>
-      </node>
-      <node id="4137">
-        <label>map</label>
-      </node>
-      <node id="4163">
-        <label>traffic_simulator/math/hermite_curve.hpp</label>
-        <link refid="hermite__curve_8hpp_source"/>
-        <childnode refid="4164" relation="include">
-        </childnode>
-        <childnode refid="4156" relation="include">
-        </childnode>
-        <childnode refid="4136" relation="include">
-        </childnode>
-        <childnode refid="4165" relation="include">
-        </childnode>
-        <childnode refid="4166" relation="include">
-        </childnode>
-        <childnode refid="4167" relation="include">
-        </childnode>
-        <childnode refid="4168" relation="include">
-        </childnode>
-        <childnode refid="4169" relation="include">
-        </childnode>
-      </node>
-      <node id="4194">
-        <label>traffic_simulator/color_utils/color_utils.hpp</label>
-        <link refid="color__utils_8hpp_source"/>
-        <childnode refid="4195" relation="include">
-        </childnode>
-        <childnode refid="4196" relation="include">
-        </childnode>
-        <childnode refid="4137" relation="include">
-        </childnode>
-        <childnode refid="4197" relation="include">
-        </childnode>
-        <childnode refid="4131" relation="include">
-        </childnode>
-      </node>
-      <node id="4186">
-        <label>openscenario_msgs/msg/bounding_box.hpp</label>
-      </node>
-      <node id="4203">
-        <label>traffic_simulator/entity/vehicle_parameter.hpp</label>
-        <link refid="vehicle__parameter_8hpp_source"/>
-        <childnode refid="4204" relation="include">
-        </childnode>
-        <childnode refid="4205" relation="include">
-        </childnode>
-        <childnode refid="4206" relation="include">
-        </childnode>
-        <childnode refid="4207" relation="include">
-        </childnode>
-        <childnode refid="4166" relation="include">
-        </childnode>
-        <childnode refid="4186" relation="include">
-        </childnode>
-        <childnode refid="4182" relation="include">
-        </childnode>
-        <childnode refid="4208" relation="include">
-        </childnode>
-        <childnode refid="4162" relation="include">
-        </childnode>
-        <childnode refid="4209" relation="include">
-        </childnode>
-        <childnode refid="4131" relation="include">
-        </childnode>
-      </node>
-      <node id="4162">
-        <label>rclcpp/rclcpp.hpp</label>
-      </node>
-      <node id="4149">
-        <label>lanelet2_routing/RoutingCost.h</label>
-      </node>
-      <node id="4154">
-        <label>tf2_geometry_msgs/tf2_geometry_msgs.h</label>
-      </node>
-      <node id="4142">
-        <label>traffic_simulator/hdmap_utils/hdmap_utils.hpp</label>
-        <link refid="hdmap__utils_8hpp_source"/>
-        <childnode refid="4143" relation="include">
-        </childnode>
-        <childnode refid="4144" relation="include">
-        </childnode>
-        <childnode refid="4145" relation="include">
-        </childnode>
-        <childnode refid="4146" relation="include">
-        </childnode>
-        <childnode refid="4147" relation="include">
-        </childnode>
-        <childnode refid="4148" relation="include">
-        </childnode>
-        <childnode refid="4149" relation="include">
-        </childnode>
-        <childnode refid="4150" relation="include">
-        </childnode>
-        <childnode refid="4151" relation="include">
-        </childnode>
-        <childnode refid="4152" relation="include">
-        </childnode>
-        <childnode refid="4153" relation="include">
-        </childnode>
-        <childnode refid="4154" relation="include">
-        </childnode>
-        <childnode refid="4155" relation="include">
-        </childnode>
-        <childnode refid="4156" relation="include">
-        </childnode>
-        <childnode refid="4157" relation="include">
-        </childnode>
-        <childnode refid="4158" relation="include">
-        </childnode>
-        <childnode refid="4159" relation="include">
-        </childnode>
-        <childnode refid="4160" relation="include">
-        </childnode>
-        <childnode refid="4161" relation="include">
-        </childnode>
-        <childnode refid="4137" relation="include">
-        </childnode>
-        <childnode refid="4138" relation="include">
-        </childnode>
-        <childnode refid="4139" relation="include">
-        </childnode>
-        <childnode refid="4162" relation="include">
-        </childnode>
-        <childnode refid="4131" relation="include">
-        </childnode>
-        <childnode refid="4163" relation="include">
-        </childnode>
-        <childnode refid="4170" relation="include">
-        </childnode>
-        <childnode refid="4174" relation="include">
-        </childnode>
-        <childnode refid="4175" relation="include">
-        </childnode>
-        <childnode refid="4169" relation="include">
-        </childnode>
-        <childnode refid="4176" relation="include">
-        </childnode>
-      </node>
-      <node id="4199">
-        <label>exception</label>
-      </node>
-      <node id="4143">
-        <label>geometry_msgs/msg/vector3.h</label>
-      </node>
-      <node id="4181">
-        <label>openscenario_msgs/msg/driver_model.hpp</label>
-      </node>
-      <node id="4166">
-        <label>geometry_msgs/msg/vector3.hpp</label>
-      </node>
-      <node id="4192">
-        <label>autoware_perception_msgs/msg/traffic_light_state.hpp</label>
-      </node>
-      <node id="4148">
-        <label>lanelet2_routing/Route.h</label>
-      </node>
-      <node id="4160">
-        <label>lanelet2_extension_psim/utility/query.hpp</label>
-      </node>
-      <node id="4164">
-        <label>quaternion_operation/quaternion_operation.h</label>
-      </node>
-      <node id="4180">
-        <label>behaviortree_cpp_v3/action_node.h</label>
-      </node>
-      <node id="4159">
-        <label>lanelet2_extension_psim/utility/message_conversion.hpp</label>
-      </node>
-      <node id="4136">
-        <label>geometry_msgs/msg/point.hpp</label>
-      </node>
-      <node id="4196">
-        <label>cstdio</label>
-      </node>
-      <node id="4184">
-        <label>boost/algorithm/clamp.hpp</label>
-      </node>
-      <node id="4202">
-        <label>openscenario_msgs/msg/catmull_rom_spline.hpp</label>
-      </node>
-      <node id="4169">
-        <label>vector</label>
-      </node>
-      <node id="4175">
-        <label>utility</label>
-      </node>
-      <node id="4209">
-        <label>sstream</label>
-      </node>
-      <node id="4132">
-        <label>traffic_simulator/behavior/vehicle/behavior_tree.hpp</label>
-        <link refid="vehicle_2behavior__tree_8hpp_source"/>
-        <childnode refid="4133" relation="include">
-        </childnode>
-        <childnode refid="4134" relation="include">
-        </childnode>
+        <label>traffic_simulator/traffic_lights/traffic_light_state.hpp</label>
+        <link refid="traffic__light__state_8hpp_source"/>
         <childnode refid="4135" relation="include">
         </childnode>
         <childnode refid="4136" relation="include">
         </childnode>
         <childnode refid="4137" relation="include">
         </childnode>
-        <childnode refid="4138" relation="include">
+      </node>
+      <node id="4170">
+        <label>boost/property_tree/xml_parser.hpp</label>
+      </node>
+      <node id="4099">
+        <label>functional</label>
+      </node>
+      <node id="4152">
+        <label>queue</label>
+      </node>
+      <node id="4157">
+        <label>limits</label>
+      </node>
+      <node id="4122">
+        <label>geometry_msgs/msg/pose_stamped.hpp</label>
+      </node>
+      <node id="4151">
+        <label>openscenario_msgs/msg/entity_type.hpp</label>
+      </node>
+      <node id="4141">
+        <label>traffic_simulator/behavior/vehicle/follow_lane_sequence/stop_at_crossing_entity_action.hpp</label>
+        <link refid="stop__at__crossing__entity__action_8hpp_source"/>
+        <childnode refid="4142" relation="include">
+        </childnode>
+        <childnode refid="4095" relation="include">
+        </childnode>
+        <childnode refid="4143" relation="include">
+        </childnode>
+        <childnode refid="4149" relation="include">
+        </childnode>
+        <childnode refid="4133" relation="include">
+        </childnode>
+      </node>
+      <node id="4161">
+        <label>std_msgs/msg/color_rgba.hpp</label>
+      </node>
+      <node id="4098">
+        <label>behaviortree_cpp_v3/loggers/bt_cout_logger.h</label>
+      </node>
+      <node id="4121">
+        <label>geographic_msgs/msg/geo_point.hpp</label>
+      </node>
+      <node id="4105">
+        <label>openscenario_msgs/msg/waypoints_array.hpp</label>
+      </node>
+      <node id="4114">
+        <label>lanelet2_routing/RoutingGraph.h</label>
+      </node>
+      <node id="4162">
+        <label>traffic_simulator/traffic_lights/traffic_light_phase.hpp</label>
+        <link refid="traffic__light__phase_8hpp_source"/>
+        <childnode refid="4157" relation="include">
+        </childnode>
+        <childnode refid="4094" relation="include">
+        </childnode>
+        <childnode refid="4106" relation="include">
         </childnode>
         <childnode refid="4139" relation="include">
         </childnode>
-        <childnode refid="4140" relation="include">
-        </childnode>
-        <childnode refid="4141" relation="include">
-        </childnode>
-        <childnode refid="4131" relation="include">
-        </childnode>
-        <childnode refid="4142" relation="include">
-        </childnode>
-        <childnode refid="4169" relation="include">
+        <childnode refid="4133" relation="include">
         </childnode>
       </node>
-      <node id="4168">
-        <label>traffic_simulator/math/polynomial_solver.hpp</label>
-        <link refid="polynomial__solver_8hpp_source"/>
-        <childnode refid="4169" relation="include">
-        </childnode>
+      <node id="4142">
+        <label>openscenario_msgs/msg/entity_trajectory.hpp</label>
       </node>
-      <node id="4152">
-        <label>lanelet2_traffic_rules/TrafficRulesFactory.h</label>
+      <node id="4109">
+        <label>lanelet2_core/geometry/Lanelet.h</label>
       </node>
-      <node id="4201">
-        <label>traffic_simulator/math/catmull_rom_spline.hpp</label>
-        <link refid="catmull__rom__spline_8hpp_source"/>
-        <childnode refid="4199" relation="include">
+      <node id="4154">
+        <label>autoware_perception_msgs/msg/traffic_light_state_array.hpp</label>
+      </node>
+      <node id="4147">
+        <label>traffic_simulator/behavior/action_node.hpp</label>
+        <link refid="action__node_8hpp_source"/>
+        <childnode refid="4144" relation="include">
         </childnode>
-        <childnode refid="4136" relation="include">
+        <childnode refid="4148" relation="include">
         </childnode>
-        <childnode refid="4202" relation="include">
+        <childnode refid="4102" relation="include">
         </childnode>
-        <childnode refid="4131" relation="include">
+        <childnode refid="4104" relation="include">
+        </childnode>
+        <childnode refid="4105" relation="include">
+        </childnode>
+        <childnode refid="4095" relation="include">
+        </childnode>
+        <childnode refid="4149" relation="include">
+        </childnode>
+        <childnode refid="4106" relation="include">
         </childnode>
         <childnode refid="4163" relation="include">
         </childnode>
-        <childnode refid="4175" relation="include">
-        </childnode>
-        <childnode refid="4169" relation="include">
-        </childnode>
-      </node>
-      <node id="4147">
-        <label>lanelet2_core/primitives/LaneletSequence.h</label>
-      </node>
-      <node id="4206">
-        <label>boost/property_tree/ptree.hpp</label>
-      </node>
-      <node id="4172">
-        <label>iostream</label>
-      </node>
-      <node id="4179">
-        <label>traffic_simulator/behavior/vehicle/vehicle_action_node.hpp</label>
-        <link refid="vehicle__action__node_8hpp_source"/>
-        <childnode refid="4180" relation="include">
+        <childnode refid="4153" relation="include">
         </childnode>
         <childnode refid="4138" relation="include">
         </childnode>
-        <childnode refid="4181" relation="include">
+        <childnode refid="4133" relation="include">
         </childnode>
-        <childnode refid="4178" relation="include">
+      </node>
+      <node id="4093">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/behavior/vehicle/follow_lane_sequence/stop_at_crossing_entity_action.cpp</label>
+        <link refid="stop__at__crossing__entity__action_8cpp"/>
+        <childnode refid="4094" relation="include">
         </childnode>
-        <childnode refid="4140" relation="include">
+        <childnode refid="4095" relation="include">
         </childnode>
-        <childnode refid="4182" relation="include">
+        <childnode refid="4096" relation="include">
         </childnode>
         <childnode refid="4141" relation="include">
         </childnode>
-        <childnode refid="4131" relation="include">
-        </childnode>
-        <childnode refid="4183" relation="include">
-        </childnode>
-        <childnode refid="4203" relation="include">
-        </childnode>
-        <childnode refid="4201" relation="include">
-        </childnode>
-        <childnode refid="4169" relation="include">
-        </childnode>
-      </node>
-      <node id="4144">
-        <label>lanelet2_core/LaneletMap.h</label>
-      </node>
-      <node id="4191">
-        <label>traffic_simulator/traffic_lights/traffic_light.hpp</label>
-        <link refid="traffic__light_8hpp_source"/>
-        <childnode refid="4192" relation="include">
-        </childnode>
-        <childnode refid="4172" relation="include">
-        </childnode>
-        <childnode refid="4193" relation="include">
-        </childnode>
-        <childnode refid="4173" relation="include">
-        </childnode>
-        <childnode refid="4194" relation="include">
-        </childnode>
-        <childnode refid="4198" relation="include">
-        </childnode>
-        <childnode refid="4200" relation="include">
-        </childnode>
-        <childnode refid="4170" relation="include">
-        </childnode>
-        <childnode refid="4174" relation="include">
-        </childnode>
-        <childnode refid="4175" relation="include">
-        </childnode>
-        <childnode refid="4169" relation="include">
-        </childnode>
-      </node>
-      <node id="4189">
-        <label>traffic_simulator/traffic_lights/traffic_light_manager.hpp</label>
-        <link refid="traffic__light__manager_8hpp_source"/>
-        <childnode refid="4190" relation="include">
-        </childnode>
-        <childnode refid="4138" relation="include">
-        </childnode>
-        <childnode refid="4162" relation="include">
-        </childnode>
-        <childnode refid="4173" relation="include">
-        </childnode>
-        <childnode refid="4131" relation="include">
-        </childnode>
-        <childnode refid="4142" relation="include">
-        </childnode>
-        <childnode refid="4191" relation="include">
-        </childnode>
-        <childnode refid="4174" relation="include">
-        </childnode>
-        <childnode refid="4175" relation="include">
-        </childnode>
-        <childnode refid="4169" relation="include">
-        </childnode>
-        <childnode refid="4176" relation="include">
-        </childnode>
-      </node>
-      <node id="4174">
-        <label>unordered_map</label>
-      </node>
-      <node id="4155">
-        <label>autoware_auto_msgs/msg/had_map_bin.hpp</label>
-      </node>
-      <node id="4176">
-        <label>visualization_msgs/msg/marker_array.hpp</label>
-      </node>
-      <node id="4185">
-        <label>traffic_simulator/entity/entity_base.hpp</label>
-        <link refid="entity__base_8hpp_source"/>
-        <childnode refid="4156" relation="include">
-        </childnode>
-        <childnode refid="4138" relation="include">
-        </childnode>
-        <childnode refid="4186" relation="include">
-        </childnode>
-        <childnode refid="4181" relation="include">
+        <childnode refid="4163" relation="include">
         </childnode>
         <childnode refid="4139" relation="include">
         </childnode>
-        <childnode refid="4187" relation="include">
+        <childnode refid="4133" relation="include">
         </childnode>
-        <childnode refid="4140" relation="include">
+      </node>
+      <node id="4103">
+        <label>openscenario_msgs/msg/entity_status.hpp</label>
+      </node>
+      <node id="4171">
+        <label>pugixml.hpp</label>
+      </node>
+      <node id="4135">
+        <label>autoware_perception_msgs/msg/lamp_state.hpp</label>
+      </node>
+      <node id="4168">
+        <label>boost/foreach.hpp</label>
+      </node>
+      <node id="4129">
+        <label>geometry_msgs/msg/pose.hpp</label>
+      </node>
+      <node id="4167">
+        <label>openscenario_msgs.pb.h</label>
+      </node>
+      <node id="4146">
+        <label>openscenario_msgs/msg/vehicle_parameters.hpp</label>
+      </node>
+      <node id="4159">
+        <label>cassert</label>
+      </node>
+      <node id="4137">
+        <label>stdexcept</label>
+      </node>
+      <node id="4131">
+        <label>openscenario_msgs/msg/hermite_curve.hpp</label>
+      </node>
+      <node id="4097">
+        <label>behaviortree_cpp_v3/bt_factory.h</label>
+      </node>
+      <node id="4095">
+        <label>string</label>
+      </node>
+      <node id="4104">
+        <label>openscenario_msgs/msg/obstacle.hpp</label>
+      </node>
+      <node id="4125">
+        <label>lanelet2_extension_psim/utility/utilities.hpp</label>
+      </node>
+      <node id="4101">
+        <label>map</label>
+      </node>
+      <node id="4127">
+        <label>traffic_simulator/math/hermite_curve.hpp</label>
+        <link refid="hermite__curve_8hpp_source"/>
+        <childnode refid="4128" relation="include">
         </childnode>
-        <childnode refid="4182" relation="include">
+        <childnode refid="4120" relation="include">
         </childnode>
-        <childnode refid="4141" relation="include">
+        <childnode refid="4100" relation="include">
         </childnode>
-        <childnode refid="4188" relation="include">
+        <childnode refid="4129" relation="include">
+        </childnode>
+        <childnode refid="4130" relation="include">
         </childnode>
         <childnode refid="4131" relation="include">
         </childnode>
-        <childnode refid="4142" relation="include">
+        <childnode refid="4132" relation="include">
         </childnode>
-        <childnode refid="4189" relation="include">
+        <childnode refid="4133" relation="include">
         </childnode>
-        <childnode refid="4174" relation="include">
+      </node>
+      <node id="4158">
+        <label>traffic_simulator/color_utils/color_utils.hpp</label>
+        <link refid="color__utils_8hpp_source"/>
+        <childnode refid="4159" relation="include">
+        </childnode>
+        <childnode refid="4160" relation="include">
+        </childnode>
+        <childnode refid="4101" relation="include">
+        </childnode>
+        <childnode refid="4161" relation="include">
+        </childnode>
+        <childnode refid="4095" relation="include">
+        </childnode>
+      </node>
+      <node id="4150">
+        <label>openscenario_msgs/msg/bounding_box.hpp</label>
+      </node>
+      <node id="4166">
+        <label>traffic_simulator/entity/vehicle_parameter.hpp</label>
+        <link refid="vehicle__parameter_8hpp_source"/>
+        <childnode refid="4167" relation="include">
+        </childnode>
+        <childnode refid="4168" relation="include">
         </childnode>
         <childnode refid="4169" relation="include">
         </childnode>
-        <childnode refid="4176" relation="include">
+        <childnode refid="4170" relation="include">
+        </childnode>
+        <childnode refid="4130" relation="include">
+        </childnode>
+        <childnode refid="4150" relation="include">
+        </childnode>
+        <childnode refid="4146" relation="include">
+        </childnode>
+        <childnode refid="4171" relation="include">
+        </childnode>
+        <childnode refid="4126" relation="include">
+        </childnode>
+        <childnode refid="4172" relation="include">
+        </childnode>
+        <childnode refid="4095" relation="include">
         </childnode>
       </node>
-      <node id="4146">
-        <label>lanelet2_core/primitives/BasicRegulatoryElements.h</label>
+      <node id="4126">
+        <label>rclcpp/rclcpp.hpp</label>
       </node>
-      <node id="4151">
-        <label>lanelet2_routing/RoutingGraphContainer.h</label>
+      <node id="4113">
+        <label>lanelet2_routing/RoutingCost.h</label>
+      </node>
+      <node id="4118">
+        <label>tf2_geometry_msgs/tf2_geometry_msgs.h</label>
+      </node>
+      <node id="4106">
+        <label>traffic_simulator/hdmap_utils/hdmap_utils.hpp</label>
+        <link refid="hdmap__utils_8hpp_source"/>
+        <childnode refid="4107" relation="include">
+        </childnode>
+        <childnode refid="4108" relation="include">
+        </childnode>
+        <childnode refid="4109" relation="include">
+        </childnode>
+        <childnode refid="4110" relation="include">
+        </childnode>
+        <childnode refid="4111" relation="include">
+        </childnode>
+        <childnode refid="4112" relation="include">
+        </childnode>
+        <childnode refid="4113" relation="include">
+        </childnode>
+        <childnode refid="4114" relation="include">
+        </childnode>
+        <childnode refid="4115" relation="include">
+        </childnode>
+        <childnode refid="4116" relation="include">
+        </childnode>
+        <childnode refid="4117" relation="include">
+        </childnode>
+        <childnode refid="4118" relation="include">
+        </childnode>
+        <childnode refid="4119" relation="include">
+        </childnode>
+        <childnode refid="4120" relation="include">
+        </childnode>
+        <childnode refid="4121" relation="include">
+        </childnode>
+        <childnode refid="4122" relation="include">
+        </childnode>
+        <childnode refid="4123" relation="include">
+        </childnode>
+        <childnode refid="4124" relation="include">
+        </childnode>
+        <childnode refid="4125" relation="include">
+        </childnode>
+        <childnode refid="4101" relation="include">
+        </childnode>
+        <childnode refid="4102" relation="include">
+        </childnode>
+        <childnode refid="4103" relation="include">
+        </childnode>
+        <childnode refid="4126" relation="include">
+        </childnode>
+        <childnode refid="4095" relation="include">
+        </childnode>
+        <childnode refid="4127" relation="include">
+        </childnode>
+        <childnode refid="4134" relation="include">
+        </childnode>
+        <childnode refid="4138" relation="include">
+        </childnode>
+        <childnode refid="4139" relation="include">
+        </childnode>
+        <childnode refid="4133" relation="include">
+        </childnode>
+        <childnode refid="4140" relation="include">
+        </childnode>
+      </node>
+      <node id="4164">
+        <label>exception</label>
+      </node>
+      <node id="4107">
+        <label>geometry_msgs/msg/vector3.h</label>
+      </node>
+      <node id="4145">
+        <label>openscenario_msgs/msg/driver_model.hpp</label>
+      </node>
+      <node id="4130">
+        <label>geometry_msgs/msg/vector3.hpp</label>
       </node>
       <node id="4156">
-        <label>boost/optional.hpp</label>
+        <label>autoware_perception_msgs/msg/traffic_light_state.hpp</label>
+      </node>
+      <node id="4112">
+        <label>lanelet2_routing/Route.h</label>
+      </node>
+      <node id="4124">
+        <label>lanelet2_extension_psim/utility/query.hpp</label>
+      </node>
+      <node id="4128">
+        <label>quaternion_operation/quaternion_operation.h</label>
+      </node>
+      <node id="4144">
+        <label>behaviortree_cpp_v3/action_node.h</label>
+      </node>
+      <node id="4123">
+        <label>lanelet2_extension_psim/utility/message_conversion.hpp</label>
+      </node>
+      <node id="4100">
+        <label>geometry_msgs/msg/point.hpp</label>
+      </node>
+      <node id="4160">
+        <label>cstdio</label>
+      </node>
+      <node id="4148">
+        <label>boost/algorithm/clamp.hpp</label>
+      </node>
+      <node id="4165">
+        <label>openscenario_msgs/msg/catmull_rom_spline.hpp</label>
+      </node>
+      <node id="4133">
+        <label>vector</label>
+      </node>
+      <node id="4139">
+        <label>utility</label>
+      </node>
+      <node id="4172">
+        <label>sstream</label>
+      </node>
+      <node id="4096">
+        <label>traffic_simulator/behavior/vehicle/behavior_tree.hpp</label>
+        <link refid="vehicle_2behavior__tree_8hpp_source"/>
+        <childnode refid="4097" relation="include">
+        </childnode>
+        <childnode refid="4098" relation="include">
+        </childnode>
+        <childnode refid="4099" relation="include">
+        </childnode>
+        <childnode refid="4100" relation="include">
+        </childnode>
+        <childnode refid="4101" relation="include">
+        </childnode>
+        <childnode refid="4102" relation="include">
+        </childnode>
+        <childnode refid="4103" relation="include">
+        </childnode>
+        <childnode refid="4104" relation="include">
+        </childnode>
+        <childnode refid="4105" relation="include">
+        </childnode>
+        <childnode refid="4095" relation="include">
+        </childnode>
+        <childnode refid="4106" relation="include">
+        </childnode>
+        <childnode refid="4133" relation="include">
+        </childnode>
+      </node>
+      <node id="4132">
+        <label>traffic_simulator/math/polynomial_solver.hpp</label>
+        <link refid="polynomial__solver_8hpp_source"/>
+        <childnode refid="4133" relation="include">
+        </childnode>
+      </node>
+      <node id="4116">
+        <label>lanelet2_traffic_rules/TrafficRulesFactory.h</label>
+      </node>
+      <node id="4163">
+        <label>traffic_simulator/math/catmull_rom_spline.hpp</label>
+        <link refid="catmull__rom__spline_8hpp_source"/>
+        <childnode refid="4164" relation="include">
+        </childnode>
+        <childnode refid="4100" relation="include">
+        </childnode>
+        <childnode refid="4165" relation="include">
+        </childnode>
+        <childnode refid="4095" relation="include">
+        </childnode>
+        <childnode refid="4127" relation="include">
+        </childnode>
+        <childnode refid="4139" relation="include">
+        </childnode>
+        <childnode refid="4133" relation="include">
+        </childnode>
+      </node>
+      <node id="4111">
+        <label>lanelet2_core/primitives/LaneletSequence.h</label>
+      </node>
+      <node id="4169">
+        <label>boost/property_tree/ptree.hpp</label>
+      </node>
+      <node id="4136">
+        <label>iostream</label>
+      </node>
+      <node id="4143">
+        <label>traffic_simulator/behavior/vehicle/vehicle_action_node.hpp</label>
+        <link refid="vehicle__action__node_8hpp_source"/>
+        <childnode refid="4144" relation="include">
+        </childnode>
+        <childnode refid="4102" relation="include">
+        </childnode>
+        <childnode refid="4145" relation="include">
+        </childnode>
+        <childnode refid="4142" relation="include">
+        </childnode>
+        <childnode refid="4104" relation="include">
+        </childnode>
+        <childnode refid="4146" relation="include">
+        </childnode>
+        <childnode refid="4105" relation="include">
+        </childnode>
+        <childnode refid="4095" relation="include">
+        </childnode>
+        <childnode refid="4147" relation="include">
+        </childnode>
+        <childnode refid="4166" relation="include">
+        </childnode>
+        <childnode refid="4163" relation="include">
+        </childnode>
+        <childnode refid="4133" relation="include">
+        </childnode>
+      </node>
+      <node id="4108">
+        <label>lanelet2_core/LaneletMap.h</label>
+      </node>
+      <node id="4155">
+        <label>traffic_simulator/traffic_lights/traffic_light.hpp</label>
+        <link refid="traffic__light_8hpp_source"/>
+        <childnode refid="4156" relation="include">
+        </childnode>
+        <childnode refid="4136" relation="include">
+        </childnode>
+        <childnode refid="4157" relation="include">
+        </childnode>
+        <childnode refid="4137" relation="include">
+        </childnode>
+        <childnode refid="4158" relation="include">
+        </childnode>
+        <childnode refid="4162" relation="include">
+        </childnode>
+        <childnode refid="4134" relation="include">
+        </childnode>
+        <childnode refid="4138" relation="include">
+        </childnode>
+        <childnode refid="4139" relation="include">
+        </childnode>
+        <childnode refid="4133" relation="include">
+        </childnode>
       </node>
       <node id="4153">
-        <label>tf2/LinearMath/Matrix3x3.h</label>
+        <label>traffic_simulator/traffic_lights/traffic_light_manager.hpp</label>
+        <link refid="traffic__light__manager_8hpp_source"/>
+        <childnode refid="4154" relation="include">
+        </childnode>
+        <childnode refid="4102" relation="include">
+        </childnode>
+        <childnode refid="4126" relation="include">
+        </childnode>
+        <childnode refid="4137" relation="include">
+        </childnode>
+        <childnode refid="4095" relation="include">
+        </childnode>
+        <childnode refid="4106" relation="include">
+        </childnode>
+        <childnode refid="4155" relation="include">
+        </childnode>
+        <childnode refid="4138" relation="include">
+        </childnode>
+        <childnode refid="4139" relation="include">
+        </childnode>
+        <childnode refid="4133" relation="include">
+        </childnode>
+        <childnode refid="4140" relation="include">
+        </childnode>
       </node>
       <node id="4138">
+        <label>unordered_map</label>
+      </node>
+      <node id="4119">
+        <label>autoware_auto_msgs/msg/had_map_bin.hpp</label>
+      </node>
+      <node id="4140">
+        <label>visualization_msgs/msg/marker_array.hpp</label>
+      </node>
+      <node id="4149">
+        <label>traffic_simulator/entity/entity_base.hpp</label>
+        <link refid="entity__base_8hpp_source"/>
+        <childnode refid="4120" relation="include">
+        </childnode>
+        <childnode refid="4102" relation="include">
+        </childnode>
+        <childnode refid="4150" relation="include">
+        </childnode>
+        <childnode refid="4145" relation="include">
+        </childnode>
+        <childnode refid="4103" relation="include">
+        </childnode>
+        <childnode refid="4151" relation="include">
+        </childnode>
+        <childnode refid="4104" relation="include">
+        </childnode>
+        <childnode refid="4146" relation="include">
+        </childnode>
+        <childnode refid="4105" relation="include">
+        </childnode>
+        <childnode refid="4152" relation="include">
+        </childnode>
+        <childnode refid="4095" relation="include">
+        </childnode>
+        <childnode refid="4106" relation="include">
+        </childnode>
+        <childnode refid="4153" relation="include">
+        </childnode>
+        <childnode refid="4138" relation="include">
+        </childnode>
+        <childnode refid="4133" relation="include">
+        </childnode>
+        <childnode refid="4140" relation="include">
+        </childnode>
+      </node>
+      <node id="4110">
+        <label>lanelet2_core/primitives/BasicRegulatoryElements.h</label>
+      </node>
+      <node id="4115">
+        <label>lanelet2_routing/RoutingGraphContainer.h</label>
+      </node>
+      <node id="4120">
+        <label>boost/optional.hpp</label>
+      </node>
+      <node id="4117">
+        <label>tf2/LinearMath/Matrix3x3.h</label>
+      </node>
+      <node id="4102">
         <label>memory</label>
       </node>
     </incdepgraph>
@@ -603,149 +599,150 @@
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;traffic_simulator/behavior/vehicle/behavior_tree.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;traffic_simulator/behavior/vehicle/follow_lane_sequence/stop_at_crossing_entity_action.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;traffic_simulator/math/catmull_rom_spline.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceentity__behavior" kindref="compound">entity_behavior</ref></highlight></codeline>
-<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">vehicle</highlight></codeline>
-<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">follow_lane_sequence</highlight></codeline>
-<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="28"><highlight class="normal">StopAtCrossingEntityAction::StopAtCrossingEntityAction(</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BT::NodeConfiguration<sp/>&amp;<sp/>config)</highlight></codeline>
-<codeline lineno="30"><highlight class="normal">:<sp/><ref refid="namespaceentity__behavior" kindref="compound">entity_behavior</ref>::VehicleActionNode(name,<sp/>config)</highlight></codeline>
-<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::optional&lt;openscenario_msgs::msg::Obstacle&gt;</highlight></codeline>
-<codeline lineno="36"><highlight class="normal">StopAtCrossingEntityAction::calculateObstacle(</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::WaypointsArray<sp/>&amp;<sp/>waypoints)</highlight></codeline>
-<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!distance_to_stop_target_)<sp/>{</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>boost::none;</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance_to_stop_target_.get()<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>boost::none;</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><ref refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline" kindref="compound">traffic_simulator::math::CatmullRomSpline</ref><sp/>spline(waypoints.waypoints);</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance_to_stop_target_.get()<sp/>&gt;<sp/>spline.getLength())<sp/>{</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>boost::none;</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/>openscenario_msgs::msg::Obstacle<sp/>obstacle;</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/>obstacle.type<sp/>=<sp/>obstacle.ENTITY;</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/>obstacle.s<sp/>=<sp/>distance_to_stop_target_.get();</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>obstacle;</highlight></codeline>
-<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::WaypointsArray<sp/>StopAtCrossingEntityAction::calculateWaypoints()</highlight></codeline>
-<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!entity_status.lanelet_pose_valid)<sp/>{</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>BehaviorTreeRuntimeError(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>assign<sp/>lane&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(entity_status.action_status.twist.linear.x<sp/>&gt;=<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>openscenario_msgs::msg::WaypointsArray<sp/>waypoints;</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline" kindref="compound">traffic_simulator::math::CatmullRomSpline</ref><sp/>spline(<ref refid="namespacehdmap__utils" kindref="compound">hdmap_utils</ref>-&gt;getCenterPoints(route_lanelets));</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>waypoints.waypoints<sp/>=<sp/>spline.getTrajectory(</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>entity_status.lanelet_pose.s,<sp/>entity_status.lanelet_pose.s<sp/>+<sp/>getHorizon(),<sp/>1.0);</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>waypoints;</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::WaypointsArray();</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal">boost::optional&lt;double&gt;<sp/>StopAtCrossingEntityAction::calculateTargetSpeed(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_velocity)</highlight></codeline>
-<codeline lineno="72"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!distance_to_stop_target_)<sp/>{</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>boost::none;</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>rest_distance<sp/>=</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>distance_to_stop_target_.get()<sp/>-<sp/>(vehicle_parameters.bounding_box.dimensions.x<sp/>+<sp/>3);</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rest_distance<sp/>&lt;<sp/>calculateStopDistance())<sp/>{</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rest_distance<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::sqrt(2<sp/>*<sp/>5<sp/>*<sp/>rest_distance);</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>current_velocity;</highlight></codeline>
-<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal">BT::NodeStatus<sp/>StopAtCrossingEntityAction::tick()</highlight></codeline>
-<codeline lineno="89"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/>getBlackBoardValues();</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(request<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;none&quot;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>request<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;follow_lane&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BT::NodeStatus::FAILURE;</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!entity_status.lanelet_pose_valid)<sp/>{</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BT::NodeStatus::FAILURE;</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!driver_model.see_around)<sp/>{</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BT::NodeStatus::FAILURE;</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getRightOfWayEntities(route_lanelets).size()<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BT::NodeStatus::FAILURE;</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>waypoints<sp/>=<sp/>calculateWaypoints();</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>spline<sp/>=<sp/><ref refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline" kindref="compound">traffic_simulator::math::CatmullRomSpline</ref>(waypoints.waypoints);</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/>distance_to_stop_target_<sp/>=<sp/>getDistanceToConflictingEntity(route_lanelets,<sp/>spline);</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>distance_to_stopline<sp/>=</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacehdmap__utils" kindref="compound">hdmap_utils</ref>-&gt;getDistanceToStopLine(route_lanelets,<sp/>waypoints.waypoints);</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>distance_to_front_entity<sp/>=<sp/>getDistanceToFrontEntity();</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((distance_to_front_entity<sp/>||<sp/>distance_to_stopline)<sp/>&amp;&amp;<sp/>distance_to_stop_target_)<sp/>{</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance_to_front_entity.get()<sp/>&lt;=<sp/>distance_to_stop_target_.get())<sp/>{</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BT::NodeStatus::FAILURE;</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance_to_stopline.get()<sp/>&lt;=<sp/>distance_to_stop_target_.get())<sp/>{</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BT::NodeStatus::FAILURE;</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((distance_to_front_entity<sp/>||<sp/>distance_to_stopline)<sp/>&amp;&amp;<sp/>!distance_to_stop_target_)<sp/>{</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BT::NodeStatus::FAILURE;</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/>boost::optional&lt;double&gt;<sp/>target_linear_speed;</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance_to_stop_target_)<sp/>{</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>target_linear_speed<sp/>=<sp/>calculateTargetSpeed(entity_status.action_status.twist.linear.x);</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>target_linear_speed<sp/>=<sp/>boost::none;</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!distance_to_stop_target_)<sp/>{</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>setOutput(</highlight><highlight class="stringliteral">&quot;updated_status&quot;</highlight><highlight class="normal">,<sp/>calculateEntityStatusUpdated(0));</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>obstacle<sp/>=<sp/>calculateObstacle(waypoints);</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>setOutput(</highlight><highlight class="stringliteral">&quot;waypoints&quot;</highlight><highlight class="normal">,<sp/>waypoints);</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>setOutput(</highlight><highlight class="stringliteral">&quot;obstacle&quot;</highlight><highlight class="normal">,<sp/>obstacle);</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BT::NodeStatus::SUCCESS;</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(target_speed)<sp/>{</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(target_speed.get()<sp/>&gt;<sp/>target_linear_speed.get())<sp/>{</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>target_speed<sp/>=<sp/>target_linear_speed.get();</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>target_speed<sp/>=<sp/>target_linear_speed.get();</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/>setOutput(</highlight><highlight class="stringliteral">&quot;updated_status&quot;</highlight><highlight class="normal">,<sp/>calculateEntityStatusUpdated(target_speed.get()));</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>obstacle<sp/>=<sp/>calculateObstacle(waypoints);</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/>setOutput(</highlight><highlight class="stringliteral">&quot;waypoints&quot;</highlight><highlight class="normal">,<sp/>waypoints);</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/>setOutput(</highlight><highlight class="stringliteral">&quot;obstacle&quot;</highlight><highlight class="normal">,<sp/>obstacle);</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BT::NodeStatus::RUNNING;</highlight></codeline>
-<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="155"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>follow_lane_sequence</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="156"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>vehicle</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="157"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>entity_behavior</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;scenario_simulator_exception/exception.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;traffic_simulator/behavior/vehicle/behavior_tree.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;traffic_simulator/behavior/vehicle/follow_lane_sequence/stop_at_crossing_entity_action.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;traffic_simulator/math/catmull_rom_spline.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceentity__behavior" kindref="compound">entity_behavior</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">vehicle</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">follow_lane_sequence</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">StopAtCrossingEntityAction::StopAtCrossingEntityAction(</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BT::NodeConfiguration<sp/>&amp;<sp/>config)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">:<sp/><ref refid="namespaceentity__behavior" kindref="compound">entity_behavior</ref>::VehicleActionNode(name,<sp/>config)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::optional&lt;openscenario_msgs::msg::Obstacle&gt;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">StopAtCrossingEntityAction::calculateObstacle(</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::WaypointsArray<sp/>&amp;<sp/>waypoints)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!distance_to_stop_target_)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>boost::none;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance_to_stop_target_.get()<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>boost::none;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><ref refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline" kindref="compound">traffic_simulator::math::CatmullRomSpline</ref><sp/>spline(waypoints.waypoints);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance_to_stop_target_.get()<sp/>&gt;<sp/>spline.getLength())<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>boost::none;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>openscenario_msgs::msg::Obstacle<sp/>obstacle;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>obstacle.type<sp/>=<sp/>obstacle.ENTITY;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>obstacle.s<sp/>=<sp/>distance_to_stop_target_.get();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>obstacle;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::WaypointsArray<sp/>StopAtCrossingEntityAction::calculateWaypoints()</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!entity_status.lanelet_pose_valid)<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>THROW_SIMULATION_ERROR(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>assign<sp/>lane&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(entity_status.action_status.twist.linear.x<sp/>&gt;=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>openscenario_msgs::msg::WaypointsArray<sp/>waypoints;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline" kindref="compound">traffic_simulator::math::CatmullRomSpline</ref><sp/>spline(<ref refid="namespacehdmap__utils" kindref="compound">hdmap_utils</ref>-&gt;getCenterPoints(route_lanelets));</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>waypoints.waypoints<sp/>=<sp/>spline.getTrajectory(</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>entity_status.lanelet_pose.s,<sp/>entity_status.lanelet_pose.s<sp/>+<sp/>getHorizon(),<sp/>1.0);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>waypoints;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::WaypointsArray();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">boost::optional&lt;double&gt;<sp/>StopAtCrossingEntityAction::calculateTargetSpeed(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_velocity)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!distance_to_stop_target_)<sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>boost::none;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>rest_distance<sp/>=</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>distance_to_stop_target_.get()<sp/>-<sp/>(vehicle_parameters.bounding_box.dimensions.x<sp/>+<sp/>3);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rest_distance<sp/>&lt;<sp/>calculateStopDistance())<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rest_distance<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::sqrt(2<sp/>*<sp/>5<sp/>*<sp/>rest_distance);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>current_velocity;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">BT::NodeStatus<sp/>StopAtCrossingEntityAction::tick()</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>getBlackBoardValues();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(request<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;none&quot;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>request<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;follow_lane&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BT::NodeStatus::FAILURE;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!entity_status.lanelet_pose_valid)<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BT::NodeStatus::FAILURE;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!driver_model.see_around)<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BT::NodeStatus::FAILURE;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getRightOfWayEntities(route_lanelets).size()<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BT::NodeStatus::FAILURE;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>waypoints<sp/>=<sp/>calculateWaypoints();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>spline<sp/>=<sp/><ref refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline" kindref="compound">traffic_simulator::math::CatmullRomSpline</ref>(waypoints.waypoints);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>distance_to_stop_target_<sp/>=<sp/>getDistanceToConflictingEntity(route_lanelets,<sp/>spline);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>distance_to_stopline<sp/>=</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacehdmap__utils" kindref="compound">hdmap_utils</ref>-&gt;getDistanceToStopLine(route_lanelets,<sp/>waypoints.waypoints);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>distance_to_front_entity<sp/>=<sp/>getDistanceToFrontEntity();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((distance_to_front_entity<sp/>||<sp/>distance_to_stopline)<sp/>&amp;&amp;<sp/>distance_to_stop_target_)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance_to_front_entity.get()<sp/>&lt;=<sp/>distance_to_stop_target_.get())<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BT::NodeStatus::FAILURE;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance_to_stopline.get()<sp/>&lt;=<sp/>distance_to_stop_target_.get())<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BT::NodeStatus::FAILURE;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((distance_to_front_entity<sp/>||<sp/>distance_to_stopline)<sp/>&amp;&amp;<sp/>!distance_to_stop_target_)<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BT::NodeStatus::FAILURE;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/>boost::optional&lt;double&gt;<sp/>target_linear_speed;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance_to_stop_target_)<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>target_linear_speed<sp/>=<sp/>calculateTargetSpeed(entity_status.action_status.twist.linear.x);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>target_linear_speed<sp/>=<sp/>boost::none;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!distance_to_stop_target_)<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>setOutput(</highlight><highlight class="stringliteral">&quot;updated_status&quot;</highlight><highlight class="normal">,<sp/>calculateEntityStatusUpdated(0));</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>obstacle<sp/>=<sp/>calculateObstacle(waypoints);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>setOutput(</highlight><highlight class="stringliteral">&quot;waypoints&quot;</highlight><highlight class="normal">,<sp/>waypoints);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>setOutput(</highlight><highlight class="stringliteral">&quot;obstacle&quot;</highlight><highlight class="normal">,<sp/>obstacle);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BT::NodeStatus::SUCCESS;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(target_speed)<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(target_speed.get()<sp/>&gt;<sp/>target_linear_speed.get())<sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>target_speed<sp/>=<sp/>target_linear_speed.get();</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>target_speed<sp/>=<sp/>target_linear_speed.get();</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/>setOutput(</highlight><highlight class="stringliteral">&quot;updated_status&quot;</highlight><highlight class="normal">,<sp/>calculateEntityStatusUpdated(target_speed.get()));</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>obstacle<sp/>=<sp/>calculateObstacle(waypoints);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>setOutput(</highlight><highlight class="stringliteral">&quot;waypoints&quot;</highlight><highlight class="normal">,<sp/>waypoints);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/>setOutput(</highlight><highlight class="stringliteral">&quot;obstacle&quot;</highlight><highlight class="normal">,<sp/>obstacle);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>in_stop_sequence_<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BT::NodeStatus::RUNNING;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>follow_lane_sequence</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>vehicle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>entity_behavior</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/behavior/vehicle/follow_lane_sequence/stop_at_crossing_entity_action.cpp"/>
   </compounddef>

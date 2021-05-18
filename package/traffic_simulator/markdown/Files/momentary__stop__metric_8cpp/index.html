@@ -746,7 +746,7 @@
 <span class="p">{</span>
   <span class="k">auto</span> <span class="n">status</span> <span class="o">=</span> <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">getEntityStatus</span><span class="p">(</span><span class="n">target_entity</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">status</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">THROW_METRICS_CALCULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to get target entity status.&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to get target entity status.&quot;</span><span class="p">);</span>
     <span class="k">return</span><span class="p">;</span>
   <span class="p">}</span>
   <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">distance</span><span class="p">;</span>
@@ -758,18 +758,18 @@
       <span class="n">distance</span> <span class="o">=</span> <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">getDistanceToCrosswalk</span><span class="p">(</span><span class="n">target_entity</span><span class="p">,</span> <span class="n">stop_target_lanelet_id</span><span class="p">);</span>
       <span class="k">break</span><span class="p">;</span>
     <span class="k">default</span><span class="o">:</span>
-      <span class="n">THROW_METRICS_CALCULATION_ERROR</span><span class="p">(</span><span class="s">&quot;invalid lanlet type.&quot;</span><span class="p">);</span>
+      <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;invalid lanlet type.&quot;</span><span class="p">);</span>
       <span class="k">break</span><span class="p">;</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">distance</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">THROW_METRICS_CALCULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to calculate distance to stop line.&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to calculate distance to stop line.&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="n">distance_to_stopline_</span> <span class="o">=</span> <span class="n">distance</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
   <span class="n">linear_acceleration_</span> <span class="o">=</span> <span class="n">status</span><span class="o">-&gt;</span><span class="n">action_status</span><span class="p">.</span><span class="n">accel</span><span class="p">.</span><span class="n">linear</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">min_acceleration</span> <span class="o">&lt;=</span> <span class="n">linear_acceleration_</span> <span class="o">&amp;&amp;</span> <span class="n">linear_acceleration_</span> <span class="o">&lt;=</span> <span class="n">max_acceleration</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">auto</span> <span class="n">standstill_duration</span> <span class="o">=</span> <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">getStandStillDuration</span><span class="p">(</span><span class="n">target_entity</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">standstill_duration</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">THROW_METRICS_CALCULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to calculate standstill duration.&quot;</span><span class="p">);</span>
+      <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;failed to calculate standstill duration.&quot;</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="n">standstill_duration_</span> <span class="o">=</span> <span class="n">standstill_duration</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
     <span class="k">if</span> <span class="p">(</span>
@@ -778,11 +778,11 @@
       <span class="n">success</span><span class="p">();</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">distance</span><span class="p">.</span><span class="n">get</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">stop_sequence_end_distance</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">failure</span><span class="p">(</span><span class="n">SPECIFICATION_VIOLATION_ERROR</span><span class="p">(</span><span class="s">&quot;overrun detected&quot;</span><span class="p">));</span>
+      <span class="n">failure</span><span class="p">(</span><span class="n">SPECIFICATION_VIOLATION</span><span class="p">(</span><span class="s">&quot;overrun detected&quot;</span><span class="p">));</span>
     <span class="p">}</span>
     <span class="k">return</span><span class="p">;</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n">failure</span><span class="p">(</span><span class="n">SPECIFICATION_VIOLATION_ERROR</span><span class="p">(</span><span class="s">&quot;acceleration is out of range.&quot;</span><span class="p">));</span>
+    <span class="n">failure</span><span class="p">(</span><span class="n">SPECIFICATION_VIOLATION</span><span class="p">(</span><span class="s">&quot;acceleration is out of range&quot;</span><span class="p">));</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
@@ -801,7 +801,7 @@
       <span class="n">distance</span> <span class="o">=</span> <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">getDistanceToCrosswalk</span><span class="p">(</span><span class="n">target_entity</span><span class="p">,</span> <span class="n">stop_target_lanelet_id</span><span class="p">);</span>
       <span class="k">break</span><span class="p">;</span>
     <span class="k">default</span><span class="o">:</span>
-      <span class="n">THROW_METRICS_CALCULATION_ERROR</span><span class="p">(</span><span class="s">&quot;invalid lanlet type.&quot;</span><span class="p">);</span>
+      <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;invalid lanlet type.&quot;</span><span class="p">);</span>
       <span class="k">break</span><span class="p">;</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">distance</span><span class="p">)</span> <span class="p">{</span>
@@ -826,7 +826,7 @@
 <span class="p">}</span>  <span class="c1">// namespace metrics</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:10 UTC</p>
                 
                   
                 

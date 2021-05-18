@@ -741,6 +741,7 @@
 
 <span class="cp">#include</span> <span class="cpf">&lt;limits&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;scenario_simulator_exception/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;simulation_interface/conversions.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
@@ -812,7 +813,7 @@
   <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PedestrianParameters</span> <span class="o">&amp;</span> <span class="n">params</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">is_ego</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span><span class="p">(</span><span class="s">&quot;pedestrian should not be ego&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;pedestrian should not be ego&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">spawnEntity</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">entity</span><span class="o">::</span><span class="n">PedestrianEntity</span><span class="o">&gt;</span><span class="p">(</span>
         <span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="p">))</span> <span class="p">{</span>
@@ -838,8 +839,7 @@
 <span class="p">{</span>
   <span class="k">auto</span> <span class="n">status</span> <span class="o">=</span> <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">getEntityStatus</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">status</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">SimulationRuntimeError</span><span class="p">(</span>
-      <span class="s">&quot;error occurs while getting entity stauts, target entity : &quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;entity : &quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s">&quot; status is empty&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">status</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
 <span class="p">}</span>
@@ -1080,7 +1080,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:10 UTC</p>
                 
                   
                 

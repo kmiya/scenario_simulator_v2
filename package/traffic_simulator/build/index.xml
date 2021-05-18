@@ -123,24 +123,6 @@
     <member refid="structtraffic__simulator_1_1entity_1_1Axles_1ae95d433bb9d941e190b24b1cca1841e1" kind="function"><name>Axles</name></member>
     <member refid="structtraffic__simulator_1_1entity_1_1Axles_1aa923ceac3a5dbe91ec643ae6d484ce92" kind="function"><name>toRosMsg</name></member>
   </compound>
-  <compound refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree" kind="class"><name>entity_behavior::pedestrian::BehaviorTree</name>
-    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1afa6e7785d063619348533d28f630ae5a" kind="variable"><name>request_</name></member>
-    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a145c11946c4936f7c487b3e03324d668" kind="variable"><name>factory_</name></member>
-    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a8d1164de00eda614ef128ac3b9e23864" kind="variable"><name>tree_</name></member>
-    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a4c19d31f9fa73fe09dd0632448123db0" kind="variable"><name>logger_cout_ptr_</name></member>
-    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a163360b4276fddb31cdedfe84191d83a" kind="variable"><name>type_</name></member>
-    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a8d413d33d0fa7160387931be2c05a1d2" kind="variable"><name>first_timestamp_</name></member>
-    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a96cea00ee518186b177e0156534c03c4" kind="variable"><name>subscribers_</name></member>
-    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a390acc6959456f15aa32de4bf6e434b1" kind="variable"><name>current_action_</name></member>
-    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a12d9c92261514e0b813dc1401c95d6f1" kind="function"><name>BehaviorTree</name></member>
-    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1ab254a45f251ede34900779ca38463bd3" kind="function"><name>tick</name></member>
-    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a106f160afe74f8ae26a3fb46918a7779" kind="function"><name>getCurrentAction</name></member>
-    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1adaa31d1e820525d651264d2128a0fb20" kind="function"><name>setValueToBlackBoard</name></member>
-    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1adfdd91efe93706252c1bfe915d5c211c" kind="function"><name>getUpdatedStatus</name></member>
-    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a929d09a53c1f867a63befbfab4ce235d" kind="function"><name>setRequest</name></member>
-    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a059d5772f80abba33d029733c1627cf0" kind="function"><name>callback</name></member>
-    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1ade32fd6c8427b162e63dad8bc6069382" kind="function"><name>setupLogger</name></member>
-  </compound>
   <compound refid="classentity__behavior_1_1vehicle_1_1BehaviorTree" kind="class"><name>entity_behavior::vehicle::BehaviorTree</name>
     <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a795e3d801c6cc289e7bc83e12a9de965" kind="variable"><name>request_</name></member>
     <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1ab31c16bdc1c090376dba69af08eccd37" kind="variable"><name>factory_</name></member>
@@ -161,8 +143,23 @@
     <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1aa6c7ae539b4fd639b77766b18649e870" kind="function"><name>callback</name></member>
     <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a5d1ca853d53af7bbd6953068a64dbe80" kind="function"><name>setupLogger</name></member>
   </compound>
-  <compound refid="classentity__behavior_1_1BehaviorTreeRuntimeError" kind="class"><name>entity_behavior::BehaviorTreeRuntimeError</name>
-    <member refid="classentity__behavior_1_1BehaviorTreeRuntimeError_1a6c28fb7b975ce4091abf2208979800a6" kind="function"><name>BehaviorTreeRuntimeError</name></member>
+  <compound refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree" kind="class"><name>entity_behavior::pedestrian::BehaviorTree</name>
+    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1afa6e7785d063619348533d28f630ae5a" kind="variable"><name>request_</name></member>
+    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a145c11946c4936f7c487b3e03324d668" kind="variable"><name>factory_</name></member>
+    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a8d1164de00eda614ef128ac3b9e23864" kind="variable"><name>tree_</name></member>
+    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a4c19d31f9fa73fe09dd0632448123db0" kind="variable"><name>logger_cout_ptr_</name></member>
+    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a163360b4276fddb31cdedfe84191d83a" kind="variable"><name>type_</name></member>
+    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a8d413d33d0fa7160387931be2c05a1d2" kind="variable"><name>first_timestamp_</name></member>
+    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a96cea00ee518186b177e0156534c03c4" kind="variable"><name>subscribers_</name></member>
+    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a390acc6959456f15aa32de4bf6e434b1" kind="variable"><name>current_action_</name></member>
+    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a12d9c92261514e0b813dc1401c95d6f1" kind="function"><name>BehaviorTree</name></member>
+    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1ab254a45f251ede34900779ca38463bd3" kind="function"><name>tick</name></member>
+    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a106f160afe74f8ae26a3fb46918a7779" kind="function"><name>getCurrentAction</name></member>
+    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1adaa31d1e820525d651264d2128a0fb20" kind="function"><name>setValueToBlackBoard</name></member>
+    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1adfdd91efe93706252c1bfe915d5c211c" kind="function"><name>getUpdatedStatus</name></member>
+    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a929d09a53c1f867a63befbfab4ce235d" kind="function"><name>setRequest</name></member>
+    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a059d5772f80abba33d029733c1627cf0" kind="function"><name>callback</name></member>
+    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1ade32fd6c8427b162e63dad8bc6069382" kind="function"><name>setupLogger</name></member>
   </compound>
   <compound refid="structtraffic__simulator_1_1entity_1_1BoundingBox" kind="struct"><name>traffic_simulator::entity::BoundingBox</name>
     <member refid="structtraffic__simulator_1_1entity_1_1BoundingBox_1a3fdd50392940381aaed3e7a95f51166c" kind="variable"><name>center</name></member>
@@ -396,9 +393,6 @@
   <compound refid="classtraffic__simulator_1_1entity_1_1EntityMarkerQoS" kind="class"><name>traffic_simulator::entity::EntityMarkerQoS</name>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityMarkerQoS_1a960a7ad87627e1ea05a548f2527e1e3d" kind="function"><name>EntityMarkerQoS</name></member>
   </compound>
-  <compound refid="structtraffic__simulator_1_1ExecutionFailedError" kind="struct"><name>traffic_simulator::ExecutionFailedError</name>
-    <member refid="structtraffic__simulator_1_1ExecutionFailedError_1a48d10c1b6697c7108402e91ba76f46f3" kind="function"><name>~ExecutionFailedError</name></member>
-  </compound>
   <compound refid="classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1FollowFrontEntityAction" kind="class"><name>entity_behavior::vehicle::follow_lane_sequence::FollowFrontEntityAction</name>
     <member refid="classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1FollowFrontEntityAction_1aed3cbb1a6d92d1b490fdb3af6164dfa8" kind="variable"><name>distance_to_front_entity_</name></member>
     <member refid="classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1FollowFrontEntityAction_1a5f234002b824610d308ead3cdf3f00e2" kind="function"><name>FollowFrontEntityAction</name></member>
@@ -421,9 +415,6 @@
     <member refid="classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1FollowLaneAction_1ac9443b2e257afcd796b4436f2818a682" kind="function"><name>calculateWaypoints</name></member>
     <member refid="classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1FollowLaneAction_1a91897ca0b925350e12f3b63ea6246bb3" kind="function"><name>calculateObstacle</name></member>
     <member refid="classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1FollowLaneAction_1ae0c3ad42a956b086d39e294b0322d17a" kind="function"><name>providedPorts</name></member>
-  </compound>
-  <compound refid="classhdmap__utils_1_1HdMapError" kind="class"><name>hdmap_utils::HdMapError</name>
-    <member refid="classhdmap__utils_1_1HdMapError_1ab108741526026e36ea11e6927788fc89" kind="function"><name>HdMapError</name></member>
   </compound>
   <compound refid="classhdmap__utils_1_1HdMapUtils" kind="class"><name>hdmap_utils::HdMapUtils</name>
     <member refid="classhdmap__utils_1_1HdMapUtils_1a2503f7ddbdb1bc5ce0d30c7a50273ea4" kind="variable"><name>lanelet_map_ptr_</name></member>
@@ -545,25 +536,20 @@
   <compound refid="classmetrics_1_1MetricBase" kind="class"><name>metrics::MetricBase</name>
     <member refid="classmetrics_1_1MetricBase_1a26827f054a849cac63e630ee6bd7cf27" kind="variable"><name>metrics_type</name></member>
     <member refid="classmetrics_1_1MetricBase_1ad10d16a7f9bf83a0952d63c8daa0c751" kind="variable"><name>entity_manager_ptr_</name></member>
-    <member refid="classmetrics_1_1MetricBase_1a8c93e59a1351e649953fdc386d13e0a7" kind="variable"><name>error_</name></member>
+    <member refid="classmetrics_1_1MetricBase_1a8f160d561efc4de63c11cfe78c20f3e5" kind="variable"><name>error_</name></member>
     <member refid="classmetrics_1_1MetricBase_1a3f3304a866ae70cdc4e1cee7b627ebea" kind="variable"><name>lifecycle_</name></member>
     <member refid="classmetrics_1_1MetricBase_1ae13ba905d9469efe56cf349890327bb1" kind="function"><name>MetricBase</name></member>
     <member refid="classmetrics_1_1MetricBase_1a86b9bbb2ceab6c040a954a4d926eb4fb" kind="function"><name>~MetricBase</name></member>
     <member refid="classmetrics_1_1MetricBase_1a39065db1c4f9042d830d9086ef01bd99" kind="function"><name>activateTrigger</name></member>
     <member refid="classmetrics_1_1MetricBase_1a5535990bccf8673505854b0db5d12e51" kind="function"><name>update</name></member>
     <member refid="classmetrics_1_1MetricBase_1a9121f7a9d69506281a9eb0533f09896c" kind="function"><name>success</name></member>
-    <member refid="classmetrics_1_1MetricBase_1a67f27b7981db0910294ab949d7ea8747" kind="function"><name>failure</name></member>
+    <member refid="classmetrics_1_1MetricBase_1aab9f2b64fa570816fe577fca1b685af2" kind="function"><name>failure</name></member>
     <member refid="classmetrics_1_1MetricBase_1ae2715921303db9ccba0092c532a386d2" kind="function"><name>activate</name></member>
     <member refid="classmetrics_1_1MetricBase_1a3ce5f237d1200357687261e5f7418022" kind="function"><name>to_json</name></member>
     <member refid="classmetrics_1_1MetricBase_1a38aefd236ee82f96ca6cf138507003a7" kind="function"><name>to_base_json</name></member>
     <member refid="classmetrics_1_1MetricBase_1a406041977f3badc4bf8a29568d0a3040" kind="function"><name>setEntityManager</name></member>
     <member refid="classmetrics_1_1MetricBase_1a0fcf4330afb3c26942ab0adc45026e65" kind="function"><name>getLifecycle</name></member>
     <member refid="classmetrics_1_1MetricBase_1a3bfb57e35e135f57d65d3a9a18ae8c29" kind="function"><name>throwException</name></member>
-  </compound>
-  <compound refid="classmetrics_1_1MetricsCalculationError" kind="class"><name>metrics::MetricsCalculationError</name>
-    <member refid="classmetrics_1_1MetricsCalculationError_1a6615198dd63ad9efbfa6c4a849e97712" kind="function"><name>MetricsCalculationError</name></member>
-    <member refid="classmetrics_1_1MetricsCalculationError_1a3348652acedda310e2f05215ddd1c1c0" kind="function"><name>MetricsCalculationError</name></member>
-    <member refid="classmetrics_1_1MetricsCalculationError_1a0973d53511b77f60a26bc89e83401f1b" kind="function"><name>MetricsCalculationError</name></member>
   </compound>
   <compound refid="classmetrics_1_1MetricsManager" kind="class"><name>metrics::MetricsManager</name>
     <member refid="classmetrics_1_1MetricsManager_1a33e66f7bc1e46e0be875f41e8621ea47" kind="variable"><name>logfile_path</name></member>
@@ -900,24 +886,6 @@
     <member refid="classtraffic__simulator_1_1SimulationClock_1af82c3b5f95bf74c4bae5994b3b9bb59f" kind="function"><name>getCurrentRosTime</name></member>
     <member refid="classtraffic__simulator_1_1SimulationClock_1a33506289dd97fec066636307bbb9e249" kind="function"><name>getCurrentRosTimeAsMsg</name></member>
   </compound>
-  <compound refid="classtraffic__simulator_1_1SimulationClockError" kind="class"><name>traffic_simulator::SimulationClockError</name>
-    <member refid="classtraffic__simulator_1_1SimulationClockError_1a448ed316a3e33171d338d7e66f003097" kind="function"><name>SimulationClockError</name></member>
-    <member refid="classtraffic__simulator_1_1SimulationClockError_1a4f605f7e422322738015ff17c14052dd" kind="function"><name>SimulationClockError</name></member>
-    <member refid="classtraffic__simulator_1_1SimulationClockError_1aa33efaa1feb25bead6fe07a787cbbd59" kind="function"><name>SimulationClockError</name></member>
-  </compound>
-  <compound refid="structtraffic__simulator_1_1SimulationRuntimeError" kind="struct"><name>traffic_simulator::SimulationRuntimeError</name>
-  </compound>
-  <compound refid="classmetrics_1_1SpecificationViolationError" kind="class"><name>metrics::SpecificationViolationError</name>
-    <member refid="classmetrics_1_1SpecificationViolationError_1adf926a415781efbf967cc168b357a44c" kind="function"><name>SpecificationViolationError</name></member>
-    <member refid="classmetrics_1_1SpecificationViolationError_1acd3325eba67e16bc6370d6b48a003b91" kind="function"><name>SpecificationViolationError</name></member>
-    <member refid="classmetrics_1_1SpecificationViolationError_1a7c02956e7df310e2c6504dfc9ee0456a" kind="function"><name>SpecificationViolationError</name></member>
-  </compound>
-  <compound refid="classtraffic__simulator_1_1math_1_1SplineInterpolationError" kind="class"><name>traffic_simulator::math::SplineInterpolationError</name>
-    <member refid="classtraffic__simulator_1_1math_1_1SplineInterpolationError_1a1a45d4b76d54a2c8ec4f1b7504ce1e43" kind="function"><name>SplineInterpolationError</name></member>
-    <member refid="classtraffic__simulator_1_1math_1_1SplineInterpolationError_1a2cfa376f560298bac50a2f025c230121" kind="function"><name>SplineInterpolationError</name></member>
-  </compound>
-  <compound refid="structtraffic__simulator_1_1SplineInterpolationError" kind="struct"><name>traffic_simulator::SplineInterpolationError</name>
-  </compound>
   <compound refid="classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtCrossingEntityAction" kind="class"><name>entity_behavior::vehicle::follow_lane_sequence::StopAtCrossingEntityAction</name>
     <member refid="classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtCrossingEntityAction_1a9b7d4f3d8fdaabfc5c68ac69b0d56ec9" kind="variable"><name>distance_to_stop_target_</name></member>
     <member refid="classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtCrossingEntityAction_1a3ccc7ea73b94e4ed554483f8b99d3f0b" kind="variable"><name>in_stop_sequence_</name></member>
@@ -1046,8 +1014,6 @@
     <member refid="classmetrics_1_1TraveledDistanceMetric_1a1c0e779b865fb5fe31685ee8d495a235" kind="function"><name>update</name></member>
     <member refid="classmetrics_1_1TraveledDistanceMetric_1a83a60b1a279388f2e324be39d3509b4c" kind="function"><name>to_json</name></member>
     <member refid="classmetrics_1_1TraveledDistanceMetric_1aeca318ff6c5c6c50656a620c2a674e32" kind="function"><name>activateTrigger</name></member>
-  </compound>
-  <compound refid="structtraffic__simulator_1_1UnsupportedActionError" kind="struct"><name>traffic_simulator::UnsupportedActionError</name>
   </compound>
   <compound refid="classentity__behavior_1_1VehicleActionNode" kind="class"><name>entity_behavior::VehicleActionNode</name>
     <member refid="classentity__behavior_1_1VehicleActionNode_1aa2efa3ca8c86b547817c7127166cba2d" kind="variable"><name>vehicle_parameters</name></member>
@@ -1246,8 +1212,6 @@
     <member refid="entity__manager_8hpp_1a9d24a74ef6e65a384ebdf0522ab4e399" kind="define"><name>FORWARD_TO_HDMAP_UTILS</name></member>
     <member refid="entity__manager_8hpp_1a1ad11a447f79aff25b6d456448fdd8a0" kind="define"><name>FORWARD_TO_ENTITY</name></member>
   </compound>
-  <compound refid="exception_8hpp" kind="file"><name>exception.hpp</name>
-  </compound>
   <compound refid="pedestrian__entity_8hpp" kind="file"><name>pedestrian_entity.hpp</name>
   </compound>
   <compound refid="pedestrian__parameter_8hpp" kind="file"><name>pedestrian_parameter.hpp</name>
@@ -1277,8 +1241,6 @@
   <compound refid="uuid_8hpp" kind="file"><name>uuid.hpp</name>
   </compound>
   <compound refid="metric__base_8hpp" kind="file"><name>metric_base.hpp</name>
-    <member refid="metric__base_8hpp_1a72c167a6452db7358cad1fc6af4d09fb" kind="define"><name>SPECIFICATION_VIOLATION_ERROR</name></member>
-    <member refid="metric__base_8hpp_1a8ba5a62992aba9afed3cb63d833b037a" kind="define"><name>THROW_METRICS_CALCULATION_ERROR</name></member>
   </compound>
   <compound refid="metrics_8hpp" kind="file"><name>metrics.hpp</name>
   </compound>
@@ -1291,7 +1253,6 @@
   <compound refid="traveled__distance__metric_8hpp" kind="file"><name>traveled_distance_metric.hpp</name>
   </compound>
   <compound refid="simulation__clock_8hpp" kind="file"><name>simulation_clock.hpp</name>
-    <member refid="simulation__clock_8hpp_1a9f64d03817883e3a0089166b0873dd04" kind="define"><name>THROW_SIMULATION_CLOCK_ERROR</name></member>
   </compound>
   <compound refid="traffic__controller_8hpp" kind="file"><name>traffic_controller.hpp</name>
   </compound>

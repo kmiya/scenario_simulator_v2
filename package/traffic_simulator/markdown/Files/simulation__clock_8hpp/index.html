@@ -692,33 +692,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#defines" class="md-nav__link">
-    Defines
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#macro-documentation" class="md-nav__link">
-    Macro Documentation
-  </a>
-  
-    <nav class="md-nav" aria-label="Macro Documentation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#define-throw_simulation_clock_error" class="md-nav__link">
-    define THROW_SIMULATION_CLOCK_ERROR
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#source-code" class="md-nav__link">
     Source code
   </a>
@@ -767,35 +740,10 @@
 <tbody>
 <tr>
 <td>class</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1SimulationClockError">traffic_simulator::SimulationClockError</a></strong></td>
-</tr>
-<tr>
-<td>class</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1SimulationClock">traffic_simulator::SimulationClock</a></strong></td>
 </tr>
 </tbody>
 </table>
-<h2 id="defines">Defines<a class="headerlink" href="#defines" title="Permanent link">#</a></h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Files/simulation__clock_8hpp#define-throw_simulation_clock_error">THROW_SIMULATION_CLOCK_ERROR</a></strong>(description)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="macro-documentation">Macro Documentation<a class="headerlink" href="#macro-documentation" title="Permanent link">#</a></h2>
-<h3 id="define-throw_simulation_clock_error">define THROW_SIMULATION_CLOCK_ERROR<a class="headerlink" href="#define-throw_simulation_clock_error" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#define THROW_SIMULATION_CLOCK_ERROR(</span>
-    <span class="n">description</span>
-<span class="p">)</span> <span class="k">throw</span> <span class="n">SimulationClockError</span><span class="p">(</span><span class="n">description</span><span class="p">,</span> <span class="n">__FILE__</span><span class="p">,</span> <span class="n">__LINE__</span><span class="p">);</span>
-</code></pre></div>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">// Copyright 2015-2020 Tier IV, Inc. All rights reserved.</span>
 <span class="c1">//</span>
@@ -819,20 +767,6 @@
 
 <span class="k">namespace</span> <span class="nn">traffic_simulator</span>
 <span class="p">{</span>
-<span class="k">class</span> <span class="nc">SimulationClockError</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-  <span class="k">explicit</span> <span class="n">SimulationClockError</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">message</span><span class="p">)</span> <span class="o">:</span> <span class="n">runtime_error</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="p">{}</span>
-  <span class="k">explicit</span> <span class="n">SimulationClockError</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">message</span><span class="p">)</span> <span class="o">:</span> <span class="n">runtime_error</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span> <span class="p">{}</span>
-  <span class="k">explicit</span> <span class="n">SimulationClockError</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">message</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">file</span><span class="p">,</span> <span class="kt">int</span> <span class="n">line</span><span class="p">)</span>
-  <span class="o">:</span> <span class="n">runtime_error</span><span class="p">(</span><span class="n">message</span> <span class="o">+</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">File:&quot;</span> <span class="o">+</span> <span class="n">file</span> <span class="o">+</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Line:&quot;</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
-  <span class="p">{</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="cp">#define THROW_SIMULATION_CLOCK_ERROR(description) \</span>
-<span class="cp">  throw SimulationClockError(description, __FILE__, __LINE__);</span>
-
 <span class="k">class</span> <span class="nc">SimulationClock</span> <span class="o">:</span> <span class="n">rclcpp</span><span class="o">::</span><span class="n">Clock</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
@@ -857,7 +791,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__SIMULATION_CLOCK__SIMULATION_CLOCK_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 May 2021 at 05:15:04 UTC</p>
+<p>Updated on 18 May 2021 at 06:32:11 UTC</p>
                 
                   
                 

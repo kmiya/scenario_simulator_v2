@@ -817,18 +817,17 @@
 <span class="cp">#ifndef OPENSCENARIO_INTERPRETER__OPENSCENARIO_INTERPRETER_HPP_</span>
 <span class="cp">#define OPENSCENARIO_INTERPRETER__OPENSCENARIO_INTERPRETER_HPP_</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/utility/visibility.h&gt;</span><span class="cp"></span>
-
 <span class="cp">#include</span> <span class="cpf">&lt;exception&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;junit_exporter/junit_exporter.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;lifecycle_msgs/msg/state.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;lifecycle_msgs/msg/transition.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/console/escape_sequence.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/openscenario.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/utility/visibility.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;rclcpp/rclcpp.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;rclcpp_lifecycle/lifecycle_node.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;scenario_simulator_exception/exception.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;simple_junit/test_suites.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
 
@@ -846,13 +845,26 @@
 
   <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">rclcpp</span><span class="o">::</span><span class="n">TimerBase</span><span class="o">&gt;</span> <span class="n">timer</span><span class="p">;</span>
 
-  <span class="n">junit_exporter</span><span class="o">::</span><span class="n">JunitExporter</span> <span class="n">exporter</span><span class="p">;</span>
+  <span class="n">junit</span><span class="o">::</span><span class="n">TestSuites</span> <span class="n">test_suites</span><span class="p">;</span>
 
-  <span class="k">const</span> <span class="n">junit_exporter</span><span class="o">::</span><span class="n">TestResult</span> <span class="n">ERROR</span> <span class="o">=</span> <span class="n">junit_exporter</span><span class="o">::</span><span class="n">TestResult</span><span class="o">::</span><span class="n">ERROR</span><span class="p">;</span>
-  <span class="k">const</span> <span class="n">junit_exporter</span><span class="o">::</span><span class="n">TestResult</span> <span class="n">FAILURE</span> <span class="o">=</span> <span class="n">junit_exporter</span><span class="o">::</span><span class="n">TestResult</span><span class="o">::</span><span class="n">FAILURE</span><span class="p">;</span>
-  <span class="k">const</span> <span class="n">junit_exporter</span><span class="o">::</span><span class="n">TestResult</span> <span class="n">SUCCESS</span> <span class="o">=</span> <span class="n">junit_exporter</span><span class="o">::</span><span class="n">TestResult</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">junit</span><span class="o">::</span><span class="n">TestResult</span> <span class="n">ERROR</span> <span class="o">=</span> <span class="n">junit</span><span class="o">::</span><span class="n">TestResult</span><span class="o">::</span><span class="n">ERROR</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">junit</span><span class="o">::</span><span class="n">TestResult</span> <span class="n">FAILURE</span> <span class="o">=</span> <span class="n">junit</span><span class="o">::</span><span class="n">TestResult</span><span class="o">::</span><span class="n">FAILURE</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">junit</span><span class="o">::</span><span class="n">TestResult</span> <span class="n">SUCCESS</span> <span class="o">=</span> <span class="n">junit</span><span class="o">::</span><span class="n">TestResult</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">;</span>
 
-  <span class="kt">void</span> <span class="nf">report</span><span class="p">(</span><span class="k">const</span> <span class="n">junit_exporter</span><span class="o">::</span><span class="n">TestResult</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+  <span class="n">junit</span><span class="o">::</span><span class="n">TestResult</span> <span class="n">current_result</span><span class="p">;</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">current_error_type</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">current_error_what</span><span class="p">;</span>
+
+  <span class="kt">void</span> <span class="nf">reset</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="n">current_result</span> <span class="o">=</span> <span class="n">junit</span><span class="o">::</span><span class="n">TestResult</span><span class="o">::</span><span class="n">FAILURE</span><span class="p">;</span>
+    <span class="n">current_error_type</span> <span class="o">=</span> <span class="s">&quot;Failure&quot;</span><span class="p">;</span>
+    <span class="n">current_error_what</span> <span class="o">=</span>
+      <span class="s">&quot;The simulation time has exceeded the time specified by the scenario_test_runner&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kt">void</span> <span class="nf">report</span><span class="p">(</span><span class="k">const</span> <span class="n">junit</span><span class="o">::</span><span class="n">TestResult</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
 
 <span class="cp">#define CATCH(TYPE)                       \</span>
 <span class="cp">  catch (const TYPE &amp; error)              \</span>
@@ -936,7 +948,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__OPENSCENARIO_INTERPRETER_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 20 May 2021 at 10:24:50 UTC</p>
+<p>Updated on 20 May 2021 at 15:20:59 UTC</p>
                 
                   
                 

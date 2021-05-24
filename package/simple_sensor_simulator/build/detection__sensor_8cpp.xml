@@ -133,7 +133,7 @@
 <codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((current_time<sp/>-<sp/>last_update_stamp_)<sp/>&gt;=<sp/>configuration_.update_duration())<sp/>{</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>autoware_perception_msgs::msg::DynamicObjectArray<sp/>msg;</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>msg.header.stamp<sp/>=<sp/>stamp;</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>msg.header.frame_id<sp/>=<sp/>configuration_.entity();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>msg.header.frame_id<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;base_link&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>last_update_stamp_<sp/>=<sp/>current_time;</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>s<sp/>:<sp/>status)<sp/>{</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>std::find(detected_objects.begin(),<sp/>detected_objects.end(),<sp/>s.name());</highlight></codeline>

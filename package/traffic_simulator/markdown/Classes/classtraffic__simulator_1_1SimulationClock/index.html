@@ -685,6 +685,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#public-attributes" class="md-nav__link">
+    Public Attributes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#public-functions-documentation" class="md-nav__link">
     Public Functions Documentation
   </a>
@@ -746,6 +753,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#public-attributes-documentation" class="md-nav__link">
+    Public Attributes Documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Public Attributes Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variable-use_raw_clock" class="md-nav__link">
+    variable use_raw_clock
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -791,16 +818,31 @@
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1SimulationClock#function-getcurrentsimulationtime">getCurrentSimulationTime</a></strong>() const</td>
 </tr>
 <tr>
-<td>rosgraph_msgs::msg::Clock</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1SimulationClock#function-getcurrentrostimeasmsg">getCurrentRosTimeAsMsg</a></strong>() const</td>
+<td>const rosgraph_msgs::msg::Clock</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1SimulationClock#function-getcurrentrostimeasmsg">getCurrentRosTimeAsMsg</a></strong>()</td>
 </tr>
 <tr>
-<td>rclcpp::Time</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1SimulationClock#function-getcurrentrostime">getCurrentRosTime</a></strong>() const</td>
+<td>const rclcpp::Time</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1SimulationClock#function-getcurrentrostime">getCurrentRosTime</a></strong>()</td>
 </tr>
 <tr>
 <td></td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1SimulationClock#function-simulationclock">SimulationClock</a></strong>()</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1SimulationClock#function-simulationclock">SimulationClock</a></strong>(rcl_clock_type_t clock_type =RCL_ROS_TIME, bool use_raw_clock =true)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-attributes">Public Attributes<a class="headerlink" href="#public-attributes" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>const bool</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1SimulationClock#variable-use_raw_clock">use_raw_clock</a></strong></td>
 </tr>
 </tbody>
 </table>
@@ -821,16 +863,23 @@
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="kt">double</span> <span class="n">getCurrentSimulationTime</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
 <h3 id="function-getcurrentrostimeasmsg">function getCurrentRosTimeAsMsg<a class="headerlink" href="#function-getcurrentrostimeasmsg" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">rosgraph_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Clock</span> <span class="n">getCurrentRosTimeAsMsg</span><span class="p">()</span> <span class="k">const</span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">rosgraph_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Clock</span> <span class="n">getCurrentRosTimeAsMsg</span><span class="p">()</span>
 </code></pre></div>
 <h3 id="function-getcurrentrostime">function getCurrentRosTime<a class="headerlink" href="#function-getcurrentrostime" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">rclcpp</span><span class="o">::</span><span class="n">Time</span> <span class="n">getCurrentRosTime</span><span class="p">()</span> <span class="k">const</span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">rclcpp</span><span class="o">::</span><span class="n">Time</span> <span class="n">getCurrentRosTime</span><span class="p">()</span>
 </code></pre></div>
 <h3 id="function-simulationclock">function SimulationClock<a class="headerlink" href="#function-simulationclock" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">SimulationClock</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="n">SimulationClock</span><span class="p">(</span>
+    <span class="n">rcl_clock_type_t</span> <span class="n">clock_type</span> <span class="o">=</span><span class="n">RCL_ROS_TIME</span><span class="p">,</span>
+    <span class="kt">bool</span> <span class="n">use_raw_clock</span> <span class="o">=</span><span class="nb">true</span>
+<span class="p">)</span>
+</code></pre></div>
+<h2 id="public-attributes-documentation">Public Attributes Documentation<a class="headerlink" href="#public-attributes-documentation" title="Permanent link">#</a></h2>
+<h3 id="variable-use_raw_clock">variable use_raw_clock<a class="headerlink" href="#variable-use_raw_clock" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="kt">bool</span> <span class="n">use_raw_clock</span><span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>Updated on 25 May 2021 at 00:09:33 UTC</p>
+<p>Updated on 25 May 2021 at 02:44:39 UTC</p>
                 
                   
                 

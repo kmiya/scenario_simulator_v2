@@ -3,6 +3,21 @@
   <compounddef id="classtraffic__simulator_1_1SimulationClock" kind="class" language="C++" prot="public">
     <compoundname>traffic_simulator::SimulationClock</compoundname>
     <basecompoundref prot="private" virt="non-virtual">Clock</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtraffic__simulator_1_1SimulationClock_1ad64fcad75dd6cb798a1111cd65c07662" prot="public" static="no" mutable="no">
+        <type>const bool</type>
+        <definition>const bool traffic_simulator::SimulationClock::use_raw_clock</definition>
+        <argsstring></argsstring>
+        <name>use_raw_clock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="33" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classtraffic__simulator_1_1SimulationClock_1a2d412fff71dd466a2d393486dd3bb54b" prot="private" static="no" mutable="no">
         <type>rclcpp::Duration</type>
@@ -15,20 +30,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="35" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" bodystart="35" bodyend="-1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="36" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" bodystart="36" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classtraffic__simulator_1_1SimulationClock_1ad38d3e030dd04c4331d9d6e8607c0b16" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classtraffic__simulator_1_1SimulationClock_1ade7b8ad5809c94b6bb8370901df107b7" prot="private" static="no" mutable="no">
         <type>rclcpp::Time</type>
-        <definition>rclcpp::Time traffic_simulator::SimulationClock::system_time_on_initialize_</definition>
+        <definition>rclcpp::Time traffic_simulator::SimulationClock::time_on_initialize_</definition>
         <argsstring></argsstring>
-        <name>system_time_on_initialize_</name>
+        <name>time_on_initialize_</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="36" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" bodystart="36" bodyend="-1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="37" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classtraffic__simulator_1_1SimulationClock_1a2416bd3fa774d9ed9a198fa95ccf6f61" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -41,7 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="37" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" bodystart="37" bodyend="-1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="38" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classtraffic__simulator_1_1SimulationClock_1ad222d8c74fc9da381423868ddd19a45e" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -54,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="38" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" bodystart="38" bodyend="-1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="39" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classtraffic__simulator_1_1SimulationClock_1a193ea25b5f040458b7aa94dac44b222b" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -67,7 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="39" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" bodystart="39" bodyend="-1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="40" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classtraffic__simulator_1_1SimulationClock_1ad27cd758681124d027b3293a3ed801a4" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -80,22 +95,32 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="40" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" bodystart="40" bodyend="-1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="41" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" bodystart="41" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classtraffic__simulator_1_1SimulationClock_1a854ac199d69e615a4df39be715e3355b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classtraffic__simulator_1_1SimulationClock_1a612dc519c2f6c82f29df61861dc4f9b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>traffic_simulator::SimulationClock::SimulationClock</definition>
-        <argsstring>()</argsstring>
+        <argsstring>(rcl_clock_type_t clock_type=RCL_ROS_TIME, bool use_raw_clock=true)</argsstring>
         <name>SimulationClock</name>
+        <param>
+          <type>rcl_clock_type_t</type>
+          <declname>clock_type</declname>
+          <defval>RCL_ROS_TIME</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>use_raw_clock</declname>
+          <defval>true</defval>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="26" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/simulation_clock/simulation_clock.cpp" bodystart="20" bodyend="23"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="26" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/simulation_clock/simulation_clock.cpp" bodystart="20" bodyend="26"/>
       </memberdef>
       <memberdef kind="function" id="classtraffic__simulator_1_1SimulationClock_1ac5bc2b02bc880c3a7dce710237383acc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -116,7 +141,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="27" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/simulation_clock/simulation_clock.cpp" bodystart="25" bodyend="33"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="27" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/simulation_clock/simulation_clock.cpp" bodystart="28" bodyend="36"/>
       </memberdef>
       <memberdef kind="function" id="classtraffic__simulator_1_1SimulationClock_1a7b773e3098c67c69f32c23d1df195750" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -129,7 +154,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="28" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/simulation_clock/simulation_clock.cpp" bodystart="35" bodyend="41"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="28" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/simulation_clock/simulation_clock.cpp" bodystart="38" bodyend="44"/>
       </memberdef>
       <memberdef kind="function" id="classtraffic__simulator_1_1SimulationClock_1ac2b3e30926fd01c7ad2565ba90437884" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
@@ -157,10 +182,10 @@
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="30" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" bodystart="30" bodyend="30"/>
       </memberdef>
-      <memberdef kind="function" id="classtraffic__simulator_1_1SimulationClock_1af82c3b5f95bf74c4bae5994b3b9bb59f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>rclcpp::Time</type>
-        <definition>rclcpp::Time traffic_simulator::SimulationClock::getCurrentRosTime</definition>
-        <argsstring>() const</argsstring>
+      <memberdef kind="function" id="classtraffic__simulator_1_1SimulationClock_1ae3d6d48e8c588b1d69c54577b5b94abb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const rclcpp::Time</type>
+        <definition>const rclcpp::Time traffic_simulator::SimulationClock::getCurrentRosTime</definition>
+        <argsstring>()</argsstring>
         <name>getCurrentRosTime</name>
         <briefdescription>
         </briefdescription>
@@ -168,12 +193,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="31" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/simulation_clock/simulation_clock.cpp" bodystart="50" bodyend="57"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="31" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/simulation_clock/simulation_clock.cpp" bodystart="53" bodyend="64"/>
       </memberdef>
-      <memberdef kind="function" id="classtraffic__simulator_1_1SimulationClock_1a33506289dd97fec066636307bbb9e249" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>rosgraph_msgs::msg::Clock</type>
-        <definition>rosgraph_msgs::msg::Clock traffic_simulator::SimulationClock::getCurrentRosTimeAsMsg</definition>
-        <argsstring>() const</argsstring>
+      <memberdef kind="function" id="classtraffic__simulator_1_1SimulationClock_1a41f121bf47c308d398159517e0dfc553" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const rosgraph_msgs::msg::Clock</type>
+        <definition>const rosgraph_msgs::msg::Clock traffic_simulator::SimulationClock::getCurrentRosTimeAsMsg</definition>
+        <argsstring>()</argsstring>
         <name>getCurrentRosTimeAsMsg</name>
         <briefdescription>
         </briefdescription>
@@ -181,7 +206,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="32" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/simulation_clock/simulation_clock.cpp" bodystart="43" bodyend="48"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="32" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/simulation_clock/simulation_clock.cpp" bodystart="46" bodyend="51"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -210,21 +235,22 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="24" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" bodystart="23" bodyend="41"/>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" line="24" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/simulation_clock/simulation_clock.hpp" bodystart="23" bodyend="42"/>
     <listofallmembers>
       <member refid="classtraffic__simulator_1_1SimulationClock_1a2416bd3fa774d9ed9a198fa95ccf6f61" prot="private" virt="non-virtual"><scope>traffic_simulator::SimulationClock</scope><name>current_simulation_time_</name></member>
-      <member refid="classtraffic__simulator_1_1SimulationClock_1af82c3b5f95bf74c4bae5994b3b9bb59f" prot="public" virt="non-virtual"><scope>traffic_simulator::SimulationClock</scope><name>getCurrentRosTime</name></member>
-      <member refid="classtraffic__simulator_1_1SimulationClock_1a33506289dd97fec066636307bbb9e249" prot="public" virt="non-virtual"><scope>traffic_simulator::SimulationClock</scope><name>getCurrentRosTimeAsMsg</name></member>
+      <member refid="classtraffic__simulator_1_1SimulationClock_1ae3d6d48e8c588b1d69c54577b5b94abb" prot="public" virt="non-virtual"><scope>traffic_simulator::SimulationClock</scope><name>getCurrentRosTime</name></member>
+      <member refid="classtraffic__simulator_1_1SimulationClock_1a41f121bf47c308d398159517e0dfc553" prot="public" virt="non-virtual"><scope>traffic_simulator::SimulationClock</scope><name>getCurrentRosTimeAsMsg</name></member>
       <member refid="classtraffic__simulator_1_1SimulationClock_1ac2b3e30926fd01c7ad2565ba90437884" prot="public" virt="non-virtual"><scope>traffic_simulator::SimulationClock</scope><name>getCurrentSimulationTime</name></member>
       <member refid="classtraffic__simulator_1_1SimulationClock_1ad957493d7f7b2a82c596dda381f163db" prot="public" virt="non-virtual"><scope>traffic_simulator::SimulationClock</scope><name>getStepTime</name></member>
       <member refid="classtraffic__simulator_1_1SimulationClock_1ad222d8c74fc9da381423868ddd19a45e" prot="private" virt="non-virtual"><scope>traffic_simulator::SimulationClock</scope><name>initial_simulation_time_</name></member>
       <member refid="classtraffic__simulator_1_1SimulationClock_1ac5bc2b02bc880c3a7dce710237383acc" prot="public" virt="non-virtual"><scope>traffic_simulator::SimulationClock</scope><name>initialize</name></member>
       <member refid="classtraffic__simulator_1_1SimulationClock_1ad27cd758681124d027b3293a3ed801a4" prot="private" virt="non-virtual"><scope>traffic_simulator::SimulationClock</scope><name>initialized_</name></member>
-      <member refid="classtraffic__simulator_1_1SimulationClock_1a854ac199d69e615a4df39be715e3355b" prot="public" virt="non-virtual"><scope>traffic_simulator::SimulationClock</scope><name>SimulationClock</name></member>
+      <member refid="classtraffic__simulator_1_1SimulationClock_1a612dc519c2f6c82f29df61861dc4f9b4" prot="public" virt="non-virtual"><scope>traffic_simulator::SimulationClock</scope><name>SimulationClock</name></member>
       <member refid="classtraffic__simulator_1_1SimulationClock_1a193ea25b5f040458b7aa94dac44b222b" prot="private" virt="non-virtual"><scope>traffic_simulator::SimulationClock</scope><name>step_time_</name></member>
       <member refid="classtraffic__simulator_1_1SimulationClock_1a2d412fff71dd466a2d393486dd3bb54b" prot="private" virt="non-virtual"><scope>traffic_simulator::SimulationClock</scope><name>step_time_duration_</name></member>
-      <member refid="classtraffic__simulator_1_1SimulationClock_1ad38d3e030dd04c4331d9d6e8607c0b16" prot="private" virt="non-virtual"><scope>traffic_simulator::SimulationClock</scope><name>system_time_on_initialize_</name></member>
+      <member refid="classtraffic__simulator_1_1SimulationClock_1ade7b8ad5809c94b6bb8370901df107b7" prot="private" virt="non-virtual"><scope>traffic_simulator::SimulationClock</scope><name>time_on_initialize_</name></member>
       <member refid="classtraffic__simulator_1_1SimulationClock_1a7b773e3098c67c69f32c23d1df195750" prot="public" virt="non-virtual"><scope>traffic_simulator::SimulationClock</scope><name>update</name></member>
+      <member refid="classtraffic__simulator_1_1SimulationClock_1ad64fcad75dd6cb798a1111cd65c07662" prot="public" virt="non-virtual"><scope>traffic_simulator::SimulationClock</scope><name>use_raw_clock</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

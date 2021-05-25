@@ -770,17 +770,18 @@
 <span class="k">class</span> <span class="nc">SimulationClock</span> <span class="o">:</span> <span class="n">rclcpp</span><span class="o">::</span><span class="n">Clock</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="n">SimulationClock</span><span class="p">();</span>
+  <span class="n">SimulationClock</span><span class="p">(</span><span class="n">rcl_clock_type_t</span> <span class="n">clock_type</span> <span class="o">=</span> <span class="n">RCL_ROS_TIME</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">use_raw_clock</span> <span class="o">=</span> <span class="nb">true</span><span class="p">);</span>
   <span class="kt">void</span> <span class="nf">initialize</span><span class="p">(</span><span class="kt">double</span> <span class="n">initial_simulation_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">);</span>
   <span class="kt">void</span> <span class="nf">update</span><span class="p">();</span>
   <span class="kt">double</span> <span class="nf">getCurrentSimulationTime</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">current_simulation_time_</span><span class="p">;</span> <span class="p">}</span>
   <span class="kt">double</span> <span class="nf">getStepTime</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">step_time_</span><span class="p">;</span> <span class="p">}</span>
-  <span class="n">rclcpp</span><span class="o">::</span><span class="n">Time</span> <span class="nf">getCurrentRosTime</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
-  <span class="n">rosgraph_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Clock</span> <span class="nf">getCurrentRosTimeAsMsg</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">rclcpp</span><span class="o">::</span><span class="n">Time</span> <span class="nf">getCurrentRosTime</span><span class="p">();</span>
+  <span class="k">const</span> <span class="n">rosgraph_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Clock</span> <span class="nf">getCurrentRosTimeAsMsg</span><span class="p">();</span>
+  <span class="k">const</span> <span class="kt">bool</span> <span class="n">use_raw_clock</span><span class="p">;</span>
 
 <span class="k">private</span><span class="o">:</span>
   <span class="n">rclcpp</span><span class="o">::</span><span class="n">Duration</span> <span class="n">step_time_duration_</span><span class="p">;</span>
-  <span class="n">rclcpp</span><span class="o">::</span><span class="n">Time</span> <span class="n">system_time_on_initialize_</span><span class="p">;</span>
+  <span class="n">rclcpp</span><span class="o">::</span><span class="n">Time</span> <span class="n">time_on_initialize_</span><span class="p">;</span>
   <span class="kt">double</span> <span class="n">current_simulation_time_</span><span class="p">;</span>
   <span class="kt">double</span> <span class="n">initial_simulation_time_</span><span class="p">;</span>
   <span class="kt">double</span> <span class="n">step_time_</span><span class="p">;</span>
@@ -791,7 +792,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__SIMULATION_CLOCK__SIMULATION_CLOCK_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 25 May 2021 at 00:09:33 UTC</p>
+<p>Updated on 25 May 2021 at 02:44:40 UTC</p>
                 
                   
                 

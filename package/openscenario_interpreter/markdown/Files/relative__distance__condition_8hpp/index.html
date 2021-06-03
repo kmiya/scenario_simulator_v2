@@ -827,7 +827,7 @@
         <span class="k">case</span> <span class="n">RelativeDistanceType</span><span class="o">::</span><span class="nl">cartesianDistance</span><span class="p">:</span>
           <span class="k">return</span> <span class="n">getBoundingBoxDistance</span><span class="p">(</span><span class="n">entity_ref</span><span class="p">,</span> <span class="n">triggering_entity</span><span class="p">);</span>
         <span class="k">default</span><span class="o">:</span>
-          <span class="n">THROW</span><span class="p">(</span><span class="n">ImplementationFault</span><span class="p">);</span>
+          <span class="k">throw</span> <span class="n">UNSUPPORTED_SETTING_DETECTED</span><span class="p">(</span><span class="n">RelativeDistanceCondition</span><span class="p">,</span> <span class="n">relative_distance_type</span><span class="p">);</span>
       <span class="p">}</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="k">switch</span> <span class="p">(</span><span class="n">relative_distance_type</span><span class="p">)</span> <span class="p">{</span>
@@ -840,7 +840,7 @@
             <span class="n">getRelativePose</span><span class="p">(</span><span class="n">triggering_entity</span><span class="p">,</span> <span class="n">entity_ref</span><span class="p">).</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span>
             <span class="n">getRelativePose</span><span class="p">(</span><span class="n">triggering_entity</span><span class="p">,</span> <span class="n">entity_ref</span><span class="p">).</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
         <span class="k">default</span><span class="o">:</span>
-          <span class="n">THROW</span><span class="p">(</span><span class="n">ImplementationFault</span><span class="p">);</span>
+          <span class="k">throw</span> <span class="n">UNSUPPORTED_SETTING_DETECTED</span><span class="p">(</span><span class="n">RelativeDistanceCondition</span><span class="p">,</span> <span class="n">relative_distance_type</span><span class="p">);</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
@@ -863,7 +863,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__RELATIVE_DISTANCE_CONDITION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  3 June 2021 at 00:24:35 UTC</p>
+<p>Updated on  3 June 2021 at 01:32:11 UTC</p>
                 
                   
                 

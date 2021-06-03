@@ -804,24 +804,34 @@
 
   <span class="k">explicit</span> <span class="k">operator</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span><span class="p">()</span> <span class="k">const</span>
   <span class="p">{</span>
-    <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Vector3</span> <span class="n">vector</span><span class="p">{};</span>
-    <span class="n">vector</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span>
-    <span class="n">vector</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
-    <span class="n">vector</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">h</span><span class="p">;</span>
+    <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Vector3</span> <span class="n">vector</span><span class="p">;</span>
+    <span class="p">{</span>
+      <span class="n">vector</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span>
+      <span class="n">vector</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
+      <span class="n">vector</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">h</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="n">point</span><span class="p">{};</span>
-    <span class="n">point</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
-    <span class="n">point</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
-    <span class="n">point</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="p">;</span>
+    <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="n">point</span><span class="p">;</span>
+    <span class="p">{</span>
+      <span class="n">point</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+      <span class="n">point</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+      <span class="n">point</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">pose</span><span class="p">{};</span>
-    <span class="n">pose</span><span class="p">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">point</span><span class="p">;</span>
-    <span class="n">pose</span><span class="p">.</span><span class="n">orientation</span> <span class="o">=</span> <span class="n">quaternion_operation</span><span class="o">::</span><span class="n">convertEulerAngleToQuaternion</span><span class="p">(</span><span class="n">vector</span><span class="p">);</span>
+    <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">pose</span><span class="p">;</span>
+    <span class="p">{</span>
+      <span class="n">pose</span><span class="p">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">point</span><span class="p">;</span>
+      <span class="n">pose</span><span class="p">.</span><span class="n">orientation</span> <span class="o">=</span> <span class="n">quaternion_operation</span><span class="o">::</span><span class="n">convertEulerAngleToQuaternion</span><span class="p">(</span><span class="n">vector</span><span class="p">);</span>
+    <span class="p">}</span>
 
     <span class="k">return</span> <span class="n">pose</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="k">explicit</span> <span class="k">operator</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="n">THROW</span><span class="p">(</span><span class="n">ImplementationFault</span><span class="p">);</span> <span class="p">}</span>
+  <span class="k">explicit</span> <span class="k">operator</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="p">()</span> <span class="k">const</span>
+  <span class="p">{</span>
+    <span class="k">throw</span> <span class="n">SemanticError</span><span class="p">(</span>
+      <span class="s">&quot;To convert the WorldPosition to LanePosition is currently not yet supported&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
 <span class="p">};</span>
 <span class="p">}</span>  <span class="c1">// namespace syntax</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
@@ -829,7 +839,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__WORLD_POSITION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  3 June 2021 at 00:24:35 UTC</p>
+<p>Updated on  3 June 2021 at 01:32:11 UTC</p>
                 
                   
                 

@@ -1,0 +1,547 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="condition__edge_8cpp" kind="file" language="C++">
+    <compoundname>condition_edge.cpp</compoundname>
+    <includes refid="condition__edge_8hpp" local="no">openscenario_interpreter/syntax/condition_edge.hpp</includes>
+    <includes local="no">sstream</includes>
+    <includes local="no">string</includes>
+    <incdepgraph>
+      <node id="15469">
+        <label>list</label>
+      </node>
+      <node id="15466">
+        <label>scenario_simulator_exception/exception.hpp</label>
+      </node>
+      <node id="15459">
+        <label>iomanip</label>
+      </node>
+      <node id="15454">
+        <label>functional</label>
+      </node>
+      <node id="15493">
+        <label>limits</label>
+      </node>
+      <node id="15461">
+        <label>openscenario_interpreter/string/cat.hpp</label>
+        <link refid="cat_8hpp_source"/>
+        <childnode refid="15462" relation="include">
+        </childnode>
+        <childnode refid="15464" relation="include">
+        </childnode>
+        <childnode refid="15465" relation="include">
+        </childnode>
+        <childnode refid="15463" relation="include">
+        </childnode>
+      </node>
+      <node id="15487">
+        <label>openscenario_interpreter/type_traits/has_stream_output_operator.hpp</label>
+        <link refid="has__stream__output__operator_8hpp_source"/>
+        <childnode refid="15456" relation="include">
+        </childnode>
+        <childnode refid="15475" relation="include">
+        </childnode>
+      </node>
+      <node id="15492">
+        <label>boost/lexical_cast.hpp</label>
+      </node>
+      <node id="15451">
+        <label>openscenario_interpreter/syntax/condition_edge.hpp</label>
+        <link refid="condition__edge_8hpp_source"/>
+        <childnode refid="15452" relation="include">
+        </childnode>
+      </node>
+      <node id="15506">
+        <label>pugixml.hpp</label>
+      </node>
+      <node id="15468">
+        <label>openscenario_interpreter/object.hpp</label>
+        <link refid="object_8hpp_source"/>
+        <childnode refid="15469" relation="include">
+        </childnode>
+        <childnode refid="15470" relation="include">
+        </childnode>
+        <childnode refid="15476" relation="include">
+        </childnode>
+        <childnode refid="15463" relation="include">
+        </childnode>
+      </node>
+      <node id="15470">
+        <label>openscenario_interpreter/expression.hpp</label>
+        <link refid="expression_8hpp_source"/>
+        <childnode refid="15471" relation="include">
+        </childnode>
+      </node>
+      <node id="15467">
+        <label>stdexcept</label>
+      </node>
+      <node id="15496">
+        <label>openscenario_interpreter/syntax/integer.hpp</label>
+        <link refid="integer_8hpp_source"/>
+        <childnode refid="15492" relation="include">
+        </childnode>
+        <childnode refid="15460" relation="include">
+        </childnode>
+        <childnode refid="15497" relation="include">
+        </childnode>
+        <childnode refid="15465" relation="include">
+        </childnode>
+      </node>
+      <node id="15497">
+        <label>std_msgs/msg/int64.hpp</label>
+      </node>
+      <node id="15465">
+        <label>string</label>
+      </node>
+      <node id="15491">
+        <label>openscenario_interpreter/syntax/double.hpp</label>
+        <link refid="double_8hpp_source"/>
+        <childnode refid="15492" relation="include">
+        </childnode>
+        <childnode refid="15493" relation="include">
+        </childnode>
+        <childnode refid="15460" relation="include">
+        </childnode>
+        <childnode refid="15494" relation="include">
+        </childnode>
+        <childnode refid="15495" relation="include">
+        </childnode>
+        <childnode refid="15465" relation="include">
+        </childnode>
+      </node>
+      <node id="15475">
+        <label>openscenario_interpreter/type_traits/void_t.hpp</label>
+        <link refid="void__t_8hpp_source"/>
+        <childnode refid="15476" relation="include">
+        </childnode>
+      </node>
+      <node id="15471">
+        <label>openscenario_interpreter/pointer.hpp</label>
+        <link refid="pointer_8hpp_source"/>
+        <childnode refid="15472" relation="include">
+        </childnode>
+        <childnode refid="15460" relation="include">
+        </childnode>
+        <childnode refid="15473" relation="include">
+        </childnode>
+        <childnode refid="15477" relation="include">
+        </childnode>
+        <childnode refid="15479" relation="include">
+        </childnode>
+        <childnode refid="15481" relation="include">
+        </childnode>
+        <childnode refid="15483" relation="include">
+        </childnode>
+        <childnode refid="15489" relation="include">
+        </childnode>
+        <childnode refid="15490" relation="include">
+        </childnode>
+        <childnode refid="15463" relation="include">
+        </childnode>
+      </node>
+      <node id="15484">
+        <label>openscenario_interpreter/console/escape_sequence.hpp</label>
+        <link refid="escape__sequence_8hpp_source"/>
+        <childnode refid="15485" relation="include">
+        </childnode>
+        <childnode refid="15465" relation="include">
+        </childnode>
+      </node>
+      <node id="15494">
+        <label>regex</label>
+      </node>
+      <node id="15479">
+        <label>openscenario_interpreter/type_traits/if_has_member_function_start.hpp</label>
+        <link refid="if__has__member__function__start_8hpp_source"/>
+        <childnode refid="15480" relation="include">
+        </childnode>
+      </node>
+      <node id="15498">
+        <label>openscenario_interpreter/syntax/string.hpp</label>
+        <link refid="string_8hpp_source"/>
+        <childnode refid="15468" relation="include">
+        </childnode>
+        <childnode refid="15465" relation="include">
+        </childnode>
+      </node>
+      <node id="15505">
+        <label>ostream</label>
+      </node>
+      <node id="15502">
+        <label>std_msgs/msg/u_int16.hpp</label>
+      </node>
+      <node id="15460">
+        <label>openscenario_interpreter/error.hpp</label>
+        <link refid="error_8hpp_source"/>
+        <childnode refid="15459" relation="include">
+        </childnode>
+        <childnode refid="15461" relation="include">
+        </childnode>
+        <childnode refid="15466" relation="include">
+        </childnode>
+        <childnode refid="15467" relation="include">
+        </childnode>
+        <childnode refid="15465" relation="include">
+        </childnode>
+        <childnode refid="15463" relation="include">
+        </childnode>
+      </node>
+      <node id="15477">
+        <label>openscenario_interpreter/type_traits/if_has_member_function_evaluate.hpp</label>
+        <link refid="if__has__member__function__evaluate_8hpp_source"/>
+        <childnode refid="15478" relation="include">
+        </childnode>
+        <childnode refid="15463" relation="include">
+        </childnode>
+      </node>
+      <node id="15455">
+        <label>openscenario_interpreter/syntax/parameter_type.hpp</label>
+        <link refid="parameter__type_8hpp_source"/>
+        <childnode refid="15456" relation="include">
+        </childnode>
+        <childnode refid="15457" relation="include">
+        </childnode>
+        <childnode refid="15491" relation="include">
+        </childnode>
+        <childnode refid="15496" relation="include">
+        </childnode>
+        <childnode refid="15498" relation="include">
+        </childnode>
+        <childnode refid="15499" relation="include">
+        </childnode>
+        <childnode refid="15501" relation="include">
+        </childnode>
+      </node>
+      <node id="15450">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/condition_edge.cpp</label>
+        <link refid="condition__edge_8cpp"/>
+        <childnode refid="15451" relation="include">
+        </childnode>
+        <childnode refid="15464" relation="include">
+        </childnode>
+        <childnode refid="15465" relation="include">
+        </childnode>
+      </node>
+      <node id="15452">
+        <label>openscenario_interpreter/reader/attribute.hpp</label>
+        <link refid="attribute_8hpp_source"/>
+        <childnode refid="15453" relation="include">
+        </childnode>
+        <childnode refid="15454" relation="include">
+        </childnode>
+        <childnode refid="15455" relation="include">
+        </childnode>
+        <childnode refid="15503" relation="include">
+        </childnode>
+        <childnode refid="15504" relation="include">
+        </childnode>
+        <childnode refid="15494" relation="include">
+        </childnode>
+        <childnode refid="15465" relation="include">
+        </childnode>
+        <childnode refid="15507" relation="include">
+        </childnode>
+      </node>
+      <node id="15453">
+        <label>ament_index_cpp/get_package_share_directory.hpp</label>
+      </node>
+      <node id="15490">
+        <label>typeinfo</label>
+      </node>
+      <node id="15480">
+        <label>openscenario_interpreter/type_traits/has_member_function_start.hpp</label>
+        <link refid="has__member__function__start_8hpp_source"/>
+        <childnode refid="15475" relation="include">
+        </childnode>
+      </node>
+      <node id="15495">
+        <label>std_msgs/msg/float64.hpp</label>
+      </node>
+      <node id="15474">
+        <label>openscenario_interpreter/type_traits/has_member_function_accomplished.hpp</label>
+        <link refid="has__member__function__accomplished_8hpp_source"/>
+        <childnode refid="15475" relation="include">
+        </childnode>
+      </node>
+      <node id="15499">
+        <label>openscenario_interpreter/syntax/unsigned_integer.hpp</label>
+        <link refid="unsigned__integer_8hpp_source"/>
+        <childnode refid="15492" relation="include">
+        </childnode>
+        <childnode refid="15500" relation="include">
+        </childnode>
+        <childnode refid="15465" relation="include">
+        </childnode>
+      </node>
+      <node id="15486">
+        <label>unistd.h</label>
+      </node>
+      <node id="15481">
+        <label>openscenario_interpreter/type_traits/if_has_member_function_state.hpp</label>
+        <link refid="if__has__member__function__state_8hpp_source"/>
+        <childnode refid="15460" relation="include">
+        </childnode>
+        <childnode refid="15482" relation="include">
+        </childnode>
+        <childnode refid="15464" relation="include">
+        </childnode>
+      </node>
+      <node id="15457">
+        <label>openscenario_interpreter/syntax/boolean.hpp</label>
+        <link refid="boolean_8hpp_source"/>
+        <childnode refid="15458" relation="include">
+        </childnode>
+        <childnode refid="15459" relation="include">
+        </childnode>
+        <childnode refid="15460" relation="include">
+        </childnode>
+        <childnode refid="15468" relation="include">
+        </childnode>
+        <childnode refid="15465" relation="include">
+        </childnode>
+      </node>
+      <node id="15458">
+        <label>boost/io/ios_state.hpp</label>
+      </node>
+      <node id="15504">
+        <label>openscenario_interpreter/utility/pugi_extension.hpp</label>
+        <link refid="pugi__extension_8hpp_source"/>
+        <childnode refid="15505" relation="include">
+        </childnode>
+        <childnode refid="15506" relation="include">
+        </childnode>
+      </node>
+      <node id="15463">
+        <label>utility</label>
+      </node>
+      <node id="15464">
+        <label>sstream</label>
+      </node>
+      <node id="15503">
+        <label>openscenario_interpreter/utility/highlighter.hpp</label>
+        <link refid="highlighter_8hpp_source"/>
+        <childnode refid="15456" relation="include">
+        </childnode>
+        <childnode refid="15487" relation="include">
+        </childnode>
+        <childnode refid="15465" relation="include">
+        </childnode>
+        <childnode refid="15463" relation="include">
+        </childnode>
+      </node>
+      <node id="15478">
+        <label>openscenario_interpreter/type_traits/has_member_function_evaluate.hpp</label>
+        <link refid="has__member__function__evaluate_8hpp_source"/>
+        <childnode refid="15475" relation="include">
+        </childnode>
+      </node>
+      <node id="15462">
+        <label>openscenario_interpreter/functional/fold.hpp</label>
+        <link refid="fold_8hpp_source"/>
+        <childnode refid="15454" relation="include">
+        </childnode>
+        <childnode refid="15463" relation="include">
+        </childnode>
+      </node>
+      <node id="15456">
+        <label>iostream</label>
+      </node>
+      <node id="15500">
+        <label>std_msgs/msg/u_int64.hpp</label>
+      </node>
+      <node id="15507">
+        <label>unordered_map</label>
+      </node>
+      <node id="15482">
+        <label>openscenario_interpreter/type_traits/has_member_function_state.hpp</label>
+        <link refid="has__member__function__state_8hpp_source"/>
+        <childnode refid="15475" relation="include">
+        </childnode>
+      </node>
+      <node id="15473">
+        <label>openscenario_interpreter/type_traits/if_has_member_function_accomplished.hpp</label>
+        <link refid="if__has__member__function__accomplished_8hpp_source"/>
+        <childnode refid="15474" relation="include">
+        </childnode>
+      </node>
+      <node id="15483">
+        <label>openscenario_interpreter/type_traits/if_has_stream_output_operator.hpp</label>
+        <link refid="if__has__stream__output__operator_8hpp_source"/>
+        <childnode refid="15484" relation="include">
+        </childnode>
+        <childnode refid="15487" relation="include">
+        </childnode>
+        <childnode refid="15488" relation="include">
+        </childnode>
+      </node>
+      <node id="15476">
+        <label>type_traits</label>
+      </node>
+      <node id="15485">
+        <label>openscenario_interpreter/console/is_console.hpp</label>
+        <link refid="is__console_8hpp_source"/>
+        <childnode refid="15486" relation="include">
+        </childnode>
+        <childnode refid="15456" relation="include">
+        </childnode>
+      </node>
+      <node id="15501">
+        <label>openscenario_interpreter/syntax/unsigned_short.hpp</label>
+        <link refid="unsigned__short_8hpp_source"/>
+        <childnode refid="15492" relation="include">
+        </childnode>
+        <childnode refid="15502" relation="include">
+        </childnode>
+        <childnode refid="15465" relation="include">
+        </childnode>
+      </node>
+      <node id="15488">
+        <label>openscenario_interpreter/utility/indent.hpp</label>
+        <link refid="indent_8hpp_source"/>
+        <childnode refid="15456" relation="include">
+        </childnode>
+        <childnode refid="15465" relation="include">
+        </childnode>
+      </node>
+      <node id="15472">
+        <label>memory</label>
+      </node>
+      <node id="15489">
+        <label>openscenario_interpreter/utility/pair.hpp</label>
+        <link refid="pair_8hpp_source"/>
+        <childnode refid="15463" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceopenscenario__interpreter">openscenario_interpreter</innernamespace>
+    <innernamespace refid="namespaceopenscenario__interpreter_1_1syntax">openscenario_interpreter::syntax</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="condition__edge_8cpp_1a9c8f164b1af96f53e82a3e558461f33f" prot="public" static="no">
+        <name>BOILERPLATE</name>
+        <param><defname>IDENTIFIER</defname></param>
+        <initializer>if (buffer == #IDENTIFIER) {              \
+    edge.value = ConditionEdge::IDENTIFIER; \
+    return is;                              \
+  }                                         \
+  static_assert(true, &quot;&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/condition_edge.cpp" line="29" column="9"/>
+      </memberdef>
+      <memberdef kind="define" id="condition__edge_8cpp_1a9c8f164b1af96f53e82a3e558461f33f" prot="public" static="no">
+        <name>BOILERPLATE</name>
+        <param><defname>IDENTIFIER</defname></param>
+        <initializer>if (buffer == #IDENTIFIER) {                                            \
+    throw UNSUPPORTED_ENUMERATION_VALUE_SPECIFIED(ConditionEdge, buffer); \
+  }                                                                       \
+  static_assert(true, &quot;&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/condition_edge.cpp" line="41" column="9"/>
+      </memberdef>
+      <memberdef kind="define" id="condition__edge_8cpp_1a9c8f164b1af96f53e82a3e558461f33f" prot="public" static="no">
+        <name>BOILERPLATE</name>
+        <param><defname>IDENTIFIER</defname></param>
+        <initializer>case ConditionEdge::IDENTIFIER: \
+    return os &lt;&lt; #IDENTIFIER;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/condition_edge.cpp" line="58" column="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2015-2020<sp/>Tier<sp/>IV,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openscenario_interpreter/syntax/condition_edge.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceopenscenario__interpreter" kindref="compound">openscenario_interpreter</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">syntax</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">std::istream<sp/>&amp;<sp/>operator&gt;&gt;(std::istream<sp/>&amp;<sp/>is,<sp/>ConditionEdge<sp/>&amp;<sp/>edge)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/>std::string<sp/>buffer;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>is<sp/>&gt;&gt;<sp/>buffer;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BOILERPLATE(IDENTIFIER)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"><sp/><sp/>if<sp/>(buffer<sp/>==<sp/>#IDENTIFIER)<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>edge.value<sp/>=<sp/>ConditionEdge::IDENTIFIER;<sp/>\</highlight></codeline>
+<codeline lineno="32"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>return<sp/>is;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor"><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor"><sp/><sp/>static_assert(true,<sp/>&quot;&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>BOILERPLATE(none);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>BOILERPLATE(sticky);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>BOILERPLATE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BOILERPLATE(IDENTIFIER)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="42"><highlight class="preprocessor"><sp/><sp/>if<sp/>(buffer<sp/>==<sp/>#IDENTIFIER)<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>throw<sp/>UNSUPPORTED_ENUMERATION_VALUE_SPECIFIED(ConditionEdge,<sp/>buffer);<sp/>\</highlight></codeline>
+<codeline lineno="44"><highlight class="preprocessor"><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor"><sp/><sp/>static_assert(true,<sp/>&quot;&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>BOILERPLATE(rising);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>BOILERPLATE(falling);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>BOILERPLATE(risingOrFalling);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>BOILERPLATE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>UNEXPECTED_ENUMERATION_VALUE_SPECIFIED(ConditionEdge,<sp/>buffer);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">std::ostream<sp/>&amp;<sp/>operator&lt;&lt;(std::ostream<sp/>&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ConditionEdge<sp/>&amp;<sp/>datum)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BOILERPLATE(IDENTIFIER)<sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="59"><highlight class="preprocessor"><sp/><sp/>case<sp/>ConditionEdge::IDENTIFIER:<sp/>\</highlight></codeline>
+<codeline lineno="60"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>return<sp/>os<sp/>&lt;&lt;<sp/>#IDENTIFIER;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(datum)<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>BOILERPLATE(rising);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>BOILERPLATE(falling);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>BOILERPLATE(risingOrFalling);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>BOILERPLATE(none);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>BOILERPLATE(sticky);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>UNEXPECTED_ENUMERATION_VALUE_ASSIGNED(ConditionEdge,<sp/>datum);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>BOILERPLATE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>syntax</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>openscenario_interpreter</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/condition_edge.cpp"/>
+  </compounddef>
+</doxygen>

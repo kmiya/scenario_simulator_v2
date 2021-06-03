@@ -707,6 +707,34 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#define-unsupported_setting_detected" class="md-nav__link">
+    define UNSUPPORTED_SETTING_DETECTED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-unsupported_enumeration_value_specified" class="md-nav__link">
+    define UNSUPPORTED_ENUMERATION_VALUE_SPECIFIED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-unsupported_element_specified" class="md-nav__link">
+    define UNSUPPORTED_ELEMENT_SPECIFIED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-unsupported_conversion_detected" class="md-nav__link">
+    define UNSUPPORTED_CONVERSION_DETECTED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#define-unsupported" class="md-nav__link">
     define UNSUPPORTED
   </a>
@@ -714,8 +742,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#define-unimplemented" class="md-nav__link">
-    define UNIMPLEMENTED
+  <a href="#define-unexpected_enumeration_value_specified" class="md-nav__link">
+    define UNEXPECTED_ENUMERATION_VALUE_SPECIFIED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-unexpected_enumeration_value_assigned" class="md-nav__link">
+    define UNEXPECTED_ENUMERATION_VALUE_ASSIGNED
   </a>
   
 </li>
@@ -723,20 +758,6 @@
           <li class="md-nav__item">
   <a href="#define-throw_unsupported_error" class="md-nav__link">
     define THROW_UNSUPPORTED_ERROR
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#define-throw_implementation_fault" class="md-nav__link">
-    define THROW_IMPLEMENTATION_FAULT
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#define-throw" class="md-nav__link">
-    define THROW
   </a>
   
 </li>
@@ -803,10 +824,6 @@
 </tr>
 <tr>
 <td>struct</td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1ImplementationFault">openscenario_interpreter::ImplementationFault</a></strong></td>
-</tr>
-<tr>
-<td>struct</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Error">openscenario_interpreter::Error</a></strong></td>
 </tr>
 <tr>
@@ -826,27 +843,68 @@
 <tbody>
 <tr>
 <td></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/error_8hpp#define-unsupported_setting_detected">UNSUPPORTED_SETTING_DETECTED</a></strong>(ACTION_OR_CONDITION, ELEMENT)</td>
+</tr>
+<tr>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/error_8hpp#define-unsupported_enumeration_value_specified">UNSUPPORTED_ENUMERATION_VALUE_SPECIFIED</a></strong>(TYPE, VALUE)</td>
+</tr>
+<tr>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/error_8hpp#define-unsupported_element_specified">UNSUPPORTED_ELEMENT_SPECIFIED</a></strong>(PARENT, CHILD)</td>
+</tr>
+<tr>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/error_8hpp#define-unsupported_conversion_detected">UNSUPPORTED_CONVERSION_DETECTED</a></strong>(FROM, TO)</td>
+</tr>
+<tr>
+<td></td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/error_8hpp#define-unsupported">UNSUPPORTED</a></strong>()</td>
 </tr>
 <tr>
 <td></td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/error_8hpp#define-unimplemented">UNIMPLEMENTED</a></strong>(NAME)</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/error_8hpp#define-unexpected_enumeration_value_specified">UNEXPECTED_ENUMERATION_VALUE_SPECIFIED</a></strong>(TYPE, VALUE)</td>
+</tr>
+<tr>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/error_8hpp#define-unexpected_enumeration_value_assigned">UNEXPECTED_ENUMERATION_VALUE_ASSIGNED</a></strong>(TYPE, VALUE)</td>
 </tr>
 <tr>
 <td></td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/error_8hpp#define-throw_unsupported_error">THROW_UNSUPPORTED_ERROR</a></strong>(PARENT)</td>
 </tr>
-<tr>
-<td></td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/error_8hpp#define-throw_implementation_fault">THROW_IMPLEMENTATION_FAULT</a></strong>()</td>
-</tr>
-<tr>
-<td></td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/error_8hpp#define-throw">THROW</a></strong>(TYPENAME)</td>
-</tr>
 </tbody>
 </table>
 <h2 id="macro-documentation">Macro Documentation<a class="headerlink" href="#macro-documentation" title="Permanent link">#</a></h2>
+<h3 id="define-unsupported_setting_detected">define UNSUPPORTED_SETTING_DETECTED<a class="headerlink" href="#define-unsupported_setting_detected" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#define UNSUPPORTED_SETTING_DETECTED(</span>
+    <span class="n">ACTION_OR_CONDITION</span><span class="p">,</span>
+    <span class="n">ELEMENT</span>
+<span class="p">)</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="err">#</span><span class="n">ACTION_OR_CONDITION</span> <span class="s">&quot; does not yet supports &quot;</span><span class="p">,</span> <span class="n">ELEMENT</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="define-unsupported_enumeration_value_specified">define UNSUPPORTED_ENUMERATION_VALUE_SPECIFIED<a class="headerlink" href="#define-unsupported_enumeration_value_specified" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#define UNSUPPORTED_ENUMERATION_VALUE_SPECIFIED(</span>
+    <span class="n">TYPE</span><span class="p">,</span>
+    <span class="n">VALUE</span>
+<span class="p">)</span> <span class="n">SyntaxError</span><span class="p">(</span>                                               \
+    <span class="s">&quot;Given value &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">quoted</span><span class="p">(</span><span class="n">VALUE</span><span class="p">),</span>                      \
+    <span class="s">&quot; is valid OpenSCENARIO value of type &quot;</span> <span class="err">#</span><span class="n">TYPE</span> <span class="s">&quot;, but it is not supported yet&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="define-unsupported_element_specified">define UNSUPPORTED_ELEMENT_SPECIFIED<a class="headerlink" href="#define-unsupported_element_specified" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#define UNSUPPORTED_ELEMENT_SPECIFIED(</span>
+    <span class="n">PARENT</span><span class="p">,</span>
+    <span class="n">CHILD</span>
+<span class="p">)</span> <span class="n">SyntaxError</span><span class="p">(</span>                                       \
+    <span class="s">&quot;Given class &quot;</span><span class="p">,</span>                                  \
+    <span class="cp">#CHILD &quot; is valid OpenSCENARIO element of class &quot; #PARENT &quot;, but is not supported yet&quot;)</span>
+</code></pre></div>
+<h3 id="define-unsupported_conversion_detected">define UNSUPPORTED_CONVERSION_DETECTED<a class="headerlink" href="#define-unsupported_conversion_detected" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#define UNSUPPORTED_CONVERSION_DETECTED(</span>
+    <span class="n">FROM</span><span class="p">,</span>
+    <span class="n">TO</span>
+<span class="p">)</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="s">&quot;Converting &quot;</span> <span class="err">#</span><span class="n">FROM</span> <span class="s">&quot; to &quot;</span> <span class="err">#</span><span class="n">TO</span>      \
+              <span class="s">&quot;. This is valid in OpenSCENARIO standard, but is not yet supported&quot;</span><span class="p">)</span>
+</code></pre></div>
 <h3 id="define-unsupported">define UNSUPPORTED<a class="headerlink" href="#define-unsupported" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#define UNSUPPORTED(</span>
 
@@ -858,15 +916,18 @@
     <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span>                                           \
   <span class="p">}</span>
 </code></pre></div>
-<h3 id="define-unimplemented">define UNIMPLEMENTED<a class="headerlink" href="#define-unimplemented" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#define UNIMPLEMENTED(</span>
-    <span class="n">NAME</span>
-<span class="p">)</span> <span class="k">do</span> <span class="p">{</span>                                                                    \
-    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>                                               \
-    <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;given class </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">NAME</span>                                        \
-       <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&#39;</span><span class="s"> is valid OpenSCENARIO element, but is not yet implemented&quot;</span><span class="p">;</span> \
-    <span class="k">throw</span> <span class="n">ImplementationFault</span><span class="p">{</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()};</span>                                  \
-  <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nb">false</span><span class="p">)</span>
+<h3 id="define-unexpected_enumeration_value_specified">define UNEXPECTED_ENUMERATION_VALUE_SPECIFIED<a class="headerlink" href="#define-unexpected_enumeration_value_specified" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#define UNEXPECTED_ENUMERATION_VALUE_SPECIFIED(</span>
+    <span class="n">TYPE</span><span class="p">,</span>
+    <span class="n">VALUE</span>
+<span class="p">)</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="s">&quot;Unexpected value &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">quoted</span><span class="p">(</span><span class="n">VALUE</span><span class="p">),</span> <span class="s">&quot; of type &quot;</span> <span class="err">#</span><span class="n">TYPE</span> <span class="s">&quot; was specified&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="define-unexpected_enumeration_value_assigned">define UNEXPECTED_ENUMERATION_VALUE_ASSIGNED<a class="headerlink" href="#define-unexpected_enumeration_value_assigned" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#define UNEXPECTED_ENUMERATION_VALUE_ASSIGNED(</span>
+    <span class="n">TYPE</span><span class="p">,</span>
+    <span class="n">VALUE</span>
+<span class="p">)</span> <span class="n">SyntaxError</span><span class="p">(</span>                                             \
+    <span class="s">&quot;Unexpected value &quot;</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">TYPE</span><span class="o">::</span><span class="n">value_type</span><span class="o">&gt;</span><span class="p">(</span><span class="n">VALUE</span><span class="p">),</span> <span class="s">&quot; was assigned to type &quot;</span> <span class="err">#</span><span class="n">TYPE</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="define-throw_unsupported_error">define THROW_UNSUPPORTED_ERROR<a class="headerlink" href="#define-throw_unsupported_error" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#define THROW_UNSUPPORTED_ERROR(</span>
@@ -878,20 +939,6 @@
     <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>                                                         \
     <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span>                                                                  \
   <span class="p">}</span>
-</code></pre></div>
-<h3 id="define-throw_implementation_fault">define THROW_IMPLEMENTATION_FAULT<a class="headerlink" href="#define-throw_implementation_fault" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#define THROW_IMPLEMENTATION_FAULT(</span>
-
-<span class="p">)</span> <span class="n">THROW</span><span class="p">(</span><span class="n">ImplementationFault</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="define-throw">define THROW<a class="headerlink" href="#define-throw" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#define THROW(</span>
-    <span class="n">TYPENAME</span>
-<span class="p">)</span> <span class="k">do</span> <span class="p">{</span>                                 \
-    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>            \
-    <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="n">__FILE__</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">__LINE__</span><span class="p">;</span> \
-    <span class="k">throw</span> <span class="n">TYPENAME</span><span class="p">{</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()};</span>          \
-  <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nb">false</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">// Copyright 2015-2020 Tier IV, Inc. All rights reserved.</span>
@@ -911,20 +958,45 @@
 <span class="cp">#ifndef OPENSCENARIO_INTERPRETER__ERROR_HPP_</span>
 <span class="cp">#define OPENSCENARIO_INTERPRETER__ERROR_HPP_</span>
 
+<span class="cp">#include</span> <span class="cpf">&lt;iomanip&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/string/cat.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;scenario_simulator_exception/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
 
 <span class="k">namespace</span> <span class="nn">openscenario_interpreter</span>
 <span class="p">{</span>
+<span class="cp">#define UNSUPPORTED_ENUMERATION_VALUE_SPECIFIED(TYPE, VALUE) \</span>
+<span class="cp">  SyntaxError(                                               \</span>
+<span class="cp">    &quot;Given value &quot;, std::quoted(VALUE),                      \</span>
+<span class="cp">    &quot; is valid OpenSCENARIO value of type &quot; #TYPE &quot;, but it is not supported yet&quot;)</span>
+
+<span class="cp">#define UNEXPECTED_ENUMERATION_VALUE_SPECIFIED(TYPE, VALUE) \</span>
+<span class="cp">  SyntaxError(&quot;Unexpected value &quot;, std::quoted(VALUE), &quot; of type &quot; #TYPE &quot; was specified&quot;)</span>
+
+<span class="cp">#define UNEXPECTED_ENUMERATION_VALUE_ASSIGNED(TYPE, VALUE) \</span>
+<span class="cp">  SyntaxError(                                             \</span>
+<span class="cp">    &quot;Unexpected value &quot;, static_cast&lt;TYPE::value_type&gt;(VALUE), &quot; was assigned to type &quot; #TYPE)</span>
+
+<span class="cp">#define UNSUPPORTED_ELEMENT_SPECIFIED(PARENT, CHILD) \</span>
+<span class="cp">  SyntaxError(                                       \</span>
+<span class="cp">    &quot;Given class &quot;,                                  \</span>
+<span class="cp">    #CHILD &quot; is valid OpenSCENARIO element of class &quot; #PARENT &quot;, but is not supported yet&quot;)</span>
+
+<span class="cp">#define UNSUPPORTED_CONVERSION_DETECTED(FROM, TO) \</span>
+<span class="cp">  SyntaxError(&quot;Converting &quot; #FROM &quot; to &quot; #TO      \</span>
+<span class="cp">              &quot;. This is valid in OpenSCENARIO standard, but is not yet supported&quot;)</span>
+
+<span class="cp">#define UNSUPPORTED_SETTING_DETECTED(ACTION_OR_CONDITION, ELEMENT) \</span>
+<span class="cp">  SyntaxError(#ACTION_OR_CONDITION &quot; does not yet supports &quot;, ELEMENT)</span>
+
 <span class="cm">/* ---- NOTE -------------------------------------------------------------------</span>
 <span class="cm"> *</span>
 <span class="cm"> *  -- Error</span>
 <span class="cm"> *      |-- SyntaxError</span>
 <span class="cm"> *      |    `-- InvalidEnumeration</span>
-<span class="cm"> *      |-- SemanticError</span>
-<span class="cm"> *      `-- ImplementationFault</span>
+<span class="cm"> *      `-- SemanticError</span>
 <span class="cm"> *</span>
 <span class="cm"> * -------------------------------------------------------------------------- */</span>
 <span class="k">struct</span> <span class="nc">Error</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span>
@@ -964,32 +1036,6 @@
     <span class="n">Error</span><span class="p">(</span><span class="s">&quot;connection-error: &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...){}</span>
 <span class="p">};</span>
 
-<span class="k">struct</span> <span class="nc">ImplementationFault</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Error</span>
-<span class="p">{</span>
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">explicit</span> <span class="n">ImplementationFault</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
-  <span class="o">:</span> <span class="n">Error</span><span class="p">(</span><span class="s">&quot;ImplementationFault: &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...)</span>
-  <span class="p">{</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="cp">#define THROW(TYPENAME)                \</span>
-<span class="cp">  do {                                 \</span>
-<span class="cp">    std::stringstream ss{};            \</span>
-<span class="cp">    ss &lt;&lt; __FILE__ &lt;&lt; &quot;:&quot; &lt;&lt; __LINE__; \</span>
-<span class="cp">    throw TYPENAME{ss.str()};          \</span>
-<span class="cp">  } while (false)</span>
-
-<span class="cp">#define THROW_IMPLEMENTATION_FAULT() THROW(ImplementationFault)</span>
-
-<span class="cp">#define UNIMPLEMENTED(NAME)                                               \</span>
-<span class="cp">  do {                                                                    \</span>
-<span class="cp">    std::stringstream ss{};                                               \</span>
-<span class="cp">    ss &lt;&lt; &quot;given class \&#39;&quot; &lt;&lt; NAME                                        \</span>
-<span class="cp">       &lt;&lt; &quot;\&#39; is valid OpenSCENARIO element, but is not yet implemented&quot;; \</span>
-<span class="cp">    throw ImplementationFault{ss.str()};                                  \</span>
-<span class="cp">  } while (false)</span>
-
 <span class="cp">#define THROW_UNSUPPORTED_ERROR(PARENT)                                                  \</span>
 <span class="cp">  [&amp;](auto &amp;&amp; child) {                                                                   \</span>
 <span class="cp">    std::stringstream ss{};                                                              \</span>
@@ -1012,7 +1058,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__ERROR_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  3 June 2021 at 00:24:35 UTC</p>
+<p>Updated on  3 June 2021 at 01:32:11 UTC</p>
                 
                   
                 

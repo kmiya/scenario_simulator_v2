@@ -55,9 +55,9 @@
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/lane_change_action.hpp" line="48" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/lane_change_action.hpp" bodystart="48" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1LaneChangeAction_1a73c1aaf1eff255b5d1055704fefc40e0" prot="public" static="no" mutable="no">
-        <type>std::unordered_map&lt; std::string, <ref refid="structopenscenario__interpreter_1_1syntax_1_1Boolean" kindref="compound">Boolean</ref> &gt;</type>
-        <definition>std::unordered_map&lt;std::string, Boolean&gt; openscenario_interpreter::syntax::LaneChangeAction::accomplishments</definition>
+      <memberdef kind="variable" id="structopenscenario__interpreter_1_1syntax_1_1LaneChangeAction_1a935cc606b0bf612f402e931bdad4d18a" prot="public" static="no" mutable="no">
+        <type>std::unordered_map&lt; String, <ref refid="structopenscenario__interpreter_1_1syntax_1_1Boolean" kindref="compound">Boolean</ref> &gt;</type>
+        <definition>std::unordered_map&lt;String, Boolean&gt; openscenario_interpreter::syntax::LaneChangeAction::accomplishments</definition>
         <argsstring></argsstring>
         <name>accomplishments</name>
         <briefdescription>
@@ -107,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/lane_change_action.hpp" line="62" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/lane_change_action.hpp" bodystart="62" bodyend="74"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/lane_change_action.hpp" line="62" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/lane_change_action.hpp" bodystart="62" bodyend="75"/>
       </memberdef>
       <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1LaneChangeAction_1a932d75ba8902e0efb79cc714ace244f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>auto</type>
@@ -120,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/lane_change_action.hpp" line="76" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/lane_change_action.hpp" bodystart="76" bodyend="89"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/lane_change_action.hpp" line="77" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/lane_change_action.hpp" bodystart="77" bodyend="91"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -128,76 +128,76 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="375">
+      <node id="368">
         <label>std::shared_ptr&lt; Expression  &gt;</label>
       </node>
-      <node id="377">
+      <node id="370">
         <label>openscenario_interpreter::syntax::TransitionDynamics</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1TransitionDynamics"/>
-        <childnode refid="378" relation="usage">
+        <childnode refid="371" relation="usage">
           <edgelabel>dynamics_dimension</edgelabel>
         </childnode>
-        <childnode refid="379" relation="usage">
+        <childnode refid="372" relation="usage">
           <edgelabel>value</edgelabel>
         </childnode>
-        <childnode refid="381" relation="usage">
+        <childnode refid="374" relation="usage">
           <edgelabel>dynamics_shape</edgelabel>
         </childnode>
       </node>
-      <node id="381">
+      <node id="374">
         <label>openscenario_interpreter::syntax::DynamicsShape</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1DynamicsShape"/>
       </node>
-      <node id="379">
+      <node id="372">
         <label>openscenario_interpreter::syntax::Double</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1Double"/>
-        <childnode refid="380" relation="public-inheritance">
+        <childnode refid="373" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="378">
+      <node id="371">
         <label>openscenario_interpreter::syntax::DynamicsDimension</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1DynamicsDimension"/>
       </node>
-      <node id="380">
+      <node id="373">
         <label>std_msgs::msg::Float64</label>
       </node>
-      <node id="372">
+      <node id="365">
         <label>openscenario_interpreter::syntax::LaneChangeAction</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1LaneChangeAction"/>
-        <childnode refid="373" relation="usage">
+        <childnode refid="366" relation="usage">
           <edgelabel>lane_change_target</edgelabel>
         </childnode>
-        <childnode refid="376" relation="usage">
+        <childnode refid="369" relation="usage">
           <edgelabel>inner_scope</edgelabel>
         </childnode>
-        <childnode refid="377" relation="usage">
+        <childnode refid="370" relation="usage">
           <edgelabel>lane_change_action_dynamics</edgelabel>
         </childnode>
-        <childnode refid="379" relation="usage">
+        <childnode refid="372" relation="usage">
           <edgelabel>target_lane_offset</edgelabel>
         </childnode>
       </node>
-      <node id="373">
+      <node id="366">
         <label>openscenario_interpreter::syntax::LaneChangeTarget</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1LaneChangeTarget"/>
-        <childnode refid="374" relation="public-inheritance">
+        <childnode refid="367" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="374">
+      <node id="367">
         <label>Element</label>
         <link refid="classopenscenario__interpreter_1_1Pointer"/>
-        <childnode refid="375" relation="public-inheritance">
+        <childnode refid="368" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="376">
+      <node id="369">
         <label>openscenario_interpreter::Scope</label>
         <link refid="structopenscenario__interpreter_1_1Scope"/>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/lane_change_action.hpp" line="41" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/lane_change_action.hpp" bodystart="40" bodyend="90"/>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/lane_change_action.hpp" line="41" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/lane_change_action.hpp" bodystart="40" bodyend="92"/>
     <listofallmembers>
       <member refid="structopenscenario__interpreter_1_1syntax_1_1LaneChangeAction_1a932d75ba8902e0efb79cc714ace244f9" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::LaneChangeAction</scope><name>accomplished</name></member>
-      <member refid="structopenscenario__interpreter_1_1syntax_1_1LaneChangeAction_1a73c1aaf1eff255b5d1055704fefc40e0" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::LaneChangeAction</scope><name>accomplishments</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1LaneChangeAction_1a935cc606b0bf612f402e931bdad4d18a" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::LaneChangeAction</scope><name>accomplishments</name></member>
       <member refid="structopenscenario__interpreter_1_1syntax_1_1LaneChangeAction_1a47d6261b4fd17ffa2129fa52795cda43" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::LaneChangeAction</scope><name>inner_scope</name></member>
       <member refid="structopenscenario__interpreter_1_1syntax_1_1LaneChangeAction_1ae917a5fcfe946b9bc39e7808c11d212b" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::LaneChangeAction</scope><name>lane_change_action_dynamics</name></member>
       <member refid="structopenscenario__interpreter_1_1syntax_1_1LaneChangeAction_1ace9908f4b301b30008b9ce4d6fe1618c" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::LaneChangeAction</scope><name>lane_change_target</name></member>

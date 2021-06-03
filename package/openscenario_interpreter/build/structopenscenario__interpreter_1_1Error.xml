@@ -4,7 +4,6 @@
     <compoundname>openscenario_interpreter::Error</compoundname>
     <basecompoundref prot="public" virt="non-virtual">runtime_error</basecompoundref>
     <derivedcompoundref refid="structopenscenario__interpreter_1_1ConnectionError" prot="public" virt="non-virtual">openscenario_interpreter::ConnectionError</derivedcompoundref>
-    <derivedcompoundref refid="structopenscenario__interpreter_1_1ImplementationFault" prot="public" virt="non-virtual">openscenario_interpreter::ImplementationFault</derivedcompoundref>
     <derivedcompoundref refid="structopenscenario__interpreter_1_1SemanticError" prot="public" virt="non-virtual">openscenario_interpreter::SemanticError</derivedcompoundref>
     <derivedcompoundref refid="structopenscenario__interpreter_1_1SyntaxError" prot="public" virt="non-virtual">openscenario_interpreter::SyntaxError</derivedcompoundref>
       <sectiondef kind="public-func">
@@ -30,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" line="37" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" bodystart="37" bodyend="40"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" line="62" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" bodystart="62" bodyend="65"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -38,7 +37,7 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="243">
+      <node id="242">
         <label>openscenario_interpreter::SyntaxError</label>
         <link refid="structopenscenario__interpreter_1_1SyntaxError"/>
         <childnode refid="238" relation="public-inheritance">
@@ -47,19 +46,13 @@
       <node id="239">
         <label>std::runtime_error</label>
       </node>
-      <node id="241">
-        <label>openscenario_interpreter::ImplementationFault</label>
-        <link refid="structopenscenario__interpreter_1_1ImplementationFault"/>
-        <childnode refid="238" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="238">
         <label>openscenario_interpreter::Error</label>
         <link refid="structopenscenario__interpreter_1_1Error"/>
         <childnode refid="239" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="242">
+      <node id="241">
         <label>openscenario_interpreter::SemanticError</label>
         <link refid="structopenscenario__interpreter_1_1SemanticError"/>
         <childnode refid="238" relation="public-inheritance">
@@ -73,17 +66,17 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="245">
+      <node id="244">
         <label>std::runtime_error</label>
       </node>
-      <node id="244">
+      <node id="243">
         <label>openscenario_interpreter::Error</label>
         <link refid="structopenscenario__interpreter_1_1Error"/>
-        <childnode refid="245" relation="public-inheritance">
+        <childnode refid="244" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" line="35" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" bodystart="34" bodyend="41"/>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" line="60" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" bodystart="59" bodyend="66"/>
     <listofallmembers>
       <member refid="structopenscenario__interpreter_1_1Error_1a43034fc5fae6fb536088a15849868b97" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Error</scope><name>Error</name></member>
     </listofallmembers>

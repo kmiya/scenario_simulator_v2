@@ -812,7 +812,7 @@
 
   <span class="kt">bool</span> <span class="k">operator</span><span class="p">()(</span><span class="k">const</span> <span class="n">RelativeWorldPosition</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">TriggeringEntity</span> <span class="o">&amp;</span><span class="p">)</span> <span class="k">const</span>
   <span class="p">{</span>
-    <span class="n">THROW</span><span class="p">(</span><span class="n">ImplementationFault</span><span class="p">);</span>
+    <span class="k">throw</span> <span class="n">UNSUPPORTED_SETTING_DETECTED</span><span class="p">(</span><span class="n">ReachPositionCondition</span><span class="p">,</span> <span class="n">position</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">name</span><span class="p">());</span>
   <span class="p">}</span>
 
   <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="k">operator</span><span class="p">()(</span>
@@ -842,7 +842,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__REACH_POSITION_CONDITION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  3 June 2021 at 00:24:35 UTC</p>
+<p>Updated on  3 June 2021 at 01:32:11 UTC</p>
                 
                   
                 

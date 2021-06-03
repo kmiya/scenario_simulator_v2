@@ -769,6 +769,7 @@
 <span class="cp">#ifndef OPENSCENARIO_INTERPRETER__TYPE_TRAITS__IF_HAS_MEMBER_FUNCTION_STATE_HPP_</span>
 <span class="cp">#define OPENSCENARIO_INTERPRETER__TYPE_TRAITS__IF_HAS_MEMBER_FUNCTION_STATE_HPP_</span>
 
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/error.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/type_traits/has_member_function_state.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;sstream&gt;</span><span class="cp"></span>
 
@@ -782,9 +783,7 @@
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Result</span><span class="o">&gt;</span>
   <span class="k">static</span> <span class="k">const</span> <span class="n">Result</span> <span class="o">&amp;</span> <span class="n">callIt</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>
-    <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;class &quot;</span> <span class="o">&lt;&lt;</span> <span class="k">typeid</span><span class="p">(</span><span class="n">T</span><span class="p">).</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; is not has member function &#39;state&#39;&quot;</span><span class="p">;</span>
-    <span class="k">throw</span> <span class="n">ImplementationFault</span><span class="p">{</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()};</span>
+    <span class="k">throw</span> <span class="n">SemanticError</span><span class="p">(</span><span class="s">&quot;Class &quot;</span><span class="p">,</span> <span class="k">typeid</span><span class="p">(</span><span class="n">T</span><span class="p">).</span><span class="n">name</span><span class="p">(),</span> <span class="s">&quot; is not an StoryboardElement&quot;</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">};</span>
 
@@ -803,7 +802,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__TYPE_TRAITS__IF_HAS_MEMBER_FUNCTION_STATE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  3 June 2021 at 00:24:35 UTC</p>
+<p>Updated on  3 June 2021 at 01:32:11 UTC</p>
                 
                   
                 

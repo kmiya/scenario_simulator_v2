@@ -770,10 +770,10 @@
 <span class="cp">#define OPENSCENARIO_INTERPRETER__SYNTAX__CUSTOM_COMMAND_ACTION_HPP_</span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;iterator&gt;</span><span class="c1">  // std::distance</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/error.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/posix/fork_exec.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/procedure.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/reader/content.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/string/cat.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="c1">  // std::runtime_error</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;type_traits&gt;</span><span class="c1">  // std::true_type</span><span class="cp"></span>
@@ -845,7 +845,7 @@
 
   <span class="k">static</span> <span class="kt">int</span> <span class="nf">error</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">Scope</span> <span class="o">&amp;</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">cat</span><span class="p">(</span><span class="n">__FILE__</span><span class="p">,</span> <span class="s">&quot;:&quot;</span><span class="p">,</span> <span class="n">__LINE__</span><span class="p">));</span>
+    <span class="k">throw</span> <span class="n">Error</span><span class="p">(</span><span class="n">__FILE__</span><span class="p">,</span> <span class="s">&quot;:&quot;</span><span class="p">,</span> <span class="n">__LINE__</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="k">static</span> <span class="kt">int</span> <span class="nf">segv</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">Scope</span> <span class="o">&amp;</span><span class="p">)</span>
@@ -932,7 +932,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__CUSTOM_COMMAND_ACTION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  4 June 2021 at 06:50:12 UTC</p>
+<p>Updated on  4 June 2021 at 12:50:55 UTC</p>
                 
                   
                 

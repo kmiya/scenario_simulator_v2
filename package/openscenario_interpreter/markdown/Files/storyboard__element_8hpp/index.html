@@ -968,10 +968,9 @@
       <span class="k">return</span> <span class="n">inner_scope</span><span class="p">.</span><span class="n">storyboard_elements</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span>
                <span class="n">make</span><span class="o">&lt;</span><span class="n">U</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">inner_scope</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>
-      <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;detected redefinition of StoryboardElement named </span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&#39;</span><span class="s"> &quot;</span><span class="p">;</span>
-      <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;(class &quot;</span> <span class="o">&lt;&lt;</span> <span class="k">typeid</span><span class="p">(</span><span class="n">U</span><span class="p">).</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;)&quot;</span><span class="p">;</span>
-      <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
+      <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">(</span>
+        <span class="s">&quot;Detected redefinition of StoryboardElement named &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">quoted</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="s">&quot; (class &quot;</span><span class="p">,</span>
+        <span class="k">typeid</span><span class="p">(</span><span class="n">U</span><span class="p">).</span><span class="n">name</span><span class="p">(),</span> <span class="s">&quot;)&quot;</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
@@ -1153,7 +1152,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__STORYBOARD_ELEMENT_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  4 June 2021 at 06:50:12 UTC</p>
+<p>Updated on  4 June 2021 at 12:50:55 UTC</p>
                 
                   
                 

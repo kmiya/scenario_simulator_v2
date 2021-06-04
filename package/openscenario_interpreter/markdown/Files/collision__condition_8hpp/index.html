@@ -796,10 +796,13 @@
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
   <span class="k">explicit</span> <span class="n">CollisionCondition</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">scope</span><span class="p">,</span> <span class="k">const</span> <span class="n">TriggeringEntities</span> <span class="o">&amp;</span> <span class="n">triggering_entities</span><span class="p">)</span>
-  <span class="o">:</span> <span class="n">given</span><span class="p">(</span><span class="n">choice</span><span class="p">(</span>
-      <span class="n">node</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;EntityRef&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">make</span><span class="o">&lt;</span><span class="n">EntityRef</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">scope</span><span class="p">);</span> <span class="p">}),</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;ByType&quot;</span><span class="p">,</span> <span class="n">UNSUPPORTED</span><span class="p">()))),</span>
+  <span class="c1">// clang-format off</span>
+  <span class="o">:</span> <span class="n">given</span><span class="p">(</span>
+      <span class="n">choice</span><span class="p">(</span><span class="n">node</span><span class="p">,</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;EntityRef&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">make</span><span class="o">&lt;</span><span class="n">EntityRef</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">scope</span><span class="p">);</span> <span class="p">}),</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;ByType&quot;</span><span class="p">,</span>    <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span> <span class="k">throw</span> <span class="n">UNSUPPORTED_ELEMENT_SPECIFIED</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">name</span><span class="p">());</span> <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span> <span class="p">}))),</span>
     <span class="n">for_each</span><span class="p">(</span><span class="n">triggering_entities</span><span class="p">)</span>
+  <span class="c1">// clang-format on</span>
   <span class="p">{</span>
   <span class="p">}</span>
 
@@ -820,7 +823,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__COLLISION_CONDITION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  4 June 2021 at 06:50:12 UTC</p>
+<p>Updated on  4 June 2021 at 12:50:55 UTC</p>
                 
                   
                 

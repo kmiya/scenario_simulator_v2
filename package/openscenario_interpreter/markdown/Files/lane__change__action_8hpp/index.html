@@ -778,13 +778,13 @@
 <span class="p">{</span>
 <span class="cm">/* ---- LaneChangeAction -------------------------------------------------------</span>
 <span class="cm"> *</span>
-<span class="cm"> * &lt;xsd:complexType name=&quot;LaneChangeAction&quot;&gt;</span>
-<span class="cm"> *   &lt;xsd:all&gt;</span>
-<span class="cm"> *     &lt;xsd:element name=&quot;LaneChangeActionDynamics&quot; type=&quot;TransitionDynamics&quot;/&gt;</span>
-<span class="cm"> *     &lt;xsd:element name=&quot;LaneChangeTarget&quot; type=&quot;LaneChangeTarget&quot;/&gt;</span>
-<span class="cm"> *   &lt;/xsd:all&gt;</span>
-<span class="cm"> *   &lt;xsd:attribute name=&quot;targetLaneOffset&quot; type=&quot;Double&quot; use=&quot;optional&quot;/&gt;</span>
-<span class="cm"> * &lt;/xsd:complexType&gt;</span>
+<span class="cm"> *  &lt;xsd:complexType name=&quot;LaneChangeAction&quot;&gt;</span>
+<span class="cm"> *    &lt;xsd:all&gt;</span>
+<span class="cm"> *      &lt;xsd:element name=&quot;LaneChangeActionDynamics&quot; type=&quot;TransitionDynamics&quot;/&gt;</span>
+<span class="cm"> *      &lt;xsd:element name=&quot;LaneChangeTarget&quot; type=&quot;LaneChangeTarget&quot;/&gt;</span>
+<span class="cm"> *    &lt;/xsd:all&gt;</span>
+<span class="cm"> *    &lt;xsd:attribute name=&quot;targetLaneOffset&quot; type=&quot;Double&quot; use=&quot;optional&quot;/&gt;</span>
+<span class="cm"> *  &lt;/xsd:complexType&gt;</span>
 <span class="cm"> *</span>
 <span class="cm"> * -------------------------------------------------------------------------- */</span>
 <span class="k">struct</span> <span class="nc">LaneChangeAction</span>
@@ -820,7 +820,7 @@
       <span class="p">}</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="c1">// NOTE: Specifying an unsupported element is an error in the constructor, so this line cannot be reached.</span>
-      <span class="k">throw</span> <span class="n">UNSUPPORTED_ELEMENT_SPECIFIED</span><span class="p">(</span><span class="n">LaneChangeTarget</span><span class="p">,</span> <span class="n">lane_change_target</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">name</span><span class="p">());</span>
+      <span class="k">throw</span> <span class="n">UNSUPPORTED_ELEMENT_SPECIFIED</span><span class="p">(</span><span class="n">lane_change_target</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">name</span><span class="p">());</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
@@ -836,7 +836,7 @@
       <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">all_of</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">accomplishments</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">accomplishments</span><span class="p">),</span> <span class="n">cdr</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="c1">// NOTE: Specifying an unsupported element is an error in the constructor, so this line cannot be reached.</span>
-      <span class="k">throw</span> <span class="n">UNSUPPORTED_ELEMENT_SPECIFIED</span><span class="p">(</span><span class="n">LaneChangeTarget</span><span class="p">,</span> <span class="n">lane_change_target</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">name</span><span class="p">());</span>
+      <span class="k">throw</span> <span class="n">UNSUPPORTED_ELEMENT_SPECIFIED</span><span class="p">(</span><span class="n">lane_change_target</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">name</span><span class="p">());</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">};</span>
@@ -846,7 +846,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__LANE_CHANGE_ACTION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  4 June 2021 at 06:50:12 UTC</p>
+<p>Updated on  4 June 2021 at 12:50:55 UTC</p>
                 
                   
                 

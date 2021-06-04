@@ -2,14 +2,10 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="namespaceopenscenario__interpreter" kind="namespace" language="C++">
     <compoundname>openscenario_interpreter</compoundname>
-    <innerclass refid="structopenscenario__interpreter_1_1ConnectionError" prot="public">openscenario_interpreter::ConnectionError</innerclass>
-    <innerclass refid="structopenscenario__interpreter_1_1Error" prot="public">openscenario_interpreter::Error</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1Expression" prot="public">openscenario_interpreter::Expression</innerclass>
     <innerclass refid="classopenscenario__interpreter_1_1Interpreter" prot="public">openscenario_interpreter::Interpreter</innerclass>
     <innerclass refid="classopenscenario__interpreter_1_1Pointer" prot="public">openscenario_interpreter::Pointer</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1Scope" prot="public">openscenario_interpreter::Scope</innerclass>
-    <innerclass refid="structopenscenario__interpreter_1_1SemanticError" prot="public">openscenario_interpreter::SemanticError</innerclass>
-    <innerclass refid="structopenscenario__interpreter_1_1SyntaxError" prot="public">openscenario_interpreter::SyntaxError</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1Unspecified" prot="public">openscenario_interpreter::Unspecified</innerclass>
     <innernamespace refid="namespaceopenscenario__interpreter_1_1concepts">openscenario_interpreter::concepts</innernamespace>
     <innernamespace refid="namespaceopenscenario__interpreter_1_1console">openscenario_interpreter::console</innernamespace>
@@ -22,6 +18,19 @@
     <innernamespace refid="namespaceopenscenario__interpreter_1_1type__traits">openscenario_interpreter::type_traits</innernamespace>
     <innernamespace refid="namespaceopenscenario__interpreter_1_1utility">openscenario_interpreter::utility</innernamespace>
       <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="error_8hpp_1a52cd5614476fd024c0966e95f03c91e0" prot="public" static="no">
+        <type>std::exception</type>
+        <definition>using openscenario_interpreter::InternalError = typedef std::exception</definition>
+        <argsstring></argsstring>
+        <name>InternalError</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" line="25" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/error.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="typedef" id="object_8hpp_1a38820d6376e3c1e298f59c9684d04991" prot="public" static="no">
         <type><ref refid="classopenscenario__interpreter_1_1Pointer" kindref="compound">Pointer</ref>&lt; <ref refid="structopenscenario__interpreter_1_1Expression" kindref="compound">Expression</ref> &gt;</type>
         <definition>using openscenario_interpreter::Element = typedef Pointer&lt;Expression&gt;</definition>

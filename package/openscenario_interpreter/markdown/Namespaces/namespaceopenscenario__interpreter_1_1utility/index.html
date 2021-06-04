@@ -728,6 +728,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-demangle" class="md-nav__link">
+    function demangle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-demangle_1" class="md-nav__link">
+    function demangle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-compose" class="md-nav__link">
     function COMPOSE
   </a>
@@ -853,6 +867,14 @@
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1utility#function-highlight">highlight</a></strong>(const std::string &amp; name, const T &amp; value)</td>
 </tr>
 <tr>
+<td>auto</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1utility#function-demangle">demangle</a></strong>(const char * name)</td>
+</tr>
+<tr>
+<td>auto</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1utility#function-demangle">demangle</a></strong>(const std::type_info &amp; info)</td>
+</tr>
+<tr>
 <td></td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1utility#function-compose">COMPOSE</a></strong>(caar , car , car )</td>
 </tr>
@@ -916,6 +938,16 @@
     <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span> <span class="n">value</span>
 <span class="p">)</span>
 </code></pre></div>
+<h3 id="function-demangle">function demangle<a class="headerlink" href="#function-demangle" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span> <span class="n">demangle</span><span class="p">(</span>
+    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">name</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-demangle_1">function demangle<a class="headerlink" href="#function-demangle_1" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span> <span class="n">demangle</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">type_info</span> <span class="o">&amp;</span> <span class="n">info</span>
+<span class="p">)</span>
+</code></pre></div>
 <h3 id="function-compose">function COMPOSE<a class="headerlink" href="#function-compose" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">COMPOSE</span><span class="p">(</span>
     <span class="n">caar</span> <span class="p">,</span>
@@ -955,7 +987,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">auto</span> <span class="n">car</span> <span class="o">=</span> <span class="p">[](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">pare</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pare</span><span class="p">);</span> <span class="p">};</span>
 </code></pre></div>
 <hr />
-<p>Updated on  4 June 2021 at 06:50:11 UTC</p>
+<p>Updated on  4 June 2021 at 12:50:55 UTC</p>
                 
                   
                 

@@ -1993,12 +1993,12 @@
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1syntax#function-operator&gt;&gt;">operator&gt;&gt;</a></strong>(std::istream &amp; is, <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1TriggeringEntitiesRule">TriggeringEntitiesRule</a> &amp; rule)</td>
 </tr>
 <tr>
-<td>template \&lt;typename... Ts></br>decltype(auto)</td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1syntax#function-operator&gt;&gt;">operator&gt;&gt;</a></strong>(std::basic_istream&lt; Ts... &gt; &amp; is, <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1UnsignedInteger">UnsignedInteger</a> &amp; rhs)</td>
+<td>std::istream &amp;</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1syntax#function-operator&gt;&gt;">operator&gt;&gt;</a></strong>(std::istream &amp; is, <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1UnsignedInteger">UnsignedInteger</a> &amp; datum)</td>
 </tr>
 <tr>
-<td>template \&lt;typename... Ts></br>decltype(auto)</td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1syntax#function-operator&gt;&gt;">operator&gt;&gt;</a></strong>(std::basic_istream&lt; Ts... &gt; &amp; is, <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1UnsignedShort">UnsignedShort</a> &amp; rhs)</td>
+<td>std::istream &amp;</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1syntax#function-operator&gt;&gt;">operator&gt;&gt;</a></strong>(std::istream &amp; is, <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1UnsignedShort">UnsignedShort</a> &amp; datum)</td>
 </tr>
 <tr>
 <td>std::istream &amp;</td>
@@ -2145,12 +2145,12 @@
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1syntax#function-operator&lt;&lt;">operator&lt;&lt;</a></strong>(std::ostream &amp; os, const <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1TriggeringEntitiesRule">TriggeringEntitiesRule</a> &amp; datum)</td>
 </tr>
 <tr>
-<td>template \&lt;typename... Ts></br>decltype(auto)</td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1syntax#function-operator&lt;&lt;">operator&lt;&lt;</a></strong>(std::basic_ostream&lt; Ts... &gt; &amp; os, const <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1UnsignedInteger">UnsignedInteger</a> &amp; rhs)</td>
+<td>std::ostream &amp;</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1syntax#function-operator&lt;&lt;">operator&lt;&lt;</a></strong>(std::ostream &amp; os, const <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1UnsignedInteger">UnsignedInteger</a> &amp; datum)</td>
 </tr>
 <tr>
-<td>template \&lt;typename... Ts></br>decltype(auto)</td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1syntax#function-operator&lt;&lt;">operator&lt;&lt;</a></strong>(std::basic_ostream&lt; Ts... &gt; &amp; os, const <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1UnsignedShort">UnsignedShort</a> &amp; rhs)</td>
+<td>std::ostream &amp;</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1syntax#function-operator&lt;&lt;">operator&lt;&lt;</a></strong>(std::ostream &amp; os, const <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1UnsignedShort">UnsignedShort</a> &amp; datum)</td>
 </tr>
 <tr>
 <td>std::ostream &amp;</td>
@@ -2369,17 +2369,15 @@
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-operator_20">function operator&gt;&gt;<a class="headerlink" href="#function-operator_20" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">basic_istream</span><span class="o">&lt;</span> <span class="n">Ts</span><span class="p">...</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">is</span><span class="p">,</span>
-    <span class="n">UnsignedInteger</span> <span class="o">&amp;</span> <span class="n">rhs</span>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="n">is</span><span class="p">,</span>
+    <span class="n">UnsignedInteger</span> <span class="o">&amp;</span> <span class="n">datum</span>
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-operator_21">function operator&gt;&gt;<a class="headerlink" href="#function-operator_21" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">basic_istream</span><span class="o">&lt;</span> <span class="n">Ts</span><span class="p">...</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">is</span><span class="p">,</span>
-    <span class="n">UnsignedShort</span> <span class="o">&amp;</span> <span class="n">rhs</span>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="n">is</span><span class="p">,</span>
+    <span class="n">UnsignedShort</span> <span class="o">&amp;</span> <span class="n">datum</span>
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-operator_22">function operator&gt;&gt;<a class="headerlink" href="#function-operator_22" title="Permanent link">#</a></h3>
@@ -2600,17 +2598,15 @@
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-operator_58">function operator&lt;&lt;<a class="headerlink" href="#function-operator_58" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">basic_ostream</span><span class="o">&lt;</span> <span class="n">Ts</span><span class="p">...</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">UnsignedInteger</span> <span class="o">&amp;</span> <span class="n">rhs</span>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">UnsignedInteger</span> <span class="o">&amp;</span> <span class="n">datum</span>
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-operator_59">function operator&lt;&lt;<a class="headerlink" href="#function-operator_59" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">basic_ostream</span><span class="o">&lt;</span> <span class="n">Ts</span><span class="p">...</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">UnsignedShort</span> <span class="o">&amp;</span> <span class="n">rhs</span>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">UnsignedShort</span> <span class="o">&amp;</span> <span class="n">datum</span>
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-operator_60">function operator&lt;&lt;<a class="headerlink" href="#function-operator_60" title="Permanent link">#</a></h3>
@@ -2699,7 +2695,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">Element</span> <span class="n">complete_state</span> <span class="o">=</span> <span class="n">make</span><span class="o">&lt;</span><span class="p">[</span><span class="n">StoryboardElementState</span><span class="p">](</span><span class="o">/</span><span class="n">scenario_simulator_v2</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">openscenario_interpreter</span><span class="o">/</span><span class="n">markdown</span><span class="o">/</span><span class="n">Classes</span><span class="o">/</span><span class="n">structopenscenario__interpreter_1_1syntax_1_1StoryboardElementState</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">StoryboardElementState</span><span class="o">::</span>  <span class="n">completeState</span><span class="p">);</span>
 </code></pre></div>
 <hr />
-<p>Updated on  4 June 2021 at 06:50:12 UTC</p>
+<p>Updated on  4 June 2021 at 12:50:55 UTC</p>
                 
                   
                 

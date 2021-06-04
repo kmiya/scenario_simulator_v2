@@ -707,13 +707,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#define-element" class="md-nav__link">
-    define ELEMENT
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#define-boilerplate" class="md-nav__link">
     define BOILERPLATE
   </a>
@@ -792,21 +785,11 @@
 <tbody>
 <tr>
 <td></td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/position_8hpp#define-element">ELEMENT</a></strong>(TYPE)</td>
-</tr>
-<tr>
-<td></td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/position_8hpp#define-boilerplate">BOILERPLATE</a></strong>(TYPE)</td>
 </tr>
 </tbody>
 </table>
 <h2 id="macro-documentation">Macro Documentation<a class="headerlink" href="#macro-documentation" title="Permanent link">#</a></h2>
-<h3 id="define-element">define ELEMENT<a class="headerlink" href="#define-element" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#define ELEMENT(</span>
-    <span class="n">TYPE</span>
-<span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span>     \
-    <span class="cp">#TYPE, [&amp;](auto &amp;&amp; node) { return make&lt;TYPE&gt;(node, std::forward&lt;decltype(xs)&gt;(xs)...); })</span>
-</code></pre></div>
 <h3 id="define-boilerplate">define BOILERPLATE<a class="headerlink" href="#define-boilerplate" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#define BOILERPLATE(</span>
     <span class="n">TYPE</span>
@@ -861,10 +844,6 @@
 <span class="cm"> * &lt;/xsd:complexType&gt;</span>
 <span class="cm"> *</span>
 <span class="cm"> * -------------------------------------------------------------------------- */</span>
-<span class="cp">#define ELEMENT(TYPE) \</span>
-<span class="cp">  std::make_pair(     \</span>
-<span class="cp">    #TYPE, [&amp;](auto &amp;&amp; node) { return make&lt;TYPE&gt;(node, std::forward&lt;decltype(xs)&gt;(xs)...); })</span>
-
 <span class="k">struct</span> <span class="nc">Position</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Element</span>
 <span class="p">{</span>
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">XML</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
@@ -874,12 +853,12 @@
       <span class="n">choice</span><span class="p">(</span><span class="n">node</span><span class="p">,</span>
         <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span>         <span class="s">&quot;WorldPosition&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">make</span><span class="o">&lt;</span>        <span class="n">WorldPosition</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span> <span class="p">}),</span>
         <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span> <span class="s">&quot;RelativeWorldPosition&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">make</span><span class="o">&lt;</span><span class="n">RelativeWorldPosition</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span> <span class="p">}),</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;RelativeObjectPosition&quot;</span><span class="p">,</span> <span class="n">UNSUPPORTED</span><span class="p">()),</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span>          <span class="s">&quot;RoadPosition&quot;</span><span class="p">,</span> <span class="n">UNSUPPORTED</span><span class="p">()),</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span>  <span class="s">&quot;RelativeRoadPosition&quot;</span><span class="p">,</span> <span class="n">UNSUPPORTED</span><span class="p">()),</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;RelativeObjectPosition&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span> <span class="k">throw</span> <span class="n">UNSUPPORTED_ELEMENT_SPECIFIED</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">name</span><span class="p">());</span> <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span> <span class="p">}),</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span>          <span class="s">&quot;RoadPosition&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span> <span class="k">throw</span> <span class="n">UNSUPPORTED_ELEMENT_SPECIFIED</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">name</span><span class="p">());</span> <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span> <span class="p">}),</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span>  <span class="s">&quot;RelativeRoadPosition&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span> <span class="k">throw</span> <span class="n">UNSUPPORTED_ELEMENT_SPECIFIED</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">name</span><span class="p">());</span> <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span> <span class="p">}),</span>
         <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span>          <span class="s">&quot;LanePosition&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">make</span><span class="o">&lt;</span>         <span class="n">LanePosition</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span> <span class="p">}),</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span>  <span class="s">&quot;RelativeLanePosition&quot;</span><span class="p">,</span> <span class="n">UNSUPPORTED</span><span class="p">()),</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span>         <span class="s">&quot;RoutePosition&quot;</span><span class="p">,</span> <span class="n">UNSUPPORTED</span><span class="p">())))</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span>  <span class="s">&quot;RelativeLanePosition&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span> <span class="k">throw</span> <span class="n">UNSUPPORTED_ELEMENT_SPECIFIED</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">name</span><span class="p">());</span> <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span> <span class="p">}),</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span>         <span class="s">&quot;RoutePosition&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span> <span class="k">throw</span> <span class="n">UNSUPPORTED_ELEMENT_SPECIFIED</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">name</span><span class="p">());</span> <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span> <span class="p">})))</span>
   <span class="c1">// clang-format on</span>
   <span class="p">{</span>
   <span class="p">}</span>
@@ -892,12 +871,10 @@
       <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span><span class="o">&gt;</span><span class="p">(</span><span class="n">as</span><span class="o">&lt;</span><span class="n">LanePosition</span><span class="o">&gt;</span><span class="p">());</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="c1">// NOTE: Specifying an unsupported element is an error in the constructor, so this line cannot be reached.</span>
-      <span class="k">throw</span> <span class="n">UNSUPPORTED_ELEMENT_SPECIFIED</span><span class="p">(</span><span class="n">Position</span><span class="p">,</span> <span class="n">type</span><span class="p">().</span><span class="n">name</span><span class="p">());</span>
+      <span class="k">throw</span> <span class="n">UNSUPPORTED_ELEMENT_SPECIFIED</span><span class="p">(</span><span class="n">type</span><span class="p">().</span><span class="n">name</span><span class="p">());</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">};</span>
-
-<span class="cp">#undef ELEMENT</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">R</span> <span class="o">=</span> <span class="kt">void</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">F</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
 <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">apply</span><span class="p">(</span><span class="n">F</span> <span class="o">&amp;&amp;</span> <span class="n">f</span><span class="p">,</span> <span class="k">const</span> <span class="n">Position</span> <span class="o">&amp;</span> <span class="n">position</span><span class="p">,</span> <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
@@ -936,7 +913,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__POSITION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  4 June 2021 at 06:50:12 UTC</p>
+<p>Updated on  4 June 2021 at 12:50:55 UTC</p>
                 
                   
                 

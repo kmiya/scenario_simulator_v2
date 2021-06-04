@@ -6,88 +6,66 @@
     <includes refid="color_8hpp" local="no">openscenario_interpreter/syntax/color.hpp</includes>
     <includes local="no">unordered_map</includes>
     <incdepgraph>
-      <node id="15406">
+      <node id="14801">
         <label>scenario_simulator_exception/exception.hpp</label>
       </node>
-      <node id="15402">
-        <label>functional</label>
-      </node>
-      <node id="15399">
+      <node id="14797">
         <label>iomanip</label>
       </node>
-      <node id="15400">
-        <label>openscenario_interpreter/string/cat.hpp</label>
-        <link refid="cat_8hpp_source"/>
-        <childnode refid="15401" relation="include">
+      <node id="14798">
+        <label>openscenario_interpreter/utility/demangle.hpp</label>
+        <link refid="demangle_8hpp_source"/>
+        <childnode refid="14799" relation="include">
         </childnode>
-        <childnode refid="15404" relation="include">
-        </childnode>
-        <childnode refid="15405" relation="include">
-        </childnode>
-        <childnode refid="15403" relation="include">
+        <childnode refid="14800" relation="include">
         </childnode>
       </node>
-      <node id="15407">
+      <node id="14802">
         <label>stdexcept</label>
       </node>
-      <node id="15405">
+      <node id="14799">
         <label>string</label>
       </node>
-      <node id="15410">
+      <node id="14805">
         <label>traffic_simulator/traffic_lights/traffic_light_state.hpp</label>
       </node>
-      <node id="15397">
+      <node id="14795">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/color.cpp</label>
         <link refid="color_8cpp"/>
-        <childnode refid="15398" relation="include">
+        <childnode refid="14796" relation="include">
         </childnode>
-        <childnode refid="15408" relation="include">
+        <childnode refid="14803" relation="include">
         </childnode>
-        <childnode refid="15411" relation="include">
+        <childnode refid="14806" relation="include">
         </childnode>
       </node>
-      <node id="15398">
+      <node id="14796">
         <label>openscenario_interpreter/error.hpp</label>
         <link refid="error_8hpp_source"/>
-        <childnode refid="15399" relation="include">
+        <childnode refid="14797" relation="include">
         </childnode>
-        <childnode refid="15400" relation="include">
+        <childnode refid="14798" relation="include">
         </childnode>
-        <childnode refid="15406" relation="include">
+        <childnode refid="14801" relation="include">
         </childnode>
-        <childnode refid="15407" relation="include">
-        </childnode>
-        <childnode refid="15405" relation="include">
-        </childnode>
-        <childnode refid="15403" relation="include">
+        <childnode refid="14802" relation="include">
         </childnode>
       </node>
-      <node id="15408">
+      <node id="14803">
         <label>openscenario_interpreter/syntax/color.hpp</label>
         <link refid="color_8hpp_source"/>
-        <childnode refid="15409" relation="include">
+        <childnode refid="14804" relation="include">
         </childnode>
-        <childnode refid="15410" relation="include">
-        </childnode>
-      </node>
-      <node id="15403">
-        <label>utility</label>
-      </node>
-      <node id="15404">
-        <label>sstream</label>
-      </node>
-      <node id="15401">
-        <label>openscenario_interpreter/functional/fold.hpp</label>
-        <link refid="fold_8hpp_source"/>
-        <childnode refid="15402" relation="include">
-        </childnode>
-        <childnode refid="15403" relation="include">
+        <childnode refid="14805" relation="include">
         </childnode>
       </node>
-      <node id="15409">
+      <node id="14800">
+        <label>typeinfo</label>
+      </node>
+      <node id="14804">
         <label>iostream</label>
       </node>
-      <node id="15411">
+      <node id="14806">
         <label>unordered_map</label>
       </node>
     </incdepgraph>
@@ -136,7 +114,7 @@
 <codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>datum.value<sp/>=<sp/>conversions.at(value);</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::out_of_range<sp/>&amp;)<sp/>{</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>SyntaxError::invalidValue(</highlight><highlight class="stringliteral">&quot;Color&quot;</highlight><highlight class="normal">,<sp/>value);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>UNEXPECTED_ENUMERATION_VALUE_SPECIFIED(Color,<sp/>value);</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>is;</highlight></codeline>

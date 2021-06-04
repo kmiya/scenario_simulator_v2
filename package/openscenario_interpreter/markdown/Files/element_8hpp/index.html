@@ -877,19 +877,19 @@
   <span class="p">};</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="n">specs</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">;</span>
-    <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Class &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">node</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; requires one of following elements: &quot;</span><span class="p">;</span>
-    <span class="n">print_keys_to</span><span class="p">(</span><span class="n">ss</span><span class="p">,</span> <span class="n">callees</span><span class="p">);</span>
-    <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;. But no element specified&quot;</span><span class="p">;</span>
-    <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">what</span><span class="p">;</span>
+    <span class="n">what</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Class &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">node</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; requires one of following elements: &quot;</span><span class="p">;</span>
+    <span class="n">print_keys_to</span><span class="p">(</span><span class="n">what</span><span class="p">,</span> <span class="n">callees</span><span class="p">);</span>
+    <span class="n">what</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;. But no element specified&quot;</span><span class="p">;</span>
+    <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="n">what</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">specs</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">;</span>
-    <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Class &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">node</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; requires just one of following elements: &quot;</span><span class="p">;</span>
-    <span class="n">print_keys_to</span><span class="p">(</span><span class="n">ss</span><span class="p">,</span> <span class="n">callees</span><span class="p">);</span>
-    <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;. But &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">specs</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; element&quot;</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">specs</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">?</span> <span class="s">&quot;s&quot;</span> <span class="o">:</span> <span class="s">&quot;&quot;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; (&quot;</span><span class="p">;</span>
-    <span class="n">print_keys_to</span><span class="p">(</span><span class="n">ss</span><span class="p">,</span> <span class="n">specs</span><span class="p">);</span>
-    <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;) specified&quot;</span><span class="p">;</span>
-    <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">what</span><span class="p">;</span>
+    <span class="n">what</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Class &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">node</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; requires just one of following elements: &quot;</span><span class="p">;</span>
+    <span class="n">print_keys_to</span><span class="p">(</span><span class="n">what</span><span class="p">,</span> <span class="n">callees</span><span class="p">);</span>
+    <span class="n">what</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;. But &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">specs</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; element&quot;</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">specs</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">?</span> <span class="s">&quot;s&quot;</span> <span class="o">:</span> <span class="s">&quot;&quot;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; (&quot;</span><span class="p">;</span>
+    <span class="n">print_keys_to</span><span class="p">(</span><span class="n">what</span><span class="p">,</span> <span class="n">specs</span><span class="p">);</span>
+    <span class="n">what</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;) specified&quot;</span><span class="p">;</span>
+    <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="n">what</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="k">const</span> <span class="k">auto</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">cbegin</span><span class="p">(</span><span class="n">specs</span><span class="p">);</span>
     <span class="k">return</span> <span class="n">callees</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="n">iter</span><span class="p">))(</span><span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="n">iter</span><span class="p">));</span>
@@ -901,7 +901,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__READER__ELEMENT_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  4 June 2021 at 06:50:12 UTC</p>
+<p>Updated on  4 June 2021 at 12:50:55 UTC</p>
                 
                   
                 

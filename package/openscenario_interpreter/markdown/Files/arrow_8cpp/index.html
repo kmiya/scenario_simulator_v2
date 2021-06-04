@@ -813,7 +813,7 @@
   <span class="k">try</span> <span class="p">{</span>
     <span class="n">datum</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">conversions</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span> <span class="o">&amp;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="n">SyntaxError</span><span class="o">::</span><span class="n">invalidValue</span><span class="p">(</span><span class="s">&quot;Arrow&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+    <span class="k">throw</span> <span class="n">UNEXPECTED_ENUMERATION_VALUE_SPECIFIED</span><span class="p">(</span><span class="n">Arrow</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="k">return</span> <span class="n">is</span><span class="p">;</span>
@@ -841,7 +841,7 @@
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
 </code></pre></div>
 <hr />
-<p>Updated on  4 June 2021 at 06:50:12 UTC</p>
+<p>Updated on  4 June 2021 at 12:50:55 UTC</p>
                 
                   
                 

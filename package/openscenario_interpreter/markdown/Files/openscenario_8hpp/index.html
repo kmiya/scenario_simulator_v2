@@ -872,12 +872,11 @@
 
   <span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">load</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">scenario</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span><span class="p">{</span><span class="n">load_file</span><span class="p">(</span><span class="n">scenario</span><span class="p">.</span><span class="n">c_str</span><span class="p">())};</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">load_file</span><span class="p">(</span><span class="n">scenario</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">result</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>
-      <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;while loading scenario </span><span class="se">\&quot;</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">scenario</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\&quot;</span><span class="s"> =&gt; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">result</span><span class="p">.</span><span class="n">description</span><span class="p">();</span>
-      <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
+      <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">(</span>
+        <span class="s">&quot;while loading scenario &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">quoted</span><span class="p">(</span><span class="n">scenario</span><span class="p">),</span> <span class="s">&quot; =&gt; &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">.</span><span class="n">description</span><span class="p">());</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
     <span class="p">}</span>
@@ -925,7 +924,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__OPENSCENARIO_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  4 June 2021 at 06:50:12 UTC</p>
+<p>Updated on  4 June 2021 at 12:50:55 UTC</p>
                 
                   
                 

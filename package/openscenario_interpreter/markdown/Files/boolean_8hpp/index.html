@@ -765,8 +765,8 @@
 <span class="cp">#ifndef OPENSCENARIO_INTERPRETER__SYNTAX__BOOLEAN_HPP_</span>
 <span class="cp">#define OPENSCENARIO_INTERPRETER__SYNTAX__BOOLEAN_HPP_</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;boost/io/ios_state.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;iomanip&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/error.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/object.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
@@ -775,26 +775,22 @@
 <span class="p">{</span>
 <span class="kr">inline</span> <span class="k">namespace</span> <span class="nn">syntax</span>
 <span class="p">{</span>
-<span class="cm">/* ---- Boolean ----------------------------------------------------------------</span>
-<span class="cm"> *</span>
-<span class="cm"> *</span>
-<span class="cm"> * -------------------------------------------------------------------------- */</span>
 <span class="k">struct</span> <span class="nc">Boolean</span>
 <span class="p">{</span>
   <span class="k">using</span> <span class="n">value_type</span> <span class="o">=</span> <span class="kt">bool</span><span class="p">;</span>
 
   <span class="n">value_type</span> <span class="n">data</span><span class="p">;</span>
 
-  <span class="k">explicit</span> <span class="k">constexpr</span> <span class="n">Boolean</span><span class="p">(</span><span class="n">value_type</span> <span class="n">value</span> <span class="o">=</span> <span class="nb">false</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span> <span class="n">data</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="k">explicit</span> <span class="n">Boolean</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+
+  <span class="k">explicit</span> <span class="k">constexpr</span> <span class="n">Boolean</span><span class="p">(</span><span class="n">value_type</span> <span class="n">value</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span> <span class="n">data</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{}</span>
 
   <span class="k">explicit</span> <span class="n">Boolean</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">target</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">interpreter</span><span class="p">{};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">interpreter</span><span class="p">;</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">interpreter</span> <span class="o">&lt;&lt;</span> <span class="n">target</span> <span class="o">&amp;&amp;</span> <span class="n">interpreter</span> <span class="o">&gt;&gt;</span> <span class="n">std</span><span class="o">::</span><span class="n">boolalpha</span> <span class="o">&gt;&gt;</span> <span class="n">data</span><span class="p">))</span> <span class="p">{</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>
-      <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;can&#39;t treat value &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">quoted</span><span class="p">(</span><span class="n">target</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; as type Boolean&quot;</span><span class="p">;</span>
-      <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
+      <span class="k">throw</span> <span class="n">INVALID_NUMERIC_LITERAL_SPECIFIED</span><span class="p">(</span><span class="n">target</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
@@ -807,7 +803,12 @@
   <span class="k">constexpr</span> <span class="k">operator</span> <span class="n">value_type</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">data</span><span class="p">;</span> <span class="p">}</span>
 <span class="p">};</span>
 
+<span class="k">static_assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_standard_layout</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+
+<span class="k">static_assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_trivial</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+
 <span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span><span class="p">,</span> <span class="n">Boolean</span> <span class="o">&amp;</span><span class="p">);</span>
+
 <span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">Boolean</span> <span class="o">&amp;</span><span class="p">);</span>
 
 <span class="k">extern</span> <span class="k">const</span> <span class="n">Element</span> <span class="n">true_v</span><span class="p">;</span>
@@ -820,7 +821,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__BOOLEAN_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  4 June 2021 at 06:50:12 UTC</p>
+<p>Updated on  4 June 2021 at 12:50:55 UTC</p>
                 
                   
                 

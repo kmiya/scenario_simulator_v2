@@ -821,16 +821,15 @@
          <span class="p">}},</span>
       <span class="p">};</span>
 
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">iter</span><span class="p">{</span><span class="n">overloads</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">target</span><span class="p">.</span><span class="n">type</span><span class="p">())};</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">overloads</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">target</span><span class="p">.</span><span class="n">type</span><span class="p">());</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="n">iter</span> <span class="o">!=</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">overloads</span><span class="p">))</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="n">iter</span><span class="p">)(</span><span class="n">target</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>
-      <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The parameter specified by attrribute &#39;parameterRef&#39; of type &#39;ParameterAction&#39; &quot;</span><span class="p">;</span>
-      <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;must be numeric type (double, integer, unsignedInteger or unsignedShort), but &quot;</span><span class="p">;</span>
-      <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="n">target</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; (type &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">target</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;) specified&quot;</span><span class="p">;</span>
-      <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
+      <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">(</span>
+        <span class="s">&quot;The parameter specified by attrribute &#39;parameterRef&#39; of type &#39;ParameterAction&#39; must be &quot;</span>
+        <span class="s">&quot;numeric type (double, integer, unsignedInteger or unsignedShort), but &quot;</span><span class="p">,</span>
+        <span class="n">target</span><span class="p">,</span> <span class="s">&quot; (type &quot;</span><span class="p">,</span> <span class="n">target</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">name</span><span class="p">(),</span> <span class="s">&quot;) specified&quot;</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">};</span>
@@ -840,7 +839,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__PARAMETER_MULTIPLY_BY_VALUE_RULE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  4 June 2021 at 06:50:12 UTC</p>
+<p>Updated on  4 June 2021 at 12:50:55 UTC</p>
                 
                   
                 

@@ -769,6 +769,7 @@
 <span class="cp">#ifndef OPENSCENARIO_INTERPRETER__TYPE_TRAITS__IF_NOT_NOTHROW_DEFAULT_CONSTRUCTIBLE_HPP_</span>
 <span class="cp">#define OPENSCENARIO_INTERPRETER__TYPE_TRAITS__IF_NOT_NOTHROW_DEFAULT_CONSTRUCTIBLE_HPP_</span>
 
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/error.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;type_traits&gt;</span><span class="cp"></span>
 
@@ -781,10 +782,8 @@
 <span class="p">{</span>
   <span class="k">static</span> <span class="n">T</span> <span class="nf">error</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">parent_name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">child_name</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">{};</span>
-    <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="n">parent_name</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; requires class &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">child_name</span>
-       <span class="o">&lt;&lt;</span> <span class="s">&quot; as element, but there is no specification&quot;</span><span class="p">;</span>
-    <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">{</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()};</span>
+    <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">(</span>
+      <span class="n">parent_name</span><span class="p">,</span> <span class="s">&quot; requires class &quot;</span><span class="p">,</span> <span class="n">child_name</span><span class="p">,</span> <span class="s">&quot; as element, but there is no specification&quot;</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">};</span>
 
@@ -795,7 +794,7 @@
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
   <span class="k">static</span> <span class="n">T</span> <span class="n">error</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...)</span>
   <span class="p">{</span>
-    <span class="k">return</span> <span class="n">T</span><span class="p">{};</span>
+    <span class="k">return</span> <span class="n">T</span><span class="p">();</span>
   <span class="p">}</span>
 <span class="p">};</span>
 <span class="p">}</span>  <span class="c1">// namespace type_traits</span>
@@ -804,7 +803,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__TYPE_TRAITS__IF_NOT_NOTHROW_DEFAULT_CONSTRUCTIBLE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  4 June 2021 at 06:50:12 UTC</p>
+<p>Updated on  4 June 2021 at 12:50:55 UTC</p>
                 
                   
                 

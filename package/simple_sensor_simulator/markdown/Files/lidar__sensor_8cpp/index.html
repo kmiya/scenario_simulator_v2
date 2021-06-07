@@ -767,7 +767,7 @@
   <span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">EntityStatus</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">status</span><span class="p">,</span>
   <span class="k">const</span> <span class="n">rclcpp</span><span class="o">::</span><span class="n">Time</span> <span class="o">&amp;</span> <span class="n">stamp</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">fabs</span><span class="p">(</span><span class="n">current_time</span> <span class="o">-</span> <span class="n">last_update_stamp_</span> <span class="o">-</span> <span class="n">configuration_</span><span class="p">.</span><span class="n">scan_duration</span><span class="p">())</span> <span class="o">&lt;=</span> <span class="mf">0.002</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">current_time</span> <span class="o">-</span> <span class="n">last_update_stamp_</span> <span class="o">-</span> <span class="n">configuration_</span><span class="p">.</span><span class="n">scan_duration</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mf">-0.002</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">last_update_stamp_</span> <span class="o">=</span> <span class="n">current_time</span><span class="p">;</span>
     <span class="n">publisher_ptr_</span><span class="o">-&gt;</span><span class="n">publish</span><span class="p">(</span><span class="n">raycast</span><span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">stamp</span><span class="p">));</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -816,7 +816,7 @@
 <span class="p">}</span>  <span class="c1">// namespace simple_sensor_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 June 2021 at 00:15:35 UTC</p>
+<p>Updated on  7 June 2021 at 04:56:36 UTC</p>
                 
                   
                 

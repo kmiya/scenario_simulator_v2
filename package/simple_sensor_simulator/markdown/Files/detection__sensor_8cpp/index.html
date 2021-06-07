@@ -764,7 +764,7 @@
   <span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">EntityStatus</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">status</span><span class="p">,</span>
   <span class="k">const</span> <span class="n">rclcpp</span><span class="o">::</span><span class="n">Time</span> <span class="o">&amp;</span> <span class="n">stamp</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">detected_objects</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">fabs</span><span class="p">(</span><span class="n">current_time</span> <span class="o">-</span> <span class="n">last_update_stamp_</span> <span class="o">-</span> <span class="n">configuration_</span><span class="p">.</span><span class="n">update_duration</span><span class="p">())</span> <span class="o">&lt;=</span> <span class="mf">0.002</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">current_time</span> <span class="o">-</span> <span class="n">last_update_stamp_</span> <span class="o">-</span> <span class="n">configuration_</span><span class="p">.</span><span class="n">update_duration</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mf">-0.002</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">autoware_perception_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">DynamicObjectArray</span> <span class="n">msg</span><span class="p">;</span>
     <span class="n">msg</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">stamp</span> <span class="o">=</span> <span class="n">stamp</span><span class="p">;</span>
     <span class="n">msg</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="s">&quot;map&quot;</span><span class="p">;</span>
@@ -821,7 +821,7 @@
 <span class="p">}</span>  <span class="c1">// namespace simple_sensor_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 June 2021 at 00:15:35 UTC</p>
+<p>Updated on  7 June 2021 at 04:56:36 UTC</p>
                 
                   
                 

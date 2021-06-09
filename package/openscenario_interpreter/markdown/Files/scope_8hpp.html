@@ -763,50 +763,85 @@
 <span class="cp">#define OPENSCENARIO_INTERPRETER__SCOPE_HPP_</span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;boost/filesystem.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="c1">  // std::reference_wrapper</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;limits&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/entity_ref.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/traffic_signal_controller.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 
 <span class="k">namespace</span> <span class="nn">openscenario_interpreter</span>
 <span class="p">{</span>
+<span class="cm">/* ---- NOTE -------------------------------------------------------------------</span>
+<span class="cm"> *</span>
+<span class="cm"> *  This structure provides resource access during the scenario at each level of</span>
+<span class="cm"> *  Storyboard.</span>
+<span class="cm"> *</span>
+<span class="cm"> *  Typically, in programming language implementations, scopes are implemented</span>
+<span class="cm"> *  as linked lists that hold pointers to outer scopes. However, OpenSCENARIO</span>
+<span class="cm"> *  does not have features that require dynamic frame construction like function</span>
+<span class="cm"> *  calls, and the structure is fixed at the time of parsing, so it is okay to</span>
+<span class="cm"> *  build the child scope as a copy of the parent scope.</span>
+<span class="cm"> *</span>
+<span class="cm"> *  In other words, this structure is not elegant, but I believe it is a simple</span>
+<span class="cm"> *  structure that even beginners of programming language implementations can</span>
+<span class="cm"> *  understand.</span>
+<span class="cm"> *</span>
+<span class="cm"> * -------------------------------------------------------------------------- */</span>
 <span class="k">struct</span> <span class="nc">Scope</span>
 <span class="p">{</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Element</span><span class="o">&gt;</span> <span class="n">parameters</span><span class="p">;</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Element</span><span class="o">&gt;</span> <span class="n">entities</span><span class="p">;</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Element</span><span class="o">&gt;</span> <span class="n">storyboard_elements</span><span class="p">;</span>
-
   <span class="k">using</span> <span class="n">Actor</span> <span class="o">=</span> <span class="n">EntityRef</span><span class="p">;</span>
 
   <span class="k">using</span> <span class="n">Actors</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">Actor</span><span class="o">&gt;</span><span class="p">;</span>
 
+  <span class="cm">/* ---- GLOBAL ------------------------------------------------------------ */</span>
+
+  <span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span> <span class="n">pathname</span><span class="p">;</span>  <span class="c1">// for substituation syntax &#39;$(dirname)&#39;</span>
+
+  <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span> <span class="n">logic_file</span><span class="p">;</span>  <span class="c1">// NOTE: Assigned by RoadNetwork&#39;s constructor.</span>
+
+  <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span> <span class="n">scene_graph_file</span><span class="p">;</span>  <span class="c1">// NOTE: Assigned by RoadNetwork&#39;s constructor.</span>
+
+  <span class="cm">/* ---- NOTE -----------------------------------------------------------------</span>
+<span class="cm">   *</span>
+<span class="cm">   *  for TrafficSignalControllerAction.trafficSignalControllerRef</span>
+<span class="cm">   *</span>
+<span class="cm">   *  Be careful not to use the TrafficSignalController as a dangling reference.</span>
+<span class="cm">   *  Normally, the destruction of all scopes occurs at the same time as the</span>
+<span class="cm">   *  destruction of the scenario itself.</span>
+<span class="cm">   *</span>
+<span class="cm">   * ------------------------------------------------------------------------ */</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">reference_wrapper</span><span class="o">&lt;</span><span class="n">TrafficSignalController</span><span class="o">&gt;&gt;</span>
+    <span class="n">traffic_signal_controller_refs</span><span class="p">;</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Element</span><span class="o">&gt;</span> <span class="n">entities</span><span class="p">;</span>
+
+  <span class="cm">/* ---- LEXICAL ----------------------------------------------------------- */</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Element</span><span class="o">&gt;</span> <span class="n">parameters</span><span class="p">;</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Element</span><span class="o">&gt;</span> <span class="n">storyboard_elements</span><span class="p">;</span>
+
   <span class="n">Actors</span> <span class="n">actors</span><span class="p">;</span>
 
-  <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span> <span class="n">logic_file</span><span class="p">;</span>
-  <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span> <span class="n">scene_graph_file</span><span class="p">;</span>
-
-  <span class="c1">// for substituation syntax &#39;$(dirname)&#39;</span>
-  <span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span> <span class="n">scenario</span><span class="p">;</span>
+  <span class="cm">/* ---- CONSTRUCTORS ------------------------------------------------------ */</span>
 
   <span class="n">Scope</span><span class="p">()</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
 
   <span class="k">explicit</span> <span class="n">Scope</span><span class="p">(</span><span class="n">Scope</span> <span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+
   <span class="k">explicit</span> <span class="n">Scope</span><span class="p">(</span><span class="k">const</span> <span class="n">Scope</span> <span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
 
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">explicit</span> <span class="n">Scope</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">scenario</span><span class="p">,</span> <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="o">:</span> <span class="n">scenario</span><span class="p">(</span><span class="n">scenario</span><span class="p">)</span>
-  <span class="p">{</span>
-  <span class="p">}</span>
+  <span class="k">explicit</span> <span class="n">Scope</span><span class="p">(</span><span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span> <span class="o">&amp;</span> <span class="n">pathname</span><span class="p">)</span> <span class="o">:</span> <span class="n">pathname</span><span class="p">(</span><span class="n">pathname</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">};</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
 
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SCOPE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  9 June 2021 at 00:08:25 UTC</p>
+<p>Updated on  9 June 2021 at 02:18:06 UTC</p>
                 
                   
                 

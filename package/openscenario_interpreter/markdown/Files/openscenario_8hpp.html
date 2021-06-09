@@ -743,10 +743,6 @@
 <tbody>
 <tr>
 <td>struct</td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1ScenarioDefinition">openscenario_interpreter::syntax::ScenarioDefinition</a></strong></td>
-</tr>
-<tr>
-<td>struct</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1OpenScenario">openscenario_interpreter::syntax::OpenScenario</a></strong></td>
 </tr>
 </tbody>
@@ -770,11 +766,8 @@
 <span class="cp">#define OPENSCENARIO_INTERPRETER__SYNTAX__OPENSCENARIO_HPP_</span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/procedure.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/catalog_locations.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/entities.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/file_header.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/road_network.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/storyboard.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/open_scenario_category.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
@@ -783,64 +776,6 @@
 <span class="p">{</span>
 <span class="kr">inline</span> <span class="k">namespace</span> <span class="nn">syntax</span>
 <span class="p">{</span>
-<span class="cm">/* ---- ScenarioDefinition -----------------------------------------------------</span>
-<span class="cm"> *</span>
-<span class="cm"> * &lt;xsd:group name=&quot;ScenarioDefinition&quot;&gt;</span>
-<span class="cm"> *   &lt;xsd:sequence&gt;</span>
-<span class="cm"> *     &lt;xsd:element name=&quot;ParameterDeclarations&quot; type=&quot;ParameterDeclarations&quot; minOccurs=&quot;0&quot;/&gt;</span>
-<span class="cm"> *     &lt;xsd:element name=&quot;CatalogLocations&quot; type=&quot;CatalogLocations&quot;/&gt;</span>
-<span class="cm"> *     &lt;xsd:element name=&quot;RoadNetwork&quot; type=&quot;RoadNetwork&quot;/&gt;</span>
-<span class="cm"> *     &lt;xsd:element name=&quot;Entities&quot; type=&quot;Entities&quot;/&gt;</span>
-<span class="cm"> *     &lt;xsd:element name=&quot;Storyboard&quot; type=&quot;Storyboard&quot;/&gt;</span>
-<span class="cm"> *   &lt;/xsd:sequence&gt;</span>
-<span class="cm"> * &lt;/xsd:group&gt;</span>
-<span class="cm"> *</span>
-<span class="cm"> * -------------------------------------------------------------------------- */</span>
-<span class="k">struct</span> <span class="nc">ScenarioDefinition</span>
-<span class="p">{</span>
-  <span class="n">ASSERT_IS_OPTIONAL_ELEMENT</span><span class="p">(</span><span class="n">ParameterDeclarations</span><span class="p">);</span>
-  <span class="k">const</span> <span class="n">ParameterDeclarations</span> <span class="n">parameter_declarations</span><span class="p">;</span>
-
-  <span class="k">const</span> <span class="n">CatalogLocations</span> <span class="n">catalog_locations</span><span class="p">;</span>
-
-  <span class="n">RoadNetwork</span> <span class="n">road_network</span><span class="p">;</span>
-
-  <span class="k">const</span> <span class="n">Entities</span> <span class="n">entities</span><span class="p">;</span>
-
-  <span class="n">Storyboard</span> <span class="n">storyboard</span><span class="p">;</span>
-
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
-  <span class="k">explicit</span> <span class="n">ScenarioDefinition</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">outer_scope</span><span class="p">)</span>
-  <span class="o">:</span> <span class="n">parameter_declarations</span><span class="p">(</span>
-      <span class="n">readElement</span><span class="o">&lt;</span><span class="n">ParameterDeclarations</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;ParameterDeclarations&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">)),</span>
-    <span class="n">catalog_locations</span><span class="p">(</span><span class="n">readElement</span><span class="o">&lt;</span><span class="n">CatalogLocations</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;CatalogLocations&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">)),</span>
-    <span class="n">road_network</span><span class="p">(</span><span class="n">readElement</span><span class="o">&lt;</span><span class="n">RoadNetwork</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;RoadNetwork&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">)),</span>
-    <span class="n">entities</span><span class="p">(</span><span class="n">readElement</span><span class="o">&lt;</span><span class="n">Entities</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;Entities&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">)),</span>
-    <span class="n">storyboard</span><span class="p">(</span><span class="n">readElement</span><span class="o">&lt;</span><span class="n">Storyboard</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;Storyboard&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">))</span>
-  <span class="p">{</span>
-  <span class="p">}</span>
-
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">complete</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="k">return</span> <span class="n">storyboard</span><span class="p">.</span><span class="n">complete</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
-  <span class="p">}</span>
-
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">auto</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="n">road_network</span><span class="p">.</span><span class="n">evaluate</span><span class="p">();</span>
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">storyboard</span><span class="p">.</span><span class="n">evaluate</span><span class="p">();</span>
-    <span class="n">updateFrame</span><span class="p">();</span>
-    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">ScenarioDefinition</span> <span class="o">&amp;</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">unspecified</span><span class="p">;</span>
-<span class="p">}</span>
-
 <span class="cm">/* ---- OpenScenario -----------------------------------------------------------</span>
 <span class="cm"> *</span>
 <span class="cm"> * &lt;xsd:complexType name=&quot;OpenScenario&quot;&gt;</span>
@@ -850,81 +785,47 @@
 <span class="cm"> *   &lt;/xsd:sequence&gt;</span>
 <span class="cm"> * &lt;/xsd:complexType&gt;</span>
 <span class="cm"> *</span>
-<span class="cm"> * &lt;xsd:group name=&quot;OpenScenarioCategory&quot;&gt;</span>
-<span class="cm"> *   &lt;xsd:choice&gt;</span>
-<span class="cm"> *     &lt;xsd:group ref=&quot;ScenarioDefinition&quot;/&gt;</span>
-<span class="cm"> *     &lt;xsd:group ref=&quot;CatalogDefinition&quot;/&gt;</span>
-<span class="cm"> *   &lt;/xsd:choice&gt;</span>
-<span class="cm"> * &lt;/xsd:group&gt;</span>
-<span class="cm"> *</span>
-<span class="cm"> * &lt;xsd:group name=&quot;CatalogDefinition&quot;&gt;</span>
-<span class="cm"> *   &lt;xsd:sequence&gt;</span>
-<span class="cm"> *     &lt;xsd:element name=&quot;Catalog&quot; type=&quot;Catalog&quot;/&gt;</span>
-<span class="cm"> *   &lt;/xsd:sequence&gt;</span>
-<span class="cm"> * &lt;/xsd:group&gt;</span>
-<span class="cm"> *</span>
 <span class="cm"> * -------------------------------------------------------------------------- */</span>
-<span class="k">struct</span> <span class="nc">OpenScenario</span> <span class="o">:</span> <span class="k">public</span> <span class="n">pugi</span><span class="o">::</span><span class="n">xml_document</span>
+<span class="k">struct</span> <span class="nc">OpenScenario</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Scope</span>
 <span class="p">{</span>
-  <span class="n">Element</span> <span class="n">category</span><span class="p">;</span>
+  <span class="n">pugi</span><span class="o">::</span><span class="n">xml_document</span> <span class="n">script</span><span class="p">;</span>
 
-  <span class="n">Scope</span> <span class="n">scope</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">FileHeader</span> <span class="n">file_header</span><span class="p">;</span>
 
-  <span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">load</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">scenario</span><span class="p">)</span>
+  <span class="k">const</span> <span class="n">OpenScenarioCategory</span> <span class="n">category</span><span class="p">;</span>
+
+  <span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">load</span><span class="p">(</span><span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span> <span class="o">&amp;</span> <span class="n">pathname</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">load_file</span><span class="p">(</span><span class="n">scenario</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">script</span><span class="p">.</span><span class="n">load_file</span><span class="p">(</span><span class="n">pathname</span><span class="p">.</span><span class="n">string</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">result</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">(</span>
-        <span class="s">&quot;while loading scenario &quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">quoted</span><span class="p">(</span><span class="n">scenario</span><span class="p">),</span> <span class="s">&quot; =&gt; &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">.</span><span class="n">description</span><span class="p">());</span>
+      <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">description</span><span class="p">(),</span> <span class="s">&quot;: &quot;</span><span class="p">,</span> <span class="n">pathname</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">load</span><span class="p">(</span><span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span> <span class="o">&amp;</span> <span class="n">scenario</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">load</span><span class="p">(</span><span class="n">scenario</span><span class="p">.</span><span class="n">string</span><span class="p">());</span> <span class="p">}</span>
-
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">explicit</span> <span class="n">OpenScenario</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="o">:</span> <span class="n">scope</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...)</span>
-  <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">load</span><span class="p">(</span><span class="n">scope</span><span class="p">.</span><span class="n">scenario</span><span class="p">).</span><span class="n">child</span><span class="p">(</span><span class="s">&quot;OpenSCENARIO&quot;</span><span class="p">).</span><span class="n">child</span><span class="p">(</span><span class="s">&quot;Catalog&quot;</span><span class="p">))</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="n">SyntaxError</span><span class="p">(</span><span class="s">&quot;The Catalog feature is not yet supported&quot;</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="n">category</span> <span class="o">=</span> <span class="n">make</span><span class="o">&lt;</span><span class="n">ScenarioDefinition</span><span class="o">&gt;</span><span class="p">(</span><span class="n">child</span><span class="p">(</span><span class="s">&quot;OpenSCENARIO&quot;</span><span class="p">),</span> <span class="n">scope</span><span class="p">);</span>
+      <span class="k">return</span> <span class="n">script</span><span class="p">;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">complete</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+  <span class="k">explicit</span> <span class="n">OpenScenario</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+  <span class="o">:</span> <span class="n">Scope</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...),</span>
+    <span class="n">file_header</span><span class="p">(</span><span class="n">readElement</span><span class="o">&lt;</span><span class="n">FileHeader</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;FileHeader&quot;</span><span class="p">,</span> <span class="n">load</span><span class="p">(</span><span class="n">pathname</span><span class="p">).</span><span class="n">child</span><span class="p">(</span><span class="s">&quot;OpenSCENARIO&quot;</span><span class="p">),</span> <span class="o">*</span><span class="k">this</span><span class="p">)),</span>
+    <span class="n">category</span><span class="p">(</span><span class="n">readElement</span><span class="o">&lt;</span><span class="n">OpenScenarioCategory</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;OpenSCENARIO&quot;</span><span class="p">,</span> <span class="n">script</span><span class="p">,</span> <span class="o">*</span><span class="k">this</span><span class="p">))</span>
   <span class="p">{</span>
-    <span class="k">return</span> <span class="n">category</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">ScenarioDefinition</span><span class="o">&gt;</span><span class="p">().</span><span class="n">complete</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
   <span class="p">}</span>
 
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="k">return</span> <span class="n">category</span><span class="p">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
-  <span class="p">}</span>
+  <span class="k">auto</span> <span class="n">complete</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">category</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">ScenarioDefinition</span><span class="o">&gt;</span><span class="p">().</span><span class="n">complete</span><span class="p">();</span> <span class="p">}</span>
 
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="k">operator</span><span class="p">()(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="k">return</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
-  <span class="p">}</span>
+  <span class="k">auto</span> <span class="n">evaluate</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">category</span><span class="p">.</span><span class="n">evaluate</span><span class="p">();</span> <span class="p">}</span>
 <span class="p">};</span>
 
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">basic_ostream</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">basic_ostream</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">OpenScenario</span> <span class="o">&amp;</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">unspecified</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">OpenScenario</span> <span class="o">&amp;</span><span class="p">);</span>
 <span class="p">}</span>  <span class="c1">// namespace syntax</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
 
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__OPENSCENARIO_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  9 June 2021 at 00:08:25 UTC</p>
+<p>Updated on  9 June 2021 at 02:18:06 UTC</p>
                 
                   
                 

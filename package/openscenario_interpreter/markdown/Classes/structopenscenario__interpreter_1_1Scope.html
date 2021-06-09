@@ -775,6 +775,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#variable-traffic_signal_controller_refs" class="md-nav__link">
+    variable traffic_signal_controller_refs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#variable-storyboard_elements" class="md-nav__link">
     variable storyboard_elements
   </a>
@@ -789,8 +796,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#variable-scenario" class="md-nav__link">
-    variable scenario
+  <a href="#variable-pathname" class="md-nav__link">
+    variable pathname
   </a>
   
 </li>
@@ -846,7 +853,7 @@
                 
                 
                 <h1 id="openscenario_interpreterscope">openscenario_interpreter::Scope<a class="headerlink" href="#openscenario_interpreterscope" title="Permanent link">#</a></h1>
-<p>Inherited by <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1TrafficSignalControllerAction">openscenario_interpreter::syntax::TrafficSignalControllerAction</a>, <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1TrafficSignalStateAction">openscenario_interpreter::syntax::TrafficSignalStateAction</a></p>
+<p>Inherited by <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1OpenScenario">openscenario_interpreter::syntax::OpenScenario</a>, <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1TrafficSignalControllerAction">openscenario_interpreter::syntax::TrafficSignalControllerAction</a>, <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1TrafficSignalStateAction">openscenario_interpreter::syntax::TrafficSignalStateAction</a></p>
 <h2 id="public-types">Public Types<a class="headerlink" href="#public-types" title="Permanent link">#</a></h2>
 <table>
 <thead>
@@ -888,8 +895,8 @@
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#function-scope">Scope</a></strong>(const <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope">Scope</a> &amp; ) =default</td>
 </tr>
 <tr>
-<td>template \&lt;typename... Ts></br></td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#function-scope">Scope</a></strong>(const std::string &amp; scenario, Ts &amp;&amp;... xs)</td>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#function-scope">Scope</a></strong>(const boost::filesystem::path &amp; pathname)</td>
 </tr>
 </tbody>
 </table>
@@ -903,6 +910,10 @@
 </thead>
 <tbody>
 <tr>
+<td>std::unordered_map&lt; String, std::reference_wrapper&lt; TrafficSignalController &gt; &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#variable-traffic_signal_controller_refs">traffic_signal_controller_refs</a></strong></td>
+</tr>
+<tr>
 <td>std::unordered_map&lt; String, <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1Pointer">Element</a> &gt;</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#variable-storyboard_elements">storyboard_elements</a></strong></td>
 </tr>
@@ -912,7 +923,7 @@
 </tr>
 <tr>
 <td>const boost::filesystem::path</td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#variable-scenario">scenario</a></strong></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#variable-pathname">pathname</a></strong></td>
 </tr>
 <tr>
 <td>std::unordered_map&lt; String, <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1Pointer">Element</a> &gt;</td>
@@ -954,21 +965,22 @@
 <span class="p">)</span> <span class="o">=</span><span class="k">default</span>
 </code></pre></div>
 <h3 id="function-scope_3">function Scope<a class="headerlink" href="#function-scope_3" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="kr">inline</span> <span class="k">explicit</span> <span class="n">Scope</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">scenario</span><span class="p">,</span>
-    <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">explicit</span> <span class="n">Scope</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span> <span class="o">&amp;</span> <span class="n">pathname</span>
 <span class="p">)</span>
 </code></pre></div>
 <h2 id="public-attributes-documentation">Public Attributes Documentation<a class="headerlink" href="#public-attributes-documentation" title="Permanent link">#</a></h2>
+<h3 id="variable-traffic_signal_controller_refs">variable traffic_signal_controller_refs<a class="headerlink" href="#variable-traffic_signal_controller_refs" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span> <span class="n">String</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">reference_wrapper</span><span class="o">&lt;</span> <span class="n">TrafficSignalController</span> <span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">traffic_signal_controller_refs</span><span class="p">;</span>
+</code></pre></div>
 <h3 id="variable-storyboard_elements">variable storyboard_elements<a class="headerlink" href="#variable-storyboard_elements" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span> <span class="n">String</span><span class="p">,</span> <span class="n">Element</span> <span class="o">&gt;</span> <span class="n">storyboard_elements</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="variable-scene_graph_file">variable scene_graph_file<a class="headerlink" href="#variable-scene_graph_file" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span> <span class="n">scene_graph_file</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="variable-scenario">variable scenario<a class="headerlink" href="#variable-scenario" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span> <span class="n">scenario</span><span class="p">;</span>
+<h3 id="variable-pathname">variable pathname<a class="headerlink" href="#variable-pathname" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span> <span class="n">pathname</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="variable-parameters">variable parameters<a class="headerlink" href="#variable-parameters" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span> <span class="n">String</span><span class="p">,</span> <span class="n">Element</span> <span class="o">&gt;</span> <span class="n">parameters</span><span class="p">;</span>
@@ -983,7 +995,7 @@
 <div class="highlight"><pre><span></span><code><span class="n">Actors</span> <span class="n">actors</span><span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>Updated on  9 June 2021 at 00:08:25 UTC</p>
+<p>Updated on  9 June 2021 at 02:18:06 UTC</p>
                 
                   
                 

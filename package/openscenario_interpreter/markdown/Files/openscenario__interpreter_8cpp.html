@@ -988,15 +988,15 @@
   <span class="n">script</span><span class="p">.</span><span class="n">rebind</span><span class="o">&lt;</span><span class="n">OpenScenario</span><span class="o">&gt;</span><span class="p">(</span><span class="n">osc_path</span><span class="p">);</span>
 
   <span class="k">const</span> <span class="k">auto</span> <span class="n">with_autoware</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">any_of</span><span class="p">(</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">script</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">OpenScenario</span><span class="o">&gt;</span><span class="p">().</span><span class="n">scope</span><span class="p">.</span><span class="n">entities</span><span class="p">),</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">script</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">OpenScenario</span><span class="o">&gt;</span><span class="p">().</span><span class="n">scope</span><span class="p">.</span><span class="n">entities</span><span class="p">),</span> <span class="p">[](</span><span class="k">auto</span> <span class="o">&amp;</span> <span class="n">each</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">script</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">OpenScenario</span><span class="o">&gt;</span><span class="p">().</span><span class="n">entities</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">script</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">OpenScenario</span><span class="o">&gt;</span><span class="p">().</span><span class="n">entities</span><span class="p">),</span>
+    <span class="p">[](</span><span class="k">auto</span> <span class="o">&amp;</span> <span class="n">each</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">each</span><span class="p">).</span><span class="k">template</span> <span class="n">as</span><span class="o">&lt;</span><span class="n">ScenarioObject</span><span class="o">&gt;</span><span class="p">().</span><span class="n">object_controller</span><span class="p">.</span><span class="n">isEgo</span><span class="p">();</span>
     <span class="p">});</span>
 
   <span class="n">connect</span><span class="p">(</span>
     <span class="n">shared_from_this</span><span class="p">(),</span>                                       <span class="c1">//</span>
     <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span><span class="p">(</span><span class="n">osc_path</span><span class="p">).</span><span class="n">replace_extension</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">),</span>  <span class="c1">// NOTE: /path/to/lanelet2_map.osm</span>
-    <span class="n">script</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">OpenScenario</span><span class="o">&gt;</span><span class="p">().</span><span class="n">scope</span><span class="p">.</span><span class="n">logic_file</span><span class="p">.</span><span class="n">string</span><span class="p">(),</span>      <span class="c1">//</span>
+    <span class="n">script</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">OpenScenario</span><span class="o">&gt;</span><span class="p">().</span><span class="n">logic_file</span><span class="p">.</span><span class="n">string</span><span class="p">(),</span>            <span class="c1">//</span>
     <span class="n">with_autoware</span> <span class="o">?</span> <span class="mi">30</span> <span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
     <span class="nb">false</span>  <span class="c1">// auto-sink</span>
   <span class="p">);</span>
@@ -1073,11 +1073,11 @@
   <span class="n">INTERPRETER_INFO_STREAM</span><span class="p">(</span><span class="s">&quot;CleaningUp.&quot;</span><span class="p">);</span>
 
   <span class="n">test_suites</span><span class="p">.</span><span class="n">addTestCase</span><span class="p">(</span>
-    <span class="n">script</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">OpenScenario</span><span class="o">&gt;</span><span class="p">().</span><span class="n">scope</span><span class="p">.</span><span class="n">scenario</span><span class="p">.</span><span class="n">parent_path</span><span class="p">().</span><span class="n">stem</span><span class="p">().</span><span class="n">string</span><span class="p">(),</span>
-    <span class="n">script</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">OpenScenario</span><span class="o">&gt;</span><span class="p">().</span><span class="n">scope</span><span class="p">.</span><span class="n">scenario</span><span class="p">.</span><span class="n">string</span><span class="p">(),</span>  <span class="c1">// case-name (XXX: DIRTY HACK!!!)</span>
-    <span class="mi">0</span><span class="p">,</span>                                                  <span class="c1">// time</span>
-    <span class="n">current_result</span><span class="p">,</span>                                     <span class="c1">//</span>
-    <span class="n">current_error_type</span><span class="p">,</span>                                 <span class="c1">//</span>
+    <span class="n">script</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">OpenScenario</span><span class="o">&gt;</span><span class="p">().</span><span class="n">pathname</span><span class="p">.</span><span class="n">parent_path</span><span class="p">().</span><span class="n">stem</span><span class="p">().</span><span class="n">string</span><span class="p">(),</span>
+    <span class="n">script</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">OpenScenario</span><span class="o">&gt;</span><span class="p">().</span><span class="n">pathname</span><span class="p">.</span><span class="n">string</span><span class="p">(),</span>  <span class="c1">// case-name (XXX: DIRTY HACK!!!)</span>
+    <span class="mi">0</span><span class="p">,</span>                                            <span class="c1">// time</span>
+    <span class="n">current_result</span><span class="p">,</span>                               <span class="c1">//</span>
+    <span class="n">current_error_type</span><span class="p">,</span>                           <span class="c1">//</span>
     <span class="n">current_error_what</span><span class="p">);</span>
 
   <span class="n">test_suites</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">output_directory</span> <span class="o">+</span> <span class="s">&quot;/result.junit.xml&quot;</span><span class="p">);</span>
@@ -1107,7 +1107,7 @@
 <span class="n">RCLCPP_COMPONENTS_REGISTER_NODE</span><span class="p">(</span><span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">Interpreter</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<p>Updated on  9 June 2021 at 00:08:25 UTC</p>
+<p>Updated on  9 June 2021 at 02:18:06 UTC</p>
                 
                   
                 

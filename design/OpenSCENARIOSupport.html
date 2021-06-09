@@ -522,7 +522,7 @@
   
     <li class="md-nav__item">
       <a href="TrafficSimulator.html" class="md-nav__link">
-        Traffic simulatior
+        Traffic simulator
       </a>
     </li>
   
@@ -1272,7 +1272,7 @@ If you want to know about OpenSCENARIO, refer to the link below.</p>
 <h2 id="specific-features">Specific Features<a class="headerlink" href="#specific-features" title="Permanent link">#</a></h2>
 <hr />
 <h3 id="ros-2-launch-like-substitution-syntax">ROS 2 Launch-like substitution syntax<a class="headerlink" href="#ros-2-launch-like-substitution-syntax" title="Permanent link">#</a></h3>
-<p>Our interpreter supports some of the substitution syntax of <a href="https://design.ros2.org/articles/roslaunch_xml.html#dynamic-configuration">the ROS 2 Launch system</a> (a.k.a string-interpolation).
+<p>Our interpreter supports some substitution syntax of <a href="https://design.ros2.org/articles/roslaunch_xml.html#dynamic-configuration">the ROS 2 Launch system</a> (a.k.a. string-interpolation).
 The substitution syntax works with any attribute string in OpenSCENARIO XML.</p>
 <p>This substitution is done only once when reading the attribute.
 Note that the substitution result is finalized before the simulation starts, so it is not affected by the <code>ParameterModifyAction</code>, etc. that takes effect during the simulation.</p>
@@ -1322,7 +1322,7 @@ An example is shown below.</p>
 <p>Used to either issue a command to the simulation environment or start an external script. Allows the user to activate custom actions in their simulation tool.</p>
 </blockquote>
 <p>For OpenSCENARIO interpreters implemented in scripting languages such as Python, this Action is often implemented as a call to an external script file written in the same language as the host language.
-However, our interpreter is implemented in C ++ and we cannot simply implement such a feature.
+However, our interpreter is implemented in C++ and we cannot simply implement such a feature.
 Therefore, our interpreter treats the string given in CustomCommandAction.type as a command and executes it on a subprocess, as <code>sh</code> does.</p>
 <p>For example, the <code>echo</code> command can be written as follows:
 <div class="highlight"><pre><span></span><code>  <span class="nt">&lt;UserDefinedAction&gt;</span>
@@ -1660,7 +1660,7 @@ OpenSCENARIO standards.</p>
 <h3 id="speedaction">SpeedAction<a class="headerlink" href="#speedaction" title="Permanent link">#</a></h3>
 <ul>
 <li>The implementation of type <a href="#transitiondynamics">TransitionDynamics</a> for element <code>SpeedActionDynamics</code> is incomplete and
-  <strong>SpeedActionDynamics.dynamicsDimention is ignored</strong>.</li>
+  <strong>SpeedActionDynamics.dynamicsDimension is ignored</strong>.</li>
 </ul>
 <h3 id="lanechangeaction">LaneChangeAction<a class="headerlink" href="#lanechangeaction" title="Permanent link">#</a></h3>
 <ul>
@@ -1728,7 +1728,7 @@ See also section <a href="#scoping">Scoping</a>.</p>
 <td align="center">✔</td>
 </tr>
 <tr>
-<td align="left">dynamicsDimention</td>
+<td align="left">dynamicsDimension</td>
 <td align="left">DynamicsDimension</td>
 <td align="center">✔</td>
 </tr>

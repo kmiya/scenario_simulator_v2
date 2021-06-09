@@ -337,23 +337,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#runing-simulation-with-docker" class="md-nav__link">
-    Runing Simulation with docker.
+  <a href="#running-simulation-with-docker" class="md-nav__link">
+    Running Simulation with docker.
   </a>
   
-    <nav class="md-nav" aria-label="Runing Simulation with docker.">
+    <nav class="md-nav" aria-label="Running Simulation with docker.">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#runing-with-docker-image-in-your-machine" class="md-nav__link">
-    Runing with docker image in your machine.
+  <a href="#running-with-docker-image-in-your-machine" class="md-nav__link">
+    Running with docker image in your machine.
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#runing-with-docker-image-from-dockerhub" class="md-nav__link">
-    Runing with docker image from dockerhub.
+  <a href="#running-with-docker-image-from-docker-hub" class="md-nav__link">
+    Running with docker image from Docker Hub.
   </a>
   
 </li>
@@ -623,7 +623,7 @@
   
     <li class="md-nav__item">
       <a href="../design/TrafficSimulator.html" class="md-nav__link">
-        Traffic simulatior
+        Traffic simulator
       </a>
     </li>
   
@@ -822,23 +822,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#runing-simulation-with-docker" class="md-nav__link">
-    Runing Simulation with docker.
+  <a href="#running-simulation-with-docker" class="md-nav__link">
+    Running Simulation with docker.
   </a>
   
-    <nav class="md-nav" aria-label="Runing Simulation with docker.">
+    <nav class="md-nav" aria-label="Running Simulation with docker.">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#runing-with-docker-image-in-your-machine" class="md-nav__link">
-    Runing with docker image in your machine.
+  <a href="#running-with-docker-image-in-your-machine" class="md-nav__link">
+    Running with docker image in your machine.
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#runing-with-docker-image-from-dockerhub" class="md-nav__link">
-    Runing with docker image from dockerhub.
+  <a href="#running-with-docker-image-from-docker-hub" class="md-nav__link">
+    Running with docker image from Docker Hub.
   </a>
   
 </li>
@@ -867,10 +867,10 @@
                 
                 <h1 id="run-with-docker">Run with docker<a class="headerlink" href="#run-with-docker" title="Permanent link">#</a></h1>
 <p>You can use this scenario_simulator_v2 with docker.
-We automatically build docker images by using github actions and push them into dockerhub.</p>
-<p>If you want to run scenario_simulator_v2 with docker, please follow instructions below.</p>
+We automatically build docker images by using GitHub Actions and push them into Docker Hub.</p>
+<p>If you want to run scenario_simulator_v2 with docker, please follow the instructions below.</p>
 <h2 id="install-docker">Install docker<a class="headerlink" href="#install-docker" title="Permanent link">#</a></h2>
-<p>Please follow instructions below.</p>
+<p>Please follow the instructions below.</p>
 <p><iframe
     src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fdocs.docker.com%2Fengine%2Finstall%2F" 
     title="Install Docker Engine" 
@@ -880,10 +880,10 @@ We automatically build docker images by using github actions and push them into 
     style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;">
 </iframe>
 </p>
-<p>If you finished to install docker, please type commands below in order to check docker is working.
+<p>If you finished installing docker, please type the commands below in order to check docker is working correctly.
 <div class="highlight"><pre><span></span><code>docker run hello-world
 </code></pre></div></p>
-<p>You can see output like below if you have succeed to install docker.<br />
+<p>You can see the output like below if you have succeeded to install docker.<br />
 <div class="highlight"><pre><span></span><code>Unable to find image <span class="s1">&#39;hello-world:latest&#39;</span> locally
 latest: Pulling from library/hello-world
 b8dfde127a29: Pull <span class="nb">complete</span> 
@@ -912,9 +912,9 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 </code></pre></div></p>
 <h2 id="install-nvidia-docker2-optional">Install nvidia-docker2 (optional)<a class="headerlink" href="#install-nvidia-docker2-optional" title="Permanent link">#</a></h2>
-<p>If you have nvidia GPU, in your machine, you have to install nvidia-driver and install nvidia-docker2</p>
+<p>If you have NVIDIA GPU(s) in your machine, you have to install nvidia-driver and install nvidia-docker2.</p>
 <h3 id="ubuntu">Ubuntu<a class="headerlink" href="#ubuntu" title="Permanent link">#</a></h3>
-<p>In order to install vidia-docker2 in ubuntu, please type commands below.</p>
+<p>In order to install nvidia-docker2 on Ubuntu, please type the commands below.</p>
 <div class="highlight"><pre><span></span><code>curl -s -L https://nvidia.github.io/nvidia-container-runtime/gpgkey <span class="p">|</span> <span class="se">\</span>
   sudo apt-key add -
 <span class="nv">distribution</span><span class="o">=</span><span class="k">$(</span>. /etc/os-release<span class="p">;</span><span class="nb">echo</span> <span class="nv">$ID$VERSION_ID</span><span class="k">)</span>
@@ -922,10 +922,10 @@ curl -s -L https://nvidia.github.io/nvidia-container-runtime/<span class="nv">$d
   sudo tee /etc/apt/sources.list.d/nvidia-container-runtime.list
 sudo apt-get update
 </code></pre></div>
-<p>If you finished to install docker and nvidia-docker2, please type this commands below.</p>
+<p>If you finished installing docker and nvidia-docker2, please type the commands below.</p>
 <div class="highlight"><pre><span></span><code>docker run --gpus all --rm nvidia/cuda:9.0-base nvidia-smi
 </code></pre></div>
-<p>You can see outputs like below.</p>
+<p>You can see the outputs like below.</p>
 <div class="highlight"><pre><span></span><code>+-----------------------------------------------------------------------------+
 <span class="p">|</span> NVIDIA-SMI <span class="m">460</span>.56       Driver Version: <span class="m">460</span>.56       CUDA Version: <span class="m">11</span>.2     <span class="p">|</span>
 <span class="p">|</span>-------------------------------+----------------------+----------------------+
@@ -954,45 +954,45 @@ sudo apt-get update
   width="300" height="150" frameborder="0" scrolling="no">
 </iframe>
 
-<p>rocker is a docker support tools for ROS.<br />
-It enables us to run rviz inside docker very easilly.<br />
+<p>rocker is a docker support tool for ROS.<br />
+It enables us to run rviz inside docker very easily.<br />
 You can install rocker via pip3.
 <div class="highlight"><pre><span></span><code>sudo pip3 install rocker
 </code></pre></div></p>
-<p>After install rocker, please check rocker works.<br />
-If your machine has GPU, please type this commands below.<br />
+<p>After install rocker, please check rocker works correctly.<br />
+If your machine has GPU(s), please type the commands below.<br />
 <div class="highlight"><pre><span></span><code>rocker --nvidia --x11 osrf/ros:crystal-desktop rviz2
 </code></pre></div>
 You can see rviz working on docker.<br />
-<img alt="Runnig rviz inside rocker" src="../image/rviz_with_rocker.png" title="runnig rviz inside rocker." /></p>
-<p>If your machine has no GPU, please type this commands below.<br />
+<img alt="Running rviz inside rocker" src="../image/rviz_with_rocker.png" title="running rviz inside rocker." /></p>
+<p>If your machine has no GPU, please type the commands below.<br />
 <div class="highlight"><pre><span></span><code>rocker --x11 osrf/ros:crystal-desktop rviz2
 </code></pre></div>
-You can see same result with nvidia GPU.</p>
+You can see the same result with NVIDIA GPU.</p>
 <h2 id="build-docker-image-locally-optional">Build docker image locally (optional)<a class="headerlink" href="#build-docker-image-locally-optional" title="Permanent link">#</a></h2>
-<p>If you want to build docker image in your local machine, please type commands below in your terminal.</p>
+<p>If you want to build a docker image in your local machine, please type the commands below in your terminal.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> <span class="o">(</span>path_to_scenario_simulator_v2<span class="o">)</span>
 docker build -t scenario_simulator_v2 .
 </code></pre></div>
-<h2 id="runing-simulation-with-docker">Runing Simulation with docker.<a class="headerlink" href="#runing-simulation-with-docker" title="Permanent link">#</a></h2>
-<h3 id="runing-with-docker-image-in-your-machine">Runing with docker image in your machine.<a class="headerlink" href="#runing-with-docker-image-in-your-machine" title="Permanent link">#</a></h3>
+<h2 id="running-simulation-with-docker">Running Simulation with docker.<a class="headerlink" href="#running-simulation-with-docker" title="Permanent link">#</a></h2>
+<h3 id="running-with-docker-image-in-your-machine">Running with docker image in your machine.<a class="headerlink" href="#running-with-docker-image-in-your-machine" title="Permanent link">#</a></h3>
 <p>Please type this commands and run <a href="SimpleDemo.html">simple demo</a> in your local terminal.</p>
-<p>If your local machine has nvidia GPUs,</p>
+<p>If your local machine has NVIDIA GPUs,</p>
 <div class="highlight"><pre><span></span><code>rocker --nvidia --x11 scenario_simulator_v2 ros2 launch traffic_simulator mock_test.launch.py
 </code></pre></div>
-<p>If your local machine does not have nvidia GPUs,</p>
+<p>If your local machine does not have NVIDIA GPUs,</p>
 <div class="highlight"><pre><span></span><code>rocker --x11 scenario_simulator_v2 ros2 launch traffic_simulator mock_test.launch.py
 </code></pre></div>
-<h3 id="runing-with-docker-image-from-dockerhub">Runing with docker image from dockerhub.<a class="headerlink" href="#runing-with-docker-image-from-dockerhub" title="Permanent link">#</a></h3>
-<p>We automatically build docker images of scenario_simulator_v2 by using github actions and put them into our dockerhub.</p>
+<h3 id="running-with-docker-image-from-docker-hub">Running with docker image from Docker Hub.<a class="headerlink" href="#running-with-docker-image-from-docker-hub" title="Permanent link">#</a></h3>
+<p>We automatically build docker images of scenario_simulator_v2 by using GitHub Actions and put them into our Docker Hub repository.</p>
 <p><a href="https://github.com/tier4/scenario_simulator_v2/actions/workflows/Docker.yaml"><img alt="Push Docker Image" src="https://github.com/tier4/scenario_simulator_v2/actions/workflows/Docker.yaml/badge.svg" /></a></p>
 <p><a href="https://hub.docker.com/r/tier4/scenario_simulator_v2"><img alt="dockeri.co" src="https://dockeri.co/image/tier4/scenario_simulator_v2" /></a></p>
-<p>We can pull docker image from dockerhub and run simulation with scenario_simulator_v2 just typing commands below.</p>
-<p>If your local machine has nvidia GPUs,</p>
+<p>We can pull the docker image from Docker Hub and run simulation with scenario_simulator_v2 just typing the commands below.</p>
+<p>If your local machine has NVIDIA GPUs,</p>
 <div class="highlight"><pre><span></span><code>docker pull tier4/scenario_simulator_v2:latest
 rocker --nvidia --x11 tier4/scenario_simulator_v2:latest ros2 launch traffic_simulator mock_test.launch.py
 </code></pre></div>
-<p>If your local machine does not have nvidia GPUs,</p>
+<p>If your local machine does not have NVIDIA GPUs,</p>
 <div class="highlight"><pre><span></span><code>docker pull tier4/scenario_simulator_v2:latest
 rocker --x11 tier4/scenario_simulator_v2:latest ros2 launch traffic_simulator mock_test.launch.py
 </code></pre></div>

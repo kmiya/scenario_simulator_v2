@@ -520,7 +520,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../design/TrafficSimulator.html" class="md-nav__link">
-        Traffic simulatior
+        Traffic simulator
       </a>
     </li>
   
@@ -785,7 +785,7 @@
 <span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">getPosition</span><span class="p">(</span><span class="k">const</span> <span class="n">TrafficLightColor</span> <span class="o">&amp;</span> <span class="n">color</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">color_positions_</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">color</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;target color does not exists&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;target color does not exist&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">color_positions_</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">color</span><span class="p">);</span>
 <span class="p">}</span>
@@ -793,14 +793,14 @@
 <span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="n">TrafficLight</span><span class="o">::</span><span class="n">getPosition</span><span class="p">(</span><span class="k">const</span> <span class="n">TrafficLightArrow</span> <span class="o">&amp;</span> <span class="n">arrow</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">arrow_positions_</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">arrow</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;target arrow does not exists&quot;</span><span class="p">);</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;target arrow does not exist&quot;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">arrow_positions_</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">arrow</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on  9 June 2021 at 03:27:44 UTC</p>
+<p>Updated on  9 June 2021 at 10:11:10 UTC</p>
                 
                   
                 

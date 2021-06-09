@@ -522,7 +522,7 @@
   
     <li class="md-nav__item">
       <a href="TrafficSimulator.html" class="md-nav__link">
-        Traffic simulatior
+        Traffic simulator
       </a>
     </li>
   
@@ -812,13 +812,13 @@
                 
                 
                 <h1 id="communication-with-simulator-and-interpreter">Communication with simulator and interpreter<a class="headerlink" href="#communication-with-simulator-and-interpreter" title="Permanent link">#</a></h1>
-<p><img alt="ZeroMQ communication" src="../image/inter_process_communication.png" title="ZeroMQ inter process communication" /></p>
-<p>We use ZeroMQ Inter-Process communication with your simulator and traffic simulator.</p>
+<p><img alt="ZeroMQ communication" src="../image/inter_process_communication.png" title="ZeroMQ inter-process communication" /></p>
+<p>We use ZeroMQ Inter-Process communication to communicate with your simulator and Traffic simulator.</p>
 <p><font color="#065479E"><em>Note! Simple Sensor Simulator is just a reference implementation, so we can adapt any kinds of autonomous driving simulators if we can develop ZeroMQ interface to your simulator.</em></font></p>
 <h2 id="what-is-zeromq">What is ZeroMQ<a class="headerlink" href="#what-is-zeromq" title="Permanent link">#</a></h2>
-<p><a href="https://zeromq.org/">ZeroMQ</a> is an open-source messaging library, it supports TCP/UDP/Intra-Process messaging communication.<br />
+<p><a href="https://zeromq.org/">ZeroMQ</a> is an open-source messaging library. It supports TCP/UDP/Inter-Process messaging communication.<br />
 We use <a href="https://zeromq.org/">ZeroMQ</a> in order to communicate with the simulator and interpreter.
-We use Request/Reply socket in order to run the simulator synchronously.  </p>
+We use Request/Reply sockets in order to run the simulators synchronously.  </p>
 <iframe 
   class="hatenablogcard" 
   style="width:100%;height:155px;max-width:450px;" 
@@ -828,8 +828,8 @@ We use Request/Reply socket in order to run the simulator synchronously.  </p>
 </iframe>
 
 <h2 id="sequence-diagram">Sequence Diagram<a class="headerlink" href="#sequence-diagram" title="Permanent link">#</a></h2>
-<p>Traffic simulator has a zeromq client and sensor simulator has a zeromq server.
-We use protobuf in order to serialize data.</p>
+<p>Traffic simulator has a ZeroMQ client and Sensor simulator has a ZeroMQ server.
+We use <a href="https://developers.google.com/protocol-buffers">Protocol Buffers</a> (protobuf) in order to serialize data.</p>
 <div class="mermaid">sequenceDiagram
     participant Traffic Simulator
     participant Simple Sensor Simulator
@@ -851,12 +851,12 @@ We use protobuf in order to serialize data.</p>
       Simple Sensor Simulator -&gt;-Traffic Simulator : UpdateEntityStatusResponse
     end</div>
 <h2 id="schema-of-the-message">Schema of the message<a class="headerlink" href="#schema-of-the-message" title="Permanent link">#</a></h2>
-<p>traffic_simulatorr::API send the request to the simulator, Requests are serialized by using <a href="https://developers.google.com/protocol-buffers">protobuf</a> and use different port in order to communicate with the simulator.  </p>
+<p>traffic_simulator::API sends the request to the simulator. The requests are serialized by using protobuf and use various ports in order to communicate with the simulator.</p>
 <h3 id="protobuf-definition">Protobuf Definition<a class="headerlink" href="#protobuf-definition" title="Permanent link">#</a></h3>
-<p><a href="https://github.com/tier4/scenario_simulator_v2/blob/master/simulation/simulation_interface/proto/simulation_api_schema.proto">Schema of Protobuf</a> is here.
-<a href="../proto_doc/protobuf.html">Protobuf Documentation</a> is here. all datas are serialized as string and send via TCP by using ZeroMQ.</p>
+<p>The schema of protobuf is <a href="https://github.com/tier4/scenario_simulator_v2/blob/master/simulation/simulation_interface/proto/simulation_api_schema.proto">here</a>.
+Protobuf documentation is <a href="../proto_doc/protobuf.html">here</a>. All data are serialized as string and sent via TCP by using ZeroMQ.</p>
 <h2 id="required-apis-for-co-simulation">Required APIs for co-simulation<a class="headerlink" href="#required-apis-for-co-simulation" title="Permanent link">#</a></h2>
-<p>Traffic simulator and simple sensor simulator communicates with APIs below, if you want to integrate with your simulator, only you have to do is prepareing these APIs below.</p>
+<p>Traffic simulator and Simple sensor simulator communicate with APIs. If you want to integrate the simulators with your simulator, only you have to do is preparing these APIs below.</p>
 <table>
 <thead>
 <tr>
@@ -942,7 +942,7 @@ We use protobuf in order to serialize data.</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="TrafficSimulator.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Traffic simulatior" rel="prev">
+        <a href="TrafficSimulator.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Traffic simulator" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -951,7 +951,7 @@ We use protobuf in order to serialize data.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Traffic simulatior
+              Traffic simulator
             </div>
           </div>
         </a>

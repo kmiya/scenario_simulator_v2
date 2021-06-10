@@ -900,17 +900,20 @@
   <span class="k">const</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">,</span>  <span class="c1">//</span>
   <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span> <span class="o">&amp;</span> <span class="n">parameters</span><span class="p">)</span>
 <span class="o">:</span> <span class="n">VehicleEntity</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">parameters</span><span class="p">),</span>
-  <span class="n">vehicle_model_ptr_</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">SimModelTimeDelaySteer</span><span class="o">&gt;</span><span class="p">(</span>  <span class="c1">// XXX: HARD CODING!!!</span>
-    <span class="n">parameters</span><span class="p">.</span><span class="n">performance</span><span class="p">.</span><span class="n">max_speed</span><span class="p">,</span> <span class="n">parameters</span><span class="p">.</span><span class="n">axles</span><span class="p">.</span><span class="n">front_axle</span><span class="p">.</span><span class="n">max_steering</span><span class="p">,</span>
-    <span class="n">parameters</span><span class="p">.</span><span class="n">performance</span><span class="p">.</span><span class="n">max_acceleration</span><span class="p">,</span>
-    <span class="mf">5.0</span><span class="p">,</span>  <span class="c1">// steer_rate_lim,</span>
-    <span class="n">parameters</span><span class="p">.</span><span class="n">axles</span><span class="p">.</span><span class="n">front_axle</span><span class="p">.</span><span class="n">position_x</span> <span class="o">-</span> <span class="n">parameters</span><span class="p">.</span><span class="n">axles</span><span class="p">.</span><span class="n">rear_axle</span><span class="p">.</span><span class="n">position_x</span><span class="p">,</span> <span class="n">step_time</span><span class="p">,</span>
-    <span class="mf">0.25</span><span class="p">,</span>  <span class="c1">// vel_time_delay,</span>
-    <span class="mf">0.5</span><span class="p">,</span>   <span class="c1">// vel_time_constant,</span>
-    <span class="mf">0.3</span><span class="p">,</span>   <span class="c1">// steer_time_delay,</span>
-    <span class="mf">0.3</span><span class="p">,</span>   <span class="c1">// steer_time_constant,</span>
-    <span class="mf">0.0</span>    <span class="c1">// deadzone_delta_steer</span>
-    <span class="p">))</span>
+  <span class="n">vehicle_model_ptr_</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">SimModelTimeDelaySteer</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="n">getParameter</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;vel_lim&quot;</span><span class="p">,</span> <span class="mf">50.0</span><span class="p">),</span>     <span class="c1">// parameters.performance.max_speed,</span>
+    <span class="n">getParameter</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;steer_lim&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>    <span class="c1">// parameters.axles.front_axle.max_steering,</span>
+    <span class="n">getParameter</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;accel_rate&quot;</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">),</span>  <span class="c1">// parameters.performance.max_acceleration,</span>
+    <span class="n">getParameter</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;steer_rate_lim&quot;</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">),</span>
+    <span class="n">getParameter</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span>
+      <span class="s">&quot;wheel_base&quot;</span><span class="p">,</span>
+      <span class="n">parameters</span><span class="p">.</span><span class="n">axles</span><span class="p">.</span><span class="n">front_axle</span><span class="p">.</span><span class="n">position_x</span> <span class="o">-</span> <span class="n">parameters</span><span class="p">.</span><span class="n">axles</span><span class="p">.</span><span class="n">rear_axle</span><span class="p">.</span><span class="n">position_x</span><span class="p">),</span>  <span class="c1">//</span>
+    <span class="n">step_time</span><span class="p">,</span>                                                                          <span class="c1">//</span>
+    <span class="n">getParameter</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;vel_time_delay&quot;</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">),</span>                                       <span class="c1">//</span>
+    <span class="n">getParameter</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;vel_time_constant&quot;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>                                     <span class="c1">//</span>
+    <span class="n">getParameter</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;steer_time_delay&quot;</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span>                                      <span class="c1">//</span>
+    <span class="n">getParameter</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;steer_time_constant&quot;</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span>                                   <span class="c1">//</span>
+    <span class="n">getParameter</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;deadzone_delta_steer&quot;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)))</span>
 <span class="p">{</span>
   <span class="n">entity_type_</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityType</span><span class="o">::</span><span class="n">EGO</span><span class="p">;</span>
 
@@ -1184,7 +1187,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 10 June 2021 at 03:09:30 UTC</p>
+<p>Updated on 10 June 2021 at 08:39:59 UTC</p>
                 
                   
                 

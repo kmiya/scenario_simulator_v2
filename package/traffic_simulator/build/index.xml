@@ -218,6 +218,15 @@
     <member refid="structtraffic__simulator_1_1entity_1_1Center_1aa5b25fdc3c101352604b7ffd6691549c" kind="function"><name>Center</name></member>
     <member refid="structtraffic__simulator_1_1entity_1_1Center_1a04bfcc5c3c4d299bf1cc595dea31ac20" kind="function"><name>Center</name></member>
   </compound>
+  <compound refid="classhdmap__utils_1_1CenterPointsCache" kind="class"><name>hdmap_utils::CenterPointsCache</name>
+    <member refid="classhdmap__utils_1_1CenterPointsCache_1ae236ebb9c3ee62d0d6ff850fc1a731c9" kind="variable"><name>data_</name></member>
+    <member refid="classhdmap__utils_1_1CenterPointsCache_1a5d9620f62bf60e5a7efe6840f865b811" kind="variable"><name>splines_</name></member>
+    <member refid="classhdmap__utils_1_1CenterPointsCache_1a4d38c076ade2c381ef1a20e215718577" kind="variable"><name>mutex_</name></member>
+    <member refid="classhdmap__utils_1_1CenterPointsCache_1a318660da306a297e7488eacad18f22d4" kind="function"><name>exists</name></member>
+    <member refid="classhdmap__utils_1_1CenterPointsCache_1a556065144c7a5e2b8b6ebdb0ba6b3d8d" kind="function"><name>getCenterPoints</name></member>
+    <member refid="classhdmap__utils_1_1CenterPointsCache_1abc799c8c944366e91aa9c59f21972cdc" kind="function"><name>getCenterPointsSpline</name></member>
+    <member refid="classhdmap__utils_1_1CenterPointsCache_1a13e066ee4de7a0682c5ff42b2f780592" kind="function"><name>appendData</name></member>
+  </compound>
   <compound refid="structtraffic__simulator_1_1entity_1_1Dimensions" kind="struct"><name>traffic_simulator::entity::Dimensions</name>
     <member refid="structtraffic__simulator_1_1entity_1_1Dimensions_1a1331b4576cc3581c3be57dfd111d66dd" kind="variable"><name>width</name></member>
     <member refid="structtraffic__simulator_1_1entity_1_1Dimensions_1ac11cf30e1b63298381c198df735f398b" kind="variable"><name>length</name></member>
@@ -347,6 +356,7 @@
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a772af412dff49c685b674a1fb12387db" kind="function"><name>FORWARD_TO_ENTITY</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1ac25ed1a313c7f09c1c7d23b0fae87af8" kind="function"><name>FORWARD_TO_ENTITY</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a6dbb3945f6b4ec6b9cd16238cc8750d7" kind="function"><name>FORWARD_TO_ENTITY</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1ab18bf10546d93d33d23c4eadf76f2ace" kind="function"><name>updateNpcLogic</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1aef7863692a43546ede0f8e44933d864e" kind="function"><name>broadcastBaseLinkTransform</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a1f7aa8faa9e41bd0ca3520df50e277e1" kind="function"><name>broadcastEntityTransform</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1abbf22f043fdf82a8471bc74b913908aa" kind="function"><name>broadcastTransform</name></member>
@@ -417,6 +427,9 @@
     <member refid="classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1FollowLaneAction_1ae0c3ad42a956b086d39e294b0322d17a" kind="function"><name>providedPorts</name></member>
   </compound>
   <compound refid="classhdmap__utils_1_1HdMapUtils" kind="class"><name>hdmap_utils::HdMapUtils</name>
+    <member refid="classhdmap__utils_1_1HdMapUtils_1a2e5ae92a0e8c601dd9873facccf8991e" kind="variable"><name>route_cache_</name></member>
+    <member refid="classhdmap__utils_1_1HdMapUtils_1abb0c71208be35b5fa7fb8d15b6df8765" kind="variable"><name>center_points_cache_</name></member>
+    <member refid="classhdmap__utils_1_1HdMapUtils_1a9d2e7b27304e9c3238b5fd73740d0039" kind="variable"><name>lanelet_length_cache_</name></member>
     <member refid="classhdmap__utils_1_1HdMapUtils_1a2503f7ddbdb1bc5ce0d30c7a50273ea4" kind="variable"><name>lanelet_map_ptr_</name></member>
     <member refid="classhdmap__utils_1_1HdMapUtils_1ae59be95d1d2a3bb3256690fe519e7d06" kind="variable"><name>vehicle_routing_graph_ptr_</name></member>
     <member refid="classhdmap__utils_1_1HdMapUtils_1ae8004d15ae917c91f7365e1b4a2f3123" kind="variable"><name>traffic_rules_vehicle_ptr_</name></member>
@@ -438,7 +451,7 @@
     <member refid="classhdmap__utils_1_1HdMapUtils_1acec4c5b7331fb02b4a0bda5364e5bb41" kind="function"><name>getPreviousLaneletIds</name></member>
     <member refid="classhdmap__utils_1_1HdMapUtils_1a4d63dbf1164f53fec2949b8ae0e76dd6" kind="function"><name>getLaneChangeableLenletId</name></member>
     <member refid="classhdmap__utils_1_1HdMapUtils_1a68ce25f523b3d394dda32cdab779e9db" kind="function"><name>getDistanceToStopLine</name></member>
-    <member refid="classhdmap__utils_1_1HdMapUtils_1a7ff7e68e4c20a9b549dedd7481921724" kind="function"><name>getLaneletLength</name></member>
+    <member refid="classhdmap__utils_1_1HdMapUtils_1a9608d3eb2763fcb19c4835a1e0967c42" kind="function"><name>getLaneletLength</name></member>
     <member refid="classhdmap__utils_1_1HdMapUtils_1aa63b1b12321bab453ad6e2d9cf53bd06" kind="function"><name>isInLanelet</name></member>
     <member refid="classhdmap__utils_1_1HdMapUtils_1ad3c18262465e99e4b1179582afa55548" kind="function"><name>getLongitudinalDistance</name></member>
     <member refid="classhdmap__utils_1_1HdMapUtils_1ab19d2c04d59532fa200e770c7c34913f" kind="function"><name>getLongitudinalDistance</name></member>
@@ -449,6 +462,7 @@
     <member refid="classhdmap__utils_1_1HdMapUtils_1afc73f75893fe3a4d181e971f23401c86" kind="function"><name>getPreviousLanelets</name></member>
     <member refid="classhdmap__utils_1_1HdMapUtils_1a880579321ca7cb649cbd8b416b61bf5a" kind="function"><name>getCenterPoints</name></member>
     <member refid="classhdmap__utils_1_1HdMapUtils_1ad0c632adb1d18b094e96648a8d80542e" kind="function"><name>getCenterPoints</name></member>
+    <member refid="classhdmap__utils_1_1HdMapUtils_1a4dbcc69645f97b4964942bcfbdfc8c1d" kind="function"><name>getCenterPointsSpline</name></member>
     <member refid="classhdmap__utils_1_1HdMapUtils_1a1811e090140bf271da228dcba73c95f4" kind="function"><name>clipTrajectoryFromLaneletIds</name></member>
     <member refid="classhdmap__utils_1_1HdMapUtils_1a74e7d1c4fbf11b9f8949f40a982aae10" kind="function"><name>canChangeLane</name></member>
     <member refid="classhdmap__utils_1_1HdMapUtils_1a359ef582724a276cf32874d07fdc87c5" kind="function"><name>getLaneChangeTrajectory</name></member>
@@ -499,6 +513,7 @@
     <member refid="classtraffic__simulator_1_1math_1_1HermiteCurve_1a9acd64679ef6663e55d5302da9ee7af9" kind="variable"><name>cz_</name></member>
     <member refid="classtraffic__simulator_1_1math_1_1HermiteCurve_1a06d92127367375d4f20e391a9f42e3e0" kind="variable"><name>dz_</name></member>
     <member refid="classtraffic__simulator_1_1math_1_1HermiteCurve_1a1d9d60bd8ab20f5ae0a9cbd59a7f8ef3" kind="variable"><name>solver_</name></member>
+    <member refid="classtraffic__simulator_1_1math_1_1HermiteCurve_1a341ab6760d58ee5320fdcc26196e1d08" kind="variable"><name>length_</name></member>
     <member refid="classtraffic__simulator_1_1math_1_1HermiteCurve_1afc4878ce44a5598c869f5a128668ca39" kind="function"><name>HermiteCurve</name></member>
     <member refid="classtraffic__simulator_1_1math_1_1HermiteCurve_1aa46dbb74579ca617d3748cda5b77807a" kind="function"><name>HermiteCurve</name></member>
     <member refid="classtraffic__simulator_1_1math_1_1HermiteCurve_1a12e908b0bcd889ca7125f7543ea4d0dd" kind="function"><name>HermiteCurve</name></member>
@@ -509,8 +524,9 @@
     <member refid="classtraffic__simulator_1_1math_1_1HermiteCurve_1a4449ab0a3cb8cfe26214d807387c1194" kind="function"><name>getTangentVector</name></member>
     <member refid="classtraffic__simulator_1_1math_1_1HermiteCurve_1a46810bd131317173c93fca087d397418" kind="function"><name>getNormalVector</name></member>
     <member refid="classtraffic__simulator_1_1math_1_1HermiteCurve_1a87059a9762eaa4f7dcbd3d172bf7e562" kind="function"><name>get2DCurvature</name></member>
-    <member refid="classtraffic__simulator_1_1math_1_1HermiteCurve_1a3eb72c11a4562e40479a5ebcfa89071c" kind="function"><name>getMaximu2DCurvature</name></member>
-    <member refid="classtraffic__simulator_1_1math_1_1HermiteCurve_1a8e523b6e9b78c12f784f22643d894775" kind="function"><name>getLength</name></member>
+    <member refid="classtraffic__simulator_1_1math_1_1HermiteCurve_1a6246fbd62171610149990066f1560010" kind="function"><name>getMaximum2DCurvature</name></member>
+    <member refid="classtraffic__simulator_1_1math_1_1HermiteCurve_1a07825497b2c728d1f3ef60f24fd1b08a" kind="function"><name>getLength</name></member>
+    <member refid="classtraffic__simulator_1_1math_1_1HermiteCurve_1aa203cdefbac8e263e9d811cd37eefdbd" kind="function"><name>getLength</name></member>
     <member refid="classtraffic__simulator_1_1math_1_1HermiteCurve_1a5162b337dbe1a676133cd088d314815d" kind="function"><name>getSValue</name></member>
     <member refid="classtraffic__simulator_1_1math_1_1HermiteCurve_1a5a535726c5e70ea9fa52f637ae8f1ba6" kind="function"><name>getSquaredDistanceIn2D</name></member>
     <member refid="classtraffic__simulator_1_1math_1_1HermiteCurve_1a6770b8b0557295d8563506b9282ef92b" kind="function"><name>getCollisionPointIn2D</name></member>
@@ -529,6 +545,13 @@
     <member refid="classentity__behavior_1_1vehicle_1_1LaneChangeAction_1ae328f27270d4bc8b789330e3807ccbd8" kind="function"><name>calculateObstacle</name></member>
     <member refid="classentity__behavior_1_1vehicle_1_1LaneChangeAction_1a00b86f746ca77a2599737546b33571ca" kind="function"><name>getBlackBoardValues</name></member>
     <member refid="classentity__behavior_1_1vehicle_1_1LaneChangeAction_1a6af46d7e3f7a10cbaaa99f57c48f197c" kind="function"><name>providedPorts</name></member>
+  </compound>
+  <compound refid="classhdmap__utils_1_1LaneletLengthCache" kind="class"><name>hdmap_utils::LaneletLengthCache</name>
+    <member refid="classhdmap__utils_1_1LaneletLengthCache_1a991babb6f573584ce7a0a7636684660a" kind="variable"><name>data_</name></member>
+    <member refid="classhdmap__utils_1_1LaneletLengthCache_1ac7f917108f534ee2a3653ca4de0a3b29" kind="variable"><name>mutex_</name></member>
+    <member refid="classhdmap__utils_1_1LaneletLengthCache_1a69dbf968abe80b9c09016941406851c0" kind="function"><name>exists</name></member>
+    <member refid="classhdmap__utils_1_1LaneletLengthCache_1aa50f96ab4be545e30ce80a485a4c2dac" kind="function"><name>getLength</name></member>
+    <member refid="classhdmap__utils_1_1LaneletLengthCache_1a0a22c79a8a140b19cc03fca8d0dc25e5" kind="function"><name>appendData</name></member>
   </compound>
   <compound refid="classtraffic__simulator_1_1entity_1_1LaneletMarkerQoS" kind="class"><name>traffic_simulator::entity::LaneletMarkerQoS</name>
     <member refid="classtraffic__simulator_1_1entity_1_1LaneletMarkerQoS_1ab628148b6533f12e848c740db94f9ca1" kind="function"><name>LaneletMarkerQoS</name></member>
@@ -659,6 +682,13 @@
     <member refid="classmetrics_1_1ReactionTimeMetric_1aa52600a32cd3b2788f8684bf7312378b" kind="function"><name>update</name></member>
     <member refid="classmetrics_1_1ReactionTimeMetric_1a00271e19e8ac3c8da5acbc2c107fb538" kind="function"><name>to_json</name></member>
     <member refid="classmetrics_1_1ReactionTimeMetric_1a561f0ba26d89a0e00fc871f00018369e" kind="function"><name>activateTrigger</name></member>
+  </compound>
+  <compound refid="classhdmap__utils_1_1RouteCache" kind="class"><name>hdmap_utils::RouteCache</name>
+    <member refid="classhdmap__utils_1_1RouteCache_1a2d9ef8e411804839045ff2e5acdfa5c9" kind="variable"><name>data_</name></member>
+    <member refid="classhdmap__utils_1_1RouteCache_1add685e3ef95b722b7d74780c7b0672c1" kind="variable"><name>mutex_</name></member>
+    <member refid="classhdmap__utils_1_1RouteCache_1a11cd0969cff5c5a6fe250f0d8b027bd4" kind="function"><name>exists</name></member>
+    <member refid="classhdmap__utils_1_1RouteCache_1a01ea299ebdd28e7496b624218b7f25cc" kind="function"><name>getRoute</name></member>
+    <member refid="classhdmap__utils_1_1RouteCache_1ad4729a16133be74a1a1339286fb27959" kind="function"><name>appendData</name></member>
   </compound>
   <compound refid="classtraffic__simulator_1_1RoutePlanner" kind="class"><name>traffic_simulator::RoutePlanner</name>
     <member refid="classtraffic__simulator_1_1RoutePlanner_1a0d592292676267c245ea09867275384a" kind="variable"><name>whole_route_</name></member>
@@ -1222,6 +1252,8 @@
   <compound refid="vehicle__entity_8hpp" kind="file"><name>vehicle_entity.hpp</name>
   </compound>
   <compound refid="vehicle__parameter_8hpp" kind="file"><name>vehicle_parameter.hpp</name>
+  </compound>
+  <compound refid="cache_8hpp" kind="file"><name>cache.hpp</name>
   </compound>
   <compound refid="hdmap__utils_8hpp" kind="file"><name>hdmap_utils.hpp</name>
   </compound>

@@ -747,6 +747,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/behavior/vehicle/behavior_tree.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/behavior/vehicle/follow_lane_sequence/follow_lane_action.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/helper/stop_watch.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/math/catmull_rom_spline.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 
@@ -804,6 +805,7 @@
     <span class="n">setOutput</span><span class="p">(</span><span class="s">&quot;updated_status&quot;</span><span class="p">,</span> <span class="n">stopAtEndOfRoad</span><span class="p">());</span>
     <span class="k">return</span> <span class="n">BT</span><span class="o">::</span><span class="n">NodeStatus</span><span class="o">::</span><span class="n">RUNNING</span><span class="p">;</span>
   <span class="p">}</span>
+  <span class="k">const</span> <span class="k">auto</span> <span class="n">waypoints</span> <span class="o">=</span> <span class="n">calculateWaypoints</span><span class="p">();</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">driver_model</span><span class="p">.</span><span class="n">see_around</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">getRightOfWayEntities</span><span class="p">(</span><span class="n">route_lanelets</span><span class="p">).</span><span class="n">size</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">BT</span><span class="o">::</span><span class="n">NodeStatus</span><span class="o">::</span><span class="n">FAILURE</span><span class="p">;</span>
@@ -816,7 +818,6 @@
         <span class="k">return</span> <span class="n">BT</span><span class="o">::</span><span class="n">NodeStatus</span><span class="o">::</span><span class="n">FAILURE</span><span class="p">;</span>
       <span class="p">}</span>
     <span class="p">}</span>
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">waypoints</span> <span class="o">=</span> <span class="n">calculateWaypoints</span><span class="p">();</span>
     <span class="k">const</span> <span class="k">auto</span> <span class="n">distance_to_traffic_stop_line</span> <span class="o">=</span>
       <span class="n">getDistanceToTrafficLightStopLine</span><span class="p">(</span><span class="n">route_lanelets</span><span class="p">,</span> <span class="n">waypoints</span><span class="p">.</span><span class="n">waypoints</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">distance_to_traffic_stop_line</span><span class="p">)</span> <span class="p">{</span>
@@ -842,13 +843,11 @@
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
-
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">target_speed</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">target_speed</span> <span class="o">=</span> <span class="n">hdmap_utils</span><span class="o">-&gt;</span><span class="n">getSpeedLimit</span><span class="p">(</span><span class="n">route_lanelets</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">auto</span> <span class="n">updated_status</span> <span class="o">=</span> <span class="n">calculateEntityStatusUpdated</span><span class="p">(</span><span class="n">target_speed</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
   <span class="n">setOutput</span><span class="p">(</span><span class="s">&quot;updated_status&quot;</span><span class="p">,</span> <span class="n">updated_status</span><span class="p">);</span>
-  <span class="k">const</span> <span class="k">auto</span> <span class="n">waypoints</span> <span class="o">=</span> <span class="n">calculateWaypoints</span><span class="p">();</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">obstacle</span> <span class="o">=</span> <span class="n">calculateObstacle</span><span class="p">(</span><span class="n">waypoints</span><span class="p">);</span>
   <span class="n">setOutput</span><span class="p">(</span><span class="s">&quot;waypoints&quot;</span><span class="p">,</span> <span class="n">waypoints</span><span class="p">);</span>
   <span class="n">setOutput</span><span class="p">(</span><span class="s">&quot;obstacle&quot;</span><span class="p">,</span> <span class="n">obstacle</span><span class="p">);</span>
@@ -859,7 +858,7 @@
 <span class="p">}</span>  <span class="c1">// namespace entity_behavior</span>
 </code></pre></div>
 <hr />
-<p>Updated on 10 June 2021 at 01:36:58 UTC</p>
+<p>Updated on 10 June 2021 at 03:09:30 UTC</p>
                 
                   
                 

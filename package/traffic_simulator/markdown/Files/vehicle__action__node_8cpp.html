@@ -818,7 +818,8 @@
             <span class="n">new_s</span> <span class="o">=</span> <span class="n">new_s</span> <span class="o">-</span> <span class="n">length</span><span class="p">;</span>
             <span class="k">auto</span> <span class="n">next_ids</span> <span class="o">=</span> <span class="n">hdmap_utils</span><span class="o">-&gt;</span><span class="n">getNextLaneletIds</span><span class="p">(</span><span class="n">route_lanelets</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">next_ids</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-              <span class="k">return</span> <span class="n">stopAtEndOfRoad</span><span class="p">();</span>
+              <span class="k">const</span> <span class="k">auto</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">stopAtEndOfRoad</span><span class="p">();</span>
+              <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
             <span class="p">}</span>
             <span class="n">new_lanelet_id</span> <span class="o">=</span> <span class="n">next_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
             <span class="k">break</span><span class="p">;</span>
@@ -903,7 +904,7 @@
 <span class="p">}</span>  <span class="c1">// namespace entity_behavior</span>
 </code></pre></div>
 <hr />
-<p>Updated on 10 June 2021 at 01:36:58 UTC</p>
+<p>Updated on 10 June 2021 at 03:09:30 UTC</p>
                 
                   
                 

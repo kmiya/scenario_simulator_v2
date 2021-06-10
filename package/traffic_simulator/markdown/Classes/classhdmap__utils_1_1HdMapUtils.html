@@ -987,6 +987,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-getcenterpointsspline" class="md-nav__link">
+    function getCenterPointsSpline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-getcenterpoints" class="md-nav__link">
     function getCenterPoints
   </a>
@@ -1174,7 +1181,7 @@
 </tr>
 <tr>
 <td>double</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classhdmap__utils_1_1HdMapUtils#function-getlaneletlength">getLaneletLength</a></strong>(std::int64_t lanelet_id) const</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classhdmap__utils_1_1HdMapUtils#function-getlaneletlength">getLaneletLength</a></strong>(std::int64_t lanelet_id)</td>
 </tr>
 <tr>
 <td>const std::vector&lt; std::int64_t &gt;</td>
@@ -1227,6 +1234,10 @@
 <tr>
 <td>boost::optional&lt; std::int64_t &gt;</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classhdmap__utils_1_1HdMapUtils#function-getclosetlanletid">getClosetLanletId</a></strong>(geometry_msgs::msg::Pose pose, double distance_thresh =30.0)</td>
+</tr>
+<tr>
+<td>std::shared_ptr&lt; <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1math_1_1CatmullRomSpline">traffic_simulator::math::CatmullRomSpline</a> &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classhdmap__utils_1_1HdMapUtils#function-getcenterpointsspline">getCenterPointsSpline</a></strong>(std::int64_t lanelet_id)</td>
 </tr>
 <tr>
 <td>std::vector&lt; geometry_msgs::msg::Point &gt;</td>
@@ -1413,7 +1424,7 @@
 <h3 id="function-getlaneletlength">function getLaneletLength<a class="headerlink" href="#function-getlaneletlength" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">double</span> <span class="n">getLaneletLength</span><span class="p">(</span>
     <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">lanelet_id</span>
-<span class="p">)</span> <span class="k">const</span>
+<span class="p">)</span>
 </code></pre></div>
 <h3 id="function-getlaneletids">function getLaneletIds<a class="headerlink" href="#function-getlaneletids" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="o">&gt;</span> <span class="n">getLaneletIds</span><span class="p">()</span>
@@ -1493,6 +1504,11 @@
     <span class="kt">double</span> <span class="n">distance_thresh</span> <span class="o">=</span><span class="mf">30.0</span>
 <span class="p">)</span>
 </code></pre></div>
+<h3 id="function-getcenterpointsspline">function getCenterPointsSpline<a class="headerlink" href="#function-getcenterpointsspline" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">CatmullRomSpline</span> <span class="o">&gt;</span> <span class="n">getCenterPointsSpline</span><span class="p">(</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">lanelet_id</span>
+<span class="p">)</span>
+</code></pre></div>
 <h3 id="function-getcenterpoints">function getCenterPoints<a class="headerlink" href="#function-getcenterpoints" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="o">&gt;</span> <span class="n">getCenterPoints</span><span class="p">(</span>
     <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">lanelet_id</span>
@@ -1527,7 +1543,7 @@
 <span class="p">)</span>
 </code></pre></div>
 <hr />
-<p>Updated on 10 June 2021 at 01:36:57 UTC</p>
+<p>Updated on 10 June 2021 at 03:09:30 UTC</p>
                 
                   
                 

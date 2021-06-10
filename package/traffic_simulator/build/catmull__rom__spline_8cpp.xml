@@ -10,108 +10,108 @@
     <includes local="no">utility</includes>
     <includes local="no">vector</includes>
     <incdepgraph>
-      <node id="5141">
+      <node id="5460">
         <label>scenario_simulator_exception/exception.hpp</label>
       </node>
-      <node id="5140">
+      <node id="5459">
         <label>limits</label>
       </node>
-      <node id="5150">
+      <node id="5469">
         <label>geometry_msgs/msg/pose.hpp</label>
       </node>
-      <node id="5152">
+      <node id="5471">
         <label>openscenario_msgs/msg/hermite_curve.hpp</label>
       </node>
-      <node id="5142">
+      <node id="5461">
         <label>string</label>
       </node>
-      <node id="5147">
+      <node id="5466">
         <label>traffic_simulator/math/hermite_curve.hpp</label>
         <link refid="hermite__curve_8hpp_source"/>
-        <childnode refid="5148" relation="include">
+        <childnode refid="5467" relation="include">
         </childnode>
-        <childnode refid="5149" relation="include">
+        <childnode refid="5468" relation="include">
         </childnode>
-        <childnode refid="5145" relation="include">
+        <childnode refid="5464" relation="include">
         </childnode>
-        <childnode refid="5150" relation="include">
+        <childnode refid="5469" relation="include">
         </childnode>
-        <childnode refid="5151" relation="include">
+        <childnode refid="5470" relation="include">
         </childnode>
-        <childnode refid="5152" relation="include">
+        <childnode refid="5471" relation="include">
         </childnode>
-        <childnode refid="5153" relation="include">
+        <childnode refid="5472" relation="include">
         </childnode>
-        <childnode refid="5154" relation="include">
+        <childnode refid="5473" relation="include">
         </childnode>
       </node>
-      <node id="5144">
+      <node id="5463">
         <label>exception</label>
       </node>
-      <node id="5151">
+      <node id="5470">
         <label>geometry_msgs/msg/vector3.hpp</label>
       </node>
-      <node id="5148">
+      <node id="5467">
         <label>quaternion_operation/quaternion_operation.h</label>
       </node>
-      <node id="5145">
+      <node id="5464">
         <label>geometry_msgs/msg/point.hpp</label>
       </node>
-      <node id="5146">
+      <node id="5465">
         <label>openscenario_msgs/msg/catmull_rom_spline.hpp</label>
       </node>
-      <node id="5154">
+      <node id="5473">
         <label>vector</label>
       </node>
-      <node id="5155">
+      <node id="5474">
         <label>utility</label>
       </node>
-      <node id="5153">
+      <node id="5472">
         <label>traffic_simulator/math/polynomial_solver.hpp</label>
         <link refid="polynomial__solver_8hpp_source"/>
-        <childnode refid="5154" relation="include">
+        <childnode refid="5473" relation="include">
         </childnode>
       </node>
-      <node id="5138">
+      <node id="5457">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/math/catmull_rom_spline.cpp</label>
         <link refid="catmull__rom__spline_8cpp"/>
-        <childnode refid="5139" relation="include">
+        <childnode refid="5458" relation="include">
         </childnode>
-        <childnode refid="5140" relation="include">
+        <childnode refid="5459" relation="include">
         </childnode>
-        <childnode refid="5141" relation="include">
+        <childnode refid="5460" relation="include">
         </childnode>
-        <childnode refid="5142" relation="include">
+        <childnode refid="5461" relation="include">
         </childnode>
-        <childnode refid="5143" relation="include">
+        <childnode refid="5462" relation="include">
         </childnode>
-        <childnode refid="5155" relation="include">
+        <childnode refid="5474" relation="include">
         </childnode>
-        <childnode refid="5154" relation="include">
+        <childnode refid="5473" relation="include">
         </childnode>
       </node>
-      <node id="5143">
+      <node id="5462">
         <label>traffic_simulator/math/catmull_rom_spline.hpp</label>
         <link refid="catmull__rom__spline_8hpp_source"/>
-        <childnode refid="5144" relation="include">
+        <childnode refid="5463" relation="include">
         </childnode>
-        <childnode refid="5145" relation="include">
+        <childnode refid="5464" relation="include">
         </childnode>
-        <childnode refid="5146" relation="include">
+        <childnode refid="5465" relation="include">
         </childnode>
-        <childnode refid="5142" relation="include">
+        <childnode refid="5461" relation="include">
         </childnode>
-        <childnode refid="5147" relation="include">
+        <childnode refid="5466" relation="include">
         </childnode>
-        <childnode refid="5155" relation="include">
+        <childnode refid="5474" relation="include">
         </childnode>
-        <childnode refid="5154" relation="include">
+        <childnode refid="5473" relation="include">
         </childnode>
       </node>
-      <node id="5139">
+      <node id="5458">
         <label>iostream</label>
       </node>
-      <node id="5149">
+      <node id="5468">
         <label>boost/optional.hpp</label>
       </node>
     </incdepgraph>
@@ -353,7 +353,7 @@
 <codeline lineno="229"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="230"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>curve<sp/>:<sp/>curves_)<sp/>{</highlight></codeline>
 <codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>length_list_.emplace_back(curve.getLength());</highlight></codeline>
-<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>maximum_2d_curvatures_.emplace_back(curve.getMaximu2DCurvature());</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>maximum_2d_curvatures_.emplace_back(curve.getMaximum2DCurvature());</highlight></codeline>
 <codeline lineno="233"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="234"><highlight class="normal"><sp/><sp/>total_length_<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="235"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>length<sp/>:<sp/>length_list_)<sp/>{</highlight></codeline>

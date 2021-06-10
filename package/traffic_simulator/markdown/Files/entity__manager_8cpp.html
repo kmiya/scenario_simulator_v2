@@ -1271,15 +1271,27 @@
   <span class="k">return</span> <span class="n">hdmap_utils_ptr_</span><span class="o">-&gt;</span><span class="n">toMapPose</span><span class="p">(</span><span class="n">lanelet_pose</span><span class="p">).</span><span class="n">pose</span><span class="p">;</span>
 <span class="p">}</span>
 
+<span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="n">EntityManager</span><span class="o">::</span><span class="n">updateNpcLogic</span><span class="p">(</span>
+  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span>
+  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityType</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">type_list</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">verbose_</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;update &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; behavior&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">entities_</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">setEntityTypeList</span><span class="p">(</span><span class="n">type_list</span><span class="p">);</span>
+  <span class="n">entities_</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">onUpdate</span><span class="p">(</span><span class="n">current_time_</span><span class="p">,</span> <span class="n">step_time_</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">entities_</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">statusSet</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">entities_</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">getStatus</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;status of entity &quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s">&quot;is empty&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
 <span class="kt">void</span> <span class="n">EntityManager</span><span class="o">::</span><span class="n">update</span><span class="p">(</span><span class="k">const</span> <span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="k">const</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">system_clock</span><span class="o">::</span><span class="n">time_point</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">;</span>
   <span class="n">start</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">system_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
   <span class="n">step_time_</span> <span class="o">=</span> <span class="n">step_time</span><span class="p">;</span>
   <span class="n">current_time_</span> <span class="o">=</span> <span class="n">current_time</span><span class="p">;</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">current_time_</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">traffic_light_manager_ptr_</span><span class="o">-&gt;</span><span class="n">update</span><span class="p">(</span><span class="n">step_time_</span><span class="p">);</span>
-  <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">verbose_</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;-------------------------- UPDATE --------------------------&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;current_time : &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">current_time_</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
@@ -1287,18 +1299,17 @@
   <span class="k">if</span> <span class="p">(</span><span class="n">getNumberOfEgo</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;multi ego simulation does not support yet&quot;</span><span class="p">);</span>
   <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">current_time_</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">traffic_light_manager_ptr_</span><span class="o">-&gt;</span><span class="n">update</span><span class="p">(</span><span class="n">step_time_</span><span class="p">);</span>
+  <span class="p">}</span>
   <span class="n">setVerbose</span><span class="p">(</span><span class="n">verbose_</span><span class="p">);</span>
   <span class="k">auto</span> <span class="n">type_list</span> <span class="o">=</span> <span class="n">getEntityTypeList</span><span class="p">();</span>
   <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="o">&gt;</span> <span class="n">all_status</span><span class="p">;</span>
-  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">entities_</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">entities_</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">verbose_</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;update &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; behavior&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">setEntityTypeList</span><span class="p">(</span><span class="n">type_list</span><span class="p">);</span>
-    <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">onUpdate</span><span class="p">(</span><span class="n">current_time</span><span class="p">,</span> <span class="n">step_time</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">statusSet</span><span class="p">())</span> <span class="p">{</span>
-      <span class="k">auto</span> <span class="n">status</span> <span class="o">=</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">getStatus</span><span class="p">();</span>
-      <span class="n">all_status</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">first</span><span class="p">,</span> <span class="n">status</span><span class="p">);</span>
+  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">entity_names</span> <span class="o">=</span> <span class="n">getEntityNames</span><span class="p">();</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">entity_name</span> <span class="p">:</span> <span class="n">entity_names</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">entities_</span><span class="p">[</span><span class="n">entity_name</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">statusSet</span><span class="p">())</span> <span class="p">{</span>
+      <span class="k">const</span> <span class="k">auto</span> <span class="n">status</span> <span class="o">=</span> <span class="n">updateNpcLogic</span><span class="p">(</span><span class="n">entity_name</span><span class="p">,</span> <span class="n">type_list</span><span class="p">);</span>
+      <span class="n">all_status</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">entity_name</span><span class="p">,</span> <span class="n">status</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
   <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">entities_</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">entities_</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -1360,7 +1371,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 10 June 2021 at 01:36:58 UTC</p>
+<p>Updated on 10 June 2021 at 03:09:30 UTC</p>
                 
                   
                 

@@ -780,7 +780,7 @@
     <span class="k">if</span> <span class="p">(</span>
       <span class="o">!</span><span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">entityExists</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
       <span class="o">!</span><span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">spawnEntity</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">entity</span><span class="o">::</span><span class="n">EgoEntity</span><span class="o">&gt;</span><span class="p">(</span>
-        <span class="n">name</span><span class="p">,</span> <span class="n">lanelet2_map_osm</span><span class="p">,</span> <span class="n">clock_</span><span class="p">.</span><span class="n">getCurrentSimulationTime</span><span class="p">(),</span> <span class="n">params</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">name</span><span class="p">,</span> <span class="n">lanelet2_map_osm</span><span class="p">,</span> <span class="n">clock_</span><span class="p">.</span><span class="n">getStepTime</span><span class="p">(),</span> <span class="n">params</span><span class="p">))</span> <span class="p">{</span>
       <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">standalone_mode</span><span class="p">)</span> <span class="p">{</span>
@@ -1084,7 +1084,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 11 June 2021 at 00:07:00 UTC</p>
+<p>Updated on 11 June 2021 at 03:39:06 UTC</p>
                 
                   
                 

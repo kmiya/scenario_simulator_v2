@@ -1223,7 +1223,7 @@
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>!entity_manager_ptr_-&gt;entityExists(name)<sp/>&amp;&amp;</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>!entity_manager_ptr_-&gt;spawnEntity&lt;<ref refid="classtraffic__simulator_1_1entity_1_1EgoEntity" kindref="compound">traffic_simulator::entity::EgoEntity</ref>&gt;(</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name,<sp/>lanelet2_map_osm,<sp/>clock_.getCurrentSimulationTime(),<sp/>params))<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name,<sp/>lanelet2_map_osm,<sp/>clock_.getStepTime(),<sp/>params))<sp/>{</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(standalone_mode)<sp/>{</highlight></codeline>

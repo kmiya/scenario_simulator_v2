@@ -775,6 +775,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_msgs/msg/entity_type.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/vehicle_entity.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/vehicle_model/sim_model_ideal.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/vehicle_model/sim_model_time_delay.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
@@ -783,12 +784,26 @@
 <span class="p">{</span>
 <span class="k">namespace</span> <span class="nn">entity</span>
 <span class="p">{</span>
+<span class="k">enum</span> <span class="k">class</span> <span class="nc">VehicleModelType</span> <span class="p">{</span>
+  <span class="n">IDEAL_TWIST</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="n">IDEAL_STEER</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="n">DELAY_TWIST</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="n">DELAY_STEER</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+  <span class="n">CONST_ACCEL_TWIST</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+  <span class="n">IDEAL_FORKLIFT_RLS</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+  <span class="n">DELAY_FORKLIFT_RLS</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span>
+  <span class="n">IDEAL_ACCEL</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span>
+  <span class="n">DELAY_STEER_ACC</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+<span class="p">};</span>
+
 <span class="k">class</span> <span class="nc">EgoEntity</span> <span class="o">:</span> <span class="k">public</span> <span class="n">VehicleEntity</span>
 <span class="p">{</span>
-  <span class="c1">// NOTE: One day we will have to do simultaneous simulations of multiple Autowares.</span>
-  <span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">concealer</span><span class="o">::</span><span class="n">Autoware</span><span class="o">&gt;</span> <span class="n">autowares</span><span class="p">;</span>
+  <span class="c1">// NOTE: One day we will have to do simultaneous simulations of multiple Ego entities.</span>
+  <span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">concealer</span><span class="o">::</span><span class="n">Autoware</span><span class="o">&gt;</span> <span class="n">ego_entities</span><span class="p">;</span>
 
   <span class="kt">bool</span> <span class="n">autoware_initialized</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>  <span class="c1">// TODO (yamacir-kit) REMOVE THIS!!!</span>
+
+  <span class="k">const</span> <span class="n">VehicleModelType</span> <span class="n">vehicle_model_type_</span><span class="p">;</span>
 
   <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">SimModelInterface</span><span class="o">&gt;</span> <span class="n">vehicle_model_ptr_</span><span class="p">;</span>
 
@@ -861,7 +876,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__ENTITY__EGO_ENTITY_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 14 June 2021 at 06:07:02 UTC</p>
+<p>Updated on 14 June 2021 at 07:26:13 UTC</p>
                 
                   
                 

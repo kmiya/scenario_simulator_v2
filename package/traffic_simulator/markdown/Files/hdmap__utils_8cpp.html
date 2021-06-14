@@ -1015,7 +1015,7 @@
 <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">toLaneletPose</span><span class="p">(</span>
   <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">pose</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">const</span> <span class="k">auto</span> <span class="n">lanelet_id</span> <span class="o">=</span> <span class="n">getClosetLanletId</span><span class="p">(</span><span class="n">pose</span><span class="p">);</span>
+  <span class="k">const</span> <span class="k">auto</span> <span class="n">lanelet_id</span> <span class="o">=</span> <span class="n">getClosetLaneletId</span><span class="p">(</span><span class="n">pose</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">lanelet_id</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">;</span>
   <span class="p">}</span>
@@ -1036,7 +1036,7 @@
   <span class="k">return</span> <span class="n">lanelet_pose</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="o">&gt;</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">getClosetLanletId</span><span class="p">(</span>
+<span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="o">&gt;</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">getClosetLaneletId</span><span class="p">(</span>
   <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">pose</span><span class="p">,</span> <span class="kt">double</span> <span class="n">distance_thresh</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="n">lanelet</span><span class="o">::</span><span class="n">BasicPoint2d</span> <span class="nf">search_point</span><span class="p">(</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
@@ -2017,7 +2017,7 @@
 <span class="p">}</span>  <span class="c1">// namespace hdmap_utils</span>
 </code></pre></div>
 <hr />
-<p>Updated on 14 June 2021 at 06:07:02 UTC</p>
+<p>Updated on 14 June 2021 at 07:26:13 UTC</p>
                 
                   
                 

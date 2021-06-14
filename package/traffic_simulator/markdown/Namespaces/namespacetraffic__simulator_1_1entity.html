@@ -694,6 +694,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#types-documentation" class="md-nav__link">
     Types Documentation
   </a>
@@ -702,8 +709,49 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#enum-vehiclemodeltype" class="md-nav__link">
+    enum VehicleModelType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#enum-direction" class="md-nav__link">
     enum Direction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions-documentation" class="md-nav__link">
+    Functions Documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-tostring" class="md-nav__link">
+    function toString
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-makesimulationmodel" class="md-nav__link">
+    function makeSimulationModel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-getvehiclemodeltype" class="md-nav__link">
+    function getVehicleModelType
   </a>
   
 </li>
@@ -813,11 +861,95 @@
 <tbody>
 <tr>
 <td>enum</td>
+<td IDEAL_TWIST="IDEAL_TWIST"><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Namespaces/namespacetraffic__simulator_1_1entity#enum-vehiclemodeltype">VehicleModelType</a></strong></td>
+</tr>
+<tr>
+<td>enum</td>
 <td STRAIGHT="STRAIGHT"><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Namespaces/namespacetraffic__simulator_1_1entity#enum-direction">Direction</a></strong></td>
 </tr>
 </tbody>
 </table>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>auto</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Namespaces/namespacetraffic__simulator_1_1entity#function-tostring">toString</a></strong>(const VehicleModelType datum)</td>
+</tr>
+<tr>
+<td>auto</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Namespaces/namespacetraffic__simulator_1_1entity#function-makesimulationmodel">makeSimulationModel</a></strong>(const VehicleModelType vehicle_model_type, const double step_time, const openscenario_msgs::msg::VehicleParameters &amp; parameters)</td>
+</tr>
+<tr>
+<td>auto</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Namespaces/namespacetraffic__simulator_1_1entity#function-getvehiclemodeltype">getVehicleModelType</a></strong>()</td>
+</tr>
+</tbody>
+</table>
 <h2 id="types-documentation">Types Documentation<a class="headerlink" href="#types-documentation" title="Permanent link">#</a></h2>
+<h3 id="enum-vehiclemodeltype">enum VehicleModelType<a class="headerlink" href="#enum-vehiclemodeltype" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Enumerator</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IDEAL_TWIST</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td>IDEAL_STEER</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>IDEAL_FORKLIFT_RLS</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>IDEAL_ACCEL</td>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>DELAY_TWIST</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>DELAY_STEER_ACC</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td>DELAY_STEER</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>DELAY_FORKLIFT_RLS</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr>
+<td>CONST_ACCEL_TWIST</td>
+<td>4</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="enum-direction">enum Direction<a class="headerlink" href="#enum-direction" title="Permanent link">#</a></h3>
 <table>
 <thead>
@@ -845,8 +977,24 @@
 </tr>
 </tbody>
 </table>
+<h2 id="functions-documentation">Functions Documentation<a class="headerlink" href="#functions-documentation" title="Permanent link">#</a></h2>
+<h3 id="function-tostring">function toString<a class="headerlink" href="#function-tostring" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span> <span class="n">toString</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">VehicleModelType</span> <span class="n">datum</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-makesimulationmodel">function makeSimulationModel<a class="headerlink" href="#function-makesimulationmodel" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span> <span class="n">makeSimulationModel</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">VehicleModelType</span> <span class="n">vehicle_model_type</span><span class="p">,</span>
+    <span class="k">const</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span> <span class="o">&amp;</span> <span class="n">parameters</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-getvehiclemodeltype">function getVehicleModelType<a class="headerlink" href="#function-getvehiclemodeltype" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span> <span class="n">getVehicleModelType</span><span class="p">()</span>
+</code></pre></div>
 <hr />
-<p>Updated on 14 June 2021 at 06:07:01 UTC</p>
+<p>Updated on 14 June 2021 at 07:26:12 UTC</p>
                 
                   
                 

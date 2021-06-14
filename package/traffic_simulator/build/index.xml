@@ -235,8 +235,9 @@
     <member refid="structtraffic__simulator_1_1entity_1_1Dimensions_1a49f7bf7c24d4f5a5630a4043f84c46ab" kind="function"><name>Dimensions</name></member>
   </compound>
   <compound refid="classtraffic__simulator_1_1entity_1_1EgoEntity" kind="class"><name>traffic_simulator::entity::EgoEntity</name>
-    <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a6627b19852f57609d7e9979e31f35f85" kind="variable"><name>autowares</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a7d4a0eda1ed9a955247f383c6074e182" kind="variable"><name>ego_entities</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a6462a02db036efef6fdd5de8190b4234" kind="variable"><name>autoware_initialized</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1adf91aef19c1028ff88572bbae627266a" kind="variable"><name>vehicle_model_type_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a8edfe25f1f9b9e0ffb16f75d15a57473" kind="variable"><name>vehicle_model_ptr_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a4a391d045af95f50e8e531abb201d6c9" kind="variable"><name>initial_pose_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1ad2b60388f3bd8a7e7190db957fe94d3c" kind="variable"><name>previous_linear_velocity_</name></member>
@@ -474,7 +475,7 @@
     <member refid="classhdmap__utils_1_1HdMapUtils_1abcbb3443e352b352773e08f3b8d9db73" kind="function"><name>generateMarker</name></member>
     <member refid="classhdmap__utils_1_1HdMapUtils_1af2dd81ca4051851c81494bfbe08fed8d" kind="function"><name>getRightOfWayLaneletIds</name></member>
     <member refid="classhdmap__utils_1_1HdMapUtils_1a2f2091800f6dba7990eb819a46a8d457" kind="function"><name>getRightOfWayLaneletIds</name></member>
-    <member refid="classhdmap__utils_1_1HdMapUtils_1a68bcbdc279b8ed28abbe3022805cd121" kind="function"><name>getClosetLanletId</name></member>
+    <member refid="classhdmap__utils_1_1HdMapUtils_1a53cfc778f9d76d81fdebd66b17e80290" kind="function"><name>getClosetLaneletId</name></member>
     <member refid="classhdmap__utils_1_1HdMapUtils_1aa73ca234cb0979f1c113624508395823" kind="function"><name>getLaneletPolygon</name></member>
     <member refid="classhdmap__utils_1_1HdMapUtils_1a71203a3037207afec9c31fc70c0ec5a3" kind="function"><name>getStopLinePolygon</name></member>
     <member refid="classhdmap__utils_1_1HdMapUtils_1a57108c20cc4accbcac79bdaf07f5ece5" kind="function"><name>getTrafficLightIds</name></member>
@@ -1168,10 +1169,23 @@
     <member refid="traffic__light__state_8hpp_1a13be641911af33072c58d28b622ede73" kind="function"><name>makeLampState</name></member>
   </compound>
   <compound refid="namespacetraffic__simulator_1_1entity" kind="namespace"><name>traffic_simulator::entity</name>
+    <member refid="ego__entity_8hpp_1ad302e23fac01bd493bdbc3d9569f7b2c" kind="enum"><name>VehicleModelType</name></member>
+    <member refid="dummy_1ad302e23fac01bd493bdbc3d9569f7b2caa2221ddbe85a59308905a0f4e793fc3a" kind="enumvalue"><name>IDEAL_TWIST</name></member>
+    <member refid="dummy_1ad302e23fac01bd493bdbc3d9569f7b2ca1dda0752d2a3e45196adcb7d227b484d" kind="enumvalue"><name>IDEAL_STEER</name></member>
+    <member refid="dummy_1ad302e23fac01bd493bdbc3d9569f7b2ca42649016ba2c51dfffd7f42ebd622dd4" kind="enumvalue"><name>DELAY_TWIST</name></member>
+    <member refid="dummy_1ad302e23fac01bd493bdbc3d9569f7b2ca53e78c00e646e543d2ae43fbf9405ae9" kind="enumvalue"><name>DELAY_STEER</name></member>
+    <member refid="dummy_1ad302e23fac01bd493bdbc3d9569f7b2ca9aa7059650a820b2c1da771c992f3619" kind="enumvalue"><name>CONST_ACCEL_TWIST</name></member>
+    <member refid="dummy_1ad302e23fac01bd493bdbc3d9569f7b2ca5014cd1b35b8c66c81014d065a03f635" kind="enumvalue"><name>IDEAL_FORKLIFT_RLS</name></member>
+    <member refid="dummy_1ad302e23fac01bd493bdbc3d9569f7b2cab1f2a29866d467ea97a39616198dc4be" kind="enumvalue"><name>DELAY_FORKLIFT_RLS</name></member>
+    <member refid="dummy_1ad302e23fac01bd493bdbc3d9569f7b2cac01abd3d51abe46c10ca9735194fb86d" kind="enumvalue"><name>IDEAL_ACCEL</name></member>
+    <member refid="dummy_1ad302e23fac01bd493bdbc3d9569f7b2caf519d33be26dd0b3b0cbe60267b13e9f" kind="enumvalue"><name>DELAY_STEER_ACC</name></member>
     <member refid="entity__base_8hpp_1ab6ba6fbc387fc75d84fcb72bfaa1791c" kind="enum"><name>Direction</name></member>
     <member refid="dummy_1ab6ba6fbc387fc75d84fcb72bfaa1791ca8c5e50fab3748e9c53a6863b3dce1401" kind="enumvalue"><name>STRAIGHT</name></member>
     <member refid="dummy_1ab6ba6fbc387fc75d84fcb72bfaa1791ca684d325a7303f52e64011467ff5c5758" kind="enumvalue"><name>LEFT</name></member>
     <member refid="dummy_1ab6ba6fbc387fc75d84fcb72bfaa1791ca21507b40c80068eda19865706fdc2403" kind="enumvalue"><name>RIGHT</name></member>
+    <member refid="ego__entity_8cpp_1ac44caef21eab1d12faeeefb2c6631e79" kind="function"><name>toString</name></member>
+    <member refid="ego__entity_8cpp_1a59147159c5c3a714e96d468b2e95850a" kind="function"><name>getVehicleModelType</name></member>
+    <member refid="ego__entity_8cpp_1a5372408b8c4763542f75b83de313adf8" kind="function"><name>makeSimulationModel</name></member>
   </compound>
   <compound refid="namespacetraffic__simulator_1_1helper" kind="namespace"><name>traffic_simulator::helper</name>
     <member refid="helper_8hpp_1aeaf5597d701d03be7983065e85866cfe" kind="enum"><name>LidarType</name></member>
@@ -1349,7 +1363,8 @@
   <compound refid="ego__entity_8cpp" kind="file"><name>ego_entity.cpp</name>
     <member refid="ego__entity_8cpp_1a902eecd05809897fb1525d2ef9f02d08" kind="define"><name>DEBUG_VALUE</name></member>
     <member refid="ego__entity_8cpp_1a7a114d97cbe378fb461b86edf1cdda9c" kind="define"><name>DEBUG_LINE</name></member>
-    <member refid="ego__entity_8cpp_1a2165f854b4b505ca01c9367263ab99d0" kind="function"><name>getParameter</name></member>
+    <member refid="ego__entity_8cpp_1a9c8f164b1af96f53e82a3e558461f33f" kind="define"><name>BOILERPLATE</name></member>
+    <member refid="ego__entity_8cpp_1aea13bc4ec60a11af02583454c7f3c352" kind="function"><name>getParameter</name></member>
   </compound>
   <compound refid="entity__base_8cpp" kind="file"><name>entity_base.cpp</name>
   </compound>

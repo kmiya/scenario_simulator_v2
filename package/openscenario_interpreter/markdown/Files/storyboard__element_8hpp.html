@@ -954,7 +954,7 @@
   <span class="k">auto</span> <span class="n">rename</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="k">const</span>
   <span class="p">{</span>
     <span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">name</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">?</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;annonymous-&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="o">++</span><span class="n">id</span><span class="p">)</span> <span class="o">:</span> <span class="n">name</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">name</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">?</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;anonymous-&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="o">++</span><span class="n">id</span><span class="p">)</span> <span class="o">:</span> <span class="n">name</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="n">std</span><span class="o">::</span><span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">;</span>
@@ -1154,7 +1154,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__STORYBOARD_ELEMENT_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 14 June 2021 at 03:31:34 UTC</p>
+<p>Updated on 14 June 2021 at 05:25:26 UTC</p>
                 
                   
                 

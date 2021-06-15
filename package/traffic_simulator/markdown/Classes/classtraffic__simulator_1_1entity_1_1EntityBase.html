@@ -870,6 +870,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-getvehiclecommand" class="md-nav__link">
+    function getVehicleCommand
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-getstatus" class="md-nav__link">
     function getStatus
   </a>
@@ -1210,6 +1217,10 @@
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getvehicleparameters">getVehicleParameters</a></strong>() const</td>
 </tr>
 <tr>
+<td>virtual const autoware_vehicle_msgs::msg::VehicleCommand</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getvehiclecommand">getVehicleCommand</a></strong>()</td>
+</tr>
+<tr>
 <td>auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getstatus">getStatus</a></strong>() const</td>
 </tr>
@@ -1455,6 +1466,10 @@
 <h3 id="function-getvehicleparameters">function getVehicleParameters<a class="headerlink" href="#function-getvehicleparameters" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">auto</span> <span class="n">getVehicleParameters</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
+<h3 id="function-getvehiclecommand">function getVehicleCommand<a class="headerlink" href="#function-getvehiclecommand" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span> <span class="k">const</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleCommand</span> <span class="n">getVehicleCommand</span><span class="p">()</span>
+</code></pre></div>
+<p><strong>Reimplemented by</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EgoEntity#function-getvehiclecommand">traffic_simulator::entity::EgoEntity::getVehicleCommand</a></p>
 <h3 id="function-getstatus">function getStatus<a class="headerlink" href="#function-getstatus" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">auto</span> <span class="n">getStatus</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
@@ -1554,7 +1569,7 @@
 <div class="highlight"><pre><span></span><code><span class="n">visualization_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">MarkerArray</span> <span class="n">current_marker_</span><span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 June 2021 at 04:43:22 UTC</p>
+<p>Updated on 15 June 2021 at 04:43:46 UTC</p>
                 
                   
                 

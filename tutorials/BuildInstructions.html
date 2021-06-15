@@ -789,7 +789,7 @@
                 
                 <h1 id="build-instructions">Build Instructions<a class="headerlink" href="#build-instructions" title="Permanent link">#</a></h1>
 <h2 id="setup-ros-2-environment">Setup ROS 2 environment<a class="headerlink" href="#setup-ros-2-environment" title="Permanent link">#</a></h2>
-<p>This framework only supports ROS 2 Foxy Fitzroy. (https://docs.ros.org/en/foxy/Installation.html)<br />
+<p>This framework only supports ROS 2 Foxy Fitzroy. (<a href="https://docs.ros.org/en/foxy/Installation.html">https://docs.ros.org/en/foxy/Installation.html</a>)<br />
 You can install Foxy by typing the command below in your terminal.</p>
 <div class="highlight"><pre><span></span><code>sudo apt update
 sudo apt install locales
@@ -807,8 +807,8 @@ sudo apt install -y python3-pip python3-rosdep2 python3-vcstool python3-colcon-c
 rosdep update
 </code></pre></div>
 <h2 id="setup-workspace">Setup workspace<a class="headerlink" href="#setup-workspace" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>mkdir -p scenario_simulator_ws/src
-<span class="nb">cd</span> scenario_simulator_ws/src
+<div class="highlight"><pre><span></span><code>mkdir -p ~/scenario_simulator_ws/src
+<span class="nb">cd</span> ~/scenario_simulator_ws/src
 git clone https://github.com/tier4/scenario_simulator_v2.git
 <span class="c1"># These lines are necessary right now, but it will be removed in the near future</span>
 <span class="nb">cd</span> scenario_simulator_v2
@@ -816,8 +816,8 @@ git clone https://github.com/tier4/scenario_simulator_v2.git
 sh install_depends.sh
 </code></pre></div>
 <h2 id="install-dependencies-via-rosdep">Install dependencies via rosdep<a class="headerlink" href="#install-dependencies-via-rosdep" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> /opt/ros/foxy/setup.bash
-vcs import src &lt; src/scenario_simulator_v2/dependency_foxy.repos
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/scenario_simulator_ws
+<span class="nb">source</span> /opt/ros/foxy/setup.bash
 rosdep install -iry --from-paths src --rosdistro foxy
 </code></pre></div>
 <h2 id="build-scenario_simulator_vs">Build scenario_simulator_vs<a class="headerlink" href="#build-scenario_simulator_vs" title="Permanent link">#</a></h2>

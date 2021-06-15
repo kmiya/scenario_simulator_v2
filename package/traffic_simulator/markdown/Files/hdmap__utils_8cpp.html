@@ -953,11 +953,11 @@
 <span class="p">}</span>
 
 <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span><span class="o">&gt;</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">clipTrajectoryFromLaneletIds</span><span class="p">(</span>
-  <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">lanelet_id</span><span class="p">,</span> <span class="kt">double</span> <span class="n">s</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="o">&gt;</span> <span class="n">lanelet_ids</span><span class="p">,</span> <span class="kt">double</span> <span class="n">foward_distance</span><span class="p">)</span>
+  <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">lanelet_id</span><span class="p">,</span> <span class="kt">double</span> <span class="n">s</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="o">&gt;</span> <span class="n">lanelet_ids</span><span class="p">,</span> <span class="kt">double</span> <span class="n">forward_distance</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span><span class="o">&gt;</span> <span class="n">ret</span><span class="p">;</span>
   <span class="kt">bool</span> <span class="n">on_traj</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-  <span class="kt">double</span> <span class="n">rest_distance</span> <span class="o">=</span> <span class="n">foward_distance</span><span class="p">;</span>
+  <span class="kt">double</span> <span class="n">rest_distance</span> <span class="o">=</span> <span class="n">forward_distance</span><span class="p">;</span>
   <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">id_itr</span> <span class="o">=</span> <span class="n">lanelet_ids</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">id_itr</span> <span class="o">!=</span> <span class="n">lanelet_ids</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">id_itr</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="kt">double</span> <span class="n">l</span> <span class="o">=</span> <span class="n">getLaneletLength</span><span class="p">(</span><span class="o">*</span><span class="n">id_itr</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">on_traj</span><span class="p">)</span> <span class="p">{</span>
@@ -978,8 +978,8 @@
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">lanelet_id</span> <span class="o">==</span> <span class="o">*</span><span class="n">id_itr</span><span class="p">)</span> <span class="p">{</span>
       <span class="n">on_traj</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-      <span class="k">if</span> <span class="p">((</span><span class="n">s</span> <span class="o">+</span> <span class="n">foward_distance</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">l</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">double</span> <span class="n">s_val</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span> <span class="n">s_val</span> <span class="o">&lt;</span> <span class="n">s</span> <span class="o">+</span> <span class="n">foward_distance</span><span class="p">;</span> <span class="n">s_val</span> <span class="o">=</span> <span class="n">s_val</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">((</span><span class="n">s</span> <span class="o">+</span> <span class="n">forward_distance</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">l</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">double</span> <span class="n">s_val</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span> <span class="n">s_val</span> <span class="o">&lt;</span> <span class="n">s</span> <span class="o">+</span> <span class="n">forward_distance</span><span class="p">;</span> <span class="n">s_val</span> <span class="o">=</span> <span class="n">s_val</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">{</span>
           <span class="k">auto</span> <span class="n">map_pose</span> <span class="o">=</span> <span class="n">toMapPose</span><span class="p">(</span><span class="n">lanelet_id</span><span class="p">,</span> <span class="n">s_val</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
           <span class="n">ret</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">map_pose</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">);</span>
         <span class="p">}</span>
@@ -1069,20 +1069,20 @@
   <span class="k">return</span> <span class="o">*</span><span class="n">std</span><span class="o">::</span><span class="n">min_element</span><span class="p">(</span><span class="n">limits</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">limits</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
 <span class="p">}</span>
 
-<span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">getLaneChangeableLenletId</span><span class="p">(</span>
+<span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">getLaneChangeableLaneletId</span><span class="p">(</span>
   <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">lanelet_id</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">direction</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">lanelet</span> <span class="o">=</span> <span class="n">lanelet_map_ptr_</span><span class="o">-&gt;</span><span class="n">laneletLayer</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">lanelet_id</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">direction</span> <span class="o">==</span> <span class="s">&quot;left&quot;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">auto</span> <span class="n">left_lanlet</span> <span class="o">=</span> <span class="n">vehicle_routing_graph_ptr_</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">(</span><span class="n">lanelet</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">left_lanlet</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="n">left_lanlet</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">();</span>
+    <span class="k">auto</span> <span class="n">left_lanelet</span> <span class="o">=</span> <span class="n">vehicle_routing_graph_ptr_</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">(</span><span class="n">lanelet</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">left_lanelet</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">left_lanelet</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">();</span>
     <span class="p">}</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">direction</span> <span class="o">==</span> <span class="s">&quot;right&quot;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">auto</span> <span class="n">right_lanlet</span> <span class="o">=</span> <span class="n">vehicle_routing_graph_ptr_</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">(</span><span class="n">lanelet</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">right_lanlet</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="n">right_lanlet</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">();</span>
+    <span class="k">auto</span> <span class="n">right_lanelet</span> <span class="o">=</span> <span class="n">vehicle_routing_graph_ptr_</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">(</span><span class="n">lanelet</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">right_lanelet</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">right_lanelet</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">();</span>
     <span class="p">}</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">;</span>
@@ -1512,11 +1512,11 @@
 <span class="p">}</span>
 
 <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PoseStamped</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">toMapPose</span><span class="p">(</span>
-  <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="n">lanlet_pose</span><span class="p">)</span>
+  <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="n">lanelet_pose</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">return</span> <span class="n">toMapPose</span><span class="p">(</span>
-    <span class="n">lanlet_pose</span><span class="p">.</span><span class="n">lanelet_id</span><span class="p">,</span> <span class="n">lanlet_pose</span><span class="p">.</span><span class="n">s</span><span class="p">,</span> <span class="n">lanlet_pose</span><span class="p">.</span><span class="n">offset</span><span class="p">,</span>
-    <span class="n">quaternion_operation</span><span class="o">::</span><span class="n">convertEulerAngleToQuaternion</span><span class="p">(</span><span class="n">lanlet_pose</span><span class="p">.</span><span class="n">rpy</span><span class="p">));</span>
+    <span class="n">lanelet_pose</span><span class="p">.</span><span class="n">lanelet_id</span><span class="p">,</span> <span class="n">lanelet_pose</span><span class="p">.</span><span class="n">s</span><span class="p">,</span> <span class="n">lanelet_pose</span><span class="p">.</span><span class="n">offset</span><span class="p">,</span>
+    <span class="n">quaternion_operation</span><span class="o">::</span><span class="n">convertEulerAngleToQuaternion</span><span class="p">(</span><span class="n">lanelet_pose</span><span class="p">.</span><span class="n">rpy</span><span class="p">));</span>
 <span class="p">}</span>
 
 <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PoseStamped</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">toMapPose</span><span class="p">(</span>
@@ -2017,7 +2017,7 @@
 <span class="p">}</span>  <span class="c1">// namespace hdmap_utils</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 June 2021 at 00:07:41 UTC</p>
+<p>Updated on 15 June 2021 at 03:58:53 UTC</p>
                 
                   
                 

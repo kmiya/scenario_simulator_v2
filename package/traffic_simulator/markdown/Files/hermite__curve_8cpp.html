@@ -931,7 +931,7 @@
 <span class="p">}</span>
 
 <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">HermiteCurve</span><span class="o">::</span><span class="n">getSValue</span><span class="p">(</span>
-  <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="n">point</span><span class="p">,</span> <span class="kt">double</span> <span class="n">threadhold_distance</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">initial_resolution</span><span class="p">,</span>
+  <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="n">point</span><span class="p">,</span> <span class="kt">double</span> <span class="n">threshold_distance</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">initial_resolution</span><span class="p">,</span>
   <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">max_iteration</span><span class="p">,</span> <span class="kt">double</span> <span class="n">tolerance</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">autoscale</span><span class="p">)</span> <span class="k">const</span>
 <span class="p">{</span>
   <span class="kt">double</span> <span class="n">step_size</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span> <span class="o">/</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">initial_resolution</span><span class="p">);</span>
@@ -959,14 +959,14 @@
   <span class="p">}</span>
   <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">min_iter</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">min_element</span><span class="p">(</span><span class="n">errors</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">errors</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
   <span class="kt">double</span> <span class="n">min_error</span> <span class="o">=</span> <span class="o">*</span><span class="n">std</span><span class="o">::</span><span class="n">min_element</span><span class="p">(</span><span class="n">errors</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">errors</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">min_error</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">threadhold_distance</span> <span class="o">*</span> <span class="n">threadhold_distance</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">min_error</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">threshold_distance</span> <span class="o">*</span> <span class="n">threshold_distance</span><span class="p">))</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">;</span>
   <span class="p">}</span>
   <span class="kt">size_t</span> <span class="n">value_index</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">distance</span><span class="p">(</span><span class="n">errors</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">min_iter</span><span class="p">);</span>
   <span class="n">ret</span> <span class="o">=</span> <span class="n">s_values</span><span class="p">[</span><span class="n">value_index</span><span class="p">];</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
     <span class="kt">double</span> <span class="n">error</span> <span class="o">=</span> <span class="n">getSquaredDistanceIn2D</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">threadhold_distance</span> <span class="o">*</span> <span class="n">threadhold_distance</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">threshold_distance</span> <span class="o">*</span> <span class="n">threshold_distance</span><span class="p">))</span> <span class="p">{</span>
       <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">;</span>
@@ -974,7 +974,7 @@
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
     <span class="kt">double</span> <span class="n">error</span> <span class="o">=</span> <span class="n">getSquaredDistanceIn2D</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">threadhold_distance</span> <span class="o">*</span> <span class="n">threadhold_distance</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">threshold_distance</span> <span class="o">*</span> <span class="n">threshold_distance</span><span class="p">))</span> <span class="p">{</span>
       <span class="n">ret</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">;</span>
@@ -1109,7 +1109,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 June 2021 at 00:07:41 UTC</p>
+<p>Updated on 15 June 2021 at 03:58:53 UTC</p>
                 
                   
                 

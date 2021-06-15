@@ -211,7 +211,7 @@
 <codeline lineno="26"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classCatmullRomSplineVisualization" kindref="compound">CatmullRomSplineVisualization</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>rclcpp::NodeOptions<sp/>&amp;<sp/>option)</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/>:<sp/>Node(</highlight><highlight class="stringliteral">&quot;catumull_rom_spline_viz&quot;</highlight><highlight class="normal">,<sp/>option)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>:<sp/>Node(</highlight><highlight class="stringliteral">&quot;catmull_rom_spline_viz&quot;</highlight><highlight class="normal">,<sp/>option)</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>marker_pub_ptr_<sp/>=<sp/>create_publisher&lt;visualization_msgs::msg::MarkerArray&gt;(</highlight><highlight class="stringliteral">&quot;/spline/marker&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>clicked_points_sub_ptr_<sp/>=<sp/>create_subscription&lt;geometry_msgs::msg::PoseStamped&gt;(</highlight></codeline>

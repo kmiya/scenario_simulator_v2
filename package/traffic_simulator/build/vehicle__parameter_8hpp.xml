@@ -448,30 +448,30 @@
 <codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>bounding_box(xml.child(</highlight><highlight class="stringliteral">&quot;Vehicle&quot;</highlight><highlight class="normal">)),</highlight></codeline>
 <codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>axles(xml.child(</highlight><highlight class="stringliteral">&quot;Vehicle&quot;</highlight><highlight class="normal">)),</highlight></codeline>
 <codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>name(xml.attribute(</highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">).as_string()),</highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>vehicle_categoly(xml.attribute(</highlight><highlight class="stringliteral">&quot;vehicleCategory&quot;</highlight><highlight class="normal">).as_string())</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>vehicle_category(xml.attribute(</highlight><highlight class="stringliteral">&quot;vehicleCategory&quot;</highlight><highlight class="normal">).as_string())</highlight></codeline>
 <codeline lineno="175"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="176"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="177"><highlight class="normal"><sp/><sp/><ref refid="structtraffic__simulator_1_1entity_1_1VehicleParameters" kindref="compound">VehicleParameters</ref>(</highlight></codeline>
-<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>name,<sp/>std::string<sp/>vehicle_categoly,<sp/><ref refid="structtraffic__simulator_1_1entity_1_1Performance" kindref="compound">Performance</ref><sp/>performance,</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>name,<sp/>std::string<sp/>vehicle_category,<sp/><ref refid="structtraffic__simulator_1_1entity_1_1Performance" kindref="compound">Performance</ref><sp/>performance,</highlight></codeline>
 <codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structtraffic__simulator_1_1entity_1_1BoundingBox" kindref="compound">BoundingBox</ref><sp/>bounding_box,<sp/><ref refid="structtraffic__simulator_1_1entity_1_1Axles" kindref="compound">Axles</ref><sp/>axles)</highlight></codeline>
 <codeline lineno="180"><highlight class="normal"><sp/><sp/>:<sp/>performance(performance),</highlight></codeline>
 <codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>bounding_box(bounding_box),</highlight></codeline>
 <codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>axles(axles),</highlight></codeline>
 <codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>name(name),</highlight></codeline>
-<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>vehicle_categoly(vehicle_categoly)</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>vehicle_category(vehicle_category)</highlight></codeline>
 <codeline lineno="185"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="186"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtraffic__simulator_1_1entity_1_1Performance" kindref="compound">Performance</ref><sp/>performance;</highlight></codeline>
 <codeline lineno="188"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtraffic__simulator_1_1entity_1_1BoundingBox" kindref="compound">BoundingBox</ref><sp/>bounding_box;</highlight></codeline>
 <codeline lineno="189"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtraffic__simulator_1_1entity_1_1Axles" kindref="compound">Axles</ref><sp/>axles;</highlight></codeline>
 <codeline lineno="190"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>name;</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>vehicle_categoly;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>vehicle_category;</highlight></codeline>
 <codeline lineno="192"><highlight class="normal"></highlight></codeline>
 <codeline lineno="193"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::VehicleParameters<sp/>toRosMsg()</highlight></codeline>
 <codeline lineno="194"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>openscenario_msgs::msg::VehicleParameters<sp/>ret;</highlight></codeline>
 <codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>ret.name<sp/>=<sp/>name;</highlight></codeline>
-<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>ret.vehicle_category<sp/>=<sp/>vehicle_categoly;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>ret.vehicle_category<sp/>=<sp/>vehicle_category;</highlight></codeline>
 <codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>ret.bounding_box<sp/>=<sp/>bounding_box.toRosMsg();</highlight></codeline>
 <codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>ret.axles<sp/>=<sp/>axles.toRosMsg();</highlight></codeline>
 <codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>ret.performance<sp/>=<sp/>performance.toRosMsg();</highlight></codeline>
@@ -484,7 +484,7 @@
 <codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>ptree<sp/>pt;</highlight></codeline>
 <codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>ptree<sp/>&amp;<sp/>vehicle_tree<sp/>=<sp/>pt.add(</highlight><highlight class="stringliteral">&quot;Vehicle&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>vehicle_tree.put(</highlight><highlight class="stringliteral">&quot;&lt;xmlattr&gt;.name&quot;</highlight><highlight class="normal">,<sp/>name);</highlight></codeline>
-<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>vehicle_tree.put(</highlight><highlight class="stringliteral">&quot;&lt;xmlattr&gt;.vehicleCategory&quot;</highlight><highlight class="normal">,<sp/>vehicle_categoly);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>vehicle_tree.put(</highlight><highlight class="stringliteral">&quot;&lt;xmlattr&gt;.vehicleCategory&quot;</highlight><highlight class="normal">,<sp/>vehicle_category);</highlight></codeline>
 <codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>ptree<sp/>&amp;<sp/>performance_tree<sp/>=<sp/>vehicle_tree.add(</highlight><highlight class="stringliteral">&quot;Performance&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>performance_tree.put(</highlight><highlight class="stringliteral">&quot;&lt;xmlattr&gt;.maxSpeed&quot;</highlight><highlight class="normal">,<sp/>performance.max_speed);</highlight></codeline>
 <codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>performance_tree.put(</highlight><highlight class="stringliteral">&quot;&lt;xmlattr&gt;.maxAcceleration&quot;</highlight><highlight class="normal">,<sp/>performance.max_acceleration);</highlight></codeline>

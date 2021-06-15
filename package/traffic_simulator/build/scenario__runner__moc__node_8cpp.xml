@@ -1312,7 +1312,7 @@
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;npc1&quot;</highlight><highlight class="normal">,<sp/>vehicle_params,<sp/>traffic_simulator::helper::constructLaneletPose(34579,<sp/>20.0),</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>traffic_simulator::helper::constructActionStatus(5));</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>api_.setTargetSpeed(</highlight><highlight class="stringliteral">&quot;npc1&quot;</highlight><highlight class="normal">,<sp/>5,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>lanechange_excuted_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>lanechange_executed_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>vehicle_params.name<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;npc2&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>api_.spawn(</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;npc2&quot;</highlight><highlight class="normal">,<sp/>vehicle_params,<sp/>traffic_simulator::helper::constructLaneletPose(34606,<sp/>20.0),</highlight></codeline>
@@ -1398,8 +1398,8 @@
 <codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>api_.updateFrame();</highlight></codeline>
 <codeline lineno="155"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>lanechange_excuted_;</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>target_speed_setted_;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>lanechange_executed_;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>target_speed_set_;</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port_;</highlight></codeline>
 <codeline lineno="159"><highlight class="normal"><sp/><sp/><ref refid="classtraffic__simulator_1_1API" kindref="compound">traffic_simulator::API</ref><sp/>api_;</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"><sp/><sp/>rclcpp::TimerBase::SharedPtr<sp/>update_timer_;</highlight></codeline>

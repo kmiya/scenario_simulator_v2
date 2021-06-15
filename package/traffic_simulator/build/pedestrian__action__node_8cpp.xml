@@ -636,9 +636,9 @@
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>entity_status.lanelet_pose.s<sp/>+</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>(twist_new.linear.x<sp/>+<sp/>entity_status.action_status.twist.linear.x)<sp/>/<sp/>2.0<sp/>*<sp/>step_time;</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(new_s<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>previous_lanlet_ids<sp/>=</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>previous_lanelet_ids<sp/>=</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdmap__utils" kindref="compound">hdmap_utils</ref>-&gt;getPreviousLaneletIds(entity_status.lanelet_pose.lanelet_id);</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>new_lanelet_id<sp/>=<sp/>previous_lanlet_ids[0];</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>new_lanelet_id<sp/>=<sp/>previous_lanelet_ids[0];</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>new_s<sp/>=<sp/>new_s<sp/>+<sp/><ref refid="namespacehdmap__utils" kindref="compound">hdmap_utils</ref>-&gt;getLaneletLength(new_lanelet_id)<sp/>-<sp/>0.01;</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>openscenario_msgs::msg::EntityStatus<sp/>entity_status_updated;</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>entity_status_updated.time<sp/>=<sp/>current_time<sp/>+<sp/>step_time;</highlight></codeline>

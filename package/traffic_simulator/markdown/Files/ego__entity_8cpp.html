@@ -1121,7 +1121,7 @@
 
     <span class="k">const</span> <span class="k">auto</span> <span class="n">closest_lanelet_id</span> <span class="o">=</span> <span class="n">hdmap_utils_ptr_</span><span class="o">-&gt;</span><span class="n">getClosetLaneletId</span><span class="p">(</span><span class="n">status</span><span class="p">.</span><span class="n">pose</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">closest_lanelet_id</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;failed to find closest lane, lane is too far away.&quot;</span><span class="p">);</span>
+      <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;failed to find the closest lane, lane is too far away.&quot;</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">CatmullRomSpline</span> <span class="n">spline</span><span class="p">(</span>
@@ -1344,7 +1344,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 June 2021 at 00:07:41 UTC</p>
+<p>Updated on 15 June 2021 at 03:58:53 UTC</p>
                 
                   
                 

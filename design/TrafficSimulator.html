@@ -835,7 +835,7 @@ You can also see detailed documentation of API class <a href="https://tier4.gith
       <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">helper</span><span class="o">::</span><span class="n">constructLaneletPose</span><span class="p">(</span><span class="mi">34579</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">),</span>
       <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">helper</span><span class="o">::</span><span class="n">constructActionStatus</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
     <span class="n">api_</span><span class="p">.</span><span class="n">setTargetSpeed</span><span class="p">(</span><span class="s">&quot;npc1&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
-    <span class="n">lanechange_excuted_</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="n">lanechange_executed_</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
     <span class="n">api_</span><span class="p">.</span><span class="n">spawn</span><span class="p">(</span><span class="nb">false</span><span class="p">,</span> <span class="s">&quot;npc2&quot;</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span>
       <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">helper</span><span class="o">::</span><span class="n">constructLaneletPose</span><span class="p">(</span><span class="mi">34606</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">),</span>
       <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">helper</span><span class="o">::</span><span class="n">constructActionStatus</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
@@ -868,8 +868,8 @@ You can also see detailed documentation of API class <a href="https://tier4.gith
     <span class="n">api_</span><span class="p">.</span><span class="n">updateFrame</span><span class="p">();</span>
     <span class="n">current_time_</span> <span class="o">=</span> <span class="n">current_time_</span> <span class="o">+</span> <span class="mf">0.02</span><span class="p">;</span>
   <span class="p">}</span>
-  <span class="kt">bool</span> <span class="n">lanechange_excuted_</span><span class="p">;</span>
-  <span class="kt">bool</span> <span class="n">target_speed_setted_</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="n">lanechange_executed_</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="n">target_speed_set_</span><span class="p">;</span>
   <span class="kt">bool</span> <span class="n">bob_spawned_</span><span class="p">;</span>
   <span class="kt">double</span> <span class="n">current_time_</span><span class="p">;</span>
   <span class="kt">int</span> <span class="n">port_</span><span class="p">;</span>

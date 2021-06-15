@@ -773,19 +773,19 @@
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
   <span class="k">explicit</span> <span class="n">ReactionTimeMetric</span><span class="p">(</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">target_entity</span><span class="p">,</span> <span class="kt">double</span> <span class="n">maximum_reaction_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">jerk_upper_threashold</span><span class="p">,</span>
-    <span class="kt">double</span> <span class="n">jerk_lower_threashold</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">check_upper_threashold</span> <span class="o">=</span> <span class="nb">true</span><span class="p">,</span>
-    <span class="kt">bool</span> <span class="n">check_lower_threashold</span> <span class="o">=</span> <span class="nb">true</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">target_entity</span><span class="p">,</span> <span class="kt">double</span> <span class="n">maximum_reaction_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">jerk_upper_threshold</span><span class="p">,</span>
+    <span class="kt">double</span> <span class="n">jerk_lower_threshold</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">check_upper_threshold</span> <span class="o">=</span> <span class="nb">true</span><span class="p">,</span>
+    <span class="kt">bool</span> <span class="n">check_lower_threshold</span> <span class="o">=</span> <span class="nb">true</span><span class="p">);</span>
   <span class="o">~</span><span class="n">ReactionTimeMetric</span><span class="p">()</span> <span class="k">override</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
   <span class="kt">void</span> <span class="nf">update</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
   <span class="n">nlohmann</span><span class="o">::</span><span class="n">json</span> <span class="nf">to_json</span><span class="p">();</span>
   <span class="kt">bool</span> <span class="nf">activateTrigger</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
   <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">target_entity</span><span class="p">;</span>
   <span class="k">const</span> <span class="kt">double</span> <span class="n">maximum_reaction_time</span><span class="p">;</span>
-  <span class="k">const</span> <span class="kt">double</span> <span class="n">jerk_upper_threashold</span><span class="p">;</span>
-  <span class="k">const</span> <span class="kt">double</span> <span class="n">jerk_lower_threashold</span><span class="p">;</span>
-  <span class="k">const</span> <span class="kt">bool</span> <span class="n">check_upper_threashold</span><span class="p">;</span>
-  <span class="k">const</span> <span class="kt">bool</span> <span class="n">check_lower_threashold</span><span class="p">;</span>
+  <span class="k">const</span> <span class="kt">double</span> <span class="n">jerk_upper_threshold</span><span class="p">;</span>
+  <span class="k">const</span> <span class="kt">double</span> <span class="n">jerk_lower_threshold</span><span class="p">;</span>
+  <span class="k">const</span> <span class="kt">bool</span> <span class="n">check_upper_threshold</span><span class="p">;</span>
+  <span class="k">const</span> <span class="kt">bool</span> <span class="n">check_lower_threshold</span><span class="p">;</span>
 
 <span class="k">private</span><span class="o">:</span>
   <span class="kt">double</span> <span class="n">elapsed_duration_</span><span class="p">;</span>
@@ -796,7 +796,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__METRICS__REACTION_TIME_METRIC_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 June 2021 at 00:07:41 UTC</p>
+<p>Updated on 15 June 2021 at 03:58:53 UTC</p>
                 
                   
                 

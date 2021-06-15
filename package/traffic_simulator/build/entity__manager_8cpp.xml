@@ -1415,11 +1415,11 @@
 <codeline lineno="287"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ref_status)<sp/>{</highlight></codeline>
 <codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>THROW_SEMANTIC_ERROR(</highlight><highlight class="stringliteral">&quot;entity<sp/>:<sp/>&quot;</highlight><highlight class="normal">,<sp/>reference_entity_name,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>status<sp/>is<sp/>empty&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="289"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="290"><highlight class="normal"><sp/><sp/>tf2::Transform<sp/>ref_transfrom,<sp/>relative_transform;</highlight></codeline>
-<codeline lineno="291"><highlight class="normal"><sp/><sp/>tf2::fromMsg(ref_status-&gt;pose,<sp/>ref_transfrom);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/>tf2::Transform<sp/>ref_transform,<sp/>relative_transform;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/>tf2::fromMsg(ref_status-&gt;pose,<sp/>ref_transform);</highlight></codeline>
 <codeline lineno="292"><highlight class="normal"><sp/><sp/>tf2::fromMsg(relative_pose,<sp/>relative_transform);</highlight></codeline>
 <codeline lineno="293"><highlight class="normal"><sp/><sp/>geometry_msgs::msg::Pose<sp/>ret;</highlight></codeline>
-<codeline lineno="294"><highlight class="normal"><sp/><sp/>tf2::toMsg(ref_transfrom<sp/>*<sp/>relative_transform,<sp/>ret);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/>tf2::toMsg(ref_transform<sp/>*<sp/>relative_transform,<sp/>ret);</highlight></codeline>
 <codeline lineno="295"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
 <codeline lineno="296"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="297"><highlight class="normal"></highlight></codeline>
@@ -1644,13 +1644,13 @@
 <codeline lineno="516"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status)<sp/>{</highlight></codeline>
 <codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(direction<sp/>==<sp/>Direction::LEFT)<sp/>{</highlight></codeline>
 <codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>target<sp/>=</highlight></codeline>
-<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hdmap_utils_ptr_-&gt;getLaneChangeableLenletId(status-&gt;lanelet_pose.lanelet_id,<sp/></highlight><highlight class="stringliteral">&quot;left&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hdmap_utils_ptr_-&gt;getLaneChangeableLaneletId(status-&gt;lanelet_pose.lanelet_id,<sp/></highlight><highlight class="stringliteral">&quot;left&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(target)<sp/>{</highlight></codeline>
 <codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>requestLaneChange(name,<sp/>target.get());</highlight></codeline>
 <codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(direction<sp/>==<sp/>Direction::RIGHT)<sp/>{</highlight></codeline>
 <codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>target<sp/>=</highlight></codeline>
-<codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hdmap_utils_ptr_-&gt;getLaneChangeableLenletId(status-&gt;lanelet_pose.lanelet_id,<sp/></highlight><highlight class="stringliteral">&quot;right&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hdmap_utils_ptr_-&gt;getLaneChangeableLaneletId(status-&gt;lanelet_pose.lanelet_id,<sp/></highlight><highlight class="stringliteral">&quot;right&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(target)<sp/>{</highlight></codeline>
 <codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>requestLaneChange(name,<sp/>target.get());</highlight></codeline>
 <codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1760,7 +1760,7 @@
 <codeline lineno="632"><highlight class="normal"><sp/><sp/>end<sp/>=<sp/>std::chrono::system_clock::now();</highlight></codeline>
 <codeline lineno="633"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>elapsed<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(end<sp/>-<sp/>start).count();</highlight></codeline>
 <codeline lineno="634"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(verbose_)<sp/>{</highlight></codeline>
-<codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;elapsed<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>elapsed<sp/>/<sp/>1000<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>secands<sp/>in<sp/>update<sp/>function.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;elapsed<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>elapsed<sp/>/<sp/>1000<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>seconds<sp/>in<sp/>update<sp/>function.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline lineno="636"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="637"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="638"><highlight class="normal"></highlight></codeline>

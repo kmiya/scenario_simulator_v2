@@ -788,7 +788,7 @@
   <span class="k">return</span> <span class="n">rpy</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Vector3</span> <span class="nf">constructRPYfronQuaternion</span><span class="p">(</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Quaternion</span> <span class="n">quaternion</span><span class="p">)</span>
+<span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Vector3</span> <span class="nf">constructRPYfromQuaternion</span><span class="p">(</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Quaternion</span> <span class="n">quaternion</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">return</span> <span class="n">quaternion_operation</span><span class="o">::</span><span class="n">convertQuaternionToEulerAngle</span><span class="p">(</span><span class="n">quaternion</span><span class="p">);</span>
 <span class="p">}</span>
@@ -890,7 +890,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 June 2021 at 00:07:41 UTC</p>
+<p>Updated on 15 June 2021 at 03:58:53 UTC</p>
                 
                   
                 

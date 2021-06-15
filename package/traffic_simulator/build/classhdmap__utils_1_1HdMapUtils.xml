@@ -231,14 +231,14 @@
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="65" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="721" bodyend="739"/>
       </memberdef>
-      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a778d8f9f50bd59413512d88548d3e875" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a71174da99952e42a5416c160e3053060" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>geometry_msgs::msg::PoseStamped</type>
         <definition>geometry_msgs::msg::PoseStamped hdmap_utils::HdMapUtils::toMapPose</definition>
-        <argsstring>(openscenario_msgs::msg::LaneletPose lanlet_pose)</argsstring>
+        <argsstring>(openscenario_msgs::msg::LaneletPose lanelet_pose)</argsstring>
         <name>toMapPose</name>
         <param>
           <type>openscenario_msgs::msg::LaneletPose</type>
-          <declname>lanlet_pose</declname>
+          <declname>lanelet_pose</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -379,11 +379,11 @@
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="77" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="517" bodyend="526"/>
       </memberdef>
-      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a4d63dbf1164f53fec2949b8ae0e76dd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1aa698a9e1df68695e47e37bf14b0cd15c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>boost::optional&lt; int &gt;</type>
-        <definition>boost::optional&lt; int &gt; hdmap_utils::HdMapUtils::getLaneChangeableLenletId</definition>
+        <definition>boost::optional&lt; int &gt; hdmap_utils::HdMapUtils::getLaneChangeableLaneletId</definition>
         <argsstring>(std::int64_t lanelet_id, std::string direction)</argsstring>
-        <name>getLaneChangeableLenletId</name>
+        <name>getLaneChangeableLaneletId</name>
         <param>
           <type>std::int64_t</type>
           <declname>lanelet_id</declname>
@@ -678,10 +678,10 @@
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/hdmap_utils/hdmap_utils.hpp" line="98" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/hdmap_utils/hdmap_utils.cpp" bodystart="448" bodyend="453"/>
       </memberdef>
-      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a1811e090140bf271da228dcba73c95f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classhdmap__utils_1_1HdMapUtils_1a40fa24534a3a21637640c40571509441" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; geometry_msgs::msg::Point &gt;</type>
         <definition>std::vector&lt; geometry_msgs::msg::Point &gt; hdmap_utils::HdMapUtils::clipTrajectoryFromLaneletIds</definition>
-        <argsstring>(std::int64_t lanelet_id, double s, std::vector&lt; std::int64_t &gt; lanelet_ids, double foward_distance=20)</argsstring>
+        <argsstring>(std::int64_t lanelet_id, double s, std::vector&lt; std::int64_t &gt; lanelet_ids, double forward_distance=20)</argsstring>
         <name>clipTrajectoryFromLaneletIds</name>
         <param>
           <type>std::int64_t</type>
@@ -697,7 +697,7 @@
         </param>
         <param>
           <type>double</type>
-          <declname>foward_distance</declname>
+          <declname>forward_distance</declname>
           <defval>20</defval>
         </param>
         <briefdescription>
@@ -1367,7 +1367,7 @@
       <member refid="classhdmap__utils_1_1HdMapUtils_1aacdd04f3efb1e4324b7c0822d4cebb17" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>calculateSegmentDistances</name></member>
       <member refid="classhdmap__utils_1_1HdMapUtils_1a74e7d1c4fbf11b9f8949f40a982aae10" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>canChangeLane</name></member>
       <member refid="classhdmap__utils_1_1HdMapUtils_1abb0c71208be35b5fa7fb8d15b6df8765" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>center_points_cache_</name></member>
-      <member refid="classhdmap__utils_1_1HdMapUtils_1a1811e090140bf271da228dcba73c95f4" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>clipTrajectoryFromLaneletIds</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a40fa24534a3a21637640c40571509441" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>clipTrajectoryFromLaneletIds</name></member>
       <member refid="classhdmap__utils_1_1HdMapUtils_1a43d8ccd6702d631c1172f1cbc824194a" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>excludeSubtypeLaneletsWithDistance</name></member>
       <member refid="classhdmap__utils_1_1HdMapUtils_1ace6c6549dab73fb6f8638d3ffecbe297" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>findNearestIndexPair</name></member>
       <member refid="classhdmap__utils_1_1HdMapUtils_1ae226d6ae5e49da337e1e953d14711301" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>generateFineCenterline</name></member>
@@ -1384,7 +1384,7 @@
       <member refid="classhdmap__utils_1_1HdMapUtils_1aba130625102cc0edf6ba616ced61d759" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getFollowingLanelets</name></member>
       <member refid="classhdmap__utils_1_1HdMapUtils_1ab206fd5dc3b72d3c571999eb7f49a50b" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getFollowingLanelets</name></member>
       <member refid="classhdmap__utils_1_1HdMapUtils_1aa35bd4e350e420693590923a23da0946" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getHeight</name></member>
-      <member refid="classhdmap__utils_1_1HdMapUtils_1a4d63dbf1164f53fec2949b8ae0e76dd6" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getLaneChangeableLenletId</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1aa698a9e1df68695e47e37bf14b0cd15c" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getLaneChangeableLaneletId</name></member>
       <member refid="classhdmap__utils_1_1HdMapUtils_1a359ef582724a276cf32874d07fdc87c5" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getLaneChangeTrajectory</name></member>
       <member refid="classhdmap__utils_1_1HdMapUtils_1aa870aa77293083bc2340366b4b2dca7d" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getLaneChangeTrajectory</name></member>
       <member refid="classhdmap__utils_1_1HdMapUtils_1ae4209f9e7210d321adfee8a59c8a5ee9" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>getLaneletIds</name></member>
@@ -1428,7 +1428,7 @@
       <member refid="classhdmap__utils_1_1HdMapUtils_1a7e0f3b53892c0b9b7e824e307d9660bc" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>toMapBin</name></member>
       <member refid="classhdmap__utils_1_1HdMapUtils_1a890f6e4058b9704ba7b21bf7e9ba7cfe" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>toMapPoints</name></member>
       <member refid="classhdmap__utils_1_1HdMapUtils_1a8ff28117a37d1b2c18a3d6e0e05bd44d" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>toMapPose</name></member>
-      <member refid="classhdmap__utils_1_1HdMapUtils_1a778d8f9f50bd59413512d88548d3e875" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>toMapPose</name></member>
+      <member refid="classhdmap__utils_1_1HdMapUtils_1a71174da99952e42a5416c160e3053060" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>toMapPose</name></member>
       <member refid="classhdmap__utils_1_1HdMapUtils_1a016c6a485712b3b1fcd2f3b450bb0f97" prot="public" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>toMapPose</name></member>
       <member refid="classhdmap__utils_1_1HdMapUtils_1a3c3b992f745c2fd2e111c82e0b243c02" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>traffic_rules_pedestrian_ptr_</name></member>
       <member refid="classhdmap__utils_1_1HdMapUtils_1ae8004d15ae917c91f7365e1b4a2f3123" prot="private" virt="non-virtual"><scope>hdmap_utils::HdMapUtils</scope><name>traffic_rules_vehicle_ptr_</name></member>

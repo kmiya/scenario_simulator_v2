@@ -1009,11 +1009,11 @@
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ref_status</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;entity : &quot;</span><span class="p">,</span> <span class="n">reference_entity_name</span><span class="p">,</span> <span class="s">&quot; status is empty&quot;</span><span class="p">);</span>
   <span class="p">}</span>
-  <span class="n">tf2</span><span class="o">::</span><span class="n">Transform</span> <span class="n">ref_transfrom</span><span class="p">,</span> <span class="n">relative_transform</span><span class="p">;</span>
-  <span class="n">tf2</span><span class="o">::</span><span class="n">fromMsg</span><span class="p">(</span><span class="n">ref_status</span><span class="o">-&gt;</span><span class="n">pose</span><span class="p">,</span> <span class="n">ref_transfrom</span><span class="p">);</span>
+  <span class="n">tf2</span><span class="o">::</span><span class="n">Transform</span> <span class="n">ref_transform</span><span class="p">,</span> <span class="n">relative_transform</span><span class="p">;</span>
+  <span class="n">tf2</span><span class="o">::</span><span class="n">fromMsg</span><span class="p">(</span><span class="n">ref_status</span><span class="o">-&gt;</span><span class="n">pose</span><span class="p">,</span> <span class="n">ref_transform</span><span class="p">);</span>
   <span class="n">tf2</span><span class="o">::</span><span class="n">fromMsg</span><span class="p">(</span><span class="n">relative_pose</span><span class="p">,</span> <span class="n">relative_transform</span><span class="p">);</span>
   <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">ret</span><span class="p">;</span>
-  <span class="n">tf2</span><span class="o">::</span><span class="n">toMsg</span><span class="p">(</span><span class="n">ref_transfrom</span> <span class="o">*</span> <span class="n">relative_transform</span><span class="p">,</span> <span class="n">ret</span><span class="p">);</span>
+  <span class="n">tf2</span><span class="o">::</span><span class="n">toMsg</span><span class="p">(</span><span class="n">ref_transform</span> <span class="o">*</span> <span class="n">relative_transform</span><span class="p">,</span> <span class="n">ret</span><span class="p">);</span>
   <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -1238,13 +1238,13 @@
   <span class="k">if</span> <span class="p">(</span><span class="n">status</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">direction</span> <span class="o">==</span> <span class="n">Direction</span><span class="o">::</span><span class="n">LEFT</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">const</span> <span class="k">auto</span> <span class="n">target</span> <span class="o">=</span>
-        <span class="n">hdmap_utils_ptr_</span><span class="o">-&gt;</span><span class="n">getLaneChangeableLenletId</span><span class="p">(</span><span class="n">status</span><span class="o">-&gt;</span><span class="n">lanelet_pose</span><span class="p">.</span><span class="n">lanelet_id</span><span class="p">,</span> <span class="s">&quot;left&quot;</span><span class="p">);</span>
+        <span class="n">hdmap_utils_ptr_</span><span class="o">-&gt;</span><span class="n">getLaneChangeableLaneletId</span><span class="p">(</span><span class="n">status</span><span class="o">-&gt;</span><span class="n">lanelet_pose</span><span class="p">.</span><span class="n">lanelet_id</span><span class="p">,</span> <span class="s">&quot;left&quot;</span><span class="p">);</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">target</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">requestLaneChange</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">target</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
       <span class="p">}</span>
     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">direction</span> <span class="o">==</span> <span class="n">Direction</span><span class="o">::</span><span class="n">RIGHT</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">const</span> <span class="k">auto</span> <span class="n">target</span> <span class="o">=</span>
-        <span class="n">hdmap_utils_ptr_</span><span class="o">-&gt;</span><span class="n">getLaneChangeableLenletId</span><span class="p">(</span><span class="n">status</span><span class="o">-&gt;</span><span class="n">lanelet_pose</span><span class="p">.</span><span class="n">lanelet_id</span><span class="p">,</span> <span class="s">&quot;right&quot;</span><span class="p">);</span>
+        <span class="n">hdmap_utils_ptr_</span><span class="o">-&gt;</span><span class="n">getLaneChangeableLaneletId</span><span class="p">(</span><span class="n">status</span><span class="o">-&gt;</span><span class="n">lanelet_pose</span><span class="p">.</span><span class="n">lanelet_id</span><span class="p">,</span> <span class="s">&quot;right&quot;</span><span class="p">);</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">target</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">requestLaneChange</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">target</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
       <span class="p">}</span>
@@ -1354,7 +1354,7 @@
   <span class="n">end</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">system_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
   <span class="kt">double</span> <span class="n">elapsed</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">&gt;</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">).</span><span class="n">count</span><span class="p">();</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">verbose_</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;elapsed &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">elapsed</span> <span class="o">/</span> <span class="mi">1000</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; secands in update function.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;elapsed &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">elapsed</span> <span class="o">/</span> <span class="mi">1000</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; seconds in update function.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
@@ -1373,7 +1373,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 June 2021 at 00:07:41 UTC</p>
+<p>Updated on 15 June 2021 at 03:58:53 UTC</p>
                 
                   
                 

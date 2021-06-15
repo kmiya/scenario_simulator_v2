@@ -947,30 +947,30 @@
     <span class="n">bounding_box</span><span class="p">(</span><span class="n">xml</span><span class="p">.</span><span class="n">child</span><span class="p">(</span><span class="s">&quot;Vehicle&quot;</span><span class="p">)),</span>
     <span class="n">axles</span><span class="p">(</span><span class="n">xml</span><span class="p">.</span><span class="n">child</span><span class="p">(</span><span class="s">&quot;Vehicle&quot;</span><span class="p">)),</span>
     <span class="n">name</span><span class="p">(</span><span class="n">xml</span><span class="p">.</span><span class="n">attribute</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">).</span><span class="n">as_string</span><span class="p">()),</span>
-    <span class="n">vehicle_categoly</span><span class="p">(</span><span class="n">xml</span><span class="p">.</span><span class="n">attribute</span><span class="p">(</span><span class="s">&quot;vehicleCategory&quot;</span><span class="p">).</span><span class="n">as_string</span><span class="p">())</span>
+    <span class="n">vehicle_category</span><span class="p">(</span><span class="n">xml</span><span class="p">.</span><span class="n">attribute</span><span class="p">(</span><span class="s">&quot;vehicleCategory&quot;</span><span class="p">).</span><span class="n">as_string</span><span class="p">())</span>
   <span class="p">{</span>
   <span class="p">}</span>
   <span class="n">VehicleParameters</span><span class="p">(</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">vehicle_categoly</span><span class="p">,</span> <span class="n">Performance</span> <span class="n">performance</span><span class="p">,</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">vehicle_category</span><span class="p">,</span> <span class="n">Performance</span> <span class="n">performance</span><span class="p">,</span>
     <span class="n">BoundingBox</span> <span class="n">bounding_box</span><span class="p">,</span> <span class="n">Axles</span> <span class="n">axles</span><span class="p">)</span>
   <span class="o">:</span> <span class="n">performance</span><span class="p">(</span><span class="n">performance</span><span class="p">),</span>
     <span class="n">bounding_box</span><span class="p">(</span><span class="n">bounding_box</span><span class="p">),</span>
     <span class="n">axles</span><span class="p">(</span><span class="n">axles</span><span class="p">),</span>
     <span class="n">name</span><span class="p">(</span><span class="n">name</span><span class="p">),</span>
-    <span class="n">vehicle_categoly</span><span class="p">(</span><span class="n">vehicle_categoly</span><span class="p">)</span>
+    <span class="n">vehicle_category</span><span class="p">(</span><span class="n">vehicle_category</span><span class="p">)</span>
   <span class="p">{</span>
   <span class="p">}</span>
   <span class="k">const</span> <span class="n">Performance</span> <span class="n">performance</span><span class="p">;</span>
   <span class="k">const</span> <span class="n">BoundingBox</span> <span class="n">bounding_box</span><span class="p">;</span>
   <span class="k">const</span> <span class="n">Axles</span> <span class="n">axles</span><span class="p">;</span>
   <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
-  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">vehicle_categoly</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">vehicle_category</span><span class="p">;</span>
 
   <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span> <span class="nf">toRosMsg</span><span class="p">()</span>
   <span class="p">{</span>
     <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span> <span class="n">ret</span><span class="p">;</span>
     <span class="n">ret</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
-    <span class="n">ret</span><span class="p">.</span><span class="n">vehicle_category</span> <span class="o">=</span> <span class="n">vehicle_categoly</span><span class="p">;</span>
+    <span class="n">ret</span><span class="p">.</span><span class="n">vehicle_category</span> <span class="o">=</span> <span class="n">vehicle_category</span><span class="p">;</span>
     <span class="n">ret</span><span class="p">.</span><span class="n">bounding_box</span> <span class="o">=</span> <span class="n">bounding_box</span><span class="p">.</span><span class="n">toRosMsg</span><span class="p">();</span>
     <span class="n">ret</span><span class="p">.</span><span class="n">axles</span> <span class="o">=</span> <span class="n">axles</span><span class="p">.</span><span class="n">toRosMsg</span><span class="p">();</span>
     <span class="n">ret</span><span class="p">.</span><span class="n">performance</span> <span class="o">=</span> <span class="n">performance</span><span class="p">.</span><span class="n">toRosMsg</span><span class="p">();</span>
@@ -983,7 +983,7 @@
     <span class="n">ptree</span> <span class="n">pt</span><span class="p">;</span>
     <span class="n">ptree</span> <span class="o">&amp;</span> <span class="n">vehicle_tree</span> <span class="o">=</span> <span class="n">pt</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;Vehicle&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
     <span class="n">vehicle_tree</span><span class="p">.</span><span class="n">put</span><span class="p">(</span><span class="s">&quot;&lt;xmlattr&gt;.name&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
-    <span class="n">vehicle_tree</span><span class="p">.</span><span class="n">put</span><span class="p">(</span><span class="s">&quot;&lt;xmlattr&gt;.vehicleCategory&quot;</span><span class="p">,</span> <span class="n">vehicle_categoly</span><span class="p">);</span>
+    <span class="n">vehicle_tree</span><span class="p">.</span><span class="n">put</span><span class="p">(</span><span class="s">&quot;&lt;xmlattr&gt;.vehicleCategory&quot;</span><span class="p">,</span> <span class="n">vehicle_category</span><span class="p">);</span>
     <span class="n">ptree</span> <span class="o">&amp;</span> <span class="n">performance_tree</span> <span class="o">=</span> <span class="n">vehicle_tree</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;Performance&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
     <span class="n">performance_tree</span><span class="p">.</span><span class="n">put</span><span class="p">(</span><span class="s">&quot;&lt;xmlattr&gt;.maxSpeed&quot;</span><span class="p">,</span> <span class="n">performance</span><span class="p">.</span><span class="n">max_speed</span><span class="p">);</span>
     <span class="n">performance_tree</span><span class="p">.</span><span class="n">put</span><span class="p">(</span><span class="s">&quot;&lt;xmlattr&gt;.maxAcceleration&quot;</span><span class="p">,</span> <span class="n">performance</span><span class="p">.</span><span class="n">max_acceleration</span><span class="p">);</span>
@@ -1019,7 +1019,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__ENTITY__VEHICLE_PARAMETER_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 June 2021 at 00:07:41 UTC</p>
+<p>Updated on 15 June 2021 at 03:58:53 UTC</p>
                 
                   
                 

@@ -1137,7 +1137,7 @@
 <codeline lineno="260"><highlight class="normal"></highlight></codeline>
 <codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>closest_lanelet_id<sp/>=<sp/>hdmap_utils_ptr_-&gt;getClosetLaneletId(status.pose);</highlight></codeline>
 <codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!closest_lanelet_id)<sp/>{</highlight></codeline>
-<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>THROW_SEMANTIC_ERROR(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>find<sp/>closest<sp/>lane,<sp/>lane<sp/>is<sp/>too<sp/>far<sp/>away.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>THROW_SEMANTIC_ERROR(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>find<sp/>the<sp/>closest<sp/>lane,<sp/>lane<sp/>is<sp/>too<sp/>far<sp/>away.&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="265"><highlight class="normal"></highlight></codeline>
 <codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classtraffic__simulator_1_1math_1_1CatmullRomSpline" kindref="compound">traffic_simulator::math::CatmullRomSpline</ref><sp/>spline(</highlight></codeline>

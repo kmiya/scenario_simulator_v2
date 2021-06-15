@@ -791,9 +791,9 @@
     <span class="n">entity_status</span><span class="p">.</span><span class="n">lanelet_pose</span><span class="p">.</span><span class="n">s</span> <span class="o">+</span>
     <span class="p">(</span><span class="n">twist_new</span><span class="p">.</span><span class="n">linear</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">entity_status</span><span class="p">.</span><span class="n">action_status</span><span class="p">.</span><span class="n">twist</span><span class="p">.</span><span class="n">linear</span><span class="p">.</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">step_time</span><span class="p">;</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">new_s</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">auto</span> <span class="n">previous_lanlet_ids</span> <span class="o">=</span>
+    <span class="k">auto</span> <span class="n">previous_lanelet_ids</span> <span class="o">=</span>
       <span class="n">hdmap_utils</span><span class="o">-&gt;</span><span class="n">getPreviousLaneletIds</span><span class="p">(</span><span class="n">entity_status</span><span class="p">.</span><span class="n">lanelet_pose</span><span class="p">.</span><span class="n">lanelet_id</span><span class="p">);</span>
-    <span class="n">new_lanelet_id</span> <span class="o">=</span> <span class="n">previous_lanlet_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="n">new_lanelet_id</span> <span class="o">=</span> <span class="n">previous_lanelet_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
     <span class="n">new_s</span> <span class="o">=</span> <span class="n">new_s</span> <span class="o">+</span> <span class="n">hdmap_utils</span><span class="o">-&gt;</span><span class="n">getLaneletLength</span><span class="p">(</span><span class="n">new_lanelet_id</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.01</span><span class="p">;</span>
     <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="n">entity_status_updated</span><span class="p">;</span>
     <span class="n">entity_status_updated</span><span class="p">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">current_time</span> <span class="o">+</span> <span class="n">step_time</span><span class="p">;</span>
@@ -906,7 +906,7 @@
 <span class="p">}</span>  <span class="c1">// namespace entity_behavior</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 June 2021 at 00:07:41 UTC</p>
+<p>Updated on 15 June 2021 at 03:58:53 UTC</p>
                 
                   
                 

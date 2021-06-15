@@ -468,7 +468,7 @@
 <codeline lineno="344"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="345"><highlight class="normal"></highlight></codeline>
 <codeline lineno="346"><highlight class="normal">boost::optional&lt;double&gt;<sp/>CatmullRomSpline::getSValue(</highlight></codeline>
-<codeline lineno="347"><highlight class="normal"><sp/><sp/>geometry_msgs::msg::Point<sp/>position,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>threadhold_distance,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>initial_num_points,</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/>geometry_msgs::msg::Point<sp/>position,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>threshold_distance,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>initial_num_points,</highlight></codeline>
 <codeline lineno="348"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max_iteration,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tolerance)</highlight></codeline>
 <codeline lineno="349"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="350"><highlight class="normal"><sp/><sp/>std::vector&lt;double&gt;<sp/>s_values;</highlight></codeline>
@@ -476,7 +476,7 @@
 <codeline lineno="352"><highlight class="normal"><sp/><sp/>std::vector&lt;size_t&gt;<sp/>curve_index;</highlight></codeline>
 <codeline lineno="353"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>curves_.size();<sp/>i++)<sp/>{</highlight></codeline>
 <codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>s_value<sp/>=<sp/>curves_[i].getSValue(</highlight></codeline>
-<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>position,<sp/>threadhold_distance,<sp/>initial_num_points,<sp/>max_iteration,<sp/>tolerance,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>position,<sp/>threshold_distance,<sp/>initial_num_points,<sp/>max_iteration,<sp/>tolerance,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s_value)<sp/>{</highlight></codeline>
 <codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s_value.get()<sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/>s_value.get()<sp/>&lt;<sp/>curves_[i].getLength())<sp/>{</highlight></codeline>
 <codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s_values.emplace_back(s_value.get());</highlight></codeline>
@@ -520,10 +520,10 @@
 <codeline lineno="396"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>curves_[index_and_s.first].getPoint(index_and_s.second,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="397"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="398"><highlight class="normal"></highlight></codeline>
-<codeline lineno="399"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>CatmullRomSpline::getMaximum2DCurventure()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>CatmullRomSpline::getMaximum2DCurvature()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="400"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="401"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(maximum_2d_curvatures_.empty())<sp/>{</highlight></codeline>
-<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/>THROW_SIMULATION_ERROR(</highlight><highlight class="stringliteral">&quot;maximum<sp/>2D<sp/>curventure<sp/>vector<sp/>size<sp/>is<sp/>0.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/>THROW_SIMULATION_ERROR(</highlight><highlight class="stringliteral">&quot;maximum<sp/>2D<sp/>curvature<sp/>vector<sp/>size<sp/>is<sp/>0.&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="403"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="404"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*std::max_element(maximum_2d_curvatures_.begin(),<sp/>maximum_2d_curvatures_.end());</highlight></codeline>
 <codeline lineno="405"><highlight class="normal">}</highlight></codeline>

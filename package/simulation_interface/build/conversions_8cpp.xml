@@ -415,7 +415,7 @@
 <codeline lineno="232"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toProto(</highlight></codeline>
 <codeline lineno="233"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::LaneletPose<sp/>&amp;<sp/>pose,<sp/>openscenario_msgs::LaneletPose<sp/>&amp;<sp/>proto)</highlight></codeline>
 <codeline lineno="234"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="235"><highlight class="normal"><sp/><sp/>proto.set_lanlet_id(pose.lanelet_id);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/>proto.set_lanelet_id(pose.lanelet_id);</highlight></codeline>
 <codeline lineno="236"><highlight class="normal"><sp/><sp/>proto.set_s(pose.s);</highlight></codeline>
 <codeline lineno="237"><highlight class="normal"><sp/><sp/>proto.set_offset(pose.offset);</highlight></codeline>
 <codeline lineno="238"><highlight class="normal"><sp/><sp/>toProto(pose.rpy,<sp/>*proto.mutable_rpy());</highlight></codeline>
@@ -423,7 +423,7 @@
 <codeline lineno="240"><highlight class="normal"></highlight></codeline>
 <codeline lineno="241"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toMsg(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::LaneletPose<sp/>&amp;<sp/>proto,<sp/>openscenario_msgs::msg::LaneletPose<sp/>&amp;<sp/>pose)</highlight></codeline>
 <codeline lineno="242"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="243"><highlight class="normal"><sp/><sp/>pose.lanelet_id<sp/>=<sp/>proto.lanlet_id();</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/>pose.lanelet_id<sp/>=<sp/>proto.lanelet_id();</highlight></codeline>
 <codeline lineno="244"><highlight class="normal"><sp/><sp/>pose.s<sp/>=<sp/>proto.s();</highlight></codeline>
 <codeline lineno="245"><highlight class="normal"><sp/><sp/>pose.offset<sp/>=<sp/>proto.offset();</highlight></codeline>
 <codeline lineno="246"><highlight class="normal"><sp/><sp/>toMsg(proto.rpy(),<sp/>pose.rpy);</highlight></codeline>

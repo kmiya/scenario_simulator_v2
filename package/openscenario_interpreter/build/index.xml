@@ -359,6 +359,15 @@
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Event_1a881f41a37994c8eaa4951608aff89036" kind="function"><name>run</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Event_1a556fe3d75f526b083e1da9f5f0449e10" kind="function"><name>stopTriggered</name></member>
   </compound>
+  <compound refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer" kind="struct"><name>openscenario_interpreter::utility::ExecutionTimer</name>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer_1ab572ecf3ab4cb447ee7ad85e34bef8c2" kind="variable"><name>statistics_map</name></member>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer_1ae64498d487edc5975f39c9c0ff71e09c" kind="function"><name>invoke</name></member>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer_1a732aa77457dafdc9e1c418e8f8ba7201" kind="function"><name>invoke</name></member>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer_1af20b8831aa3bbf1f217fc54c147dca65" kind="function"><name>clear</name></member>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer_1a89fadfac16d04fa94b38ef898607d447" kind="function"><name>getStatistics</name></member>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer_1ae9472dffdf0059cfe208781272abbdd9" kind="function"><name>begin</name></member>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer_1a2f08108f67599db79d9652b6ae6c5fcb" kind="function"><name>end</name></member>
+  </compound>
   <compound refid="structopenscenario__interpreter_1_1Expression" kind="struct"><name>openscenario_interpreter::Expression</name>
     <member refid="structopenscenario__interpreter_1_1Expression_1a43fdc4ac3faa5eb198dd2a55644dd9a6" kind="function"><name>type</name></member>
     <member refid="structopenscenario__interpreter_1_1Expression_1afba5927b6c2d2ec10c2a92b1d82edc14" kind="function"><name>write</name></member>
@@ -484,6 +493,7 @@
     <member refid="classopenscenario__interpreter_1_1Interpreter_1ac6eb6a10ddae02bf4a47119293e20d54" kind="variable"><name>current_result</name></member>
     <member refid="classopenscenario__interpreter_1_1Interpreter_1a86010d7df11a71558584745117729e63" kind="variable"><name>current_error_type</name></member>
     <member refid="classopenscenario__interpreter_1_1Interpreter_1a207587c7a41f234bb1179b3fa19786e5" kind="variable"><name>current_error_what</name></member>
+    <member refid="classopenscenario__interpreter_1_1Interpreter_1a24aac5d1c4a6c1d8c44268049398f45c" kind="variable"><name>execution_timer</name></member>
     <member refid="classopenscenario__interpreter_1_1Interpreter_1a83901966701a14d915206294b58a7bd4" kind="function"><name>reset</name></member>
     <member refid="classopenscenario__interpreter_1_1Interpreter_1ae4651e7dd250a0fdc4667e025c11a9dc" kind="function"><name>report</name></member>
     <member refid="classopenscenario__interpreter_1_1Interpreter_1aab7e2bae3d6fcdf1d8b545f22d973d6a" kind="function"><name>withExceptionHandler</name></member>
@@ -916,6 +926,19 @@
     <member refid="structopenscenario__interpreter_1_1syntax_1_1StandStillCondition_1a5e1573789c905d6d73a5b51695dcfa3e" kind="variable"><name>for_each</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1StandStillCondition_1a95bf62bbb6873d5ebea5ed05e72a4a09" kind="function"><name>StandStillCondition</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1StandStillCondition_1a23580d1198c5cfa9501d78c615d839c7" kind="function"><name>evaluate</name></member>
+  </compound>
+  <compound refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer_1_1Statistics" kind="struct"><name>openscenario_interpreter::utility::ExecutionTimer::Statistics</name>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer_1_1Statistics_1a242f9882cdaf5744a1e3885189d87637" kind="variable"><name>ns_max</name></member>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer_1_1Statistics_1a47f834d3b1b8b137bb90301a236d3f81" kind="variable"><name>ns_min</name></member>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer_1_1Statistics_1a263ae6aae079f5af5781df16243a3f9c" kind="variable"><name>ns_sum</name></member>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer_1_1Statistics_1a1ec146d83249f06a38a7ba6e6ba566f1" kind="variable"><name>ns_sq_sum</name></member>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer_1_1Statistics_1a4a58bd87ebf40fb3ae785d49abcb46a0" kind="variable"><name>count_</name></member>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer_1_1Statistics_1a769590f254f8179e0b27d8ad03c3cefb" kind="function"><name>add</name></member>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer_1_1Statistics_1aa2b15f0e1e4943abf639856f3b40b73e" kind="function"><name>count</name></member>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer_1_1Statistics_1a8afd2f823ad3ebb6425678875b559fa7" kind="function"><name>max</name></member>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer_1_1Statistics_1a1fba91860095fe033ed3c8bcaedb5a56" kind="function"><name>min</name></member>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer_1_1Statistics_1aaeacd756d4f023fa29022d96b3d0f79c" kind="function"><name>mean</name></member>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer_1_1Statistics_1a20d70e6f91d8fea72f0087bfb28ff8b1" kind="function"><name>standardDeviation</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1Story" kind="struct"><name>openscenario_interpreter::syntax::Story</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Story_1a3e1162e75d43a4b7de4d5e74a5a7bfc1" kind="variable"><name>name</name></member>
@@ -1741,6 +1764,8 @@
     <member refid="assertion__auxiliary_8hpp_1acec90ae2f8e719deafcb416853d9ecc4" kind="define"><name>ASSERT_IS_OPTIONAL_ELEMENT</name></member>
   </compound>
   <compound refid="demangle_8hpp" kind="file"><name>demangle.hpp</name>
+  </compound>
+  <compound refid="execution__timer_8hpp" kind="file"><name>execution_timer.hpp</name>
   </compound>
   <compound refid="highlighter_8hpp" kind="file"><name>highlighter.hpp</name>
   </compound>

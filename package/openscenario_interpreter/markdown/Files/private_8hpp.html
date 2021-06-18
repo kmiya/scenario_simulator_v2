@@ -808,6 +808,13 @@
 
     <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span>
   <span class="p">}</span>
+
+  <span class="kt">bool</span> <span class="n">endsImmediately</span><span class="p">()</span> <span class="k">const</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">all_of</span><span class="p">(</span>
+      <span class="n">private_actions</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">private_actions</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span>
+      <span class="p">[](</span><span class="k">const</span> <span class="n">PrivateAction</span> <span class="o">&amp;</span> <span class="n">private_action</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">private_action</span><span class="p">.</span><span class="n">endsImmediately</span><span class="p">();</span> <span class="p">});</span>
+  <span class="p">}</span>
 <span class="p">};</span>
 <span class="p">}</span>  <span class="c1">// namespace syntax</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
@@ -815,7 +822,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__PRIVATE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 June 2021 at 00:07:25 UTC</p>
+<p>Updated on 18 June 2021 at 04:00:58 UTC</p>
                 
                   
                 

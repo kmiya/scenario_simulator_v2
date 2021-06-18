@@ -866,6 +866,21 @@
     <span class="p">}</span>
     <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span>
   <span class="p">}</span>
+
+  <span class="kt">bool</span> <span class="n">endsImmediately</span><span class="p">()</span> <span class="k">const</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">all_of</span><span class="p">(</span><span class="n">begin</span><span class="p">(),</span> <span class="n">end</span><span class="p">(),</span> <span class="p">[</span><span class="o">=</span><span class="p">](</span><span class="k">const</span> <span class="n">Element</span> <span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">is</span><span class="o">&lt;</span><span class="n">GlobalAction</span><span class="o">&gt;</span><span class="p">())</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">e</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">GlobalAction</span><span class="o">&gt;</span><span class="p">().</span><span class="n">endsImmediately</span><span class="p">();</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">is</span><span class="o">&lt;</span><span class="n">UserDefinedAction</span><span class="o">&gt;</span><span class="p">())</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">e</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">UserDefinedAction</span><span class="o">&gt;</span><span class="p">().</span><span class="n">endsImmediately</span><span class="p">();</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">is</span><span class="o">&lt;</span><span class="n">Private</span><span class="o">&gt;</span><span class="p">())</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">e</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">Private</span><span class="o">&gt;</span><span class="p">().</span><span class="n">endsImmediately</span><span class="p">();</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">UNSUPPORTED_ELEMENT_SPECIFIED</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">name</span><span class="p">());</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
 <span class="p">};</span>
 
 <span class="cp">#undef ELEMENT</span>
@@ -875,7 +890,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__INIT_ACTIONS_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 June 2021 at 00:07:25 UTC</p>
+<p>Updated on 18 June 2021 at 04:00:58 UTC</p>
                 
                   
                 

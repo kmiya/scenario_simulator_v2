@@ -1058,6 +1058,22 @@
     <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1PrivateAction" prot="public">openscenario_interpreter::syntax::PrivateAction</innerclass>
     <innernamespace refid="namespaceopenscenario__interpreter">openscenario_interpreter</innernamespace>
     <innernamespace refid="namespaceopenscenario__interpreter_1_1syntax">openscenario_interpreter::syntax</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="private__action_8hpp_1aa470251fbe80466c8732a0ad6c409e3a" prot="public" static="no">
+        <name>BOILERPLATE</name>
+        <param><defname>TYPE</defname></param>
+        <initializer>if (is&lt;TYPE&gt;()) {                      \
+    return as&lt;TYPE&gt;().endsImmediately(); \
+  }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/private_action.hpp" line="65" column="9"/>
+      </memberdef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -1125,11 +1141,25 @@
 <codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>clang-format<sp/>on</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="63"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="64"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>syntax</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>openscenario_interpreter</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>OPENSCENARIO_INTERPRETER__SYNTAX__PRIVATE_ACTION_HPP_</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>endsImmediately()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="64"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BOILERPLATE(TYPE)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="66"><highlight class="preprocessor"><sp/><sp/>if<sp/>(is&lt;TYPE&gt;())<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="67"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>return<sp/>as&lt;TYPE&gt;().endsImmediately();<sp/>\</highlight></codeline>
+<codeline lineno="68"><highlight class="preprocessor"><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>BOILERPLATE(<ref refid="structopenscenario__interpreter_1_1syntax_1_1LongitudinalAction" kindref="compound">LongitudinalAction</ref>)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>BOILERPLATE(<ref refid="structopenscenario__interpreter_1_1syntax_1_1LateralAction" kindref="compound">LateralAction</ref>)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>BOILERPLATE(<ref refid="structopenscenario__interpreter_1_1syntax_1_1ControllerAction" kindref="compound">ControllerAction</ref>)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>BOILERPLATE(<ref refid="structopenscenario__interpreter_1_1syntax_1_1TeleportAction" kindref="compound">TeleportAction</ref>)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>BOILERPLATE(<ref refid="structopenscenario__interpreter_1_1syntax_1_1RoutingAction" kindref="compound">RoutingAction</ref>)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>UNSUPPORTED_ELEMENT_SPECIFIED(type().name());</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>BOILERPLATE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>syntax</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>openscenario_interpreter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>OPENSCENARIO_INTERPRETER__SYNTAX__PRIVATE_ACTION_HPP_</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/private_action.hpp"/>
   </compounddef>

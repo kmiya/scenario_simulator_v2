@@ -7,6 +7,8 @@
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1AbsoluteTargetSpeed" kind="struct"><name>openscenario_interpreter::syntax::AbsoluteTargetSpeed</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1AbsoluteTargetSpeed_1a782b6cc21fcd755d6868abfaff31d593" kind="variable"><name>value</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1AbsoluteTargetSpeed_1acf1c7a83be81f17011648a2f0bcc445f" kind="function"><name>AbsoluteTargetSpeed</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1AbsoluteTargetSpeed_1aa1726c6010e0e58044f2fe2e8f89e86d" kind="function"><name>getCalculateAbsoluteTargetSpeed</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1AbsoluteTargetSpeed_1a3d132f37565abe32bb336d9f365c841b" kind="function"><name>getIsEnd</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1AccelerationCondition" kind="struct"><name>openscenario_interpreter::syntax::AccelerationCondition</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1AccelerationCondition_1ae821fc60b8f07739cdb94e97fcdb3302" kind="variable"><name>value</name></member>
@@ -19,13 +21,14 @@
     <member refid="structopenscenario__interpreter_1_1syntax_1_1AcquirePositionAction_1a6e1ae4a7bc6355c9ef0c4844e7903952" kind="variable"><name>inner_scope</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1AcquirePositionAction_1a5ca0cb8e19d731048f62244075e1929c" kind="variable"><name>position</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1AcquirePositionAction_1ae3ae5e42526d7f4ba40506dfde1b990c" kind="variable"><name>accomplishments</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1AcquirePositionAction_1a79ed77d086713e00a5f2fcf7d196b02a" kind="variable"><name>accomplished</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1AcquirePositionAction_1a9c4a9be98a10ab328598280cc66a931f" kind="function"><name>AcquirePositionAction</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1AcquirePositionAction_1ab1f4aeb02c55d6b0215cf6ee534c2a3e" kind="function"><name>operator()</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1AcquirePositionAction_1a9e24f6749b706e108e6a56dd0a8669ed" kind="function"><name>reset</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1AcquirePositionAction_1a3cf025e08c363dda56843b0d5511edcc" kind="function"><name>start</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1AcquirePositionAction_1a26a016b3b5baa710a113abb363e130b8" kind="function"><name>check</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1AcquirePositionAction_1afac97aad160b0d1fc891d85a891d0152" kind="function"><name>update</name></member>
-    <member refid="structopenscenario__interpreter_1_1syntax_1_1AcquirePositionAction_1abad76be92bf26a5a64ae0477d49a3e7d" kind="function"><name>accomplished</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1AcquirePositionAction_1a66535e897c5886c8d275c505f5d16c8f" kind="function"><name>endsImmediately</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1Act" kind="struct"><name>openscenario_interpreter::syntax::Act</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Act_1a2ca0418b7b175d688730980ad2551bf6" kind="variable"><name>name</name></member>
@@ -82,6 +85,7 @@
     <member refid="structopenscenario__interpreter_1_1syntax_1_1AssignRouteAction_1acb6ed2718c5e2f3ab09a6f62179e8871" kind="function"><name>AssignRouteAction</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1AssignRouteAction_1a9797d4adb25314e4151c0394d51b43de" kind="function"><name>operator()</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1AssignRouteAction_1adae7fbf5704f97c0b9d9d970cae8a09d" kind="function"><name>start</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1AssignRouteAction_1af4affe32afdba9e0724621d06f7128e6" kind="function"><name>endsImmediately</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1utility_1_1AttributeHighlighter" kind="struct"><name>openscenario_interpreter::utility::AttributeHighlighter</name>
     <member refid="structopenscenario__interpreter_1_1utility_1_1AttributeHighlighter_1a971a6b9cd8ca84568c7ac8b43681ffb0" kind="variable"><name>name</name></member>
@@ -246,6 +250,7 @@
     <member refid="structopenscenario__interpreter_1_1syntax_1_1ControllerAction_1ae3b14b3a35fcc0f24cc5210091452341" kind="variable"><name>accomplished</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1ControllerAction_1a8cbb46c46ade3557d783fe3a7a268897" kind="function"><name>ControllerAction</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1ControllerAction_1a1cfd615807dd888c9e53d74e56f8f541" kind="function"><name>start</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1ControllerAction_1a5e63411ceec3e9e076446cac36ad0e58" kind="function"><name>endsImmediately</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction" kind="struct"><name>openscenario_interpreter::syntax::CustomCommandAction</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction_1a404f767a226a774356f8e405a051f813" kind="variable"><name>inner_scope</name></member>
@@ -329,6 +334,7 @@
     <member refid="structopenscenario__interpreter_1_1syntax_1_1EntityAction_1aa1a474ca0f873f8e415c92958922e385" kind="variable"><name>accomplished</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1EntityAction_1a69849e9257958b5a2a47af7702dc0815" kind="function"><name>EntityAction</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1EntityAction_1aa885be56b7950c0be54d8533f7d65c5e" kind="function"><name>evaluate</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1EntityAction_1aa73b5fc0f34f3737e0b6152476f1985f" kind="function"><name>endsImmediately</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1EntityCondition" kind="struct"><name>openscenario_interpreter::syntax::EntityCondition</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1EntityCondition_1a7170df55f28238ec3867bb802d8d7239" kind="function"><name>EntityCondition</name></member>
@@ -394,6 +400,7 @@
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1GlobalAction" kind="struct"><name>openscenario_interpreter::syntax::GlobalAction</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1GlobalAction_1ad4f2dd1b1550e24e0073500bc751290d" kind="function"><name>GlobalAction</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1GlobalAction_1ad55e2b0f51743dab45dd93e1658077d2" kind="function"><name>endsImmediately</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1type__traits_1_1HasMemberFunctionAccomplished" kind="struct"><name>openscenario_interpreter::type_traits::HasMemberFunctionAccomplished</name>
   </compound>
@@ -460,6 +467,7 @@
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1InfrastructureAction" kind="struct"><name>openscenario_interpreter::syntax::InfrastructureAction</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1InfrastructureAction_1a50ba5c09f6dc1d6a3bd5c5df7dc95686" kind="function"><name>InfrastructureAction</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1InfrastructureAction_1a78ca2dffd9db638c45a0969a5021d576" kind="function"><name>endsImmediately</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1Init" kind="struct"><name>openscenario_interpreter::syntax::Init</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Init_1a31223a99cfbd8750c9aed614b9883278" kind="function"><name>Init</name></member>
@@ -467,6 +475,7 @@
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1InitActions" kind="struct"><name>openscenario_interpreter::syntax::InitActions</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1InitActions_1a7ae482445a7d2cabd6949a56c2715cce" kind="function"><name>InitActions</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1InitActions_1aa55a96337db7ac47bcc22afc885ac58f" kind="function"><name>evaluate</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1InitActions_1a1425016e19d4cde84c715c6c2fb015e1" kind="function"><name>endsImmediately</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1Integer" kind="struct"><name>openscenario_interpreter::syntax::Integer</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Integer_1a7c4b1f851b657d803d39fcca5c63f2d9" kind="typedef"><name>value_type</name></member>
@@ -514,6 +523,7 @@
     <member refid="structopenscenario__interpreter_1_1syntax_1_1LaneChangeAction_1a22f09aee14765707d3dc2a8c693e5174" kind="function"><name>LaneChangeAction</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1LaneChangeAction_1a384cf086b5930e66cd6d86bdeb587572" kind="function"><name>start</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1LaneChangeAction_1a932d75ba8902e0efb79cc714ace244f9" kind="function"><name>accomplished</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1LaneChangeAction_1a369da81f3f2203b0274e2ce390bacc70" kind="function"><name>endsImmediately</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1LaneChangeTarget" kind="struct"><name>openscenario_interpreter::syntax::LaneChangeTarget</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1LaneChangeTarget_1a15df4784c7dad5a21474fad524d70639" kind="function"><name>LaneChangeTarget</name></member>
@@ -530,9 +540,11 @@
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1LateralAction" kind="struct"><name>openscenario_interpreter::syntax::LateralAction</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1LateralAction_1ada1838fabe502628cce60252a7eac6f8" kind="function"><name>LateralAction</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1LateralAction_1a8ea7792bd622069bce13364796b275fa" kind="function"><name>endsImmediately</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1LongitudinalAction" kind="struct"><name>openscenario_interpreter::syntax::LongitudinalAction</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1LongitudinalAction_1ae7e6e46f8897e2280bab1c4b0ae28459" kind="function"><name>LongitudinalAction</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1LongitudinalAction_1a5a8a3565cccd0f980127f6b41ced3835" kind="function"><name>endsImmediately</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1Maneuver" kind="struct"><name>openscenario_interpreter::syntax::Maneuver</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Maneuver_1a60da96ab1a8bf3d4c2d455c54815c860" kind="variable"><name>name</name></member>
@@ -598,6 +610,7 @@
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1ParameterAction" kind="struct"><name>openscenario_interpreter::syntax::ParameterAction</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1ParameterAction_1a1bc14597fb04fa41054b5ffb181e9e59" kind="function"><name>ParameterAction</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1ParameterAction_1aec8714caed443a788f52dae708d2c7dc" kind="function"><name>endsImmediately</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1ParameterAddValueRule" kind="struct"><name>openscenario_interpreter::syntax::ParameterAddValueRule</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1ParameterAddValueRule_1af2dc0dd75fba56ab94769bbc238d0f23" kind="variable"><name>value</name></member>
@@ -716,9 +729,11 @@
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Private_1a882f7c7246dea152d6968f876e35e0e0" kind="variable"><name>private_actions</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Private_1af7e89f8e72658e317a109705c2d3396f" kind="function"><name>Private</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Private_1a58b348d8d7172f35f00445ff8ee80dfc" kind="function"><name>evaluate</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1Private_1aec9d04ccac53b33115989119b3537ada" kind="function"><name>endsImmediately</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1PrivateAction" kind="struct"><name>openscenario_interpreter::syntax::PrivateAction</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1PrivateAction_1afc687365e2d516f77ad9cb5cdd4d8fbd" kind="function"><name>PrivateAction</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1PrivateAction_1a891a20593802d88af166763723dbce2b" kind="function"><name>endsImmediately</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1Properties" kind="struct"><name>openscenario_interpreter::syntax::Properties</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Properties_1a4be8eb6e5af68e4cc9ed892c3f402683" kind="variable"><name>properties</name></member>
@@ -786,6 +801,8 @@
     <member refid="structopenscenario__interpreter_1_1syntax_1_1RelativeTargetSpeed_1a2df684873dab01ff4fe3c2a08c7273be" kind="variable"><name>speed_target_value_type</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1RelativeTargetSpeed_1ad9e2c7cc03a98e1b1a6bf72f0a4be1f3" kind="variable"><name>continuous</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1RelativeTargetSpeed_1a37851ae0e33e7f2d2cf950276a03e590" kind="function"><name>RelativeTargetSpeed</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1RelativeTargetSpeed_1a0311f2697da6379a51dd776ebb519735" kind="function"><name>getCalculateAbsoluteTargetSpeed</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1RelativeTargetSpeed_1a9bb5d205f58672a165e40f7f600dbaa4" kind="function"><name>getIsEnd</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1RelativeWorldPosition" kind="struct"><name>openscenario_interpreter::syntax::RelativeWorldPosition</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1RelativeWorldPosition_1a63229db5da57793f629ea6bda4e201c8" kind="variable"><name>orientation</name></member>
@@ -827,6 +844,7 @@
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1RoutingAction" kind="struct"><name>openscenario_interpreter::syntax::RoutingAction</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1RoutingAction_1a609ffc88de4ad9aff42ad3ee7dea6ba6" kind="function"><name>RoutingAction</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1RoutingAction_1a047fdf0f55fd4d46d197de01925340d4" kind="function"><name>endsImmediately</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1Rule" kind="struct"><name>openscenario_interpreter::syntax::Rule</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Rule_1ac17ed7783d1242de9ee2a412d65ecbab" kind="enum"><name>value_type</name></member>
@@ -892,18 +910,19 @@
     <member refid="structopenscenario__interpreter_1_1syntax_1_1SpeedAction_1aff272ab107ce475844658c7df743c4f4" kind="variable"><name>speed_action_dynamics</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1SpeedAction_1a27c463e3b86c86e415275272db6db8e8" kind="variable"><name>speed_action_target</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1SpeedAction_1a255768efd68c1a73b7994484976f412c" kind="variable"><name>accomplishments</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1SpeedAction_1a98028fdfb13b81b44ed0825d61c8b45f" kind="variable"><name>update_and_check</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1SpeedAction_1a607ebdd41dbd4fb469feb3916c37fd18" kind="function"><name>SpeedAction</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1SpeedAction_1ad4e2072c5bf19000bf94af9353831513" kind="function"><name>reset</name></member>
-    <member refid="structopenscenario__interpreter_1_1syntax_1_1SpeedAction_1a1a85bcf8c2345990e0e42880dd61ffed" kind="function"><name>setLinearTransition</name></member>
-    <member refid="structopenscenario__interpreter_1_1syntax_1_1SpeedAction_1a29020c33f11f4aa67aac73497ea06b26" kind="function"><name>setStepTransition</name></member>
-    <member refid="structopenscenario__interpreter_1_1syntax_1_1SpeedAction_1a8d053b33f5c21eebba7bb53b7580a04e" kind="function"><name>operator()</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1SpeedAction_1a73b8fb1782d92635b6ad5480ec63e493" kind="function"><name>start</name></member>
-    <member refid="structopenscenario__interpreter_1_1syntax_1_1SpeedAction_1aeb3cc6346aae665128dac55a331a81b2" kind="function"><name>check</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1SpeedAction_1aa6dec30455b50d07acc8e8c77629e6fc" kind="function"><name>update</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1SpeedAction_1afabc4900aab2c068a8cdf38d98aabe5e" kind="function"><name>accomplished</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1SpeedAction_1a56261a704858724b3320c57e94cd7809" kind="function"><name>endsImmediately</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1SpeedAction_1a6c4f592763bf7678056e9f6e3e5e8867" kind="function"><name>startImpl</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1SpeedActionTarget" kind="struct"><name>openscenario_interpreter::syntax::SpeedActionTarget</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1SpeedActionTarget_1a8f8c1596b8b6ebccfd85b7913e8d92de" kind="function"><name>SpeedActionTarget</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1SpeedActionTarget_1aff677d8540fc2a316f52b54ae7bd3246" kind="function"><name>getCalculateAbsoluteTargetSpeed</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1SpeedActionTarget_1a73d7c00ae0bdf037bdff2769415b557c" kind="function"><name>getIsEnd</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1SpeedCondition" kind="struct"><name>openscenario_interpreter::syntax::SpeedCondition</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1SpeedCondition_1a9d002f884b253ba991ea714eb02d7f1a" kind="variable"><name>value</name></member>
@@ -1037,6 +1056,7 @@
     <member refid="structopenscenario__interpreter_1_1syntax_1_1TeleportAction_1ae10fd5405eff3a4b9e13f02c46c96575" kind="function"><name>operator()</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1TeleportAction_1a56382c40b738e1dd5e9e3eb23dc3d7b8" kind="function"><name>operator()</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1TeleportAction_1afb941c0cebd3d3f4a67080cc961b1451" kind="function"><name>start</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1TeleportAction_1a8fbcc5244f6b9e06ab60348c6f03a1c2" kind="function"><name>endsImmediately</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition" kind="struct"><name>openscenario_interpreter::syntax::TimeHeadwayCondition</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition_1ac988c21adae52cdb85fac3d87b437579" kind="variable"><name>entity_ref</name></member>
@@ -1146,6 +1166,7 @@
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1UserDefinedAction" kind="struct"><name>openscenario_interpreter::syntax::UserDefinedAction</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1UserDefinedAction_1a37c86303cdca10b9fb833e64bf397272" kind="function"><name>UserDefinedAction</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1UserDefinedAction_1afa04bf708de32e03dcabcf80cb9ac25b" kind="function"><name>endsImmediately</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1Vehicle" kind="struct"><name>openscenario_interpreter::syntax::Vehicle</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Vehicle_1ab8984e89e9de3abf5a7bb0af30c8d02a" kind="variable"><name>name</name></member>
@@ -1558,6 +1579,7 @@
   <compound refid="file__header_8hpp" kind="file"><name>file_header.hpp</name>
   </compound>
   <compound refid="global__action_8hpp" kind="file"><name>global_action.hpp</name>
+    <member refid="global__action_8hpp_1aa470251fbe80466c8732a0ad6c409e3a" kind="define"><name>BOILERPLATE</name></member>
   </compound>
   <compound refid="infrastructure__action_8hpp" kind="file"><name>infrastructure_action.hpp</name>
   </compound>
@@ -1632,6 +1654,7 @@
   <compound refid="private_8hpp" kind="file"><name>private.hpp</name>
   </compound>
   <compound refid="private__action_8hpp" kind="file"><name>private_action.hpp</name>
+    <member refid="private__action_8hpp_1aa470251fbe80466c8732a0ad6c409e3a" kind="define"><name>BOILERPLATE</name></member>
   </compound>
   <compound refid="properties_8hpp" kind="file"><name>properties.hpp</name>
   </compound>
@@ -1656,6 +1679,7 @@
   <compound refid="route__strategy_8hpp" kind="file"><name>route_strategy.hpp</name>
   </compound>
   <compound refid="routing__action_8hpp" kind="file"><name>routing_action.hpp</name>
+    <member refid="routing__action_8hpp_1aa470251fbe80466c8732a0ad6c409e3a" kind="define"><name>BOILERPLATE</name></member>
   </compound>
   <compound refid="rule_8hpp" kind="file"><name>rule.hpp</name>
   </compound>
@@ -1890,7 +1914,6 @@
   <compound refid="scenario__object_8cpp" kind="file"><name>scenario_object.cpp</name>
   </compound>
   <compound refid="speed__target__value__type_8cpp" kind="file"><name>speed_target_value_type.cpp</name>
-    <member refid="speed__target__value__type_8cpp_1a9c8f164b1af96f53e82a3e558461f33f" kind="define"><name>BOILERPLATE</name></member>
     <member refid="speed__target__value__type_8cpp_1a9c8f164b1af96f53e82a3e558461f33f" kind="define"><name>BOILERPLATE</name></member>
     <member refid="speed__target__value__type_8cpp_1a042387daeb4ef49d52ad4fb5f73a8f40" kind="define"><name>BOILERPLATE</name></member>
   </compound>

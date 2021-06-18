@@ -542,20 +542,20 @@
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/entity_base.hpp" line="104" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/entity/entity_base.cpp" bodystart="101" bodyend="106"/>
       </memberdef>
-      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EntityBase_1a10010a867a1628b54c3b95e45e033b20" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="classtraffic__simulator_1_1entity_1_1EntityBase_1a93bec8c41a87b1ceac517143e526ee48" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void traffic_simulator::entity::EntityBase::setTargetSpeed</definition>
-        <argsstring>(const double target_speed, const bool continuous)=0</argsstring>
+        <argsstring>(double target_speed, bool continuous)=0</argsstring>
         <name>setTargetSpeed</name>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1af5685211b4c3a9edcc7870facf493478">setTargetSpeed</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a757d8e5d2d63e237033a6edc86a3cb66">setTargetSpeed</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1adbb86441cd161fccf0c4090da4e5bd2c">setTargetSpeed</reimplementedby>
         <param>
-          <type>const double</type>
+          <type>double</type>
           <declname>target_speed</declname>
         </param>
         <param>
-          <type>const bool</type>
+          <type>bool</type>
           <declname>continuous</declname>
         </param>
         <briefdescription>
@@ -869,7 +869,7 @@
       <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a825c88dac304034b8b6daf005b894fd0" prot="public" virt="virtual"><scope>traffic_simulator::entity::EntityBase</scope><name>setHdMapUtils</name></member>
       <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1accd382ea1a7e68441dcb6260487ce030" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EntityBase</scope><name>setOtherStatus</name></member>
       <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ab4d7a67026fdd472cc0b85a393af142d" prot="public" virt="virtual"><scope>traffic_simulator::entity::EntityBase</scope><name>setStatus</name></member>
-      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a10010a867a1628b54c3b95e45e033b20" prot="public" virt="pure-virtual"><scope>traffic_simulator::entity::EntityBase</scope><name>setTargetSpeed</name></member>
+      <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a93bec8c41a87b1ceac517143e526ee48" prot="public" virt="pure-virtual"><scope>traffic_simulator::entity::EntityBase</scope><name>setTargetSpeed</name></member>
       <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ad31af76af146bd5c56c99999cf85e8f2" prot="public" virt="virtual"><scope>traffic_simulator::entity::EntityBase</scope><name>setTrafficLightManager</name></member>
       <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a53e31e2a5e533dd6a4931fa12b681a8c" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EntityBase</scope><name>setVerbose</name></member>
       <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ac91115ed599bea1fb02448c3b964afe2" prot="public" virt="non-virtual"><scope>traffic_simulator::entity::EntityBase</scope><name>setVisibility</name></member>

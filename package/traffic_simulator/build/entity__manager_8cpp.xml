@@ -1663,125 +1663,137 @@
 <codeline lineno="530"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="531"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="532"><highlight class="normal"></highlight></codeline>
-<codeline lineno="533"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>EntityManager::setEntityStatus(</highlight></codeline>
-<codeline lineno="534"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,<sp/>openscenario_msgs::msg::EntityStatus<sp/>status)</highlight></codeline>
-<codeline lineno="535"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="536"><highlight class="normal"><sp/><sp/>status.name<sp/>=<sp/>name;<sp/><sp/></highlight><highlight class="comment">//<sp/>XXX<sp/>UGLY<sp/>CODE</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="537"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>entities_.at(name)-&gt;setStatus(status);</highlight></codeline>
-<codeline lineno="538"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="539"><highlight class="normal"></highlight></codeline>
-<codeline lineno="540"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EntityManager::setVerbose(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>verbose)</highlight></codeline>
-<codeline lineno="541"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="542"><highlight class="normal"><sp/><sp/>verbose_<sp/>=<sp/>verbose;</highlight></codeline>
-<codeline lineno="543"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>entity<sp/>:<sp/>entities_)<sp/>{</highlight></codeline>
-<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/>entity.second-&gt;setVerbose(verbose);</highlight></codeline>
-<codeline lineno="545"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="546"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="547"><highlight class="normal"></highlight></codeline>
-<codeline lineno="548"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>EntityManager::toMapPose(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::LaneletPose<sp/>&amp;<sp/>lanelet_pose)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="549"><highlight class="normal"><sp/><sp/>-&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>geometry_msgs::msg::Pose</highlight></codeline>
-<codeline lineno="550"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="551"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hdmap_utils_ptr_-&gt;toMapPose(lanelet_pose).pose;</highlight></codeline>
-<codeline lineno="552"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="553"><highlight class="normal"></highlight></codeline>
-<codeline lineno="554"><highlight class="normal">openscenario_msgs::msg::EntityStatus<sp/>EntityManager::updateNpcLogic(</highlight></codeline>
-<codeline lineno="555"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,</highlight></codeline>
-<codeline lineno="556"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_map&lt;std::string,<sp/>openscenario_msgs::msg::EntityType&gt;<sp/>&amp;<sp/>type_list)</highlight></codeline>
-<codeline lineno="557"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="558"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(verbose_)<sp/>{</highlight></codeline>
-<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;update<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>behavior&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="560"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="561"><highlight class="normal"><sp/><sp/>entities_[name]-&gt;setEntityTypeList(type_list);</highlight></codeline>
-<codeline lineno="562"><highlight class="normal"><sp/><sp/>entities_[name]-&gt;onUpdate(current_time_,<sp/>step_time_);</highlight></codeline>
-<codeline lineno="563"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(entities_[name]-&gt;statusSet())<sp/>{</highlight></codeline>
-<codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>entities_[name]-&gt;getStatus();</highlight></codeline>
-<codeline lineno="565"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="566"><highlight class="normal"><sp/><sp/>THROW_SIMULATION_ERROR(</highlight><highlight class="stringliteral">&quot;status<sp/>of<sp/>entity<sp/>&quot;</highlight><highlight class="normal">,<sp/>name,<sp/></highlight><highlight class="stringliteral">&quot;is<sp/>empty&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="567"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="568"><highlight class="normal"></highlight></codeline>
-<codeline lineno="569"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EntityManager::update(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step_time)</highlight></codeline>
-<codeline lineno="570"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="571"><highlight class="normal"><sp/><sp/>std::chrono::system_clock::time_point<sp/>start,<sp/>end;</highlight></codeline>
-<codeline lineno="572"><highlight class="normal"><sp/><sp/>start<sp/>=<sp/>std::chrono::system_clock::now();</highlight></codeline>
-<codeline lineno="573"><highlight class="normal"><sp/><sp/>step_time_<sp/>=<sp/>step_time;</highlight></codeline>
-<codeline lineno="574"><highlight class="normal"><sp/><sp/>current_time_<sp/>=<sp/>current_time;</highlight></codeline>
-<codeline lineno="575"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(verbose_)<sp/>{</highlight></codeline>
-<codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;--------------------------<sp/>UPDATE<sp/>--------------------------&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="577"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;current_time<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>current_time_<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="578"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="579"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getNumberOfEgo()<sp/>&gt;=<sp/>2)<sp/>{</highlight></codeline>
-<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/>THROW_SEMANTIC_ERROR(</highlight><highlight class="stringliteral">&quot;multi<sp/>ego<sp/>simulation<sp/>does<sp/>not<sp/>support<sp/>yet&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="581"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="582"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(current_time_<sp/>&gt;=<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/>traffic_light_manager_ptr_-&gt;update(step_time_);</highlight></codeline>
-<codeline lineno="584"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="585"><highlight class="normal"><sp/><sp/>setVerbose(verbose_);</highlight></codeline>
-<codeline lineno="586"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>type_list<sp/>=<sp/>getEntityTypeList();</highlight></codeline>
-<codeline lineno="587"><highlight class="normal"><sp/><sp/>std::unordered_map&lt;std::string,<sp/>openscenario_msgs::msg::EntityStatus&gt;<sp/>all_status;</highlight></codeline>
-<codeline lineno="588"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;<sp/>entity_names<sp/>=<sp/>getEntityNames();</highlight></codeline>
-<codeline lineno="589"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>entity_name<sp/>:<sp/>entity_names)<sp/>{</highlight></codeline>
-<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(entities_[entity_name]-&gt;statusSet())<sp/>{</highlight></codeline>
-<codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>status<sp/>=<sp/>updateNpcLogic(entity_name,<sp/>type_list);</highlight></codeline>
-<codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>all_status.emplace(entity_name,<sp/>status);</highlight></codeline>
-<codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="594"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="595"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>entities_.begin();<sp/>it<sp/>!=<sp/>entities_.end();<sp/>it++)<sp/>{</highlight></codeline>
-<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/>it-&gt;second-&gt;setOtherStatus(all_status);</highlight></codeline>
-<codeline lineno="597"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="598"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>entity_type_list<sp/>=<sp/>getEntityTypeList();</highlight></codeline>
-<codeline lineno="599"><highlight class="normal"><sp/><sp/>openscenario_msgs::msg::EntityStatusWithTrajectoryArray<sp/>status_array_msg;</highlight></codeline>
-<codeline lineno="600"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>status<sp/>:<sp/>all_status)<sp/>{</highlight></codeline>
-<codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;calculating<sp/>&quot;<sp/>&lt;&lt;<sp/>status.first<sp/>&lt;&lt;<sp/>&quot;<sp/>status&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/>openscenario_msgs::msg::EntityStatusWithTrajectory<sp/>status_with_traj;</highlight></codeline>
-<codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>status_msg<sp/>=<sp/>status.second;</highlight></codeline>
-<codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/>status_msg.name<sp/>=<sp/>status.first;</highlight></codeline>
-<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/>status_msg.bounding_box<sp/>=<sp/>getBoundingBox(status.first);</highlight></codeline>
-<codeline lineno="606"><highlight class="normal"><sp/><sp/><sp/><sp/>status_msg.action_status.current_action<sp/>=<sp/>getCurrentAction(status.first);</highlight></codeline>
-<codeline lineno="607"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(getEntityType(status.first).type)<sp/>{</highlight></codeline>
-<codeline lineno="608"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::EntityType::EGO:</highlight></codeline>
-<codeline lineno="609"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status_msg.type.type<sp/>=<sp/>status_msg.type.EGO;</highlight></codeline>
-<codeline lineno="610"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::EntityType::VEHICLE:</highlight></codeline>
-<codeline lineno="612"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status_msg.type.type<sp/>=<sp/>status_msg.type.VEHICLE;</highlight></codeline>
-<codeline lineno="613"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::EntityType::PEDESTRIAN:</highlight></codeline>
-<codeline lineno="615"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status_msg.type.type<sp/>=<sp/>status_msg.type.PEDESTRIAN;</highlight></codeline>
-<codeline lineno="616"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="618"><highlight class="normal"><sp/><sp/><sp/><sp/>status_with_traj.waypoint<sp/>=<sp/>getWaypoints(status.first);</highlight></codeline>
-<codeline lineno="619"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>obstacle<sp/>=<sp/>getObstacle(status.first);</highlight></codeline>
-<codeline lineno="620"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(obstacle)<sp/>{</highlight></codeline>
-<codeline lineno="621"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>status_with_traj.obstacle<sp/>=<sp/>obstacle.get();</highlight></codeline>
-<codeline lineno="622"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>status_with_traj.obstacle_find<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="623"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="624"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>status_with_traj.obstacle_find<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="626"><highlight class="normal"><sp/><sp/><sp/><sp/>status_with_traj.status<sp/>=<sp/>status_msg;</highlight></codeline>
-<codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/>status_with_traj.name<sp/>=<sp/>status.first;</highlight></codeline>
-<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/>status_with_traj.time<sp/>=<sp/>current_time<sp/>+<sp/>step_time;</highlight></codeline>
-<codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/>status_array_msg.data.emplace_back(status_with_traj);</highlight></codeline>
-<codeline lineno="630"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="631"><highlight class="normal"><sp/><sp/>entity_status_array_pub_ptr_-&gt;publish(status_array_msg);</highlight></codeline>
-<codeline lineno="632"><highlight class="normal"><sp/><sp/>end<sp/>=<sp/>std::chrono::system_clock::now();</highlight></codeline>
-<codeline lineno="633"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>elapsed<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(end<sp/>-<sp/>start).count();</highlight></codeline>
-<codeline lineno="634"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(verbose_)<sp/>{</highlight></codeline>
-<codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;elapsed<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>elapsed<sp/>/<sp/>1000<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>seconds<sp/>in<sp/>update<sp/>function.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="636"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="637"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="638"><highlight class="normal"></highlight></codeline>
-<codeline lineno="639"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EntityManager::updateHdmapMarker()</highlight></codeline>
-<codeline lineno="640"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="641"><highlight class="normal"><sp/><sp/>MarkerArray<sp/>markers;</highlight></codeline>
-<codeline lineno="642"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>stamp<sp/>=<sp/>clock_ptr_-&gt;now();</highlight></codeline>
-<codeline lineno="643"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>marker_raw<sp/>:<sp/>markers_raw_.markers)<sp/>{</highlight></codeline>
-<codeline lineno="644"><highlight class="normal"><sp/><sp/><sp/><sp/>visualization_msgs::msg::Marker<sp/>marker<sp/>=<sp/>marker_raw;</highlight></codeline>
-<codeline lineno="645"><highlight class="normal"><sp/><sp/><sp/><sp/>marker.header.stamp<sp/>=<sp/>stamp;</highlight></codeline>
-<codeline lineno="646"><highlight class="normal"><sp/><sp/><sp/><sp/>markers.markers.emplace_back(marker);</highlight></codeline>
-<codeline lineno="647"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="648"><highlight class="normal"><sp/><sp/>lanelet_marker_pub_ptr_-&gt;publish(markers);</highlight></codeline>
+<codeline lineno="533"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EntityManager::setTargetSpeed(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>target_speed,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>continuous)</highlight></codeline>
+<codeline lineno="534"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="535"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isEgo(name)<sp/>&amp;&amp;<sp/>getCurrentTime()<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/>THROW_SEMANTIC_ERROR(</highlight><highlight class="stringliteral">&quot;You<sp/>cannot<sp/>set<sp/>target<sp/>speed<sp/>to<sp/>the<sp/>ego<sp/>vehicle<sp/>after<sp/>starting<sp/>scenario.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="537"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="538"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>entities_.at(name)-&gt;setTargetSpeed(target_speed,<sp/>continuous);</highlight></codeline>
+<codeline lineno="539"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"></highlight></codeline>
+<codeline lineno="541"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>EntityManager::setEntityStatus(</highlight></codeline>
+<codeline lineno="542"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,<sp/>openscenario_msgs::msg::EntityStatus<sp/>status)</highlight></codeline>
+<codeline lineno="543"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/>status.name<sp/>=<sp/>name;<sp/><sp/></highlight><highlight class="comment">//<sp/>XXX<sp/>UGLY<sp/>CODE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isEgo(name)<sp/>&amp;&amp;<sp/>getCurrentTime()<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/>THROW_SEMANTIC_ERROR(</highlight></codeline>
+<codeline lineno="547"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;You<sp/>cannot<sp/>set<sp/>entity<sp/>status<sp/>to<sp/>the<sp/>ego<sp/>vehicle<sp/>after<sp/>starting<sp/>scenario.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="549"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>entities_.at(name)-&gt;setStatus(status);</highlight></codeline>
+<codeline lineno="550"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="551"><highlight class="normal"></highlight></codeline>
+<codeline lineno="552"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EntityManager::setVerbose(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>verbose)</highlight></codeline>
+<codeline lineno="553"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="554"><highlight class="normal"><sp/><sp/>verbose_<sp/>=<sp/>verbose;</highlight></codeline>
+<codeline lineno="555"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>entity<sp/>:<sp/>entities_)<sp/>{</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/>entity.second-&gt;setVerbose(verbose);</highlight></codeline>
+<codeline lineno="557"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="558"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="559"><highlight class="normal"></highlight></codeline>
+<codeline lineno="560"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>EntityManager::toMapPose(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::LaneletPose<sp/>&amp;<sp/>lanelet_pose)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/>-&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>geometry_msgs::msg::Pose</highlight></codeline>
+<codeline lineno="562"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hdmap_utils_ptr_-&gt;toMapPose(lanelet_pose).pose;</highlight></codeline>
+<codeline lineno="564"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="565"><highlight class="normal"></highlight></codeline>
+<codeline lineno="566"><highlight class="normal">openscenario_msgs::msg::EntityStatus<sp/>EntityManager::updateNpcLogic(</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_map&lt;std::string,<sp/>openscenario_msgs::msg::EntityType&gt;<sp/>&amp;<sp/>type_list)</highlight></codeline>
+<codeline lineno="569"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(verbose_)<sp/>{</highlight></codeline>
+<codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;update<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>behavior&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="572"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"><sp/><sp/>entities_[name]-&gt;setEntityTypeList(type_list);</highlight></codeline>
+<codeline lineno="574"><highlight class="normal"><sp/><sp/>entities_[name]-&gt;onUpdate(current_time_,<sp/>step_time_);</highlight></codeline>
+<codeline lineno="575"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(entities_[name]-&gt;statusSet())<sp/>{</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>entities_[name]-&gt;getStatus();</highlight></codeline>
+<codeline lineno="577"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"><sp/><sp/>THROW_SIMULATION_ERROR(</highlight><highlight class="stringliteral">&quot;status<sp/>of<sp/>entity<sp/>&quot;</highlight><highlight class="normal">,<sp/>name,<sp/></highlight><highlight class="stringliteral">&quot;is<sp/>empty&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="579"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"></highlight></codeline>
+<codeline lineno="581"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EntityManager::update(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step_time)</highlight></codeline>
+<codeline lineno="582"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="583"><highlight class="normal"><sp/><sp/>std::chrono::system_clock::time_point<sp/>start,<sp/>end;</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/>start<sp/>=<sp/>std::chrono::system_clock::now();</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"><sp/><sp/>step_time_<sp/>=<sp/>step_time;</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/><sp/>current_time_<sp/>=<sp/>current_time;</highlight></codeline>
+<codeline lineno="587"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(verbose_)<sp/>{</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;--------------------------<sp/>UPDATE<sp/>--------------------------&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;current_time<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>current_time_<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getNumberOfEgo()<sp/>&gt;=<sp/>2)<sp/>{</highlight></codeline>
+<codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/>THROW_SEMANTIC_ERROR(</highlight><highlight class="stringliteral">&quot;multi<sp/>ego<sp/>simulation<sp/>does<sp/>not<sp/>support<sp/>yet&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="593"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="594"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(current_time_<sp/>&gt;=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="595"><highlight class="normal"><sp/><sp/><sp/><sp/>traffic_light_manager_ptr_-&gt;update(step_time_);</highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/><sp/>setVerbose(verbose_);</highlight></codeline>
+<codeline lineno="598"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>type_list<sp/>=<sp/>getEntityTypeList();</highlight></codeline>
+<codeline lineno="599"><highlight class="normal"><sp/><sp/>std::unordered_map&lt;std::string,<sp/>openscenario_msgs::msg::EntityStatus&gt;<sp/>all_status;</highlight></codeline>
+<codeline lineno="600"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;<sp/>entity_names<sp/>=<sp/>getEntityNames();</highlight></codeline>
+<codeline lineno="601"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>entity_name<sp/>:<sp/>entity_names)<sp/>{</highlight></codeline>
+<codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(entities_[entity_name]-&gt;statusSet())<sp/>{</highlight></codeline>
+<codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>status<sp/>=<sp/>updateNpcLogic(entity_name,<sp/>type_list);</highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>all_status.emplace(entity_name,<sp/>status);</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="606"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="607"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>entities_.begin();<sp/>it<sp/>!=<sp/>entities_.end();<sp/>it++)<sp/>{</highlight></codeline>
+<codeline lineno="608"><highlight class="normal"><sp/><sp/><sp/><sp/>it-&gt;second-&gt;setOtherStatus(all_status);</highlight></codeline>
+<codeline lineno="609"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="610"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>entity_type_list<sp/>=<sp/>getEntityTypeList();</highlight></codeline>
+<codeline lineno="611"><highlight class="normal"><sp/><sp/>openscenario_msgs::msg::EntityStatusWithTrajectoryArray<sp/>status_array_msg;</highlight></codeline>
+<codeline lineno="612"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>status<sp/>:<sp/>all_status)<sp/>{</highlight></codeline>
+<codeline lineno="613"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;calculating<sp/>&quot;<sp/>&lt;&lt;<sp/>status.first<sp/>&lt;&lt;<sp/>&quot;<sp/>status&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/>openscenario_msgs::msg::EntityStatusWithTrajectory<sp/>status_with_traj;</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>status_msg<sp/>=<sp/>status.second;</highlight></codeline>
+<codeline lineno="616"><highlight class="normal"><sp/><sp/><sp/><sp/>status_msg.name<sp/>=<sp/>status.first;</highlight></codeline>
+<codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/><sp/>status_msg.bounding_box<sp/>=<sp/>getBoundingBox(status.first);</highlight></codeline>
+<codeline lineno="618"><highlight class="normal"><sp/><sp/><sp/><sp/>status_msg.action_status.current_action<sp/>=<sp/>getCurrentAction(status.first);</highlight></codeline>
+<codeline lineno="619"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(getEntityType(status.first).type)<sp/>{</highlight></codeline>
+<codeline lineno="620"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::EntityType::EGO:</highlight></codeline>
+<codeline lineno="621"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status_msg.type.type<sp/>=<sp/>status_msg.type.EGO;</highlight></codeline>
+<codeline lineno="622"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="623"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::EntityType::VEHICLE:</highlight></codeline>
+<codeline lineno="624"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status_msg.type.type<sp/>=<sp/>status_msg.type.VEHICLE;</highlight></codeline>
+<codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="626"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::EntityType::PEDESTRIAN:</highlight></codeline>
+<codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status_msg.type.type<sp/>=<sp/>status_msg.type.PEDESTRIAN;</highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/>status_with_traj.waypoint<sp/>=<sp/>getWaypoints(status.first);</highlight></codeline>
+<codeline lineno="631"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>obstacle<sp/>=<sp/>getObstacle(status.first);</highlight></codeline>
+<codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(obstacle)<sp/>{</highlight></codeline>
+<codeline lineno="633"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>status_with_traj.obstacle<sp/>=<sp/>obstacle.get();</highlight></codeline>
+<codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>status_with_traj.obstacle_find<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="636"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>status_with_traj.obstacle_find<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="637"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="638"><highlight class="normal"><sp/><sp/><sp/><sp/>status_with_traj.status<sp/>=<sp/>status_msg;</highlight></codeline>
+<codeline lineno="639"><highlight class="normal"><sp/><sp/><sp/><sp/>status_with_traj.name<sp/>=<sp/>status.first;</highlight></codeline>
+<codeline lineno="640"><highlight class="normal"><sp/><sp/><sp/><sp/>status_with_traj.time<sp/>=<sp/>current_time<sp/>+<sp/>step_time;</highlight></codeline>
+<codeline lineno="641"><highlight class="normal"><sp/><sp/><sp/><sp/>status_array_msg.data.emplace_back(status_with_traj);</highlight></codeline>
+<codeline lineno="642"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="643"><highlight class="normal"><sp/><sp/>entity_status_array_pub_ptr_-&gt;publish(status_array_msg);</highlight></codeline>
+<codeline lineno="644"><highlight class="normal"><sp/><sp/>end<sp/>=<sp/>std::chrono::system_clock::now();</highlight></codeline>
+<codeline lineno="645"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>elapsed<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(end<sp/>-<sp/>start).count();</highlight></codeline>
+<codeline lineno="646"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(verbose_)<sp/>{</highlight></codeline>
+<codeline lineno="647"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;elapsed<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>elapsed<sp/>/<sp/>1000<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>seconds<sp/>in<sp/>update<sp/>function.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="648"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="649"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="650"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>entity</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="651"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>traffic_simulator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="650"><highlight class="normal"></highlight></codeline>
+<codeline lineno="651"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EntityManager::updateHdmapMarker()</highlight></codeline>
+<codeline lineno="652"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="653"><highlight class="normal"><sp/><sp/>MarkerArray<sp/>markers;</highlight></codeline>
+<codeline lineno="654"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>stamp<sp/>=<sp/>clock_ptr_-&gt;now();</highlight></codeline>
+<codeline lineno="655"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>marker_raw<sp/>:<sp/>markers_raw_.markers)<sp/>{</highlight></codeline>
+<codeline lineno="656"><highlight class="normal"><sp/><sp/><sp/><sp/>visualization_msgs::msg::Marker<sp/>marker<sp/>=<sp/>marker_raw;</highlight></codeline>
+<codeline lineno="657"><highlight class="normal"><sp/><sp/><sp/><sp/>marker.header.stamp<sp/>=<sp/>stamp;</highlight></codeline>
+<codeline lineno="658"><highlight class="normal"><sp/><sp/><sp/><sp/>markers.markers.emplace_back(marker);</highlight></codeline>
+<codeline lineno="659"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="660"><highlight class="normal"><sp/><sp/>lanelet_marker_pub_ptr_-&gt;publish(markers);</highlight></codeline>
+<codeline lineno="661"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="662"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>entity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="663"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>traffic_simulator</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/entity/entity_manager.cpp"/>
   </compounddef>

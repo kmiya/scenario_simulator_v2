@@ -1385,6 +1385,8 @@
         </childnode>
         <childnode refid="5552" relation="include">
         </childnode>
+        <childnode refid="5525" relation="include">
+        </childnode>
         <childnode refid="5553" relation="include">
         </childnode>
       </node>
@@ -1642,7 +1644,7 @@
 <codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/>&lt;/xsd:complexType&gt;</highlight></codeline>
 <codeline lineno="39"><highlight class="comment"><sp/>*</highlight></codeline>
 <codeline lineno="40"><highlight class="comment"><sp/>*<sp/>--------------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41" refid="structopenscenario__interpreter_1_1syntax_1_1Event" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structopenscenario__interpreter_1_1syntax_1_1Event" kindref="compound">Event</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement" kindref="compound">StoryboardElement</ref>&lt;Event&gt;,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Elements</highlight></codeline>
+<codeline lineno="41" refid="structopenscenario__interpreter_1_1syntax_1_1Event" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structopenscenario__interpreter_1_1syntax_1_1Event" kindref="compound">Event</ref><sp/>:<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref>,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement" kindref="compound">StoryboardElement</ref>&lt;Event&gt;,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Elements</highlight></codeline>
 <codeline lineno="42"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Name<sp/>of<sp/>the<sp/>event.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>String<sp/>name;</highlight></codeline>
@@ -1650,64 +1652,62 @@
 <codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Priority<sp/>of<sp/>each<sp/>event.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1syntax_1_1Priority" kindref="compound">Priority</ref><sp/>priority;</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>inner_scope;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><ref refid="structopenscenario__interpreter_1_1syntax_1_1Trigger" kindref="compound">Trigger</ref><sp/>start_trigger;</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><ref refid="structopenscenario__interpreter_1_1syntax_1_1Trigger" kindref="compound">Trigger</ref><sp/>start_trigger;</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>XML&gt;</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1syntax_1_1Event" kindref="compound">Event</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>XML<sp/>&amp;<sp/>node,<sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>&amp;<sp/>outer_scope)</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/>:<sp/><ref refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement" kindref="compound">StoryboardElement</ref>(</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>readAttribute&lt;UnsignedInt&gt;(</highlight><highlight class="stringliteral">&quot;maximumExecutionCount&quot;</highlight><highlight class="normal">,<sp/>node,<sp/>outer_scope,<sp/><ref refid="structopenscenario__interpreter_1_1syntax_1_1UnsignedInteger" kindref="compound">UnsignedInt</ref>(1))),</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>name(readAttribute&lt;String&gt;(</highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">,<sp/>node,<sp/>outer_scope)),</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>priority(readAttribute&lt;Priority&gt;(</highlight><highlight class="stringliteral">&quot;priority&quot;</highlight><highlight class="normal">,<sp/>node,<sp/>outer_scope)),</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>inner_scope(outer_scope),</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>start_trigger(readElement&lt;Trigger&gt;(</highlight><highlight class="stringliteral">&quot;StartTrigger&quot;</highlight><highlight class="normal">,<sp/>node,<sp/>inner_scope))</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>callWithElements(node,<sp/></highlight><highlight class="stringliteral">&quot;Action&quot;</highlight><highlight class="normal">,<sp/>1,<sp/>unbounded,<sp/>[&amp;](</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>node)<sp/>{</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>push_back(readStoryboardElement&lt;Action&gt;(node,<sp/>inner_scope,<sp/>maximum_execution_count));</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>XML&gt;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1syntax_1_1Event" kindref="compound">Event</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>XML<sp/>&amp;<sp/>node,<sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>&amp;<sp/>outer_scope)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>:<sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref>(outer_scope),</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement" kindref="compound">StoryboardElement</ref>(</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>readAttribute&lt;UnsignedInt&gt;(</highlight><highlight class="stringliteral">&quot;maximumExecutionCount&quot;</highlight><highlight class="normal">,<sp/>node,<sp/>localScope(),<sp/><ref refid="structopenscenario__interpreter_1_1syntax_1_1UnsignedInteger" kindref="compound">UnsignedInt</ref>(1))),</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>name(readAttribute&lt;String&gt;(</highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">,<sp/>node,<sp/>localScope())),</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>priority(readAttribute&lt;Priority&gt;(</highlight><highlight class="stringliteral">&quot;priority&quot;</highlight><highlight class="normal">,<sp/>node,<sp/>localScope())),</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>start_trigger(readElement&lt;Trigger&gt;(</highlight><highlight class="stringliteral">&quot;StartTrigger&quot;</highlight><highlight class="normal">,<sp/>node,<sp/>localScope()))</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>callWithElements(node,<sp/></highlight><highlight class="stringliteral">&quot;Action&quot;</highlight><highlight class="normal">,<sp/>1,<sp/>unbounded,<sp/>[&amp;](</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>node)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>push_back(readStoryboardElement&lt;Action&gt;(node,<sp/>localScope(),<sp/>maximum_execution_count));</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ready()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>start_trigger.evaluate().as&lt;<ref refid="structopenscenario__interpreter_1_1syntax_1_1Boolean" kindref="compound">Boolean</ref>&gt;();<sp/>}</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ready()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>start_trigger.evaluate().as&lt;<ref refid="structopenscenario__interpreter_1_1syntax_1_1Boolean" kindref="compound">Boolean</ref>&gt;();<sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>stopTriggered()<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>stopTriggered()<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>-------------------------------------------------------------------------</highlight></codeline>
-<codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
-<codeline lineno="73"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/>An<sp/>Event&apos;s<sp/>goal<sp/>is<sp/>accomplished<sp/>when<sp/>all<sp/>its<sp/>Actions<sp/>are<sp/>in<sp/>the</highlight></codeline>
-<codeline lineno="74"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/>completeState.</highlight></codeline>
-<codeline lineno="75"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
-<codeline lineno="76"><highlight class="comment"><sp/><sp/><sp/>*<sp/>----------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>accomplished()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="78"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::all_of(std::begin(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">),<sp/>std::end(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">),<sp/>[](</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>each)<sp/>{</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>each.template<sp/>as&lt;Action&gt;().complete();</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>-------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/>An<sp/>Event&apos;s<sp/>goal<sp/>is<sp/>accomplished<sp/>when<sp/>all<sp/>its<sp/>Actions<sp/>are<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/>completeState.</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/><sp/>*<sp/>----------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>accomplished()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="76"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::all_of(std::begin(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">),<sp/>std::end(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">),<sp/>[](</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>each)<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>each.template<sp/>as&lt;Action&gt;().complete();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>StoryboardElement::evaluate;</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>StoryboardElement::evaluate;</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>stop()</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>each<sp/>:<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>each.as&lt;<ref refid="structopenscenario__interpreter_1_1syntax_1_1Action" kindref="compound">Action</ref>&gt;().</highlight><highlight class="keyword">override</highlight><highlight class="normal">();</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>each.evaluate();</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>run()</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>each<sp/>:<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>each.evaluate();</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="100"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"></highlight></codeline>
-<codeline lineno="102"><highlight class="normal">nlohmann::json<sp/>&amp;<sp/>operator&lt;&lt;(nlohmann::json<sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1syntax_1_1Event" kindref="compound">Event</ref><sp/>&amp;);</highlight></codeline>
-<codeline lineno="103"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>syntax</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="104"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>openscenario_interpreter</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="105"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>OPENSCENARIO_INTERPRETER__SYNTAX__EVENT_HPP_</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>stop()</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>each<sp/>:<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>each.as&lt;<ref refid="structopenscenario__interpreter_1_1syntax_1_1Action" kindref="compound">Action</ref>&gt;().</highlight><highlight class="keyword">override</highlight><highlight class="normal">();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>each.evaluate();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>run()</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>each<sp/>:<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>each.evaluate();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal">nlohmann::json<sp/>&amp;<sp/>operator&lt;&lt;(nlohmann::json<sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1syntax_1_1Event" kindref="compound">Event</ref><sp/>&amp;);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>syntax</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>openscenario_interpreter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>OPENSCENARIO_INTERPRETER__SYNTAX__EVENT_HPP_</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/event.hpp"/>
   </compounddef>

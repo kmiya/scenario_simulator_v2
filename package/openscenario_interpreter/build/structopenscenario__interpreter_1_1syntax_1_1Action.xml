@@ -138,57 +138,57 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="34">
+      <node id="35">
         <label>std::shared_ptr&lt; Expression  &gt;</label>
       </node>
-      <node id="32">
+      <node id="33">
         <label>openscenario_interpreter::syntax::StoryboardElement&lt; Action &gt;</label>
         <link refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement"/>
       </node>
-      <node id="31">
+      <node id="32">
         <label>openscenario_interpreter::syntax::Action</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1Action"/>
-        <childnode refid="32" relation="public-inheritance">
-        </childnode>
         <childnode refid="33" relation="public-inheritance">
         </childnode>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="33">
+      <node id="34">
         <label>Element</label>
         <link refid="classopenscenario__interpreter_1_1Pointer"/>
-        <childnode refid="34" relation="public-inheritance">
+        <childnode refid="35" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="38">
+      <node id="39">
         <label>std::shared_ptr&lt; Expression  &gt;</label>
       </node>
-      <node id="36">
+      <node id="37">
         <label>openscenario_interpreter::syntax::StoryboardElement&lt; Action &gt;</label>
         <link refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement"/>
-        <childnode refid="37" relation="usage">
+        <childnode refid="38" relation="usage">
           <edgelabel>current_state</edgelabel>
         </childnode>
       </node>
-      <node id="35">
+      <node id="36">
         <label>openscenario_interpreter::syntax::Action</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1Action"/>
-        <childnode refid="36" relation="public-inheritance">
+        <childnode refid="37" relation="public-inheritance">
         </childnode>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>openscenario_interpreter::Pointer&lt; Expression &gt;</label>
+        <link refid="classopenscenario__interpreter_1_1Pointer"/>
         <childnode refid="39" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="37">
-        <label>openscenario_interpreter::Pointer&lt; Expression &gt;</label>
-        <link refid="classopenscenario__interpreter_1_1Pointer"/>
-        <childnode refid="38" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="39">
+      <node id="40">
         <label>Element</label>
         <link refid="classopenscenario__interpreter_1_1Pointer"/>
-        <childnode refid="38" relation="public-inheritance">
+        <childnode refid="39" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

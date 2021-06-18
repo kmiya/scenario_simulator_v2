@@ -174,6 +174,8 @@
         </childnode>
         <childnode refid="412" relation="include">
         </childnode>
+        <childnode refid="389" relation="include">
+        </childnode>
         <childnode refid="413" relation="include">
         </childnode>
       </node>
@@ -1141,7 +1143,7 @@
 <codeline lineno="44"><highlight class="normal"></highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>write(std::ostream<sp/>&amp;<sp/>os)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>-&gt;<sp/>std::ostream<sp/>&amp;</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>IfHasStreamOutputOperator&lt;Expression&gt;::applyIt(os,<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>IfHasStreamOutputOperator&lt;Expression&gt;::invoke(os,<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="49"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="50"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>openscenario_interpreter</highlight><highlight class="normal"></highlight></codeline>

@@ -2,15 +2,31 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="structopenscenario__interpreter_1_1Scope" kind="struct" language="C++" prot="public">
     <compoundname>openscenario_interpreter::Scope</compoundname>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1AcquirePositionAction" prot="private" virt="non-virtual">openscenario_interpreter::syntax::AcquirePositionAction</derivedcompoundref>
     <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1Act" prot="private" virt="non-virtual">openscenario_interpreter::syntax::Act</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1AssignControllerAction" prot="private" virt="non-virtual">openscenario_interpreter::syntax::AssignControllerAction</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1AssignRouteAction" prot="private" virt="non-virtual">openscenario_interpreter::syntax::AssignRouteAction</derivedcompoundref>
     <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1ByEntityCondition" prot="private" virt="non-virtual">openscenario_interpreter::syntax::ByEntityCondition</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1Controller" prot="private" virt="non-virtual">openscenario_interpreter::syntax::Controller</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction" prot="private" virt="non-virtual">openscenario_interpreter::syntax::CustomCommandAction</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1Event" prot="private" virt="non-virtual">openscenario_interpreter::syntax::Event</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1LaneChangeAction" prot="private" virt="non-virtual">openscenario_interpreter::syntax::LaneChangeAction</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1Maneuver" prot="private" virt="non-virtual">openscenario_interpreter::syntax::Maneuver</derivedcompoundref>
     <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1OpenScenario" prot="public" virt="non-virtual">openscenario_interpreter::syntax::OpenScenario</derivedcompoundref>
     <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1ParameterCondition" prot="private" virt="non-virtual">openscenario_interpreter::syntax::ParameterCondition</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1ParameterModifyAction" prot="public" virt="non-virtual">openscenario_interpreter::syntax::ParameterModifyAction</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1ParameterSetAction" prot="private" virt="non-virtual">openscenario_interpreter::syntax::ParameterSetAction</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1Pedestrian" prot="private" virt="non-virtual">openscenario_interpreter::syntax::Pedestrian</derivedcompoundref>
     <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1Private" prot="private" virt="non-virtual">openscenario_interpreter::syntax::Private</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1Route" prot="private" virt="non-virtual">openscenario_interpreter::syntax::Route</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1SpeedAction" prot="private" virt="non-virtual">openscenario_interpreter::syntax::SpeedAction</derivedcompoundref>
     <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1Story" prot="private" virt="non-virtual">openscenario_interpreter::syntax::Story</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1Storyboard" prot="private" virt="non-virtual">openscenario_interpreter::syntax::Storyboard</derivedcompoundref>
     <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1StoryboardElementStateCondition" prot="private" virt="non-virtual">openscenario_interpreter::syntax::StoryboardElementStateCondition</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1TeleportAction" prot="private" virt="non-virtual">openscenario_interpreter::syntax::TeleportAction</derivedcompoundref>
     <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalControllerAction" prot="private" virt="non-virtual">openscenario_interpreter::syntax::TrafficSignalControllerAction</derivedcompoundref>
     <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalStateAction" prot="private" virt="non-virtual">openscenario_interpreter::syntax::TrafficSignalStateAction</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1Vehicle" prot="private" virt="non-virtual">openscenario_interpreter::syntax::Vehicle</derivedcompoundref>
       <sectiondef kind="public-type">
       <memberdef kind="typedef" id="structopenscenario__interpreter_1_1Scope_1a71adbadb72f848f4dd4d08ea00bb351e" prot="public" static="no">
         <type>EntityRef</type>
@@ -240,61 +256,157 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="645">
+      <node id="660">
         <label>openscenario_interpreter::syntax::Act</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1Act"/>
-        <childnode refid="644" relation="private-inheritance">
+        <childnode refid="658" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="646">
+      <node id="661">
+        <label>openscenario_interpreter::syntax::AssignControllerAction</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1AssignControllerAction"/>
+        <childnode refid="658" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="675">
+        <label>openscenario_interpreter::syntax::Route</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Route"/>
+        <childnode refid="658" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="672">
+        <label>openscenario_interpreter::syntax::ParameterSetAction</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1ParameterSetAction"/>
+        <childnode refid="658" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="663">
         <label>openscenario_interpreter::syntax::ByEntityCondition</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1ByEntityCondition"/>
-        <childnode refid="644" relation="private-inheritance">
+        <childnode refid="658" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="652">
+      <node id="662">
+        <label>openscenario_interpreter::syntax::AssignRouteAction</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1AssignRouteAction"/>
+        <childnode refid="658" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="681">
         <label>openscenario_interpreter::syntax::TrafficSignalControllerAction</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalControllerAction"/>
-        <childnode refid="644" relation="private-inheritance">
+        <childnode refid="658" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="649">
+      <node id="674">
         <label>openscenario_interpreter::syntax::Private</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1Private"/>
-        <childnode refid="644" relation="private-inheritance">
+        <childnode refid="658" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="647">
+      <node id="671">
+        <label>openscenario_interpreter::syntax::ParameterModifyAction</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1ParameterModifyAction"/>
+        <childnode refid="658" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="669">
         <label>openscenario_interpreter::syntax::OpenScenario</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1OpenScenario"/>
-        <childnode refid="644" relation="public-inheritance">
+        <childnode refid="658" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="648">
+      <node id="680">
+        <label>openscenario_interpreter::syntax::TeleportAction</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1TeleportAction"/>
+        <childnode refid="658" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="676">
+        <label>openscenario_interpreter::syntax::SpeedAction</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1SpeedAction"/>
+        <childnode refid="658" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="668">
+        <label>openscenario_interpreter::syntax::Maneuver</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Maneuver"/>
+        <childnode refid="658" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="670">
         <label>openscenario_interpreter::syntax::ParameterCondition</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1ParameterCondition"/>
-        <childnode refid="644" relation="private-inheritance">
+        <childnode refid="658" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="650">
+      <node id="683">
+        <label>openscenario_interpreter::syntax::Vehicle</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Vehicle"/>
+        <childnode refid="658" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="678">
+        <label>openscenario_interpreter::syntax::Storyboard</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Storyboard"/>
+        <childnode refid="658" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="677">
         <label>openscenario_interpreter::syntax::Story</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1Story"/>
-        <childnode refid="644" relation="private-inheritance">
+        <childnode refid="658" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="653">
+      <node id="666">
+        <label>openscenario_interpreter::syntax::Event</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Event"/>
+        <childnode refid="658" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="682">
         <label>openscenario_interpreter::syntax::TrafficSignalStateAction</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalStateAction"/>
-        <childnode refid="644" relation="private-inheritance">
+        <childnode refid="658" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="651">
+      <node id="667">
+        <label>openscenario_interpreter::syntax::LaneChangeAction</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1LaneChangeAction"/>
+        <childnode refid="658" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="665">
+        <label>openscenario_interpreter::syntax::CustomCommandAction</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction"/>
+        <childnode refid="658" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="673">
+        <label>openscenario_interpreter::syntax::Pedestrian</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Pedestrian"/>
+        <childnode refid="658" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="659">
+        <label>openscenario_interpreter::syntax::AcquirePositionAction</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1AcquirePositionAction"/>
+        <childnode refid="658" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="679">
         <label>openscenario_interpreter::syntax::StoryboardElementStateCondition</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1StoryboardElementStateCondition"/>
-        <childnode refid="644" relation="private-inheritance">
+        <childnode refid="658" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="644">
+      <node id="664">
+        <label>openscenario_interpreter::syntax::Controller</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Controller"/>
+        <childnode refid="658" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="658">
         <label>openscenario_interpreter::Scope</label>
         <link refid="structopenscenario__interpreter_1_1Scope"/>
       </node>

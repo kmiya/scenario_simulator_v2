@@ -384,6 +384,8 @@
         </childnode>
         <childnode refid="4433" relation="include">
         </childnode>
+        <childnode refid="4396" relation="include">
+        </childnode>
         <childnode refid="4434" relation="include">
         </childnode>
       </node>
@@ -580,135 +582,133 @@
 <codeline lineno="47"><highlight class="comment"><sp/>*<sp/><sp/>&lt;/xsd:complexType&gt;</highlight></codeline>
 <codeline lineno="48"><highlight class="comment"><sp/>*</highlight></codeline>
 <codeline lineno="49"><highlight class="comment"><sp/>*<sp/>--------------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="50" refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction" kindref="compound">CustomCommandAction</ref></highlight></codeline>
+<codeline lineno="50" refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction" kindref="compound">CustomCommandAction</ref><sp/>:<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref></highlight></codeline>
 <codeline lineno="51"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>inner_scope;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>String<sp/>type;</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>String<sp/>type;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>String<sp/>content;</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>String<sp/>content;</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Node&gt;</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction" kindref="compound">CustomCommandAction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Node<sp/>&amp;<sp/>node,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>&amp;<sp/>outer_scope)</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/>:<sp/>inner_scope(outer_scope),</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>type(readAttribute&lt;String&gt;(</highlight><highlight class="stringliteral">&quot;type&quot;</highlight><highlight class="normal">,<sp/>node,<sp/>inner_scope)),</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>content(readContent&lt;String&gt;(node,<sp/>inner_scope))</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Node&gt;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction" kindref="compound">CustomCommandAction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Node<sp/>&amp;<sp/>node,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>&amp;<sp/>outer_scope)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>:<sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref>(outer_scope),</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>type(readAttribute&lt;String&gt;(</highlight><highlight class="stringliteral">&quot;type&quot;</highlight><highlight class="normal">,<sp/>node,<sp/>localScope())),</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>content(readContent&lt;String&gt;(node,<sp/>localScope()))</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::true_type<sp/>accomplished{};</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::true_type<sp/>accomplished{};</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>walkStraightAction(</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;<sp/>&amp;<sp/>actors,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>&amp;<sp/>current_scope)</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>actor<sp/>:<sp/>actors)<sp/>{</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>requestWalkStraight(actor);</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>actor<sp/>:<sp/>current_scope.actors)<sp/>{</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>requestWalkStraight(actor);</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>current_scope.actors.size();</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>exitSuccess(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;<sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>&amp;)</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1syntax_1_1SpecialAction" kindref="compound">SpecialAction&lt;EXIT_SUCCESS&gt;</ref>();</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>exitFailure(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;<sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>&amp;)</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1syntax_1_1SpecialAction" kindref="compound">SpecialAction&lt;EXIT_FAILURE&gt;</ref>();</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>error(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;<sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>&amp;)</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>Error(__FILE__,<sp/></highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal">,<sp/>__LINE__);</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>segv(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;<sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>&amp;)</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">std::add_pointer&lt;int&gt;::type</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(0);</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"></highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>test(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;<sp/>&amp;<sp/>args,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>&amp;)</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>iter<sp/>=<sp/>std::cbegin(args);<sp/>iter<sp/>!=<sp/>std::cend(args);<sp/>++iter)<sp/>{</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>args[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::distance(std::cbegin(args),<sp/>iter)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>*iter<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"></highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>args.size();</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"></highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_map&lt;</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string,<sp/>std::function&lt;int(const<sp/>std::vector&lt;std::string&gt;<sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>&amp;)&gt;&gt;</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>builtins{</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(</highlight><highlight class="stringliteral">&quot;WalkStraightAction&quot;</highlight><highlight class="normal">,<sp/>walkStraightAction),</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(</highlight><highlight class="stringliteral">&quot;error&quot;</highlight><highlight class="normal">,<sp/>error),</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(</highlight><highlight class="stringliteral">&quot;exitFailure&quot;</highlight><highlight class="normal">,<sp/>exitFailure),</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(</highlight><highlight class="stringliteral">&quot;exitSuccess&quot;</highlight><highlight class="normal">,<sp/>exitSuccess),</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(</highlight><highlight class="stringliteral">&quot;sigsegv&quot;</highlight><highlight class="normal">,<sp/>segv),<sp/><sp/></highlight><highlight class="comment">//<sp/>Deprecated</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(</highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal">,<sp/>test),</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"></highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>split(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>s)</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::regex<sp/>pattern{R</highlight><highlight class="stringliteral">&quot;(([^\(&quot;\s,\)]+|\&quot;[^&quot;]*\&quot;),?\s*)&quot;};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>walkStraightAction(</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;<sp/>&amp;<sp/>actors,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>&amp;<sp/>current_scope)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>actor<sp/>:<sp/>actors)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>requestWalkStraight(actor);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>actor<sp/>:<sp/>current_scope.actors)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>requestWalkStraight(actor);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>current_scope.actors.size();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>exitSuccess(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;<sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>&amp;)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1syntax_1_1SpecialAction" kindref="compound">SpecialAction&lt;EXIT_SUCCESS&gt;</ref>();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>exitFailure(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;<sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>&amp;)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1syntax_1_1SpecialAction" kindref="compound">SpecialAction&lt;EXIT_FAILURE&gt;</ref>();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>error(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;<sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>&amp;)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>Error(__FILE__,<sp/></highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal">,<sp/>__LINE__);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>segv(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;<sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>&amp;)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">std::add_pointer&lt;int&gt;::type</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(0);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>test(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;<sp/>&amp;<sp/>args,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>&amp;)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>iter<sp/>=<sp/>std::cbegin(args);<sp/>iter<sp/>!=<sp/>std::cend(args);<sp/>++iter)<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>args[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::distance(std::cbegin(args),<sp/>iter)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>*iter<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>args.size();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_map&lt;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string,<sp/>std::function&lt;int(const<sp/>std::vector&lt;std::string&gt;<sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref><sp/>&amp;)&gt;&gt;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>builtins{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(</highlight><highlight class="stringliteral">&quot;WalkStraightAction&quot;</highlight><highlight class="normal">,<sp/>walkStraightAction),</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(</highlight><highlight class="stringliteral">&quot;error&quot;</highlight><highlight class="normal">,<sp/>error),</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(</highlight><highlight class="stringliteral">&quot;exitFailure&quot;</highlight><highlight class="normal">,<sp/>exitFailure),</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(</highlight><highlight class="stringliteral">&quot;exitSuccess&quot;</highlight><highlight class="normal">,<sp/>exitSuccess),</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(</highlight><highlight class="stringliteral">&quot;sigsegv&quot;</highlight><highlight class="normal">,<sp/>segv),<sp/><sp/></highlight><highlight class="comment">//<sp/>Deprecated</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::make_pair(</highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal">,<sp/>test),</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>split(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>s)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::regex<sp/>pattern{R</highlight><highlight class="stringliteral">&quot;(([^\(&quot;\s,\)]+|\&quot;[^&quot;]*\&quot;),?\s*)&quot;};</highlight></codeline>
+<codeline lineno="125"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="126"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>args{};</highlight></codeline>
 <codeline lineno="127"><highlight class="stringliteral"></highlight></codeline>
-<codeline lineno="128"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>args{};</highlight></codeline>
-<codeline lineno="129"><highlight class="stringliteral"></highlight></codeline>
-<codeline lineno="130"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::sregex_iterator<sp/>iter{std::begin(s),<sp/>std::end(s),<sp/>pattern},<sp/>end;<sp/>iter<sp/>!=<sp/>end;<sp/>++iter)<sp/>{</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>args.emplace_back((*iter)[1]);</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"></highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>args;</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"></highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>evaluate()</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>----<sp/>NOTE<sp/>---------------------------------------------------------------</highlight></codeline>
+<codeline lineno="128"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::sregex_iterator<sp/>iter{std::begin(s),<sp/>std::end(s),<sp/>pattern},<sp/>end;<sp/>iter<sp/>!=<sp/>end;<sp/>++iter)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>args.emplace_back((*iter)[1]);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>args;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>evaluate()</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>----<sp/>NOTE<sp/>---------------------------------------------------------------</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/>&lt;CustomCommandAction<sp/>type=&quot;function(hoge,<sp/>&amp;quot;hello,<sp/>world!&amp;quot;,<sp/>3.14)&quot;/&gt;</highlight></codeline>
 <codeline lineno="140"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
-<codeline lineno="141"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/>&lt;CustomCommandAction<sp/>type=&quot;function(hoge,<sp/>&amp;quot;hello,<sp/>world!&amp;quot;,<sp/>3.14)&quot;/&gt;</highlight></codeline>
-<codeline lineno="142"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
-<codeline lineno="143"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/>result[0]<sp/>=<sp/>function(hoge,<sp/>&quot;hello,<sp/>world!&quot;,<sp/>3.14)</highlight></codeline>
-<codeline lineno="144"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/>result[1]<sp/>=<sp/>function</highlight></codeline>
-<codeline lineno="145"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/>result[2]<sp/>=<sp/>(hoge,<sp/>&quot;hello,<sp/>world!&quot;,<sp/>3.14)</highlight></codeline>
-<codeline lineno="146"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/>result[3]<sp/>=<sp/>hoge,<sp/>&quot;hello,<sp/>world!&quot;,<sp/>3.14</highlight></codeline>
-<codeline lineno="147"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
-<codeline lineno="148"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>----------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::regex<sp/>pattern{R</highlight><highlight class="stringliteral">&quot;(^(\w+)(\(((?:(?:[^\(&quot;\s,\)]+|\&quot;[^&quot;]*\&quot;),?\s*)*)\))?$)&quot;};</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/>result[0]<sp/>=<sp/>function(hoge,<sp/>&quot;hello,<sp/>world!&quot;,<sp/>3.14)</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/>result[1]<sp/>=<sp/>function</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/>result[2]<sp/>=<sp/>(hoge,<sp/>&quot;hello,<sp/>world!&quot;,<sp/>3.14)</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/>result[3]<sp/>=<sp/>hoge,<sp/>&quot;hello,<sp/>world!&quot;,<sp/>3.14</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>----------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::regex<sp/>pattern{R</highlight><highlight class="stringliteral">&quot;(^(\w+)(\(((?:(?:[^\(&quot;\s,\)]+|\&quot;[^&quot;]*\&quot;),?\s*)*)\))?$)&quot;};</highlight></codeline>
+<codeline lineno="148"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="149"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>std::smatch<sp/>result{};</highlight></codeline>
 <codeline lineno="150"><highlight class="stringliteral"></highlight></codeline>
-<codeline lineno="151"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>std::smatch<sp/>result{};</highlight></codeline>
-<codeline lineno="152"><highlight class="stringliteral"></highlight></codeline>
-<codeline lineno="153"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(std::regex_match(type,<sp/>result,<sp/>pattern)<sp/>&amp;&amp;<sp/>builtins.find(result[1])<sp/>!=<sp/>std::end(builtins))<sp/>{</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>builtins.at(result[1])(split(result[3]),<sp/>inner_scope);</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>fork_exec(type,<sp/>content);</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"></highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>unspecified;</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="161"><highlight class="normal"></highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ostream<sp/>&amp;<sp/>operator&lt;&lt;(std::ostream<sp/>&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction" kindref="compound">CustomCommandAction</ref><sp/>&amp;<sp/>action)</highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>indent<sp/>&lt;&lt;<sp/>blue<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;&lt;CustomCommandAction&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>highlight(</highlight><highlight class="stringliteral">&quot;type&quot;</highlight><highlight class="normal">,<sp/>action.type);</highlight></codeline>
-<codeline lineno="166"><highlight class="normal"></highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(action.content.empty())<sp/>{</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os<sp/>&lt;&lt;<sp/>blue<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;/&gt;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>reset;</highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os<sp/>&lt;&lt;<sp/>blue<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;&gt;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>reset<sp/>&lt;&lt;<sp/>action.content<sp/>&lt;&lt;<sp/>blue<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;&lt;/CustomCommandAction&gt;&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>reset;</highlight></codeline>
-<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="174"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="175"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>syntax</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="176"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>openscenario_interpreter</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="177"><highlight class="normal"></highlight></codeline>
-<codeline lineno="178"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>OPENSCENARIO_INTERPRETER__SYNTAX__CUSTOM_COMMAND_ACTION_HPP_</highlight></codeline>
+<codeline lineno="151"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(std::regex_match(type,<sp/>result,<sp/>pattern)<sp/>&amp;&amp;<sp/>builtins.find(result[1])<sp/>!=<sp/>std::end(builtins))<sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>builtins.at(result[1])(split(result[3]),<sp/>localScope());</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>fork_exec(type,<sp/>content);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>unspecified;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ostream<sp/>&amp;<sp/>operator&lt;&lt;(std::ostream<sp/>&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction" kindref="compound">CustomCommandAction</ref><sp/>&amp;<sp/>action)</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>indent<sp/>&lt;&lt;<sp/>blue<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;&lt;CustomCommandAction&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>highlight(</highlight><highlight class="stringliteral">&quot;type&quot;</highlight><highlight class="normal">,<sp/>action.type);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(action.content.empty())<sp/>{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os<sp/>&lt;&lt;<sp/>blue<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;/&gt;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>reset;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os<sp/>&lt;&lt;<sp/>blue<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;&gt;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>reset<sp/>&lt;&lt;<sp/>action.content<sp/>&lt;&lt;<sp/>blue<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;&lt;/CustomCommandAction&gt;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>reset;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="173"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>syntax</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>openscenario_interpreter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>OPENSCENARIO_INTERPRETER__SYNTAX__CUSTOM_COMMAND_ACTION_HPP_</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/custom_command_action.hpp"/>
   </compounddef>

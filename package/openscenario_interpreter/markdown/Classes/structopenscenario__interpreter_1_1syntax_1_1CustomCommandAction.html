@@ -701,6 +701,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#additional-inherited-members" class="md-nav__link">
+    Additional inherited members
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#public-functions-documentation" class="md-nav__link">
     Public Functions Documentation
   </a>
@@ -792,13 +799,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#variable-inner_scope" class="md-nav__link">
-    variable inner_scope
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#variable-content" class="md-nav__link">
     variable content
   </a>
@@ -862,6 +862,7 @@
                 
                 
                 <h1 id="openscenario_interpretersyntaxcustomcommandaction">openscenario_interpreter::syntax::CustomCommandAction<a class="headerlink" href="#openscenario_interpretersyntaxcustomcommandaction" title="Permanent link">#</a></h1>
+<p>Inherits from <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope">openscenario_interpreter::Scope</a></p>
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">#</a></h2>
 <table>
 <thead>
@@ -923,10 +924,6 @@
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction#variable-type">type</a></strong></td>
 </tr>
 <tr>
-<td><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope">Scope</a></td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction#variable-inner_scope">inner_scope</a></strong></td>
-</tr>
-<tr>
 <td>const String</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction#variable-content">content</a></strong></td>
 </tr>
@@ -952,6 +949,104 @@
 <tr>
 <td>std::ostream &amp;</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction#friend-operator&lt;&lt;">operator&lt;&lt;</a></strong>(std::ostream &amp; os, const <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1CustomCommandAction">CustomCommandAction</a> &amp; action)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="additional-inherited-members">Additional inherited members<a class="headerlink" href="#additional-inherited-members" title="Permanent link">#</a></h2>
+<p><strong>Public Types inherited from <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope">openscenario_interpreter::Scope</a></strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>using std::list&lt; Actor &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#using-actors">Actors</a></strong></td>
+</tr>
+<tr>
+<td>using EntityRef</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#using-actor">Actor</a></strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Public Functions inherited from <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope">openscenario_interpreter::Scope</a></strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>auto</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#function-localscope">localScope</a></strong>()</td>
+</tr>
+<tr>
+<td>auto</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#function-localscope">localScope</a></strong>() const</td>
+</tr>
+<tr>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#function-scope">Scope</a></strong>()</td>
+</tr>
+<tr>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#function-scope">Scope</a></strong>(<a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope">Scope</a> &amp; ) =default</td>
+</tr>
+<tr>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#function-scope">Scope</a></strong>(const <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope">Scope</a> &amp; ) =default</td>
+</tr>
+<tr>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#function-scope">Scope</a></strong>(const boost::filesystem::path &amp; pathname)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Public Attributes inherited from <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope">openscenario_interpreter::Scope</a></strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>std::unordered_map&lt; String, std::reference_wrapper&lt; TrafficSignalController &gt; &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#variable-traffic_signal_controller_refs">traffic_signal_controller_refs</a></strong></td>
+</tr>
+<tr>
+<td>std::unordered_map&lt; String, <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1Pointer">Element</a> &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#variable-storyboard_elements">storyboard_elements</a></strong></td>
+</tr>
+<tr>
+<td>boost::filesystem::path</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#variable-scene_graph_file">scene_graph_file</a></strong></td>
+</tr>
+<tr>
+<td>const boost::filesystem::path</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#variable-pathname">pathname</a></strong></td>
+</tr>
+<tr>
+<td>std::unordered_map&lt; String, <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1Pointer">Element</a> &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#variable-parameters">parameters</a></strong></td>
+</tr>
+<tr>
+<td>boost::filesystem::path</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#variable-logic_file">logic_file</a></strong></td>
+</tr>
+<tr>
+<td>std::unordered_map&lt; String, <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1Pointer">Element</a> &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#variable-entities">entities</a></strong></td>
+</tr>
+<tr>
+<td>Actors</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#variable-actors">actors</a></strong></td>
 </tr>
 </tbody>
 </table>
@@ -1011,9 +1106,6 @@
 <h3 id="variable-type">variable type<a class="headerlink" href="#variable-type" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">String</span> <span class="n">type</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="variable-inner_scope">variable inner_scope<a class="headerlink" href="#variable-inner_scope" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">Scope</span> <span class="n">inner_scope</span><span class="p">;</span>
-</code></pre></div>
 <h3 id="variable-content">variable content<a class="headerlink" href="#variable-content" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">String</span> <span class="n">content</span><span class="p">;</span>
 </code></pre></div>
@@ -1038,7 +1130,7 @@
 <span class="p">);</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 June 2021 at 09:02:01 UTC</p>
+<p>Updated on 18 June 2021 at 09:03:09 UTC</p>
                 
                   
                 

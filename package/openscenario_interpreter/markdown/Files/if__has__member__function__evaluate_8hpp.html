@@ -782,7 +782,7 @@
 <span class="k">struct</span> <span class="nc">IfHasMemberFunctionEvaluate</span>
 <span class="p">{</span>
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Result</span><span class="o">&gt;</span>
-  <span class="k">static</span> <span class="k">constexpr</span> <span class="n">Result</span> <span class="n">callIt</span><span class="p">(</span><span class="n">T</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">Result</span> <span class="o">&amp;</span> <span class="n">as_self_evaluating</span><span class="p">)</span>
+  <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">invoke</span><span class="p">(</span><span class="n">T</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">Result</span> <span class="o">&amp;</span> <span class="n">as_self_evaluating</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Result</span>
   <span class="p">{</span>
     <span class="k">return</span> <span class="n">as_self_evaluating</span><span class="p">;</span>
   <span class="p">}</span>
@@ -793,7 +793,7 @@
   <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">std</span><span class="o">::</span><span class="n">enable_if</span><span class="o">&lt;</span><span class="n">HasMemberFunctionEvaluate</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">value</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">&gt;</span>
 <span class="p">{</span>
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Result</span><span class="o">&gt;</span>
-  <span class="k">static</span> <span class="k">constexpr</span> <span class="n">Result</span> <span class="n">callIt</span><span class="p">(</span><span class="n">T</span> <span class="o">&amp;</span> <span class="n">then</span><span class="p">,</span> <span class="k">const</span> <span class="n">Result</span> <span class="o">&amp;</span><span class="p">)</span>
+  <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">invoke</span><span class="p">(</span><span class="n">T</span> <span class="o">&amp;</span> <span class="n">then</span><span class="p">,</span> <span class="k">const</span> <span class="n">Result</span> <span class="o">&amp;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Result</span>
   <span class="p">{</span>
     <span class="k">return</span> <span class="n">then</span><span class="p">.</span><span class="n">evaluate</span><span class="p">();</span>
   <span class="p">}</span>
@@ -804,7 +804,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__TYPE_TRAITS__IF_HAS_MEMBER_FUNCTION_EVALUATE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 June 2021 at 09:02:01 UTC</p>
+<p>Updated on 18 June 2021 at 09:03:09 UTC</p>
                 
                   
                 

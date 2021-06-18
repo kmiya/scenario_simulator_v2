@@ -837,13 +837,18 @@
   <span class="k">explicit</span> <span class="n">Scope</span><span class="p">(</span><span class="k">const</span> <span class="n">Scope</span> <span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
 
   <span class="k">explicit</span> <span class="n">Scope</span><span class="p">(</span><span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span> <span class="o">&amp;</span> <span class="n">pathname</span><span class="p">)</span> <span class="o">:</span> <span class="n">pathname</span><span class="p">(</span><span class="n">pathname</span><span class="p">)</span> <span class="p">{}</span>
+
+  <span class="c1">// clang-format off</span>
+  <span class="k">auto</span> <span class="n">localScope</span><span class="p">()</span>       <span class="k">noexcept</span> <span class="o">-&gt;</span>       <span class="k">auto</span> <span class="o">&amp;</span> <span class="p">{</span> <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span> <span class="p">}</span>
+  <span class="k">auto</span> <span class="n">localScope</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="p">{</span> <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span> <span class="p">}</span>
+  <span class="c1">// clang-format on</span>
 <span class="p">};</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
 
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SCOPE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 June 2021 at 04:00:58 UTC</p>
+<p>Updated on 18 June 2021 at 06:57:48 UTC</p>
                 
                   
                 

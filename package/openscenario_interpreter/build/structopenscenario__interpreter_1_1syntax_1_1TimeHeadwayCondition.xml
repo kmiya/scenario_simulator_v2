@@ -83,10 +83,13 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition_1a7baf731fb74e8ef3dd4d18449ec13be1" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition_1aab4c5564a1acddc9c920e622aff3806e" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename Node</type>
+          </param>
+          <param>
+            <type>typename <ref refid="structopenscenario__interpreter_1_1Scope" kindref="compound">Scope</ref></type>
           </param>
         </templateparamlist>
         <type></type>
@@ -111,7 +114,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/time_headway_condition.hpp" line="52" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/time_headway_condition.hpp" bodystart="52" bodyend="61"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/time_headway_condition.hpp" line="52" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/time_headway_condition.hpp" bodystart="52" bodyend="63"/>
       </memberdef>
       <memberdef kind="function" id="structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition_1a9cd6de1ac2e6d1df83f5e215ee7f726c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>auto</type>
@@ -124,7 +127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/time_headway_condition.hpp" line="63" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/time_headway_condition.hpp" bodystart="63" bodyend="67"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/time_headway_condition.hpp" line="65" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/time_headway_condition.hpp" bodystart="65" bodyend="69"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -132,65 +135,60 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="734">
+      <node id="748">
         <label>openscenario_interpreter::syntax::Rule</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1Rule"/>
       </node>
-      <node id="733">
+      <node id="747">
         <label>openscenario_interpreter::syntax::TriggeringEntitiesRule</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1TriggeringEntitiesRule"/>
       </node>
-      <node id="730">
+      <node id="745">
         <label>openscenario_interpreter::syntax::TimeHeadwayCondition</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition"/>
-        <childnode refid="731" relation="usage">
+        <childnode refid="746" relation="usage">
           <edgelabel>trigger</edgelabel>
         </childnode>
-        <childnode refid="734" relation="usage">
+        <childnode refid="748" relation="usage">
           <edgelabel>compare</edgelabel>
         </childnode>
-        <childnode refid="735" relation="usage">
+        <childnode refid="749" relation="usage">
           <edgelabel>freespace</edgelabel>
           <edgelabel>along_route</edgelabel>
         </childnode>
-        <childnode refid="736" relation="usage">
+        <childnode refid="750" relation="usage">
           <edgelabel>value</edgelabel>
         </childnode>
       </node>
-      <node id="736">
+      <node id="750">
         <label>openscenario_interpreter::syntax::Double</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1Double"/>
-        <childnode refid="737" relation="public-inheritance">
+        <childnode refid="751" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="732">
-        <label>std::list&lt; EntityRef &gt;</label>
-      </node>
-      <node id="737">
+      <node id="751">
         <label>std_msgs::msg::Float64</label>
       </node>
-      <node id="735">
+      <node id="749">
         <label>openscenario_interpreter::syntax::Boolean</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1Boolean"/>
       </node>
-      <node id="731">
+      <node id="746">
         <label>openscenario_interpreter::syntax::TriggeringEntities</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1TriggeringEntities"/>
-        <childnode refid="732" relation="public-inheritance">
-        </childnode>
-        <childnode refid="733" relation="usage">
-          <edgelabel>quantify</edgelabel>
+        <childnode refid="747" relation="usage">
+          <edgelabel>triggering_entities_rule</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/time_headway_condition.hpp" line="38" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/time_headway_condition.hpp" bodystart="37" bodyend="68"/>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/time_headway_condition.hpp" line="38" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/time_headway_condition.hpp" bodystart="37" bodyend="70"/>
     <listofallmembers>
       <member refid="structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition_1a7900d8ec18973d3de15e78f5ebdf7533" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::TimeHeadwayCondition</scope><name>along_route</name></member>
       <member refid="structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition_1ada882cfa8752ac325baabdfd69406569" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::TimeHeadwayCondition</scope><name>compare</name></member>
       <member refid="structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition_1ac988c21adae52cdb85fac3d87b437579" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::TimeHeadwayCondition</scope><name>entity_ref</name></member>
       <member refid="structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition_1a9cd6de1ac2e6d1df83f5e215ee7f726c" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::TimeHeadwayCondition</scope><name>evaluate</name></member>
       <member refid="structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition_1ae9b93d457c666626c2ff92e7e2e3c2ed" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::TimeHeadwayCondition</scope><name>freespace</name></member>
-      <member refid="structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition_1a7baf731fb74e8ef3dd4d18449ec13be1" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::TimeHeadwayCondition</scope><name>TimeHeadwayCondition</name></member>
+      <member refid="structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition_1aab4c5564a1acddc9c920e622aff3806e" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::TimeHeadwayCondition</scope><name>TimeHeadwayCondition</name></member>
       <member refid="structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition_1a8fac02e2b66251a1ae2cfdfb76f08086" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::TimeHeadwayCondition</scope><name>trigger</name></member>
       <member refid="structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition_1aa0cf73e1298162ee3d03d5e7f29a8287" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::TimeHeadwayCondition</scope><name>value</name></member>
     </listofallmembers>

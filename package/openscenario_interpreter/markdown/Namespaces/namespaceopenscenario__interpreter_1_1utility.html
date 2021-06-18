@@ -723,6 +723,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-maketypename" class="md-nav__link">
+    function makeTypename
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-highlight" class="md-nav__link">
     function highlight
   </a>
@@ -869,6 +876,10 @@
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1utility#function-operator&lt;&lt;">operator&lt;&lt;</a></strong>(std::basic_ostream&lt; Ts... &gt; &amp; os, const <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1utility_1_1Indent">Indent</a> &amp; indent)</td>
 </tr>
 <tr>
+<td>template \&lt;typename... Ts></br>auto</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1utility#function-maketypename">makeTypename</a></strong>(Ts &amp;&amp;... xs)</td>
+</tr>
+<tr>
 <td>template \&lt;typename T ,typename  =typename std::enable_if<HasStreamOutputOperator\<T>::value>::type></br>auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1utility#function-highlight">highlight</a></strong>(const std::string &amp; name, const T &amp; value)</td>
 </tr>
@@ -936,6 +947,12 @@
     <span class="k">const</span> <span class="n">Indent</span> <span class="o">&amp;</span> <span class="n">indent</span>
 <span class="p">)</span>
 </code></pre></div>
+<h3 id="function-maketypename">function makeTypename<a class="headerlink" href="#function-maketypename" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="k">auto</span> <span class="n">makeTypename</span><span class="p">(</span>
+    <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span>
+<span class="p">)</span>
+</code></pre></div>
 <h3 id="function-highlight">function highlight<a class="headerlink" href="#function-highlight" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span> <span class="p">,</span>
 <span class="k">typename</span>  <span class="o">=</span><span class="k">typename</span> <span class="nc">std</span><span class="o">::</span><span class="n">enable_if</span><span class="o">&lt;</span><span class="n">HasStreamOutputOperator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">value</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">&gt;</span>
@@ -993,7 +1010,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">auto</span> <span class="n">car</span> <span class="o">=</span> <span class="p">[](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">pare</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pare</span><span class="p">);</span> <span class="p">};</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 June 2021 at 04:00:57 UTC</p>
+<p>Updated on 18 June 2021 at 06:57:47 UTC</p>
                 
                   
                 

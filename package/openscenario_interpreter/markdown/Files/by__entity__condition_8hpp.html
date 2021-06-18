@@ -767,6 +767,7 @@
 <span class="cp">#ifndef OPENSCENARIO_INTERPRETER__SYNTAX__BY_ENTITY_CONDITION_HPP_</span>
 <span class="cp">#define OPENSCENARIO_INTERPRETER__SYNTAX__BY_ENTITY_CONDITION_HPP_</span>
 
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/scope.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/entity_condition.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
 
@@ -776,33 +777,23 @@
 <span class="p">{</span>
 <span class="cm">/* ---- ByEntityCondition ------------------------------------------------------</span>
 <span class="cm"> *</span>
-<span class="cm"> * &lt;xsd:complexType name=&quot;ByEntityCondition&quot;&gt;</span>
-<span class="cm"> *   &lt;xsd:all&gt;</span>
-<span class="cm"> *     &lt;xsd:element name=&quot;TriggeringEntities&quot; type=&quot;TriggeringEntities&quot;/&gt;</span>
-<span class="cm"> *     &lt;xsd:element name=&quot;EntityCondition&quot; type=&quot;EntityCondition&quot;/&gt;</span>
-<span class="cm"> *   &lt;/xsd:all&gt;</span>
-<span class="cm"> * &lt;/xsd:complexType&gt;</span>
+<span class="cm"> *  &lt;xsd:complexType name=&quot;ByEntityCondition&quot;&gt;</span>
+<span class="cm"> *    &lt;xsd:all&gt;</span>
+<span class="cm"> *      &lt;xsd:element name=&quot;TriggeringEntities&quot; type=&quot;TriggeringEntities&quot;/&gt;</span>
+<span class="cm"> *      &lt;xsd:element name=&quot;EntityCondition&quot; type=&quot;EntityCondition&quot;/&gt;</span>
+<span class="cm"> *    &lt;/xsd:all&gt;</span>
+<span class="cm"> *  &lt;/xsd:complexType&gt;</span>
 <span class="cm"> *</span>
 <span class="cm"> * -------------------------------------------------------------------------- */</span>
-<span class="k">struct</span> <span class="nc">ByEntityCondition</span>
+<span class="k">struct</span> <span class="nc">ByEntityCondition</span> <span class="o">:</span> <span class="k">private</span> <span class="n">Scope</span><span class="p">,</span> <span class="k">public</span> <span class="n">EntityCondition</span>
 <span class="p">{</span>
-  <span class="n">Scope</span> <span class="n">inner_scope</span><span class="p">;</span>
-
-  <span class="k">const</span> <span class="n">EntityCondition</span> <span class="n">entity_condition</span><span class="p">;</span>
-
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="o">&gt;</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
   <span class="k">explicit</span> <span class="n">ByEntityCondition</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">outer_scope</span><span class="p">)</span>
-  <span class="o">:</span> <span class="n">inner_scope</span><span class="p">(</span><span class="n">outer_scope</span><span class="p">),</span>
-    <span class="n">entity_condition</span><span class="p">(</span><span class="n">readElement</span><span class="o">&lt;</span><span class="n">EntityCondition</span><span class="o">&gt;</span><span class="p">(</span>
-      <span class="s">&quot;EntityCondition&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">inner_scope</span><span class="p">,</span>
-      <span class="n">readElement</span><span class="o">&lt;</span><span class="n">TriggeringEntities</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;TriggeringEntities&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">inner_scope</span><span class="p">)))</span>
+  <span class="o">:</span> <span class="n">Scope</span><span class="p">(</span><span class="n">outer_scope</span><span class="p">),</span>
+    <span class="n">EntityCondition</span><span class="p">(</span><span class="n">readElement</span><span class="o">&lt;</span><span class="n">EntityCondition</span><span class="o">&gt;</span><span class="p">(</span>
+      <span class="s">&quot;EntityCondition&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">localScope</span><span class="p">(),</span>
+      <span class="n">readElement</span><span class="o">&lt;</span><span class="n">TriggeringEntities</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;TriggeringEntities&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">localScope</span><span class="p">())))</span>
   <span class="p">{</span>
-  <span class="p">}</span>
-
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">auto</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="k">const</span>
-  <span class="p">{</span>
-    <span class="k">return</span> <span class="n">entity_condition</span><span class="p">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
   <span class="p">}</span>
 <span class="p">};</span>
 <span class="p">}</span>  <span class="c1">// namespace syntax</span>
@@ -811,7 +802,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__BY_ENTITY_CONDITION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 June 2021 at 04:00:58 UTC</p>
+<p>Updated on 18 June 2021 at 06:57:48 UTC</p>
                 
                   
                 

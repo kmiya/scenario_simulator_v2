@@ -723,13 +723,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#function-state" class="md-nav__link">
-    function state
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#function-override" class="md-nav__link">
     function override
   </a>
@@ -739,6 +732,13 @@
           <li class="md-nav__item">
   <a href="#function-evaluate" class="md-nav__link">
     function evaluate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-currentstate" class="md-nav__link">
+    function currentState
   </a>
   
 </li>
@@ -942,16 +942,16 @@
 </thead>
 <tbody>
 <tr>
-<td>const auto &amp;</td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1syntax_1_1StoryboardElement#function-state">state</a></strong>() const</td>
-</tr>
-<tr>
 <td><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1Pointer">Element</a></td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1syntax_1_1StoryboardElement#function-override">override</a></strong>()</td>
 </tr>
 <tr>
 <td>auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1syntax_1_1StoryboardElement#function-evaluate">evaluate</a></strong>()</td>
+</tr>
+<tr>
+<td>const auto &amp;</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1syntax_1_1StoryboardElement#function-currentstate">currentState</a></strong>() const</td>
 </tr>
 <tr>
 <td>template \&lt;typename Boolean ,REQUIRES(std::is_convertible&lt; Boolean, bool &gt;) ></br>auto</td>
@@ -1065,14 +1065,14 @@
 <span class="k">class</span> <span class="nc">openscenario_interpreter</span><span class="o">::</span><span class="n">syntax</span><span class="o">::</span><span class="n">StoryboardElement</span><span class="p">;</span>
 </code></pre></div>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">#</a></h2>
-<h3 id="function-state">function state<a class="headerlink" href="#function-state" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">state</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div>
 <h3 id="function-override">function override<a class="headerlink" href="#function-override" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="n">Element</span> <span class="k">override</span><span class="p">()</span>
 </code></pre></div>
 <h3 id="function-evaluate">function evaluate<a class="headerlink" href="#function-evaluate" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">auto</span> <span class="n">evaluate</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="function-currentstate">function currentState<a class="headerlink" href="#function-currentstate" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">currentState</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
 <h3 id="function-changestateif">function changeStateIf<a class="headerlink" href="#function-changestateif" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Boolean</span> <span class="p">,</span>
@@ -1184,7 +1184,7 @@
 <div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">unordered_set</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&gt;</span> <span class="n">names</span><span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 June 2021 at 04:00:57 UTC</p>
+<p>Updated on 18 June 2021 at 06:57:47 UTC</p>
                 
                   
                 

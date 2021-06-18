@@ -767,6 +767,7 @@
 <span class="cp">#ifndef OPENSCENARIO_INTERPRETER__SYNTAX__STORYBOARD_HPP_</span>
 <span class="cp">#define OPENSCENARIO_INTERPRETER__SYNTAX__STORYBOARD_HPP_</span>
 
+<span class="cp">#include</span> <span class="cpf">&lt;nlohmann/json.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/procedure.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/init.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/story.hpp&gt;</span><span class="cp"></span>
@@ -794,13 +795,14 @@
 
   <span class="n">Trigger</span> <span class="n">stop_trigger</span><span class="p">;</span>
 
-  <span class="k">const</span> <span class="n">String</span> <span class="n">name</span><span class="p">{</span><span class="s">&quot;Storyboard&quot;</span><span class="p">};</span>
+  <span class="k">const</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
   <span class="k">explicit</span> <span class="n">Storyboard</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">outer_scope</span><span class="p">)</span>
   <span class="o">:</span> <span class="n">inner_scope</span><span class="p">(</span><span class="n">outer_scope</span><span class="p">),</span>
     <span class="n">init</span><span class="p">(</span><span class="n">readElement</span><span class="o">&lt;</span><span class="n">Init</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;Init&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">inner_scope</span><span class="p">)),</span>
-    <span class="n">stop_trigger</span><span class="p">(</span><span class="n">readElement</span><span class="o">&lt;</span><span class="n">Trigger</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;StopTrigger&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">inner_scope</span><span class="p">))</span>
+    <span class="n">stop_trigger</span><span class="p">(</span><span class="n">readElement</span><span class="o">&lt;</span><span class="n">Trigger</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;StopTrigger&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">inner_scope</span><span class="p">)),</span>
+    <span class="n">name</span><span class="p">(</span><span class="s">&quot;Storyboard&quot;</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="n">callWithElements</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s">&quot;Story&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">unbounded</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">push_back</span><span class="p">(</span><span class="n">readStoryboardElement</span><span class="o">&lt;</span><span class="n">Story</span><span class="o">&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">inner_scope</span><span class="p">));</span>
@@ -811,9 +813,9 @@
     <span class="p">}</span>
   <span class="p">}</span>
 
-  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">true_type</span> <span class="n">ready</span><span class="p">{};</span>
+  <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">ready</span><span class="p">()</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="p">}</span>
 
-  <span class="kt">void</span> <span class="nf">start</span><span class="p">()</span>
+  <span class="kt">void</span> <span class="n">start</span><span class="p">()</span>
   <span class="p">{</span>
     <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">each</span> <span class="p">:</span> <span class="n">inner_scope</span><span class="p">.</span><span class="n">entities</span><span class="p">)</span> <span class="p">{</span>
       <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">each</span><span class="p">).</span><span class="n">evaluate</span><span class="p">();</span>
@@ -875,13 +877,17 @@
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">};</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">Storyboard</span> <span class="o">&amp;</span><span class="p">);</span>
+
+<span class="n">nlohmann</span><span class="o">::</span><span class="n">json</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">nlohmann</span><span class="o">::</span><span class="n">json</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">Storyboard</span> <span class="o">&amp;</span><span class="p">);</span>
 <span class="p">}</span>  <span class="c1">// namespace syntax</span>
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
 
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__STORYBOARD_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 June 2021 at 04:00:58 UTC</p>
+<p>Updated on 18 June 2021 at 06:57:48 UTC</p>
                 
                   
                 

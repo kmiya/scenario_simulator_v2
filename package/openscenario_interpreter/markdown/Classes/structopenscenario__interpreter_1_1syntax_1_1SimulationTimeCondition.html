@@ -694,13 +694,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#friends" class="md-nav__link">
-    Friends
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#public-functions-documentation" class="md-nav__link">
     Public Functions Documentation
   </a>
@@ -711,6 +704,13 @@
           <li class="md-nav__item">
   <a href="#function-evaluate" class="md-nav__link">
     function evaluate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    function description
   </a>
   
 </li>
@@ -743,8 +743,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#variable-result" class="md-nav__link">
-    variable result
+  <a href="#variable-last_checked_time" class="md-nav__link">
+    variable last_checked_time
   </a>
   
 </li>
@@ -752,26 +752,6 @@
           <li class="md-nav__item">
   <a href="#variable-compare" class="md-nav__link">
     variable compare
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#friends_1" class="md-nav__link">
-    Friends
-  </a>
-  
-    <nav class="md-nav" aria-label="Friends">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#friend-operator" class="md-nav__link">
-    friend operator&lt;&lt;
   </a>
   
 </li>
@@ -810,7 +790,11 @@
 <tbody>
 <tr>
 <td>auto</td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1SimulationTimeCondition#function-evaluate">evaluate</a></strong>() const</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1SimulationTimeCondition#function-evaluate">evaluate</a></strong>()</td>
+</tr>
+<tr>
+<td>auto</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1SimulationTimeCondition#function-description">description</a></strong>() const</td>
 </tr>
 <tr>
 <td>template \&lt;typename Node ,typename Scope ></br></td>
@@ -832,8 +816,8 @@
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1SimulationTimeCondition#variable-value">value</a></strong></td>
 </tr>
 <tr>
-<td><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1Pointer">Element</a></td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1SimulationTimeCondition#variable-result">result</a></strong></td>
+<td><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1Double">Double</a></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1SimulationTimeCondition#variable-last_checked_time">last_checked_time</a></strong></td>
 </tr>
 <tr>
 <td>const <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1Rule">Rule</a></td>
@@ -841,24 +825,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="friends">Friends<a class="headerlink" href="#friends" title="Permanent link">#</a></h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>std::ostream &amp;</td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1SimulationTimeCondition#friend-operator&lt;&lt;">operator&lt;&lt;</a></strong>(std::ostream &amp; os, const <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1SimulationTimeCondition">SimulationTimeCondition</a> &amp; condition)</td>
-</tr>
-</tbody>
-</table>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">#</a></h2>
 <h3 id="function-evaluate">function evaluate<a class="headerlink" href="#function-evaluate" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">auto</span> <span class="n">evaluate</span><span class="p">()</span> <span class="k">const</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">auto</span> <span class="n">evaluate</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="function-description">function description<a class="headerlink" href="#function-description" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">auto</span> <span class="n">description</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
 <h3 id="function-simulationtimecondition">function SimulationTimeCondition<a class="headerlink" href="#function-simulationtimecondition" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span> <span class="p">,</span>
@@ -872,21 +844,14 @@
 <h3 id="variable-value">variable value<a class="headerlink" href="#variable-value" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">Double</span> <span class="n">value</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="variable-result">variable result<a class="headerlink" href="#variable-result" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">Element</span> <span class="n">result</span><span class="p">;</span>
+<h3 id="variable-last_checked_time">variable last_checked_time<a class="headerlink" href="#variable-last_checked_time" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">Double</span> <span class="n">last_checked_time</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="variable-compare">variable compare<a class="headerlink" href="#variable-compare" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">Rule</span> <span class="n">compare</span><span class="p">;</span>
 </code></pre></div>
-<h2 id="friends_1">Friends<a class="headerlink" href="#friends_1" title="Permanent link">#</a></h2>
-<h3 id="friend-operator">friend operator&lt;&lt;<a class="headerlink" href="#friend-operator" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">friend</span> <span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">SimulationTimeCondition</span> <span class="o">&amp;</span> <span class="n">condition</span>
-<span class="p">);</span>
-</code></pre></div>
 <hr />
-<p>Updated on 18 June 2021 at 04:00:57 UTC</p>
+<p>Updated on 18 June 2021 at 06:57:47 UTC</p>
                 
                   
                 

@@ -827,6 +827,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/openscenario.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/utility/execution_timer.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/utility/visibility.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter_msgs/msg/context.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;rclcpp/rclcpp.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;rclcpp_lifecycle/lifecycle_node.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;scenario_simulator_exception/exception.hpp&gt;</span><span class="cp"></span>
@@ -838,6 +839,10 @@
 <span class="p">{</span>
 <span class="k">class</span> <span class="nc">Interpreter</span> <span class="o">:</span> <span class="k">public</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">LifecycleNode</span>
 <span class="p">{</span>
+  <span class="k">using</span> <span class="n">Context</span> <span class="o">=</span> <span class="n">openscenario_interpreter_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Context</span><span class="p">;</span>
+
+  <span class="k">const</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">LifecyclePublisher</span><span class="o">&lt;</span><span class="n">Context</span><span class="o">&gt;::</span><span class="n">SharedPtr</span> <span class="n">publisher_of_context</span><span class="p">;</span>
+
   <span class="n">String</span> <span class="n">intended_result</span><span class="p">;</span>
   <span class="kt">double</span> <span class="n">local_frame_rate</span><span class="p">;</span>
   <span class="kt">double</span> <span class="n">local_real_time_factor</span><span class="p">;</span>
@@ -910,7 +915,7 @@
     <span class="n">CATCH</span><span class="p">(</span><span class="n">SemanticError</span><span class="p">)</span>
     <span class="n">CATCH</span><span class="p">(</span><span class="n">SimulationError</span><span class="p">)</span>
     <span class="n">CATCH</span><span class="p">(</span><span class="n">SyntaxError</span><span class="p">)</span>
-    <span class="n">CATCH</span><span class="p">(</span><span class="n">InternalError</span><span class="p">)</span>  <span class="c1">// NOTE: THIS MUST BE LAST OF CATCH STATEMENTS.</span>
+    <span class="n">CATCH</span><span class="p">(</span><span class="n">InternalError</span><span class="p">)</span>  <span class="c1">// NOTE: InternalError MUST BE LAST OF CATCH STATEMENTS.</span>
 
     <span class="k">catch</span> <span class="p">(...)</span>  <span class="c1">// FINAL BARRIER</span>
     <span class="p">{</span>
@@ -943,7 +948,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__OPENSCENARIO_INTERPRETER_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 June 2021 at 04:00:58 UTC</p>
+<p>Updated on 18 June 2021 at 06:57:48 UTC</p>
                 
                   
                 

@@ -709,13 +709,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-state" class="md-nav__link">
-    function state
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#function-start" class="md-nav__link">
     function start
   </a>
@@ -725,6 +718,20 @@
           <li class="md-nav__item">
   <a href="#function-evaluate" class="md-nav__link">
     function evaluate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    function description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-currentstate" class="md-nav__link">
+    function currentState
   </a>
   
 </li>
@@ -769,24 +776,28 @@
 </thead>
 <tbody>
 <tr>
-<td>virtual std::ostream &amp;</td>
+<td>virtual auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Expression#function-write">write</a></strong>(std::ostream &amp; os) const</td>
 </tr>
 <tr>
-<td>virtual const std::type_info &amp;</td>
+<td>virtual auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Expression#function-type">type</a></strong>() const</td>
-</tr>
-<tr>
-<td>virtual const <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1Pointer">Pointer</a>&lt; <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Expression">Expression</a> &gt; &amp;</td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Expression#function-state">state</a></strong>() const</td>
 </tr>
 <tr>
 <td>virtual void</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Expression#function-start">start</a></strong>()</td>
 </tr>
 <tr>
-<td>virtual <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1Pointer">Pointer</a>&lt; <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Expression">Expression</a> &gt;</td>
+<td>virtual auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Expression#function-evaluate">evaluate</a></strong>(const <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1Pointer">Pointer</a>&lt; <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Expression">Expression</a> &gt; &amp; )</td>
+</tr>
+<tr>
+<td>virtual auto</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Expression#function-description">description</a></strong>() const</td>
+</tr>
+<tr>
+<td>virtual auto</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Expression#function-currentstate">currentState</a></strong>() const</td>
 </tr>
 <tr>
 <td>virtual bool</td>
@@ -796,29 +807,32 @@
 </table>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">#</a></h2>
 <h3 id="function-write">function write<a class="headerlink" href="#function-write" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="n">write</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="k">auto</span> <span class="n">write</span><span class="p">(</span>
     <span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="n">os</span>
 <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>
 <h3 id="function-type">function type<a class="headerlink" href="#function-type" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">type_info</span> <span class="o">&amp;</span> <span class="n">type</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div>
-<h3 id="function-state">function state<a class="headerlink" href="#function-state" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="k">const</span> <span class="n">Pointer</span><span class="o">&lt;</span> <span class="n">Expression</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">state</span><span class="p">()</span> <span class="k">const</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="k">auto</span> <span class="n">type</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
 <h3 id="function-start">function start<a class="headerlink" href="#function-start" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="kt">void</span> <span class="n">start</span><span class="p">()</span>
 </code></pre></div>
 <h3 id="function-evaluate">function evaluate<a class="headerlink" href="#function-evaluate" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="n">Pointer</span><span class="o">&lt;</span> <span class="n">Expression</span> <span class="o">&gt;</span> <span class="n">evaluate</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="k">auto</span> <span class="n">evaluate</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">Pointer</span><span class="o">&lt;</span> <span class="n">Expression</span> <span class="o">&gt;</span> <span class="o">&amp;</span> 
 <span class="p">)</span>
+</code></pre></div>
+<h3 id="function-description">function description<a class="headerlink" href="#function-description" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="k">auto</span> <span class="n">description</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>
+<h3 id="function-currentstate">function currentState<a class="headerlink" href="#function-currentstate" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="k">auto</span> <span class="n">currentState</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
 <h3 id="function-accomplished">function accomplished<a class="headerlink" href="#function-accomplished" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="kt">bool</span> <span class="n">accomplished</span><span class="p">()</span>
 </code></pre></div>
 <hr />
-<p>Updated on 18 June 2021 at 04:00:58 UTC</p>
+<p>Updated on 18 June 2021 at 06:57:47 UTC</p>
                 
                   
                 

@@ -2,8 +2,14 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="structopenscenario__interpreter_1_1Scope" kind="struct" language="C++" prot="public">
     <compoundname>openscenario_interpreter::Scope</compoundname>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1Act" prot="private" virt="non-virtual">openscenario_interpreter::syntax::Act</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1ByEntityCondition" prot="private" virt="non-virtual">openscenario_interpreter::syntax::ByEntityCondition</derivedcompoundref>
     <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1OpenScenario" prot="public" virt="non-virtual">openscenario_interpreter::syntax::OpenScenario</derivedcompoundref>
-    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalControllerAction" prot="public" virt="non-virtual">openscenario_interpreter::syntax::TrafficSignalControllerAction</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1ParameterCondition" prot="private" virt="non-virtual">openscenario_interpreter::syntax::ParameterCondition</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1Private" prot="private" virt="non-virtual">openscenario_interpreter::syntax::Private</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1Story" prot="private" virt="non-virtual">openscenario_interpreter::syntax::Story</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1StoryboardElementStateCondition" prot="private" virt="non-virtual">openscenario_interpreter::syntax::StoryboardElementStateCondition</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalControllerAction" prot="private" virt="non-virtual">openscenario_interpreter::syntax::TrafficSignalControllerAction</derivedcompoundref>
     <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalStateAction" prot="private" virt="non-virtual">openscenario_interpreter::syntax::TrafficSignalStateAction</derivedcompoundref>
       <sectiondef kind="public-type">
       <memberdef kind="typedef" id="structopenscenario__interpreter_1_1Scope_1a71adbadb72f848f4dd4d08ea00bb351e" prot="public" static="no">
@@ -202,41 +208,105 @@
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/scope.hpp" line="90" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/scope.hpp" bodystart="90" bodyend="90"/>
       </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1Scope_1a81a89c19fa47be12aabf28dc87a4bc0d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto openscenario_interpreter::Scope::localScope</definition>
+        <argsstring>() noexcept -&gt; auto &amp;</argsstring>
+        <name>localScope</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/scope.hpp" line="93" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/scope.hpp" bodystart="93" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="structopenscenario__interpreter_1_1Scope_1aadff2e8f2596e50f25246d9602eb8d18" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto openscenario_interpreter::Scope::localScope</definition>
+        <argsstring>() const noexcept -&gt; const auto &amp;</argsstring>
+        <name>localScope</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/scope.hpp" line="94" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/scope.hpp" bodystart="94" bodyend="94"/>
+      </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="635">
+      <node id="645">
+        <label>openscenario_interpreter::syntax::Act</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Act"/>
+        <childnode refid="644" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="646">
+        <label>openscenario_interpreter::syntax::ByEntityCondition</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1ByEntityCondition"/>
+        <childnode refid="644" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="652">
         <label>openscenario_interpreter::syntax::TrafficSignalControllerAction</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalControllerAction"/>
-        <childnode refid="633" relation="public-inheritance">
+        <childnode refid="644" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="634">
+      <node id="649">
+        <label>openscenario_interpreter::syntax::Private</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Private"/>
+        <childnode refid="644" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="647">
         <label>openscenario_interpreter::syntax::OpenScenario</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1OpenScenario"/>
-        <childnode refid="633" relation="public-inheritance">
+        <childnode refid="644" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="636">
+      <node id="648">
+        <label>openscenario_interpreter::syntax::ParameterCondition</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1ParameterCondition"/>
+        <childnode refid="644" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="650">
+        <label>openscenario_interpreter::syntax::Story</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1Story"/>
+        <childnode refid="644" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="653">
         <label>openscenario_interpreter::syntax::TrafficSignalStateAction</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalStateAction"/>
-        <childnode refid="633" relation="private-inheritance">
+        <childnode refid="644" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="633">
+      <node id="651">
+        <label>openscenario_interpreter::syntax::StoryboardElementStateCondition</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1StoryboardElementStateCondition"/>
+        <childnode refid="644" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="644">
         <label>openscenario_interpreter::Scope</label>
         <link refid="structopenscenario__interpreter_1_1Scope"/>
       </node>
     </inheritancegraph>
-    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/scope.hpp" line="47" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/scope.hpp" bodystart="46" bodyend="91"/>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/scope.hpp" line="47" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/scope.hpp" bodystart="46" bodyend="96"/>
     <listofallmembers>
       <member refid="structopenscenario__interpreter_1_1Scope_1a71adbadb72f848f4dd4d08ea00bb351e" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Scope</scope><name>Actor</name></member>
       <member refid="structopenscenario__interpreter_1_1Scope_1a8f47946a2ec4238dffdb1fa25137ac43" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Scope</scope><name>Actors</name></member>
       <member refid="structopenscenario__interpreter_1_1Scope_1a7e23ddea0b69991cc161f7a2c4b05304" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Scope</scope><name>actors</name></member>
       <member refid="structopenscenario__interpreter_1_1Scope_1a0682dea0459bee5fbc795e2fc9baebb2" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Scope</scope><name>entities</name></member>
+      <member refid="structopenscenario__interpreter_1_1Scope_1a81a89c19fa47be12aabf28dc87a4bc0d" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Scope</scope><name>localScope</name></member>
+      <member refid="structopenscenario__interpreter_1_1Scope_1aadff2e8f2596e50f25246d9602eb8d18" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Scope</scope><name>localScope</name></member>
       <member refid="structopenscenario__interpreter_1_1Scope_1a6eb516be10fe431f206ce01d0a3f5cd7" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Scope</scope><name>logic_file</name></member>
       <member refid="structopenscenario__interpreter_1_1Scope_1a9e9eb5015e45940c1215cbb5f7d87fc5" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Scope</scope><name>parameters</name></member>
       <member refid="structopenscenario__interpreter_1_1Scope_1ae59a0eb9f9fa26076eebf7b37e3d81e5" prot="public" virt="non-virtual"><scope>openscenario_interpreter::Scope</scope><name>pathname</name></member>

@@ -926,6 +926,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-getentitystatusbeforeupdate" class="md-nav__link">
+    function getEntityStatusBeforeUpdate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-getcurrentaction" class="md-nav__link">
     function getCurrentAction
   </a>
@@ -1024,6 +1031,13 @@
           <li class="md-nav__item">
   <a href="#variable-traffic_light_manager_" class="md-nav__link">
     variable traffic_light_manager_
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-status_before_update_" class="md-nav__link">
+    variable status_before_update_
   </a>
   
 </li>
@@ -1202,7 +1216,7 @@
 </tr>
 <tr>
 <td>virtual void</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-onupdate">onUpdate</a></strong>(double current_time, double step_time) =0</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-onupdate">onUpdate</a></strong>(double current_time, double step_time)</td>
 </tr>
 <tr>
 <td>virtual auto</td>
@@ -1247,6 +1261,10 @@
 <tr>
 <td>auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getentitytype">getEntityType</a></strong>() const</td>
+</tr>
+<tr>
+<td>const boost::optional&lt; openscenario_msgs::msg::EntityStatus &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#function-getentitystatusbeforeupdate">getEntityStatusBeforeUpdate</a></strong>() const</td>
 </tr>
 <tr>
 <td>virtual auto</td>
@@ -1313,6 +1331,10 @@
 <tr>
 <td>std::shared_ptr&lt; <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLightManager">traffic_simulator::TrafficLightManager</a> &gt;</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#variable-traffic_light_manager_">traffic_light_manager_</a></strong></td>
+</tr>
+<tr>
+<td>boost::optional&lt; openscenario_msgs::msg::EntityStatus &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityBase#variable-status_before_update_">status_before_update_</a></strong></td>
 </tr>
 <tr>
 <td>boost::optional&lt; openscenario_msgs::msg::EntityStatus &gt;</td>
@@ -1453,7 +1475,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">virtual</span> <span class="kt">void</span> <span class="n">onUpdate</span><span class="p">(</span>
     <span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span>
     <span class="kt">double</span> <span class="n">step_time</span>
-<span class="p">)</span> <span class="o">=</span><span class="mi">0</span>
+<span class="p">)</span>
 </code></pre></div>
 <p><strong>Reimplemented by</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1PedestrianEntity#function-onupdate">traffic_simulator::entity::PedestrianEntity::onUpdate</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1VehicleEntity#function-onupdate">traffic_simulator::entity::VehicleEntity::onUpdate</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EgoEntity#function-onupdate">traffic_simulator::entity::EgoEntity::onUpdate</a></p>
 <h3 id="function-getwaypoints">function getWaypoints<a class="headerlink" href="#function-getwaypoints" title="Permanent link">#</a></h3>
@@ -1495,6 +1517,9 @@
 <p><strong>Reimplemented by</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1PedestrianEntity#function-getentitytypename">traffic_simulator::entity::PedestrianEntity::getEntityTypename</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1VehicleEntity#function-getentitytypename">traffic_simulator::entity::VehicleEntity::getEntityTypename</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EgoEntity#function-getentitytypename">traffic_simulator::entity::EgoEntity::getEntityTypename</a></p>
 <h3 id="function-getentitytype">function getEntityType<a class="headerlink" href="#function-getentitytype" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">auto</span> <span class="n">getEntityType</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getentitystatusbeforeupdate">function getEntityStatusBeforeUpdate<a class="headerlink" href="#function-getentitystatusbeforeupdate" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&gt;</span> <span class="n">getEntityStatusBeforeUpdate</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
 <h3 id="function-getcurrentaction">function getCurrentAction<a class="headerlink" href="#function-getcurrentaction" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">virtual</span> <span class="k">auto</span> <span class="n">getCurrentAction</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span><span class="mi">0</span>
@@ -1541,6 +1566,9 @@
 <h3 id="variable-traffic_light_manager_">variable traffic_light_manager_<a class="headerlink" href="#variable-traffic_light_manager_" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">TrafficLightManager</span> <span class="o">&gt;</span> <span class="n">traffic_light_manager_</span><span class="p">;</span>
 </code></pre></div>
+<h3 id="variable-status_before_update_">variable status_before_update_<a class="headerlink" href="#variable-status_before_update_" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&gt;</span> <span class="n">status_before_update_</span><span class="p">;</span>
+</code></pre></div>
 <h3 id="variable-status_">variable status_<a class="headerlink" href="#variable-status_" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&gt;</span> <span class="n">status_</span><span class="p">;</span>
 </code></pre></div>
@@ -1569,7 +1597,7 @@
 <div class="highlight"><pre><span></span><code><span class="n">visualization_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">MarkerArray</span> <span class="n">current_marker_</span><span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>Updated on 21 June 2021 at 05:46:58 UTC</p>
+<p>Updated on 21 June 2021 at 06:49:52 UTC</p>
                 
                   
                 

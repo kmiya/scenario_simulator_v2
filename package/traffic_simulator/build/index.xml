@@ -82,6 +82,7 @@
     <member refid="classtraffic__simulator_1_1API_1a5fe7992b86ac036d462462a57bd8afb0" kind="function"><name>FORWARD_TO_ENTITY_MANAGER</name></member>
     <member refid="classtraffic__simulator_1_1API_1a619f0f22127fc1d6761398ac076e5950" kind="function"><name>FORWARD_TO_ENTITY_MANAGER</name></member>
     <member refid="classtraffic__simulator_1_1API_1a17c3ae7808141f748bbe763988259813" kind="function"><name>FORWARD_TO_ENTITY_MANAGER</name></member>
+    <member refid="classtraffic__simulator_1_1API_1ab06feec5add5091b905cbd542047f28d" kind="function"><name>FORWARD_TO_ENTITY_MANAGER</name></member>
     <member refid="classtraffic__simulator_1_1API_1a8c7b1a5e22c6651e6edfa190f457c087" kind="function"><name>FORWARD_TO_ENTITY_MANAGER</name></member>
     <member refid="classtraffic__simulator_1_1API_1ac31230b4d345edb3fd966b7a1fa3fd42" kind="function"><name>FORWARD_TO_ENTITY_MANAGER</name></member>
     <member refid="classtraffic__simulator_1_1API_1a0f6c55ebde9840b46bc794dc7b84baec" kind="function"><name>FORWARD_TO_ENTITY_MANAGER</name></member>
@@ -268,6 +269,7 @@
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a3a4d53f8de4fd65b8eb687f898964aac" kind="variable"><name>name</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ae1398a179cc534a3b4b060d91b313dd7" kind="variable"><name>next_waypoint_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a59fa0432bf01dfd7a55433b4d1fb409c" kind="variable"><name>status_</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1acf6bf95b2dee1990fb3cf81b495c3779" kind="variable"><name>status_before_update_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a343cc0c0ec922c8836d1a5191f310447" kind="variable"><name>waypoints_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a72dc3af2b74ab8f861334f24c0fcce51" kind="variable"><name>hdmap_utils_ptr_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a2198c8c9703f9344f685d774c4f1690e" kind="variable"><name>traffic_light_manager_</name></member>
@@ -304,7 +306,7 @@
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ad31af76af146bd5c56c99999cf85e8f2" kind="function"><name>setTrafficLightManager</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a53e31e2a5e533dd6a4931fa12b681a8c" kind="function"><name>setVerbose</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ac91115ed599bea1fb02448c3b964afe2" kind="function"><name>setVisibility</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a2ca560ba0e1d878e734635b021deb5a6" kind="function"><name>onUpdate</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a8d9a2869ccabffc62d3746393aa655e6" kind="function"><name>onUpdate</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a1360df867bb5ca641f1b30170665b684" kind="function"><name>ready</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ae502e8355bcbb8024fd940dbec71d933" kind="function"><name>requestAcquirePosition</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a511092715e59a7e42242fee720208995" kind="function"><name>requestAssignRoute</name></member>
@@ -315,6 +317,7 @@
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ab2ccab44e0202371ccee31dc4cb4d7e7" kind="function"><name>updateEntityStatusTimestamp</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a4b957ec5d6bb199a12de020ea1e305a0" kind="function"><name>updateStandStillDuration</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a98d9e60aa5abe92d631ee91d23e71935" kind="function"><name>getVehicleCommand</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a28a0a0bf8237644e7aaed07c493d8485" kind="function"><name>getEntityStatusBeforeUpdate</name></member>
   </compound>
   <compound refid="classtraffic__simulator_1_1entity_1_1EntityManager" kind="class"><name>traffic_simulator::entity::EntityManager</name>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a0fcee4c5f9e11d43e431c831135ca888" kind="typedef"><name>EntityStatusWithTrajectoryArray</name></member>
@@ -349,6 +352,7 @@
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a601b3a8e8cc211c0d8f8a24466b7d24c" kind="function"><name>FORWARD_TO_ENTITY</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a1d478516ebb40c800ed157f7e6afafc1" kind="function"><name>FORWARD_TO_ENTITY</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a70fb339dc76408b5fe6b3d95133e6225" kind="function"><name>FORWARD_TO_ENTITY</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1ac58d774dfe1c2dc592de10ea9167ef6e" kind="function"><name>FORWARD_TO_ENTITY</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a39492fd4ad032116f17397ba752a2362" kind="function"><name>FORWARD_TO_ENTITY</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a164d4484de8d51526291973e1a457844" kind="function"><name>FORWARD_TO_ENTITY</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a6f9f3c0b3e834276f22713051dd8ae8a" kind="function"><name>FORWARD_TO_ENTITY</name></member>
@@ -392,6 +396,7 @@
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1ae5a4c4da67b861101a42abb505cadd95" kind="function"><name>getSValueInRoute</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a95b5c44d015a8957d3a3b4f8159dd438" kind="function"><name>getWaypoints</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a02c42520e1202aea73ac99aa25fc58b4" kind="function"><name>isEgo</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a4514db8bc75ed89060d73d980bea90a3" kind="function"><name>getEgoName</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1af597ca4966705bf1c3c8f1c1314dcc25" kind="function"><name>isInLanelet</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1aff1fe32aac76f83ba14de580dc6f8af4" kind="function"><name>isStopping</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1aa24ba70180c4bcdf7e9ac0f3e1371a2a" kind="function"><name>reachPosition</name></member>

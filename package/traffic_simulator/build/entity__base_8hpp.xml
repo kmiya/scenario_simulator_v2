@@ -760,7 +760,7 @@
 <codeline lineno="115"><highlight class="normal"></highlight></codeline>
 <codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>setVisibility(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>visibility)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>visibility_<sp/>=<sp/>visibility;<sp/>}</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onUpdate(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step_time)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onUpdate(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step_time);</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"></highlight></codeline>
 <codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ready()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">bool</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(status_);<sp/>}</highlight></codeline>
 <codeline lineno="121"><highlight class="normal"></highlight></codeline>
@@ -785,31 +785,37 @@
 <codeline lineno="140"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateStandStillDuration(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step_time);</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>autoware_vehicle_msgs::msg::VehicleCommand<sp/>getVehicleCommand();</highlight></codeline>
 <codeline lineno="142"><highlight class="normal"></highlight></codeline>
-<codeline lineno="143"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/>boost::optional&lt;openscenario_msgs::msg::LaneletPose&gt;<sp/>next_waypoint_;</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/>boost::optional&lt;openscenario_msgs::msg::EntityStatus&gt;<sp/>status_;</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"></highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/>std::queue&lt;openscenario_msgs::msg::LaneletPose&gt;<sp/>waypoints_;</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"></highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;hdmap_utils::HdMapUtils&gt;<sp/>hdmap_utils_ptr_;</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;traffic_simulator::TrafficLightManager&gt;<sp/>traffic_light_manager_;</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"></highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>verbose_;</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>visibility_;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::optional&lt;openscenario_msgs::msg::EntityStatus&gt;<sp/>getEntityStatusBeforeUpdate()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="144"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status_before_update_;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/>boost::optional&lt;openscenario_msgs::msg::LaneletPose&gt;<sp/>next_waypoint_;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/>boost::optional&lt;openscenario_msgs::msg::EntityStatus&gt;<sp/>status_;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>boost::optional&lt;openscenario_msgs::msg::EntityStatus&gt;<sp/>status_before_update_;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>std::queue&lt;openscenario_msgs::msg::LaneletPose&gt;<sp/>waypoints_;</highlight></codeline>
 <codeline lineno="154"><highlight class="normal"></highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/>std::unordered_map&lt;std::string,<sp/>openscenario_msgs::msg::EntityStatus&gt;<sp/>other_status_;</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/>std::unordered_map&lt;std::string,<sp/>openscenario_msgs::msg::EntityType&gt;<sp/>entity_type_list_;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;hdmap_utils::HdMapUtils&gt;<sp/>hdmap_utils_ptr_;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;traffic_simulator::TrafficLightManager&gt;<sp/>traffic_light_manager_;</highlight></codeline>
 <codeline lineno="157"><highlight class="normal"></highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/>boost::optional&lt;double&gt;<sp/>linear_jerk_;</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/>boost::optional&lt;double&gt;<sp/>stand_still_duration_;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>verbose_;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>visibility_;</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"></highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/>visualization_msgs::msg::MarkerArray<sp/>current_marker_;</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/>openscenario_msgs::msg::EntityType<sp/>entity_type_;</highlight></codeline>
-<codeline lineno="163"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="164"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>entity</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="165"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>traffic_simulator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/>std::unordered_map&lt;std::string,<sp/>openscenario_msgs::msg::EntityStatus&gt;<sp/>other_status_;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/>std::unordered_map&lt;std::string,<sp/>openscenario_msgs::msg::EntityType&gt;<sp/>entity_type_list_;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>boost::optional&lt;double&gt;<sp/>linear_jerk_;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/>boost::optional&lt;double&gt;<sp/>stand_still_duration_;</highlight></codeline>
 <codeline lineno="166"><highlight class="normal"></highlight></codeline>
-<codeline lineno="167"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>TRAFFIC_SIMULATOR__ENTITY__ENTITY_BASE_HPP_</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/>visualization_msgs::msg::MarkerArray<sp/>current_marker_;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>openscenario_msgs::msg::EntityType<sp/>entity_type_;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>entity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>traffic_simulator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>TRAFFIC_SIMULATOR__ENTITY__ENTITY_BASE_HPP_</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/entity_base.hpp"/>
   </compounddef>

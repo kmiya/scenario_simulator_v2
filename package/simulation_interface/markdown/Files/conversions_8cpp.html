@@ -1071,10 +1071,120 @@
 <span class="p">{</span>
   <span class="n">toMsg</span><span class="p">(</span><span class="n">proto</span><span class="p">.</span><span class="n">clock</span><span class="p">(),</span> <span class="n">clock</span><span class="p">.</span><span class="n">clock</span><span class="p">);</span>
 <span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">toProto</span><span class="p">(</span><span class="k">const</span> <span class="n">std_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Header</span> <span class="o">&amp;</span> <span class="n">header</span><span class="p">,</span> <span class="n">std_msgs</span><span class="o">::</span><span class="n">Header</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">proto</span><span class="p">.</span><span class="n">set_frame_id</span><span class="p">(</span><span class="n">header</span><span class="p">.</span><span class="n">frame_id</span><span class="p">);</span>
+  <span class="n">toProto</span><span class="p">(</span><span class="n">header</span><span class="p">.</span><span class="n">stamp</span><span class="p">,</span> <span class="o">*</span><span class="n">proto</span><span class="p">.</span><span class="n">mutable_stamp</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">toMsg</span><span class="p">(</span><span class="k">const</span> <span class="n">std_msgs</span><span class="o">::</span><span class="n">Header</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span> <span class="n">std_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Header</span> <span class="o">&amp;</span> <span class="n">header</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">header</span><span class="p">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="n">proto</span><span class="p">.</span><span class="n">frame_id</span><span class="p">();</span>
+  <span class="n">toMsg</span><span class="p">(</span><span class="n">proto</span><span class="p">.</span><span class="n">stamp</span><span class="p">(),</span> <span class="n">header</span><span class="p">.</span><span class="n">stamp</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">toProto</span><span class="p">(</span>
+  <span class="k">const</span> <span class="n">autoware_control_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">ControlCommand</span> <span class="o">&amp;</span> <span class="n">control_command</span><span class="p">,</span>
+  <span class="n">autoware_control_msgs</span><span class="o">::</span><span class="n">ControlCommand</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">proto</span><span class="p">.</span><span class="n">set_velocity</span><span class="p">(</span><span class="n">control_command</span><span class="p">.</span><span class="n">velocity</span><span class="p">);</span>
+  <span class="n">proto</span><span class="p">.</span><span class="n">set_acceleration</span><span class="p">(</span><span class="n">control_command</span><span class="p">.</span><span class="n">acceleration</span><span class="p">);</span>
+  <span class="n">proto</span><span class="p">.</span><span class="n">set_steering_angle</span><span class="p">(</span><span class="n">control_command</span><span class="p">.</span><span class="n">steering_angle</span><span class="p">);</span>
+  <span class="n">proto</span><span class="p">.</span><span class="n">set_steering_angle_velocity</span><span class="p">(</span><span class="n">control_command</span><span class="p">.</span><span class="n">steering_angle_velocity</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">toMsg</span><span class="p">(</span>
+  <span class="k">const</span> <span class="n">autoware_control_msgs</span><span class="o">::</span><span class="n">ControlCommand</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span>
+  <span class="n">autoware_control_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">ControlCommand</span> <span class="o">&amp;</span> <span class="n">control_command</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">control_command</span><span class="p">.</span><span class="n">velocity</span> <span class="o">=</span> <span class="n">proto</span><span class="p">.</span><span class="n">velocity</span><span class="p">();</span>
+  <span class="n">control_command</span><span class="p">.</span><span class="n">acceleration</span> <span class="o">=</span> <span class="n">proto</span><span class="p">.</span><span class="n">acceleration</span><span class="p">();</span>
+  <span class="n">control_command</span><span class="p">.</span><span class="n">steering_angle</span> <span class="o">=</span> <span class="n">proto</span><span class="p">.</span><span class="n">steering_angle</span><span class="p">();</span>
+  <span class="n">control_command</span><span class="p">.</span><span class="n">steering_angle_velocity</span> <span class="o">=</span> <span class="n">proto</span><span class="p">.</span><span class="n">steering_angle_velocity</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">toProto</span><span class="p">(</span><span class="k">const</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span> <span class="o">&amp;</span> <span class="n">shift</span><span class="p">,</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">Shift</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="n">shift</span><span class="p">.</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span><span class="o">::</span><span class="nl">NONE</span><span class="p">:</span>
+      <span class="n">proto</span><span class="p">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">SHIFT_POSITIONS</span><span class="o">::</span><span class="n">NONE</span><span class="p">);</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span><span class="o">::</span><span class="nl">PARKING</span><span class="p">:</span>
+      <span class="n">proto</span><span class="p">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">SHIFT_POSITIONS</span><span class="o">::</span><span class="n">PARKING</span><span class="p">);</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span><span class="o">::</span><span class="nl">REVERSE</span><span class="p">:</span>
+      <span class="n">proto</span><span class="p">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">SHIFT_POSITIONS</span><span class="o">::</span><span class="n">REVERSE</span><span class="p">);</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span><span class="o">::</span><span class="nl">NEUTRAL</span><span class="p">:</span>
+      <span class="n">proto</span><span class="p">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">SHIFT_POSITIONS</span><span class="o">::</span><span class="n">NEUTRAL</span><span class="p">);</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span><span class="o">::</span><span class="nl">DRIVE</span><span class="p">:</span>
+      <span class="n">proto</span><span class="p">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">SHIFT_POSITIONS</span><span class="o">::</span><span class="n">DRIVE</span><span class="p">);</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span><span class="o">::</span><span class="nl">LOW</span><span class="p">:</span>
+      <span class="n">proto</span><span class="p">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">SHIFT_POSITIONS</span><span class="o">::</span><span class="n">LOW</span><span class="p">);</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">default</span><span class="o">:</span>
+      <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span>
+        <span class="s">&quot;shift position is invalid while converting ROS2 message to proto, shit position is &quot;</span><span class="p">,</span>
+        <span class="n">proto</span><span class="p">.</span><span class="n">data</span><span class="p">());</span>
+      <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">toMsg</span><span class="p">(</span><span class="k">const</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">Shift</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span> <span class="o">&amp;</span> <span class="n">shift</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="n">proto</span><span class="p">.</span><span class="n">data</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">SHIFT_POSITIONS</span><span class="o">::</span><span class="nl">NONE</span><span class="p">:</span>
+      <span class="n">shift</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span><span class="o">::</span><span class="n">NONE</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">SHIFT_POSITIONS</span><span class="o">::</span><span class="nl">PARKING</span><span class="p">:</span>
+      <span class="n">shift</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span><span class="o">::</span><span class="n">PARKING</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">SHIFT_POSITIONS</span><span class="o">::</span><span class="nl">REVERSE</span><span class="p">:</span>
+      <span class="n">shift</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span><span class="o">::</span><span class="n">REVERSE</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">SHIFT_POSITIONS</span><span class="o">::</span><span class="nl">NEUTRAL</span><span class="p">:</span>
+      <span class="n">shift</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span><span class="o">::</span><span class="n">NEUTRAL</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">SHIFT_POSITIONS</span><span class="o">::</span><span class="nl">DRIVE</span><span class="p">:</span>
+      <span class="n">shift</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span><span class="o">::</span><span class="n">DRIVE</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">SHIFT_POSITIONS</span><span class="o">::</span><span class="nl">LOW</span><span class="p">:</span>
+      <span class="n">shift</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span><span class="o">::</span><span class="n">LOW</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">default</span><span class="o">:</span>
+      <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span>
+        <span class="s">&quot;shift position is invalid while converting proto to ROS2 message, shit position is &quot;</span><span class="p">,</span>
+        <span class="n">proto</span><span class="p">.</span><span class="n">data</span><span class="p">());</span>
+      <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">toProto</span><span class="p">(</span>
+  <span class="k">const</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleCommand</span> <span class="o">&amp;</span> <span class="n">vehicle_command</span><span class="p">,</span>
+  <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">VehicleCommand</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">toProto</span><span class="p">(</span><span class="n">vehicle_command</span><span class="p">.</span><span class="n">control</span><span class="p">,</span> <span class="o">*</span><span class="n">proto</span><span class="p">.</span><span class="n">mutable_control</span><span class="p">());</span>
+  <span class="n">proto</span><span class="p">.</span><span class="n">set_emergency</span><span class="p">(</span><span class="n">vehicle_command</span><span class="p">.</span><span class="n">emergency</span><span class="p">);</span>
+  <span class="n">toProto</span><span class="p">(</span><span class="n">vehicle_command</span><span class="p">.</span><span class="n">header</span><span class="p">,</span> <span class="o">*</span><span class="n">proto</span><span class="p">.</span><span class="n">mutable_header</span><span class="p">());</span>
+  <span class="n">toProto</span><span class="p">(</span><span class="n">vehicle_command</span><span class="p">.</span><span class="n">shift</span><span class="p">,</span> <span class="o">*</span><span class="n">proto</span><span class="p">.</span><span class="n">mutable_shift</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">toMsg</span><span class="p">(</span>
+  <span class="k">const</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">VehicleCommand</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span>
+  <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleCommand</span> <span class="o">&amp;</span> <span class="n">vehicle_command</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">toMsg</span><span class="p">(</span><span class="n">proto</span><span class="p">.</span><span class="n">control</span><span class="p">(),</span> <span class="n">vehicle_command</span><span class="p">.</span><span class="n">control</span><span class="p">);</span>
+  <span class="n">vehicle_command</span><span class="p">.</span><span class="n">emergency</span> <span class="o">=</span> <span class="n">proto</span><span class="p">.</span><span class="n">emergency</span><span class="p">();</span>
+  <span class="n">toMsg</span><span class="p">(</span><span class="n">proto</span><span class="p">.</span><span class="n">header</span><span class="p">(),</span> <span class="n">vehicle_command</span><span class="p">.</span><span class="n">header</span><span class="p">);</span>
+  <span class="n">toMsg</span><span class="p">(</span><span class="n">proto</span><span class="p">.</span><span class="n">shift</span><span class="p">(),</span> <span class="n">vehicle_command</span><span class="p">.</span><span class="n">shift</span><span class="p">);</span>
+<span class="p">}</span>
 <span class="p">}</span>  <span class="c1">// namespace simulation_interface</span>
 </code></pre></div>
 <hr />
-<p>Updated on 21 June 2021 at 05:46:59 UTC</p>
+<p>Updated on 21 June 2021 at 06:49:53 UTC</p>
                 
                   
                 

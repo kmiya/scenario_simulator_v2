@@ -1024,6 +1024,19 @@
   <span class="p">});</span>
 <span class="p">}</span>
 
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">EntityManager</span><span class="o">::</span><span class="n">getEgoName</span><span class="p">()</span> <span class="k">const</span>
+<span class="p">{</span>
+  <span class="k">const</span> <span class="k">auto</span> <span class="n">names</span> <span class="o">=</span> <span class="n">getEntityNames</span><span class="p">();</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="nl">name</span> <span class="p">:</span> <span class="n">names</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">isEgo</span><span class="p">(</span><span class="n">name</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span>
+    <span class="s">&quot;const std::string EntityManager::getEgoName(const std::string &amp; name) function was called, &quot;</span>
+    <span class="s">&quot;but ego vehicle does not exist&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
 <span class="k">auto</span> <span class="n">EntityManager</span><span class="o">::</span><span class="n">getObstacle</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
   <span class="o">-&gt;</span> <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Obstacle</span><span class="o">&gt;</span>
 <span class="p">{</span>
@@ -1385,7 +1398,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 21 June 2021 at 05:46:58 UTC</p>
+<p>Updated on 21 June 2021 at 06:49:52 UTC</p>
                 
                   
                 

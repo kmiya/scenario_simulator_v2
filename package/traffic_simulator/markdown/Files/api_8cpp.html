@@ -1017,6 +1017,20 @@
 <span class="kt">bool</span> <span class="n">API</span><span class="o">::</span><span class="n">updateEntityStatusInSim</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateEntityStatusRequest</span> <span class="n">req</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">getNumberOfEgo</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">simulation_interface</span><span class="o">::</span><span class="n">toProto</span><span class="p">(</span>
+      <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">getVehicleCommand</span><span class="p">(</span><span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">getEgoName</span><span class="p">()),</span>
+      <span class="o">*</span><span class="n">req</span><span class="p">.</span><span class="n">mutable_vehicle_command</span><span class="p">());</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">ego_status_before_update</span> <span class="o">=</span>
+      <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">getEntityStatusBeforeUpdate</span><span class="p">(</span><span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">getEgoName</span><span class="p">());</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ego_status_before_update</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">req</span><span class="p">.</span><span class="n">set_ego_entity_status_before_update_is_empty</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+      <span class="n">simulation_interface</span><span class="o">::</span><span class="n">toProto</span><span class="p">(</span>
+        <span class="n">ego_status_before_update</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="o">*</span><span class="n">req</span><span class="p">.</span><span class="n">mutable_ego_entity_status_before_update</span><span class="p">());</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">req</span><span class="p">.</span><span class="n">set_ego_entity_status_before_update_is_empty</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">names</span> <span class="o">=</span> <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">getEntityNames</span><span class="p">();</span>
   <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="nl">name</span> <span class="p">:</span> <span class="n">names</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">auto</span> <span class="n">status</span> <span class="o">=</span> <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">getEntityStatus</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
@@ -1056,6 +1070,7 @@
 
 <span class="kt">bool</span> <span class="n">API</span><span class="o">::</span><span class="n">updateFrame</span><span class="p">()</span>
 <span class="p">{</span>
+  <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="o">&gt;</span> <span class="n">ego_status_before_update</span> <span class="o">=</span> <span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">;</span>
   <span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">update</span><span class="p">(</span><span class="n">clock_</span><span class="p">.</span><span class="n">getCurrentSimulationTime</span><span class="p">(),</span> <span class="n">clock_</span><span class="p">.</span><span class="n">getStepTime</span><span class="p">());</span>
   <span class="n">traffic_controller_ptr_</span><span class="o">-&gt;</span><span class="n">execute</span><span class="p">();</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">standalone_mode</span><span class="p">)</span> <span class="p">{</span>
@@ -1086,7 +1101,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 21 June 2021 at 05:46:58 UTC</p>
+<p>Updated on 21 June 2021 at 06:49:52 UTC</p>
                 
                   
                 

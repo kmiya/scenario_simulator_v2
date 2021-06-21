@@ -933,6 +933,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-getegoname" class="md-nav__link">
+    function getEgoName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-getdistancetostopline" class="md-nav__link">
     function getDistanceToStopLine
   </a>
@@ -1123,6 +1130,13 @@
         
           <li class="md-nav__item">
   <a href="#function-forward_to_entity_14" class="md-nav__link">
+    function FORWARD_TO_ENTITY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-forward_to_entity_15" class="md-nav__link">
     function FORWARD_TO_ENTITY
   </a>
   
@@ -1346,6 +1360,10 @@
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityManager#function-getentitynames">getEntityNames</a></strong>() const</td>
 </tr>
 <tr>
+<td>const std::string</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityManager#function-getegoname">getEgoName</a></strong>() const</td>
+</tr>
+<tr>
 <td>auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityManager#function-getdistancetostopline">getDistanceToStopLine</a></strong>(const std::string &amp; name, const std::int64_t target_stop_line_id)</td>
 </tr>
@@ -1412,6 +1430,10 @@
 <tr>
 <td></td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityManager#function-forward_to_entity">FORWARD_TO_ENTITY</a></strong>(getEntityType , const )</td>
+</tr>
+<tr>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1entity_1_1EntityManager#function-forward_to_entity">FORWARD_TO_ENTITY</a></strong>(getEntityStatusBeforeUpdate , const )</td>
 </tr>
 <tr>
 <td></td>
@@ -1682,6 +1704,9 @@
 <h3 id="function-getentitynames">function getEntityNames<a class="headerlink" href="#function-getentitynames" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">auto</span> <span class="n">getEntityNames</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
+<h3 id="function-getegoname">function getEgoName<a class="headerlink" href="#function-getegoname" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">getEgoName</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>
 <h3 id="function-getdistancetostopline">function getDistanceToStopLine<a class="headerlink" href="#function-getdistancetostopline" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">auto</span> <span class="n">getDistanceToStopLine</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span>
@@ -1772,60 +1797,66 @@
 </code></pre></div>
 <h3 id="function-forward_to_entity_4">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_4" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">FORWARD_TO_ENTITY</span><span class="p">(</span>
-    <span class="n">getLinearJerk</span> <span class="p">,</span>
+    <span class="n">getEntityStatusBeforeUpdate</span> <span class="p">,</span>
     <span class="k">const</span> 
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-forward_to_entity_5">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_5" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">FORWARD_TO_ENTITY</span><span class="p">(</span>
-    <span class="n">getRouteLanelets</span> 
+    <span class="n">getLinearJerk</span> <span class="p">,</span>
+    <span class="k">const</span> 
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-forward_to_entity_6">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_6" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">FORWARD_TO_ENTITY</span><span class="p">(</span>
+    <span class="n">getRouteLanelets</span> 
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-forward_to_entity_7">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_7" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">FORWARD_TO_ENTITY</span><span class="p">(</span>
     <span class="n">getStandStillDuration</span> <span class="p">,</span>
     <span class="k">const</span> 
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-forward_to_entity_7">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_7" title="Permanent link">#</a></h3>
+<h3 id="function-forward_to_entity_8">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_8" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">FORWARD_TO_ENTITY</span><span class="p">(</span>
     <span class="n">getVehicleParameters</span> <span class="p">,</span>
     <span class="k">const</span> 
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-forward_to_entity_8">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_8" title="Permanent link">#</a></h3>
+<h3 id="function-forward_to_entity_9">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_9" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">FORWARD_TO_ENTITY</span><span class="p">(</span>
     <span class="n">getVehicleCommand</span> <span class="p">,</span>
     <span class="k">const</span> 
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-forward_to_entity_9">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_9" title="Permanent link">#</a></h3>
+<h3 id="function-forward_to_entity_10">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_10" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">FORWARD_TO_ENTITY</span><span class="p">(</span>
     <span class="n">ready</span> <span class="p">,</span>
     <span class="k">const</span> 
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-forward_to_entity_10">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_10" title="Permanent link">#</a></h3>
+<h3 id="function-forward_to_entity_11">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_11" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">FORWARD_TO_ENTITY</span><span class="p">(</span>
     <span class="n">requestAcquirePosition</span> 
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-forward_to_entity_11">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_11" title="Permanent link">#</a></h3>
+<h3 id="function-forward_to_entity_12">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_12" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">FORWARD_TO_ENTITY</span><span class="p">(</span>
     <span class="n">requestAssignRoute</span> 
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-forward_to_entity_12">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_12" title="Permanent link">#</a></h3>
+<h3 id="function-forward_to_entity_13">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_13" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">FORWARD_TO_ENTITY</span><span class="p">(</span>
     <span class="n">requestLaneChange</span> 
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-forward_to_entity_13">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_13" title="Permanent link">#</a></h3>
+<h3 id="function-forward_to_entity_14">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_14" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">FORWARD_TO_ENTITY</span><span class="p">(</span>
     <span class="n">requestWalkStraight</span> 
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-forward_to_entity_14">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_14" title="Permanent link">#</a></h3>
+<h3 id="function-forward_to_entity_15">function FORWARD_TO_ENTITY<a class="headerlink" href="#function-forward_to_entity_15" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">FORWARD_TO_ENTITY</span><span class="p">(</span>
     <span class="n">setDriverModel</span> 
 <span class="p">)</span>
@@ -1869,7 +1900,7 @@
 <span class="p">)</span>
 </code></pre></div>
 <hr />
-<p>Updated on 21 June 2021 at 05:46:57 UTC</p>
+<p>Updated on 21 June 2021 at 06:49:52 UTC</p>
                 
                   
                 

@@ -769,6 +769,8 @@
   <span class="n">status_</span> <span class="o">=</span> <span class="n">initial_state</span><span class="p">;</span>
 <span class="p">}</span>
 
+<span class="kt">void</span> <span class="n">EntityBase</span><span class="o">::</span><span class="n">onUpdate</span><span class="p">(</span><span class="kt">double</span><span class="p">,</span> <span class="kt">double</span><span class="p">)</span> <span class="p">{</span> <span class="n">status_before_update_</span> <span class="o">=</span> <span class="n">status_</span><span class="p">;</span> <span class="p">}</span>
+
 <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">EntityBase</span><span class="o">::</span><span class="n">getStandStillDuration</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">stand_still_duration_</span><span class="p">;</span> <span class="p">}</span>
 
 <span class="k">const</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleCommand</span> <span class="n">EntityBase</span><span class="o">::</span><span class="n">getVehicleCommand</span><span class="p">()</span>
@@ -848,7 +850,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 21 June 2021 at 05:46:58 UTC</p>
+<p>Updated on 21 June 2021 at 06:49:52 UTC</p>
                 
                   
                 

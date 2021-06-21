@@ -687,6 +687,60 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#autoware_control_msgsproto" class="md-nav__link">
+    autoware_control_msgs.proto
+  </a>
+  
+    <nav class="md-nav" aria-label="autoware_control_msgs.proto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controlcommand" class="md-nav__link">
+    ControlCommand
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autoware_vehicle_msgsproto" class="md-nav__link">
+    autoware_vehicle_msgs.proto
+  </a>
+  
+    <nav class="md-nav" aria-label="autoware_vehicle_msgs.proto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shift" class="md-nav__link">
+    Shift
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vehiclecommand" class="md-nav__link">
+    VehicleCommand
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shift_positions" class="md-nav__link">
+    SHIFT_POSITIONS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#builtin_interfacesproto" class="md-nav__link">
     builtin_interfaces.proto
   </a>
@@ -1053,6 +1107,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#std_msgsproto" class="md-nav__link">
+    std_msgs.proto
+  </a>
+  
+    <nav class="md-nav" aria-label="std_msgs.proto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#header" class="md-nav__link">
+    Header
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#scalar-value-types" class="md-nav__link">
     Scalar Value Types
   </a>
@@ -1080,6 +1154,24 @@
 <p><a name="top"></a></p>
 <h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">#</a></h2>
 <ul>
+<li>
+<p><a href="#autoware_control_msgs.proto">autoware_control_msgs.proto</a></p>
+<ul>
+<li><a href="#autoware_control_msgs.ControlCommand">ControlCommand</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#autoware_vehicle_msgs.proto">autoware_vehicle_msgs.proto</a></p>
+<ul>
+<li><a href="#autoware_vehicle_msgs.Shift">Shift</a></li>
+<li>
+<p><a href="#autoware_vehicle_msgs.VehicleCommand">VehicleCommand</a></p>
+</li>
+<li>
+<p><a href="#autoware_vehicle_msgs.SHIFT_POSITIONS">SHIFT_POSITIONS</a></p>
+</li>
+</ul>
+</li>
 <li>
 <p><a href="#builtin_interfaces.proto">builtin_interfaces.proto</a></p>
 <ul>
@@ -1153,9 +1245,164 @@
 </ul>
 </li>
 <li>
+<p><a href="#std_msgs.proto">std_msgs.proto</a></p>
+<ul>
+<li><a href="#std_msgs.Header">Header</a></li>
+</ul>
+</li>
+<li>
 <p><a href="#scalar-value-types">Scalar Value Types</a></p>
 </li>
 </ul>
+<p><a name="autoware_control_msgs.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+
+<h2 id="autoware_control_msgsproto">autoware_control_msgs.proto<a class="headerlink" href="#autoware_control_msgsproto" title="Permanent link">#</a></h2>
+<p><a name="autoware_control_msgs.ControlCommand"></a></p>
+<h3 id="controlcommand">ControlCommand<a class="headerlink" href="#controlcommand" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>steering_angle</td>
+<td><a href="#double">double</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>steering_angle_velocity</td>
+<td><a href="#double">double</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>velocity</td>
+<td><a href="#double">double</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>acceleration</td>
+<td><a href="#double">double</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="autoware_vehicle_msgs.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+
+<h2 id="autoware_vehicle_msgsproto">autoware_vehicle_msgs.proto<a class="headerlink" href="#autoware_vehicle_msgsproto" title="Permanent link">#</a></h2>
+<p><a name="autoware_vehicle_msgs.Shift"></a></p>
+<h3 id="shift">Shift<a class="headerlink" href="#shift" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td><a href="#autoware_vehicle_msgs.SHIFT_POSITIONS">SHIFT_POSITIONS</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="autoware_vehicle_msgs.VehicleCommand"></a></p>
+<h3 id="vehiclecommand">VehicleCommand<a class="headerlink" href="#vehiclecommand" title="Permanent link">#</a></h3>
+<p>Protobuf defintion of the autoware_vehicle_msgs/msg/VehicleCommand type in
+ROS2.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td><a href="#std_msgs.Header">std_msgs.Header</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>control</td>
+<td><a href="#autoware_control_msgs.ControlCommand">autoware_control_msgs.ControlCommand</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>shift</td>
+<td><a href="#autoware_vehicle_msgs.Shift">Shift</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>emergency</td>
+<td><a href="#int32">int32</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="autoware_vehicle_msgs.SHIFT_POSITIONS"></a></p>
+<h3 id="shift_positions">SHIFT_POSITIONS<a class="headerlink" href="#shift_positions" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NONE</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td>PARKING</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>REVERSE</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>NEUTRAL</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>DRIVE</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>LOW</td>
+<td>5</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p><a name="builtin_interfaces.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -1425,7 +1672,7 @@
 <td>current_action</td>
 <td><a href="#string">string</a></td>
 <td></td>
-<td>Current action of the entity.</td>
+<td>Current acttion of the entity.</td>
 </tr>
 <tr>
 <td>twist</td>
@@ -2229,6 +2476,24 @@
 <td>repeated</td>
 <td>List of updated entity status in traffic simulator.</td>
 </tr>
+<tr>
+<td>vehicle_command</td>
+<td><a href="#autoware_vehicle_msgs.VehicleCommand">autoware_vehicle_msgs.VehicleCommand</a></td>
+<td></td>
+<td>Ego Vehicle Command of from Autoware</td>
+</tr>
+<tr>
+<td>ego_entity_status_before_update</td>
+<td><a href="#openscenario_msgs.EntityStatus">openscenario_msgs.EntityStatus</a></td>
+<td></td>
+<td>Entity status of ego entity before runnig vehicle model</td>
+</tr>
+<tr>
+<td>ego_entity_status_before_update_is_empty</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>If True,ego entity status before update is empty.</td>
+</tr>
 </tbody>
 </table>
 <p><a name="simulation_api_schema.UpdateEntityStatusResponse"></a></p>
@@ -2371,7 +2636,7 @@
 <td>name</td>
 <td><a href="#string">string</a></td>
 <td></td>
-<td>Name og the entity.</td>
+<td>Name of the entity.</td>
 </tr>
 <tr>
 <td>action_status</td>
@@ -2384,6 +2649,37 @@
 <td><a href="#geometry_msgs.Pose">geometry_msgs.Pose</a></td>
 <td></td>
 <td>Pose of the entity in the map coordinate.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="std_msgs.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+
+<h2 id="std_msgsproto">std_msgs.proto<a class="headerlink" href="#std_msgsproto" title="Permanent link">#</a></h2>
+<p><a name="std_msgs.Header"></a></p>
+<h3 id="header">Header<a class="headerlink" href="#header" title="Permanent link">#</a></h3>
+<p>Protobuf definiciton of <a href="https://github.com/ros2/common_interfaces/blob/master/std_msgs/msg/Header.msg">std_msgs::msgs::Header type in ROS2.</a></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stamp</td>
+<td><a href="#builtin_interfaces.Time">builtin_interfaces.Time</a></td>
+<td></td>
+<td>Two-integer timestamp that is expressed as seconds and nanoseconds.</td>
+</tr>
+<tr>
+<td>frame_id</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Transform frame with which this data is associated.</td>
 </tr>
 </tbody>
 </table>

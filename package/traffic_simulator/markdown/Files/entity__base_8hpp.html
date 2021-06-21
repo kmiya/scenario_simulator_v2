@@ -867,7 +867,7 @@
 
   <span class="cm">/*   */</span> <span class="k">auto</span> <span class="n">setVisibility</span><span class="p">(</span><span class="k">const</span> <span class="kt">bool</span> <span class="n">visibility</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">visibility_</span> <span class="o">=</span> <span class="n">visibility</span><span class="p">;</span> <span class="p">}</span>
 
-  <span class="k">virtual</span> <span class="kt">void</span> <span class="n">onUpdate</span><span class="p">(</span><span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">virtual</span> <span class="kt">void</span> <span class="n">onUpdate</span><span class="p">(</span><span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">);</span>
 
   <span class="k">virtual</span> <span class="k">auto</span> <span class="n">ready</span><span class="p">()</span> <span class="k">const</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span> <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">status_</span><span class="p">);</span> <span class="p">}</span>
 
@@ -892,9 +892,15 @@
   <span class="cm">/*   */</span> <span class="kt">void</span> <span class="nf">updateStandStillDuration</span><span class="p">(</span><span class="k">const</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">);</span>
   <span class="k">virtual</span> <span class="k">const</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleCommand</span> <span class="nf">getVehicleCommand</span><span class="p">();</span>
 
+  <span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="o">&gt;</span> <span class="n">getEntityStatusBeforeUpdate</span><span class="p">()</span> <span class="k">const</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="n">status_before_update_</span><span class="p">;</span>
+  <span class="p">}</span>
+
 <span class="k">protected</span><span class="o">:</span>
   <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span> <span class="n">next_waypoint_</span><span class="p">;</span>
   <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="o">&gt;</span> <span class="n">status_</span><span class="p">;</span>
+  <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="o">&gt;</span> <span class="n">status_before_update_</span><span class="p">;</span>
 
   <span class="n">std</span><span class="o">::</span><span class="n">queue</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span> <span class="n">waypoints_</span><span class="p">;</span>
 
@@ -919,7 +925,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__ENTITY__ENTITY_BASE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 21 June 2021 at 05:46:58 UTC</p>
+<p>Updated on 21 June 2021 at 06:49:52 UTC</p>
                 
                   
                 

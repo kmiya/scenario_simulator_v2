@@ -810,6 +810,7 @@
 
 <span class="kt">void</span> <span class="n">VehicleEntity</span><span class="o">::</span><span class="n">onUpdate</span><span class="p">(</span><span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span>
 <span class="p">{</span>
+  <span class="n">EntityBase</span><span class="o">::</span><span class="n">onUpdate</span><span class="p">(</span><span class="n">current_time</span><span class="p">,</span> <span class="n">step_time</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">status_</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span><span class="p">;</span>
   <span class="p">}</span>
@@ -861,7 +862,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 21 June 2021 at 05:46:58 UTC</p>
+<p>Updated on 21 June 2021 at 06:49:52 UTC</p>
                 
                   
                 

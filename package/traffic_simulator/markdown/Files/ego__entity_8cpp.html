@@ -930,7 +930,7 @@
   <span class="p">}</span>
 
 <span class="cp">#undef BOILERPLATE</span>
-  <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;Invalid vehicle model type.&quot;</span><span class="p">);</span>
+  <span class="n">THROW_SIMULATION_ERROR</span><span class="p">(</span><span class="s">&quot;Unsupported vehicle model type, failed to convert to string&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="k">auto</span> <span class="n">getVehicleModelType</span><span class="p">()</span>
@@ -1173,6 +1173,7 @@
 
 <span class="kt">void</span> <span class="n">EgoEntity</span><span class="o">::</span><span class="n">onUpdate</span><span class="p">(</span><span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span>
 <span class="p">{</span>
+  <span class="n">EntityBase</span><span class="o">::</span><span class="n">onUpdate</span><span class="p">(</span><span class="n">current_time</span><span class="p">,</span> <span class="n">step_time</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">current_time</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">updateEntityStatusTimestamp</span><span class="p">(</span><span class="n">current_time</span><span class="p">);</span>
 
@@ -1350,7 +1351,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 21 June 2021 at 05:46:58 UTC</p>
+<p>Updated on 21 June 2021 at 06:49:52 UTC</p>
                 
                   
                 

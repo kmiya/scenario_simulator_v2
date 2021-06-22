@@ -709,6 +709,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    function description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-timeheadwaycondition" class="md-nav__link">
     function TimeHeadwayCondition
   </a>
@@ -736,8 +743,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#variable-trigger" class="md-nav__link">
-    variable trigger
+  <a href="#variable-triggering_entities" class="md-nav__link">
+    variable triggering_entities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-last_checked_values" class="md-nav__link">
+    variable last_checked_values
   </a>
   
 </li>
@@ -807,8 +821,12 @@
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition#function-evaluate">evaluate</a></strong>()</td>
 </tr>
 <tr>
+<td>auto</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition#function-description">description</a></strong>() const</td>
+</tr>
+<tr>
 <td>template \&lt;typename Node ,typename Scope ></br></td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition#function-timeheadwaycondition">TimeHeadwayCondition</a></strong>(const Node &amp; node, <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope">Scope</a> &amp; outer_scope, const <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1TriggeringEntities">TriggeringEntities</a> &amp; trigger)</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition#function-timeheadwaycondition">TimeHeadwayCondition</a></strong>(const Node &amp; node, <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope">Scope</a> &amp; outer_scope, const <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1TriggeringEntities">TriggeringEntities</a> &amp; triggering_entities)</td>
 </tr>
 </tbody>
 </table>
@@ -827,7 +845,11 @@
 </tr>
 <tr>
 <td>const <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1TriggeringEntities">TriggeringEntities</a></td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition#variable-trigger">trigger</a></strong></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition#variable-triggering_entities">triggering_entities</a></strong></td>
+</tr>
+<tr>
+<td>std::vector&lt; <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1Double">Double</a> &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1TimeHeadwayCondition#variable-last_checked_values">last_checked_values</a></strong></td>
 </tr>
 <tr>
 <td>const <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1Boolean">Boolean</a></td>
@@ -851,21 +873,27 @@
 <h3 id="function-evaluate">function evaluate<a class="headerlink" href="#function-evaluate" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">auto</span> <span class="n">evaluate</span><span class="p">()</span>
 </code></pre></div>
+<h3 id="function-description">function description<a class="headerlink" href="#function-description" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">auto</span> <span class="n">description</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>
 <h3 id="function-timeheadwaycondition">function TimeHeadwayCondition<a class="headerlink" href="#function-timeheadwaycondition" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span> <span class="p">,</span>
 <span class="k">typename</span> <span class="nc">Scope</span> <span class="o">&gt;</span>
 <span class="kr">inline</span> <span class="k">explicit</span> <span class="n">TimeHeadwayCondition</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span>
     <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">outer_scope</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">TriggeringEntities</span> <span class="o">&amp;</span> <span class="n">trigger</span>
+    <span class="k">const</span> <span class="n">TriggeringEntities</span> <span class="o">&amp;</span> <span class="n">triggering_entities</span>
 <span class="p">)</span>
 </code></pre></div>
 <h2 id="public-attributes-documentation">Public Attributes Documentation<a class="headerlink" href="#public-attributes-documentation" title="Permanent link">#</a></h2>
 <h3 id="variable-value">variable value<a class="headerlink" href="#variable-value" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">Double</span> <span class="n">value</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="variable-trigger">variable trigger<a class="headerlink" href="#variable-trigger" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">TriggeringEntities</span> <span class="n">trigger</span><span class="p">;</span>
+<h3 id="variable-triggering_entities">variable triggering_entities<a class="headerlink" href="#variable-triggering_entities" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">TriggeringEntities</span> <span class="n">triggering_entities</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-last_checked_values">variable last_checked_values<a class="headerlink" href="#variable-last_checked_values" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">Double</span> <span class="o">&gt;</span> <span class="n">last_checked_values</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="variable-freespace">variable freespace<a class="headerlink" href="#variable-freespace" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">Boolean</span> <span class="n">freespace</span><span class="p">;</span>
@@ -880,7 +908,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">Boolean</span> <span class="n">along_route</span><span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>Updated on 22 June 2021 at 00:08:49 UTC</p>
+<p>Updated on 22 June 2021 at 07:23:53 UTC</p>
                 
                   
                 

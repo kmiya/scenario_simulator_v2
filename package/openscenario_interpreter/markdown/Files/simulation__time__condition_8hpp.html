@@ -802,10 +802,12 @@
 
   <span class="k">auto</span> <span class="n">description</span><span class="p">()</span> <span class="k">const</span>
   <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">;</span>
-    <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">fixed</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">setprecision</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">last_checked_time</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; is &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">compare</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
-       <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;?&quot;</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">();</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">description</span><span class="p">;</span>
+
+    <span class="n">description</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">fixed</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">setprecision</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">last_checked_time</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; is &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">compare</span>
+                <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;?&quot;</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">description</span><span class="p">.</span><span class="n">str</span><span class="p">();</span>
   <span class="p">}</span>
 <span class="p">};</span>
 <span class="p">}</span>  <span class="c1">// namespace syntax</span>
@@ -814,7 +816,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__SIMULATION_TIME_CONDITION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 22 June 2021 at 00:08:50 UTC</p>
+<p>Updated on 22 June 2021 at 07:23:54 UTC</p>
                 
                   
                 

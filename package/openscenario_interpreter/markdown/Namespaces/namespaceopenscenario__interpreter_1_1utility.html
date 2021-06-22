@@ -709,6 +709,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#function-print_to" class="md-nav__link">
+    function print_to
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-operator" class="md-nav__link">
     function operator&lt;&lt;
   </a>
@@ -868,6 +875,10 @@
 </thead>
 <tbody>
 <tr>
+<td>template \&lt;typename SequenceContainer ></br>auto &amp;</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1utility#function-print_to">print_to</a></strong>(std::ostream &amp; os, const SequenceContainer &amp; sequence_container)</td>
+</tr>
+<tr>
 <td>template \&lt;typename... Ts></br>decltype(auto)</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1utility#function-operator&lt;&lt;">operator&lt;&lt;</a></strong>(std::basic_ostream&lt; Ts... &gt; &amp; os, const <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1utility_1_1AttributeHighlighter">AttributeHighlighter</a> &amp; highlight)</td>
 </tr>
@@ -933,6 +944,13 @@
 </tbody>
 </table>
 <h2 id="functions-documentation">Functions Documentation<a class="headerlink" href="#functions-documentation" title="Permanent link">#</a></h2>
+<h3 id="function-print_to">function print_to<a class="headerlink" href="#function-print_to" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">SequenceContainer</span> <span class="o">&gt;</span>
+<span class="k">auto</span> <span class="o">&amp;</span> <span class="n">print_to</span><span class="p">(</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">SequenceContainer</span> <span class="o">&amp;</span> <span class="n">sequence_container</span>
+<span class="p">)</span>
+</code></pre></div>
 <h3 id="function-operator">function operator&lt;&lt;<a class="headerlink" href="#function-operator" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
 <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
@@ -1010,7 +1028,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">auto</span> <span class="n">car</span> <span class="o">=</span> <span class="p">[](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">pare</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pare</span><span class="p">);</span> <span class="p">};</span>
 </code></pre></div>
 <hr />
-<p>Updated on 22 June 2021 at 00:08:49 UTC</p>
+<p>Updated on 22 June 2021 at 07:23:53 UTC</p>
                 
                   
                 

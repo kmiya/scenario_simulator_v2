@@ -770,6 +770,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/reader/element.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/entity_ref.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/triggering_entities_rule.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/utility/print.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 
@@ -801,11 +802,28 @@
   <span class="p">{</span>
   <span class="p">}</span>
 
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="k">constexpr</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="k">operator</span><span class="p">()(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="k">const</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Predicate</span><span class="o">&gt;</span>
+  <span class="k">constexpr</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">apply</span><span class="p">(</span><span class="n">Predicate</span> <span class="o">&amp;&amp;</span> <span class="n">predicate</span><span class="p">)</span> <span class="k">const</span>
   <span class="p">{</span>
     <span class="k">return</span> <span class="n">triggering_entities_rule</span><span class="p">.</span><span class="n">apply</span><span class="p">(</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">entity_refs</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">entity_refs</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">entity_refs</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">entity_refs</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">predicate</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">predicate</span><span class="p">));</span>
+  <span class="p">}</span>
+
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+  <span class="p">[[</span><span class="n">deprecated</span><span class="p">]]</span> <span class="k">constexpr</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="k">operator</span><span class="p">()(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="k">const</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="n">apply</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
+  <span class="p">}</span>
+
+  <span class="k">auto</span> <span class="n">description</span><span class="p">()</span> <span class="k">const</span>
+  <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">description</span><span class="p">;</span>
+
+    <span class="n">description</span> <span class="o">&lt;&lt;</span> <span class="n">triggering_entities_rule</span><span class="p">.</span><span class="n">description</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+
+    <span class="n">print_to</span><span class="p">(</span><span class="n">description</span><span class="p">,</span> <span class="n">entity_refs</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">description</span><span class="p">.</span><span class="n">str</span><span class="p">();</span>
   <span class="p">}</span>
 <span class="p">};</span>
 <span class="p">}</span>  <span class="c1">// namespace syntax</span>
@@ -814,7 +832,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__TRIGGERING_ENTITIES_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 22 June 2021 at 00:08:50 UTC</p>
+<p>Updated on 22 June 2021 at 07:23:54 UTC</p>
                 
                   
                 

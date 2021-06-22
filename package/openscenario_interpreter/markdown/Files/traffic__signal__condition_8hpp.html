@@ -773,14 +773,14 @@
 <span class="p">{</span>
 <span class="kr">inline</span> <span class="k">namespace</span> <span class="nn">syntax</span>
 <span class="p">{</span>
-<span class="cm">/* ==== TrafficSignalCondition ===============================================</span>
+<span class="cm">/* ---- TrafficSignalCondition -------------------------------------------------</span>
 <span class="cm"> *</span>
-<span class="cm"> * &lt;xsd:complexType name=&quot;TrafficSignalCondition&quot;&gt;</span>
-<span class="cm"> *   &lt;xsd:attribute name=&quot;name&quot; type=&quot;String&quot; use=&quot;required&quot;/&gt;</span>
-<span class="cm"> *   &lt;xsd:attribute name=&quot;state&quot; type=&quot;String&quot; use=&quot;required&quot;/&gt;</span>
-<span class="cm"> * &lt;/xsd:complexType&gt;</span>
+<span class="cm"> *  &lt;xsd:complexType name=&quot;TrafficSignalCondition&quot;&gt;</span>
+<span class="cm"> *    &lt;xsd:attribute name=&quot;name&quot; type=&quot;String&quot; use=&quot;required&quot;/&gt;</span>
+<span class="cm"> *    &lt;xsd:attribute name=&quot;state&quot; type=&quot;String&quot; use=&quot;required&quot;/&gt;</span>
+<span class="cm"> *  &lt;/xsd:complexType&gt;</span>
 <span class="cm"> *</span>
-<span class="cm"> * ======================================================================== */</span>
+<span class="cm"> * -------------------------------------------------------------------------- */</span>
 <span class="k">struct</span> <span class="nc">TrafficSignalCondition</span>
 <span class="p">{</span>
   <span class="k">const</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
@@ -789,8 +789,8 @@
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
   <span class="k">explicit</span> <span class="n">TrafficSignalCondition</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">scope</span><span class="p">)</span>
-  <span class="o">:</span> <span class="n">name</span><span class="p">{</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">scope</span><span class="p">)},</span>
-    <span class="n">state</span><span class="p">{</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;state&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">scope</span><span class="p">)}</span>
+  <span class="o">:</span> <span class="n">name</span><span class="p">(</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">scope</span><span class="p">)),</span>
+    <span class="n">state</span><span class="p">(</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;state&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">scope</span><span class="p">))</span>
   <span class="p">{</span>
   <span class="p">}</span>
 <span class="p">};</span>
@@ -800,7 +800,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__TRAFFIC_SIGNAL_CONDITION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 22 June 2021 at 00:08:50 UTC</p>
+<p>Updated on 22 June 2021 at 07:23:54 UTC</p>
                 
                   
                 

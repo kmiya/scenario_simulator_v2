@@ -777,6 +777,9 @@
 <span class="p">{</span>
 <span class="cm">/* ---- SpeedCondition ---------------------------------------------------------</span>
 <span class="cm"> *</span>
+<span class="cm"> *  Compares a triggering entity&#39;s/entities&#39; speed to a target speed. The</span>
+<span class="cm"> *  logical operator for the comparison is given by the rule attribute.</span>
+<span class="cm"> *</span>
 <span class="cm"> *  &lt;xsd:complexType name=&quot;SpeedCondition&quot;&gt;</span>
 <span class="cm"> *    &lt;xsd:attribute name=&quot;value&quot; type=&quot;Double&quot; use=&quot;required&quot;/&gt;</span>
 <span class="cm"> *    &lt;xsd:attribute name=&quot;rule&quot; type=&quot;Rule&quot; use=&quot;required&quot;/&gt;</span>
@@ -789,21 +792,41 @@
 
   <span class="k">const</span> <span class="n">Rule</span> <span class="n">compare</span><span class="p">;</span>
 
+  <span class="k">const</span> <span class="n">TriggeringEntities</span> <span class="n">triggering_entities</span><span class="p">;</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">last_checked_values</span><span class="p">;</span>  <span class="c1">// for description</span>
+
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">AST</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
   <span class="k">explicit</span> <span class="n">SpeedCondition</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">AST</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">outer_scope</span><span class="p">,</span> <span class="k">const</span> <span class="n">TriggeringEntities</span> <span class="o">&amp;</span> <span class="n">triggering_entities</span><span class="p">)</span>
   <span class="o">:</span> <span class="n">value</span><span class="p">(</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;value&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">)),</span>
     <span class="n">compare</span><span class="p">(</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">Rule</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;rule&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">)),</span>
-    <span class="n">for_each</span><span class="p">(</span><span class="n">triggering_entities</span><span class="p">)</span>
+    <span class="n">triggering_entities</span><span class="p">(</span><span class="n">triggering_entities</span><span class="p">),</span>
+    <span class="n">last_checked_values</span><span class="p">(</span><span class="n">triggering_entities</span><span class="p">.</span><span class="n">entity_refs</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">Double</span><span class="o">::</span><span class="n">nan</span><span class="p">())</span>
   <span class="p">{</span>
   <span class="p">}</span>
 
-  <span class="k">const</span> <span class="n">TriggeringEntities</span> <span class="n">for_each</span><span class="p">;</span>
+  <span class="k">auto</span> <span class="n">description</span><span class="p">()</span> <span class="k">const</span>
+  <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">description</span><span class="p">;</span>
+
+    <span class="n">description</span> <span class="o">&lt;&lt;</span> <span class="n">triggering_entities</span><span class="p">.</span><span class="n">description</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&#39;s speed = &quot;</span><span class="p">;</span>
+
+    <span class="n">print_to</span><span class="p">(</span><span class="n">description</span><span class="p">,</span> <span class="n">last_checked_values</span><span class="p">);</span>
+
+    <span class="n">description</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">compare</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;?&quot;</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">description</span><span class="p">.</span><span class="n">str</span><span class="p">();</span>
+  <span class="p">}</span>
 
   <span class="k">auto</span> <span class="n">evaluate</span><span class="p">()</span>
   <span class="p">{</span>
-    <span class="k">return</span> <span class="n">asBoolean</span><span class="p">(</span><span class="n">for_each</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">triggering_entity</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="n">compare</span><span class="p">(</span><span class="n">getEntityStatus</span><span class="p">(</span><span class="n">triggering_entity</span><span class="p">).</span><span class="n">action_status</span><span class="p">.</span><span class="n">twist</span><span class="p">.</span><span class="n">linear</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+    <span class="n">last_checked_values</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="n">asBoolean</span><span class="p">(</span><span class="n">triggering_entities</span><span class="p">.</span><span class="n">apply</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">triggering_entity</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">last_checked_values</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span>
+        <span class="n">getEntityStatus</span><span class="p">(</span><span class="n">triggering_entity</span><span class="p">).</span><span class="n">action_status</span><span class="p">.</span><span class="n">twist</span><span class="p">.</span><span class="n">linear</span><span class="p">.</span><span class="n">x</span><span class="p">);</span>
+      <span class="k">return</span> <span class="n">compare</span><span class="p">(</span><span class="n">last_checked_values</span><span class="p">.</span><span class="n">back</span><span class="p">(),</span> <span class="n">value</span><span class="p">);</span>
     <span class="p">}));</span>
   <span class="p">}</span>
 <span class="p">};</span>
@@ -813,7 +836,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__SPEED_CONDITION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 22 June 2021 at 00:08:50 UTC</p>
+<p>Updated on 22 June 2021 at 07:23:54 UTC</p>
                 
                   
                 

@@ -859,7 +859,8 @@
         <span class="k">return</span> <span class="n">BT</span><span class="o">::</span><span class="n">NodeStatus</span><span class="o">::</span><span class="n">FAILURE</span><span class="p">;</span>
       <span class="p">}</span>
       <span class="k">auto</span> <span class="n">from_pose</span> <span class="o">=</span> <span class="n">hdmap_utils</span><span class="o">-&gt;</span><span class="n">toMapPose</span><span class="p">(</span><span class="n">entity_status</span><span class="p">.</span><span class="n">lanelet_pose</span><span class="p">).</span><span class="n">pose</span><span class="p">;</span>
-      <span class="k">auto</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">hdmap_utils</span><span class="o">-&gt;</span><span class="n">getLaneChangeTrajectory</span><span class="p">(</span><span class="n">from_pose</span><span class="p">,</span> <span class="n">to_lanelet_id_</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
+      <span class="k">auto</span> <span class="n">ret</span> <span class="o">=</span>
+        <span class="n">hdmap_utils</span><span class="o">-&gt;</span><span class="n">getLaneChangeTrajectory</span><span class="p">(</span><span class="n">from_pose</span><span class="p">,</span> <span class="n">to_lanelet_id_</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">);</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">curve_</span> <span class="o">=</span> <span class="n">ret</span><span class="o">-&gt;</span><span class="n">first</span><span class="p">;</span>
         <span class="n">target_s_</span> <span class="o">=</span> <span class="n">ret</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
@@ -914,7 +915,7 @@
 <span class="p">}</span>  <span class="c1">// namespace entity_behavior</span>
 </code></pre></div>
 <hr />
-<p>Updated on 24 June 2021 at 00:06:27 UTC</p>
+<p>Updated on 24 June 2021 at 05:50:11 UTC</p>
                 
                   
                 

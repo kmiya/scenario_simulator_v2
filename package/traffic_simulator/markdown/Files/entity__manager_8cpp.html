@@ -778,6 +778,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/helper/helper.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/math/bounding_box.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/math/collision.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/math/transfrom.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 
@@ -1074,40 +1075,7 @@
   <span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="o">&amp;</span> <span class="n">from</span><span class="p">,</span> <span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="o">&amp;</span> <span class="n">to</span><span class="p">)</span> <span class="k">const</span>
   <span class="o">-&gt;</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span>
 <span class="p">{</span>
-  <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Transform</span> <span class="n">from_translation</span><span class="p">;</span>
-  <span class="p">{</span>
-    <span class="n">from_translation</span><span class="p">.</span><span class="n">translation</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">from</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
-    <span class="n">from_translation</span><span class="p">.</span><span class="n">translation</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">from</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
-    <span class="n">from_translation</span><span class="p">.</span><span class="n">translation</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">from</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="p">;</span>
-    <span class="n">from_translation</span><span class="p">.</span><span class="n">rotation</span> <span class="o">=</span> <span class="n">from</span><span class="p">.</span><span class="n">orientation</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="n">tf2</span><span class="o">::</span><span class="n">Transform</span> <span class="n">from_tf</span><span class="p">;</span>
-  <span class="p">{</span>
-    <span class="n">tf2</span><span class="o">::</span><span class="n">fromMsg</span><span class="p">(</span><span class="n">from_translation</span><span class="p">,</span> <span class="n">from_tf</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Transform</span> <span class="n">to_translation</span><span class="p">;</span>
-  <span class="p">{</span>
-    <span class="n">to_translation</span><span class="p">.</span><span class="n">translation</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">to</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
-    <span class="n">to_translation</span><span class="p">.</span><span class="n">translation</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">to</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
-    <span class="n">to_translation</span><span class="p">.</span><span class="n">translation</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">to</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="p">;</span>
-    <span class="n">to_translation</span><span class="p">.</span><span class="n">rotation</span> <span class="o">=</span> <span class="n">to</span><span class="p">.</span><span class="n">orientation</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="n">tf2</span><span class="o">::</span><span class="n">Transform</span> <span class="n">to_tf</span><span class="p">;</span>
-  <span class="p">{</span>
-    <span class="n">tf2</span><span class="o">::</span><span class="n">fromMsg</span><span class="p">(</span><span class="n">to_translation</span><span class="p">,</span> <span class="n">to_tf</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="n">tf2</span><span class="o">::</span><span class="n">Transform</span> <span class="n">tf_delta</span> <span class="o">=</span> <span class="n">from_tf</span><span class="p">.</span><span class="n">inverse</span><span class="p">()</span> <span class="o">*</span> <span class="n">to_tf</span><span class="p">;</span>
-
-  <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">ret</span><span class="p">;</span>
-  <span class="p">{</span>
-    <span class="n">tf2</span><span class="o">::</span><span class="n">toMsg</span><span class="p">(</span><span class="n">tf_delta</span><span class="p">,</span> <span class="n">ret</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">getRelativePose</span><span class="p">(</span><span class="n">from</span><span class="p">,</span> <span class="n">to</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="k">auto</span> <span class="n">EntityManager</span><span class="o">::</span><span class="n">getRelativePose</span><span class="p">(</span><span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="o">&amp;</span> <span class="n">from</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">to</span><span class="p">)</span>
@@ -1422,7 +1390,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 24 June 2021 at 00:06:27 UTC</p>
+<p>Updated on 24 June 2021 at 05:50:11 UTC</p>
                 
                   
                 

@@ -838,6 +838,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/hdmap_utils/hdmap_utils.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/math/catmull_rom_spline.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/math/hermite_curve.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/math/transfrom.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
@@ -1434,7 +1435,10 @@
 <span class="p">}</span>
 
 <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">HermiteCurve</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;&gt;</span>
-<span class="n">HdMapUtils</span><span class="o">::</span><span class="n">getLaneChangeTrajectory</span><span class="p">(</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">from_pose</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">to_lanelet_id</span><span class="p">)</span>
+<span class="n">HdMapUtils</span><span class="o">::</span><span class="n">getLaneChangeTrajectory</span><span class="p">(</span>
+  <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">from_pose</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">to_lanelet_id</span><span class="p">,</span>
+  <span class="kt">double</span> <span class="n">maximum_curvature_threshold</span><span class="p">,</span> <span class="kt">double</span> <span class="n">target_trajectory_length</span><span class="p">,</span>
+  <span class="kt">double</span> <span class="n">forward_distance_threashold</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kt">double</span> <span class="n">to_length</span> <span class="o">=</span> <span class="n">getLaneletLength</span><span class="p">(</span><span class="n">to_lanelet_id</span><span class="p">);</span>
   <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">evaluation</span><span class="p">,</span> <span class="n">target_s</span><span class="p">;</span>
@@ -1442,18 +1446,21 @@
 
   <span class="k">for</span> <span class="p">(</span><span class="kt">double</span> <span class="n">to_s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">to_s</span> <span class="o">&lt;</span> <span class="n">to_length</span><span class="p">;</span> <span class="n">to_s</span> <span class="o">=</span> <span class="n">to_s</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">auto</span> <span class="n">goal_pose</span> <span class="o">=</span> <span class="n">toMapPose</span><span class="p">(</span><span class="n">to_lanelet_id</span><span class="p">,</span> <span class="n">to_s</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span>
+      <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">getRelativePose</span><span class="p">(</span><span class="n">from_pose</span><span class="p">,</span> <span class="n">goal_pose</span><span class="p">.</span><span class="n">pose</span><span class="p">).</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;=</span>
+      <span class="n">forward_distance_threashold</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">continue</span><span class="p">;</span>
+    <span class="p">}</span>
     <span class="kt">double</span> <span class="n">start_to_goal_dist</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span>
       <span class="n">std</span><span class="o">::</span><span class="n">pow</span><span class="p">(</span><span class="n">from_pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">goal_pose</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span>
       <span class="n">std</span><span class="o">::</span><span class="n">pow</span><span class="p">(</span><span class="n">from_pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">goal_pose</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span>
       <span class="n">std</span><span class="o">::</span><span class="n">pow</span><span class="p">(</span><span class="n">from_pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span> <span class="o">-</span> <span class="n">goal_pose</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
     <span class="k">auto</span> <span class="n">traj</span> <span class="o">=</span> <span class="n">getLaneChangeTrajectory</span><span class="p">(</span><span class="n">from_pose</span><span class="p">,</span> <span class="n">to_lanelet_id</span><span class="p">,</span> <span class="n">to_s</span><span class="p">,</span> <span class="n">start_to_goal_dist</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">traj</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">traj</span><span class="o">-&gt;</span><span class="n">getMaximum2DCurvature</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">double</span> <span class="n">eval</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">fabs</span><span class="p">(</span><span class="mi">20</span> <span class="o">-</span> <span class="n">traj</span><span class="o">-&gt;</span><span class="n">getLength</span><span class="p">());</span>
-        <span class="n">evaluation</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">eval</span><span class="p">);</span>
-        <span class="n">curves</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">traj</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
-        <span class="n">target_s</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">to_s</span><span class="p">);</span>
-      <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">traj</span><span class="p">.</span><span class="n">getMaximum2DCurvature</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">maximum_curvature_threshold</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">double</span> <span class="n">eval</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">fabs</span><span class="p">(</span><span class="n">target_trajectory_length</span> <span class="o">-</span> <span class="n">traj</span><span class="p">.</span><span class="n">getLength</span><span class="p">());</span>
+      <span class="n">evaluation</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">eval</span><span class="p">);</span>
+      <span class="n">curves</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">traj</span><span class="p">);</span>
+      <span class="n">target_s</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">to_s</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">evaluation</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
@@ -1464,7 +1471,7 @@
   <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="n">curves</span><span class="p">[</span><span class="n">min_index</span><span class="p">],</span> <span class="n">target_s</span><span class="p">[</span><span class="n">min_index</span><span class="p">]);</span>
 <span class="p">}</span>
 
-<span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">HermiteCurve</span><span class="o">&gt;</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">getLaneChangeTrajectory</span><span class="p">(</span>
+<span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">HermiteCurve</span> <span class="n">HdMapUtils</span><span class="o">::</span><span class="n">getLaneChangeTrajectory</span><span class="p">(</span>
   <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">from_pose</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">to_lanelet_id</span><span class="p">,</span> <span class="kt">double</span> <span class="n">to_s</span><span class="p">,</span>
   <span class="kt">double</span> <span class="n">tangent_vector_size</span><span class="p">)</span>
 <span class="p">{</span>
@@ -2041,7 +2048,7 @@
 <span class="p">}</span>  <span class="c1">// namespace hdmap_utils</span>
 </code></pre></div>
 <hr />
-<p>Updated on 24 June 2021 at 00:06:27 UTC</p>
+<p>Updated on 24 June 2021 at 05:50:11 UTC</p>
                 
                   
                 

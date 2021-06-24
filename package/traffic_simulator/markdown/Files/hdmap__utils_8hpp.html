@@ -875,8 +875,10 @@
     <span class="kt">double</span> <span class="n">forward_distance</span> <span class="o">=</span> <span class="mi">20</span><span class="p">);</span>
   <span class="kt">bool</span> <span class="nf">canChangeLane</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">from_lanelet_id</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">to_lanelet_id</span><span class="p">);</span>
   <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">HermiteCurve</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;&gt;</span> <span class="n">getLaneChangeTrajectory</span><span class="p">(</span>
-    <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">from_pose</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">to_lanelet_id</span><span class="p">);</span>
-  <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">HermiteCurve</span><span class="o">&gt;</span> <span class="n">getLaneChangeTrajectory</span><span class="p">(</span>
+    <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">from_pose</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">to_lanelet_id</span><span class="p">,</span>
+    <span class="kt">double</span> <span class="n">maximum_curvature_threshold</span><span class="p">,</span> <span class="kt">double</span> <span class="n">target_trajectory_length</span><span class="p">,</span>
+    <span class="kt">double</span> <span class="n">forward_distance_threashold</span><span class="p">);</span>
+  <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">HermiteCurve</span> <span class="nf">getLaneChangeTrajectory</span><span class="p">(</span>
     <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">from_pose</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">to_lanelet_id</span><span class="p">,</span> <span class="kt">double</span> <span class="n">to_s</span><span class="p">,</span>
     <span class="kt">double</span> <span class="n">tangent_vector_size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">);</span>
   <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Vector3</span><span class="o">&gt;</span> <span class="n">getTangentVector</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">lanelet_id</span><span class="p">,</span> <span class="kt">double</span> <span class="n">s</span><span class="p">);</span>
@@ -944,7 +946,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__HDMAP_UTILS__HDMAP_UTILS_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 24 June 2021 at 00:06:27 UTC</p>
+<p>Updated on 24 June 2021 at 05:50:11 UTC</p>
                 
                   
                 

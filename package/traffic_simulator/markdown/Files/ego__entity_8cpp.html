@@ -1297,9 +1297,12 @@
 
   <span class="k">if</span> <span class="p">(</span><span class="n">not</span> <span class="n">std</span><span class="o">::</span><span class="n">exchange</span><span class="p">(</span><span class="n">autoware_initialized</span><span class="p">,</span> <span class="nb">true</span><span class="p">))</span> <span class="p">{</span>
     <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">initialize</span><span class="p">(</span><span class="n">getStatus</span><span class="p">().</span><span class="n">pose</span><span class="p">);</span>
+    <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">plan</span><span class="p">(</span><span class="n">route</span><span class="p">);</span>
+    <span class="c1">// NOTE: engage() will be executed at simulation-time 0.</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">plan</span><span class="p">(</span><span class="n">route</span><span class="p">);</span>
+    <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">engage</span><span class="p">();</span>
   <span class="p">}</span>
-
-  <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">plan</span><span class="p">(</span><span class="n">route</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kt">void</span> <span class="n">EgoEntity</span><span class="o">::</span><span class="n">requestLaneChange</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="p">)</span>
@@ -1375,7 +1378,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 25 June 2021 at 00:07:12 UTC</p>
+<p>Updated on 25 June 2021 at 02:57:37 UTC</p>
                 
                   
                 

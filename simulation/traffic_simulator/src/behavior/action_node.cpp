@@ -257,7 +257,18 @@ boost::optional<double> ActionNode::getDistanceToConflictingEntity(
 boost::optional<double> ActionNode::getDistanceToConflictingEntity(
   const traffic_simulator::math::CatmullRomSpline & spline) const
 {
-  // spline.getCollisionPointIn2D
+  std::set<double> distances;
+  for(const auto status : other_entity_status) {
+    const auto distance = spline.getCollisionPointIn2D(status.second.pose, status.second.bounding_box);
+    if(distance) {
+      distances.emplace(distance.get());
+    }
+  }
+  if(distances.empty())
+  {
+    return boost::none;
+  }
+  return *distances.begin();
 }
 
 boost::optional<double> ActionNode::getDistanceToConflictingEntity(

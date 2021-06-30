@@ -16,6 +16,7 @@
 
 #include <exception>
 #include <geometry_msgs/msg/point.hpp>
+#include <openscenario_msgs/msg/bounding_box.hpp>
 #include <openscenario_msgs/msg/catmull_rom_spline.hpp>
 #include <string>
 #include <traffic_simulator/math/hermite_curve.hpp>
@@ -53,6 +54,9 @@ public:
     bool search_backward = false) const;
   boost::optional<double> getCollisionPointIn2D(
     std::vector<geometry_msgs::msg::Point> polygon, bool search_backward = false) const;
+  boost::optional<double> getCollisionPointIn2D(
+    const geometry_msgs::msg::Pose & pose, const openscenario_msgs::msg::BoundingBox & box,
+    bool search_backward = false) const;
   const openscenario_msgs::msg::CatmullRomSpline toRosMsg() const;
   const geometry_msgs::msg::Point getRightBoundsPoint(
     double width, double s, double z_offset = 0) const;

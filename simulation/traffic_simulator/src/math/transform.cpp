@@ -16,6 +16,7 @@
 #include <tf2_geometry_msgs/tf2_geometry_msgs.h>
 
 #include <traffic_simulator/math/transfrom.hpp>
+#include <quaternion_operation/quaternion_operation.h>
 
 namespace traffic_simulator
 {
@@ -59,5 +60,24 @@ const geometry_msgs::msg::Pose getRelativePose(
 
   return ret;
 }
+
+const geometry_msgs::msg::Point transform(
+  const geometry_msgs::msg::Pose & frame_pose, const geometry_msgs::msg::Point & point)
+  {
+    auto mat = quaternion_operation::getRotationMatrix(frame_pose.orientation);
+    Eigen::VectorXd point_vec(3);
+    point_vec(0) = point.x;
+    point_vec(1) = point.y;
+    point_vec(2) = point.z;
+    point_vec = mat * point_vec;
+    point_vec(0) = point_vec(0) + frame_pose.position.x;
+    point_vec(1) = point_vec(1) + frame_pose.position.y;
+    point_vec(2) = point_vec(2) + frame_pose.position.z;
+    geometry_msgs::msg::Point ret;
+    ret.x = point_vec(0);
+    ret.y = point_vec(1);
+    ret.z = point_vec(2);
+    return ret;
+  }
 }  // namespace math
 }  // namespace traffic_simulator

@@ -23,6 +23,9 @@ namespace math
 {
 const geometry_msgs::msg::Pose getRelativePose(
   const geometry_msgs::msg::Pose & from, const geometry_msgs::msg::Pose & to);
+
+const geometry_msgs::msg::Point transform(
+  const geometry_msgs::msg::Pose & frame_pose, const geometry_msgs::msg::Point & point);
 }  // namespace math
 }  // namespace traffic_simulator
 

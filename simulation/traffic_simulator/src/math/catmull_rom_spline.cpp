@@ -282,6 +282,13 @@ double CatmullRomSpline::getSInSplineCurve(size_t curve_index, double s) const
 }
 
 boost::optional<double> CatmullRomSpline::getCollisionPointIn2D(
+  const geometry_msgs::msg::Pose & pose, const openscenario_msgs::msg::BoundingBox & box,
+  bool search_backward) const
+{
+  return boost::none;
+}
+
+boost::optional<double> CatmullRomSpline::getCollisionPointIn2D(
   std::vector<geometry_msgs::msg::Point> polygon, bool search_backward) const
 {
   size_t n = curves_.size();

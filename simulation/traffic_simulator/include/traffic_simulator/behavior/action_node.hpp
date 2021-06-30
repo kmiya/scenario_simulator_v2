@@ -45,6 +45,8 @@ public:
   boost::optional<double> getDistanceToConflictingEntity(
     const std::vector<std::int64_t> & following_lanelets) const;
   boost::optional<double> getDistanceToConflictingEntity(
+    const traffic_simulator::math::CatmullRomSpline & spline) const;
+  boost::optional<double> getDistanceToConflictingEntity(
     const std::vector<std::int64_t> & route_lanelets,
     const traffic_simulator::math::CatmullRomSpline & spline);
   boost::optional<openscenario_msgs::msg::EntityStatus> getFrontEntityStatus();

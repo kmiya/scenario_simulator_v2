@@ -17,6 +17,7 @@
 #include <scenario_simulator_exception/exception.hpp>
 #include <string>
 #include <traffic_simulator/math/catmull_rom_spline.hpp>
+#include <traffic_simulator/math/transfrom.hpp>
 #include <utility>
 #include <vector>
 
@@ -285,7 +286,29 @@ boost::optional<double> CatmullRomSpline::getCollisionPointIn2D(
   const geometry_msgs::msg::Pose & pose, const openscenario_msgs::msg::BoundingBox & box,
   bool search_backward) const
 {
-  return boost::none;
+  geometry_msgs::msg::Point p0;
+  p0.x = box.center.x + 0.5 * box.dimensions.x;
+  p0.y = box.center.y + 0.5 * box.dimensions.y;
+  p0.z = box.center.z;
+  geometry_msgs::msg::Point p1;
+  p1.x = box.center.x + 0.5 * box.dimensions.x;
+  p1.y = box.center.y - 0.5 * box.dimensions.y;
+  p1.z = box.center.z;
+  geometry_msgs::msg::Point p2;
+  p2.x = box.center.x - 0.5 * box.dimensions.x;
+  p2.y = box.center.y - 0.5 * box.dimensions.y;
+  p2.z = box.center.z;
+  geometry_msgs::msg::Point p3;
+  p3.x = box.center.x - 0.5 * box.dimensions.x;
+  p3.y = box.center.y + 0.5 * box.dimensions.y;
+  p3.z = box.center.z;
+  std::vector<geometry_msgs::msg::Point> polygon;
+  polygon.emplace_back(math::transform(pose, p0));
+  polygon.emplace_back(math::transform(pose, p1));
+  polygon.emplace_back(math::transform(pose, p2));
+  polygon.emplace_back(math::transform(pose, p3));
+  polygon.emplace_back(math::transform(pose, p0));
+  return getCollisionPointIn2D(polygon, search_backward);
 }
 
 boost::optional<double> CatmullRomSpline::getCollisionPointIn2D(

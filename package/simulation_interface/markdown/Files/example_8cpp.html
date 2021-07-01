@@ -761,6 +761,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-spawn_misc_object_entity_callback" class="md-nav__link">
+    function spawn_misc_object_entity_callback
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-main" class="md-nav__link">
     function main
   </a>
@@ -870,6 +877,10 @@
 <td><strong><a href="/scenario_simulator_v2/package/simulation_interface/markdown/Files/example_8cpp#function-spawn_pedestrian_entity_callback">spawn_pedestrian_entity_callback</a></strong>(const simulation_api_schema::SpawnPedestrianEntityRequest &amp; , simulation_api_schema::SpawnPedestrianEntityResponse &amp; )</td>
 </tr>
 <tr>
+<td>void</td>
+<td><strong><a href="/scenario_simulator_v2/package/simulation_interface/markdown/Files/example_8cpp#function-spawn_misc_object_entity_callback">spawn_misc_object_entity_callback</a></strong>(const simulation_api_schema::SpawnMiscObjectEntityRequest &amp; , simulation_api_schema::SpawnMiscObjectEntityResponse &amp; )</td>
+</tr>
+<tr>
 <td>int</td>
 <td><strong><a href="/scenario_simulator_v2/package/simulation_interface/markdown/Files/example_8cpp#function-main">main</a></strong>(int argc, char * argv[])</td>
 </tr>
@@ -920,6 +931,12 @@
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">spawn_pedestrian_entity_callback</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnPedestrianEntityRequest</span> <span class="o">&amp;</span> <span class="p">,</span>
     <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnPedestrianEntityResponse</span> <span class="o">&amp;</span> 
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-spawn_misc_object_entity_callback">function spawn_misc_object_entity_callback<a class="headerlink" href="#function-spawn_misc_object_entity_callback" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">spawn_misc_object_entity_callback</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityRequest</span> <span class="o">&amp;</span> <span class="p">,</span>
+    <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityResponse</span> <span class="o">&amp;</span> 
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-main">function main<a class="headerlink" href="#function-main" title="Permanent link">#</a></h3>
@@ -994,6 +1011,12 @@
 <span class="p">{</span>
 <span class="p">}</span>
 
+<span class="kt">void</span> <span class="nf">spawn_misc_object_entity_callback</span><span class="p">(</span>
+  <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityRequest</span> <span class="o">&amp;</span><span class="p">,</span>
+  <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityResponse</span> <span class="o">&amp;</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
 <span class="kt">void</span> <span class="nf">spawn_vehicle_entity_callback</span><span class="p">(</span>
   <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnVehicleEntityRequest</span> <span class="o">&amp;</span><span class="p">,</span>
   <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnVehicleEntityResponse</span> <span class="o">&amp;</span><span class="p">)</span>
@@ -1044,9 +1067,9 @@
     <span class="n">server_</span><span class="p">(</span>
       <span class="n">simulation_interface</span><span class="o">::</span><span class="n">TransportProtocol</span><span class="o">::</span><span class="n">TCP</span><span class="p">,</span> <span class="n">simulation_interface</span><span class="o">::</span><span class="n">HostName</span><span class="o">::</span><span class="n">ANY</span><span class="p">,</span>
       <span class="n">initialize_callback</span><span class="p">,</span> <span class="n">update_frame_callback</span><span class="p">,</span> <span class="n">update_sensor_frame_callback</span><span class="p">,</span>
-      <span class="n">spawn_vehicle_entity_callback</span><span class="p">,</span> <span class="n">spawn_pedestrian_entity_callback</span><span class="p">,</span> <span class="n">despawn_entity_callback</span><span class="p">,</span>
-      <span class="n">update_entity_status_callback</span><span class="p">,</span> <span class="n">attach_lidar_sensor_callback</span><span class="p">,</span>
-      <span class="n">attach_detection_sensor_callback</span><span class="p">),</span>
+      <span class="n">spawn_vehicle_entity_callback</span><span class="p">,</span> <span class="n">spawn_pedestrian_entity_callback</span><span class="p">,</span>
+      <span class="n">spawn_misc_object_entity_callback</span><span class="p">,</span> <span class="n">despawn_entity_callback</span><span class="p">,</span> <span class="n">update_entity_status_callback</span><span class="p">,</span>
+      <span class="n">attach_lidar_sensor_callback</span><span class="p">,</span> <span class="n">attach_detection_sensor_callback</span><span class="p">),</span>
     <span class="n">client_</span><span class="p">(</span>
       <span class="n">simulation_interface</span><span class="o">::</span><span class="n">TransportProtocol</span><span class="o">::</span><span class="n">TCP</span><span class="p">,</span> <span class="n">simulation_interface</span><span class="o">::</span><span class="n">HostName</span><span class="o">::</span><span class="n">LOCLHOST</span><span class="p">,</span>
       <span class="n">simulation_interface</span><span class="o">::</span><span class="n">ports</span><span class="o">::</span><span class="n">update_entity_status</span><span class="p">),</span>
@@ -1096,7 +1119,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<p>Updated on  1 July 2021 at 00:07:59 UTC</p>
+<p>Updated on  1 July 2021 at 09:54:18 UTC</p>
                 
                   
                 

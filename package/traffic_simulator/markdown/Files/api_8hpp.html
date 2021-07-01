@@ -909,6 +909,9 @@
     <span class="n">spawn_pedestrian_entity_client_</span><span class="p">(</span>
       <span class="n">simulation_interface</span><span class="o">::</span><span class="n">protocol</span><span class="p">,</span> <span class="n">simulation_interface</span><span class="o">::</span><span class="n">HostName</span><span class="o">::</span><span class="n">LOCLHOST</span><span class="p">,</span>
       <span class="n">simulation_interface</span><span class="o">::</span><span class="n">ports</span><span class="o">::</span><span class="n">spawn_pedestrian_entity</span><span class="p">),</span>
+    <span class="n">spawn_misc_object_entity_client_</span><span class="p">(</span>
+      <span class="n">simulation_interface</span><span class="o">::</span><span class="n">protocol</span><span class="p">,</span> <span class="n">simulation_interface</span><span class="o">::</span><span class="n">HostName</span><span class="o">::</span><span class="n">LOCLHOST</span><span class="p">,</span>
+      <span class="n">simulation_interface</span><span class="o">::</span><span class="n">ports</span><span class="o">::</span><span class="n">spawn_misc_object_entity</span><span class="p">),</span>
     <span class="n">despawn_entity_client_</span><span class="p">(</span>
       <span class="n">simulation_interface</span><span class="o">::</span><span class="n">protocol</span><span class="p">,</span> <span class="n">simulation_interface</span><span class="o">::</span><span class="n">HostName</span><span class="o">::</span><span class="n">LOCLHOST</span><span class="p">,</span>
       <span class="n">simulation_interface</span><span class="o">::</span><span class="n">ports</span><span class="o">::</span><span class="n">despawn_entity</span><span class="p">),</span>
@@ -941,6 +944,10 @@
   <span class="kt">bool</span> <span class="nf">spawn</span><span class="p">(</span>
     <span class="k">const</span> <span class="kt">bool</span> <span class="n">is_ego</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span>
     <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PedestrianParameters</span> <span class="o">&amp;</span> <span class="n">params</span><span class="p">);</span>
+
+  <span class="kt">bool</span> <span class="nf">spawn</span><span class="p">(</span>
+    <span class="k">const</span> <span class="kt">bool</span> <span class="n">is_ego</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">MiscObjectParameters</span> <span class="o">&amp;</span> <span class="n">params</span><span class="p">);</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Parameters</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
   <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">spawn</span><span class="p">(</span>
@@ -1074,6 +1081,10 @@
     <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnPedestrianEntityResponse</span><span class="o">&gt;</span>
     <span class="n">spawn_pedestrian_entity_client_</span><span class="p">;</span>
   <span class="n">zeromq</span><span class="o">::</span><span class="n">Client</span><span class="o">&lt;</span>
+    <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityRequest</span><span class="p">,</span>
+    <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityResponse</span><span class="o">&gt;</span>
+    <span class="n">spawn_misc_object_entity_client_</span><span class="p">;</span>
+  <span class="n">zeromq</span><span class="o">::</span><span class="n">Client</span><span class="o">&lt;</span>
     <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">DespawnEntityRequest</span><span class="p">,</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">DespawnEntityResponse</span><span class="o">&gt;</span>
     <span class="n">despawn_entity_client_</span><span class="p">;</span>
   <span class="n">zeromq</span><span class="o">::</span><span class="n">Client</span><span class="o">&lt;</span>
@@ -1094,7 +1105,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__API__API_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  1 July 2021 at 00:07:58 UTC</p>
+<p>Updated on  1 July 2021 at 09:54:17 UTC</p>
                 
                   
                 

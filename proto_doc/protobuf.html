@@ -897,6 +897,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#miscobjectparameters" class="md-nav__link">
+    MiscObjectParameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pedestrianparameters" class="md-nav__link">
     PedestrianParameters
   </a>
@@ -1044,6 +1051,20 @@
           <li class="md-nav__item">
   <a href="#result" class="md-nav__link">
     Result
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spawnmiscobjectentityrequest" class="md-nav__link">
+    SpawnMiscObjectEntityRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spawnmiscobjectentityresponse" class="md-nav__link">
+    SpawnMiscObjectEntityResponse
   </a>
   
 </li>
@@ -1223,6 +1244,7 @@
 <li><a href="#openscenario_msgs.BoundingBox">BoundingBox</a></li>
 <li><a href="#openscenario_msgs.EntityStatus">EntityStatus</a></li>
 <li><a href="#openscenario_msgs.LaneletPose">LaneletPose</a></li>
+<li><a href="#openscenario_msgs.MiscObjectParameters">MiscObjectParameters</a></li>
 <li><a href="#openscenario_msgs.PedestrianParameters">PedestrianParameters</a></li>
 <li><a href="#openscenario_msgs.Performance">Performance</a></li>
 <li><a href="#openscenario_msgs.Property">Property</a></li>
@@ -1255,6 +1277,8 @@
 <li><a href="#simulation_api_schema.InitializeResponse">InitializeResponse</a></li>
 <li><a href="#simulation_api_schema.LidarConfiguration">LidarConfiguration</a></li>
 <li><a href="#simulation_api_schema.Result">Result</a></li>
+<li><a href="#simulation_api_schema.SpawnMiscObjectEntityRequest">SpawnMiscObjectEntityRequest</a></li>
+<li><a href="#simulation_api_schema.SpawnMiscObjectEntityResponse">SpawnMiscObjectEntityResponse</a></li>
 <li><a href="#simulation_api_schema.SpawnPedestrianEntityRequest">SpawnPedestrianEntityRequest</a></li>
 <li><a href="#simulation_api_schema.SpawnPedestrianEntityResponse">SpawnPedestrianEntityResponse</a></li>
 <li><a href="#simulation_api_schema.SpawnVehicleEntityRequest">SpawnVehicleEntityRequest</a></li>
@@ -1913,6 +1937,38 @@ ROS2.</p>
 </tr>
 </tbody>
 </table>
+<p><a name="openscenario_msgs.MiscObjectParameters"></a></p>
+<h3 id="miscobjectparameters">MiscObjectParameters<a class="headerlink" href="#miscobjectparameters" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Name of the pedestrian entity.</td>
+</tr>
+<tr>
+<td>misc_object_category</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Category of pedestrian entity.</td>
+</tr>
+<tr>
+<td>bounding_box</td>
+<td><a href="#openscenario_msgs.BoundingBox">BoundingBox</a></td>
+<td></td>
+<td>Bounding box of the pedestrian entity.</td>
+</tr>
+</tbody>
+</table>
 <p><a name="openscenario_msgs.PedestrianParameters"></a></p>
 <h3 id="pedestrianparameters">PedestrianParameters<a class="headerlink" href="#pedestrianparameters" title="Permanent link">#</a></h3>
 <p>Protobuf definition of openscenario_msgs/msg/PedestrianParameters type in ROS2.</p>
@@ -2080,6 +2136,11 @@ ROS2.</p>
 <td>PEDESTRIAN</td>
 <td>2</td>
 <td>Pedestrian Entity (NPC Pedestrian)</td>
+</tr>
+<tr>
+<td>MISC_OBJECT</td>
+<td>3</td>
+<td>Misc Object Entity (Static Objects in environment like cones)</td>
 </tr>
 </tbody>
 </table>
@@ -2388,6 +2449,48 @@ ROS2.</p>
 <td><a href="#string">string</a></td>
 <td></td>
 <td>Description of why the request was failed.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="simulation_api_schema.SpawnMiscObjectEntityRequest"></a></p>
+<h3 id="spawnmiscobjectentityrequest">SpawnMiscObjectEntityRequest<a class="headerlink" href="#spawnmiscobjectentityrequest" title="Permanent link">#</a></h3>
+<p>Requests spawning misc object entity</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parameters</td>
+<td><a href="#openscenario_msgs.MiscObjectParameters">openscenario_msgs.MiscObjectParameters</a></td>
+<td></td>
+<td>Parameters of misc object entity.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="simulation_api_schema.SpawnMiscObjectEntityResponse"></a></p>
+<h3 id="spawnmiscobjectentityresponse">SpawnMiscObjectEntityResponse<a class="headerlink" href="#spawnmiscobjectentityresponse" title="Permanent link">#</a></h3>
+<p>Response of spawning misc object entity</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>result</td>
+<td><a href="#simulation_api_schema.Result">Result</a></td>
+<td></td>
+<td>Result of <a href="#SpawnPedestrianEntityResponse">SpawnPedestrianEntityResponse</a></td>
 </tr>
 </tbody>
 </table>

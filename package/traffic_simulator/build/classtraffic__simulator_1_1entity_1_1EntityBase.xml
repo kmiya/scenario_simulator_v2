@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classtraffic__simulator_1_1entity_1_1EntityBase" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>traffic_simulator::entity::EntityBase</compoundname>
+    <derivedcompoundref refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity" prot="public" virt="non-virtual">traffic_simulator::entity::MiscObjectEntity</derivedcompoundref>
     <derivedcompoundref refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity" prot="public" virt="non-virtual">traffic_simulator::entity::PedestrianEntity</derivedcompoundref>
     <derivedcompoundref refid="classtraffic__simulator_1_1entity_1_1VehicleEntity" prot="public" virt="non-virtual">traffic_simulator::entity::VehicleEntity</derivedcompoundref>
       <sectiondef kind="public-attrib">
@@ -295,6 +296,7 @@
         <definition>virtual auto traffic_simulator::entity::EntityBase::getBoundingBox</definition>
         <argsstring>() const -&gt; const openscenario_msgs::msg::BoundingBox=0</argsstring>
         <name>getBoundingBox</name>
+        <reimplementedby refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1abd47091c3636ac62e4ffea756fb5d575">getBoundingBox</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a11aa789219bf39127244ae02d8faa649">getBoundingBox</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a3addacfa59627b573a0cfbcdab0f01e3">getBoundingBox</reimplementedby>
         <briefdescription>
@@ -310,6 +312,7 @@
         <definition>virtual auto traffic_simulator::entity::EntityBase::getCurrentAction</definition>
         <argsstring>() const -&gt; const std::string=0</argsstring>
         <name>getCurrentAction</name>
+        <reimplementedby refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1acc29fd3a5b1d63ac40d7e588d0449a66">getCurrentAction</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1aac894c52324b81c539985f2bd08de8f8">getCurrentAction</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a9e9efde07636007f1f6a66f96ce393b4">getCurrentAction</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a91b9fb6c08025ff4d8687be9a7313535">getCurrentAction</reimplementedby>
@@ -339,6 +342,7 @@
         <definition>virtual auto traffic_simulator::entity::EntityBase::getEntityTypename</definition>
         <argsstring>() const -&gt; const std::string &amp;=0</argsstring>
         <name>getEntityTypename</name>
+        <reimplementedby refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1aab19254f8903341604715a8e158144bd">getEntityTypename</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a53a6d180f19d0357ca3294aef39c50ab">getEntityTypename</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a0d6eead59fa3fbd130ba1c2abf3c1d49">getEntityTypename</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a7536f7a8935537111b70bd5c48367e45">getEntityTypename</reimplementedby>
@@ -368,6 +372,7 @@
         <definition>virtual auto traffic_simulator::entity::EntityBase::getObstacle</definition>
         <argsstring>() -&gt; boost::optional&lt; openscenario_msgs::msg::Obstacle &gt;=0</argsstring>
         <name>getObstacle</name>
+        <reimplementedby refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1a61032e27bbb74466b17c210d49d232d6">getObstacle</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a24452bad4a8d3a50a45d88862a7a042e">getObstacle</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a3b8d356d13f44ac325c35e15ba4656a2">getObstacle</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a9591a4efefbdd2340b02ea45ca89480f">getObstacle</reimplementedby>
@@ -384,6 +389,7 @@
         <definition>virtual auto traffic_simulator::entity::EntityBase::getRouteLanelets</definition>
         <argsstring>(const double horizon=100) -&gt; std::vector&lt; std::int64_t &gt;=0</argsstring>
         <name>getRouteLanelets</name>
+        <reimplementedby refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1ab921368cbcf6fa692bcd37f2cc170f30">getRouteLanelets</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a7013266a9204695fac4563a64db5e703">getRouteLanelets</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1abdaf8acad597a5f36783ec0172a1d0b4">getRouteLanelets</reimplementedby>
         <param>
@@ -456,6 +462,7 @@
         <definition>virtual auto traffic_simulator::entity::EntityBase::getWaypoints</definition>
         <argsstring>() -&gt; const openscenario_msgs::msg::WaypointsArray=0</argsstring>
         <name>getWaypoints</name>
+        <reimplementedby refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1a5cdcf5c19c8143dd5813cb1ae650c0e5">getWaypoints</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a0f0171b8b3d260de7a82398f1d1b9f07">getWaypoints</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a62bea62bbcea04fd2fd28fadb7e9cacd">getWaypoints</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1ad3fed5c3a323b1c7d9713a60f24c8302">getWaypoints</reimplementedby>
@@ -560,6 +567,7 @@
         <definition>virtual void traffic_simulator::entity::EntityBase::setTargetSpeed</definition>
         <argsstring>(double target_speed, bool continuous)=0</argsstring>
         <name>setTargetSpeed</name>
+        <reimplementedby refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1a6634b41cc7f72c45e527d0b13c913dbe">setTargetSpeed</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1af5685211b4c3a9edcc7870facf493478">setTargetSpeed</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a757d8e5d2d63e237033a6edc86a3cb66">setTargetSpeed</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1adbb86441cd161fccf0c4090da4e5bd2c">setTargetSpeed</reimplementedby>
@@ -637,6 +645,7 @@
         <definition>void traffic_simulator::entity::EntityBase::onUpdate</definition>
         <argsstring>(double current_time, double step_time)</argsstring>
         <name>onUpdate</name>
+        <reimplementedby refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1a60e5f653b833166e87116eb8c5411429">onUpdate</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a2d74c3d8d4d701764da59811697471fa">onUpdate</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a244d20e0620376ce845f2b317c984945">onUpdate</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a5d229203b6a37b9baa17a558231a6565">onUpdate</reimplementedby>
@@ -677,6 +686,7 @@
         <name>requestAcquirePosition</name>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a2ea589f878fb800c1324ec05d2dc924a">requestAcquirePosition</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1afa792a184e28a81af3ec642988489212">requestAcquirePosition</reimplementedby>
+        <reimplementedby refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1ad65a496f1f959905ba0b7d56f3dd5c07">requestAcquirePosition</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1a0279d0aa4935a9908258a703b75b558b">requestAcquirePosition</reimplementedby>
         <param>
           <type>const openscenario_msgs::msg::LaneletPose &amp;</type>
@@ -695,6 +705,7 @@
         <definition>virtual void traffic_simulator::entity::EntityBase::requestAssignRoute</definition>
         <argsstring>(const std::vector&lt; openscenario_msgs::msg::LaneletPose &gt; &amp;waypoints)=0</argsstring>
         <name>requestAssignRoute</name>
+        <reimplementedby refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1a730d146c35452714079b1aff418cc77c">requestAssignRoute</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a3cf7caa9730daf6ff2bdc8115831de8f">requestAssignRoute</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a26766b08a3ab925403ffe0257c1d1250">requestAssignRoute</reimplementedby>
         <reimplementedby refid="classtraffic__simulator_1_1entity_1_1EgoEntity_1aadefa6e29e32a57eb4fb0f2847262ee3">requestAssignRoute</reimplementedby>
@@ -839,21 +850,27 @@
         <label>traffic_simulator::entity::EntityBase</label>
         <link refid="classtraffic__simulator_1_1entity_1_1EntityBase"/>
       </node>
-      <node id="49">
+      <node id="50">
         <label>traffic_simulator::entity::PedestrianEntity</label>
         <link refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity"/>
         <childnode refid="48" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="51">
+      <node id="52">
         <label>traffic_simulator::entity::EgoEntity</label>
         <link refid="classtraffic__simulator_1_1entity_1_1EgoEntity"/>
-        <childnode refid="50" relation="public-inheritance">
+        <childnode refid="51" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="50">
+      <node id="51">
         <label>traffic_simulator::entity::VehicleEntity</label>
         <link refid="classtraffic__simulator_1_1entity_1_1VehicleEntity"/>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>traffic_simulator::entity::MiscObjectEntity</label>
+        <link refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity"/>
         <childnode refid="48" relation="public-inheritance">
         </childnode>
       </node>

@@ -885,6 +885,7 @@
     <span class="n">api_</span><span class="p">.</span><span class="n">setEntityStatus</span><span class="p">(</span>
       <span class="s">&quot;npc3&quot;</span><span class="p">,</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">helper</span><span class="o">::</span><span class="n">constructLaneletPose</span><span class="p">(</span><span class="mi">34468</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
       <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">helper</span><span class="o">::</span><span class="n">constructActionStatus</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+    <span class="n">spawnObstacle</span><span class="p">();</span>
     <span class="cm">/*</span>
 <span class="cm">    api_.addMetric&lt;metrics::TraveledDistanceMetric&gt;(&quot;ego_traveled_distance&quot;, &quot;ego&quot;);</span>
 <span class="cm">    api_.addMetric&lt;metrics::MomentaryStopMetric&gt;(</span>
@@ -911,10 +912,31 @@
   <span class="p">}</span>
 
 <span class="k">private</span><span class="o">:</span>
+  <span class="kt">void</span> <span class="n">spawnObstacle</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">MiscObjectParameters</span> <span class="n">misc_object_param</span><span class="p">;</span>
+    <span class="n">misc_object_param</span><span class="p">.</span><span class="n">bounding_box</span><span class="p">.</span><span class="n">dimensions</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+    <span class="n">misc_object_param</span><span class="p">.</span><span class="n">bounding_box</span><span class="p">.</span><span class="n">dimensions</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+    <span class="n">misc_object_param</span><span class="p">.</span><span class="n">bounding_box</span><span class="p">.</span><span class="n">dimensions</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+    <span class="n">misc_object_param</span><span class="p">.</span><span class="n">misc_object_category</span> <span class="o">=</span> <span class="s">&quot;obstacle&quot;</span><span class="p">;</span>
+    <span class="n">misc_object_param</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;obstacle&quot;</span><span class="p">;</span>
+    <span class="n">api_</span><span class="p">.</span><span class="n">spawn</span><span class="p">(</span><span class="nb">false</span><span class="p">,</span> <span class="s">&quot;obstacle&quot;</span><span class="p">,</span> <span class="n">misc_object_param</span><span class="p">);</span>
+    <span class="n">api_</span><span class="p">.</span><span class="n">setEntityStatus</span><span class="p">(</span>
+      <span class="s">&quot;obstacle&quot;</span><span class="p">,</span> <span class="s">&quot;ego&quot;</span><span class="p">,</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">helper</span><span class="o">::</span><span class="n">constructPose</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">-1.57</span><span class="p">),</span>
+      <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">helper</span><span class="o">::</span><span class="n">constructActionStatus</span><span class="p">());</span>
+  <span class="p">}</span>
   <span class="kt">void</span> <span class="n">update</span><span class="p">()</span>
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">api_</span><span class="p">.</span><span class="n">getCurrentTime</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="n">api_</span><span class="p">.</span><span class="n">entityExists</span><span class="p">(</span><span class="s">&quot;tom&quot;</span><span class="p">))</span> <span class="p">{</span>
       <span class="n">api_</span><span class="p">.</span><span class="n">despawn</span><span class="p">(</span><span class="s">&quot;tom&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">api_</span><span class="p">.</span><span class="n">getCurrentTime</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="n">api_</span><span class="p">.</span><span class="n">entityExists</span><span class="p">(</span><span class="s">&quot;obstacle&quot;</span><span class="p">))</span> <span class="p">{</span>
+      <span class="n">api_</span><span class="p">.</span><span class="n">setEntityStatus</span><span class="p">(</span>
+        <span class="s">&quot;obstacle&quot;</span><span class="p">,</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">helper</span><span class="o">::</span><span class="n">constructLaneletPose</span><span class="p">(</span><span class="mi">120545</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">helper</span><span class="o">::</span><span class="n">constructActionStatus</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">api_</span><span class="p">.</span><span class="n">getCurrentTime</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">6</span> <span class="o">&amp;&amp;</span> <span class="n">api_</span><span class="p">.</span><span class="n">entityExists</span><span class="p">(</span><span class="s">&quot;obstacle&quot;</span><span class="p">))</span> <span class="p">{</span>
+      <span class="n">api_</span><span class="p">.</span><span class="n">despawn</span><span class="p">(</span><span class="s">&quot;obstacle&quot;</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="cm">/*</span>
 <span class="cm">    if (api_.getLinearJerk(&quot;ego&quot;)) {</span>
@@ -973,9 +995,7 @@
 <span class="s">           &lt;FrontAxle maxSteering=&#39;0.5&#39; wheelDiameter=&#39;0.6&#39; trackWidth=&#39;1.8&#39; positionX=&#39;3.1&#39; positionZ=&#39;0.3&#39;/&gt;</span>
 <span class="s">           &lt;RearAxle maxSteering=&#39;0.0&#39; wheelDiameter=&#39;0.6&#39; trackWidth=&#39;1.8&#39; positionX=&#39;0.0&#39; positionZ=&#39;0.3&#39;/&gt;</span>
 <span class="s">         &lt;/Axles&gt;</span>
-<span class="s">         &lt;Properties&gt;</span>
-<span class="s">           &lt;Property name=&#39;type&#39; value=&#39;ego_vehicle&#39;/&gt;</span>
-<span class="s">         &lt;/Properties&gt;</span>
+<span class="s">         &lt;Properties/&gt;</span>
 <span class="s">       &lt;/Vehicle&gt;</span><span class="dl">)</span><span class="s">&quot;</span><span class="p">;</span>
 
   <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">pedestrian_xml</span> <span class="o">=</span>
@@ -999,7 +1019,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<p>Updated on  1 July 2021 at 00:07:58 UTC</p>
+<p>Updated on  1 July 2021 at 09:54:17 UTC</p>
                 
                   
                 

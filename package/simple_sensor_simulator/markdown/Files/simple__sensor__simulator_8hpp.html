@@ -977,6 +977,9 @@
   <span class="kt">void</span> <span class="nf">spawnPedestrianEntity</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnPedestrianEntityRequest</span> <span class="o">&amp;</span> <span class="n">req</span><span class="p">,</span>
     <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnPedestrianEntityResponse</span> <span class="o">&amp;</span> <span class="n">res</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">spawnMiscObjectEntity</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityRequest</span> <span class="o">&amp;</span><span class="p">,</span>
+    <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityResponse</span> <span class="o">&amp;</span><span class="p">);</span>
   <span class="kt">void</span> <span class="nf">despawnEntity</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">DespawnEntityRequest</span> <span class="o">&amp;</span> <span class="n">req</span><span class="p">,</span>
     <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">DespawnEntityResponse</span> <span class="o">&amp;</span> <span class="n">res</span><span class="p">);</span>
@@ -992,6 +995,7 @@
   <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">VehicleParameters</span><span class="o">&gt;</span> <span class="n">ego_vehicles_</span><span class="p">;</span>
   <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">VehicleParameters</span><span class="o">&gt;</span> <span class="n">vehicles_</span><span class="p">;</span>
   <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">PedestrianParameters</span><span class="o">&gt;</span> <span class="n">pedestrians_</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">MiscObjectParameters</span><span class="o">&gt;</span> <span class="n">misc_objects_</span><span class="p">;</span>
   <span class="kt">double</span> <span class="n">realtime_factor_</span><span class="p">;</span>
   <span class="kt">double</span> <span class="n">step_time_</span><span class="p">;</span>
   <span class="kt">double</span> <span class="n">current_time_</span><span class="p">;</span>
@@ -1005,7 +1009,7 @@
 <span class="cp">#endif  </span><span class="c1">// SIMPLE_SENSOR_SIMULATOR__SIMPLE_SENSOR_SIMULATOR_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  1 July 2021 at 00:07:58 UTC</p>
+<p>Updated on  1 July 2021 at 09:54:17 UTC</p>
                 
                   
                 

@@ -928,6 +928,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-toproto_23" class="md-nav__link">
+    function toProto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-tomsg" class="md-nav__link">
     function toMsg
   </a>
@@ -1096,6 +1103,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-tomsg_24" class="md-nav__link">
+    function toMsg
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-getendpoint" class="md-nav__link">
     function getEndPoint
   </a>
@@ -1250,6 +1264,10 @@
 </tr>
 <tr>
 <td>void</td>
+<td><strong><a href="/scenario_simulator_v2/package/simulation_interface/markdown/Namespaces/namespacesimulation__interface#function-toproto">toProto</a></strong>(const openscenario_msgs::msg::MiscObjectParameters &amp; p, openscenario_msgs::MiscObjectParameters &amp; proto)</td>
+</tr>
+<tr>
+<td>void</td>
 <td><strong><a href="/scenario_simulator_v2/package/simulation_interface/markdown/Namespaces/namespacesimulation__interface#function-toproto">toProto</a></strong>(const openscenario_msgs::msg::ActionStatus &amp; s, openscenario_msgs::ActionStatus &amp; proto)</td>
 </tr>
 <tr>
@@ -1339,6 +1357,10 @@
 <tr>
 <td>void</td>
 <td><strong><a href="/scenario_simulator_v2/package/simulation_interface/markdown/Namespaces/namespacesimulation__interface#function-tomsg">toMsg</a></strong>(const openscenario_msgs::PedestrianParameters &amp; proto, openscenario_msgs::msg::PedestrianParameters &amp; p)</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong><a href="/scenario_simulator_v2/package/simulation_interface/markdown/Namespaces/namespacesimulation__interface#function-tomsg">toMsg</a></strong>(const openscenario_msgs::MiscObjectParameters &amp; proto, openscenario_msgs::msg::MiscObjectParameters &amp; p)</td>
 </tr>
 <tr>
 <td>void</td>
@@ -1537,65 +1559,71 @@
 </code></pre></div>
 <h3 id="function-toproto_12">function toProto<a class="headerlink" href="#function-toproto_12" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toProto</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">MiscObjectParameters</span> <span class="o">&amp;</span> <span class="n">p</span><span class="p">,</span>
+    <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">MiscObjectParameters</span> <span class="o">&amp;</span> <span class="n">proto</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-toproto_13">function toProto<a class="headerlink" href="#function-toproto_13" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toProto</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">ActionStatus</span> <span class="o">&amp;</span> <span class="n">s</span><span class="p">,</span>
     <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">ActionStatus</span> <span class="o">&amp;</span> <span class="n">proto</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-toproto_13">function toProto<a class="headerlink" href="#function-toproto_13" title="Permanent link">#</a></h3>
+<h3 id="function-toproto_14">function toProto<a class="headerlink" href="#function-toproto_14" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toProto</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="o">&amp;</span> <span class="n">pose</span><span class="p">,</span>
     <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="o">&amp;</span> <span class="n">proto</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-toproto_14">function toProto<a class="headerlink" href="#function-toproto_14" title="Permanent link">#</a></h3>
+<h3 id="function-toproto_15">function toProto<a class="headerlink" href="#function-toproto_15" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toProto</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityType</span> <span class="o">&amp;</span> <span class="n">type</span><span class="p">,</span>
     <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">EntityType</span> <span class="o">&amp;</span> <span class="n">proto</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-toproto_15">function toProto<a class="headerlink" href="#function-toproto_15" title="Permanent link">#</a></h3>
+<h3 id="function-toproto_16">function toProto<a class="headerlink" href="#function-toproto_16" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toProto</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&amp;</span> <span class="n">status</span><span class="p">,</span>
     <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&amp;</span> <span class="n">proto</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-toproto_16">function toProto<a class="headerlink" href="#function-toproto_16" title="Permanent link">#</a></h3>
+<h3 id="function-toproto_17">function toProto<a class="headerlink" href="#function-toproto_17" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toProto</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">builtin_interfaces</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Duration</span> <span class="o">&amp;</span> <span class="n">duration</span><span class="p">,</span>
     <span class="n">builtin_interfaces</span><span class="o">::</span><span class="n">Duration</span> <span class="o">&amp;</span> <span class="n">proto</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-toproto_17">function toProto<a class="headerlink" href="#function-toproto_17" title="Permanent link">#</a></h3>
+<h3 id="function-toproto_18">function toProto<a class="headerlink" href="#function-toproto_18" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toProto</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">builtin_interfaces</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Time</span> <span class="o">&amp;</span> <span class="n">time</span><span class="p">,</span>
     <span class="n">builtin_interfaces</span><span class="o">::</span><span class="n">Time</span> <span class="o">&amp;</span> <span class="n">proto</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-toproto_18">function toProto<a class="headerlink" href="#function-toproto_18" title="Permanent link">#</a></h3>
+<h3 id="function-toproto_19">function toProto<a class="headerlink" href="#function-toproto_19" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toProto</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">rosgraph_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Clock</span> <span class="o">&amp;</span> <span class="n">time</span><span class="p">,</span>
     <span class="n">rosgraph_msgs</span><span class="o">::</span><span class="n">Clock</span> <span class="o">&amp;</span> <span class="n">proto</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-toproto_19">function toProto<a class="headerlink" href="#function-toproto_19" title="Permanent link">#</a></h3>
+<h3 id="function-toproto_20">function toProto<a class="headerlink" href="#function-toproto_20" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toProto</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">std_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Header</span> <span class="o">&amp;</span> <span class="n">header</span><span class="p">,</span>
     <span class="n">std_msgs</span><span class="o">::</span><span class="n">Header</span> <span class="o">&amp;</span> <span class="n">proto</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-toproto_20">function toProto<a class="headerlink" href="#function-toproto_20" title="Permanent link">#</a></h3>
+<h3 id="function-toproto_21">function toProto<a class="headerlink" href="#function-toproto_21" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toProto</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">autoware_control_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">ControlCommand</span> <span class="o">&amp;</span> <span class="n">control_command</span><span class="p">,</span>
     <span class="n">autoware_control_msgs</span><span class="o">::</span><span class="n">ControlCommand</span> <span class="o">&amp;</span> <span class="n">proto</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-toproto_21">function toProto<a class="headerlink" href="#function-toproto_21" title="Permanent link">#</a></h3>
+<h3 id="function-toproto_22">function toProto<a class="headerlink" href="#function-toproto_22" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toProto</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span> <span class="o">&amp;</span> <span class="n">shift</span><span class="p">,</span>
     <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">Shift</span> <span class="o">&amp;</span> <span class="n">proto</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-toproto_22">function toProto<a class="headerlink" href="#function-toproto_22" title="Permanent link">#</a></h3>
+<h3 id="function-toproto_23">function toProto<a class="headerlink" href="#function-toproto_23" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toProto</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleCommand</span> <span class="o">&amp;</span> <span class="n">vehicle_command</span><span class="p">,</span>
     <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">VehicleCommand</span> <span class="o">&amp;</span> <span class="n">proto</span>
@@ -1675,71 +1703,77 @@
 </code></pre></div>
 <h3 id="function-tomsg_12">function toMsg<a class="headerlink" href="#function-tomsg_12" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toMsg</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">MiscObjectParameters</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span>
+    <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">MiscObjectParameters</span> <span class="o">&amp;</span> <span class="n">p</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-tomsg_13">function toMsg<a class="headerlink" href="#function-tomsg_13" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toMsg</span><span class="p">(</span>
     <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">ActionStatus</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span>
     <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">ActionStatus</span> <span class="o">&amp;</span> <span class="n">s</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-tomsg_13">function toMsg<a class="headerlink" href="#function-tomsg_13" title="Permanent link">#</a></h3>
+<h3 id="function-tomsg_14">function toMsg<a class="headerlink" href="#function-tomsg_14" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toMsg</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span>
     <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span> <span class="o">&amp;</span> <span class="n">pose</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-tomsg_14">function toMsg<a class="headerlink" href="#function-tomsg_14" title="Permanent link">#</a></h3>
+<h3 id="function-tomsg_15">function toMsg<a class="headerlink" href="#function-tomsg_15" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toMsg</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">EntityType</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span>
     <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityType</span> <span class="o">&amp;</span> <span class="n">type</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-tomsg_15">function toMsg<a class="headerlink" href="#function-tomsg_15" title="Permanent link">#</a></h3>
+<h3 id="function-tomsg_16">function toMsg<a class="headerlink" href="#function-tomsg_16" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toMsg</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span>
     <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&amp;</span> <span class="n">status</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-tomsg_16">function toMsg<a class="headerlink" href="#function-tomsg_16" title="Permanent link">#</a></h3>
+<h3 id="function-tomsg_17">function toMsg<a class="headerlink" href="#function-tomsg_17" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toMsg</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">builtin_interfaces</span><span class="o">::</span><span class="n">Duration</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span>
     <span class="n">builtin_interfaces</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Duration</span> <span class="o">&amp;</span> <span class="n">duration</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-tomsg_17">function toMsg<a class="headerlink" href="#function-tomsg_17" title="Permanent link">#</a></h3>
+<h3 id="function-tomsg_18">function toMsg<a class="headerlink" href="#function-tomsg_18" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toMsg</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">builtin_interfaces</span><span class="o">::</span><span class="n">Time</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span>
     <span class="n">builtin_interfaces</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Time</span> <span class="o">&amp;</span> <span class="n">time</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-tomsg_18">function toMsg<a class="headerlink" href="#function-tomsg_18" title="Permanent link">#</a></h3>
+<h3 id="function-tomsg_19">function toMsg<a class="headerlink" href="#function-tomsg_19" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toMsg</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">rosgraph_msgs</span><span class="o">::</span><span class="n">Clock</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span>
     <span class="n">rosgraph_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Clock</span> <span class="o">&amp;</span> <span class="n">time</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-tomsg_19">function toMsg<a class="headerlink" href="#function-tomsg_19" title="Permanent link">#</a></h3>
+<h3 id="function-tomsg_20">function toMsg<a class="headerlink" href="#function-tomsg_20" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toMsg</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">std_msgs</span><span class="o">::</span><span class="n">Header</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span>
     <span class="n">std_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Header</span> <span class="o">&amp;</span> <span class="n">header</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-tomsg_20">function toMsg<a class="headerlink" href="#function-tomsg_20" title="Permanent link">#</a></h3>
+<h3 id="function-tomsg_21">function toMsg<a class="headerlink" href="#function-tomsg_21" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toMsg</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">autoware_control_msgs</span><span class="o">::</span><span class="n">ControlCommand</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span>
     <span class="n">autoware_control_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">ControlCommand</span> <span class="o">&amp;</span> <span class="n">control_command</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-tomsg_21">function toMsg<a class="headerlink" href="#function-tomsg_21" title="Permanent link">#</a></h3>
+<h3 id="function-tomsg_22">function toMsg<a class="headerlink" href="#function-tomsg_22" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toMsg</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">Shift</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span>
     <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span> <span class="o">&amp;</span> <span class="n">shift</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-tomsg_22">function toMsg<a class="headerlink" href="#function-tomsg_22" title="Permanent link">#</a></h3>
+<h3 id="function-tomsg_23">function toMsg<a class="headerlink" href="#function-tomsg_23" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toMsg</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">VehicleCommand</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span>
     <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleCommand</span> <span class="o">&amp;</span> <span class="n">vehicle_command</span>
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-tomsg_23">function toMsg<a class="headerlink" href="#function-tomsg_23" title="Permanent link">#</a></h3>
+<h3 id="function-tomsg_24">function toMsg<a class="headerlink" href="#function-tomsg_24" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">toMsg</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">ActionStatus</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span>
     <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">ActionStatus</span> <span class="o">&amp;</span> <span class="n">s</span>
@@ -1767,7 +1801,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">TransportProtocol</span> <span class="n">protocol</span> <span class="o">=</span> <span class="n">TransportProtocol</span><span class="o">::</span><span class="n">TCP</span><span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>Updated on  1 July 2021 at 00:07:59 UTC</p>
+<p>Updated on  1 July 2021 at 09:54:18 UTC</p>
                 
                   
                 

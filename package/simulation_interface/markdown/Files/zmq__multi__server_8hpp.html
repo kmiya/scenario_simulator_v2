@@ -827,6 +827,10 @@
       <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnPedestrianEntityResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
       <span class="n">spawn_pedestrian_entity_func</span><span class="p">,</span>
     <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
+      <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityRequest</span> <span class="o">&amp;</span><span class="p">,</span>
+      <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
+      <span class="n">spawn_misc_object_entity_func</span><span class="p">,</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
       <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">DespawnEntityRequest</span> <span class="o">&amp;</span><span class="p">,</span>
       <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">DespawnEntityResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
       <span class="n">despawn_entity_func</span><span class="p">,</span>
@@ -874,6 +878,11 @@
     <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnPedestrianEntityRequest</span> <span class="o">&amp;</span><span class="p">,</span>
     <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnPedestrianEntityResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
     <span class="n">spawn_pedestrian_entity_func_</span><span class="p">;</span>
+  <span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span> <span class="n">spawn_misc_object_entity_sock_</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityRequest</span> <span class="o">&amp;</span><span class="p">,</span>
+    <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
+    <span class="n">spawn_misc_object_entity_func_</span><span class="p">;</span>
   <span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span> <span class="n">despawn_entity_sock_</span><span class="p">;</span>
   <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">DespawnEntityRequest</span> <span class="o">&amp;</span><span class="p">,</span>
@@ -900,7 +909,7 @@
 <span class="cp">#endif  </span><span class="c1">// SIMULATION_INTERFACE__ZMQ_MULTI_SERVER_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  1 July 2021 at 00:07:59 UTC</p>
+<p>Updated on  1 July 2021 at 09:54:18 UTC</p>
                 
                   
                 

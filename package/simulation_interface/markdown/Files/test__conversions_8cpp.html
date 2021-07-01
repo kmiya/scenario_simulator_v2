@@ -851,6 +851,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#function-test_17" class="md-nav__link">
+    function TEST
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-test_18" class="md-nav__link">
+    function TEST
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -963,6 +977,10 @@
 </tr>
 <tr>
 <td></td>
+<td><strong><a href="/scenario_simulator_v2/package/simulation_interface/markdown/Files/test__conversions_8cpp#function-test">TEST</a></strong>(Conversion , ConvertMiscObjectParametrs )</td>
+</tr>
+<tr>
+<td></td>
 <td><strong><a href="/scenario_simulator_v2/package/simulation_interface/markdown/Files/test__conversions_8cpp#function-test">TEST</a></strong>(Conversion , ConvertActionStatus )</td>
 </tr>
 <tr>
@@ -988,6 +1006,10 @@
 <tr>
 <td></td>
 <td><strong><a href="/scenario_simulator_v2/package/simulation_interface/markdown/Files/test__conversions_8cpp#function-test">TEST</a></strong>(Conversion , VehicleCommand )</td>
+</tr>
+<tr>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/simulation_interface/markdown/Files/test__conversions_8cpp#function-test">TEST</a></strong>(Conversion , EntityType )</td>
 </tr>
 </tbody>
 </table>
@@ -1080,43 +1102,55 @@
 <h3 id="function-test_10">function TEST<a class="headerlink" href="#function-test_10" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">TEST</span><span class="p">(</span>
     <span class="n">Conversion</span> <span class="p">,</span>
-    <span class="n">ConvertActionStatus</span> 
+    <span class="n">ConvertMiscObjectParametrs</span> 
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-test_11">function TEST<a class="headerlink" href="#function-test_11" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">TEST</span><span class="p">(</span>
     <span class="n">Conversion</span> <span class="p">,</span>
-    <span class="n">Time</span> 
+    <span class="n">ConvertActionStatus</span> 
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-test_12">function TEST<a class="headerlink" href="#function-test_12" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">TEST</span><span class="p">(</span>
     <span class="n">Conversion</span> <span class="p">,</span>
-    <span class="n">Duration</span> 
+    <span class="n">Time</span> 
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-test_13">function TEST<a class="headerlink" href="#function-test_13" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">TEST</span><span class="p">(</span>
     <span class="n">Conversion</span> <span class="p">,</span>
-    <span class="n">Header</span> 
+    <span class="n">Duration</span> 
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-test_14">function TEST<a class="headerlink" href="#function-test_14" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">TEST</span><span class="p">(</span>
     <span class="n">Conversion</span> <span class="p">,</span>
-    <span class="n">ControlCommand</span> 
+    <span class="n">Header</span> 
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-test_15">function TEST<a class="headerlink" href="#function-test_15" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">TEST</span><span class="p">(</span>
     <span class="n">Conversion</span> <span class="p">,</span>
-    <span class="n">Shift</span> 
+    <span class="n">ControlCommand</span> 
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-test_16">function TEST<a class="headerlink" href="#function-test_16" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">TEST</span><span class="p">(</span>
     <span class="n">Conversion</span> <span class="p">,</span>
+    <span class="n">Shift</span> 
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-test_17">function TEST<a class="headerlink" href="#function-test_17" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">TEST</span><span class="p">(</span>
+    <span class="n">Conversion</span> <span class="p">,</span>
     <span class="n">VehicleCommand</span> 
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-test_18">function TEST<a class="headerlink" href="#function-test_18" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">TEST</span><span class="p">(</span>
+    <span class="n">Conversion</span> <span class="p">,</span>
+    <span class="n">EntityType</span> 
 <span class="p">)</span>
 </code></pre></div>
 <h2 id="macro-documentation">Macro Documentation<a class="headerlink" href="#macro-documentation" title="Permanent link">#</a></h2>
@@ -1426,6 +1460,18 @@
   <span class="c1">// EXPECT_EQ(proto.property().is_ego(), p.property.is_ego);</span>
 <span class="p">}</span>
 
+<span class="n">TEST</span><span class="p">(</span><span class="n">Conversion</span><span class="p">,</span> <span class="n">ConvertMiscObjectParametrs</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">MiscObjectParameters</span> <span class="n">proto</span><span class="p">;</span>
+  <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">MiscObjectParameters</span> <span class="n">p</span><span class="p">;</span>
+  <span class="n">p</span><span class="p">.</span><span class="n">misc_object_category</span> <span class="o">=</span> <span class="s">&quot;obstacle&quot;</span><span class="p">;</span>
+  <span class="n">EXPECT_NO_THROW</span><span class="p">(</span><span class="n">simulation_interface</span><span class="o">::</span><span class="n">toProto</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">proto</span><span class="p">));</span>
+  <span class="n">EXPECT_STREQ</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">misc_object_category</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">proto</span><span class="p">.</span><span class="n">misc_object_category</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+  <span class="n">p</span><span class="p">.</span><span class="n">misc_object_category</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+  <span class="n">EXPECT_NO_THROW</span><span class="p">(</span><span class="n">simulation_interface</span><span class="o">::</span><span class="n">toMsg</span><span class="p">(</span><span class="n">proto</span><span class="p">,</span> <span class="n">p</span><span class="p">));</span>
+  <span class="n">EXPECT_STREQ</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">misc_object_category</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">proto</span><span class="p">.</span><span class="n">misc_object_category</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+<span class="p">}</span>
+
 <span class="n">TEST</span><span class="p">(</span><span class="n">Conversion</span><span class="p">,</span> <span class="n">ConvertActionStatus</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">ActionStatus</span> <span class="n">proto</span><span class="p">;</span>
@@ -1577,6 +1623,18 @@
   <span class="n">EXPECT_EQ</span><span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">emergency</span><span class="p">,</span> <span class="n">proto</span><span class="p">.</span><span class="n">emergency</span><span class="p">());</span>
 <span class="p">}</span>
 
+<span class="n">TEST</span><span class="p">(</span><span class="n">Conversion</span><span class="p">,</span> <span class="n">EntityType</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">EntityType</span> <span class="n">proto</span><span class="p">;</span>
+  <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityType</span> <span class="n">msg</span><span class="p">;</span>
+  <span class="n">msg</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">msg</span><span class="p">.</span><span class="n">VEHICLE</span><span class="p">;</span>
+  <span class="n">EXPECT_NO_THROW</span><span class="p">(</span><span class="n">simulation_interface</span><span class="o">::</span><span class="n">toProto</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">proto</span><span class="p">));</span>
+  <span class="n">EXPECT_EQ</span><span class="p">(</span><span class="n">proto</span><span class="p">,</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">EntityType</span><span class="o">::</span><span class="n">VEHICLE</span><span class="p">);</span>
+  <span class="n">msg</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">msg</span><span class="p">.</span><span class="n">EGO</span><span class="p">;</span>
+  <span class="n">EXPECT_NO_THROW</span><span class="p">(</span><span class="n">simulation_interface</span><span class="o">::</span><span class="n">toMsg</span><span class="p">(</span><span class="n">proto</span><span class="p">,</span> <span class="n">msg</span><span class="p">));</span>
+  <span class="n">EXPECT_EQ</span><span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">type</span><span class="p">,</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityType</span><span class="o">::</span><span class="n">VEHICLE</span><span class="p">);</span>
+<span class="p">}</span>
+
 <span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="n">testing</span><span class="o">::</span><span class="n">InitGoogleTest</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
@@ -1584,7 +1642,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<p>Updated on  1 July 2021 at 00:07:59 UTC</p>
+<p>Updated on  1 July 2021 at 09:54:18 UTC</p>
                 
                   
                 

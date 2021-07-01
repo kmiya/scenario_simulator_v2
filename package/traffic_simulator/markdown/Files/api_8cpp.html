@@ -856,6 +856,28 @@
   <span class="k">return</span> <span class="n">res</span><span class="p">.</span><span class="n">result</span><span class="p">().</span><span class="n">success</span><span class="p">();</span>
 <span class="p">}</span>
 
+<span class="kt">bool</span> <span class="nf">API::spawn</span><span class="p">(</span>
+  <span class="k">const</span> <span class="kt">bool</span> <span class="n">is_ego</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span>
+  <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">MiscObjectParameters</span> <span class="o">&amp;</span> <span class="n">params</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">is_ego</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">THROW_SEMANTIC_ERROR</span><span class="p">(</span><span class="s">&quot;misc object should not be ego&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">entity_manager_ptr_</span><span class="o">-&gt;</span><span class="n">spawnEntity</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">entity</span><span class="o">::</span><span class="n">MiscObjectEntity</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">standalone_mode</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityRequest</span> <span class="n">req</span><span class="p">;</span>
+  <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityResponse</span> <span class="n">res</span><span class="p">;</span>
+  <span class="n">simulation_interface</span><span class="o">::</span><span class="n">toProto</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="o">*</span><span class="n">req</span><span class="p">.</span><span class="n">mutable_parameters</span><span class="p">());</span>
+  <span class="n">spawn_misc_object_entity_client_</span><span class="p">.</span><span class="n">call</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">res</span><span class="p">.</span><span class="n">result</span><span class="p">().</span><span class="n">success</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
 <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="nf">API::getEntityPose</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">auto</span> <span class="n">status</span> <span class="o">=</span> <span class="n">getEntityStatus</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
@@ -1125,7 +1147,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on  1 July 2021 at 00:07:58 UTC</p>
+<p>Updated on  1 July 2021 at 09:54:17 UTC</p>
                 
                   
                 

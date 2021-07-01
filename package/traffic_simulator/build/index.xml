@@ -50,6 +50,7 @@
     <member refid="classtraffic__simulator_1_1API_1a7a5f3fbd7cd5b1bee74b20dfde8ca61b" kind="variable"><name>update_sensor_frame_client_</name></member>
     <member refid="classtraffic__simulator_1_1API_1af65c3beebde41b2091354484f5da7ea4" kind="variable"><name>spawn_vehicle_entity_client_</name></member>
     <member refid="classtraffic__simulator_1_1API_1ac006c577516f9535d7b13e65ad6bf3de" kind="variable"><name>spawn_pedestrian_entity_client_</name></member>
+    <member refid="classtraffic__simulator_1_1API_1ab4a66b09dcb82e469bd2f6537a8d96d3" kind="variable"><name>spawn_misc_object_entity_client_</name></member>
     <member refid="classtraffic__simulator_1_1API_1a5ce85cea2cb277e8b1122d949403c057" kind="variable"><name>despawn_entity_client_</name></member>
     <member refid="classtraffic__simulator_1_1API_1aa9b8877249a83d2de54b382c225ea897" kind="variable"><name>update_entity_status_client_</name></member>
     <member refid="classtraffic__simulator_1_1API_1aee17063f1d521eacf8c994acccd0fc40" kind="variable"><name>attach_lidar_sensor_client_</name></member>
@@ -59,6 +60,7 @@
     <member refid="classtraffic__simulator_1_1API_1a7c971afaf5e2273489eb3cd09914da27" kind="function"><name>setVerbose</name></member>
     <member refid="classtraffic__simulator_1_1API_1a99fe59bcd7050c22ca5b0360ecbb641e" kind="function"><name>spawn</name></member>
     <member refid="classtraffic__simulator_1_1API_1a4754fecd5ca125ba276b7c583ba73035" kind="function"><name>spawn</name></member>
+    <member refid="classtraffic__simulator_1_1API_1a6ac6e8a54ae3e0ce4a6bfac484d0001e" kind="function"><name>spawn</name></member>
     <member refid="classtraffic__simulator_1_1API_1aaccd2d90d9226f3c4560fe6859fe3a8a" kind="function"><name>spawn</name></member>
     <member refid="classtraffic__simulator_1_1API_1ac97aed8727b68897762ab305e75fef21" kind="function"><name>despawn</name></member>
     <member refid="classtraffic__simulator_1_1API_1ad8ada52d7fffe908d364f42f1c12db7f" kind="function"><name>getEntityStatus</name></member>
@@ -599,6 +601,21 @@
     <member refid="classmetrics_1_1MetricsManager_1a3e53c70f480778efa4127fb2ff5ea4b6" kind="function"><name>addMetric</name></member>
     <member refid="classmetrics_1_1MetricsManager_1a1d387eeee19bec3b6e43f19273464110" kind="function"><name>calculate</name></member>
   </compound>
+  <compound refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity" kind="class"><name>traffic_simulator::entity::MiscObjectEntity</name>
+    <member refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1a30ed29713a7f0b7dc92d0820134acad3" kind="variable"><name>params_</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1a728d0a3d6c3102adda9e6f6c23cc277e" kind="function"><name>MiscObjectEntity</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1a6d72ff80a3a2568086c477ad92980e14" kind="function"><name>MiscObjectEntity</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1a60e5f653b833166e87116eb8c5411429" kind="function"><name>onUpdate</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1abd47091c3636ac62e4ffea756fb5d575" kind="function"><name>getBoundingBox</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1acc29fd3a5b1d63ac40d7e588d0449a66" kind="function"><name>getCurrentAction</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1aab19254f8903341604715a8e158144bd" kind="function"><name>getEntityTypename</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1a61032e27bbb74466b17c210d49d232d6" kind="function"><name>getObstacle</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1ab921368cbcf6fa692bcd37f2cc170f30" kind="function"><name>getRouteLanelets</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1a5cdcf5c19c8143dd5813cb1ae650c0e5" kind="function"><name>getWaypoints</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1a6634b41cc7f72c45e527d0b13c913dbe" kind="function"><name>setTargetSpeed</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1a730d146c35452714079b1aff418cc77c" kind="function"><name>requestAssignRoute</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1MiscObjectEntity_1ad65a496f1f959905ba0b7d56f3dd5c07" kind="function"><name>requestAcquirePosition</name></member>
+  </compound>
   <compound refid="classmetrics_1_1MomentaryStopMetric" kind="class"><name>metrics::MomentaryStopMetric</name>
     <member refid="classmetrics_1_1MomentaryStopMetric_1a8a855a8e7b8a6594ac4caf7a77da83b6" kind="enum"><name>StopTargetLaneletType</name></member>
     <member refid="classmetrics_1_1MomentaryStopMetric_1a8a855a8e7b8a6594ac4caf7a77da83b6a7fe9c8b9471aa06a98e3aa67cbebe3f6" kind="enumvalue"><name>STOP_LINE</name></member>
@@ -721,6 +738,7 @@
     <member refid="classScenarioRunnerMoc_1aff086aeabe3ad22f7dde98870f975bd0" kind="variable"><name>catalog_xml</name></member>
     <member refid="classScenarioRunnerMoc_1a9f1ce77690c0d3c46b95e5c94118e5d2" kind="variable"><name>pedestrian_xml</name></member>
     <member refid="classScenarioRunnerMoc_1a7a498854a34209e4527dc1f184384116" kind="function"><name>ScenarioRunnerMoc</name></member>
+    <member refid="classScenarioRunnerMoc_1a261b2484e192774c091101a6e2c77db0" kind="function"><name>spawnObstacle</name></member>
     <member refid="classScenarioRunnerMoc_1ac86083286e8c1ba4e5bea680efbd2d5b" kind="function"><name>update</name></member>
   </compound>
   <compound refid="classSimModelIdealAccel" kind="class"><name>SimModelIdealAccel</name>
@@ -1269,6 +1287,8 @@
     <member refid="entity__manager_8hpp_1a9d24a74ef6e65a384ebdf0522ab4e399" kind="define"><name>FORWARD_TO_HDMAP_UTILS</name></member>
     <member refid="entity__manager_8hpp_1a1ad11a447f79aff25b6d456448fdd8a0" kind="define"><name>FORWARD_TO_ENTITY</name></member>
   </compound>
+  <compound refid="misc__object__entity_8hpp" kind="file"><name>misc_object_entity.hpp</name>
+  </compound>
   <compound refid="pedestrian__entity_8hpp" kind="file"><name>pedestrian_entity.hpp</name>
   </compound>
   <compound refid="pedestrian__parameter_8hpp" kind="file"><name>pedestrian_parameter.hpp</name>
@@ -1381,6 +1401,8 @@
   <compound refid="entity__base_8cpp" kind="file"><name>entity_base.cpp</name>
   </compound>
   <compound refid="entity__manager_8cpp" kind="file"><name>entity_manager.cpp</name>
+  </compound>
+  <compound refid="misc__object__entity_8cpp" kind="file"><name>misc_object_entity.cpp</name>
   </compound>
   <compound refid="pedestrian__entity_8cpp" kind="file"><name>pedestrian_entity.cpp</name>
   </compound>

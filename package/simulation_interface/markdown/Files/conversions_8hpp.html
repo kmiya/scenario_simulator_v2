@@ -794,6 +794,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_msgs/msg/entity_status.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_msgs/msg/entity_type.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_msgs/msg/lanelet_pose.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_msgs/msg/misc_object_parameters.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_msgs/msg/pedestrian_parameters.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_msgs/msg/performance.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_msgs/msg/property.hpp&gt;</span><span class="cp"></span>
@@ -850,6 +851,12 @@
   <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">PedestrianParameters</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span>
   <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PedestrianParameters</span> <span class="o">&amp;</span> <span class="n">p</span><span class="p">);</span>
 <span class="kt">void</span> <span class="nf">toProto</span><span class="p">(</span>
+  <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">MiscObjectParameters</span> <span class="o">&amp;</span> <span class="n">p</span><span class="p">,</span>
+  <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">MiscObjectParameters</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">toMsg</span><span class="p">(</span>
+  <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">MiscObjectParameters</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span>
+  <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">MiscObjectParameters</span> <span class="o">&amp;</span> <span class="n">p</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">toProto</span><span class="p">(</span>
   <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">ActionStatus</span> <span class="o">&amp;</span> <span class="n">s</span><span class="p">,</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">ActionStatus</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">);</span>
 <span class="kt">void</span> <span class="nf">toMsg</span><span class="p">(</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">ActionStatus</span> <span class="o">&amp;</span> <span class="n">proto</span><span class="p">,</span> <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">ActionStatus</span> <span class="o">&amp;</span> <span class="n">s</span><span class="p">);</span>
 <span class="kt">void</span> <span class="nf">toProto</span><span class="p">(</span>
@@ -892,7 +899,7 @@
 <span class="cp">#endif  </span><span class="c1">// SIMULATION_INTERFACE__CONVERSIONS_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  1 July 2021 at 00:07:59 UTC</p>
+<p>Updated on  1 July 2021 at 09:54:18 UTC</p>
                 
                   
                 

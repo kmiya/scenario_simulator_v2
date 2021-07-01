@@ -810,6 +810,10 @@
     <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnPedestrianEntityResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
     <span class="n">spawn_pedestrian_entity_func</span><span class="p">,</span>
   <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityRequest</span> <span class="o">&amp;</span><span class="p">,</span>
+    <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
+    <span class="n">spawn_misc_object_entity_func</span><span class="p">,</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">DespawnEntityRequest</span> <span class="o">&amp;</span><span class="p">,</span>
     <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">DespawnEntityResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
     <span class="n">despawn_entity_func</span><span class="p">,</span>
@@ -837,6 +841,8 @@
   <span class="n">spawn_vehicle_entity_func_</span><span class="p">(</span><span class="n">spawn_vehicle_entity_func</span><span class="p">),</span>
   <span class="n">spawn_pedestrian_entity_sock_</span><span class="p">(</span><span class="n">context_</span><span class="p">,</span> <span class="n">type_</span><span class="p">),</span>
   <span class="n">spawn_pedestrian_entity_func_</span><span class="p">(</span><span class="n">spawn_pedestrian_entity_func</span><span class="p">),</span>
+  <span class="n">spawn_misc_object_entity_sock_</span><span class="p">(</span><span class="n">context_</span><span class="p">,</span> <span class="n">type_</span><span class="p">),</span>
+  <span class="n">spawn_misc_object_entity_func_</span><span class="p">(</span><span class="n">spawn_misc_object_entity_func</span><span class="p">),</span>
   <span class="n">despawn_entity_sock_</span><span class="p">(</span><span class="n">context_</span><span class="p">,</span> <span class="n">type_</span><span class="p">),</span>
   <span class="n">despawn_entity_func_</span><span class="p">(</span><span class="n">despawn_entity_func</span><span class="p">),</span>
   <span class="n">update_entity_status_sock_</span><span class="p">(</span><span class="n">context_</span><span class="p">,</span> <span class="n">type_</span><span class="p">),</span>
@@ -856,6 +862,8 @@
     <span class="n">protocol</span><span class="p">,</span> <span class="n">hostname</span><span class="p">,</span> <span class="n">simulation_interface</span><span class="o">::</span><span class="n">ports</span><span class="o">::</span><span class="n">spawn_vehicle_entity</span><span class="p">));</span>
   <span class="n">spawn_pedestrian_entity_sock_</span><span class="p">.</span><span class="n">bind</span><span class="p">(</span><span class="n">simulation_interface</span><span class="o">::</span><span class="n">getEndPoint</span><span class="p">(</span>
     <span class="n">protocol</span><span class="p">,</span> <span class="n">hostname</span><span class="p">,</span> <span class="n">simulation_interface</span><span class="o">::</span><span class="n">ports</span><span class="o">::</span><span class="n">spawn_pedestrian_entity</span><span class="p">));</span>
+  <span class="n">spawn_misc_object_entity_sock_</span><span class="p">.</span><span class="n">bind</span><span class="p">(</span><span class="n">simulation_interface</span><span class="o">::</span><span class="n">getEndPoint</span><span class="p">(</span>
+    <span class="n">protocol</span><span class="p">,</span> <span class="n">hostname</span><span class="p">,</span> <span class="n">simulation_interface</span><span class="o">::</span><span class="n">ports</span><span class="o">::</span><span class="n">spawn_misc_object_entity</span><span class="p">));</span>
   <span class="n">despawn_entity_sock_</span><span class="p">.</span><span class="n">bind</span><span class="p">(</span><span class="n">simulation_interface</span><span class="o">::</span><span class="n">getEndPoint</span><span class="p">(</span>
     <span class="n">protocol</span><span class="p">,</span> <span class="n">hostname</span><span class="p">,</span> <span class="n">simulation_interface</span><span class="o">::</span><span class="n">ports</span><span class="o">::</span><span class="n">despawn_entity</span><span class="p">));</span>
   <span class="n">update_sensor_frame_sock_</span><span class="p">.</span><span class="n">bind</span><span class="p">(</span><span class="n">simulation_interface</span><span class="o">::</span><span class="n">getEndPoint</span><span class="p">(</span>
@@ -869,6 +877,7 @@
   <span class="n">poller_</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">update_sensor_frame_sock_</span><span class="p">);</span>
   <span class="n">poller_</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">spawn_vehicle_entity_sock_</span><span class="p">);</span>
   <span class="n">poller_</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">spawn_pedestrian_entity_sock_</span><span class="p">);</span>
+  <span class="n">poller_</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">spawn_misc_object_entity_sock_</span><span class="p">);</span>
   <span class="n">poller_</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">despawn_entity_sock_</span><span class="p">);</span>
   <span class="n">poller_</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">update_entity_status_sock_</span><span class="p">);</span>
   <span class="n">poller_</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">attach_lidar_sensor_sock_</span><span class="p">);</span>
@@ -922,6 +931,15 @@
     <span class="k">auto</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">toZMQ</span><span class="p">(</span><span class="n">response</span><span class="p">);</span>
     <span class="n">spawn_pedestrian_entity_sock_</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
   <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">poller_</span><span class="p">.</span><span class="n">has_input</span><span class="p">(</span><span class="n">spawn_misc_object_entity_sock_</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">zmqpp</span><span class="o">::</span><span class="n">message</span> <span class="n">request</span><span class="p">;</span>
+    <span class="n">spawn_misc_object_entity_sock_</span><span class="p">.</span><span class="n">receive</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+    <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityResponse</span> <span class="n">response</span><span class="p">;</span>
+    <span class="n">spawn_misc_object_entity_func_</span><span class="p">(</span>
+      <span class="n">toProto</span><span class="o">&lt;</span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityRequest</span><span class="o">&gt;</span><span class="p">(</span><span class="n">request</span><span class="p">),</span> <span class="n">response</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">toZMQ</span><span class="p">(</span><span class="n">response</span><span class="p">);</span>
+    <span class="n">spawn_misc_object_entity_sock_</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+  <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">poller_</span><span class="p">.</span><span class="n">has_input</span><span class="p">(</span><span class="n">despawn_entity_sock_</span><span class="p">))</span> <span class="p">{</span>
     <span class="n">zmqpp</span><span class="o">::</span><span class="n">message</span> <span class="n">request</span><span class="p">;</span>
     <span class="n">despawn_entity_sock_</span><span class="p">.</span><span class="n">receive</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
@@ -967,7 +985,7 @@
 <span class="p">}</span>  <span class="c1">// namespace zeromq</span>
 </code></pre></div>
 <hr />
-<p>Updated on  1 July 2021 at 00:07:59 UTC</p>
+<p>Updated on  1 July 2021 at 09:54:18 UTC</p>
                 
                   
                 

@@ -740,6 +740,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-endsimmediately" class="md-nav__link">
+    function endsImmediately
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-accomplished" class="md-nav__link">
     function accomplished
   </a>
@@ -815,7 +822,11 @@
 <tbody>
 <tr>
 <td>auto</td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1TrafficSignalControllerAction#function-start">start</a></strong>() const</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1TrafficSignalControllerAction#function-start">start</a></strong>()</td>
+</tr>
+<tr>
+<td>auto</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1TrafficSignalControllerAction#function-endsimmediately">endsImmediately</a></strong>()</td>
 </tr>
 <tr>
 <td>auto</td>
@@ -911,8 +922,8 @@
 </thead>
 <tbody>
 <tr>
-<td>std::unordered_map&lt; String, std::reference_wrapper&lt; TrafficSignalController &gt; &gt;</td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#variable-traffic_signal_controller_refs">traffic_signal_controller_refs</a></strong></td>
+<td>std::unordered_map&lt; String, std::shared_ptr&lt; TrafficSignalController &gt; &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope#variable-traffic_signal_controllers">traffic_signal_controllers</a></strong></td>
 </tr>
 <tr>
 <td>std::unordered_map&lt; String, <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1Pointer">Element</a> &gt;</td>
@@ -946,7 +957,10 @@
 </table>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">#</a></h2>
 <h3 id="function-start">function start<a class="headerlink" href="#function-start" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">auto</span> <span class="n">start</span><span class="p">()</span> <span class="k">const</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">auto</span> <span class="n">start</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="function-endsimmediately">function endsImmediately<a class="headerlink" href="#function-endsimmediately" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">static</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">endsImmediately</span><span class="p">()</span>
 </code></pre></div>
 <h3 id="function-accomplished">function accomplished<a class="headerlink" href="#function-accomplished" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">static</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">accomplished</span><span class="p">()</span>
@@ -966,7 +980,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">String</span> <span class="n">phase</span><span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>Updated on  1 July 2021 at 09:54:19 UTC</p>
+<p>Updated on  1 July 2021 at 21:35:49 UTC</p>
                 
                   
                 

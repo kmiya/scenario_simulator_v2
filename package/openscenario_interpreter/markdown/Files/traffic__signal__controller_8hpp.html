@@ -845,6 +845,7 @@
 <span class="cm">   * ------------------------------------------------------------------------ */</span>
   <span class="k">const</span> <span class="n">String</span> <span class="n">reference</span><span class="p">;</span>
 
+<span class="k">private</span><span class="o">:</span>
   <span class="cm">/* ---- NOTE -----------------------------------------------------------------</span>
 <span class="cm">   *</span>
 <span class="cm">   *  Phases of a TrafficSignalController.</span>
@@ -852,10 +853,39 @@
 <span class="cm">   * ------------------------------------------------------------------------ */</span>
   <span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">Phase</span><span class="o">&gt;</span> <span class="n">phases</span><span class="p">;</span>
 
-  <span class="n">CircularIterator</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">phases</span><span class="p">)</span><span class="o">::</span><span class="n">iterator</span><span class="o">&gt;</span> <span class="n">current_phase</span><span class="p">;</span>
+  <span class="n">CircularIterator</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">Phase</span><span class="o">&gt;&gt;</span> <span class="n">current_phase</span><span class="p">;</span>
 
+  <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">getCurrentTime</span><span class="p">())</span><span class="o">&gt;</span> <span class="n">change_to_begin_time</span><span class="p">;</span>
   <span class="k">decltype</span><span class="p">(</span><span class="n">getCurrentTime</span><span class="p">())</span> <span class="n">current_phase_started_at</span><span class="p">;</span>
 
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">TrafficSignalController</span><span class="o">&gt;&gt;</span> <span class="n">observers</span><span class="p">;</span>
+
+  <span class="k">auto</span> <span class="n">changePhaseTo</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">Phase</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="o">&amp;</span> <span class="n">next</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">auto</span> <span class="n">current_time</span> <span class="o">=</span> <span class="n">getCurrentTime</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">next</span> <span class="o">==</span> <span class="n">phases</span><span class="p">.</span><span class="n">begin</span><span class="p">())</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">observer</span> <span class="p">:</span> <span class="n">observers</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">observer</span><span class="o">-&gt;</span><span class="n">notify_begin</span><span class="p">();</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">current_phase_started_at</span> <span class="o">=</span> <span class="n">current_time</span><span class="p">;</span>
+    <span class="n">current_phase</span> <span class="o">=</span> <span class="n">next</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">current_phase</span> <span class="o">!=</span> <span class="n">phases</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span><span class="o">*</span><span class="n">current_phase</span><span class="p">).</span><span class="n">evaluate</span><span class="p">();</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kt">void</span> <span class="n">notify_begin</span><span class="p">()</span> <span class="p">{</span> <span class="n">change_to_begin_time</span> <span class="o">=</span> <span class="n">getCurrentTime</span><span class="p">()</span> <span class="o">+</span> <span class="n">delay</span><span class="p">;</span> <span class="p">}</span>
+
+  <span class="k">friend</span> <span class="k">struct</span> <span class="nc">TrafficSignalControllerAction</span><span class="p">;</span>
+  <span class="k">friend</span> <span class="k">struct</span> <span class="nc">TrafficSignals</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
   <span class="k">explicit</span> <span class="n">TrafficSignalController</span><span class="p">()</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
 
   <span class="k">explicit</span> <span class="n">TrafficSignalController</span><span class="p">(</span><span class="n">TrafficSignalController</span> <span class="o">&amp;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
@@ -865,31 +895,85 @@
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
   <span class="k">explicit</span> <span class="n">TrafficSignalController</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">outer_scope</span><span class="p">)</span>
   <span class="o">:</span> <span class="n">name</span><span class="p">(</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">)),</span>
-    <span class="n">delay</span><span class="p">(</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;delay&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">,</span> <span class="n">Double</span><span class="p">())),</span>
+    <span class="n">delay</span><span class="p">(</span>
+      <span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;delay&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">quiet_NaN</span><span class="p">())),</span>
     <span class="n">reference</span><span class="p">(</span><span class="n">readAttribute</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;reference&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">,</span> <span class="n">String</span><span class="p">())),</span>
     <span class="n">phases</span><span class="p">(</span><span class="n">readElements</span><span class="o">&lt;</span><span class="n">Phase</span><span class="p">,</span> <span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;Phase&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">)),</span>
     <span class="n">current_phase</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">phases</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">phases</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">phases</span><span class="p">)),</span>
+    <span class="n">change_to_begin_time</span><span class="p">(</span><span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">),</span>
     <span class="n">current_phase_started_at</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">current_phase_started_at</span><span class="p">)</span><span class="o">&gt;::</span><span class="n">min</span><span class="p">())</span>
   <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">delay</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">THROW_SYNTAX_ERROR</span><span class="p">(</span>
+        <span class="s">&quot;TrafficSignalController (&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s">&quot;): delay must not be a negative number&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">std</span><span class="o">::</span><span class="n">isnan</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">reference</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+      <span class="n">THROW_SYNTAX_ERROR</span><span class="p">(</span>
+        <span class="s">&quot;TrafficSignalController (&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s">&quot;): If delay is set, reference is required&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">reference</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">std</span><span class="o">::</span><span class="n">isnan</span><span class="p">(</span><span class="n">delay</span><span class="p">))</span> <span class="p">{</span>
+      <span class="n">THROW_SYNTAX_ERROR</span><span class="p">(</span>
+        <span class="s">&quot;TrafficSignalController (&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s">&quot;): If reference is set, delay is required&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
   <span class="p">}</span>
 
-  <span class="k">auto</span> <span class="n">theDurationExceeded</span><span class="p">()</span> <span class="k">const</span>
+  <span class="k">auto</span> <span class="n">evaluate</span><span class="p">()</span>
   <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">not</span> <span class="n">phases</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">shouldChangePhaseToBegin</span><span class="p">())</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">changePhaseTo</span><span class="p">(</span><span class="n">phases</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">theDurationExceeded</span><span class="p">())</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">changePhaseTo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">next</span><span class="p">(</span><span class="n">current_phase</span><span class="p">));</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">auto</span> <span class="n">cycleTime</span><span class="p">()</span> <span class="k">const</span>
+  <span class="p">{</span>
+    <span class="n">Double</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">each</span> <span class="p">:</span> <span class="n">phases</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">sum</span> <span class="o">+=</span> <span class="n">each</span><span class="p">.</span><span class="n">duration</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+  <span class="k">auto</span> <span class="n">theDurationExceeded</span><span class="p">()</span> <span class="k">const</span> <span class="o">-&gt;</span> <span class="kt">bool</span>
+  <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">current_phase</span> <span class="o">!=</span> <span class="n">phases</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">{</span>
       <span class="k">return</span> <span class="p">(</span><span class="o">*</span><span class="n">current_phase</span><span class="p">).</span><span class="n">duration</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">getCurrentTime</span><span class="p">()</span> <span class="o">-</span> <span class="n">current_phase_started_at</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
-  <span class="k">auto</span> <span class="n">evaluate</span><span class="p">()</span>
+  <span class="k">auto</span> <span class="n">shouldChangePhaseToBegin</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">bool</span>
   <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">theDurationExceeded</span><span class="p">())</span> <span class="p">{</span>
-      <span class="n">current_phase_started_at</span> <span class="o">=</span> <span class="n">getCurrentTime</span><span class="p">();</span>
-      <span class="k">return</span> <span class="p">(</span><span class="o">*++</span><span class="n">current_phase</span><span class="p">).</span><span class="n">evaluate</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">reference</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">current_phase</span> <span class="o">==</span> <span class="n">phases</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>  <span class="c1">// if current_phase haven&#39;t been initialized</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">change_to_begin_time</span><span class="p">.</span><span class="n">has_value</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">change_to_begin_time</span><span class="p">.</span><span class="n">value</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">getCurrentTime</span><span class="p">()))</span> <span class="p">{</span>
+        <span class="n">change_to_begin_time</span> <span class="o">=</span> <span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+      <span class="p">}</span>
     <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kt">void</span> <span class="n">changePhaseByName</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">phase_name</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find_if</span><span class="p">(</span><span class="n">phases</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">phases</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">phase_name</span><span class="p">](</span><span class="k">const</span> <span class="n">Phase</span> <span class="o">&amp;</span> <span class="n">phase</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">phase</span><span class="p">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">phase_name</span><span class="p">;</span>
+    <span class="p">});</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">==</span> <span class="n">phases</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">{</span>
+      <span class="n">THROW_SYNTAX_ERROR</span><span class="p">(</span><span class="n">phase_name</span><span class="p">,</span> <span class="s">&quot;is not declared in this TrafficSignalContoller, &quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">changePhaseTo</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">};</span>
 <span class="p">}</span>  <span class="c1">// namespace syntax</span>
@@ -898,7 +982,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__TRAFFIC_SIGNAL_CONTROLLER_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  1 July 2021 at 09:54:20 UTC</p>
+<p>Updated on  1 July 2021 at 21:35:50 UTC</p>
                 
                   
                 

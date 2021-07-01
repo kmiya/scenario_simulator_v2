@@ -5,6 +5,7 @@
     <innerclass refid="structopenscenario__interpreter_1_1utility_1_1AttributeHighlighter" prot="public">openscenario_interpreter::utility::AttributeHighlighter</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1utility_1_1ExecutionTimer" prot="public">openscenario_interpreter::utility::ExecutionTimer</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1utility_1_1Indent" prot="public">openscenario_interpreter::utility::Indent</innerclass>
+    <innernamespace refid="namespaceopenscenario__interpreter_1_1utility_1_1detail">openscenario_interpreter::utility::detail</innernamespace>
       <sectiondef kind="var">
       <memberdef kind="variable" id="indent_8hpp_1a9a1de3a09943bbd8a4c729a86e390f03" prot="public" static="no" mutable="no">
         <type>struct <ref refid="structopenscenario__interpreter_1_1utility_1_1Indent" kindref="compound">openscenario_interpreter::utility::Indent</ref></type>
@@ -49,6 +50,39 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
+      <memberdef kind="function" id="circular__check_8hpp_1a49b869fe83970d72298e1a6ae4aa8d47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Node</type>
+          </param>
+          <param>
+            <type>class NodeToChildren</type>
+          </param>
+          <param>
+            <type>class Hash</type>
+            <defval>std::hash&lt;Node&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool openscenario_interpreter::utility::circular_check</definition>
+        <argsstring>(const Node &amp;init, NodeToChildren &amp;&amp;node_to_children)</argsstring>
+        <name>circular_check</name>
+        <param>
+          <type>const Node &amp;</type>
+          <declname>init</declname>
+        </param>
+        <param>
+          <type>NodeToChildren &amp;&amp;</type>
+          <declname>node_to_children</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/circular_check.hpp" line="51" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/utility/circular_check.hpp" bodystart="51" bodyend="55"/>
+      </memberdef>
       <memberdef kind="function" id="demangle_8hpp_1a7628e4480fc8547241fb34e5711cfd69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>auto</type>
         <definition>auto openscenario_interpreter::utility::demangle</definition>

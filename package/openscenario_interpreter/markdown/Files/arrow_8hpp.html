@@ -791,6 +791,7 @@
 <span class="cp">#ifndef OPENSCENARIO_INTERPRETER__SYNTAX__ARROW_HPP_</span>
 <span class="cp">#define OPENSCENARIO_INTERPRETER__SYNTAX__ARROW_HPP_</span>
 
+<span class="cp">#include</span> <span class="cpf">&lt;boost/optional.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/traffic_lights/traffic_light_state.hpp&gt;</span><span class="cp"></span>
 
@@ -807,7 +808,7 @@
     <span class="n">straight</span><span class="p">,</span>
   <span class="p">}</span> <span class="n">value</span><span class="p">;</span>
 
-  <span class="k">explicit</span> <span class="k">constexpr</span> <span class="n">Arrow</span><span class="p">(</span><span class="n">value_type</span> <span class="n">value</span> <span class="o">=</span> <span class="n">noArrow</span><span class="p">)</span> <span class="o">:</span> <span class="n">value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="k">constexpr</span> <span class="n">Arrow</span><span class="p">(</span><span class="n">value_type</span> <span class="n">value</span> <span class="o">=</span> <span class="n">noArrow</span><span class="p">)</span> <span class="o">:</span> <span class="n">value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{}</span>
 
   <span class="k">constexpr</span> <span class="k">operator</span> <span class="n">value_type</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">value</span><span class="p">;</span> <span class="p">}</span>
 
@@ -832,7 +833,12 @@
   <span class="p">}</span>
 <span class="p">};</span>
 
+<span class="k">static_assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_trivially_copy_constructible</span><span class="o">&lt;</span><span class="n">Arrow</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+<span class="k">static_assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_trivially_copy_assignable</span><span class="o">&lt;</span><span class="n">Arrow</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+<span class="k">static_assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_standard_layout</span><span class="o">&lt;</span><span class="n">Arrow</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+
 <span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span><span class="p">,</span> <span class="n">Arrow</span> <span class="o">&amp;</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span><span class="p">,</span> <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">Arrow</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="p">);</span>
 
 <span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">Arrow</span> <span class="o">&amp;</span><span class="p">);</span>
 <span class="p">}</span>  <span class="c1">// namespace syntax</span>
@@ -841,7 +847,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__ARROW_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  1 July 2021 at 09:54:20 UTC</p>
+<p>Updated on  1 July 2021 at 21:35:50 UTC</p>
                 
                   
                 

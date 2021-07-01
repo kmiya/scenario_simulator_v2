@@ -704,6 +704,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#namespaces" class="md-nav__link">
+    Namespaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#classes" class="md-nav__link">
     Classes
   </a>
@@ -777,6 +784,13 @@
           <li class="md-nav__item">
   <a href="#function-demangle_1" class="md-nav__link">
     function demangle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-circular_check" class="md-nav__link">
+    function circular_check
   </a>
   
 </li>
@@ -866,6 +880,19 @@
                 
                 
                 <h1 id="openscenario_interpreterutility">openscenario_interpreter::utility<a class="headerlink" href="#openscenario_interpreterutility" title="Permanent link">#</a></h1>
+<h2 id="namespaces">Namespaces<a class="headerlink" href="#namespaces" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1utility_1_1detail">openscenario_interpreter::utility::detail</a></strong></td>
+</tr>
+</tbody>
+</table>
 <h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">#</a></h2>
 <table>
 <thead>
@@ -925,6 +952,10 @@
 <tr>
 <td>auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1utility#function-demangle">demangle</a></strong>(const std::type_info &amp; info)</td>
+</tr>
+<tr>
+<td>template \&lt;class Node ,class NodeToChildren ,class Hash  =std::hash<Node>></br>bool</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter_1_1utility#function-circular_check">circular_check</a></strong>(const Node &amp; init, NodeToChildren &amp;&amp; node_to_children)</td>
 </tr>
 <tr>
 <td></td>
@@ -1013,6 +1044,15 @@
     <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">type_info</span> <span class="o">&amp;</span> <span class="n">info</span>
 <span class="p">)</span>
 </code></pre></div>
+<h3 id="function-circular_check">function circular_check<a class="headerlink" href="#function-circular_check" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">Node</span> <span class="p">,</span>
+<span class="k">class</span> <span class="nc">NodeToChildren</span> <span class="p">,</span>
+<span class="k">class</span> <span class="nc">Hash</span>  <span class="o">=</span><span class="n">std</span><span class="o">::</span><span class="n">hash</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;&gt;</span>
+<span class="kt">bool</span> <span class="n">circular_check</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">init</span><span class="p">,</span>
+    <span class="n">NodeToChildren</span> <span class="o">&amp;&amp;</span> <span class="n">node_to_children</span>
+<span class="p">)</span>
+</code></pre></div>
 <h3 id="function-compose">function COMPOSE<a class="headerlink" href="#function-compose" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">COMPOSE</span><span class="p">(</span>
     <span class="n">caar</span> <span class="p">,</span>
@@ -1052,7 +1092,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">auto</span> <span class="n">car</span> <span class="o">=</span> <span class="p">[](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">pare</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pare</span><span class="p">);</span> <span class="p">};</span>
 </code></pre></div>
 <hr />
-<p>Updated on  1 July 2021 at 09:54:19 UTC</p>
+<p>Updated on  1 July 2021 at 21:35:49 UTC</p>
                 
                   
                 

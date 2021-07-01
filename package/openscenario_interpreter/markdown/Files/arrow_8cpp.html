@@ -829,17 +829,36 @@
 
   <span class="n">is</span> <span class="o">&gt;&gt;</span> <span class="n">value</span><span class="p">;</span>
 
-  <span class="k">static</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">Arrow</span><span class="o">::</span><span class="n">value_type</span><span class="o">&gt;</span> <span class="n">conversions</span><span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;noArrow&quot;</span><span class="p">,</span> <span class="n">Arrow</span><span class="o">::</span><span class="n">noArrow</span><span class="p">),</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;left&quot;</span><span class="p">,</span> <span class="n">Arrow</span><span class="o">::</span><span class="n">left</span><span class="p">),</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;right&quot;</span><span class="p">,</span> <span class="n">Arrow</span><span class="o">::</span><span class="n">right</span><span class="p">),</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;straight&quot;</span><span class="p">,</span> <span class="n">Arrow</span><span class="o">::</span><span class="n">straight</span><span class="p">),</span>
-  <span class="p">};</span>
-
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="n">datum</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">conversions</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span> <span class="o">&amp;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="s">&quot;noArrow&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">datum</span> <span class="o">=</span> <span class="n">Arrow</span><span class="o">::</span><span class="n">noArrow</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="s">&quot;left&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">datum</span> <span class="o">=</span> <span class="n">Arrow</span><span class="o">::</span><span class="n">left</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="s">&quot;right&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">datum</span> <span class="o">=</span> <span class="n">Arrow</span><span class="o">::</span><span class="n">right</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="s">&quot;straight&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">datum</span> <span class="o">=</span> <span class="n">Arrow</span><span class="o">::</span><span class="n">straight</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="k">throw</span> <span class="n">UNEXPECTED_ENUMERATION_VALUE_SPECIFIED</span><span class="p">(</span><span class="n">Arrow</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="n">is</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="n">is</span><span class="p">,</span> <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">Arrow</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">datum</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">value</span><span class="p">;</span>
+  <span class="n">is</span> <span class="o">&gt;&gt;</span> <span class="n">value</span><span class="p">;</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="s">&quot;noArrow&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">datum</span> <span class="o">=</span> <span class="n">Arrow</span><span class="o">::</span><span class="n">noArrow</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="s">&quot;left&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">datum</span> <span class="o">=</span> <span class="n">Arrow</span><span class="o">::</span><span class="n">left</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="s">&quot;right&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">datum</span> <span class="o">=</span> <span class="n">Arrow</span><span class="o">::</span><span class="n">right</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="s">&quot;straight&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">datum</span> <span class="o">=</span> <span class="n">Arrow</span><span class="o">::</span><span class="n">straight</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">datum</span> <span class="o">=</span> <span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="k">return</span> <span class="n">is</span><span class="p">;</span>
@@ -867,7 +886,7 @@
 <span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
 </code></pre></div>
 <hr />
-<p>Updated on  1 July 2021 at 09:54:20 UTC</p>
+<p>Updated on  1 July 2021 at 21:35:50 UTC</p>
                 
                   
                 

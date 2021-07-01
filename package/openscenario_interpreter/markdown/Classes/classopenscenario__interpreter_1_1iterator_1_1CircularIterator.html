@@ -789,7 +789,7 @@
         
           <li class="md-nav__item">
   <a href="#function-operator" class="md-nav__link">
-    function operator++
+    function operator=
   </a>
   
 </li>
@@ -803,7 +803,28 @@
         
           <li class="md-nav__item">
   <a href="#function-operator_2" class="md-nav__link">
+    function operator++
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-operator_3" class="md-nav__link">
     function operator*
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-operator-forwarditerator" class="md-nav__link">
+    function operator ForwardIterator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-operator-forwardconstiterator" class="md-nav__link">
+    function operator ForwardConstIterator
   </a>
   
 </li>
@@ -884,6 +905,10 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1iterator_1_1CircularIterator">CircularIterator</a> &amp;</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1iterator_1_1CircularIterator#function-operator=">operator=</a></strong>(const ForwardIterator &amp; iterator)</td>
+</tr>
+<tr>
 <td>auto &amp;</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1iterator_1_1CircularIterator#function-operator++">operator++</a></strong>()</td>
 </tr>
@@ -897,44 +922,63 @@
 </tr>
 <tr>
 <td></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1iterator_1_1CircularIterator#function-operator-forwarditerator">operator ForwardIterator</a></strong>()</td>
+</tr>
+<tr>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1iterator_1_1CircularIterator#function-operator-forwardconstiterator">operator ForwardConstIterator</a></strong>() const</td>
+</tr>
+<tr>
+<td></td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1iterator_1_1CircularIterator#function-circulariterator">CircularIterator</a></strong>(ForwardIterator begin, ForwardIterator end, ForwardIterator current)</td>
 </tr>
 </tbody>
 </table>
 <h2 id="detailed-description">Detailed Description<a class="headerlink" href="#detailed-description" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">ForwardIterator</span> <span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Container</span> <span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">openscenario_interpreter</span><span class="o">::</span><span class="n">iterator</span><span class="o">::</span><span class="n">CircularIterator</span><span class="p">;</span>
 </code></pre></div>
 <h2 id="public-types-documentation">Public Types Documentation<a class="headerlink" href="#public-types-documentation" title="Permanent link">#</a></h2>
 <h3 id="using-value_type">using value_type<a class="headerlink" href="#using-value_type" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">iterator</span><span class="o">::</span><span class="n">CircularIterator</span><span class="o">&lt;</span> <span class="n">ForwardIterator</span> <span class="o">&gt;::</span><span class="n">value_type</span> <span class="o">=</span>  <span class="k">typename</span> <span class="nc">std</span><span class="o">::</span><span class="n">iterator_traits</span><span class="o">&lt;</span><span class="n">ForwardIterator</span><span class="o">&gt;::</span><span class="n">value_type</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">iterator</span><span class="o">::</span><span class="n">CircularIterator</span><span class="o">&lt;</span> <span class="n">Container</span> <span class="o">&gt;::</span><span class="n">value_type</span> <span class="o">=</span>  <span class="k">typename</span> <span class="nc">std</span><span class="o">::</span><span class="n">iterator_traits</span><span class="o">&lt;</span><span class="n">ForwardIterator</span><span class="o">&gt;::</span><span class="n">value_type</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="using-reference">using reference<a class="headerlink" href="#using-reference" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">iterator</span><span class="o">::</span><span class="n">CircularIterator</span><span class="o">&lt;</span> <span class="n">ForwardIterator</span> <span class="o">&gt;::</span><span class="n">reference</span> <span class="o">=</span>  <span class="k">typename</span> <span class="nc">std</span><span class="o">::</span><span class="n">add_lvalue_reference</span><span class="o">&lt;</span><span class="n">value_type</span><span class="o">&gt;::</span><span class="n">type</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">iterator</span><span class="o">::</span><span class="n">CircularIterator</span><span class="o">&lt;</span> <span class="n">Container</span> <span class="o">&gt;::</span><span class="n">reference</span> <span class="o">=</span>  <span class="k">typename</span> <span class="nc">std</span><span class="o">::</span><span class="n">add_lvalue_reference</span><span class="o">&lt;</span><span class="n">value_type</span><span class="o">&gt;::</span><span class="n">type</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="using-pointer">using pointer<a class="headerlink" href="#using-pointer" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">iterator</span><span class="o">::</span><span class="n">CircularIterator</span><span class="o">&lt;</span> <span class="n">ForwardIterator</span> <span class="o">&gt;::</span><span class="n">pointer</span> <span class="o">=</span>  <span class="k">typename</span> <span class="nc">std</span><span class="o">::</span><span class="n">iterator_traits</span><span class="o">&lt;</span><span class="n">ForwardIterator</span><span class="o">&gt;::</span><span class="n">pointer</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">iterator</span><span class="o">::</span><span class="n">CircularIterator</span><span class="o">&lt;</span> <span class="n">Container</span> <span class="o">&gt;::</span><span class="n">pointer</span> <span class="o">=</span>  <span class="k">typename</span> <span class="nc">std</span><span class="o">::</span><span class="n">iterator_traits</span><span class="o">&lt;</span><span class="n">ForwardIterator</span><span class="o">&gt;::</span><span class="n">pointer</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="using-iterator_category">using iterator_category<a class="headerlink" href="#using-iterator_category" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">iterator</span><span class="o">::</span><span class="n">CircularIterator</span><span class="o">&lt;</span> <span class="n">ForwardIterator</span> <span class="o">&gt;::</span><span class="n">iterator_category</span> <span class="o">=</span>  <span class="n">std</span><span class="o">::</span><span class="n">forward_iterator_tag</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">iterator</span><span class="o">::</span><span class="n">CircularIterator</span><span class="o">&lt;</span> <span class="n">Container</span> <span class="o">&gt;::</span><span class="n">iterator_category</span> <span class="o">=</span>  <span class="n">std</span><span class="o">::</span><span class="n">forward_iterator_tag</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="using-difference_type">using difference_type<a class="headerlink" href="#using-difference_type" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">iterator</span><span class="o">::</span><span class="n">CircularIterator</span><span class="o">&lt;</span> <span class="n">ForwardIterator</span> <span class="o">&gt;::</span><span class="n">difference_type</span> <span class="o">=</span>  <span class="k">typename</span> <span class="nc">std</span><span class="o">::</span><span class="n">iterator_traits</span><span class="o">&lt;</span><span class="n">ForwardIterator</span><span class="o">&gt;::</span><span class="n">difference_type</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">iterator</span><span class="o">::</span><span class="n">CircularIterator</span><span class="o">&lt;</span> <span class="n">Container</span> <span class="o">&gt;::</span><span class="n">difference_type</span> <span class="o">=</span>  <span class="k">typename</span> <span class="nc">std</span><span class="o">::</span><span class="n">iterator_traits</span><span class="o">&lt;</span><span class="n">ForwardIterator</span><span class="o">&gt;::</span><span class="n">difference_type</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="using-const_reference">using const_reference<a class="headerlink" href="#using-const_reference" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">iterator</span><span class="o">::</span><span class="n">CircularIterator</span><span class="o">&lt;</span> <span class="n">ForwardIterator</span> <span class="o">&gt;::</span><span class="n">const_reference</span> <span class="o">=</span>  <span class="k">typename</span> <span class="nc">std</span><span class="o">::</span><span class="n">add_const</span><span class="o">&lt;</span><span class="n">reference</span><span class="o">&gt;::</span><span class="n">type</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">iterator</span><span class="o">::</span><span class="n">CircularIterator</span><span class="o">&lt;</span> <span class="n">Container</span> <span class="o">&gt;::</span><span class="n">const_reference</span> <span class="o">=</span>  <span class="k">typename</span> <span class="nc">std</span><span class="o">::</span><span class="n">add_const</span><span class="o">&lt;</span><span class="n">reference</span><span class="o">&gt;::</span><span class="n">type</span><span class="p">;</span>
 </code></pre></div>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">#</a></h2>
-<h3 id="function-operator">function operator++<a class="headerlink" href="#function-operator" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">++</span><span class="p">()</span>
+<h3 id="function-operator">function operator=<a class="headerlink" href="#function-operator" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="n">CircularIterator</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">ForwardIterator</span> <span class="o">&amp;</span> <span class="n">iterator</span>
+<span class="p">)</span>
 </code></pre></div>
 <h3 id="function-operator_1">function operator++<a class="headerlink" href="#function-operator_1" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">++</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="function-operator_2">function operator++<a class="headerlink" href="#function-operator_2" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">++</span><span class="p">(</span>
     <span class="kt">int</span> 
 <span class="p">)</span>
 </code></pre></div>
-<h3 id="function-operator_2">function operator*<a class="headerlink" href="#function-operator_2" title="Permanent link">#</a></h3>
+<h3 id="function-operator_3">function operator*<a class="headerlink" href="#function-operator_3" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="n">reference</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>
+<h3 id="function-operator-forwarditerator">function operator ForwardIterator<a class="headerlink" href="#function-operator-forwarditerator" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">operator</span> <span class="n">ForwardIterator</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="function-operator-forwardconstiterator">function operator ForwardConstIterator<a class="headerlink" href="#function-operator-forwardconstiterator" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">operator</span> <span class="n">ForwardConstIterator</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
 <h3 id="function-circulariterator">function CircularIterator<a class="headerlink" href="#function-circulariterator" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">explicit</span> <span class="n">CircularIterator</span><span class="p">(</span>
@@ -944,7 +988,7 @@
 <span class="p">)</span>
 </code></pre></div>
 <hr />
-<p>Updated on  1 July 2021 at 09:54:20 UTC</p>
+<p>Updated on  1 July 2021 at 21:35:50 UTC</p>
                 
                   
                 

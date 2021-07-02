@@ -21,4 +21,5 @@ jobs:
       - run: |
           ./node_modules/.bin/cspell \
             --config .github/workflows/.cspell.json \
-            "**/!(CHANGELOG.rst)"
+            "**/!(CHANGELOG.rst)" \
+            2> /dev/null || true

@@ -18,4 +18,7 @@ jobs:
 
       - uses: actions/setup-node@v2
       - run: npm install cspell
-      - run: ./node_modules/.bin/cspell "**/!(CHANGELOG.rst)"
+      - run: |
+          ./node_modules/.bin/cspell \
+            --config .github/workflows/.cspell.json \
+            "**/!(CHANGELOG.rst)"
